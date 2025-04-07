@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Ebook de Intervenção em Crises Suicidas – CBMMG</title>
+    <!-- Google Fonts para tipografia elegante -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Swiper CSS para o carrossel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- CSS Customizado -->
+    <style>
+      /* RESET E ESTILOS GLOBAIS */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #e0f7fa;
+        color: #333;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      p,
+      ul {
+        margin-bottom: 1rem;
+      }
+      ul {
+        list-style: none;
+      }
+      
+      /* VARIÁVEIS DE COR */
+      :root {
+        --primary-color: #008cba;
+        --secondary-color: #00bfa6;
+        --light-color: #ffffff;
+        --background-color: #e0f7fa;
+      }
+      
+      /* CABEÇALHO – NÃO SOBREPOR O TÍTULO E SUBTÍTULO */
+      header {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        padding: 3rem 1rem;
+        text-align: center;
+        color: var(--light-color);
+      }
+      header h1 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+      }
+      /* Subtítulo (8 palavras exatas) */
+      header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      /* PARÁGRAFO INTRODUTÓRIO – COPYWRITING */
+      #intro-seo {
+        max-width: 900px;
+        margin: 2rem auto 1.5rem;
+        padding: 0 1rem;
+        text-align: center;
+        font-size: 1rem;
+        color: #444;
+      }
+      
+      /* CARROSSEL DE CARDS */
+      main {
+        padding: 2rem 0;
+      }
+      .swiper-container {
+        width: 100%;
+        padding-bottom: 3rem;
+      }
+      .swiper-slide {
+        background: var(--light-color);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        width: 280px;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        border: 2px solid transparent;
+      }
+      .swiper-slide:hover {
+        transform: scale(1.03);
+        border-color: var(--primary-color);
+      }
+      .card-icon {
+        margin-bottom: 1rem;
+      }
+      .card-icon svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--primary-color);
+      }
+      .card-content {
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .card-content h3 {
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+      .card-content p {
+        font-size: 0.85rem;
+        color: #555;
+        line-height: 1.3;
+      }
+      
+      /* CONTROLES DO SWIPER */
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: var(--primary-color);
+      }
+      .swiper-pagination-bullet-active {
+        background: var(--primary-color);
+      }
+      
+      /* MODAL */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: rgba(0,0,0,0.6);
+      }
+      .modal-content {
+        background: var(--light-color);
+        margin: 5% auto;
+        padding: 1.5rem;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 800px;
+        position: relative;
+      }
+      .modal-close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.8rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #aaa;
+        cursor: pointer;
+      }
+      .modal-close:hover {
+        color: #000;
+      }
+      .modal-content article {
+        max-height: 70vh;
+        overflow-y: auto;
+        padding-right: 1rem;
+      }
+      
+      /* SEÇÃO DE CONTATO */
+      #contact {
+        background: var(--light-color);
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      #contact h2 {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+      #contactForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #contactForm textarea {
+        resize: vertical;
+        min-height: 100px;
+        padding: 0.8rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      #contactForm button {
+        background: var(--primary-color);
+        color: var(--light-color);
+        border: none;
+        padding: 0.75rem 1.2rem;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+      #contactForm button:hover {
+        background: #006c9e;
+      }
+      
+      /* BOTÃO FLOUTANTE DE WHATSAPP */
+      #whatsappFloat {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        z-index: 3000;
+      }
+      #whatsappFloat svg {
+        fill: #fff;
+        width: 28px;
+        height: 28px;
+      }
+      
+      /* RODAPÉ */
+      footer {
+        background: #333;
+        color: var(--light-color);
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+      .footer-line {
+        margin: 0.3rem 0;
+      }
+      
+      /* RESPONSIVIDADE */
+      @media (max-width: 768px) {
+        header {
+          padding: 2rem 1rem;
+        }
+        header h1 {
+          font-size: 2rem;
+        }
+        .swiper-slide {
+          width: 220px;
+          height: 320px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>Guia de Intervenção em Crises Suicidas</h1>
+      <p>Suporte prático para profissionais do CBMMG em situações de emergência.</p>
+    </header>
+    
+    <!-- PARÁGRAFO INTRODUTÓRIO -->
+    <div id="intro-seo">
+      <p>
+        Este ebook, desenvolvido para os abordadores do curso de atendimento a tentativas de suicídio do CBMMG, reúne conhecimentos neurocientíficos e estratégias de intervenção para apoiar profissionais na identificação e modulação de crises emocionais. Com base em estudos recentes, o material explora desde os mecanismos de resposta imediata até técnicas de comunicação dissuasiva, oferecendo uma base sólida para a prática em situações de alta vulnerabilidade.
+      </p>
+    </div>
+    
+    <!-- CARROSSEL DE CARDS (41 slides) -->
+    <main>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Card 1: Sumário -->
+          <div class="swiper-slide card" data-chapter="sumario">
+            <div class="card-icon">
+              <!-- Ícone de lista -->
+              <svg viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Sumário</h3>
+              <p>Visualize a estrutura completa do ebook.</p>
+            </div>
+          </div>
+          <!-- Card 2: 1 INTRODUTÓRIA -->
+          <div class="swiper-slide card" data-chapter="intro">
+            <div class="card-icon">
+              <!-- Ícone de livro aberto -->
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16v16H4z" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8 4v16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>1 INTRODUÇÃO</h3>
+              <p>Entenda os mecanismos de resposta emocional e o papel da amígdala.</p>
+            </div>
+          </div>
+          <!-- Card 3: 1.1 A Importância da Amígdala na Sobrevivência e no Comportamento Suicida -->
+          <div class="swiper-slide card" data-chapter="1-1">
+            <div class="card-icon">
+              <!-- Ícone representativo -->
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></circle>
+                <path d="M12 8v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 16h.01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>1.1 A Importância da Amígdala</h3>
+              <p>Descubra como a amígdala influencia a sobrevivência e comportamentos suicidas.</p>
+            </div>
+          </div>
+          <!-- Card 4: 1.2 O Conceito de Sequestro da Amígdala e sua Influência em Crises -->
+          <div class="swiper-slide card" data-chapter="1-2">
+            <div class="card-icon">
+              <!-- Ícone de alerta -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 22h20L12 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>1.2 Sequestro da Amígdala</h3>
+              <p>Entenda como o sequestro afeta a reflexão e gera impulsividade.</p>
+            </div>
+          </div>
+          <!-- Card 5: 1.3 Objetivo e Estrutura do eBook -->
+          <div class="swiper-slide card" data-chapter="1-3">
+            <div class="card-icon">
+              <!-- Ícone de objetivo -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>1.3 Objetivo e Estrutura</h3>
+              <p>Saiba como o ebook está organizado para orientar intervenções eficazes.</p>
+            </div>
+          </div>
+          <!-- Card 6: 2 O SEQUESTRO DA AMÍGDALA E A CRISE SUICIDA -->
+          <div class="swiper-slide card" data-chapter="c2">
+            <div class="card-icon">
+              <!-- Ícone de alerta duplo -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 18v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>2 O SEQUESTRO DA AMÍGDALA</h3>
+              <p>Explore a dinâmica entre a amígdala e o controle emocional em crises.</p>
+            </div>
+          </div>
+          <!-- Card 7: 2.1 O Alarme Primitivo da Amígdala -->
+          <div class="swiper-slide card" data-chapter="2-1">
+            <div class="card-icon">
+              <!-- Ícone de sino -->
+              <svg viewBox="0 0 24 24">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>2.1 Alarme Primitivo</h3>
+              <p>Entenda a resposta ancestral da amígdala diante do perigo.</p>
+            </div>
+          </div>
+          <!-- Card 8: 2.2 Sequestro da Amígdala: Um Processo Técnico em Ação -->
+          <div class="swiper-slide card" data-chapter="2-2">
+            <div class="card-icon">
+              <!-- Ícone de engrenagens -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>2.2 Processo Técnico</h3>
+              <p>Veja como a ativação rápida da amígdala desencadeia respostas intensas.</p>
+            </div>
+          </div>
+          <!-- Card 9: 2.3 Sequestro Emocional e Ação Impulsiva -->
+          <div class="swiper-slide card" data-chapter="2-3">
+            <div class="card-icon">
+              <!-- Ícone de raio -->
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8L21 10h-9l1-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>2.3 Ação Impulsiva</h3>
+              <p>Entenda como impulsos intensos surgem e podem levar à autodestruição.</p>
+            </div>
+          </div>
+          <!-- Card 10: 2.4 Reflexão Aplicada -->
+          <div class="swiper-slide card" data-chapter="2-4">
+            <div class="card-icon">
+              <!-- Ícone de reflexão -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 20l9-5-9-5-9 5 9 5z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>2.4 Reflexão Aplicada</h3>
+              <p>Reflita sobre experiências e estratégias para moderar impulsos intensos.</p>
+            </div>
+          </div>
+          <!-- Card 11: 2.5 Aspectos Essenciais -->
+          <div class="swiper-slide card" data-chapter="2-5">
+            <div class="card-icon">
+              <!-- Ícone de checklist -->
+              <svg viewBox="0 0 24 24">
+                <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>2.5 Aspectos Essenciais</h3>
+              <p>Identifique os pontos-chave para compreender o sequestro da amígdala.</p>
+            </div>
+          </div>
+          <!-- Card 12: 2.6 Implicações Práticas -->
+          <div class="swiper-slide card" data-chapter="2-6">
+            <div class="card-icon">
+              <!-- Ícone de interrogação -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 18h.01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 14a4 4 0 1 0-4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>2.6 Implicações Práticas</h3>
+              <p>Saiba como aplicar esse conhecimento em intervenções emergenciais.</p>
+            </div>
+          </div>
+          <!-- Card 13: 3 REGULAÇÃO EMOCIONAL EM CRISES SUICIDAS -->
+          <div class="swiper-slide card" data-chapter="c3">
+            <div class="card-icon">
+              <!-- Ícone de equilíbrio -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M12 6v6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>3 REGULAÇÃO EMOCIONAL</h3>
+              <p>Explore técnicas para retomar o controle em crises intensas.</p>
+            </div>
+          </div>
+          <!-- Card 14: 3.1 Origens da Resposta Emocional -->
+          <div class="swiper-slide card" data-chapter="3-1">
+            <div class="card-icon">
+              <!-- Ícone de origem -->
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></circle>
+                <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>3.1 Origens da Resposta</h3>
+              <p>Compreenda como respostas ancestrais influenciam crises modernas.</p>
+            </div>
+          </div>
+          <!-- Card 15: 3.2 Como as Emoções Tomam o Controle? -->
+          <div class="swiper-slide card" data-chapter="3-2">
+            <div class="card-icon">
+              <!-- Ícone de controle -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 18v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>3.2 Emoções em Ação</h3>
+              <p>Saiba como a resposta rápida da amígdala domina o controle.</p>
+            </div>
+          </div>
+          <!-- Card 16: 3.3 Um Episódio de Sequestro Emocional -->
+          <div class="swiper-slide card" data-chapter="3-3">
+            <div class="card-icon">
+              <!-- Ícone de episódio -->
+              <svg viewBox="0 0 24 24">
+                <path d="M4 12l1.5-1.5L12 16l6.5-5.5L20 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>3.3 Episódio de Sequestro</h3>
+              <p>Conheça o caso de João e como a crise se instala.</p>
+            </div>
+          </div>
+          <!-- Card 17: 3.4 Reflexão Aplicada -->
+          <div class="swiper-slide card" data-chapter="3-4">
+            <div class="card-icon">
+              <!-- Ícone de pensamento -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 20l9-8-9-8-9 8 9 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>3.4 Reflexão Aplicada</h3>
+              <p>Reflita sobre a regulação das emoções em situações críticas.</p>
+            </div>
+          </div>
+          <!-- Card 18: 3.5 Aspectos Essenciais -->
+          <div class="swiper-slide card" data-chapter="3-5">
+            <div class="card-icon">
+              <!-- Ícone de checklist -->
+              <svg viewBox="0 0 24 24">
+                <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>3.5 Aspectos Essenciais</h3>
+              <p>Identifique os pontos chave para a regulação emocional em crises.</p>
+            </div>
+          </div>
+          <!-- Card 19: 3.6 Intervenção e Regulação Emocional -->
+          <div class="swiper-slide card" data-chapter="3-6">
+            <div class="card-icon">
+              <!-- Ícone de intervenção -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>3.6 Intervenção e Regulação</h3>
+              <p>Aprenda técnicas para restaurar o controle racional em crises.</p>
+            </div>
+          </div>
+          <!-- Card 20: 4 IMPACTOS DO SEQUESTRO DA AMÍGDALA (Seção Principal) -->
+          <div class="swiper-slide card" data-chapter="c4">
+            <div class="card-icon">
+              <!-- Ícone de gráfico -->
+              <svg viewBox="0 0 24 24">
+                <path d="M4 16v4h16v-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M4 12v1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>4 IMPACTOS</h3>
+              <p>Analise os riscos do sequestro em crises suicidas.</p>
+            </div>
+          </div>
+          <!-- Card 21: 4.1 Impacto do Sequestro Emocional -->
+          <div class="swiper-slide card" data-chapter="4-1">
+            <div class="card-icon">
+              <!-- Ícone de impacto -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2v20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M5 12h14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>4.1 Impacto Emocional</h3>
+              <p>Descubra como a resposta intensa afeta a tomada de decisões.</p>
+            </div>
+          </div>
+          <!-- Card 22: 4.2 Sequestro Ligado a Transtornos Mentais -->
+          <div class="swiper-slide card" data-chapter="4-2">
+            <div class="card-icon">
+              <!-- Ícone de transtornos -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M12 6v6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>4.2 Transtornos Mentais</h3>
+              <p>Veja como a hiperatividade da amígdala afeta diferentes transtornos.</p>
+            </div>
+          </div>
+          <!-- Card 23: 4.3 Sequestro Não Ligado a Transtornos -->
+          <div class="swiper-slide card" data-chapter="4-3">
+            <div class="card-icon">
+              <!-- Ícone de normalidade -->
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></circle>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>4.3 Sem Transtornos</h3>
+              <p>Entenda que reações intensas podem ocorrer em pessoas saudáveis.</p>
+            </div>
+          </div>
+          <!-- Card 24: 4.4 Comportamento Autolesivo e Suicídio -->
+          <div class="swiper-slide card" data-chapter="4-4">
+            <div class="card-icon">
+              <!-- Ícone de alerta -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>4.4 Autolesão & Suicídio</h3>
+              <p>Analise os riscos de impulsividade e a busca por alívio imediato.</p>
+            </div>
+          </div>
+          <!-- Card 25: 4.5 Influência dos Hormônios -->
+          <div class="swiper-slide card" data-chapter="4-5">
+            <div class="card-icon">
+              <!-- Ícone de química -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M8 12h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>4.5 Hormônios & Neurotransmissores</h3>
+              <p>Veja como cortisol, adrenalina e glutamato intensificam a resposta.</p>
+            </div>
+          </div>
+          <!-- Card 26: 4.6 Reflexão Aplicada (Impacts) -->
+          <div class="swiper-slide card" data-chapter="4-6">
+            <div class="card-icon">
+              <!-- Ícone de reflexão -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 20l9-8-9-8-9 8 9 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>4.6 Reflexão Aplicada</h3>
+              <p>Reflita sobre como as reações impactam a tomada de decisões.</p>
+            </div>
+          </div>
+          <!-- Card 27: 4.7 Reduzindo o Impacto -->
+          <div class="swiper-slide card" data-chapter="4-7">
+            <div class="card-icon">
+              <!-- Ícone de redução -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2v20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M5 12h14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>4.7 Reduzindo o Impacto</h3>
+              <p>Aplique intervenções para recuperar o controle emocional.</p>
+            </div>
+          </div>
+          <!-- Card 28: 5 COMUNICAÇÃO DISSUASIVA (Seção Principal) -->
+          <div class="swiper-slide card" data-chapter="c5">
+            <div class="card-icon">
+              <!-- Ícone de diálogo -->
+              <svg viewBox="0 0 24 24">
+                <path d="M3 12h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 6h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 18h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5 COMUNICAÇÃO DISSUASIVA</h3>
+              <p>Utilize diálogo e escuta ativa para acalmar crises.</p>
+            </div>
+          </div>
+          <!-- Card 29: 5.1 Da Reação Instintiva ao Diálogo Construtivo -->
+          <div class="swiper-slide card" data-chapter="5-1">
+            <div class="card-icon">
+              <!-- Ícone de transformação -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5.1 Do Instinto ao Diálogo</h3>
+              <p>Transforme reações automáticas em conversas construtivas.</p>
+            </div>
+          </div>
+          <!-- Card 30: 5.2 Estrutura e Importância -->
+          <div class="swiper-slide card" data-chapter="5-2">
+            <div class="card-icon">
+              <!-- Ícone de estrutura -->
+              <svg viewBox="0 0 24 24">
+                <rect x="4" y="4" width="16" height="16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></rect>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5.2 Estrutura da Comunicação</h3>
+              <p>Criar ambientes seguros para a intervenção emocional.</p>
+            </div>
+          </div>
+          <!-- Card 31: 5.3 Técnicas de Comunicação para Modulação Emocional -->
+          <div class="swiper-slide card" data-chapter="5-3">
+            <div class="card-icon">
+              <!-- Ícone de técnicas -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M8 12h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5.3 Técnicas de Diálogo</h3>
+              <p>Ferramentas para modular emoções e reconstruir perspectivas.</p>
+            </div>
+          </div>
+          <!-- Card 32: 5.3.1 Escuta Ativa -->
+          <div class="swiper-slide card" data-chapter="5-3-1">
+            <div class="card-icon">
+              <!-- Ícone de ouvido -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M9 12l3 3 5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5.3.1 Escuta Ativa</h3>
+              <p>Ouça com empatia para reduzir a tensão emocional.</p>
+            </div>
+          </div>
+          <!-- Card 33: 5.3.2 Ferramentas de Diálogo -->
+          <div class="swiper-slide card" data-chapter="5-3-2">
+            <div class="card-icon">
+              <!-- Ícone de diálogo -->
+              <svg viewBox="0 0 24 24">
+                <path d="M3 12h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 6h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5.3.2 Ferramentas de Diálogo</h3>
+              <p>Acesse memórias de superação para reequilibrar emoções.</p>
+            </div>
+          </div>
+          <!-- Card 34: 5.4 Reflexão Aplicada (Comunicação) -->
+          <div class="swiper-slide card" data-chapter="5-4">
+            <div class="card-icon">
+              <!-- Ícone de reflexão -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 20l9-8-9-8-9 8 9 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5.4 Reflexão Aplicada</h3>
+              <p>Reflita sobre a criação de ambientes seguros para a expressão.</p>
+            </div>
+          </div>
+          <!-- Card 35: 5.5 Algumas Considerações -->
+          <div class="swiper-slide card" data-chapter="5-5">
+            <div class="card-icon">
+              <!-- Ícone de considerações -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2v20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5.5 Considerações</h3>
+              <p>Importância da empatia e do suporte na intervenção.</p>
+            </div>
+          </div>
+          <!-- Card 36: 5.6 Comunicação Dissuasiva como Estratégia -->
+          <div class="swiper-slide card" data-chapter="5-6">
+            <div class="card-icon">
+              <!-- Ícone de estratégia -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>5.6 Comunicação Dissuasiva</h3>
+              <p>Construa pontes entre o desespero e a esperança.</p>
+            </div>
+          </div>
+          <!-- Card 37: 6 CONCLUSÃO (Seção Principal) -->
+          <div class="swiper-slide card" data-chapter="c6">
+            <div class="card-icon">
+              <!-- Ícone de encerramento -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>6 CONCLUSÃO</h3>
+              <p>Reveja os conceitos e perspectivas para futuras intervenções.</p>
+            </div>
+          </div>
+          <!-- Card 38: 6.1 Revisão dos Conceitos Centrais -->
+          <div class="swiper-slide card" data-chapter="6-1">
+            <div class="card-icon">
+              <!-- Ícone de revisão -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M12 8v4l3 3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>6.1 Revisão dos Conceitos</h3>
+              <p>Recapitule os fundamentos e os aprendizados essenciais.</p>
+            </div>
+          </div>
+          <!-- Card 39: 6.2 Reflexões Finais -->
+          <div class="swiper-slide card" data-chapter="6-2">
+            <div class="card-icon">
+              <!-- Ícone de reflexão final -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 20l9-8-9-8-9 8 9 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>6.2 Reflexões Finais</h3>
+              <p>Considere as implicações e os próximos passos para a intervenção.</p>
+            </div>
+          </div>
+          <!-- Card 40: 6.3 Perspectivas Futuras -->
+          <div class="swiper-slide card" data-chapter="6-3">
+            <div class="card-icon">
+              <!-- Ícone de futuro -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l7 7-7 7-7-7 7-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>6.3 Perspectivas Futuras</h3>
+              <p>Explore caminhos e desafios para o atendimento em crises.</p>
+            </div>
+          </div>
+          <!-- Card 41: Referências Bibliográficas -->
+          <div class="swiper-slide card" data-chapter="ref">
+            <div class="card-icon">
+              <!-- Ícone de referências -->
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16v16H4z" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8 4v16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Referências</h3>
+              <p>Consulte as fontes que embasam este ebook.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Paginação e Navegação do Swiper -->
+        <div class="swiper-pagination" aria-label="Navegação"></div>
+        <div class="swiper-button-next" aria-label="Próximo"></div>
+        <div class="swiper-button-prev" aria-label="Anterior"></div>
+      </div>
+    </main>
+    
+    <!-- MODAL: Exibe o conteúdo completo do capítulo selecionado -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <span class="modal-close" aria-label="Fechar">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+    
+    <!-- TEXTOS COMPLETOS – CONTEÚDO DE CADA SUBITEM -->
+    
+    <!-- Sumário -->
+    <div id="chapter-sumario" style="display: none;">
+      <article>
+        <h2>SUMÁRIO</h2>
+        <p>
+          1 INTRODUÇÃO<br />
+          1.1 A Importância da Amígdala na Sobrevivência e no Comportamento Suicida<br />
+          1.2 O Conceito de Sequestro da Amígdala e sua Influência em Crises<br />
+          1.3 Objetivo e Estrutura do eBook<br /><br />
+          2 O SEQUESTRO DA AMÍGDALA E A CRISE SUICIDA<br />
+          2.1 O Alarme Primitivo da Amígdala<br />
+          2.2 Sequestro da Amígdala: Um Processo Técnico em Ação<br />
+          2.3 Sequestro Emocional e Ação Impulsiva<br />
+          2.4 Reflexão Aplicada<br />
+          2.5 Aspectos Essenciais<br />
+          2.6 Implicações Práticas e Relevância para a Intervenção em Crises<br /><br />
+          3 REGULAÇÃO EMOCIONAL EM CRISES SUICIDAS<br />
+          3.1 Origens da Resposta Emocional<br />
+          3.2 Como as Emoções Tomam o Controle?<br />
+          3.3 Um Episódio de Sequestro Emocional em Ato Suicida<br />
+          3.4 Reflexão Aplicada<br />
+          3.5 Aspectos Essenciais<br />
+          3.6 Intervenção e Regulação Emocional em Momentos de Crise<br /><br />
+          4 IMPACTOS DO SEQUESTRO DA AMÍGDALA NO COMPORTAMENTO SUICIDA<br />
+          4.1 Impacto do Sequestro Emocional<br />
+          4.2 Sequestro da Amígdala Ligado a Transtornos Mentais<br />
+          4.3 Sequestro da Amígdala Não Ligado a Transtornos Mentais<br />
+          4.4 Comportamento Autolesivo e Suicídio<br />
+          4.5 A Influência dos Hormônios e Neurotransmissores<br />
+          4.6 Reflexão Aplicada<br />
+          4.7 Reduzindo o Impacto do Sequestro da Amígdala<br /><br />
+          5 COMUNICAÇÃO DISSUASIVA EM SITUAÇÕES DE CRISE<br />
+          5.1 Da Reação Instintiva ao Diálogo Construtivo<br />
+          5.2 Estrutura e Importância da Comunicação Dissuasiva<br />
+          5.3 Técnicas de Comunicação para Modulação Emocional<br />
+          5.3.1 Escuta Ativa<br />
+          5.3.2 Ferramentas de Diálogo para Modulação Emocional<br />
+          5.4 Reflexão Aplicada<br />
+          5.5 Algumas Considerações<br />
+          5.6 Comunicação Dissuasiva como Estratégia<br /><br />
+          6 CONCLUSÃO<br />
+          6.1 Revisão dos Conceitos Centrais<br />
+          6.2 Reflexões Finais para Profissionais de Saúde e Emergência<br />
+          6.3 Perspectivas Futuras para o Atendimento em Crises Suicidas<br /><br />
+          REFERÊNCIAS BIBLIOGRÁFICAS
+        </p>
+      </article>
+    </div>
+    
+<!-- 1 INTRODUÇÃO -->
+<div id="chapter-intro" style="display: none;">
+  <article>
+    <h2>1 INTRODUÇÃO</h2>
+    <p>
+      A sobrevivência humana sempre esteve intimamente ligada a mecanismos de resposta imediata ao perigo, e um dos principais responsáveis por essa reação é a amígdala – uma pequena, mas poderosa estrutura do sistema límbico. Ela dispara reações rápidas e intensas diante de ameaças, funcionando como um alarme primitivo que, no ambiente ancestral, acionava o corpo no impulso da “luta ou fuga” para evitar predadores ou escapar de riscos iminentes. Contudo, no contexto moderno, esse mecanismo evolutivo pode se tornar desadaptativo, sobretudo em situações de crise emocional intensa, como aquelas que podem culminar em comportamentos suicidas.
+    </p>
+  </article>
+</div>
+
+<!-- 1.1 A Importância da Amígdala -->
+<div id="chapter-1-1" style="display: none;">
+  <article>
+    <h2>1.1 A Importância da Amígdala</h2>
+    <p>
+      A amígdala é essencial para detectar ameaças, desencadeando reações imediatas que nos protegem em situações de perigo. No ambiente ancestral, a resposta rápida – a clássica “luta ou fuga” – era vital para a sobrevivência. Hoje, porém, a hiperatividade dessa estrutura pode distorcer a percepção de risco, interferindo na regulação emocional e na capacidade de tomar decisões equilibradas, o que pode levar a reações desproporcionais e, em casos extremos, a comportamentos autodestrutivos.
+    </p>
+  </article>
+</div>
+
+<!-- 1.2 Sequestro da Amígdala -->
+<div id="chapter-1-2" style="display: none;">
+  <article>
+    <h2>1.2 Sequestro da Amígdala</h2>
+    <p>
+      O fenômeno conhecido como “sequestro da amígdala” ocorre quando essa estrutura assume o controle das reações emocionais, inibindo a ação do córtex pré-frontal – a área responsável pela lógica e regulação das emoções. Esse sequestro impede temporariamente a capacidade de reflexão e a avaliação de alternativas, restringindo a visão a um estado de emergência. Em crises suicidas, o cérebro entra em “modo de sobrevivência”, bloqueando o controle racional e amplificando sentimentos de desespero e impulsividade, o que aumenta significativamente o risco de comportamentos autodestrutivos.
+    </p>
+  </article>
+</div>
+
+<!-- 1.3 Objetivo e Estrutura -->
+<div id="chapter-1-3" style="display: none;">
+  <article>
+    <h2>1.3 Objetivo e Estrutura</h2>
+    <p>
+      Este eBook explora o funcionamento da amígdala e o impacto do seu sequestro em crises emocionais, tanto em condições normais quanto em situações associadas a transtornos como depressão, transtorno bipolar, transtorno de personalidade borderline e ansiedade. Ao longo dos capítulos, aprofundamos a relação entre a amígdala e o córtex pré-frontal, fundamentando intervenções eficazes em crises suicidas. Além disso, apresentamos técnicas de comunicação dissuasiva – como a escuta ativa e ferramentas de diálogo (“ponte para o passado”, “ponte para o futuro” e “sucesso anterior”) – que visam apoiar a modulação emocional, resgatar memórias de resiliência e ampliar a percepção de alternativas. O objetivo deste eBook é oferecer uma compreensão detalhada dos processos neurobiológicos subjacentes ao sequestro da amígdala e fornecer estratégias práticas para que profissionais de saúde mental atuem com empatia e eficácia em momentos de extrema vulnerabilidade.
+    </p>
+  </article>
+</div>
+
+
+
+   <!-- 2 O SEQUESTRO DA AMÍGDALA -->
+<div id="chapter-c2" style="display: none;">
+  <article>
+    <h2>2 O SEQUESTRO DA AMÍGDALA</h2>
+    <p>
+      Este capítulo explora como o “sequestro da amígdala” pode influenciar profundamente as reações emocionais e impulsivas em crises suicidas. Ao compreender a interação entre a amígdala e o córtex pré-frontal, é possível reconhecer os mecanismos que intensificam comportamentos autodestrutivos e identificar abordagens eficazes para intervenção.
+    </p>
+  </article>
+</div>
+
+<!-- 2.1 O Alarme Primitivo da Amígdala -->
+<div id="chapter-2-1" style="display: none;">
+  <article>
+    <h2>2.1 O Alarme Primitivo</h2>
+    <p>
+      Desde os primórdios, a sobrevivência humana dependia de reações rápidas e automáticas diante de ameaças. Em tempos ancestrais, essas respostas eram essenciais para evitar predadores e enfrentar perigos imediatos. A amígdala, uma estrutura profunda do sistema límbico, funcionava como um “alarme cerebral”, disparando reações impulsivas que aumentavam as chances de sobrevivência. Contudo, essa função evolutiva – outrora crucial para a preservação da vida – pode se tornar desadaptativa em contextos modernos, especialmente durante crises emocionais intensas e momentos de impulsividade extrema, que podem culminar em comportamentos suicidas.
+    </p>
+    <p>
+      O conceito de “sequestro da amígdala”, introduzido por Joseph LeDoux e popularizado por Daniel Goleman, descreve o fenômeno em que uma reação emocional avassaladora domina temporariamente o córtex pré-frontal, responsável pelo raciocínio lógico e pelo controle dos impulsos. Em crises emocionais graves, a amígdala assume o controle, limitando a capacidade de reflexão e podendo levar a comportamentos impulsivos e autodestrutivos. Compreender essa interação é fundamental para desenvolver estratégias que atenuem seus efeitos.
+    </p>
+  </article>
+</div>
+
+<!-- 2.2 Sequestro da Amígdala: Um Processo Técnico em Ação -->
+<div id="chapter-2-2" style="display: none;">
+  <article>
+    <h2>2.2 Processo Técnico em Ação</h2>
+    <p>
+      A amígdala atua como um detector de ameaças automáticas, reagindo de forma rápida e direta a estímulos interpretados como perigosos. Ao processar uma situação alarmante, o tálamo envia sinais à amígdala antes de envolver o córtex pré-frontal, promovendo uma resposta quase imediata. Em contextos de ameaça física, essa reação é vantajosa, permitindo uma ação defensiva rápida.
+    </p>
+    <p>
+      Entretanto, em crises emocionais, essa resposta se torna disfuncional. Em uma crise suicida, a amígdala pode acionar o “modo de emergência”, sobrecarregando o cérebro com emoções intensas – desespero, pânico – dificultando a intervenção do córtex pré-frontal, que seria responsável por avaliar alternativas e consequências.
+    </p>
+    <p>
+      Essa dinâmica é comparável a um “alarme de incêndio” que dispara ao menor sinal de perigo, impedindo o “responsável pela segurança” de verificar a situação e, assim, levando a reações impulsivas e autodestrutivas.
+    </p>
+  </article>
+</div>
+
+<!-- 2.3 Sequestro Emocional e Ação Impulsiva -->
+<div id="chapter-2-3" style="display: none;">
+  <article>
+    <h2>2.3 Sequestro e Impulsividade</h2>
+    <p>
+      Imagine o caso de Luísa, uma jovem imersa em uma crise emocional aguda. Em meio a um desespero extremo, ela se vê dominada por pensamentos autolesivos e sente uma urgência avassaladora de agir para silenciar sua dor. Nesse cenário, o sequestro da amígdala se manifesta plenamente: sua percepção torna-se estreita, a dor emocional se intensifica e a ativação exacerbada da amígdala suprime a capacidade de considerar alternativas ou buscar ajuda. Como resultado, suas ações ocorrem de forma imediata e impulsiva, sem o benefício da reflexão proporcionada pelo córtex pré-frontal.
+    </p>
+    <p>
+      Uma intervenção especializada, se aplicada a tempo, pode atenuar essa hiperatividade, permitindo que o córtex pré-frontal retome o controle. Estratégias como a escuta ativa, a criação de um ambiente seguro e a validação emocional são essenciais para “desarmar o alarme” disparado pela amígdala, promovendo gradualmente a recuperação do equilíbrio racional. Tais intervenções podem ser decisivas para impedir que uma crise emocional evolua para um ato suicida.
+    </p>
+  </article>
+</div>
+
+
+<!-- 2.4 Reflexão Aplicada -->
+<div id="chapter-2-4" style="display: none;">
+  <article>
+    <h2>2.4 Reflexão Aplicada</h2>
+    <p>
+      A reflexão é uma ferramenta poderosa para converter experiências intensas em oportunidades de aprendizagem e aprimoramento das intervenções. Considere as questões abaixo:
+    </p>
+    <ul>
+      <li>
+        <strong>a)</strong> Em situações de crise, você já presenciou alguém tão dominado por uma emoção intensa que agiu impulsivamente, sem ponderar as consequências?
+      </li>
+      <li>
+        <strong>b)</strong> Quais estratégias podem auxiliar uma pessoa a redirecionar suas emoções intensas, evitando que ela ceda a impulsos potencialmente perigosos?
+      </li>
+      <li>
+        <strong>c)</strong> De que forma profissionais de saúde mental podem empregar o conhecimento sobre o sequestro da amígdala para aprimorar suas abordagens em crises suicidas?
+      </li>
+    </ul>
+    <p>
+      Reflita sobre cada uma dessas perguntas e considere como elas podem orientar a adoção de técnicas mais eficazes e empáticas, oferecendo suporte a indivíduos em situação de vulnerabilidade.
+    </p>
+  </article>
+</div>
+
+
+<!-- 2.5 Aspectos Essenciais -->
+<div id="chapter-2-5" style="display: none;">
+  <article>
+    <h2>2.5 Aspectos Essenciais</h2>
+    <p>
+      Identificar os aspectos essenciais é fundamental para compreender como as respostas emocionais intensas se desenvolvem durante uma crise. Observe os pontos abaixo:
+    </p>
+    <ul style="line-height: 1.6; margin-left: 1.5rem;">
+      <li>
+        <strong>a)</strong> <em>Função da amígdala e respostas de emergência:</em> Em uma crise emocional, a amígdala atua como um “alarme de emergência”, dominando o controle racional e desencadeando ações impulsivas e potencialmente perigosas.
+      </li>
+      <li>
+        <strong>b)</strong> <em>Interrupção do córtex pré-frontal:</em> A intensa ativação da amígdala bloqueia a intervenção do córtex pré-frontal, que é responsável pelo controle dos impulsos, aumentando o risco de comportamentos autodestrutivos.
+      </li>
+      <li>
+        <strong>c)</strong> <em>Importância das técnicas de desescalada:</em> Estratégias de intervenção, como a comunicação dissuasiva e o suporte empático, auxiliam na redução da resposta emocional extrema, contribuindo para a restauração do controle racional.
+      </li>
+    </ul>
+  </article>
+</div>
+
+
+<!-- 2.6 Implicações Práticas -->
+<div id="chapter-2-6" style="display: none;">
+  <article>
+    <h2>2.6 Implicações Práticas</h2>
+    <p>
+      Compreender o sequestro da amígdala e sua influência no comportamento suicida fornece uma perspectiva valiosa – tanto do ponto de vista neurobiológico quanto prático – para profissionais que atuam em emergências e na saúde mental. Esse fenômeno, ao comprometer a regulação emocional e intensificar impulsos, representa um risco considerável durante crises de autolesão e tentativas de suicídio.
+    </p>
+    <p>
+      Ao reconhecer como a hiperatividade da amígdala interfere no controle racional, psicólogos, médicos, equipes de resgate e outros profissionais podem desenvolver abordagens mais eficazes e humanizadas para atuar em momentos críticos. Técnicas como validação emocional, escuta ativa e comunicação dissuasiva ajudam a interromper o ciclo de impulsividade, possibilitando que a pessoa em crise recupere o controle e encontre alternativas ao sofrimento extremo.
+    </p>
+    <p>
+      Este capítulo estabelece uma base essencial para os próximos, que abordarão em profundidade a anatomia funcional da amígdala e do córtex pré-frontal, além de estratégias de intervenção capazes de restaurar o equilíbrio emocional durante crises.
+    </p>
+  </article>
+</div>
+
+
+
+
+
+
+    
+    <!-- 3 REGULAÇÃO EMOCIONAL EM CRISES SUICIDAS (Seção Principal) -->
+    <div id="chapter-c3" style="display: none;">
+      <article>
+        <h2>3 REGULAÇÃO EMOCIONAL EM CRISES SUICIDAS</h2>
+        <p>
+          Este capítulo explora como a amígdala e o córtex pré-frontal atuam na regulação das respostas emocionais, oferecendo estratégias para intervir em crises de impulsividade suicida.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 3.1 Origens da Resposta Emocional -->
+    <div id="chapter-3-1" style="display: none;">
+      <article>
+        <h2>3.1 Origens da Resposta</h2>
+        <p>
+          A resposta de “luta ou fuga” acionada pela amígdala, essencial para a sobrevivência, pode se tornar desadaptativa em contextos emocionais modernos, originando impulsos autolesivos.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 3.2 Como as Emoções Tomam o Controle? -->
+    <div id="chapter-3-2" style="display: none;">
+      <article>
+        <h2>3.2 Controle das Emoções</h2>
+        <p>
+          A amígdala responde antes do córtex pré-frontal, disparando hormônios do estresse e bloqueando o raciocínio, o que pode levar à perda de controle em crises.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 3.3 Um Episódio de Sequestro Emocional -->
+    <div id="chapter-3-3" style="display: none;">
+      <article>
+        <h2>3.3 Episódio de Sequestro</h2>
+        <p>
+          Imagine João, que em um momento de desespero, tem sua capacidade de reflexão bloqueada pela intensa ativação da amígdala, resultando em ações impulsivas.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 3.4 Reflexão Aplicada (Regulação) -->
+    <div id="chapter-3-4" style="display: none;">
+      <article>
+        <h2>3.4 Reflexão Aplicada</h2>
+        <p>
+          a) Você já se sentiu tomado por uma emoção intensa?<br />
+          b) Quais estratégias evitam reações impulsivas?<br />
+          c) Como esse conhecimento pode melhorar intervenções em crises?
+        </p>
+      </article>
+    </div>
+    
+    <!-- 3.5 Aspectos Essenciais -->
+    <div id="chapter-3-5" style="display: none;">
+      <article>
+        <h2>3.5 Aspectos Essenciais</h2>
+        <p>
+          A ativação da amígdala e a supressão do córtex pré-frontal são os pontos centrais que tornam necessárias as técnicas de modulação emocional.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 3.6 Intervenção e Regulação Emocional -->
+    <div id="chapter-3-6" style="display: none;">
+      <article>
+        <h2>3.6 Intervenção e Regulação</h2>
+        <p>
+          Técnicas como validação emocional, escuta ativa e desescalada ajudam a “desarmar” a resposta exagerada da amígdala e restaurar o controle racional.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 4 IMPACTOS DO SEQUESTRO DA AMÍGDALA NO COMPORTAMENTO SUICIDA (Seção Principal) -->
+    <div id="chapter-c4" style="display: none;">
+      <article>
+        <h2>4 IMPACTOS DO SEQUESTRO DA AMÍGDALA</h2>
+        <p>
+          Este capítulo analisa como a reação intensa da amígdala compromete o controle racional e influencia comportamentos autolesivos e suicidas.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 4.1 Impacto do Sequestro Emocional -->
+    <div id="chapter-4-1" style="display: none;">
+      <article>
+        <h2>4.1 Impacto Emocional</h2>
+        <p>
+          O sequestro provoca reações impulsivas e prejudica a capacidade de tomar decisões racionais, afetando tanto pessoas com transtornos quanto indivíduos saudáveis.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 4.2 Sequestro Ligado a Transtornos Mentais -->
+    <div id="chapter-4-2" style="display: none;">
+      <article>
+        <h2>4.2 Ligado a Transtornos Mentais</h2>
+        <p>
+          Em transtornos como TAB, TDM, TEPT, TAG, psicose e TPB, a amígdala hiperativa dificulta o controle emocional, aumentando riscos autolesivos.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 4.3 Sequestro Não Ligado a Transtornos -->
+    <div id="chapter-4-3" style="display: none;">
+      <article>
+        <h2>4.3 Sem Transtornos</h2>
+        <p>
+          Mesmo sem diagnósticos clínicos, eventos de alta carga emocional podem desencadear um sequestro da amígdala e reações impulsivas.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 4.4 Comportamento Autolesivo e Suicídio -->
+    <div id="chapter-4-4" style="display: none;">
+      <article>
+        <h2>4.4 Autolesão e Suicídio</h2>
+        <p>
+          A perda do controle emocional, devido ao sequestro, pode levar à autolesão e ao impulso suicida, por falta de alternativas.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 4.5 Influência dos Hormônios e Neurotransmissores -->
+    <div id="chapter-4-5" style="display: none;">
+      <article>
+        <h2>4.5 Hormônios e Neurotransmissores</h2>
+        <p>
+          A liberação de cortisol, adrenalina e glutamato intensifica a resposta emocional, prejudicando o controle racional.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 4.6 Reflexão Aplicada (Impactos) -->
+    <div id="chapter-4-6" style="display: none;">
+      <article>
+        <h2>4.6 Reflexão Aplicada</h2>
+        <p>
+          a) Você presenciou reações impulsivas intensas?<br />
+          b) Que estratégias redirecionam emoções fortes?<br />
+          c) Como aprimorar intervenções com este conhecimento?
+        </p>
+      </article>
+    </div>
+    
+    <!-- 4.7 Reduzindo o Impacto -->
+    <div id="chapter-4-7" style="display: none;">
+      <article>
+        <h2>4.7 Reduzindo o Impacto</h2>
+        <p>
+          Intervenções que diminuem a ativação emocional podem permitir a retomada do controle racional e prevenir comportamentos autodestrutivos.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5 COMUNICAÇÃO DISSUASIVA EM SITUAÇÕES DE CRISE (Seção Principal) -->
+    <div id="chapter-c5" style="display: none;">
+      <article>
+        <h2>5 COMUNICAÇÃO DISSUASIVA EM SITUAÇÕES DE CRISE</h2>
+        <p>
+          Este capítulo apresenta estratégias para reduzir a intensidade emocional em crises por meio do diálogo empático e escuta ativa.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5.1 Da Reação Instintiva ao Diálogo Construtivo -->
+    <div id="chapter-5-1" style="display: none;">
+      <article>
+        <h2>5.1 Do Instinto ao Diálogo</h2>
+        <p>
+          Transforme a reação automática em uma conversa construtiva para restabelecer o controle emocional.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5.2 Estrutura e Importância da Comunicação Dissuasiva -->
+    <div id="chapter-5-2" style="display: none;">
+      <article>
+        <h2>5.2 Estrutura da Comunicação</h2>
+        <p>
+          Um ambiente seguro e acolhedor permite que o tentante retome gradualmente o controle emocional.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5.3 Técnicas de Comunicação para Modulação Emocional -->
+    <div id="chapter-5-3" style="display: none;">
+      <article>
+        <h2>5.3 Técnicas de Comunicação</h2>
+        <p>
+          Apresenta estratégias para modular a emoção por meio de escuta ativa e ferramentas de diálogo.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5.3.1 Escuta Ativa -->
+    <div id="chapter-5-3-1" style="display: none;">
+      <article>
+        <h2>5.3.1 Escuta Ativa</h2>
+        <p>
+          Ouvir com empatia reduz a ativação da amígdala, permitindo que o tentante se sinta valorizado.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5.3.2 Ferramentas de Diálogo para Modulação Emocional -->
+    <div id="chapter-5-3-2" style="display: none;">
+      <article>
+        <h2>5.3.2 Ferramentas de Diálogo</h2>
+        <p>
+          Técnicas como “ponte para o passado”, “ponte para o futuro” e “sucesso anterior” ajudam o tentante a acessar memórias de resiliência.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5.4 Reflexão Aplicada (Comunicação) -->
+    <div id="chapter-5-4" style="display: none;">
+      <article>
+        <h2>5.4 Reflexão Aplicada</h2>
+        <p>
+          a) Como criar um ambiente seguro para a expressão?<br />
+          b) Que técnicas podem oferecer alternativas ao sofrimento?<br />
+          c) Como a comunicação dissuasiva melhora as intervenções?
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5.5 Algumas Considerações -->
+    <div id="chapter-5-5" style="display: none;">
+      <article>
+        <h2>5.5 Considerações</h2>
+        <p>
+          A escuta ativa e o diálogo empático são fundamentais para restaurar o controle emocional e prevenir impulsos autodestrutivos.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 5.6 Comunicação Dissuasiva como Estratégia -->
+    <div id="chapter-5-6" style="display: none;">
+      <article>
+        <h2>5.6 Comunicação Dissuasiva</h2>
+        <p>
+          Esta estratégia possibilita ao tentante visualizar alternativas e recuperar gradualmente o controle emocional.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 6 CONCLUSÃO (Seção Principal) -->
+    <div id="chapter-c6" style="display: none;">
+      <article>
+        <h2>6 CONCLUSÃO</h2>
+        <p>
+          Este capítulo recapitula os principais conceitos sobre o sequestro da amígdala, os riscos de impulsividade e as estratégias de intervenção para crises suicidas.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 6.1 Revisão dos Conceitos Centrais -->
+    <div id="chapter-6-1" style="display: none;">
+      <article>
+        <h2>6.1 Revisão dos Conceitos</h2>
+        <p>
+          Uma análise dos fundamentos que explicam a influência da amígdala nas crises e a importância do controle emocional.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 6.2 Reflexões Finais para Profissionais -->
+    <div id="chapter-6-2" style="display: none;">
+      <article>
+        <h2>6.2 Reflexões Finais</h2>
+        <p>
+          Considerações para profissionais de saúde e emergência sobre a aplicação dos conceitos e técnicas apresentadas.
+        </p>
+      </article>
+    </div>
+    
+    <!-- 6.3 Perspectivas Futuras -->
+    <div id="chapter-6-3" style="display: none;">
+      <article>
+        <h2>6.3 Perspectivas Futuras</h2>
+        <p>
+          Um olhar para os desafios e possibilidades futuras no atendimento em crises suicidas.
+        </p>
+      </article>
+    </div>
+    
+    <!-- Referências Bibliográficas -->
+    <div id="chapter-ref" style="display: none;">
+      <article>
+        <h2>REFERÊNCIAS BIBLIOGRÁFICAS</h2>
+        <p>
+          1. Goleman, D. Inteligência emocional: A teoria revolucionária que redefine o que é ser inteligente. Rio de Janeiro: Objetiva, 1995.<br />
+          2. LeDoux, J. O cérebro emocional: Os misteriosos alicerces da vida emocional. São Paulo: Objetiva, 1998.<br />
+          3. Corpo de Bombeiros Militar de Minas Gerais (CBMMG). Instrução Técnica Operacional 30: Atendimento a Tentativas de Suicídio. Alexandre Cardoso, Richelmy Murta Pinto, Igor Cesar Grandi, Geani Barbosa de Oliveira Freitas, Deusdet Moreira de Souza, Nayara Máximo Rodrigues, Suemy Oliveira Santos (Organizadores). Belo Horizonte: CBMMG, 2021. 65 p.
+        </p>
+      </article>
+    </div>
+    
+    <!-- SEÇÃO DE CONTATO -->
+    <section id="contact">
+      <h2>Gostaria de compartilhar algo? Envie sua mensagem e responderei com carinho.</h2>
+      <form id="contactForm">
+        <textarea id="contactText" placeholder="Escreva sua mensagem aqui..." required aria-label="Mensagem"></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+    
+    <!-- RODAPÉ -->
+    <footer>
+      <div class="footer-line">Richelmy Murta, Psicólogo Clínico</div>
+      <div class="footer-line">Especialista em Terapia Cognitivo-Comportamental</div>
+      <div class="footer-line">2025 - Todos os direitos reservados</div>
+    </footer>
+    
+    <!-- BOTÃO FLOUTANTE DE WHATSAPP -->
+    <div id="whatsappFloat">
+      <svg viewBox="0 0 32 32">
+        <path d="M16.003 3.007c-7.156 0-12.993 5.837-12.993 12.992 0 2.299.617 4.557 1.791 6.531l-1.906 6.96 7.125-1.857c1.867 1.023 3.994 1.566 6.064 1.566h.01c7.155 0 12.992-5.837 12.992-12.992 0-3.461-1.349-6.72-3.8-9.17-2.451-2.449-5.709-3.77-9.169-3.77zm7.49 18.41c-.247.69-1.455 1.346-2.009 1.417-.516.061-1.174.086-1.893-.12-.438-.14-1.004-.323-1.73-.627-3.046-1.32-5.035-4.59-5.19-4.82-.156-.23-1.235-1.645-1.235-3.143 0-1.499.78-2.232 1.055-2.532.274-.3.6-.375.8-.375.2 0 .4.002.57.01.184.008.43-.07.67.52.247.6.837 2.076.91 2.23.074.153.124.33.024.53-.1.2-.15.32-.3.49-.15.16-.3.37-.45.55-.15.18-.31.37-.14.65.17.28.76 1.24 1.63 2.02 1.12 1 2.06 1.31 2.34 1.45.28.14.44.12.6-.07.16-.19.69-.79.87-1.06.18-.28.36-.23.6-.14.24.09 1.52.72 1.78.85.26.13.43.2.49.31.06.11.06.64-.18 1.33z"></path>
+      </svg>
+    </div>
+    
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      // Inicializa o Swiper (efeito coverflow)
+      const swiper = new Swiper(".swiper-container", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 30,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      
+      // MODAL: Ao clicar em cada card, carrega o conteúdo correspondente
+      const modal = document.getElementById("modal");
+      const modalBody = document.getElementById("modal-body");
+      const modalClose = document.querySelector(".modal-close");
+      
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", () => {
+          const chapterKey = card.getAttribute("data-chapter");
+          const content = document.getElementById("chapter-" + chapterKey);
+          if (content) {
+            modalBody.innerHTML = content.innerHTML;
+            modal.style.display = "block";
+          }
+        });
+      });
+      
+      modalClose.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+      
+      // Formulário de Contato: Envio de mensagem para WhatsApp
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const text = document.getElementById("contactText").value.trim();
+        if (text !== "") {
+          const whatsappNumber = "5535984640729";
+          const message = encodeURIComponent(`Mensagem do Landing: ${text}`);
+          window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+        }
+      });
+      
+      // Botão Flutuante de WhatsApp para compartilhar o link da página
+      const whatsappFloat = document.getElementById("whatsappFloat");
+      whatsappFloat.addEventListener("click", () => {
+        const shareUrl = encodeURIComponent("Confira este guia de intervenção em crises suicidas: [URL do Site]");
+        window.open(`https://wa.me/?text=${shareUrl}`, "_blank");
+      });
+    </script>
+  </body>
+</html>
+
