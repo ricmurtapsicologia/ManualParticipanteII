@@ -7,23 +7,23 @@ const css = await readFile(new URL('../app/globals.css', import.meta.url), 'utf8
 const health = await readFile(new URL('../app/api/health/route.ts', import.meta.url), 'utf8');
 
 const fail = (message) => { throw new Error(message); };
-if (!Array.isArray(pages) || pages.length !== 50) fail(`Expected 50 pages, got ${pages?.length ?? 'invalid'}`);
+if (!Array.isArray(pages) || pages.length !== 100) fail(`Expected 100 pages, got ${pages?.length ?? 'invalid'}`);
 pages.forEach((page, index) => {
   if (page.number !== index + 1) fail(`Unexpected number at page ${index + 1}: ${page.number}`);
   if (!page.title || !Array.isArray(page.paragraphs) || page.paragraphs.length === 0) fail(`Invalid page ${index + 1}`);
 });
 if (pages[0].cover !== true) fail('Page 1 must be the cover');
 if (provenance.schema !== 3) fail(`Unexpected provenance schema: ${provenance.schema}`);
-if (provenance.extractedPages !== 50) fail('Provenance extractedPages mismatch');
-if (provenance.recoverableSequentialPages < 50) fail(`Insufficient recoverable pages: ${provenance.recoverableSequentialPages}`);
+if (provenance.extractedPages !== 100) fail('Provenance extractedPages mismatch');
+if (provenance.recoverableSequentialPages < 100) fail(`Insufficient recoverable pages: ${provenance.recoverableSequentialPages}`);
 if (provenance.targetBookPages !== 249) fail(`Unexpected target book size: ${provenance.targetBookPages}`);
 if (!provenance.sourceSha256 || !provenance.selectedSha256 || !provenance.sourceCommit) fail('Provenance hashes/source missing');
 if (!/text-align:justify/.test(css)) fail('Paragraphs are not justified');
 if (!/ant\[oô\]nio/i.test(pageSource)) fail('Antonio voice preference missing');
 if (!/pt-br/i.test(pageSource)) fail('pt-BR fallback missing');
 if (!/data-page-count=\{pages\.length\}/.test(pageSource)) fail('Stable page-count runtime contract missing');
-if (!/data-wave="4"/.test(pageSource)) fail('Wave 4 runtime marker missing');
+if (!/data-wave="5"/.test(pageSource)) fail('Wave 5 runtime marker missing');
 const executableSurface = pageSource + css;
 if (/cdn\.jsdelivr\.net|https?:\/\/[^'"\s]*jsdelivr/i.test(executableSurface)) fail('jsDelivr dependency detected');
-if (!/status:\s*'ok'/.test(health) || !/pages:\s*50/.test(health) || !/wave:\s*4/.test(health)) fail('Health contract mismatch');
-console.log(`VALIDATE_OK pages=50 sequence=1-50 recoverable=${provenance.recoverableSequentialPages} provenance=${provenance.selectedSha256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok`);
+if (!/status:\s*'ok'/.test(health) || !/pages:\s*100/.test(health) || !/wave:\s*5/.test(health)) fail('Health contract mismatch');
+console.log(`VALIDATE_OK pages=100 sequence=1-100 recoverable=${provenance.recoverableSequentialPages} provenance=${provenance.selectedSha256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok`);
