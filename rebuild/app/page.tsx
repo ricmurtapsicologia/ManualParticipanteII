@@ -5,6 +5,7 @@ import semanticData from '../content/semantic-pages.json';
 import navigationData from '../content/navigation.json';
 import multimediaData from '../content/multimedia-manifest.json';
 import { ApprovedCover, AudioResourceCard, selectPreferredVoice, type Wave54AudioResource } from './wave54';
+import { VideoResourceCard, type Wave55VideoResource } from './wave55';
 
 type SemanticBlock = { id: string; kind: string; sourceIndex: number; text: string };
 type SemanticPage = { number: number; part?: number | null; partTitle?: string; chapter?: number | null; title: string; cover?: boolean; blocks: SemanticBlock[] };
@@ -122,6 +123,9 @@ function MicrolearningCard({ resource }: { resource: MultimediaResource }) {
 function renderMultimediaResource(resource: MultimediaResource) {
   if (resource.kind === 'audio' && resource.src === 'native://speech-synthesis' && resource.transcript) {
     return <AudioResourceCard key={resource.id} resource={resource as Wave54AudioResource} />;
+  }
+  if (resource.kind === 'video' && resource.src === 'native://ats-system-video' && resource.transcript && resource.steps?.length) {
+    return <VideoResourceCard key={resource.id} resource={resource as Wave55VideoResource} />;
   }
   if (resource.kind === 'microlearning') return <MicrolearningCard key={resource.id} resource={resource} />;
   if (resource.kind !== 'infographic' || resource.src !== 'native://ats-system-macro' || !resource.steps?.length) return null;

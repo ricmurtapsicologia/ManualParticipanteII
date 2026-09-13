@@ -23,7 +23,7 @@ test('page 8 exposes accessible audio with canonical transcript and voice prefer
   await page.goto('/', { waitUntil: 'networkidle' });
   await loadSavedPage(page, 8);
 
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-multimedia-wave', '5.4');
+  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-multimedia-wave', '5.5');
   const audio = page.getByTestId('audio-resource');
   await expect(audio).toHaveCount(1);
   await expect(audio).toHaveAttribute('data-media-id', 'audio-opening-cats-p8');
@@ -42,7 +42,7 @@ test('page 8 exposes accessible audio with canonical transcript and voice prefer
   await expect(paper).toContainText('Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único.');
 });
 
-test('wave 5.4 cover and audio remain inside the viewport at 320px', async ({ page }) => {
+test('wave 5.5 cover and audio remain inside the viewport at 320px', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 740 });
   await page.goto('/', { waitUntil: 'networkidle' });
   await loadSavedPage(page, 8);

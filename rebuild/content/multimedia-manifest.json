@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "wave": "5.4",
+  "wave": "5.5",
   "policy": {
     "sourceTextFrozen": true,
     "accessibilityRequired": true,
@@ -26,6 +26,25 @@
         { "order": 7, "title": "Continuidade", "detail": "APH, rede, registro e cuidado." }
       ],
       "transverse": "REAVALIAR QUANDO RISCO, AMBIENTE, COMPORTAMENTO, RECURSOS OU RESPOSTA MUDAREM"
+    },
+    {
+      "id": "video-ats-operational-flow-p54",
+      "kind": "video",
+      "pageNumber": 54,
+      "title": "Sistema ATS • sequência operacional",
+      "src": "native://ats-system-video",
+      "alt": "Vídeo didático animado com as sete fases operacionais do Sistema ATS e a regra transversal de reavaliação.",
+      "steps": [
+        { "order": 1, "title": "Acionamento", "detail": "Receber e qualificar dados." },
+        { "order": 2, "title": "Deslocamento", "detail": "Preparar equipe e recursos." },
+        { "order": 3, "title": "Estabelecimento", "detail": "Posicionar e organizar a cena." },
+        { "order": 4, "title": "Observação + avaliação", "detail": "Ler risco, ambiente e comportamento." },
+        { "order": 5, "title": "Desenvolvimento", "detail": "Definir e executar estratégia." },
+        { "order": 6, "title": "Encerramento", "detail": "Confirmar segurança e transição." },
+        { "order": 7, "title": "Continuidade", "detail": "APH, rede, registro e cuidado." }
+      ],
+      "transverse": "REAVALIAR QUANDO RISCO, AMBIENTE, COMPORTAMENTO, RECURSOS OU RESPOSTA MUDAREM",
+      "transcript": "Acionamento. Receber e qualificar dados. Deslocamento. Preparar equipe e recursos. Estabelecimento. Posicionar e organizar a cena. Observação + avaliação. Ler risco, ambiente e comportamento. Desenvolvimento. Definir e executar estratégia. Encerramento. Confirmar segurança e transição. Continuidade. APH, rede, registro e cuidado. Reavaliar quando risco, ambiente, comportamento, recursos ou resposta mudarem."
     },
     {
       "id": "microlearning-high-impact-hypothesis-p58",

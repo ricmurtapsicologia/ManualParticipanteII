@@ -18,7 +18,7 @@ const fail = message => {
 const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
 
 if (manifest.schemaVersion !== 1) fail(`schemaVersion=${manifest.schemaVersion}`);
-if (manifest.wave !== '5.4') fail(`wave=${manifest.wave}`);
+if (manifest.wave !== '5.5') fail(`wave=${manifest.wave}`);
 if (manifest.policy?.sourceTextFrozen !== true) fail('sourceTextFrozen must be true');
 if (manifest.policy?.accessibilityRequired !== true) fail('accessibilityRequired must be true');
 if (manifest.policy?.ttsPreferredVoice !== 'Antônio') fail('ttsPreferredVoice must be Antônio');
@@ -34,7 +34,7 @@ for (const kind of allowed) if (!canonicalKinds.includes(kind)) fail(`unexpected
 const ids = new Set();
 const visualKinds = new Set(['infographic', 'chart', 'image']);
 const timedKinds = new Set(['audio', 'video']);
-const nativeRenderers = new Set(['native://ats-system-macro', 'native://speech-synthesis']);
+const nativeRenderers = new Set(['native://ats-system-macro', 'native://speech-synthesis', 'native://ats-system-video']);
 const semanticByPage = new Map((semantic.pages ?? []).map(page => [page.number, page]));
 
 for (const [index, resource] of manifest.resources.entries()) {
@@ -61,7 +61,7 @@ for (const [index, resource] of manifest.resources.entries()) {
   const canonicalText = normalize((sourcePage.blocks ?? []).map(block => block.text).join(' '));
 
   if (resource.kind === 'audio') {
-    if (resource.src !== 'native://speech-synthesis') fail(`resource=${resource.id} audio src must be native://speech-synthesis in wave 5.4`);
+    if (resource.src !== 'native://speech-synthesis') fail(`resource=${resource.id} audio src must be native://speech-synthesis in wave 5.5`);
     if (typeof resource.sourceBlockId !== 'string' || !resource.sourceBlockId.trim()) fail(`resource=${resource.id} missing sourceBlockId`);
     const sourceBlock = (sourcePage.blocks ?? []).find(block => block.id === resource.sourceBlockId);
     if (!sourceBlock) fail(`resource=${resource.id} sourceBlockId not found=${resource.sourceBlockId}`);
@@ -118,7 +118,29 @@ for (const [index, resource] of manifest.resources.entries()) {
       if (!canonicalText.includes(normalize(resource.transverse))) fail(`resource=${resource.id} transverse rule not grounded`);
     }
     if (resource.src === 'native://speech-synthesis' && resource.kind !== 'audio') fail(`resource=${resource.id} speech-synthesis renderer requires audio kind`);
+    if (resource.src === 'native://ats-system-video') {
+      if (resource.kind !== 'video') fail(`resource=${resource.id} ATS video renderer requires video kind`);
+      if (resource.pageNumber !== 54) fail(`resource=${resource.id} ATS video must be on page 54`);
+      if (typeof resource.alt !== 'string' || !resource.alt.trim()) fail(`resource=${resource.id} ATS video missing descriptive alt`);
+      if (!Array.isArray(resource.steps) || resource.steps.length !== 7) fail(`resource=${resource.id} ATS video steps=${resource.steps?.length ?? 0}`);
+      const orders = new Set();
+      const transcript = normalize(resource.transcript);
+      for (const step of resource.steps) {
+        if (!Number.isInteger(step.order) || step.order < 1) fail(`resource=${resource.id} invalid video step order`);
+        if (orders.has(step.order)) fail(`resource=${resource.id} duplicate video step order=${step.order}`);
+        orders.add(step.order);
+        if (typeof step.title !== 'string' || !step.title.trim()) fail(`resource=${resource.id} video step missing title`);
+        if (typeof step.detail !== 'string' || !step.detail.trim()) fail(`resource=${resource.id} video step missing detail`);
+        if (!canonicalText.includes(normalize(step.title))) fail(`resource=${resource.id} video step title not grounded=${step.title}`);
+        if (!canonicalText.includes(normalize(step.detail))) fail(`resource=${resource.id} video step detail not grounded=${step.detail}`);
+        if (!transcript.includes(normalize(step.title))) fail(`resource=${resource.id} transcript missing step title=${step.title}`);
+        if (!transcript.includes(normalize(step.detail))) fail(`resource=${resource.id} transcript missing step detail=${step.detail}`);
+      }
+      if (typeof resource.transverse !== 'string' || !resource.transverse.trim()) fail(`resource=${resource.id} video missing transverse rule`);
+      if (!canonicalText.includes(normalize(resource.transverse))) fail(`resource=${resource.id} video transverse rule not grounded`);
+      if (!transcript.includes(normalize(resource.transverse))) fail(`resource=${resource.id} transcript missing transverse rule`);
+    }
   }
 }
 
-console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} native=${manifest.resources.filter(item => String(item.src ?? '').startsWith('native://')).length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);
+console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} video=${manifest.resources.filter(item => item.kind === 'video').length} microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} native=${manifest.resources.filter(item => String(item.src ?? '').startsWith('native://')).length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);

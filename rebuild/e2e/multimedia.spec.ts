@@ -11,7 +11,7 @@ test('page 54 renders the source-grounded ATS macro infographic without replacin
   await loadSavedPage(page, 54);
 
   const shell = page.getByTestId('reader-shell');
-  await expect(shell).toHaveAttribute('data-multimedia-wave', '5.4');
+  await expect(shell).toHaveAttribute('data-multimedia-wave', '5.5');
 
   const resource = page.getByTestId('multimedia-resource');
   await expect(resource).toHaveCount(1);
