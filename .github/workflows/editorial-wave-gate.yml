@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'wave14-*'
+      - 'wave15-*'
     paths:
       - 'rebuild/**'
       - '.github/workflows/editorial-wave-gate.yml'
@@ -29,12 +30,13 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Validate semantic and navigation contracts
+      - name: Validate semantic, navigation and multimedia contracts
         run: |
           npm run semantic:migrate
           npm run semantic:validate
           npm run navigation:build
           npm run navigation:validate
+          npm run multimedia:validate
           npm run validate
       - name: Build and smoke
         run: |
