@@ -17,9 +17,9 @@
     const response = await fetch(chunk.url, { cache: 'force-cache' });
     if (!response.ok) throw new Error(`Falha ao carregar ${chunk.url}: HTTP ${response.status}`);
     const source = await response.text();
-    if (chunk.sha256 && crypto?.subtle) {
+    if (chunk.sha256 && window.crypto?.subtle) {
       const bytes = new TextEncoder().encode(source);
-      const digest = await crypto.subtle.digest('SHA-256', bytes);
+      const digest = await window.crypto.subtle.digest('SHA-256', bytes);
       const actual = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
       if (actual !== chunk.sha256) throw new Error(`Integridade inválida no bloco ${chunk.id}.`);
     }

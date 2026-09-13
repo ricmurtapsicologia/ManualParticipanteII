@@ -9,6 +9,6 @@
     "start": "node scripts/dev-server.mjs"
   },
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   }
 }

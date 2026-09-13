@@ -10,13 +10,16 @@ Atualizado em 13 de setembro de 2026.
 - Projeto produtivo reservado: `manual-participante-cats-definitivo` (`prj_O4U8NcOrjeSjkSlhnx0Qow8FAKHK`).
 - O deployment anterior estava `READY`, mas a interface exibia `Failed to fetch` e `/api/book` retornava `404`.
 - A carga GZIP/Base64 anterior estava truncada; por isso `atob` e `DecompressionStream` foram retirados do caminho ativo.
+- Implementação da Onda 1 publicada na branch remota `web-book-v1`, commit `d3e273d3d8dfe80b23c5b20bb28e06affa5ccbca`.
+- Preview da fatia vertical publicado no projeto canônico e concluído pelo Vercel com estado `READY`.
+- Produção, branch `main` e projetos legados permanecem inalterados.
 
 ## Onda 1
 
 - Camada 1 — contenção e preservação: concluída.
-- Camada 2 — fonte única e registro de decisões: concluída na branch de consolidação; integração em `main` pendente da validação do preview.
-- Camada 3 — fatia vertical: 15 páginas, capa, sumário e capítulo 1 preparados em JSON normal.
+- Camada 2 — fonte única e registro de decisões: branch remota consolidada; conexão GitHub → Vercel e integração em `main` aguardam o portão final.
+- Camada 3 — fatia vertical: 15 páginas, capa, sumário e capítulo 1 preparados em JSON normal, com testes locais e smoke HTTP aprovados.
 
 ## Próximo portão
 
-Publicar preview no projeto Vercel canônico, comprovar `/api/health`, `/api/book`, capa, sumário e navegação, e então integrar a branch em `main`.
+Concluir o E2E autenticado do preview — `/api/health`, `/api/book`, capa, sumário, busca e navegação — e conectar o projeto Vercel ao repositório. Só depois integrar a branch em `main` e avaliar a promoção para produção.
