@@ -1,0 +1,29 @@
+{
+  "scannedUniquePayloads": 1,
+  "best": {
+    "commit": "e1436cb48030499a2d082ca56b2b7794766f75ff",
+    "date": "2026-09-12T16:55:59-03:00",
+    "message": "feat: corpus DS1 íntegro bloco 17/19",
+    "sourceSha256": "9f335b5ece570928a75ea8f5c137a05586bd1570ca3781066a3304b59d6c5b19",
+    "compressedBytes": 99666,
+    "partialChars": 337656,
+    "fullGzip": false,
+    "pages": 155,
+    "firstInvalidOffset": 242914,
+    "reason": "json:Expected ',' or ']' after array element in JSON at position 524 (line 1 column 525)"
+  },
+  "top": [
+    {
+      "commit": "e1436cb48030499a2d082ca56b2b7794766f75ff",
+      "date": "2026-09-12T16:55:59-03:00",
+      "message": "feat: corpus DS1 íntegro bloco 17/19",
+      "sourceSha256": "9f335b5ece570928a75ea8f5c137a05586bd1570ca3781066a3304b59d6c5b19",
+      "compressedBytes": 99666,
+      "partialChars": 337656,
+      "fullGzip": false,
+      "pages": 155,
+      "firstInvalidOffset": 242914,
+      "reason": "json:Expected ',' or ']' after array element in JSON at position 524 (line 1 column 525)"
+    }
+  ]
+}
