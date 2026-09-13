@@ -1,9 +1,13 @@
 (async()=>{'use strict';
-const raw=window.__CATS_BOOK__||await (async()=>{const get=async u=>fetch(u,{cache:'force-cache'}).then(r=>{if(!r.ok)throw new Error('Falha ao carregar conteúdo: '+r.status+' '+u);return r.json()});const [meta,...chunks]=await Promise.all(['/book/meta.json',...Array.from({length:8},(_,i)=>'/book/pages-'+String(i+1).padStart(2,'0')+'.json')].map(get));return {...meta,pages:chunks.flat()}})();
-const BOOK={title:raw.title,edition:raw.edition,parts:raw.parts.map(a=>({n:a[0],page:a[1],title:a[2]})),chapters:raw.chapters.map(a=>({n:a[0],page:a[1],title:a[2]})),pages:raw.pages.map(a=>({n:a[0],part:a[1],partTitle:a[2],ch:a[3],chTitle:a[4],blocks:a[5].map(b=>({t:b[0],x:b[1]}))}))};
+const raw=window.__CATS_BOOK__||await (async()=>{if(window.B){const bin=atob(window.B),u=Uint8Array.from(bin,c=>c.charCodeAt(0)),stream=new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'));return JSON.parse(await new Response(stream).text())}const get=async u=>fetch(u,{cache:'force-cache'}).then(r=>{if(!r.ok)throw new Error('Falha ao carregar conteúdo: '+r.status+' '+u);return r.json()});const [meta,...chunks]=await Promise.all(['/book/meta.json',...Array.from({length:8},(_,i)=>'/book/pages-'+String(i+1).padStart(2,'0')+'.json')].map(get));return {...meta,pages:chunks.flat()}})();
+const classify=x=>{const s=String(x||'').trim(),u=s.toLocaleUpperCase('pt-BR');if(/^CAPÍTULO\s+\d+/.test(u))return {t:'chapter',x:s};if(/^REFERÊNCIAS? PRINCIPAIS?:/i.test(s))return {t:'ref',x:s};if(/^\d+\.\s+/.test(s))return {t:'sub',x:s};if(/^[A-ZÁÀÃÂÉÊÍÓÔÕÚÇ0-9 —–-]{4,}$/.test(s)&&s===u)return {t:'section',x:s};if(/^[•▪◦]\s*/.test(s))return {t:'bullet',x:s.replace(/^[•▪◦]\s*/,'')};return {t:'p',x:s}};
+const meta=raw.meta||raw, parts0=raw.parts||meta.parts||[], chapters0=raw.chapters||meta.chapters||[];
+const mapPart=a=>Array.isArray(a)?{n:a[0],page:a[1],title:a[2]}:{n:a.n??a.number,page:a.page,title:a.title};
+const mapChapter=a=>Array.isArray(a)?{n:a[0],page:a[1],title:a[2]}:{n:a.n??a.number,page:a.page,title:a.title};
+const BOOK={title:raw.title||meta.title||'Manual do Participante CATS',edition:raw.edition||meta.edition||'DS1 • 2026',parts:parts0.map(mapPart),chapters:chapters0.map(mapChapter),pages:raw.pages.map(a=>({n:a[0],part:a[1],partTitle:a[2],ch:a[3],chTitle:a[4],blocks:(a[5]||[]).map(b=>Array.isArray(b)?{t:b[0],x:b[1]}:classify(b))}))};
 const TOTAL=BOOK.pages.length, COVER='data:image/webp;base64,'+(window.C||'');
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
 let page=1,mode='book',double=false,busy=false,speaking=false;
 const saved=(()=>{try{return JSON.parse(localStorage.getItem('catsBookProgress')||'{}')}catch{return {}}})();
 const hashPage=()=>{let m=location.hash.match(/p=(\d+)/);return m?+m[1]:null};
