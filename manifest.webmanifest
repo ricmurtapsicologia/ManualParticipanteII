@@ -1,0 +1,9 @@
+{
+  "name": "Manual do Participante CATS",
+  "short_name": "CATS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071f20",
+  "theme_color": "#071f20",
+  "lang": "pt-BR"
+}
