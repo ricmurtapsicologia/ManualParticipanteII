@@ -1,4 +1,4 @@
-name: Rebuild Wave 11 Canonical CI
+name: Rebuild Wave 13 Canonical CI
 
 on:
   push:
@@ -35,22 +35,26 @@ jobs:
         run: npm run semantic:migrate
       - name: Validate lossless semantic architecture
         run: npm run semantic:validate
+      - name: Build compact reader navigation
+        run: npm run navigation:build
+      - name: Validate hierarchical reader navigation
+        run: npm run navigation:validate
       - name: Validate corpus, runtime and Vercel cutover contracts
         run: npm run validate
       - name: Build
         run: npm run build
       - name: Smoke runtime
         run: npm run smoke
-      - name: Persist validated canonical corpus
+      - name: Persist validated canonical corpus and navigation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           rm -f recovery/v08-tail-source.b64.part5a recovery/v08-tail-source.b64.part5b
-          git add content/pages.json content/provenance.json content/semantic-pages.json recovery/v08-tail-source.b64.part5
+          git add content/pages.json content/provenance.json content/semantic-pages.json content/navigation.json recovery/v08-tail-source.b64.part5
           git add -u recovery/v08-tail-source.b64.part5a recovery/v08-tail-source.b64.part5b || true
           if git diff --cached --quiet; then
-            echo "Canonical and semantic corpora already persisted"
+            echo "Canonical, semantic and navigation artifacts already persisted"
             exit 0
           fi
-          git commit -m "wave11: persist validated canonical and semantic corpora [skip ci]"
+          git commit -m "wave13: persist validated corpus and reader navigation [skip ci]"
           git push origin HEAD:main

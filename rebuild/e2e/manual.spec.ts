@@ -33,6 +33,7 @@ test('production health and direct URL are canonical', async ({ page, request })
 
   await gotoBook(page, '?e2e=direct');
   await expect(page).toHaveTitle('Manual do Participante CATS | Edição Digital');
+  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-editorial-wave', '13');
 });
 
 test('key pages 1, 2, 10, 50, 100, 150, 200 and 249 render', async ({ page }) => {
@@ -41,7 +42,7 @@ test('key pages 1, 2, 10, 50, 100, 150, 200 and 249 render', async ({ page }) =>
   await expect(page.getByRole('button', { name: 'Próxima página' })).toBeDisabled();
 });
 
-test('navigation, table of contents and search work end to end', async ({ page }) => {
+test('hierarchical table of contents, navigation and search work end to end', async ({ page }) => {
   await gotoBook(page);
   await setPage(page, 1);
   await page.keyboard.press('ArrowRight');
@@ -50,10 +51,17 @@ test('navigation, table of contents and search work end to end', async ({ page }
   await expect(page.getByTestId('page-counter')).toContainText('1 / 249');
 
   await page.getByRole('button', { name: 'Sumário' }).click();
-  const toc = page.locator('.toc button');
-  await expect(toc).toHaveCount(249);
-  await toc.nth(99).click();
-  await expect(page.getByTestId('page-counter')).toContainText('100 / 249');
+  await expect(page.getByTestId('hierarchical-toc')).toBeVisible();
+  await expect(page.getByTestId('toc-part')).toHaveCount(7);
+  await expect(page.getByTestId('toc-chapter')).toHaveCount(34);
+  await expect(page.getByTestId('toc-marker')).toHaveCount(165);
+
+  const part3 = page.getByTestId('toc-part').filter({ hasText: 'Parte 3' });
+  await part3.locator(':scope > summary').click();
+  const chapter14 = part3.getByTestId('toc-chapter').filter({ hasText: 'Cap. 14' });
+  await chapter14.locator(':scope > summary').click();
+  await chapter14.getByTestId('toc-chapter-open').click();
+  await expect(page.getByTestId('page-counter')).toContainText('106 / 249');
 
   await page.getByRole('button', { name: 'Pesquisar' }).click();
   const input = page.getByPlaceholder('Digite pelo menos 2 caracteres');
@@ -117,19 +125,14 @@ test('layout is responsive and critical resources have no 404/500', async ({ pag
   const failures: string[] = [];
   page.on('response', response => {
     const type = response.request().resourceType();
-    if (['document', 'script', 'stylesheet', 'fetch', 'xhr'].includes(type) && response.status() >= 400) {
-      failures.push(`${response.status()} ${response.url()}`);
-    }
+    if (['document', 'script', 'stylesheet', 'fetch', 'xhr'].includes(type) && response.status() >= 400) failures.push(`${response.status()} ${response.url()}`);
   });
   const consoleErrors: string[] = [];
   page.on('console', message => { if (message.type() === 'error') consoleErrors.push(message.text()); });
   page.on('pageerror', error => consoleErrors.push(error.message));
 
   await gotoBook(page);
-  const dimensions = await page.evaluate(() => ({
-    viewport: document.documentElement.clientWidth,
-    scroll: document.documentElement.scrollWidth
-  }));
+  const dimensions = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth }));
   expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.viewport + 1);
   expect(failures).toEqual([]);
   expect(consoleErrors).toEqual([]);

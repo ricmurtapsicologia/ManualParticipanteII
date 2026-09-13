@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "wave": 12,
-  "stage": "taxonomy-navigation",
-  "status": "validated",
+  "wave": 13,
+  "stage": "reader-navigation",
+  "status": "candidate",
   "sourcePages": 249,
   "semanticBlocks": 2224,
   "parts": 7,
@@ -12,8 +12,8 @@
   "partOpeningPages": [7, 53, 95, 144, 166, 186, 202],
   "pedagogicalMarkerCount": 165,
   "preservation": "lossless-title-paragraph-and-source-taxonomy",
-  "navigation": "hierarchical-part-chapter-supplementary",
-  "pedagogicalMarkers": "recovered-from-source-block-kinds",
-  "gate": "semantic-v2+canonical-validate+build+smoke",
-  "nextWave": "connect normalized semantic navigation to the reader UI"
+  "navigation": "hierarchical-reader-ui-part-chapter-pedagogical",
+  "readerArtifact": "content/navigation.json",
+  "gate": "semantic-v2+navigation-v1+canonical-validate+build+smoke+e2e",
+  "nextWave": "apply DS2 semantic components and continuation-page typography"
 }
