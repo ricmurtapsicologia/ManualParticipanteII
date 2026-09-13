@@ -22,10 +22,10 @@ try {
   const homeRes = await fetch(base);
   if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
   const html = await homeRes.text();
-  for (const token of ['Manual do Participante CATS', '249 páginas canônicas', 'Fonte canônica: main', 'data-page-count="249"', 'data-wave="8"']) {
+  for (const token of ['Manual do Participante CATS', 'Edição Digital Interativa', 'data-page-count="249"', 'data-wave="8"', 'data-editorial-wave="13"']) {
     if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
   }
-  console.log('SMOKE_OK home=200 health=200 pages=249 wave=8 architecture=rebuild-clean corpus=canonical-hybrid-recovered canonical=main deployment-proof=local');
+  console.log('SMOKE_OK home=200 health=200 pages=249 runtime-wave=8 editorial-wave=13 architecture=rebuild-clean corpus=canonical-hybrid-recovered navigation=hierarchical deployment-proof=local');
 } finally {
   child.kill('SIGTERM');
   await sleep(300);
