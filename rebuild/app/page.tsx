@@ -3,7 +3,15 @@
 import { useEffect, useMemo, useState } from 'react';
 import pagesData from '../content/pages.json';
 
-type BookPage = { title: string; paragraphs: string[]; cover?: boolean };
+type BookPage = {
+  number?: number;
+  part?: number | null;
+  partTitle?: string;
+  chapter?: number | null;
+  title: string;
+  paragraphs: string[];
+  cover?: boolean;
+};
 const pages = pagesData as BookPage[];
 
 function normalize(value: string) {
@@ -71,13 +79,15 @@ export default function Home() {
 
   const current = pages[page];
   const progress = ((page + 1) / pages.length) * 100;
+  const runningLeft = current.part ? `PARTE ${current.part}${current.partTitle ? ` • ${current.partTitle}` : ''}` : 'CATS • MANUAL DO PARTICIPANTE';
+  const runningRight = current.chapter ? `CAPÍTULO ${current.chapter}` : '2026';
 
   return (
     <div className="shell" data-testid="reader-shell">
       <header className="top">
         <div className="topin">
           <div className="mark">CATS</div>
-          <div className="brand"><strong>Manual do Participante CATS</strong><span>Rebuild limpo • Onda 2 • 10 páginas validadas</span></div>
+          <div className="brand"><strong>Manual do Participante CATS</strong><span>Rebuild limpo • Onda 3 • 25 páginas reais</span></div>
           <div className="tools">
             <button onClick={speak} className={speaking ? 'active' : ''} aria-label="Leitura em voz alta">◖)) <span>{speaking ? 'Parar' : 'Ouvir'}</span></button>
             <button onClick={() => setDrawer('search')} aria-label="Pesquisar">⌕ <span>Buscar</span></button>
@@ -93,7 +103,7 @@ export default function Home() {
             {current.cover ? (
               <div className="coverContent"><div className="coverEyebrow">Corpo de Bombeiros Militar de Minas Gerais</div><h1>{current.title}</h1>{current.paragraphs.map((text, i) => <p key={i}>{text}</p>)}</div>
             ) : (
-              <><div className="running"><span>CATS • Manual do Participante</span><span>Onda 2</span></div><h2>{current.title}</h2>{current.paragraphs.map((text, i) => <p key={i}>{text}</p>)}<div className="pageno">{page + 1}</div></>
+              <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div><h2>{current.title}</h2>{current.paragraphs.map((text, i) => <p key={i}>{text}</p>)}<div className="pageno">{current.number ?? page + 1}</div></>
             )}
           </article>
         </div>
@@ -109,7 +119,7 @@ export default function Home() {
       {drawer && <div className="drawer" role="dialog" aria-modal="true" onMouseDown={e => { if (e.target === e.currentTarget) setDrawer(null); }}>
         <aside className="panel">
           <div className="panelHead"><strong>{drawer === 'toc' ? 'Sumário' : 'Pesquisar'}</strong><button onClick={() => setDrawer(null)}>Fechar</button></div>
-          {drawer === 'toc' ? <div className="toc">{pages.map((item, index) => <button key={item.title} onClick={() => go(index)}>{index + 1}. {item.title}</button>)}</div> : <><input className="search" autoFocus value={query} onChange={e => setQuery(e.target.value)} placeholder="Digite pelo menos 2 caracteres" /><div className="hits">{query.trim().length < 2 ? <p>Digite pelo menos 2 caracteres.</p> : results.length ? results.map(({ item, index }) => <button key={item.title} onClick={() => go(index)}><strong>P. {index + 1} — {item.title}</strong></button>) : <p>Nenhum resultado.</p>}</div></>}
+          {drawer === 'toc' ? <div className="toc">{pages.map((item, index) => <button key={`${index}-${item.title}`} onClick={() => go(index)}>{index + 1}. {item.title}</button>)}</div> : <><input className="search" autoFocus value={query} onChange={e => setQuery(e.target.value)} placeholder="Digite pelo menos 2 caracteres" /><div className="hits">{query.trim().length < 2 ? <p>Digite pelo menos 2 caracteres.</p> : results.length ? results.map(({ item, index }) => <button key={`${index}-${item.title}`} onClick={() => go(index)}><strong>P. {index + 1} — {item.title}</strong></button>) : <p>Nenhum resultado.</p>}</div></>}
         </aside>
       </div>}
     </div>
