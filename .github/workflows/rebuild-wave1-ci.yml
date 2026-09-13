@@ -1,4 +1,4 @@
-name: Rebuild Wave 7 CI
+name: Rebuild Wave 8 Recovery CI
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 jobs:
-  migrate-build-smoke:
+  recover-migrate-build-smoke:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -29,6 +29,13 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Historical recovery scan
+        run: |
+          if [ -f recovery/history-scan.json ]; then
+            echo "Historical recovery report already persisted"
+          else
+            node scripts/recovery-scan.mjs
+          fi
       - name: Migrate canonical pages 1-155
         run: npm run migrate:155
       - name: Validate contracts
@@ -37,14 +44,17 @@ jobs:
         run: npm run build
       - name: Smoke runtime
         run: npm run smoke
-      - name: Persist validated corpus
+      - name: Persist validated corpus and recovery report
         run: |
-          if git diff --quiet -- content/pages.json content/provenance.json; then
-            echo "Validated corpus already persisted"
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add content/pages.json content/provenance.json
-          git commit -m "wave7: persist canonical 155-page corpus [skip ci]"
+          if [ -f recovery/history-scan.json ]; then
+            git add recovery/history-scan.json recovery/history-scan.md
+          fi
+          if git diff --cached --quiet; then
+            echo "Validated corpus and recovery report already persisted"
+            exit 0
+          fi
+          git commit -m "wave8: persist recovery scan and validated 155-page corpus [skip ci]"
           git push origin HEAD:rebuild-clean-v1
