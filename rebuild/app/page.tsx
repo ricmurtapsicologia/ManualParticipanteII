@@ -107,7 +107,7 @@ export default function Home() {
             )}
           </article>
         </div>
-        <div className="status">Use <span className="kbd">←</span> <span className="kbd">→</span> para navegar. <span className="kbd">/</span> abre a busca. Branch: rebuild-clean-v1.</div>
+        <div className="status">Use <span className="kbd">←</span> <span className="kbd">→</span> para navegar. <span className="kbd">/</span> abre a busca. Fonte canônica: main.</div>
       </main>
 
       <nav className="nav" aria-label="Navegação do livro">
