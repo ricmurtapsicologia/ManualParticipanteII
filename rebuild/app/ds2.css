@@ -146,3 +146,79 @@ button:focus-visible,input:focus-visible,summary:focus-visible{
   .pedagogicalBody{padding:11px 12px 12px}
   .page .pedagogicalBody p{font-size:14px;line-height:1.58}
 }
+
+/* DS2 4.4 — responsive finish and visual integrity */
+.shell,.main,.book,.page,.running,.continuationHeading,.pedagogicalBox,.pedagogicalHeader,.pedagogicalBody{min-width:0}
+.page{
+  width:min(620px,calc(100vw - 32px));
+  max-width:620px;
+}
+.page h2,.page h3,.page p,.running span,.continuationHeading span,.pedagogicalHeader strong,.pedagogicalBody,.semanticListItem{
+  max-width:100%;
+  overflow-wrap:break-word;
+  word-break:normal;
+}
+.running span:first-child,.continuationHeading span:first-child{min-width:0}
+.running span:last-child,.continuationHeading strong{flex:0 0 auto;white-space:nowrap}
+.pedagogicalBox{max-width:100%}
+.pedagogicalHeader{align-items:flex-start}
+.pedagogicalHeader strong{min-width:0}
+.pedagogicalBody>*:last-child{margin-bottom:0}
+.nav{
+  max-width:calc(100vw - 20px);
+  bottom:max(10px,env(safe-area-inset-bottom));
+}
+.panel{
+  max-width:100vw;
+  padding-bottom:max(18px,env(safe-area-inset-bottom));
+}
+
+@media(max-width:700px){
+  .topin{padding:8px 10px;gap:8px}
+  .mark{width:34px;height:34px;flex:0 0 34px;border-radius:9px;font-size:12px}
+  .brand{flex:1 1 auto;overflow:hidden}
+  .brand strong{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tools{flex:0 0 auto;gap:5px;flex-wrap:nowrap}
+  .tools button{width:38px;height:38px;padding:0;display:grid;place-items:center}
+  .main{width:100%;padding:14px 0 calc(100px + env(safe-area-inset-bottom))}
+  .book{width:100%}
+  .page{
+    width:calc(100vw - 20px);
+    min-height:max(620px,calc(100svh - 148px));
+    padding:30px 24px 62px;
+    border-radius:12px;
+  }
+  .running{gap:8px;font-size:9px;line-height:1.35}
+  .continuationHeading{gap:8px}
+  .pedagogicalHeader{gap:8px}
+  .nav button{width:44px;height:42px}
+  .panelHead{top:-18px}
+}
+
+@media(max-width:420px){
+  .topin{gap:6px}
+  .page{width:calc(100vw - 14px);padding:27px 19px 60px;border-radius:11px}
+  .cover h1{font-size:32px;line-height:1.04}
+  .running{flex-wrap:wrap}
+  .running span:last-child{margin-left:auto}
+  .page h2{font-size:24px;line-height:1.14}
+  .page h3{font-size:15.5px}
+  .pedagogicalIcon{width:22px;height:22px;flex-basis:22px}
+  .pedagogicalHeader{font-size:10.5px;letter-spacing:.065em}
+  .pedagogicalBody{padding:11px}
+  .tocMeta{font-size:10px}
+}
+
+@media(max-width:340px){
+  .mark{display:none}
+  .brand strong{font-size:11.5px}
+  .tools button{width:36px;height:36px}
+  .page{width:calc(100vw - 10px);padding-left:16px;padding-right:16px}
+  .nav{gap:6px;padding:6px}
+  .counter{min-width:76px}
+}
+
+@media(max-height:700px) and (max-width:700px){
+  .page{min-height:560px}
+  .main{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+}
