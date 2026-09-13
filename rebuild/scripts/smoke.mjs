@@ -21,7 +21,7 @@ try {
   const homeRes = await fetch(base);
   if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
   const html = await homeRes.text();
-  for (const token of ['Manual do Participante CATS', '25 páginas reais', 'rebuild-clean-v1', '1 / 25']) {
+  for (const token of ['Manual do Participante CATS', '25 páginas reais', 'rebuild-clean-v1', 'data-page-count="25"', 'data-wave="3"']) {
     if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
   }
   console.log('SMOKE_OK home=200 health=200 pages=25 wave=3 architecture=rebuild-clean');
