@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "sourceTitle": "Manual do Participante CATS - v0.8 - CANÔNICA - SANITIZADA.pdf",
+  "driveFileId": "1PePK8Tic7PGo65fiqf02k8vUzG_Halh0",
+  "pdfSha256": "7a8d9a0a0614e18af812ffe1c172b48a87e609b66ec8631eec15cb1ea15becbb",
+  "pdfPages": 159,
+  "canonicalBoundaryPage": 155,
+  "canonicalTitle": "Água, enforcamento, incêndio, eletricidade e intoxicação",
+  "pdfTitle": "Referências nucleares",
+  "sourceWordCount": 85,
+  "canonicalWordCount": 145,
+  "sharedWordCount": 7,
+  "sourceCoverage": 0.0824,
+  "canonicalCoverage": 0.0483,
+  "anchors": [
+    {
+      "anchor": "Panorama dos suicídios e lesões autoprovocadas",
+      "present": false
+    },
+    {
+      "anchor": "Instrução Técnica Operacional n. 30",
+      "present": false
+    },
+    {
+      "anchor": "Plano de Ensino",
+      "present": false
+    },
+    {
+      "anchor": "Primeiros Socorros Psicológicos",
+      "present": false
+    },
+    {
+      "anchor": "Tratado de suicidologia",
+      "present": false
+    },
+    {
+      "anchor": "Crise suicida",
+      "present": false
+    },
+    {
+      "anchor": "Emergências psiquiátricas",
+      "present": false
+    }
+  ],
+  "anchorHits": 0,
+  "candidateSequence": [
+    156,
+    157,
+    158,
+    159
+  ],
+  "candidateParagraphCounts": [
+    {
+      "number": 156,
+      "paragraphs": 10
+    },
+    {
+      "number": 157,
+      "paragraphs": 11
+    },
+    {
+      "number": 158,
+      "paragraphs": 6
+    },
+    {
+      "number": 159,
+      "paragraphs": 12
+    }
+  ],
+  "sequenceOk": true,
+  "contentOk": true,
+  "pdfMetadataOk": true,
+  "boundaryPass": false,
+  "safeCandidate": false
+}
