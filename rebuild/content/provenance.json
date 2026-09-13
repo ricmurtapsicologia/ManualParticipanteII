@@ -1,0 +1,30 @@
+{
+  "schema": 3,
+  "source": "legacy CATS corpus recovered from complete sequential prefix using tolerant gzip flush",
+  "sourceCommit": "9e6e2a844fbb16adfdce4dec0dbd3c2ec6983111",
+  "sourceFiles": [
+    "data1.js",
+    "data2.js",
+    "data3.js",
+    "data4.js",
+    "data5.js",
+    "data6.js",
+    "data7.js",
+    "data8.js",
+    "data9.js",
+    "data10.js",
+    "data11.js",
+    "data12.js",
+    "data13.js",
+    "data14.js",
+    "data15.js",
+    "data16.js",
+    "data17.js"
+  ],
+  "sourceSha256": "9f335b5ece570928a75ea8f5c137a05586bd1570ca3781066a3304b59d6c5b19",
+  "selectedSha256": "3ef83c84c5862693bca3972e77b769e967d909caffd61ada6ecfe6188cbce0ea",
+  "recoverableSequentialPages": 155,
+  "firstInvalidOffset": 242914,
+  "extractedPages": 25,
+  "targetBookPages": 249
+}

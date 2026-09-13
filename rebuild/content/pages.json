@@ -1,12 +1,433 @@
 [
-  {"cover":true,"title":"Manual do Participante CATS","paragraphs":["Edição digital interativa 2026","Base limpa — Onda 1 • prova de arquitetura"]},
-  {"title":"Apresentação","paragraphs":["Esta versão é uma prova técnica isolada da produção anterior. O objetivo da primeira onda é validar uma base única, previsível e testável antes da migração integral do Manual do Participante CATS.","Nenhum componente essencial desta versão depende do jsDelivr. A aplicação, a navegação, o estilo, a busca e o health-check pertencem à própria base do projeto."]},
-  {"title":"Como utilizar este protótipo","paragraphs":["Use os controles inferiores ou as setas do teclado para avançar e retornar. O sumário permite acesso direto às dez páginas desta primeira onda e a busca localiza termos nos títulos e textos.","O progresso é preservado no navegador. Ao retornar, o protótipo tenta restaurar a última página consultada."]},
-  {"title":"Princípio de fonte única","paragraphs":["A reconstrução parte de um princípio operacional simples: o código versionado deve ser a fonte de verdade. O que estiver em produção deverá corresponder a um commit identificável, sem uma segunda cópia oculta do aplicativo sendo montada manualmente.","Esse desenho reduz divergências entre GitHub, build e domínio público e torna cada mudança rastreável."]},
-  {"title":"Leitura e legibilidade","paragraphs":["O corpo textual deste protótipo utiliza alinhamento justificado, espaçamento confortável e hifenização quando suportada pelo navegador. A intenção é aproximar a leitura digital da experiência editorial do manual sem sacrificar responsividade.","A página adapta largura, tipografia e controles para telas menores sem depender de uma versão móvel separada."]},
-  {"title":"Navegação","paragraphs":["A navegação mantém um estado único de página. Os botões anterior e próxima, o sumário, os resultados da busca e as teclas direcionais atualizam o mesmo estado, evitando múltiplos mecanismos concorrentes.","Nesta primeira onda, o efeito visual é deliberadamente simples. A animação de virada de página será acrescentada somente depois que o pipeline estiver comprovadamente estável."]},
-  {"title":"Busca","paragraphs":["A busca funciona sobre o conteúdo já carregado no protótipo e apresenta resultados por página. Na migração integral, o mesmo contrato poderá ser alimentado pelo corpus completo sem alterar a interface do leitor.","Essa separação entre conteúdo e interface permitirá atualizar o manual sem reescrever o mecanismo de navegação."]},
-  {"title":"Leitura em voz alta","paragraphs":["O comando de voz procura primeiro uma voz instalada cujo nome contenha Antônio ou Antonio. Se ela não existir no dispositivo, usa uma voz disponível em português do Brasil como fallback controlado.","A disponibilidade de uma voz específica é determinada pelo sistema operacional e pelo navegador. O aplicativo não deve presumir uma voz que o dispositivo não oferece."]},
-  {"title":"Saúde da aplicação","paragraphs":["A nova base possui um endpoint próprio de saúde. Ele deve responder diretamente pela aplicação implantada e será utilizado como um dos primeiros sinais de integridade em cada publicação.","O health-check não substitui testes de interface. Smoke tests e testes ponta a ponta continuam necessários para confirmar que navegação, conteúdo e recursos do navegador funcionam."]},
-  {"title":"Gate da Onda 1","paragraphs":["Esta onda é aprovada somente quando a base compilar sem erros, o health-check responder corretamente e uma alteração rastreável no código puder ser associada à versão publicada.","Depois desse gate, a próxima onda pode migrar conteúdo real do manual de forma progressiva, preservando a estrutura estável já validada."]}
+  {
+    "number": 1,
+    "part": 0,
+    "partTitle": "",
+    "chapter": 0,
+    "title": "Manual do Participante CATS",
+    "paragraphs": [
+      "Curso de Atendimento a Tentativas de Suicídio",
+      "Manual do Participante • Edição Digital Interativa • 2026"
+    ],
+    "cover": true
+  },
+  {
+    "number": 2,
+    "part": 0,
+    "partTitle": "",
+    "chapter": 0,
+    "title": "Abertura",
+    "paragraphs": [
+      "COMANDANTE-GERAL DO CBMMG",
+      "CORONEL BM JORDANA DE OLIVEIRA FILGUEIRAS DALDEGAN",
+      "CHEFE DO ESTADO-MAIOR",
+      "CORONEL BM MOISÉS MAGALHÃES DE SOUSA",
+      "ELABORAÇÃO — GTO ATS",
+      "MAJ BM RICHELMY MURTA PINTO",
+      "MAJ BM EDUARDO FELIPE ALMEIDA DOS SANTOS",
+      "CAP BM LUCAS ANTÔNIO DE OLIVEIRA",
+      "1º TEN BM LEONARDO BOTELHO VIÇOSO",
+      "2º TEN BM PAULO ESTEVAM COSTA C. PRETA",
+      "1º SGT BM ALEXANDRE DA SILVA GOMIDES",
+      "1º SGT BM DANIEL ALVES TEÓFILO",
+      "1º SGT BM VIVIANE CAMPOS SILVA RIBEIRO",
+      "2º SGT BM LUCIANA PIMENTA ANTONINI DE OLIVEIRA FAM",
+      "3º SGT BM EMILIANA FERNANDES NASCIMENTO MELO",
+      "3º SGT BM MARCELO EDUARDO RESENDE RIBEIRO",
+      "CB BM LEANDRO BOTELHO SUDRÉ",
+      "CB BM JOSÉ SEBASTIÃO DA SILVA",
+      "CB BM VINÍCIUS RODRIGUES DOS SANTOS",
+      "CB BM NAYARA MÁXIMO RODRIGUES",
+      "CB BM THALES ALEXANDER MIRANDA FRADE"
+    ]
+  },
+  {
+    "number": 3,
+    "part": 0,
+    "partTitle": "",
+    "chapter": 0,
+    "title": "Abertura",
+    "paragraphs": [
+      "Como usar este manual Este Manual do participante acompanha aulas, estudo, simulações e revisão posterior do CATS. Não substitui a ITO 30 vigente nem cursos de especialidade. Em qualquer divergência, prevalecem a doutrina e as normas institucionais aplicáveis. Quatro níveis de aprendizagem usados no manual.",
+      "DOUTRINA VIGENTE",
+      "Quando o texto identifica “Doutrina”, apresenta regra ou princípio apoiado na ITO 30 vigente. Minutas de revisão não são tratadas como norma atual.",
+      "EVIDÊNCIA",
+      "Modelos científicos e dados epidemiológicos explicam contexto e mecanismos com o grau de certeza permitido pelas fontes; não funcionam como diagnóstico ou previsão individual.",
+      "NA PRÁTICA",
+      "Converte o conceito em comportamento profissional observável.",
+      "ATENÇÃO",
+      "Marca limite, erro frequente ou condição que exige cautela.",
+      "DECIDA",
+      "Propõe um ponto de escolha para recuperar o conteúdo antes da resposta."
+    ]
+  },
+  {
+    "number": 4,
+    "part": 0,
+    "partTitle": "",
+    "chapter": 0,
+    "title": "Abertura",
+    "paragraphs": [
+      "Hierarquia de fontes",
+      "HIERARQUIA DE FONTES",
+      "Precedência para leitura, ensino e atualização doutrinária. 1 ITO 30 vigente e normas aplicáveis 2 Planos de ensino e fontes institucionais 3 Minutas de evolução — uso didático, sem valor normativo 4 Fontes oficiais e evidência técnico-científica 5 Experiência operacional e casos didáticos Em divergência, prevalecem a norma vigente e os atos institucionais aplicáveis. Hierarquia de fontes: norma vigente, fontes institucionais, minutas de evolução, evidência e experiência didática.",
+      "1. ITO 30 vigente e demais normas aplicáveis — fonte normativa",
+      "principal. 2. Planos de ensino e currículo institucional — escopo formativo. 3. Minutas V3.1 a V3.4 — fonte de compreensão da evolução doutrinária e do desenho didático, sem valor normativo enquanto não homologadas. 4. Fontes epidemiológicas oficiais e literatura técnico-científica — contexto e fundamentação. 5. Experiência operacional e casos didáticos — aplicação e treino; não criam doutrina. REGRA DE PREVALÊNCIA — Em qualquer divergência, prevalecem a ITO 30 vigente e as demais normas institucionais aplicáveis. Neste manual, “abordagem de dissuasão” e “saída honrosa” são usados como categorias didáticas inspiradas na evolução V3.x; o termo"
+    ]
+  },
+  {
+    "number": 5,
+    "part": 0,
+    "partTitle": "",
+    "chapter": 0,
+    "title": "Abertura",
+    "paragraphs": [
+      "normativo da ITO 30 vigente para a linha comunicacional é “abordagem técnica”."
+    ]
+  },
+  {
+    "number": 6,
+    "part": 0,
+    "partTitle": "",
+    "chapter": 0,
+    "title": "Abertura",
+    "paragraphs": [
+      "Mapa do manual",
+      "MAPA DO MANUAL",
+      "Sete partes, uma progressão: compreender organizar abordar integrar .→ → → 1 Fenômeno 2 Ocorrência 3 Abordagem técnica 4 Abordagem tática 5 Pessoas e contextos 6 Depois da crise 7 Integração Casos longitudinais Personagens fictícios reaparecem para mostrar como decisões mudam quando nova informação chega."
+    ]
+  },
+  {
+    "number": 7,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 0,
+    "title": "Abertura",
+    "paragraphs": [
+      "Os casos são compostos e fictícios. Nenhum representa prontuário ou ocorrência identificável. A função é didática: estimular atualização de hipóteses e integração entre segurança, comunicação, comando e cuidado.",
+      "PARTE 1",
+      "COMPREENDER O FENÔMENO",
+      "Do problema de saúde pública à leitura profissional da crise"
+    ]
+  },
+  {
+    "number": 8,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 1,
+    "title": "O CATS e a prática profissional",
+    "paragraphs": [
+      "O CATS e a prática profissional O que este curso pretende transformar na forma de observar, decidir e agir",
+      "SITUAÇÃO DE ABERTURA",
+      "Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único. Enquanto uma pessoa está em crise, a equipe precisa proteger a cena, compreender o que está acontecendo, coordenar recursos, comunicar-se com cuidado, manejar incerteza e preparar a continuidade do cuidado. O Curso de Atendimento a Tentativas de Suicídio (CATS) existe para transformar esse conjunto de exigências em desempenho profissional organizado. O objetivo não é ensinar uma coleção de frases ou técnicas isoladas, mas formar um raciocínio que possa ser usado quando a cena muda, quando a informação é incompleta e quando o tempo exerce pressão.",
+      "O que você deverá conseguir fazer",
+      "• Explicar a função do CATS na formação do bombeiro militar e reconhecer o material didático como apoio subordinado à doutrina vigente.",
+      "• Distinguir doutrina institucional, conhecimento científico, experiência operacional e material didático.",
+      "• Reconhecer os limites da atuação do bombeiro no manejo de crise suicida.",
+      "• Usar o ciclo observar, interpretar com prudência, priorizar riscos, decidir, agir e reavaliar.",
+      "• Compreender por que segurança, dignidade e continuidade do cuidado atravessam todo o Sistema ATS.",
+      "1. Um curso de desempenho, não de frases prontas",
+      "O plano de ensino de Atendimento a Tentativas de Suicídio para o CFO define uma formação teórico-prática que integra conceitos do comportamento suicida e da crise psíquica, segurança da cena, Sistema ATS, comunicação dissuasiva, noções de abordagem tática, gerenciamento, integração interinstitucional, encerramento, registro e Primeiros Socorros Psicológicos. A mesma lógica aparece no mapa de competências: identificar riscos, trabalhar em equipe, atuar sob pressão, orientar vítimas e familiares, solicitar apoio, planejar,"
+    ]
+  },
+  {
+    "number": 9,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 1,
+    "title": "O CATS e a prática profissional",
+    "paragraphs": [
+      "decidir e manter respeito à dignidade humana. Esse desenho curricular oferece uma pista importante sobre como estudar: nenhum capítulo deve ser lido como conhecimento separado da ocorrência. O aluno do CATS precisa saber conceitos, mas não é suficiente defini-los. Ele precisa reconhecer como esses conceitos aparecem na prática; decidir o que é prioritário; comunicar-se de maneira ajustada; e aplicar a doutrina em conjunto com outros profissionais. Por isso, o manual trabalha em quatro níveis cumulativos: entender, reconhecer, decidir e aplicar. Um conceito que não modifica o que o profissional consegue observar ou fazer ainda não completou seu percurso didático.",
+      "DOUTRINA",
+      "A ITO 30 vigente é a referência normativa primária deste manual. Quando houver diferença entre uma explicação didática e a norma, prevalece a norma. Minutas de revisão podem apoiar estudo e evolução doutrinária, mas não são apresentadas como doutrina vigente.",
+      "2. O papel do manual durante e depois do curso",
+      "O manual não substitui a aula, e a aula não deve reproduzir o manual. O texto permite aprofundar conceitos, acompanhar casos, revisar figuras e consolidar decisões. Os slides servem à mediação do instrutor. A prática transforma conhecimento em comportamento observável por meio de simulação, feedback e debriefing. A aprendizagem fica mais robusta quando cada recurso exerce função diferente. Durante o curso, algumas páginas serão lidas antes da aula; outras funcionarão como apoio ao instrutor; e parte dos casos será retomada em simulações. Depois do CATS, o manual deve permanecer como referência de estudo. Isso exige navegação consistente: cores e boxes indicam a natureza da informação, capítulos se conectam entre si e conceitos importantes reaparecem em contextos diferentes."
+    ]
+  },
+  {
+    "number": 10,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 1,
+    "title": "O CATS e a prática profissional",
+    "paragraphs": [
+      "Quatro níveis de aprendizagem usados em todo o manual.",
+      "3. Fonte não é sinônimo de autoridade",
+      "Este manual utiliza diferentes tipos de fonte. A ITO 30 informa como o CBMMG organiza o atendimento e quais procedimentos estão estabelecidos. Os planos de ensino definem as competências que o aluno precisa desenvolver. Boletins oficiais ajudam a compreender magnitude e distribuição do problema. A literatura científica oferece modelos e evidências para interpretar fenômenos psicológicos e sociais. A experiência operacional fornece casos, dificuldades recorrentes e exemplos de aplicação. Essas fontes não possuem o mesmo papel. Um artigo científico não altera sozinho uma norma institucional. Uma aula antiga não pode ser usada para substituir a ITO vigente. Um relato de ocorrência é valioso para aprendizagem, mas não prova que uma técnica será eficaz em todas as situações. A maturidade profissional depende de saber o que cada evidência permite concluir e o que não permite."
+    ]
+  },
+  {
+    "number": 11,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 1,
+    "title": "O CATS e a prática profissional",
+    "paragraphs": [
+      "Hierarquia de fontes para leitura e aplicação.",
+      "EVIDÊNCIA",
+      "O modelo cognitivo de Wenzel e Beck é útil para compreender como conteúdos cognitivos, vieses de processamento, estressores e vulnerabilidades podem interagir durante uma crise. Os próprios autores destacam que diferentes componentes do modelo possuem níveis diferentes de suporte empírico. Neste manual, modelos teóricos são usados para organizar pensamento, não para afirmar que é possível “ler” o estado mental de alguém a partir de um único comportamento.",
+      "4. O bombeiro não precisa diagnosticar para agir bem",
+      "Em uma ocorrência, a equipe encontra comportamentos: choro, silêncio, fala rápida, irritação, desorganização, hesitação, agitação, aparente calma, pedidos, ameaças, relatos de perda ou de sofrimento. Esses elementos são relevantes para segurança e comunicação. Eles não autorizam diagnóstico clínico improvisado. A ITO 30 apresenta categorias comportamentais de forma didática e deixa explícito que não se trata de avaliação psicológica. Este manual aprofunda essa cautela. O aluno aprenderá a descrever o que observa, reconhecer necessidades, comunicar riscos e articular recursos sem transformar a cena em consulta psiquiátrica. Quando uma condição de saúde exigir avaliação clínica, a resposta é integração com a rede de saúde, não ampliação informal do escopo do abordador.",
+      "ATENÇÃO",
+      "“Parece deprimido”, “é psicótico” ou “é manipulador” são rótulos que podem contaminar a leitura da cena. Prefira descrição: “fala pouco, evita contato, diz que não vê saída”; “responde a estímulos"
+    ]
+  },
+  {
+    "number": 12,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 1,
+    "title": "O CATS e a prática profissional",
+    "paragraphs": [
+      "não percebidos pela equipe”; “muda rapidamente de exigência”. Descrever melhora a comunicação entre profissionais e reduz inferências precipitadas.",
+      "5. Um ciclo de raciocínio para cenas que mudam",
+      "A ocorrência começa antes do contato verbal. Informações do acionamento, características do local, presença de terceiros, riscos do método e recursos disponíveis formam uma hipótese inicial. Essa hipótese precisa ser atualizada quando a equipe chega. O ciclo utilizado ao longo do manual é: ocorrência, observar, interpretar com prudência, priorizar riscos, decidir, comunicar ou agir e reavaliar. A palavra “prudência” é central. Interpretar não significa adivinhar intenção. Significa atribuir sentido provisório às informações disponíveis, mantendo abertura para correção. Uma pessoa pode aparentar maior tranquilidade e ainda exigir vigilância; pode rejeitar uma primeira tentativa de contato e posteriormente falar; pode demonstrar ambivalência sem que isso garanta desfecho favorável. A equipe trabalha com probabilidades, sinais e mudanças, não com certezas psicológicas. Ciclo de raciocínio profissional aplicado ao CATS."
+    ]
+  },
+  {
+    "number": 13,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 1,
+    "title": "O CATS e a prática profissional",
+    "paragraphs": [
+      "NA PRÁTICA",
+      "Quando uma informação nova não muda sua leitura, sua prioridade ou sua conduta, registre-a e preserve foco. Quando muda risco, segurança, capacidade de comunicação ou necessidade de apoio, ela precisa entrar no ciclo de decisão.",
+      "6. Segurança e humanidade não competem",
+      "Uma abordagem humanizada não significa reduzir segurança. Ao contrário: a relação respeitosa depende de uma cena minimamente organizada, com papéis claros, controle de estímulos e proteção do profissional, da pessoa em crise e de terceiros. A ITO 30 trata a ocorrência como insegura e exige avaliação contínua de riscos. O manual mantém essa lógica em todos os capítulos. Da mesma forma, segurança não autoriza tratamento hostil. O profissional pode estabelecer limites sem humilhar; pode manter distância sem parecer indiferente; pode recusar uma exigência que contrarie protocolo sem transformar a conversa em disputa. Dignidade, ética e respeito são competências operacionais porque influenciam cooperação, confiança e legitimidade institucional.",
+      "7. A ocorrência não termina quando a pessoa sai da área de risco",
+      "A ITO 30 inclui encaminhamento, registro, articulação com saúde, proteção de informações e cuidado dos militares envolvidos. Isso impede uma visão estreita em que o sucesso é medido apenas pelo instante da retirada do risco imediato. O desfecho da cena inicia outra etapa: continuidade do cuidado, comunicação responsável, registro adequado e proteção da equipe. O manual retoma essa ideia no final: desistência, resgate ou contenção não são pontos finais do fenômeno. São transições. Um profissional bem formado consegue executar a cena pensando também no que acontecerá depois.",
+      "LABORATÓRIO DE DECISÃO",
+      "Caso inicial. Você chega a uma ocorrência em que a pessoa está em local elevado. Há familiares próximos, uma equipe de saúde a"
+    ]
+  },
+  {
+    "number": 14,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 1,
+    "title": "O CATS e a prática profissional",
+    "paragraphs": [
+      "caminho e dois curiosos filmando. Um militar diz que “ela parece calma” e propõe aproximar-se imediatamente. Antes de discutir qualquer técnica de diálogo, identifique três decisões que pertencem ao Sistema ATS e explique por que cada uma deve ser tomada antes ou durante a tentativa de contato.",
+      "DEBRIEFING",
+      "Uma resposta adequada começa por segurança e organização: reconhecer riscos do local, controlar acesso/estímulos, estabelecer comando e funções, obter informações úteis e preparar suporte. A aparente calma é uma observação, não autorização para reduzir vigilância. A aproximação precisa ocorrer dentro da lógica prevista pela ITO 30 e pela leitura dinâmica da cena. O exercício mostra que “abordagem” não é sinônimo de “conversa”: ela depende de todo um sistema que sustenta a comunicação.",
+      "O QUE EU LEVO DESTE CAPÍTULO",
+      "• O CATS forma desempenho integrado, não repertório de frases.",
+      "• A ITO 30 vigente é a fonte normativa primária.",
+      "• Literatura e experiência ampliam compreensão, mas não criam doutrina paralela.",
+      "• Descrever comportamentos é mais útil e seguro do que diagnosticar na cena.",
+      "• Observar, interpretar com prudência, priorizar, decidir, agir e reavaliar é um ciclo contínuo.",
+      "• Segurança, dignidade e continuidade do cuidado atravessam todo o Sistema ATS.",
+      "TESTE-SE",
+      "1. Qual é a diferença entre conhecer um conceito e demonstrar",
+      "competência operacional relacionada a ele?",
+      "2. Em que situação uma informação científica pode enriquecer a doutrina",
+      "sem modificá-la?",
+      "3. Por que descrever comportamentos observáveis costuma ser superior a",
+      "usar rótulos diagnósticos na comunicação operacional?"
+    ]
+  },
+  {
+    "number": 15,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 1,
+    "title": "O CATS e a prática profissional",
+    "paragraphs": [
+      "4. Dê um exemplo de informação nova que obrigaria a equipe a reiniciar o",
+      "ciclo de avaliação.",
+      "5. Por que o encerramento da cena não representa o fim do cuidado?",
+      "Referências principais: CBMMG, 2021; CBMMG/ABM, 2026; Wenzel & Beck, 2008; WHO, 2025.",
+      "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 1",
+      "LEITURA DA CENA",
+      "Qual ideia deste capítulo muda o que você observa ou prioriza? ________________________________________________",
+      "ERRO A EVITAR",
+      "Que automatismo, rótulo ou comportamento pode prejudicar segurança ou vínculo? ________________________________________________",
+      "COMPETÊNCIA",
+      "Qual comportamento observável deverá ser demonstrado na próxima simulação? ________________________________________________",
+      "CRITÉRIO DE SUCESSO",
+      "Que indicador mostrará execução adequada da competência? ________________________________________________",
+      "FEEDBACK / DÚVIDA",
+      "Registre um acerto, um ajuste para a próxima prática ou uma dúvida para o instrutor. ________________________________________________"
+    ]
+  },
+  {
+    "number": 16,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 2,
+    "title": "Comportamento suicida: conceitos e linguagem",
+    "paragraphs": [
+      "Comportamento suicida: conceitos e linguagem Nomear com precisão para reduzir ruído, estigma e improviso",
+      "SITUAÇÃO DE ABERTURA",
+      "Gabriel, 16 anos, está em situação de crise após uma discussão familiar. Em menos de cinco minutos, diferentes pessoas na cena usam expressões como “suicida”, “ameaça”, “tentativa”, “chantagem” e “surto”. Cada palavra conduz a uma interpretação diferente. Antes de escolher como falar com Gabriel, a equipe precisa alinhar linguagem: o que realmente foi observado, o que foi informado por terceiros e o que ainda é hipótese.",
+      "O que você deverá conseguir fazer",
+      "• Diferenciar ideação, ato suicida, tentativa, tentativa interrompida/abortada e suicídio conforme a terminologia doutrinária.",
+      "• Utilizar linguagem centrada na pessoa e evitar termos estigmatizantes ou moralizantes.",
+      "• Separar descrição de comportamento, intenção inferida e diagnóstico clínico.",
+      "• Reconhecer como a escolha de palavras afeta registro, comunicação e abordagem.",
+      "1. Conceitos existem para organizar decisão",
+      "A ITO 30 inicia sua doutrina definindo conceitos porque palavras diferentes produzem condutas diferentes. O comportamento suicida abrange fenômenos diversos: pensamentos sobre morte, ideação, atos autoinfligidos com intenção de morrer, tentativas interrompidas ou abortadas e morte por suicídio. Na prática, a equipe nem sempre conhece a intenção com clareza no primeiro momento. Por isso, a terminologia deve acompanhar o grau de informação disponível. O erro comum é tratar todo comportamento autolesivo como equivalente ou, no extremo oposto, desvalorizar uma situação porque a letalidade aparente parece baixa. A qualidade da resposta"
+    ]
+  },
+  {
+    "number": 17,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 2,
+    "title": "Comportamento suicida: conceitos e linguagem",
+    "paragraphs": [
+      "depende menos de classificar rapidamente e mais de reconhecer que a pessoa está em situação que exige avaliação, segurança e cuidado.",
+      "DOUTRINA",
+      "A ITO 30 define comportamento suicida e seus componentes e utiliza o termo “tentante” para a pessoa que tenta suicídio. Ao longo deste manual, “pessoa em crise” e “pessoa em situação de tentativa de suicídio” são usados quando ajudam a manter a pessoa antes do rótulo. Quando a norma exigir termo específico, a terminologia normativa é preservada.",
+      "2. Ideação não é sinônimo de tentativa",
+      "Pensamentos sobre morte ou suicídio variam em frequência, intensidade, significado e proximidade de comportamento. Em contexto clínico, profissionais de saúde realizam avaliação detalhada desses elementos. No contexto operacional, a equipe precisa reconhecer comunicações relevantes e atuar diante da situação concreta, sem transformar o atendimento em avaliação psicométrica. Quando o acionamento ocorre porque terceiros relatam risco iminente, a ITO 30 orienta averiguação no local quando há possibilidade de localização. Isso demonstra que a ausência de um ato observado pelo solicitante não elimina a necessidade de resposta. O sistema trabalha com informação, verificação e segurança.",
+      "3. Tentativa, interrupção e aborto da tentativa",
+      "A doutrina diferencia tentativa de suicídio de situações em que o comportamento é interrompido por terceiro ou abortado pela própria pessoa antes de produzir o desfecho pretendido. Para o aluno, o mais importante é compreender que essas diferenças auxiliam registro, comunicação entre instituições e análise epidemiológica. Elas não são instrumentos para hierarquizar sofrimento. Uma tentativa interrompida pode representar situação de grande risco mesmo sem lesão. Uma tentativa abortada pode oferecer informação importante sobre ambivalência, medo, valores, vínculos ou mudança de decisão. Nenhum desses elementos deve ser"
+    ]
+  },
+  {
+    "number": 18,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 2,
+    "title": "Comportamento suicida: conceitos e linguagem",
+    "paragraphs": [
+      "transformado automaticamente em prognóstico. O histórico serve de contexto e requer continuidade de cuidado.",
+      "4. Linguagem centrada na pessoa",
+      "Expressões estigmatizantes reduzem pessoas a um comportamento e podem comunicar julgamento. Termos como “louco”, “fraco”, “egoísta”, “manipulador” ou “chamador de atenção” não descrevem adequadamente a situação e ainda podem orientar respostas improdutivas. Mesmo palavras usadas coloquialmente pela equipe podem aparecer no tom, na postura e na forma de ouvir. Linguagem centrada na pessoa não significa negar o risco. Significa formular a informação de modo que preserve precisão e dignidade: “pessoa em crise que relata intenção de morrer”; “pessoa com comportamento agressivo”; “pessoa que responde a estímulos não percebidos pela equipe”; “pessoa que realizou autolesão e requer avaliação de saúde”. Essas formulações descrevem o que importa e deixam espaço para avaliação especializada.",
+      "ATENÇÃO",
+      "Evite interpretar pedidos repetidos, exigências ou mudanças de fala como prova de “manipulação”. O comportamento pode ter múltiplas funções e significados. A tarefa operacional é reconhecer o efeito na cena, estabelecer limites seguros e manter comunicação sem julgar intenção moral.",
+      "5. O problema da palavra “ameaça”",
+      "Em segurança pública, “ameaça” pode ter sentido jurídico ou operacional. Em saúde mental, frases sobre morte podem ser comunicações de sofrimento, intenção, ambivalência ou pedido de ajuda. Chamar qualquer verbalização de suicídio de “ameaça” pode induzir a equipe a responder como se estivesse diante de desafio ou barganha. Uma descrição melhor registra a fala e o contexto: “a pessoa afirmou que pretende morrer”; “relatou que não pretende continuar viva”; “disse que fará algo contra si se determinada"
+    ]
+  },
+  {
+    "number": 19,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 2,
+    "title": "Comportamento suicida: conceitos e linguagem",
+    "paragraphs": [
+      "situação ocorrer”. A forma descritiva preserva informação sem atribuir intenção moral e facilita trabalho de outras instituições.",
+      "6. Mito: falar sobre suicídio produz suicídio",
+      "A literatura de prevenção diferencia conversa responsável de exposição sensacionalista. Perguntar de forma cuidadosa sobre pensamentos suicidas em contexto apropriado não é o mesmo que induzir comportamento. No CATS, o abordador não deve evitar um tema que a própria pessoa traz por medo de “colocar ideia”. Ao mesmo tempo, comunicação responsável evita dramatização, detalhes desnecessários e exposição pública. A ITO 30 preocupa-se explicitamente com Efeito Werther e controle de imagens, curiosos e imprensa. Esse cuidado está relacionado à comunicação pública e à possibilidade de contágio, não à proibição de conversar diretamente com a pessoa sobre o que ela está vivendo.",
+      "7. Da linguagem ao registro",
+      "A escolha de palavras também modifica estatística institucional. O encerramento da ITO 30 orienta codificação adequada da ocorrência para que o fenômeno possa ser acompanhado. Um registro genérico pode esconder o evento real em bases de dados e prejudicar planejamento. A linguagem do REDS deve ser objetiva, suficiente e respeitar privacidade. O aluno precisa aprender a registrar fatos, ações realizadas, riscos observados, instituições acionadas e desfecho, sem transformar o documento em narrativa especulativa. Quando a motivação não é conhecida, registre que não foi informada ou não pôde ser confirmada. Quando há versões divergentes, descreva a origem das informações.",
+      "LABORATÓRIO DE DECISÃO",
+      "Reescreva as seguintes falas de equipe em linguagem operacional: “ele está fazendo chantagem”; “ela é depressiva”; “é só uma ameaça”;"
+    ]
+  },
+  {
+    "number": 20,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 2,
+    "title": "Comportamento suicida: conceitos e linguagem",
+    "paragraphs": [
+      "“ele surtou”; “ela se acalmou, então o risco passou”. Para cada uma, produza uma frase que descreva comportamento ou informação observada sem inferência desnecessária.",
+      "DEBRIEFING",
+      "Boas respostas trocam rótulos por descrições: “condiciona sua conduta a determinada exigência”; “fala em tom baixo, chora e relata desesperança”; “verbalizou intenção de morrer”; “apresenta fala desorganizada e dificuldade de manter sequência”; “reduziu o volume de voz e permanece cooperativa, mas a avaliação de risco continua”. A descrição é mais auditável, compartilhável e compatível com reavaliação.",
+      "O QUE EU LEVO DESTE CAPÍTULO",
+      "• Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+      "• Diferentes formas de comportamento suicida requerem precisão terminológica.",
+      "• Linguagem centrada na pessoa preserva dignidade sem minimizar risco.",
+      "• Descrição observável é preferível a diagnóstico ou julgamento moral.",
+      "• Comunicação direta e responsável é diferente de exposição sensacionalista.",
+      "• Registro preciso melhora continuidade do cuidado e inteligência institucional.",
+      "TESTE-SE",
+      "6. Por que “ameaça de suicídio” pode ser uma expressão problemática na",
+      "comunicação operacional?",
+      "7. Qual é a diferença entre uma descrição comportamental e um",
+      "diagnóstico?",
+      "8. Como a terminologia influencia a qualidade dos indicadores",
+      "institucionais?",
+      "9. O que significa linguagem centrada na pessoa no contexto do CATS?",
+      "10. Por que aparente tranquilização não deve ser registrada como “risco",
+      "encerrado” sem reavaliação?",
+      "Referências principais: CBMMG, 2021; Corrêa et al., 2022; Botega, 2015; Scavacini, Reis e Silva, 2021.",
+      "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 2"
+    ]
+  },
+  {
+    "number": 21,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 2,
+    "title": "Comportamento suicida: conceitos e linguagem",
+    "paragraphs": [
+      "LEITURA DA CENA",
+      "Qual ideia deste capítulo muda o que você observa ou prioriza? ________________________________________________",
+      "ERRO A EVITAR",
+      "Que automatismo, rótulo ou comportamento pode prejudicar segurança ou vínculo? ________________________________________________",
+      "COMPETÊNCIA",
+      "Qual comportamento observável deverá ser demonstrado na próxima simulação? ________________________________________________",
+      "CRITÉRIO DE SUCESSO",
+      "Que indicador mostrará execução adequada da competência? ________________________________________________",
+      "FEEDBACK / DÚVIDA",
+      "Registre um acerto, um ajuste para a próxima prática ou uma dúvida para o instrutor. ________________________________________________"
+    ]
+  },
+  {
+    "number": 22,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 3,
+    "title": "Epidemiologia e inteligência para decisão",
+    "paragraphs": [
+      "Epidemiologia e inteligência para decisão Ler dados populacionais sem tentar prever o indivíduo",
+      "SITUAÇÃO DE ABERTURA",
+      "Uma turma do CATS recebe três números: a maioria dos óbitos por suicídio no Brasil ocorre entre homens; a maioria das notificações de violência autoprovocada ocorre entre mulheres; e Minas Gerais apresentou taxa de mortalidade por suicídio acima da média nacional em 2021. Um aluno pergunta: “Então, se eu chegar a uma ocorrência com uma mulher jovem, o risco de morte é menor?” A pergunta mostra por que epidemiologia precisa ser ensinada junto com seus limites.",
+      "O que você deverá conseguir fazer",
+      "• Interpretar número absoluto, proporção e taxa de mortalidade.",
+      "• Descrever achados nacionais recentes disponíveis no Boletim Epidemiológico v.55 n.4.",
+      "• Distinguir padrão populacional de previsão individual.",
+      "• Identificar como dados podem orientar prevenção, treinamento, alocação e avaliação institucional.",
+      "• Reconhecer limitações de notificação e registro.",
+      "1. Epidemiologia responde a perguntas de população",
+      "Epidemiologia descreve distribuição e determinantes de eventos de saúde em populações. Ela ajuda a responder quantos eventos ocorreram, em que grupos, em quais períodos e como a frequência se modifica. Esses dados são fundamentais para políticas públicas, vigilância, prevenção e planejamento institucional. Não dizem, sozinhos, o que acontecerá com uma pessoa específica nos próximos minutos. A confusão entre população e indivíduo é perigosa. Um grupo com taxa média menor ainda contém indivíduos em alto risco; um grupo com taxa maior contém muitas pessoas que nunca apresentarão comportamento suicida. Para o abordador, estatística oferece contexto. A decisão na cena depende das informações daquele caso e da avaliação dinâmica dos riscos presentes."
+    ]
+  },
+  {
+    "number": 23,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 3,
+    "title": "Epidemiologia e inteligência para decisão",
+    "paragraphs": [
+      "EVIDÊNCIA",
+      "No Brasil, em 2021, foram contabilizados 15.507 suicídios; 77,8% ocorreram no sexo masculino. No mesmo ano, o suicídio foi a terceira causa de morte entre 15-19 anos e a quarta entre 20-29 anos. Entre 2010 e 2021, a taxa nacional subiu de 5,24 para 7,45 por 100 mil habitantes, aumento de 42,2% (Brasil, 2024).",
+      "2. Número absoluto, proporção e taxa",
+      "Número absoluto é contagem: 15.507 mortes por suicídio. Proporção mostra a participação de um grupo dentro de um total: 77,8% dos óbitos por suicídio ocorreram entre homens. Taxa relaciona eventos à população exposta: 7,45 óbitos por 100 mil habitantes. As três medidas respondem a perguntas diferentes. Uma região populosa pode ter muitos casos e taxa relativamente menor. Outra pode ter poucos casos e taxa elevada. Para planejar prevenção, precisamos das duas dimensões: volume de demanda e risco populacional. Para o atendimento individual, nenhuma dessas medidas substitui leitura da cena. Taxas de mortalidade por suicídio no Brasil e em Minas Gerais, 2010, 2019 e 2021."
+    ]
+  },
+  {
+    "number": 24,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 3,
+    "title": "Epidemiologia e inteligência para decisão",
+    "paragraphs": [
+      "3. O que os dados mostram em Minas Gerais",
+      "Segundo o boletim do Ministério da Saúde, Minas Gerais apresentou taxa de 5,83 por 100 mil habitantes em 2010, 8,21 em 2019 e 8,45 em",
+      "2021. A variação entre 2010 e 2021 foi de 44,9%. A média nacional,",
+      "nos mesmos anos, foi de 5,24, 6,65 e 7,45. Esses números não devem ser usados como selo permanente do estado. Taxas mudam, e o período do dado precisa acompanhar qualquer citação. Adota-se uma regra de qualidade: todo número epidemiológico aparece com local, período e medida. Quando uma informação estiver desatualizada, deverá ser substituída na próxima edição, e não repetida por tradição.",
+      "NA PRÁTICA",
+      "Para uma Região de Bombeiro Militar, a pergunta útil é dupla: “quantas ocorrências demandam resposta?” e “como essa demanda se distribui no território e no tempo?” A resposta deve usar registros institucionais de qualidade, não extrapolações de boletins nacionais.",
+      "4. Violência autoprovocada notificada não é igual a suicídio",
+      "consumado Em 2021, o Sinan registrou 114.159 notificações de violência autoprovocada. Dessas, 70,3% ocorreram no sexo feminino e 29,7% no masculino. A diferença entre esse padrão e a distribuição dos óbitos demonstra como medidas distintas não podem ser misturadas."
+    ]
+  },
+  {
+    "number": 25,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 3,
+    "title": "Epidemiologia e inteligência para decisão",
+    "paragraphs": [
+      "Distribuição das notificações de violência autoprovocada por sexo no Brasil, 2021. Notificação de violência autoprovocada envolve eventos não fatais registrados em sistema de vigilância; mortalidade provém de outra base. Fatores como acesso a serviços, método, gravidade, qualidade do registro e busca de cuidado influenciam os dados. O profissional deve resistir à tentação de transformar uma estatística em estereótipo: “homens morrem, mulheres tentam”. Essa frase elimina variação individual e pode reduzir vigilância justamente quando ela é necessária.",
+      "5. Faixa etária e significado operacional",
+      "O boletim mostra relevância importante do suicídio entre adolescentes e jovens quando comparado a outras causas de morte. Isso não significa que pessoas idosas tenham baixo risco; ao contrário, taxas específicas podem ser altas em determinados"
+    ]
+  }
 ]
