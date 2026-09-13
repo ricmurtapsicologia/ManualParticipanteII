@@ -1,17 +1,19 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import pagesData from '../content/pages.json';
+import semanticData from '../content/semantic-pages.json';
 import navigationData from '../content/navigation.json';
 
-type BookPage = { number?: number; part?: number | null; partTitle?: string; chapter?: number | null; title: string; paragraphs: string[]; cover?: boolean };
+type SemanticBlock = { id: string; kind: string; sourceIndex: number; text: string };
+type SemanticPage = { number: number; part?: number | null; partTitle?: string; chapter?: number | null; title: string; cover?: boolean; blocks: SemanticBlock[] };
+type SemanticArtifact = { pages: SemanticPage[] };
 type PedagogicalMarker = { kind: string; pageNumber: number; blockId: string };
 type NavChapter = { chapter: number; title: string; openingPage: number; pageNumbers: number[]; pedagogicalMarkers: PedagogicalMarker[] };
 type NavSupplement = { id: string; title: string; openingPage: number; pageNumbers: number[]; pedagogicalMarkers: PedagogicalMarker[] };
 type NavPart = { id: string; part: number; title: string; openingPage: number; pedagogicalMarkers: PedagogicalMarker[]; chapters: NavChapter[]; supplementarySections: NavSupplement[] };
 type NavigationArtifact = { schemaVersion: number; sourcePageCount: number; chapterCount: number; pedagogicalMarkerCount: number; frontMatter: NavSupplement[]; parts: NavPart[] };
 
-const pages = pagesData as BookPage[];
+const pages = (semanticData as SemanticArtifact).pages;
 const navigation = navigationData as NavigationArtifact;
 const pageNumberToIndex = new Map(pages.map((item, index) => [item.number ?? index + 1, index]));
 const markerLabels: Record<string, string> = {
@@ -23,10 +25,47 @@ const markerIcons: Record<string, string> = {
   opening: '◐', objectives: '◎', doctrine: '§', evidence: '◆', practice: '▶', attention: '!',
   decide: '↯', case: '◇', 'guided-analysis': '↳', summary: '≡', review: '?'
 };
+const pedagogicalKinds = new Set(Object.keys(markerLabels));
 
 function normalize(value: string) { return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
 function findPartForPage(pageNumber: number) {
   return navigation.parts.find(part => part.openingPage === pageNumber || part.chapters.some(chapter => chapter.pageNumbers.includes(pageNumber)) || part.supplementarySections.some(section => section.pageNumbers.includes(pageNumber))) ?? null;
+}
+function renderPlainBlock(block: SemanticBlock) {
+  if (block.kind === 'heading') return <h3 key={block.id} data-kind="heading">{block.text}</h3>;
+  if (block.kind === 'list-item') return <p key={block.id} className="semanticListItem" data-kind="list-item">{block.text}</p>;
+  return <p key={block.id} data-kind={block.kind}>{block.text}</p>;
+}
+function renderSemanticBlocks(blocks: SemanticBlock[]) {
+  const output = [];
+  let index = 0;
+  while (index < blocks.length) {
+    const block = blocks[index];
+    if (!pedagogicalKinds.has(block.kind)) {
+      output.push(renderPlainBlock(block));
+      index += 1;
+      continue;
+    }
+
+    const content: SemanticBlock[] = [];
+    let cursor = index + 1;
+    while (cursor < blocks.length && !pedagogicalKinds.has(blocks[cursor].kind) && blocks[cursor].kind !== 'heading') {
+      content.push(blocks[cursor]);
+      cursor += 1;
+    }
+    const labelId = `${block.id}-label`;
+    output.push(
+      <section key={block.id} className="pedagogicalBox" data-testid="pedagogical-box" data-kind={block.kind} aria-labelledby={labelId}>
+        <div className="pedagogicalHeader">
+          <span className="pedagogicalIcon" aria-hidden="true">{markerIcons[block.kind] ?? '•'}</span>
+          <strong id={labelId} data-pedagogical-label={block.kind}>{block.text}</strong>
+        </div>
+        {content.length > 0 && <div className="pedagogicalBody">{content.map(renderPlainBlock)}</div>}
+      </section>
+    );
+    index = cursor;
+  }
+  return output;
 }
 
 export default function Home() {
@@ -58,7 +97,7 @@ export default function Home() {
   const results = useMemo(() => {
     const q = normalize(query.trim());
     if (q.length < 2) return [];
-    return pages.map((item, index) => ({ item, index })).filter(({ item }) => normalize([item.title, ...item.paragraphs].join(' ')).includes(q));
+    return pages.map((item, index) => ({ item, index })).filter(({ item }) => normalize([item.title, ...item.blocks.map(block => block.text)].join(' ')).includes(q));
   }, [query]);
   const go = (index: number) => { setPage(Math.min(pages.length - 1, Math.max(0, index))); setDrawer(null); };
   const goPageNumber = (pageNumber: number) => go(pageNumberToIndex.get(pageNumber) ?? pageNumber - 1);
@@ -75,7 +114,7 @@ export default function Home() {
   const speak = () => {
     if (!('speechSynthesis' in window)) return;
     if (speaking) { window.speechSynthesis.cancel(); setSpeaking(false); return; }
-    const utterance = new SpeechSynthesisUtterance([current.title, ...current.paragraphs].join('. '));
+    const utterance = new SpeechSynthesisUtterance([current.title, ...current.blocks.map(block => block.text)].join('. '));
     const voices = window.speechSynthesis.getVoices();
     const antonio = voices.find(v => /ant[oô]nio/i.test(v.name));
     const ptBr = voices.find(v => v.lang.toLowerCase() === 'pt-br');
@@ -89,9 +128,9 @@ export default function Home() {
   const runningRight = currentChapter ? `CAPÍTULO ${currentChapter.chapter}` : currentPart ? `PARTE ${currentPart.part}` : '2026';
   const pageRole = current.cover ? 'cover' : currentChapter ? (currentChapter.openingPage === currentPageNumber ? 'chapter-opening' : 'chapter-continuation') : currentPart?.openingPage === currentPageNumber ? 'part-opening' : 'standard';
 
-  return <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8" data-editorial-wave="13" data-design-system="DS2" data-design-subwave="4.2">
+  return <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8" data-editorial-wave="13" data-design-system="DS2" data-design-subwave="4.3" data-semantic-renderer="blocks">
     <header className="top"><div className="topin"><div className="mark">CATS</div><div className="brand"><strong>Manual do Participante CATS</strong><span>Edição Digital Interativa • 249 páginas</span></div><div className="tools"><button onClick={speak} className={speaking ? 'active' : ''} aria-label="Leitura em voz alta">◖)) <span>{speaking ? 'Parar' : 'Ouvir'}</span></button><button onClick={() => setDrawer('search')} aria-label="Pesquisar">⌕ <span>Buscar</span></button><button onClick={() => setDrawer('toc')} aria-label="Sumário">☰ <span>Sumário</span></button></div></div><div className="progressTrack"><div className="progress" style={{ width: `${progress}%` }} /></div></header>
-    <main className="main"><div className="book"><article className={`page${current.cover ? ' cover' : ''}${pageRole === 'chapter-opening' ? ' chapterOpening' : ''}${pageRole === 'chapter-continuation' ? ' chapterContinuation' : ''}`} lang="pt-BR" data-testid="book-page" data-page-role={pageRole}>{current.cover ? <div className="coverContent"><div className="coverEyebrow">Corpo de Bombeiros Militar de Minas Gerais</div><h1>{current.title}</h1>{current.paragraphs.map((text, i) => <p key={i}>{text}</p>)}</div> : <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div>{pageRole === 'chapter-continuation' && currentChapter ? <div className="continuationHeading" data-testid="continuation-heading"><span>Capítulo {currentChapter.chapter}</span><strong>Continuação</strong></div> : <h2 data-testid={pageRole === 'chapter-opening' ? 'chapter-title' : undefined}>{current.title}</h2>}{current.paragraphs.map((text, i) => <p key={i}>{text}</p>)}<div className="pageno">{currentPageNumber}</div></>}</article></div><div className="status">Use <span className="kbd">←</span> <span className="kbd">→</span> para navegar. <span className="kbd">/</span> abre a busca. Conteúdo canônico.</div></main>
+    <main className="main"><div className="book"><article className={`page${current.cover ? ' cover' : ''}${pageRole === 'chapter-opening' ? ' chapterOpening' : ''}${pageRole === 'chapter-continuation' ? ' chapterContinuation' : ''}`} lang="pt-BR" data-testid="book-page" data-page-role={pageRole}>{current.cover ? <div className="coverContent"><div className="coverEyebrow">Corpo de Bombeiros Militar de Minas Gerais</div><h1>{current.title}</h1>{current.blocks.map(renderPlainBlock)}</div> : <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div>{pageRole === 'chapter-continuation' && currentChapter ? <div className="continuationHeading" data-testid="continuation-heading"><span>Capítulo {currentChapter.chapter}</span><strong>Continuação</strong></div> : <h2 data-testid={pageRole === 'chapter-opening' ? 'chapter-title' : undefined}>{current.title}</h2>}{renderSemanticBlocks(current.blocks)}<div className="pageno">{currentPageNumber}</div></>}</article></div><div className="status">Use <span className="kbd">←</span> <span className="kbd">→</span> para navegar. <span className="kbd">/</span> abre a busca. Conteúdo canônico.</div></main>
     <nav className="nav" aria-label="Navegação do livro"><button onClick={() => go(page - 1)} disabled={page === 0} aria-label="Página anterior">‹</button><div className="counter" data-testid="page-counter">{page + 1} / {pages.length}</div><button onClick={() => go(page + 1)} disabled={page === pages.length - 1} aria-label="Próxima página">›</button></nav>
     {drawer && <div className="drawer" role="dialog" aria-modal="true" onMouseDown={e => { if (e.target === e.currentTarget) setDrawer(null); }}><aside className="panel"><div className="panelHead"><strong>{drawer === 'toc' ? 'Sumário' : 'Pesquisar'}</strong><button onClick={() => setDrawer(null)}>Fechar</button></div>{drawer === 'toc' ? <div className="toc" data-testid="hierarchical-toc">
       <button className={`tocPrimary${currentPageNumber === 1 ? ' current' : ''}`} onClick={() => goPageNumber(1)}><strong>Capa</strong><span>p. 1</span></button>
