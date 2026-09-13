@@ -31,8 +31,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Historical recovery scan
         run: |
-          if [ -f recovery/history-scan.json ]; then
-            echo "Historical recovery report already persisted"
+          if [ -f recovery/history-scan.json ] && grep -q '"scannerVersion": 2' recovery/history-scan.json; then
+            echo "Historical recovery report v2 already persisted"
           else
             node scripts/recovery-scan.mjs
           fi
@@ -56,5 +56,5 @@ jobs:
             echo "Validated corpus and recovery report already persisted"
             exit 0
           fi
-          git commit -m "wave8: persist recovery scan and validated 155-page corpus [skip ci]"
+          git commit -m "wave8: persist expanded recovery scan and validated 155-page corpus [skip ci]"
           git push origin HEAD:rebuild-clean-v1
