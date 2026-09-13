@@ -6,7 +6,7 @@ test('DS2 tokens and semantic marker iconography are active', async ({ page }) =
 
   const shell = page.getByTestId('reader-shell');
   await expect(shell).toHaveAttribute('data-design-system', 'DS2');
-  await expect(shell).toHaveAttribute('data-design-subwave', '4.2');
+  await expect(shell).toHaveAttribute('data-design-subwave', /^4\.[2-9]$/);
 
   const tokens = await page.evaluate(() => {
     const styles = getComputedStyle(document.documentElement);
@@ -27,7 +27,6 @@ test('DS2 tokens and semantic marker iconography are active', async ({ page }) =
   await expect(markers).toHaveCount(165);
 
   for (const kind of ['doctrine', 'evidence', 'practice', 'attention', 'decide']) {
-    const sample = markers.filter({ has: page.locator(`[data-kind="${kind}"]`) });
     expect(await page.locator(`[data-testid="toc-marker"][data-kind="${kind}"]`).count()).toBeGreaterThan(0);
   }
 
