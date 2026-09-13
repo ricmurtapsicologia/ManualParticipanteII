@@ -1,12 +1,6 @@
 name: Rebuild Wave 8 Recovery CI
 
 on:
-  push:
-    branches: [rebuild-clean-v1]
-    paths:
-      - 'rebuild/**'
-      - 'data*.js'
-      - '.github/workflows/rebuild-wave1-ci.yml'
   workflow_dispatch:
 
 permissions:
@@ -50,21 +44,3 @@ jobs:
         run: npm run build
       - name: Smoke runtime
         run: npm run smoke
-      - name: Persist validated corpus and recovery reports
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/pages.json content/provenance.json
-          git add recovery/v08-tail-source.json
-          for report in history-scan v08-scan tail-resync-scan v08-tail-validation; do
-            if [ -f "recovery/${report}.json" ]; then
-              git add "recovery/${report}.json"
-              if [ -f "recovery/${report}.md" ]; then git add "recovery/${report}.md"; fi
-            fi
-          done
-          if git diff --cached --quiet; then
-            echo "Validated corpus and recovery reports already persisted"
-            exit 0
-          fi
-          git commit -m "wave8: persist canonical PDF tail validation and validated 155-page corpus [skip ci]"
-          git push origin HEAD:rebuild-clean-v1
