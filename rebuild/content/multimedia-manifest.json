@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "wave": "5.3",
+  "wave": "5.4",
   "policy": {
     "sourceTextFrozen": true,
     "accessibilityRequired": true,
@@ -40,6 +40,17 @@
         { "id": "high-impact", "label": "Hipótese de alto impacto", "correct": true }
       ],
       "reveal": "A resposta mais prudente é hipótese de alto impacto: ela altera posicionamento e necessidade de apoio até ser verificada, sem autorizar afirmar que a arma está presente."
+    },
+    {
+      "id": "audio-opening-cats-p8",
+      "kind": "audio",
+      "pageNumber": 8,
+      "title": "O CATS e a prática profissional",
+      "src": "native://speech-synthesis",
+      "sourceBlockId": "p8-b3",
+      "preferredVoice": "Antônio",
+      "fallbackLang": "pt-BR",
+      "transcript": "Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único. Enquanto uma pessoa está em crise, a equipe precisa proteger a cena, compreender o que está acontecendo, coordenar recursos, comunicar-se com cuidado, manejar incerteza e preparar a continuidade do cuidado. O Curso de Atendimento a Tentativas de Suicídio (CATS) existe para transformar esse conjunto de exigências em desempenho profissional organizado. O objetivo não é ensinar uma coleção de frases ou técnicas isoladas, mas formar um raciocínio que possa ser usado quando a cena muda, quando a informação é incompleta e quando o tempo exerce pressão."
     }
   ]
 }

@@ -18,7 +18,7 @@ const fail = message => {
 const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
 
 if (manifest.schemaVersion !== 1) fail(`schemaVersion=${manifest.schemaVersion}`);
-if (manifest.wave !== '5.3') fail(`wave=${manifest.wave}`);
+if (manifest.wave !== '5.4') fail(`wave=${manifest.wave}`);
 if (manifest.policy?.sourceTextFrozen !== true) fail('sourceTextFrozen must be true');
 if (manifest.policy?.accessibilityRequired !== true) fail('accessibilityRequired must be true');
 if (manifest.policy?.ttsPreferredVoice !== 'Antônio') fail('ttsPreferredVoice must be Antônio');
@@ -34,7 +34,7 @@ for (const kind of allowed) if (!canonicalKinds.includes(kind)) fail(`unexpected
 const ids = new Set();
 const visualKinds = new Set(['infographic', 'chart', 'image']);
 const timedKinds = new Set(['audio', 'video']);
-const nativeRenderers = new Set(['native://ats-system-macro']);
+const nativeRenderers = new Set(['native://ats-system-macro', 'native://speech-synthesis']);
 const semanticByPage = new Map((semantic.pages ?? []).map(page => [page.number, page]));
 
 for (const [index, resource] of manifest.resources.entries()) {
@@ -59,6 +59,16 @@ for (const [index, resource] of manifest.resources.entries()) {
   const sourcePage = semanticByPage.get(resource.pageNumber);
   if (!sourcePage) fail(`resource=${resource.id} source page not found`);
   const canonicalText = normalize((sourcePage.blocks ?? []).map(block => block.text).join(' '));
+
+  if (resource.kind === 'audio') {
+    if (resource.src !== 'native://speech-synthesis') fail(`resource=${resource.id} audio src must be native://speech-synthesis in wave 5.4`);
+    if (typeof resource.sourceBlockId !== 'string' || !resource.sourceBlockId.trim()) fail(`resource=${resource.id} missing sourceBlockId`);
+    const sourceBlock = (sourcePage.blocks ?? []).find(block => block.id === resource.sourceBlockId);
+    if (!sourceBlock) fail(`resource=${resource.id} sourceBlockId not found=${resource.sourceBlockId}`);
+    if (normalize(resource.transcript) !== normalize(sourceBlock.text)) fail(`resource=${resource.id} audio transcript must match source block`);
+    if (resource.preferredVoice !== manifest.policy.ttsPreferredVoice) fail(`resource=${resource.id} preferredVoice must match policy`);
+    if (resource.fallbackLang !== manifest.policy.ttsFallbackLang) fail(`resource=${resource.id} fallbackLang must match policy`);
+  }
 
   if (resource.kind === 'microlearning') {
     if (typeof resource.prompt !== 'string' || !resource.prompt.trim()) fail(`resource=${resource.id} missing prompt`);
@@ -90,24 +100,25 @@ for (const [index, resource] of manifest.resources.entries()) {
 
   if (typeof resource.src === 'string' && resource.src.startsWith('native://')) {
     if (!nativeRenderers.has(resource.src)) fail(`resource=${resource.id} unknown native renderer=${resource.src}`);
-    if (!Array.isArray(resource.steps) || resource.steps.length === 0) fail(`resource=${resource.id} native renderer requires steps`);
-    const orders = new Set();
-    for (const step of resource.steps) {
-      if (!Number.isInteger(step.order) || step.order < 1) fail(`resource=${resource.id} invalid step order`);
-      if (orders.has(step.order)) fail(`resource=${resource.id} duplicate step order=${step.order}`);
-      orders.add(step.order);
-      if (typeof step.title !== 'string' || !step.title.trim()) fail(`resource=${resource.id} step missing title`);
-      if (typeof step.detail !== 'string' || !step.detail.trim()) fail(`resource=${resource.id} step missing detail`);
-      if (!canonicalText.includes(normalize(step.title))) fail(`resource=${resource.id} step title not grounded=${step.title}`);
-      if (!canonicalText.includes(normalize(step.detail))) fail(`resource=${resource.id} step detail not grounded=${step.detail}`);
-    }
     if (resource.src === 'native://ats-system-macro') {
+      if (!Array.isArray(resource.steps) || resource.steps.length === 0) fail(`resource=${resource.id} native renderer requires steps`);
+      const orders = new Set();
+      for (const step of resource.steps) {
+        if (!Number.isInteger(step.order) || step.order < 1) fail(`resource=${resource.id} invalid step order`);
+        if (orders.has(step.order)) fail(`resource=${resource.id} duplicate step order=${step.order}`);
+        orders.add(step.order);
+        if (typeof step.title !== 'string' || !step.title.trim()) fail(`resource=${resource.id} step missing title`);
+        if (typeof step.detail !== 'string' || !step.detail.trim()) fail(`resource=${resource.id} step missing detail`);
+        if (!canonicalText.includes(normalize(step.title))) fail(`resource=${resource.id} step title not grounded=${step.title}`);
+        if (!canonicalText.includes(normalize(step.detail))) fail(`resource=${resource.id} step detail not grounded=${step.detail}`);
+      }
       if (resource.pageNumber !== 54) fail(`resource=${resource.id} ATS macro must be on page 54`);
       if (resource.steps.length !== 7) fail(`resource=${resource.id} ATS macro steps=${resource.steps.length}`);
       if (typeof resource.transverse !== 'string' || !resource.transverse.trim()) fail(`resource=${resource.id} missing transverse re-evaluation rule`);
       if (!canonicalText.includes(normalize(resource.transverse))) fail(`resource=${resource.id} transverse rule not grounded`);
     }
+    if (resource.src === 'native://speech-synthesis' && resource.kind !== 'audio') fail(`resource=${resource.id} speech-synthesis renderer requires audio kind`);
   }
 }
 
-console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} native=${manifest.resources.filter(item => String(item.src ?? '').startsWith('native://')).length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);
+console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} native=${manifest.resources.filter(item => String(item.src ?? '').startsWith('native://')).length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);
