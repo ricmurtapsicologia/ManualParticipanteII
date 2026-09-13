@@ -1,6 +1,6 @@
 {
   "name": "manual-participante-cats-rebuild",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,6 +11,7 @@
     "migrate:100": "node scripts/migrate100.mjs",
     "migrate:150": "node scripts/migrate150.mjs",
     "migrate:155": "node scripts/migrate155.mjs",
+    "migrate:249": "node scripts/migrate155.mjs && node scripts/reflow-v08-tail.mjs",
     "validate": "node scripts/validate.mjs",
     "smoke": "node scripts/smoke.mjs"
   },
