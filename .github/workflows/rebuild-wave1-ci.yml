@@ -1,4 +1,4 @@
-name: Rebuild Wave 10 Canonical CI
+name: Rebuild Wave 11 Canonical CI
 
 on:
   push:
@@ -31,6 +31,10 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Migrate canonical 249-page corpus
         run: npm run migrate:249
+      - name: Migrate semantic editorial corpus
+        run: npm run semantic:migrate
+      - name: Validate lossless semantic architecture
+        run: npm run semantic:validate
       - name: Validate corpus, runtime and Vercel cutover contracts
         run: npm run validate
       - name: Build
@@ -42,11 +46,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           rm -f recovery/v08-tail-source.b64.part5a recovery/v08-tail-source.b64.part5b
-          git add content/pages.json content/provenance.json recovery/v08-tail-source.b64.part5
+          git add content/pages.json content/provenance.json content/semantic-pages.json recovery/v08-tail-source.b64.part5
           git add -u recovery/v08-tail-source.b64.part5a recovery/v08-tail-source.b64.part5b || true
           if git diff --cached --quiet; then
-            echo "Canonical 249-page corpus already persisted"
+            echo "Canonical and semantic corpora already persisted"
             exit 0
           fi
-          git commit -m "wave10: persist validated 249-page corpus [skip ci]"
+          git commit -m "wave11: persist validated canonical and semantic corpora [skip ci]"
           git push origin HEAD:main

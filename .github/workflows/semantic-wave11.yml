@@ -10,6 +10,7 @@ on:
       - 'rebuild/scripts/migrate-semantic.mjs'
       - 'rebuild/scripts/validate-semantic.mjs'
       - 'rebuild/package.json'
+      - '.github/workflows/rebuild-wave1-ci.yml'
       - '.github/workflows/semantic-wave11.yml'
   workflow_dispatch:
 

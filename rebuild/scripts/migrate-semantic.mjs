@@ -19,3 +19,8 @@ console.log(
   `SEMANTIC_MIGRATE_OK pages=${semantic.manifest.pageCount} blocks=${semantic.manifest.blockCount} ` +
   `parts=${semantic.manifest.partCount} ${chapterNote} sha=${sourceSha256.slice(0, 12)}`
 );
+
+if (semantic.manifest.editorialAnomalies.length) {
+  console.log(`SEMANTIC_SOURCE_CHAPTER_PAIRS ${semantic.manifest.sourceChapterPairs.join(',')}`);
+  console.log(`SEMANTIC_ANOMALIES ${JSON.stringify(semantic.manifest.editorialAnomalies)}`);
+}
