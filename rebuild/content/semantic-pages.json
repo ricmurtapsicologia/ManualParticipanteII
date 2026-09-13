@@ -16704,7 +16704,44 @@
     "pageCount": 249,
     "blockCount": 2224,
     "partCount": 7,
-    "sourceChapterCount": 37,
+    "distinctChapterNumberCount": 34,
+    "distinctChapterNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "sourceChapterPairCount": 37,
     "sourceChapterPairs": [
       "1:1",
       "1:2",
@@ -16744,13 +16781,59 @@
       "7:33",
       "7:34"
     ],
+    "boundaryChapterOverlaps": [
+      {
+        "chapter": 5,
+        "parts": [
+          1,
+          2
+        ]
+      },
+      {
+        "chapter": 11,
+        "parts": [
+          2,
+          3
+        ]
+      },
+      {
+        "chapter": 20,
+        "parts": [
+          3,
+          4
+        ]
+      }
+    ],
     "expectedEditorialChapterCount": 34,
     "editorialAnomalies": [
       {
-        "code": "SOURCE_CHAPTER_COUNT_DIFFERS_FROM_EXPECTED_34",
-        "expected": 34,
-        "observed": 37,
-        "action": "Preserve source metadata in Wave 1; reconcile chapter taxonomy in Wave 2."
+        "code": "CHAPTER_METADATA_CROSSES_PART_BOUNDARIES",
+        "distinctChapterCount": 34,
+        "chapterPartPairCount": 37,
+        "overlaps": [
+          {
+            "chapter": 5,
+            "parts": [
+              1,
+              2
+            ]
+          },
+          {
+            "chapter": 11,
+            "parts": [
+              2,
+              3
+            ]
+          },
+          {
+            "chapter": 20,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        ],
+        "action": "Preserve source metadata in Wave 1; normalize transition-page taxonomy in Wave 2."
       }
     ],
     "pageRoles": {
