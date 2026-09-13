@@ -1,6 +1,6 @@
 {
   "name": "manual-participante-cats-rebuild",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,8 @@
     "migrate:249": "node scripts/migrate155.mjs && node scripts/repair-v08-source.mjs && node scripts/reflow-v08-tail.mjs",
     "validate": "node scripts/validate.mjs",
     "smoke": "node scripts/smoke.mjs",
-    "verify:deployment": "node scripts/verify-deployment.mjs"
+    "verify:deployment": "node scripts/verify-deployment.mjs",
+    "e2e": "playwright test"
   },
   "dependencies": {
     "next": "16.3.5",
@@ -22,6 +23,7 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.55.0",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
