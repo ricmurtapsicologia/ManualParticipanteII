@@ -1,0 +1,80 @@
+:root{
+  --ds2-bg:#081b1d;
+  --ds2-surface:#0f2d2f;
+  --ds2-paper:#fbfaf5;
+  --ds2-ink:#183537;
+  --ds2-muted:#667572;
+  --ds2-accent:#e86d2b;
+  --ds2-teal:#0f6260;
+  --ds2-aqua:#74d3cc;
+  --ds2-line:#d7ddd8;
+  --ds2-focus:#2d7775;
+  --ds2-soft:#eaf3f0;
+  --ds2-doctrine:#0f6260;
+  --ds2-evidence:#315f8c;
+  --ds2-practice:#4d7048;
+  --ds2-attention:#a9512a;
+  --ds2-decide:#7b4b84;
+  --ds2-case:#7a5a2c;
+  --ds2-analysis:#53606b;
+  --ds2-summary:#0f6260;
+  --ds2-review:#495b6e;
+  --bg:var(--ds2-bg);
+  --panel:var(--ds2-surface);
+  --paper:var(--ds2-paper);
+  --ink:var(--ds2-ink);
+  --muted:var(--ds2-muted);
+  --orange:var(--ds2-accent);
+  --aqua:var(--ds2-aqua);
+  --line:var(--ds2-line);
+}
+
+button:focus-visible,input:focus-visible,summary:focus-visible{
+  outline:3px solid var(--ds2-aqua);
+  outline-offset:3px;
+}
+
+.mark{color:var(--ds2-aqua);border-color:rgba(116,211,204,.35)}
+.progress{background:linear-gradient(90deg,var(--ds2-accent),var(--ds2-aqua))}
+.page{background:var(--ds2-paper);color:var(--ds2-ink)}
+.page h2{color:var(--ds2-teal)}
+.page.chapterOpening h2:after{background:var(--ds2-accent)}
+.continuationHeading strong{color:var(--ds2-teal)}
+.toc .current{outline-color:var(--ds2-focus);background:var(--ds2-soft)!important}
+.tocPart>summary{border-left-color:var(--ds2-teal)}
+.tocChapterGroup>summary b{color:var(--ds2-teal)}
+
+.tocMarkers button{
+  --marker-accent:var(--ds2-teal);
+  border-left:3px solid var(--marker-accent)!important;
+  min-height:40px;
+}
+.tocMarkers button[data-kind="opening"]{--marker-accent:var(--ds2-accent)}
+.tocMarkers button[data-kind="objectives"]{--marker-accent:var(--ds2-teal)}
+.tocMarkers button[data-kind="doctrine"]{--marker-accent:var(--ds2-doctrine)}
+.tocMarkers button[data-kind="evidence"]{--marker-accent:var(--ds2-evidence)}
+.tocMarkers button[data-kind="practice"]{--marker-accent:var(--ds2-practice)}
+.tocMarkers button[data-kind="attention"]{--marker-accent:var(--ds2-attention)}
+.tocMarkers button[data-kind="decide"]{--marker-accent:var(--ds2-decide)}
+.tocMarkers button[data-kind="case"]{--marker-accent:var(--ds2-case)}
+.tocMarkers button[data-kind="guided-analysis"]{--marker-accent:var(--ds2-analysis)}
+.tocMarkers button[data-kind="summary"]{--marker-accent:var(--ds2-summary)}
+.tocMarkers button[data-kind="review"]{--marker-accent:var(--ds2-review)}
+.tocMarkerLabel{display:flex;align-items:center;gap:8px;min-width:0}
+.markerIcon{
+  width:21px;
+  height:21px;
+  flex:0 0 21px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--marker-accent);
+  border-radius:6px;
+  color:var(--marker-accent);
+  background:#fff;
+  font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif;
+}
+
+@media(max-width:700px){
+  .markerIcon{width:22px;height:22px;flex-basis:22px}
+  .tocMarkers button{min-height:44px}
+}
