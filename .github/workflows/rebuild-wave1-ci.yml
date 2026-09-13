@@ -1,13 +1,19 @@
-name: Rebuild Wave 8 Recovery CI
+name: Rebuild Wave 8 Canonical Corpus CI
 
 on:
+  push:
+    branches: [rebuild-clean-v1]
+    paths:
+      - 'rebuild/**'
+      - 'data*.js'
+      - '.github/workflows/rebuild-wave1-ci.yml'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  recover-migrate-build-smoke:
+  migrate-validate-build-smoke:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,24 +29,22 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Historical recovery scan
-        run: |
-          if [ -f recovery/history-scan.json ] && grep -q '"scannerVersion": 2' recovery/history-scan.json; then
-            echo "Historical recovery report v2 already persisted"
-          else
-            node scripts/recovery-scan.mjs
-          fi
-      - name: v0.8 recovery scan
-        run: node scripts/v08-recovery-scan.mjs
-      - name: Tail resynchronization scan
-        run: node scripts/tail-resync-scan.mjs
-      - name: Validate canonical PDF tail boundary
-        run: node scripts/validate-v08-tail.mjs || true
-      - name: Migrate canonical pages 1-155
-        run: npm run migrate:155
-      - name: Validate contracts
+      - name: Migrate canonical 249-page corpus
+        run: npm run migrate:249
+      - name: Validate contracts and provenance
         run: npm run validate
       - name: Build
         run: npm run build
       - name: Smoke runtime
         run: npm run smoke
+      - name: Persist validated canonical corpus
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/pages.json content/provenance.json
+          if git diff --cached --quiet; then
+            echo "Canonical 249-page corpus already persisted"
+            exit 0
+          fi
+          git commit -m "wave8: persist validated 249-page canonical corpus [skip ci]"
+          git push origin HEAD:rebuild-clean-v1
