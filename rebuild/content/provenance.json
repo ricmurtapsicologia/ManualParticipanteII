@@ -22,9 +22,9 @@
     "data17.js"
   ],
   "sourceSha256": "9f335b5ece570928a75ea8f5c137a05586bd1570ca3781066a3304b59d6c5b19",
-  "selectedSha256": "180a665985d6446d97647f76d3c1fc975b31ae024c4fa27c923994cbe0f8b87e",
+  "selectedSha256": "aade894d683c99511cb9fb816ebddd348361556889aec5b8d45a38e9d0f038e0",
   "recoverableSequentialPages": 155,
   "firstInvalidOffset": 242914,
-  "extractedPages": 50,
+  "extractedPages": 100,
   "targetBookPages": 249
 }
