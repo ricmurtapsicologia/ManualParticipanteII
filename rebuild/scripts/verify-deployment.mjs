@@ -18,7 +18,7 @@ for (const [key, value] of Object.entries(expected)) {
 }
 if (health.deployment?.platform !== 'vercel') throw new Error(`Expected Vercel platform, got ${health.deployment?.platform}`);
 if (health.deployment?.environment !== 'production') throw new Error(`Expected production environment, got ${health.deployment?.environment}`);
-if (health.deployment?.branch !== 'rebuild-clean-v1') throw new Error(`Expected rebuild-clean-v1, got ${health.deployment?.branch}`);
+if (health.deployment?.branch !== 'main') throw new Error(`Expected main, got ${health.deployment?.branch}`);
 if (!health.deployment?.commit || health.deployment.commit === 'local') throw new Error('Missing real Git commit SHA in Vercel health proof');
 
 const homeRes = await fetch(base, { redirect: 'follow' });
