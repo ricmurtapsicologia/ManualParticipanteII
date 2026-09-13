@@ -1,0 +1,1505 @@
+{
+  "schemaVersion": 1,
+  "sourceSemanticSchemaVersion": 2,
+  "sourcePageCount": 249,
+  "sourceSha256": "5869733f428387c180d293db12783a988019ec9eb2fc477a8dfe431400b52cf3",
+  "chapterCount": 34,
+  "pedagogicalMarkerCount": 165,
+  "generatedFrom": "content/semantic-pages.json",
+  "frontMatter": [
+    {
+      "id": "front-matter-1",
+      "title": "Abertura",
+      "openingPage": 2,
+      "pageNumbers": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pedagogicalMarkers": [
+        {
+          "kind": "doctrine",
+          "pageNumber": 3,
+          "blockId": "p3-b2"
+        },
+        {
+          "kind": "evidence",
+          "pageNumber": 3,
+          "blockId": "p3-b4"
+        },
+        {
+          "kind": "practice",
+          "pageNumber": 3,
+          "blockId": "p3-b6"
+        },
+        {
+          "kind": "attention",
+          "pageNumber": 3,
+          "blockId": "p3-b8"
+        },
+        {
+          "kind": "decide",
+          "pageNumber": 3,
+          "blockId": "p3-b10"
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "part-1",
+      "part": 1,
+      "title": "Compreender o fenômeno",
+      "openingPage": 7,
+      "pedagogicalMarkers": [],
+      "chapters": [
+        {
+          "chapter": 1,
+          "title": "O CATS e a prática profissional",
+          "openingPage": 8,
+          "pageNumbers": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 8,
+              "blockId": "p8-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 8,
+              "blockId": "p8-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 9,
+              "blockId": "p9-b2"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 11,
+              "blockId": "p11-b2"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 11,
+              "blockId": "p11-b6"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 13,
+              "blockId": "p13-b1"
+            }
+          ]
+        },
+        {
+          "chapter": 2,
+          "title": "Comportamento suicida: conceitos e linguagem",
+          "openingPage": 16,
+          "pageNumbers": [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 16,
+              "blockId": "p16-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 16,
+              "blockId": "p16-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 17,
+              "blockId": "p17-b2"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 18,
+              "blockId": "p18-b4"
+            }
+          ]
+        },
+        {
+          "chapter": 3,
+          "title": "Epidemiologia e inteligência para decisão",
+          "openingPage": 22,
+          "pageNumbers": [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 22,
+              "blockId": "p22-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 22,
+              "blockId": "p22-b4"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 23,
+              "blockId": "p23-b1"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 24,
+              "blockId": "p24-b5"
+            },
+            {
+              "kind": "decide",
+              "pageNumber": 27,
+              "blockId": "p27-b2"
+            }
+          ]
+        },
+        {
+          "chapter": 4,
+          "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+          "openingPage": 29,
+          "pageNumbers": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 29,
+              "blockId": "p29-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 29,
+              "blockId": "p29-b4"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 30,
+              "blockId": "p30-b2"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 30,
+              "blockId": "p30-b6"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 31,
+              "blockId": "p31-b4"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 32,
+              "blockId": "p32-b4"
+            }
+          ]
+        },
+        {
+          "chapter": 5,
+          "title": "Fatores associados, proteção, risco e limites da avaliação",
+          "openingPage": 36,
+          "pageNumbers": [
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 36,
+              "blockId": "p36-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 36,
+              "blockId": "p36-b4"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 37,
+              "blockId": "p37-b2"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 37,
+              "blockId": "p37-b6"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 38,
+              "blockId": "p38-b4"
+            }
+          ]
+        }
+      ],
+      "supplementarySections": []
+    },
+    {
+      "id": "part-2",
+      "part": 2,
+      "title": "Compreender a ocorrência",
+      "openingPage": 53,
+      "pedagogicalMarkers": [],
+      "chapters": [
+        {
+          "chapter": 6,
+          "title": "Do acionamento ao estabelecimento",
+          "openingPage": 54,
+          "pageNumbers": [
+            54,
+            55,
+            56,
+            57,
+            58,
+            59
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 54,
+              "blockId": "p54-b5"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 54,
+              "blockId": "p54-b7"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 55,
+              "blockId": "p55-b3"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 56,
+              "blockId": "p56-b2"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 57,
+              "blockId": "p57-b2"
+            },
+            {
+              "kind": "decide",
+              "pageNumber": 58,
+              "blockId": "p58-b3"
+            }
+          ]
+        },
+        {
+          "chapter": 7,
+          "title": "Observação inicial, passagem de comando e avaliação",
+          "openingPage": 60,
+          "pageNumbers": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 60,
+              "blockId": "p60-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 60,
+              "blockId": "p60-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 61,
+              "blockId": "p61-b2"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 61,
+              "blockId": "p61-b6"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 63,
+              "blockId": "p63-b4"
+            }
+          ]
+        },
+        {
+          "chapter": 8,
+          "title": "Isolamento, espaços de comunicação e avaliação dinâmica",
+          "openingPage": 66,
+          "pageNumbers": [
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 66,
+              "blockId": "p66-b10"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 66,
+              "blockId": "p66-b12"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 67,
+              "blockId": "p67-b5"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 67,
+              "blockId": "p67-b9"
+            },
+            {
+              "kind": "decide",
+              "pageNumber": 69,
+              "blockId": "p69-b2"
+            }
+          ]
+        },
+        {
+          "chapter": 9,
+          "title": "Funções, comando e coordenação",
+          "openingPage": 72,
+          "pageNumbers": [
+            72,
+            73,
+            74,
+            75,
+            76,
+            77
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 72,
+              "blockId": "p72-b6"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 72,
+              "blockId": "p72-b8"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 73,
+              "blockId": "p73-b4"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 74,
+              "blockId": "p74-b5"
+            }
+          ]
+        },
+        {
+          "chapter": 10,
+          "title": "Coleta de informações e apoio à decisão",
+          "openingPage": 78,
+          "pageNumbers": [
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 78,
+              "blockId": "p78-b10"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 78,
+              "blockId": "p78-b12"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 79,
+              "blockId": "p79-b5"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 80,
+              "blockId": "p80-b4"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 80,
+              "blockId": "p80-b8"
+            }
+          ]
+        },
+        {
+          "chapter": 11,
+          "title": "Integração interinstitucional",
+          "openingPage": 83,
+          "pageNumbers": [
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 83,
+              "blockId": "p83-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 83,
+              "blockId": "p83-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 83,
+              "blockId": "p83-b12"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 85,
+              "blockId": "p85-b4"
+            }
+          ]
+        }
+      ],
+      "supplementarySections": []
+    },
+    {
+      "id": "part-3",
+      "part": 3,
+      "title": "Abordagem de dissuasão",
+      "openingPage": 95,
+      "pedagogicalMarkers": [],
+      "chapters": [
+        {
+          "chapter": 12,
+          "title": "O abordador e a preparação para o contato",
+          "openingPage": 96,
+          "pageNumbers": [
+            96,
+            97,
+            98,
+            99,
+            100
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 96,
+              "blockId": "p96-b4"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 96,
+              "blockId": "p96-b6"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 97,
+              "blockId": "p97-b4"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 97,
+              "blockId": "p97-b8"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 99,
+              "blockId": "p99-b4"
+            }
+          ]
+        },
+        {
+          "chapter": 13,
+          "title": "Aproximação, silêncio inicial e apresentação",
+          "openingPage": 101,
+          "pageNumbers": [
+            101,
+            102,
+            103,
+            104,
+            105
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 101,
+              "blockId": "p101-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 101,
+              "blockId": "p101-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 101,
+              "blockId": "p101-b12"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 102,
+              "blockId": "p102-b3"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 103,
+              "blockId": "p103-b7"
+            }
+          ]
+        },
+        {
+          "chapter": 14,
+          "title": "Perguntas e escuta",
+          "openingPage": 106,
+          "pageNumbers": [
+            106,
+            107,
+            108,
+            109,
+            110
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 106,
+              "blockId": "p106-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 106,
+              "blockId": "p106-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 106,
+              "blockId": "p106-b12"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 108,
+              "blockId": "p108-b5"
+            }
+          ]
+        },
+        {
+          "chapter": 15,
+          "title": "Validação e paráfrase",
+          "openingPage": 111,
+          "pageNumbers": [
+            111,
+            112,
+            113,
+            114
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 111,
+              "blockId": "p111-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 111,
+              "blockId": "p111-b4"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 112,
+              "blockId": "p112-b2"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 112,
+              "blockId": "p112-b6"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 113,
+              "blockId": "p113-b6"
+            }
+          ]
+        },
+        {
+          "chapter": 16,
+          "title": "Ferramentas de diálogo da ITO 30",
+          "openingPage": 115,
+          "pageNumbers": [
+            115,
+            116,
+            117,
+            118,
+            119
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 115,
+              "blockId": "p115-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 115,
+              "blockId": "p115-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 117,
+              "blockId": "p117-b1"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 117,
+              "blockId": "p117-b5"
+            }
+          ]
+        },
+        {
+          "chapter": 17,
+          "title": "Ambivalência, alternativas e microdecisões",
+          "openingPage": 120,
+          "pageNumbers": [
+            120,
+            121,
+            122,
+            123
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 120,
+              "blockId": "p120-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 120,
+              "blockId": "p120-b4"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 121,
+              "blockId": "p121-b1"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 122,
+              "blockId": "p122-b3"
+            }
+          ]
+        },
+        {
+          "chapter": 18,
+          "title": "Silêncio, resistência, impasse e ruptura",
+          "openingPage": 124,
+          "pageNumbers": [
+            124,
+            125,
+            126,
+            127
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 124,
+              "blockId": "p124-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 124,
+              "blockId": "p124-b4"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 125,
+              "blockId": "p125-b1"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 126,
+              "blockId": "p126-b3"
+            }
+          ]
+        },
+        {
+          "chapter": 19,
+          "title": "Agitação, retraimento e alterações perceptivas",
+          "openingPage": 128,
+          "pageNumbers": [
+            128,
+            129,
+            130,
+            131
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 128,
+              "blockId": "p128-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 128,
+              "blockId": "p128-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 128,
+              "blockId": "p128-b12"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 130,
+              "blockId": "p130-b2"
+            }
+          ]
+        },
+        {
+          "chapter": 20,
+          "title": "Troca do abordador e transição para abordagem tática",
+          "openingPage": 132,
+          "pageNumbers": [
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 132,
+              "blockId": "p132-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 132,
+              "blockId": "p132-b4"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 133,
+              "blockId": "p133-b2"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 133,
+              "blockId": "p133-b6"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 135,
+              "blockId": "p135-b1"
+            }
+          ]
+        }
+      ],
+      "supplementarySections": []
+    },
+    {
+      "id": "part-4",
+      "part": 4,
+      "title": "Abordagem tática e riscos",
+      "openingPage": 144,
+      "pedagogicalMarkers": [],
+      "chapters": [
+        {
+          "chapter": 21,
+          "title": "Princípios e segurança da abordagem tática",
+          "openingPage": 145,
+          "pageNumbers": [
+            145,
+            146,
+            147,
+            148,
+            149
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 145,
+              "blockId": "p145-b4"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 145,
+              "blockId": "p145-b6"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 146,
+              "blockId": "p146-b4"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 147,
+              "blockId": "p147-b4"
+            }
+          ]
+        },
+        {
+          "chapter": 22,
+          "title": "Precipitação e ambiente vertical",
+          "openingPage": 150,
+          "pageNumbers": [
+            150,
+            151,
+            152,
+            153
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 150,
+              "blockId": "p150-b12"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 150,
+              "blockId": "p150-b14"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 151,
+              "blockId": "p151-b5"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 152,
+              "blockId": "p152-b2"
+            }
+          ]
+        },
+        {
+          "chapter": 23,
+          "title": "Água, enforcamento, incêndio, eletricidade e intoxicação",
+          "openingPage": 154,
+          "pageNumbers": [
+            154,
+            155,
+            156,
+            157
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "opening",
+              "pageNumber": 154,
+              "blockId": "p154-b2"
+            },
+            {
+              "kind": "objectives",
+              "pageNumber": 154,
+              "blockId": "p154-b4"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 155,
+              "blockId": "p155-b3"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 155,
+              "blockId": "p155-b9"
+            },
+            {
+              "kind": "case",
+              "pageNumber": 157,
+              "blockId": "p157-b1"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 157,
+              "blockId": "p157-b3"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 157,
+              "blockId": "p157-b5"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 157,
+              "blockId": "p157-b7"
+            }
+          ]
+        },
+        {
+          "chapter": 24,
+          "title": "Arma branca, arma de fogo e risco de violência",
+          "openingPage": 158,
+          "pageNumbers": [
+            158,
+            159,
+            160,
+            161
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 161,
+              "blockId": "p161-b1"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 161,
+              "blockId": "p161-b3"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 161,
+              "blockId": "p161-b5"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 161,
+              "blockId": "p161-b7"
+            }
+          ]
+        },
+        {
+          "chapter": 25,
+          "title": "Entrada, contenção, lesões, APH e presunção de óbito",
+          "openingPage": 162,
+          "pageNumbers": [
+            162,
+            163,
+            164,
+            165
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 165,
+              "blockId": "p165-b2"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 165,
+              "blockId": "p165-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 165,
+              "blockId": "p165-b6"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 165,
+              "blockId": "p165-b8"
+            }
+          ]
+        }
+      ],
+      "supplementarySections": []
+    },
+    {
+      "id": "part-5",
+      "part": 5,
+      "title": "Pessoas e contextos",
+      "openingPage": 166,
+      "pedagogicalMarkers": [],
+      "chapters": [
+        {
+          "chapter": 26,
+          "title": "Crianças e adolescentes",
+          "openingPage": 167,
+          "pageNumbers": [
+            167,
+            168,
+            169,
+            170,
+            171
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 171,
+              "blockId": "p171-b1"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 171,
+              "blockId": "p171-b3"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 171,
+              "blockId": "p171-b5"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 171,
+              "blockId": "p171-b7"
+            }
+          ]
+        },
+        {
+          "chapter": 27,
+          "title": "Pessoas idosas, pessoas com deficiência e neurodivergentes",
+          "openingPage": 172,
+          "pageNumbers": [
+            172,
+            173,
+            174,
+            175,
+            176
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 176,
+              "blockId": "p176-b2"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 176,
+              "blockId": "p176-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 176,
+              "blockId": "p176-b6"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 176,
+              "blockId": "p176-b8"
+            }
+          ]
+        },
+        {
+          "chapter": 28,
+          "title": "Intoxicação, agitação e alterações do pensamento",
+          "openingPage": 177,
+          "pageNumbers": [
+            177,
+            178,
+            179,
+            180
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 180,
+              "blockId": "p180-b2"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 180,
+              "blockId": "p180-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 180,
+              "blockId": "p180-b6"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 180,
+              "blockId": "p180-b8"
+            }
+          ]
+        },
+        {
+          "chapter": 29,
+          "title": "Mulheres, violência doméstica, cultura, espiritualidade e contexto social",
+          "openingPage": 181,
+          "pageNumbers": [
+            181,
+            182,
+            183,
+            184,
+            185
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 185,
+              "blockId": "p185-b1"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 185,
+              "blockId": "p185-b3"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 185,
+              "blockId": "p185-b5"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 185,
+              "blockId": "p185-b8"
+            }
+          ]
+        }
+      ],
+      "supplementarySections": []
+    },
+    {
+      "id": "part-6",
+      "part": 6,
+      "title": "Depois da crise",
+      "openingPage": 186,
+      "pedagogicalMarkers": [],
+      "chapters": [
+        {
+          "chapter": 30,
+          "title": "Desistência, resgate, encaminhamento e registro",
+          "openingPage": 187,
+          "pageNumbers": [
+            187,
+            188,
+            189,
+            190
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 190,
+              "blockId": "p190-b2"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 190,
+              "blockId": "p190-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 190,
+              "blockId": "p190-b6"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 190,
+              "blockId": "p190-b9"
+            }
+          ]
+        },
+        {
+          "chapter": 31,
+          "title": "Comunicação responsável, imprensa, Werther e Papageno",
+          "openingPage": 191,
+          "pageNumbers": [
+            191,
+            192,
+            193,
+            194
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 194,
+              "blockId": "p194-b2"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 194,
+              "blockId": "p194-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 194,
+              "blockId": "p194-b6"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 194,
+              "blockId": "p194-b8"
+            }
+          ]
+        },
+        {
+          "chapter": 32,
+          "title": "Primeiros Socorros Psicológicos, pós-ocorrência e posvenção",
+          "openingPage": 195,
+          "pageNumbers": [
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "case",
+              "pageNumber": 200,
+              "blockId": "p200-b4"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 201,
+              "blockId": "p201-b2"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 201,
+              "blockId": "p201-b4"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 201,
+              "blockId": "p201-b6"
+            }
+          ]
+        }
+      ],
+      "supplementarySections": []
+    },
+    {
+      "id": "part-7",
+      "part": 7,
+      "title": "Integração e consolidação",
+      "openingPage": 202,
+      "pedagogicalMarkers": [],
+      "chapters": [
+        {
+          "chapter": 33,
+          "title": "Casos longitudinais integradores",
+          "openingPage": 203,
+          "pageNumbers": [
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 205,
+              "blockId": "p205-b2"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 206,
+              "blockId": "p206-b1"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 206,
+              "blockId": "p206-b9"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 207,
+              "blockId": "p207-b6"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 208,
+              "blockId": "p208-b2"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 208,
+              "blockId": "p208-b8"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 209,
+              "blockId": "p209-b4"
+            },
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 210,
+              "blockId": "p210-b1"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 210,
+              "blockId": "p210-b5"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 210,
+              "blockId": "p210-b7"
+            }
+          ]
+        },
+        {
+          "chapter": 34,
+          "title": "Síntese do Sistema ATTS e matriz final de competências",
+          "openingPage": 211,
+          "pageNumbers": [
+            211,
+            212,
+            213,
+            214,
+            215,
+            216
+          ],
+          "pedagogicalMarkers": [
+            {
+              "kind": "guided-analysis",
+              "pageNumber": 216,
+              "blockId": "p216-b2"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 216,
+              "blockId": "p216-b4"
+            },
+            {
+              "kind": "review",
+              "pageNumber": 216,
+              "blockId": "p216-b6"
+            }
+          ]
+        }
+      ],
+      "supplementarySections": [
+        {
+          "id": "part-7-supplement-1",
+          "title": "Respostas orientadoras às questões de revisão",
+          "openingPage": 217,
+          "pageNumbers": [
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239
+          ],
+          "pedagogicalMarkers": []
+        },
+        {
+          "id": "part-7-supplement-2",
+          "title": "Recursos digitais do participante",
+          "openingPage": 240,
+          "pageNumbers": [
+            240,
+            241
+          ],
+          "pedagogicalMarkers": []
+        },
+        {
+          "id": "part-7-supplement-3",
+          "title": "Referências nucleares",
+          "openingPage": 242,
+          "pageNumbers": [
+            242,
+            243,
+            244
+          ],
+          "pedagogicalMarkers": []
+        },
+        {
+          "id": "part-7-supplement-4",
+          "title": "Glossário essencial",
+          "openingPage": 245,
+          "pageNumbers": [
+            245,
+            246,
+            247
+          ],
+          "pedagogicalMarkers": []
+        },
+        {
+          "id": "part-7-supplement-5",
+          "title": "Checklist final do participante",
+          "openingPage": 248,
+          "pageNumbers": [
+            248,
+            249
+          ],
+          "pedagogicalMarkers": []
+        }
+      ]
+    }
+  ]
+}
