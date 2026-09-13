@@ -38,6 +38,8 @@ jobs:
           fi
       - name: v0.8 recovery scan
         run: node scripts/v08-recovery-scan.mjs
+      - name: Tail resynchronization scan
+        run: node scripts/tail-resync-scan.mjs
       - name: Migrate canonical pages 1-155
         run: npm run migrate:155
       - name: Validate contracts
@@ -51,15 +53,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add content/pages.json content/provenance.json
-          if [ -f recovery/history-scan.json ]; then
-            git add recovery/history-scan.json recovery/history-scan.md
-          fi
-          if [ -f recovery/v08-scan.json ]; then
-            git add recovery/v08-scan.json recovery/v08-scan.md
-          fi
+          for report in history-scan v08-scan tail-resync-scan; do
+            if [ -f "recovery/${report}.json" ]; then
+              git add "recovery/${report}.json" "recovery/${report}.md"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "Validated corpus and recovery reports already persisted"
             exit 0
           fi
-          git commit -m "wave8: persist v0.8 recovery diagnostic and validated 155-page corpus [skip ci]"
+          git commit -m "wave8: persist tail resynchronization diagnostic and validated 155-page corpus [skip ci]"
           git push origin HEAD:rebuild-clean-v1
