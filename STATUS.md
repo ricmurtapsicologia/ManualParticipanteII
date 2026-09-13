@@ -7,13 +7,15 @@ Atualizado em 13 de setembro de 2026.
 - Repositório canônico confirmado: `ricmurtapsicologia/ManualParticipanteII`.
 - Projeto Vercel canônico reservado: `manual-participante-cats-definitivo` (`prj_O4U8NcOrjeSjkSlhnx0Qow8FAKHK`).
 - Branch da Onda 1: `web-book-v1`.
-- Head validado: `61c71143bdb701f33ac9aa9e1fc469af858f4377`.
-- PR #1 permanece aberto, mergeable e em rascunho enquanto os portões finais não forem satisfeitos.
+- Head atual da branch: `20f171018d8ae879d57b8fa839efb41dbcd38778`.
+- O código/runtime validado no preview corresponde ao commit `61c71143bdb701f33ac9aa9e1fc469af858f4377`; o commit posterior altera somente este documento de estado e não modifica runtime.
+- PR #1 permanece aberto, mergeable e em rascunho enquanto os portões técnicos finais não forem satisfeitos.
 - Preview Vercel da Onda 1: `dpl_EBPdPDMyRH8sUzbFK7fxCbhdHVz6`, estado `READY`, 12 arquivos de deployment e 2 funções Node.js.
 - O preview respondeu com runtime HTTP 200 em `/api/book`; não há cluster de erro de runtime no projeto.
 - A produção atual continua no deployment legado `dpl_C86oZjGWoxfRcaK3c3c6JkwFyqFY`; a raiz responde HTTP 200, porém `/api/health` responde HTTP 500 e `/api/book` responde 404. Ela não deve ser tratada como a Onda 1 aprovada.
 - O projeto Vercel ainda não está conectado ao GitHub (`link: null`).
 - Produção e projetos legados permanecem preservados; nenhum projeto foi excluído.
+- Autorização humana para concluir a Onda 1 foi dada em 13/09/2026; ela não substitui os gates técnicos de E2E, conexão Git e read-back de produção.
 
 ## Onda 1
 
