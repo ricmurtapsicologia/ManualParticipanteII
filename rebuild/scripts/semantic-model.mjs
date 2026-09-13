@@ -71,6 +71,43 @@ export function pageRoleFor(sourcePage, previousPage) {
   return 'continuation';
 }
 
+function buildOrderedNavigation(pages) {
+  const parts = [];
+  let currentPart = null;
+  let currentEntry = null;
+
+  for (const page of pages) {
+    if (page.cover) continue;
+    const partNumber = page.part ?? 0;
+    if (!currentPart || currentPart.part !== partNumber) {
+      currentPart = {
+        part: partNumber,
+        title: partNumber === 0 ? 'Elementos iniciais' : page.partTitle || `Parte ${partNumber}`,
+        chapters: []
+      };
+      parts.push(currentPart);
+      currentEntry = null;
+    }
+
+    const chapterNumber = page.chapter ?? 0;
+    const startsNewEntry = !currentEntry ||
+      currentEntry.chapter !== chapterNumber ||
+      (chapterNumber === 0 && currentEntry.title !== page.title);
+
+    if (startsNewEntry) {
+      currentEntry = {
+        chapter: chapterNumber,
+        title: page.title,
+        pageNumbers: []
+      };
+      currentPart.chapters.push(currentEntry);
+    }
+    currentEntry.pageNumbers.push(page.number);
+  }
+
+  return { parts };
+}
+
 export function buildSemanticDocument(sourcePages, sourceSha256) {
   const pages = sourcePages.map((sourcePage, index) => {
     const previousPage = index > 0 ? sourcePages[index - 1] : null;
@@ -91,36 +128,12 @@ export function buildSemanticDocument(sourcePages, sourceSha256) {
     };
   });
 
-  const partMap = new Map();
-  for (const page of pages) {
-    if (page.cover) continue;
-    const partNumber = page.part ?? 0;
-    if (!partMap.has(partNumber)) {
-      partMap.set(partNumber, {
-        part: partNumber,
-        title: partNumber === 0 ? 'Elementos iniciais' : page.partTitle || `Parte ${partNumber}`,
-        chapters: new Map()
-      });
-    }
-    const part = partMap.get(partNumber);
-    const chapterNumber = page.chapter ?? 0;
-    if (!part.chapters.has(chapterNumber)) {
-      part.chapters.set(chapterNumber, {
-        chapter: chapterNumber,
-        title: page.title,
-        pageNumbers: []
-      });
-    }
-    part.chapters.get(chapterNumber).pageNumbers.push(page.number);
-  }
-
-  const navigation = {
-    parts: [...partMap.values()].map(part => ({
-      part: part.part,
-      title: part.title,
-      chapters: [...part.chapters.values()]
-    }))
-  };
+  const navigation = buildOrderedNavigation(pages);
+  const sourceChapterPairs = [...new Set(
+    pages
+      .filter(page => Number(page.chapter) > 0)
+      .map(page => `${page.part ?? 0}:${page.chapter}`)
+  )];
 
   const blockKinds = {};
   const pageRoles = {};
@@ -131,6 +144,17 @@ export function buildSemanticDocument(sourcePages, sourceSha256) {
       blockKinds[block.kind] = (blockKinds[block.kind] ?? 0) + 1;
       blockCount += 1;
     }
+  }
+
+  const sourceChapterCount = sourceChapterPairs.length;
+  const editorialAnomalies = [];
+  if (sourceChapterCount !== 34) {
+    editorialAnomalies.push({
+      code: 'SOURCE_CHAPTER_COUNT_DIFFERS_FROM_EXPECTED_34',
+      expected: 34,
+      observed: sourceChapterCount,
+      action: 'Preserve source metadata in Wave 1; reconcile chapter taxonomy in Wave 2.'
+    });
   }
 
   return {
@@ -152,7 +176,10 @@ export function buildSemanticDocument(sourcePages, sourceSha256) {
       pageCount: pages.length,
       blockCount,
       partCount: navigation.parts.filter(part => part.part > 0).length,
-      chapterCount: navigation.parts.reduce((sum, part) => sum + part.chapters.filter(chapter => chapter.chapter > 0).length, 0),
+      sourceChapterCount,
+      sourceChapterPairs,
+      expectedEditorialChapterCount: 34,
+      editorialAnomalies,
       pageRoles,
       blockKinds
     }
