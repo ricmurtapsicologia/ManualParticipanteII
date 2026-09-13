@@ -1,6 +1,12 @@
 name: Rebuild Wave 8 Canonical Corpus CI
 
 on:
+  push:
+    branches: [rebuild-clean-v1]
+    paths:
+      - 'rebuild/**'
+      - 'data*.js'
+      - '.github/workflows/rebuild-wave1-ci.yml'
   workflow_dispatch:
 
 permissions:
@@ -31,3 +37,16 @@ jobs:
         run: npm run build
       - name: Smoke runtime
         run: npm run smoke
+      - name: Persist validated canonical corpus
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f recovery/v08-tail-source.b64.part5a recovery/v08-tail-source.b64.part5b
+          git add content/pages.json content/provenance.json recovery/v08-tail-source.b64.part5
+          git add -u recovery/v08-tail-source.b64.part5a recovery/v08-tail-source.b64.part5b || true
+          if git diff --cached --quiet; then
+            echo "Canonical 249-page corpus already persisted"
+            exit 0
+          fi
+          git commit -m "wave8: persist validated 249-page canonical corpus [skip ci]"
+          git push origin HEAD:rebuild-clean-v1
