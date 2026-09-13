@@ -1,4 +1,4 @@
-name: Rebuild Wave 1 CI
+name: Rebuild Wave 2 CI
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-smoke:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,5 +23,9 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Validate contracts
+        run: npm run validate
       - name: Build
         run: npm run build
+      - name: Smoke runtime
+        run: npm run smoke
