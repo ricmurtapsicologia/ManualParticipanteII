@@ -1,4 +1,4 @@
-name: Rebuild Wave 8 Canonical Corpus CI
+name: Rebuild Wave 9 Vercel Cutover Readiness CI
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Migrate canonical 249-page corpus
         run: npm run migrate:249
-      - name: Validate contracts and provenance
+      - name: Validate corpus, runtime and Vercel cutover contracts
         run: npm run validate
       - name: Build
         run: npm run build
@@ -48,5 +48,5 @@ jobs:
             echo "Canonical 249-page corpus already persisted"
             exit 0
           fi
-          git commit -m "wave8: persist validated 249-page canonical corpus [skip ci]"
+          git commit -m "wave9: persist validated 249-page corpus [skip ci]"
           git push origin HEAD:rebuild-clean-v1
