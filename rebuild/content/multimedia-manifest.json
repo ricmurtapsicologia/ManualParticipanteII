@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "wave": "5.1",
+  "policy": {
+    "sourceTextFrozen": true,
+    "accessibilityRequired": true,
+    "allowedKinds": ["infographic", "chart", "image", "audio", "video", "microlearning"],
+    "ttsPreferredVoice": "Antônio",
+    "ttsFallbackLang": "pt-BR"
+  },
+  "resources": []
+}
