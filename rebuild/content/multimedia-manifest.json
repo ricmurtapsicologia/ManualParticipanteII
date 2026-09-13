@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "wave": "5.1",
+  "wave": "5.2",
   "policy": {
     "sourceTextFrozen": true,
     "accessibilityRequired": true,
@@ -8,5 +8,24 @@
     "ttsPreferredVoice": "Antônio",
     "ttsFallbackLang": "pt-BR"
   },
-  "resources": []
+  "resources": [
+    {
+      "id": "ats-system-macro-p54",
+      "kind": "infographic",
+      "pageNumber": 54,
+      "title": "Sistema ATS • visão macro",
+      "src": "native://ats-system-macro",
+      "alt": "Infográfico do Sistema ATS com sete fases operacionais e reavaliação dinâmica transversal.",
+      "steps": [
+        { "order": 1, "title": "Acionamento", "detail": "Receber e qualificar dados." },
+        { "order": 2, "title": "Deslocamento", "detail": "Preparar equipe e recursos." },
+        { "order": 3, "title": "Estabelecimento", "detail": "Posicionar e organizar a cena." },
+        { "order": 4, "title": "Observação + avaliação", "detail": "Ler risco, ambiente e comportamento." },
+        { "order": 5, "title": "Desenvolvimento", "detail": "Definir e executar estratégia." },
+        { "order": 6, "title": "Encerramento", "detail": "Confirmar segurança e transição." },
+        { "order": 7, "title": "Continuidade", "detail": "APH, rede, registro e cuidado." }
+      ],
+      "transverse": "REAVALIAR QUANDO RISCO, AMBIENTE, COMPORTAMENTO, RECURSOS OU RESPOSTA MUDAREM"
+    }
+  ]
 }

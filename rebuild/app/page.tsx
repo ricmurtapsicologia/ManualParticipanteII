@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import semanticData from '../content/semantic-pages.json';
 import navigationData from '../content/navigation.json';
+import multimediaData from '../content/multimedia-manifest.json';
 
 type SemanticBlock = { id: string; kind: string; sourceIndex: number; text: string };
 type SemanticPage = { number: number; part?: number | null; partTitle?: string; chapter?: number | null; title: string; cover?: boolean; blocks: SemanticBlock[] };
@@ -12,9 +13,13 @@ type NavChapter = { chapter: number; title: string; openingPage: number; pageNum
 type NavSupplement = { id: string; title: string; openingPage: number; pageNumbers: number[]; pedagogicalMarkers: PedagogicalMarker[] };
 type NavPart = { id: string; part: number; title: string; openingPage: number; pedagogicalMarkers: PedagogicalMarker[]; chapters: NavChapter[]; supplementarySections: NavSupplement[] };
 type NavigationArtifact = { schemaVersion: number; sourcePageCount: number; chapterCount: number; pedagogicalMarkerCount: number; frontMatter: NavSupplement[]; parts: NavPart[] };
+type MultimediaStep = { order: number; title: string; detail: string };
+type MultimediaResource = { id: string; kind: string; pageNumber: number; title: string; src?: string; alt?: string; steps?: MultimediaStep[]; transverse?: string };
+type MultimediaArtifact = { schemaVersion: number; wave: string; resources: MultimediaResource[] };
 
 const pages = (semanticData as SemanticArtifact).pages;
 const navigation = navigationData as NavigationArtifact;
+const multimedia = multimediaData as MultimediaArtifact;
 const pageNumberToIndex = new Map(pages.map((item, index) => [item.number ?? index + 1, index]));
 const markerLabels: Record<string, string> = {
   opening: 'Situação de abertura', objectives: 'Objetivos', doctrine: 'Doutrina', evidence: 'Evidência',
@@ -67,6 +72,23 @@ function renderSemanticBlocks(blocks: SemanticBlock[]) {
   }
   return output;
 }
+function renderMultimediaResource(resource: MultimediaResource) {
+  if (resource.kind !== 'infographic' || resource.src !== 'native://ats-system-macro' || !resource.steps?.length) return null;
+  const labelId = `${resource.id}-label`;
+  const descriptionId = `${resource.id}-description`;
+  return <figure key={resource.id} className="multimediaFigure atsMacro" data-testid="multimedia-resource" data-media-id={resource.id} data-media-kind={resource.kind} data-media-src={resource.src} aria-labelledby={labelId} aria-describedby={descriptionId}>
+    <div className="multimediaEyebrow">Infográfico</div>
+    <figcaption id={labelId}>{resource.title}</figcaption>
+    <p id={descriptionId} className="multimediaDescription">{resource.alt}</p>
+    <div className="atsFlow" role="list" aria-label="Fases operacionais do Sistema ATS">
+      {resource.steps.sort((a, b) => a.order - b.order).map(step => <div key={step.order} className="atsFlowStep" data-testid="multimedia-step" data-step={step.order} role="listitem">
+        <span className="atsStepNo" aria-hidden="true">{step.order}</span>
+        <div><strong>{step.title}</strong><span>{step.detail}</span></div>
+      </div>)}
+    </div>
+    {resource.transverse && <div className="atsTransverse"><span aria-hidden="true">↻</span><strong>{resource.transverse}</strong></div>}
+  </figure>;
+}
 
 export default function Home() {
   const [page, setPage] = useState(0);
@@ -80,6 +102,7 @@ export default function Home() {
   const currentPart = findPartForPage(currentPageNumber);
   const currentPartNumber = currentPart?.part ?? null;
   const currentChapter = currentPart?.chapters.find(chapter => chapter.pageNumbers.includes(currentPageNumber)) ?? null;
+  const pageMedia = multimedia.resources.filter(resource => resource.pageNumber === currentPageNumber);
 
   useEffect(() => { const saved = Number(localStorage.getItem('cats-rebuild-page')); if (Number.isInteger(saved) && saved >= 0 && saved < pages.length) setPage(saved); }, []);
   useEffect(() => { localStorage.setItem('cats-rebuild-page', String(page)); }, [page]);
@@ -128,9 +151,9 @@ export default function Home() {
   const runningRight = currentChapter ? `CAPÍTULO ${currentChapter.chapter}` : currentPart ? `PARTE ${currentPart.part}` : '2026';
   const pageRole = current.cover ? 'cover' : currentChapter ? (currentChapter.openingPage === currentPageNumber ? 'chapter-opening' : 'chapter-continuation') : currentPart?.openingPage === currentPageNumber ? 'part-opening' : 'standard';
 
-  return <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8" data-editorial-wave="13" data-design-system="DS2" data-design-subwave="4.3" data-semantic-renderer="blocks">
+  return <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8" data-editorial-wave="13" data-design-system="DS2" data-design-subwave="4.3" data-semantic-renderer="blocks" data-multimedia-wave={multimedia.wave}>
     <header className="top"><div className="topin"><div className="mark">CATS</div><div className="brand"><strong>Manual do Participante CATS</strong><span>Edição Digital Interativa • 249 páginas</span></div><div className="tools"><button onClick={speak} className={speaking ? 'active' : ''} aria-label="Leitura em voz alta">◖)) <span>{speaking ? 'Parar' : 'Ouvir'}</span></button><button onClick={() => setDrawer('search')} aria-label="Pesquisar">⌕ <span>Buscar</span></button><button onClick={() => setDrawer('toc')} aria-label="Sumário">☰ <span>Sumário</span></button></div></div><div className="progressTrack"><div className="progress" style={{ width: `${progress}%` }} /></div></header>
-    <main className="main"><div className="book"><article className={`page${current.cover ? ' cover' : ''}${pageRole === 'chapter-opening' ? ' chapterOpening' : ''}${pageRole === 'chapter-continuation' ? ' chapterContinuation' : ''}`} lang="pt-BR" data-testid="book-page" data-page-role={pageRole}>{current.cover ? <div className="coverContent"><div className="coverEyebrow">Corpo de Bombeiros Militar de Minas Gerais</div><h1>{current.title}</h1>{current.blocks.map(renderPlainBlock)}</div> : <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div>{pageRole === 'chapter-continuation' && currentChapter ? <div className="continuationHeading" data-testid="continuation-heading"><span>Capítulo {currentChapter.chapter}</span><strong>Continuação</strong></div> : <h2 data-testid={pageRole === 'chapter-opening' ? 'chapter-title' : undefined}>{current.title}</h2>}{renderSemanticBlocks(current.blocks)}<div className="pageno">{currentPageNumber}</div></>}</article></div><div className="status">Use <span className="kbd">←</span> <span className="kbd">→</span> para navegar. <span className="kbd">/</span> abre a busca. Conteúdo canônico.</div></main>
+    <main className="main"><div className="book"><article className={`page${current.cover ? ' cover' : ''}${pageRole === 'chapter-opening' ? ' chapterOpening' : ''}${pageRole === 'chapter-continuation' ? ' chapterContinuation' : ''}`} lang="pt-BR" data-testid="book-page" data-page-role={pageRole}>{current.cover ? <div className="coverContent"><div className="coverEyebrow">Corpo de Bombeiros Militar de Minas Gerais</div><h1>{current.title}</h1>{current.blocks.map(renderPlainBlock)}</div> : <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div>{pageRole === 'chapter-continuation' && currentChapter ? <div className="continuationHeading" data-testid="continuation-heading"><span>Capítulo {currentChapter.chapter}</span><strong>Continuação</strong></div> : <h2 data-testid={pageRole === 'chapter-opening' ? 'chapter-title' : undefined}>{current.title}</h2>}{pageMedia.length > 0 && <div className="multimediaLayer" data-testid="multimedia-layer">{pageMedia.map(renderMultimediaResource)}</div>}{renderSemanticBlocks(current.blocks)}<div className="pageno">{currentPageNumber}</div></>}</article></div><div className="status">Use <span className="kbd">←</span> <span className="kbd">→</span> para navegar. <span className="kbd">/</span> abre a busca. Conteúdo canônico.</div></main>
     <nav className="nav" aria-label="Navegação do livro"><button onClick={() => go(page - 1)} disabled={page === 0} aria-label="Página anterior">‹</button><div className="counter" data-testid="page-counter">{page + 1} / {pages.length}</div><button onClick={() => go(page + 1)} disabled={page === pages.length - 1} aria-label="Próxima página">›</button></nav>
     {drawer && <div className="drawer" role="dialog" aria-modal="true" onMouseDown={e => { if (e.target === e.currentTarget) setDrawer(null); }}><aside className="panel"><div className="panelHead"><strong>{drawer === 'toc' ? 'Sumário' : 'Pesquisar'}</strong><button onClick={() => setDrawer(null)}>Fechar</button></div>{drawer === 'toc' ? <div className="toc" data-testid="hierarchical-toc">
       <button className={`tocPrimary${currentPageNumber === 1 ? ' current' : ''}`} onClick={() => goPageNumber(1)}><strong>Capa</strong><span>p. 1</span></button>

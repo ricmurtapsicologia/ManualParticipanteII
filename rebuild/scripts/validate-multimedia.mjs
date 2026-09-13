@@ -15,9 +15,10 @@ const fail = message => {
   console.error(`MULTIMEDIA_VALIDATE_FAIL ${message}`);
   process.exit(1);
 };
+const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
 
 if (manifest.schemaVersion !== 1) fail(`schemaVersion=${manifest.schemaVersion}`);
-if (manifest.wave !== '5.1') fail(`wave=${manifest.wave}`);
+if (manifest.wave !== '5.2') fail(`wave=${manifest.wave}`);
 if (manifest.policy?.sourceTextFrozen !== true) fail('sourceTextFrozen must be true');
 if (manifest.policy?.accessibilityRequired !== true) fail('accessibilityRequired must be true');
 if (manifest.policy?.ttsPreferredVoice !== 'Antônio') fail('ttsPreferredVoice must be Antônio');
@@ -33,6 +34,8 @@ for (const kind of allowed) if (!canonicalKinds.includes(kind)) fail(`unexpected
 const ids = new Set();
 const visualKinds = new Set(['infographic', 'chart', 'image']);
 const timedKinds = new Set(['audio', 'video']);
+const nativeRenderers = new Set(['native://ats-system-macro']);
+const semanticByPage = new Map((semantic.pages ?? []).map(page => [page.number, page]));
 
 for (const [index, resource] of manifest.resources.entries()) {
   if (!resource || typeof resource !== 'object') fail(`resource[${index}] must be an object`);
@@ -61,6 +64,30 @@ for (const [index, resource] of manifest.resources.entries()) {
   if (typeof resource.src === 'string' && /^https?:/i.test(resource.src) && !resource.src.startsWith('https://')) {
     fail(`resource=${resource.id} external src must use https`);
   }
+
+  if (typeof resource.src === 'string' && resource.src.startsWith('native://')) {
+    if (!nativeRenderers.has(resource.src)) fail(`resource=${resource.id} unknown native renderer=${resource.src}`);
+    const sourcePage = semanticByPage.get(resource.pageNumber);
+    if (!sourcePage) fail(`resource=${resource.id} source page not found`);
+    const canonicalText = normalize((sourcePage.blocks ?? []).map(block => block.text).join(' '));
+    if (!Array.isArray(resource.steps) || resource.steps.length === 0) fail(`resource=${resource.id} native renderer requires steps`);
+    const orders = new Set();
+    for (const step of resource.steps) {
+      if (!Number.isInteger(step.order) || step.order < 1) fail(`resource=${resource.id} invalid step order`);
+      if (orders.has(step.order)) fail(`resource=${resource.id} duplicate step order=${step.order}`);
+      orders.add(step.order);
+      if (typeof step.title !== 'string' || !step.title.trim()) fail(`resource=${resource.id} step missing title`);
+      if (typeof step.detail !== 'string' || !step.detail.trim()) fail(`resource=${resource.id} step missing detail`);
+      if (!canonicalText.includes(normalize(step.title))) fail(`resource=${resource.id} step title not grounded=${step.title}`);
+      if (!canonicalText.includes(normalize(step.detail))) fail(`resource=${resource.id} step detail not grounded=${step.detail}`);
+    }
+    if (resource.src === 'native://ats-system-macro') {
+      if (resource.pageNumber !== 54) fail(`resource=${resource.id} ATS macro must be on page 54`);
+      if (resource.steps.length !== 7) fail(`resource=${resource.id} ATS macro steps=${resource.steps.length}`);
+      if (typeof resource.transverse !== 'string' || !resource.transverse.trim()) fail(`resource=${resource.id} missing transverse re-evaluation rule`);
+      if (!canonicalText.includes(normalize(resource.transverse))) fail(`resource=${resource.id} transverse rule not grounded`);
+    }
+  }
 }
 
-console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} kinds=${canonicalKinds.length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);
+console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} kinds=${canonicalKinds.length} native=${manifest.resources.filter(item => String(item.src ?? '').startsWith('native://')).length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);
