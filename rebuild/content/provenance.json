@@ -1,5 +1,5 @@
 {
-  "schema": 3,
+  "schema": 4,
   "source": "legacy CATS corpus recovered from complete sequential prefix using tolerant gzip flush",
   "sourceCommit": "9e6e2a844fbb16adfdce4dec0dbd3c2ec6983111",
   "sourceFiles": [
@@ -25,6 +25,44 @@
   "selectedSha256": "9e627c209d73dce4eaedf68a9a21381a69cfa7ec5c5b2b9849bd278a64919c73",
   "recoverableSequentialPages": 155,
   "firstInvalidOffset": 242914,
-  "extractedPages": 155,
-  "targetBookPages": 249
+  "extractedPages": 249,
+  "targetBookPages": 249,
+  "recoveredTail": {
+    "sourceTitle": "Manual do Participante CATS - v0.8 - CANÔNICA - SANITIZADA.pdf",
+    "driveFileId": "1PePK8Tic7PGo65fiqf02k8vUzG_Halh0",
+    "pdfSha256": "7a8d9a0a0614e18af812ffe1c172b48a87e609b66ec8631eec15cb1ea15becbb",
+    "pdfPages": 159,
+    "sourcePhysicalStartPage": 90,
+    "anchor": "5. Eletricidade: proximidade pode ferir sem contato direto",
+    "sourceTextSha256": "892511fd392b8a3cbca876803244e3297c683f214f79f44823a3e29ff56e6be8",
+    "generatedDigitalPages": 94,
+    "digitalRange": [
+      156,
+      249
+    ],
+    "algorithm": "deterministic balanced paragraph reflow v1",
+    "allocations": [
+      2,
+      4,
+      4,
+      1,
+      5,
+      5,
+      4,
+      5,
+      1,
+      4,
+      4,
+      7,
+      1,
+      8,
+      6,
+      23,
+      2,
+      3,
+      3,
+      2
+    ],
+    "sourceDerived": true
+  }
 }
