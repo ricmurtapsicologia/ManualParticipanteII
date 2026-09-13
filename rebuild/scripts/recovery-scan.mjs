@@ -5,12 +5,13 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { constants, gunzipSync } from 'node:zlib';
 
+const SCANNER_VERSION = 2;
 const here = dirname(fileURLToPath(import.meta.url));
 const rebuildRoot = resolve(here, '..');
 const repoRoot = resolve(rebuildRoot, '..');
 const outDir = join(rebuildRoot, 'recovery');
-const names = Array.from({ length: 17 }, (_, i) => `data${i + 1}.js`);
-const git = (...args) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+const candidateNames = Array.from({ length: 25 }, (_, i) => `data${i + 1}.js`);
+const git = (...args) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', maxBuffer: 128 * 1024 * 1024 });
 
 function extractChunk(source) {
   const match = source.match(/\+\s*'([^']+)'\s*;?\s*$/s);
@@ -57,47 +58,55 @@ function recoverPages(partialJson) {
   return { pages: recovered.length, firstInvalidOffset: itemStart >= 0 ? itemStart : null, reason: itemStart >= 0 ? 'truncated-page' : 'eof' };
 }
 
-const paths = names.join(' ');
-const commits = git('rev-list', '--all', '--', ...names).trim().split(/\s+/).filter(Boolean);
+const commits = git('rev-list', '--all', '--', ...candidateNames).trim().split(/\s+/).filter(Boolean);
 const seenHashes = new Set();
 const results = [];
 
 for (const commit of commits) {
   try {
     let base64 = '';
-    let completeFiles = true;
-    for (const name of names) {
+    let chunkCount = 0;
+    const files = [];
+    for (const name of candidateNames) {
       try {
         const source = git('show', `${commit}:${name}`);
         const chunk = extractChunk(source);
-        if (!chunk) { completeFiles = false; break; }
+        if (!chunk) break;
         base64 += chunk;
-      } catch { completeFiles = false; break; }
+        files.push(name);
+        chunkCount += 1;
+      } catch {
+        break;
+      }
     }
-    if (!completeFiles) continue;
+    if (chunkCount === 0) continue;
+
     const sourceSha256 = createHash('sha256').update(base64).digest('hex');
-    if (seenHashes.has(sourceSha256)) continue;
-    seenHashes.add(sourceSha256);
+    const identity = `${chunkCount}:${sourceSha256}`;
+    if (seenHashes.has(identity)) continue;
+    seenHashes.add(identity);
 
     const compressed = Buffer.from(base64, 'base64');
     let fullGzip = true;
     try { gunzipSync(compressed); } catch { fullGzip = false; }
+
     let partialJson = '';
+    let recovery = { pages: 0, firstInvalidOffset: null, reason: 'not-scanned' };
     try {
       partialJson = gunzipSync(compressed, { finishFlush: constants.Z_SYNC_FLUSH }).toString('utf8');
+      recovery = recoverPages(partialJson);
     } catch (error) {
-      const meta = git('show', '-s', '--format=%cI%x09%s', commit).trim();
-      const [date, ...msg] = meta.split('\t');
-      results.push({ commit, date, message: msg.join('\t'), sourceSha256, fullGzip, pages: 0, firstInvalidOffset: null, reason: `gunzip:${error.message}` });
-      continue;
+      recovery = { pages: 0, firstInvalidOffset: null, reason: `gunzip:${error.message}` };
     }
-    const recovery = recoverPages(partialJson);
+
     const meta = git('show', '-s', '--format=%cI%x09%s', commit).trim();
     const [date, ...msg] = meta.split('\t');
     results.push({
       commit,
       date,
       message: msg.join('\t'),
+      chunkCount,
+      files,
       sourceSha256,
       compressedBytes: compressed.length,
       partialChars: partialJson.length,
@@ -109,20 +118,26 @@ for (const commit of commits) {
   }
 }
 
-results.sort((a, b) => (b.pages ?? 0) - (a.pages ?? 0) || Number(b.fullGzip) - Number(a.fullGzip) || String(b.date ?? '').localeCompare(String(a.date ?? '')));
-const top = results.slice(0, 30);
+results.sort((a, b) => (b.pages ?? 0) - (a.pages ?? 0) || Number(b.fullGzip) - Number(a.fullGzip) || (b.chunkCount ?? 0) - (a.chunkCount ?? 0) || String(b.date ?? '').localeCompare(String(a.date ?? '')));
+const top = results.slice(0, 50);
 const best = top[0] ?? null;
+const maxChunkCount = results.reduce((m, r) => Math.max(m, r.chunkCount ?? 0), 0);
+const tailCandidates = results.filter(r => (r.chunkCount ?? 0) >= 18).slice(0, 20);
+
 await mkdir(outDir, { recursive: true });
-await writeFile(join(outDir, 'history-scan.json'), `${JSON.stringify({ scannedUniquePayloads: results.length, best, top }, null, 2)}\n`);
+const report = { scannerVersion: SCANNER_VERSION, scannedUniquePayloads: results.length, maxChunkCount, best, tailCandidates, top };
+await writeFile(join(outDir, 'history-scan.json'), `${JSON.stringify(report, null, 2)}\n`);
 const lines = [
   '# CATS corpus historical recovery scan',
   '',
+  `Scanner version: ${SCANNER_VERSION}`,
   `Unique payloads scanned: ${results.length}`,
-  best ? `Best: ${best.pages} pages at ${best.commit} (${best.message})` : 'Best: none',
+  `Maximum contiguous data chunks found: ${maxChunkCount}`,
+  best ? `Best: ${best.pages} pages / ${best.chunkCount} chunks at ${best.commit} (${best.message})` : 'Best: none',
   '',
-  '| pages | full gzip | commit | date | message | reason |',
-  '|---:|:---:|---|---|---|---|',
-  ...top.map(r => `| ${r.pages ?? 0} | ${r.fullGzip ? 'yes' : 'no'} | ${String(r.commit).slice(0, 12)} | ${r.date ?? ''} | ${(r.message ?? '').replaceAll('|', '\\|')} | ${(r.reason ?? '').replaceAll('|', '\\|')} |`)
+  '| pages | chunks | full gzip | commit | date | message | reason |',
+  '|---:|---:|:---:|---|---|---|---|',
+  ...top.map(r => `| ${r.pages ?? 0} | ${r.chunkCount ?? 0} | ${r.fullGzip ? 'yes' : 'no'} | ${String(r.commit).slice(0, 12)} | ${r.date ?? ''} | ${(r.message ?? '').replaceAll('|', '\\|')} | ${(r.reason ?? '').replaceAll('|', '\\|')} |`)
 ];
 await writeFile(join(outDir, 'history-scan.md'), `${lines.join('\n')}\n`);
-console.log(`RECOVERY_HISTORY_SCAN_OK unique=${results.length} bestPages=${best?.pages ?? 0} bestCommit=${best?.commit ?? 'none'} fullGzip=${best?.fullGzip ?? false}`);
+console.log(`RECOVERY_HISTORY_SCAN_OK version=${SCANNER_VERSION} unique=${results.length} maxChunks=${maxChunkCount} bestPages=${best?.pages ?? 0} bestChunks=${best?.chunkCount ?? 0} bestCommit=${best?.commit ?? 'none'} fullGzip=${best?.fullGzip ?? false}`);
