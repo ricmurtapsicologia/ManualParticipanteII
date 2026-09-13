@@ -11,16 +11,17 @@ const semantic = buildSemanticDocument(sourcePages, sourceSha256);
 
 await writeFile(outputUrl, `${JSON.stringify(semantic, null, 2)}\n`, 'utf8');
 
-const chapterNote = semantic.manifest.sourceChapterCount === semantic.manifest.expectedEditorialChapterCount
-  ? `chapters=${semantic.manifest.sourceChapterCount}`
-  : `source-chapters=${semantic.manifest.sourceChapterCount} expected-editorial=${semantic.manifest.expectedEditorialChapterCount}`;
+const overlaps = semantic.manifest.boundaryChapterOverlaps
+  .map(item => `${item.chapter}:[${item.parts.join(',')}]`)
+  .join(';');
 
 console.log(
   `SEMANTIC_MIGRATE_OK pages=${semantic.manifest.pageCount} blocks=${semantic.manifest.blockCount} ` +
-  `parts=${semantic.manifest.partCount} ${chapterNote} sha=${sourceSha256.slice(0, 12)}`
+  `parts=${semantic.manifest.partCount} chapters=${semantic.manifest.distinctChapterNumberCount} ` +
+  `chapter-part-pairs=${semantic.manifest.sourceChapterPairCount} overlaps=${overlaps || 'none'} ` +
+  `sha=${sourceSha256.slice(0, 12)}`
 );
 
 if (semantic.manifest.editorialAnomalies.length) {
-  console.log(`SEMANTIC_SOURCE_CHAPTER_PAIRS ${semantic.manifest.sourceChapterPairs.join(',')}`);
   console.log(`SEMANTIC_ANOMALIES ${JSON.stringify(semantic.manifest.editorialAnomalies)}`);
 }

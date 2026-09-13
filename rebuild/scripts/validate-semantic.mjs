@@ -44,14 +44,30 @@ for (let i = 0; i < expectedNavigationPages.length; i += 1) {
   if (navigationPages[i] !== expectedNavigationPages[i]) fail(`Navigation coverage mismatch near page ${expectedNavigationPages[i]}`);
 }
 
-const sourceChapterPairs = [...new Set(
-  sourcePages
-    .filter(page => Number(page.chapter) > 0)
-    .map(page => `${page.part ?? 0}:${page.chapter}`)
-)];
+const chapterParts = new Map();
+for (const page of sourcePages) {
+  const chapter = Number(page.chapter);
+  if (!(chapter > 0)) continue;
+  if (!chapterParts.has(chapter)) chapterParts.set(chapter, new Set());
+  chapterParts.get(chapter).add(page.part ?? 0);
+}
+const distinctChapterNumbers = [...chapterParts.keys()].sort((a, b) => a - b);
+const sourceChapterPairs = [];
+for (const chapter of distinctChapterNumbers) {
+  for (const part of [...chapterParts.get(chapter)].sort((a, b) => a - b)) sourceChapterPairs.push(`${part}:${chapter}`);
+}
+const overlaps = distinctChapterNumbers
+  .map(chapter => ({ chapter, parts: [...chapterParts.get(chapter)].sort((a, b) => a - b) }))
+  .filter(item => item.parts.length > 1);
+
 if (semantic.manifest.partCount !== 7) fail(`Expected 7 editorial parts, got ${semantic.manifest.partCount}`);
-if (semantic.manifest.sourceChapterCount !== sourceChapterPairs.length) fail('Source chapter-count preservation mismatch');
-if (JSON.stringify(semantic.manifest.sourceChapterPairs) !== JSON.stringify(sourceChapterPairs)) fail('Source chapter-pair preservation mismatch');
+if (semantic.manifest.distinctChapterNumberCount !== 34) fail(`Expected 34 distinct chapter numbers, got ${semantic.manifest.distinctChapterNumberCount}`);
+if (JSON.stringify(semantic.manifest.distinctChapterNumbers) !== JSON.stringify(distinctChapterNumbers)) fail('Distinct chapter-number preservation mismatch');
+if (semantic.manifest.sourceChapterPairCount !== sourceChapterPairs.length) fail('Chapter/part pair count mismatch');
+if (JSON.stringify(semantic.manifest.sourceChapterPairs) !== JSON.stringify(sourceChapterPairs)) fail('Chapter/part pair preservation mismatch');
+if (JSON.stringify(semantic.manifest.boundaryChapterOverlaps) !== JSON.stringify(overlaps)) fail('Boundary chapter-overlap diagnostics mismatch');
+if (JSON.stringify(overlaps) !== JSON.stringify([{ chapter: 5, parts: [1, 2] }, { chapter: 11, parts: [2, 3] }, { chapter: 20, parts: [3, 4] }])) fail(`Unexpected transition overlaps: ${JSON.stringify(overlaps)}`);
+
 if (semantic.manifest.pageRoles.cover !== 1) fail('Exactly one cover page is required');
 if (!semantic.manifest.pageRoles.continuation) fail('Continuation pages were not identified');
 if (!semantic.manifest.pageRoles['chapter-opening']) fail('Chapter openings were not identified');
@@ -64,11 +80,8 @@ for (const reservedKind of ['figure','diagram','audio','video','quiz','external-
   if (!semantic.capabilities.reservedForLaterWaves.includes(reservedKind)) fail(`Future capability missing from semantic contract: ${reservedKind}`);
 }
 
-const chapterNote = semantic.manifest.sourceChapterCount === 34
-  ? 'source-chapters=34'
-  : `source-chapters=${semantic.manifest.sourceChapterCount} anomaly=queued-for-wave2`;
-
 console.log(
-  `SEMANTIC_VALIDATE_OK pages=249 parts=7 ${chapterNote} blocks=${blockCount} ` +
-  `text=lossless navigation=complete source=${sourceSha256.slice(0, 12)}`
+  `SEMANTIC_VALIDATE_OK pages=249 parts=7 chapters=34 chapter-part-pairs=${sourceChapterPairs.length} ` +
+  `overlaps=5:[1,2];11:[2,3];20:[3,4] blocks=${blockCount} text=lossless navigation=complete ` +
+  `source=${sourceSha256.slice(0, 12)}`
 );
