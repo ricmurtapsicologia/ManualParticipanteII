@@ -1,4 +1,4 @@
-name: Rebuild Wave 4 CI
+name: Rebuild Wave 5 CI
 
 on:
   push:
@@ -29,8 +29,8 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Migrate canonical pages 1-50
-        run: npm run migrate:50
+      - name: Migrate canonical pages 1-100
+        run: npm run migrate:100
       - name: Validate contracts
         run: npm run validate
       - name: Build
@@ -46,5 +46,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add content/pages.json content/provenance.json
-          git commit -m "wave4: persist canonical 50-page corpus [skip ci]"
+          git commit -m "wave5: persist canonical 100-page corpus [skip ci]"
           git push origin HEAD:rebuild-clean-v1
