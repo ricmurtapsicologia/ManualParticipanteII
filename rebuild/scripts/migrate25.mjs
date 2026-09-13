@@ -1,29 +1,34 @@
 import { createHash } from 'node:crypto';
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+import { writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gunzipSync } from 'node:zlib';
 
+const SOURCE_COMMIT = '1c4c0239544ac4ba21dd71b4be973abe01624537';
 const here = dirname(fileURLToPath(import.meta.url));
 const rebuildRoot = resolve(here, '..');
 const repoRoot = resolve(rebuildRoot, '..');
 const contentDir = join(rebuildRoot, 'content');
 
-const names = (await readdir(repoRoot))
+const git = (...args) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
+const names = git('ls-tree', '--name-only', SOURCE_COMMIT)
+  .split(/\r?\n/)
   .filter(name => /^data\d+\.js$/i.test(name))
   .sort((a, b) => Number(a.match(/\d+/)?.[0]) - Number(b.match(/\d+/)?.[0]));
 
-if (!names.length) throw new Error('No legacy data*.js corpus files found');
+if (!names.length) throw new Error(`No data*.js corpus files found at ${SOURCE_COMMIT}`);
 
 let base64 = '';
 for (const name of names) {
-  const source = await readFile(join(repoRoot, name), 'utf8');
+  const source = git('show', `${SOURCE_COMMIT}:${name}`);
   const match = source.match(/\+\s*'([^']+)'\s*;?\s*$/s);
   if (!match) throw new Error(`Could not extract corpus chunk from ${name}`);
   base64 += match[1];
 }
 
-const decoded = gunzipSync(Buffer.from(base64, 'base64')).toString('utf8');
+const compressed = Buffer.from(base64, 'base64');
+const decoded = gunzipSync(compressed).toString('utf8');
 const legacy = JSON.parse(decoded);
 if (!legacy || !Array.isArray(legacy.pages) || legacy.pages.length < 25) {
   throw new Error(`Legacy corpus has ${legacy?.pages?.length ?? 0} pages; expected at least 25`);
@@ -62,6 +67,7 @@ const sourceHash = createHash('sha256').update(base64).digest('hex');
 const provenance = {
   schema: 1,
   source: 'legacy embedded CATS corpus',
+  sourceCommit: SOURCE_COMMIT,
   sourceFiles: names,
   sourceSha256: sourceHash,
   extractedPages: 25,
@@ -71,5 +77,5 @@ const provenance = {
 await writeFile(join(contentDir, 'pages.json'), `${JSON.stringify(migrated, null, 2)}\n`);
 await writeFile(join(contentDir, 'provenance.json'), `${JSON.stringify(provenance, null, 2)}\n`);
 
-console.log(`MIGRATE_OK chunks=${names.length} legacyPages=${legacy.pages.length} extracted=25 sha256=${sourceHash.slice(0, 12)}`);
-console.log(`MIGRATE_TITLES ${migrated.slice(0, 25).map(p => `${p.number}:${p.title}`).join(' | ')}`);
+console.log(`MIGRATE_OK source=${SOURCE_COMMIT.slice(0, 12)} chunks=${names.length} compressedBytes=${compressed.length} legacyPages=${legacy.pages.length} extracted=25 sha256=${sourceHash.slice(0, 12)}`);
+console.log(`MIGRATE_TITLES ${migrated.map(p => `${p.number}:${p.title}`).join(' | ')}`);
