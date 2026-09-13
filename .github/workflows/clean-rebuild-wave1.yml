@@ -1,0 +1,20 @@
+name: clean-rebuild-wave1
+
+on:
+  push:
+    branches: [rebuild-clean-wave1]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install
+      - run: npm run smoke
+      - run: npm run check
+      - run: npm run build
