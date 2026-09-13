@@ -84,6 +84,8 @@
   let doublePage = false;
   let busy = false;
   let speaking = false;
+  let speechPending = false;
+  const TTS_VOICE_NAME = 'Antônio';
 
   const saved = (() => {
     try { return JSON.parse(localStorage.getItem('catsBookProgress') || '{}'); } catch { return {}; }
@@ -258,19 +260,58 @@
     setTimeout(() => $(`#${id} input`)?.focus(), 100);
   }
 
-  function textToSpeech() {
+  const normalizeVoiceName = (value) => String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase('pt-BR');
+
+  function findAntonioVoice() {
+    return window.speechSynthesis.getVoices().find((voice) => {
+      const identity = normalizeVoiceName(`${voice.name} ${voice.voiceURI}`);
+      const language = String(voice.lang || '').replace('_', '-').toLowerCase();
+      return identity.includes('antonio') && language.startsWith('pt-br');
+    }) || null;
+  }
+
+  async function resolveAntonioVoice() {
+    const available = findAntonioVoice();
+    if (available) return available;
+    await new Promise((resolve) => {
+      let finished = false;
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timer);
+        window.speechSynthesis.removeEventListener?.('voiceschanged', finish);
+        resolve();
+      };
+      const timer = setTimeout(finish, 1200);
+      window.speechSynthesis.addEventListener?.('voiceschanged', finish, { once: true });
+      window.speechSynthesis.getVoices();
+    });
+    return findAntonioVoice();
+  }
+
+  async function textToSpeech() {
     if (!('speechSynthesis' in window)) { toast('Leitura em voz alta indisponível neste navegador.'); return; }
-    if (speaking) { speechSynthesis.cancel(); speaking = false; toast('Leitura interrompida.'); return; }
+    if (speaking) { window.speechSynthesis.cancel(); speaking = false; toast('Leitura interrompida.'); return; }
+    if (speechPending) return;
+    speechPending = true;
+    const voice = await resolveAntonioVoice();
+    speechPending = false;
+    if (!voice) { toast('A voz Antônio não está disponível neste navegador.'); return; }
     const item = BOOK.pages[page - 1];
     const text = [item.title, ...item.blocks.filter((block) => !['ref', 'chapter'].includes(block.type)).map((block) => block.text)].join('. ').slice(0, 12000);
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'pt-BR';
+    utterance.voice = voice;
+    utterance.lang = voice.lang || 'pt-BR';
     utterance.rate = 0.96;
     utterance.onend = () => { speaking = false; };
-    speechSynthesis.cancel();
-    speechSynthesis.speak(utterance);
+    utterance.onerror = () => { speaking = false; toast('Não foi possível iniciar a voz Antônio.'); };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
     speaking = true;
-    toast('Leitura em voz alta iniciada. Toque novamente para parar.');
+    toast('Leitura iniciada com a voz Antônio. Toque novamente para parar.');
   }
 
   function bind() {
@@ -317,6 +358,7 @@
     book: BOOK,
     manifest,
     getState: () => ({ page, mode, doublePage, total: TOTAL, target: BOOK.targetPages }),
+    getTtsStatus: () => ({ preferredVoice: TTS_VOICE_NAME, activeVoice: findAntonioVoice()?.name || null }),
     goToPage,
     search,
   };

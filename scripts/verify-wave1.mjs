@@ -15,6 +15,7 @@ const meta = json('book/meta.json');
 const pages = json('book/pages-01.json');
 const index = read('index.html');
 const app = read('app.js');
+const css = read('app.css');
 const config = json('vercel.json');
 
 assert.equal(manifest.schemaVersion, 1);
@@ -47,6 +48,11 @@ assert.equal(/data\d+\.js/.test(index), false, 'Legacy data scripts are still ac
 assert.ok(index.includes('/cover1.js'));
 assert.ok(index.includes('/app.js'));
 assert.ok(app.includes("fetchJson('/api/book'"));
+assert.ok(css.includes('.page p,.scrollpage p,.bullet,.ref{text-align:justify'));
+assert.ok(app.includes("const TTS_VOICE_NAME = 'Antônio'"));
+assert.ok(app.includes("identity.includes('antonio') && language.startsWith('pt-br')"));
+assert.ok(app.includes('utterance.voice = voice'));
+assert.ok(index.includes('Leitura com a voz Antônio'));
 assert.ok(config.rewrites.some((rule) => rule.source === '/manual-do-participante-cats'));
 
 const invoke = async (handler) => {
@@ -78,5 +84,7 @@ console.log(JSON.stringify({
   chapters: meta.chapters.length,
   apiBook: bookResponse.statusCode,
   apiHealth: healthResponse.statusCode,
+  typography: 'justified',
+  ttsVoice: 'Antônio (pt-BR)',
   legacyBrowserPipeline: 'inactive',
 }, null, 2));

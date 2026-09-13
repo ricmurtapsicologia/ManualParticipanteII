@@ -11,3 +11,5 @@
 - Fixado o runtime em Node.js `24.x` para evitar atualização automática de versão principal.
 - Tornada explícita a verificação de integridade com `window.crypto.subtle`.
 - Publicado preview isolado no projeto Vercel canônico; produção permaneceu intacta.
+- Justificados os textos corridos nos modos livro e leitura contínua.
+- Definida Antônio (`pt-BR`) como voz TTS canônica, sem substituição silenciosa.
