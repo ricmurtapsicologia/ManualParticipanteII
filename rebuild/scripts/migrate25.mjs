@@ -34,7 +34,9 @@ let depth = 0;
 let inString = false;
 let escaped = false;
 let itemStart = -1;
-for (let cursor = pagesStart; cursor < partialJson.length; cursor += 1) {
+let firstInvalidOffset = null;
+
+scan: for (let cursor = pagesStart; cursor < partialJson.length; cursor += 1) {
   const character = partialJson[cursor];
   if (inString) {
     if (escaped) escaped = false;
@@ -49,18 +51,31 @@ for (let cursor = pagesStart; cursor < partialJson.length; cursor += 1) {
   } else if (character === ']') {
     depth -= 1;
     if (depth === 0 && itemStart >= 0) {
-      recovered.push(JSON.parse(partialJson.slice(itemStart, cursor + 1)));
+      const candidate = partialJson.slice(itemStart, cursor + 1);
+      try {
+        const parsed = JSON.parse(candidate);
+        const expected = recovered.length + 1;
+        if (!Array.isArray(parsed) || Number(parsed[0]) !== expected) {
+          firstInvalidOffset = itemStart;
+          console.log(`RECOVERY_STOP reason=sequence expected=${expected} got=${parsed?.[0] ?? 'invalid'} offset=${itemStart}`);
+          break scan;
+        }
+        recovered.push(parsed);
+      } catch (error) {
+        firstInvalidOffset = itemStart;
+        console.log(`RECOVERY_STOP reason=json pageCandidate=${recovered.length + 1} offset=${itemStart} message=${JSON.stringify(error.message)}`);
+        break scan;
+      }
       itemStart = -1;
     }
   }
 }
 
-console.log(`RECOVERY_SCAN completePages=${recovered.length} partialChars=${partialJson.length} compressedBytes=${compressed.length} base64Mod4=${base64.length % 4}`);
-if (recovered.length < TARGET_PAGES) throw new Error(`Only ${recovered.length} complete pages are safely recoverable; target is ${TARGET_PAGES}`);
+console.log(`RECOVERY_SCAN completePages=${recovered.length} firstInvalidOffset=${firstInvalidOffset ?? 'none'} partialChars=${partialJson.length} compressedBytes=${compressed.length} base64Mod4=${base64.length % 4}`);
+if (recovered.length < TARGET_PAGES) throw new Error(`Only ${recovered.length} complete sequential pages are safely recoverable; target is ${TARGET_PAGES}`);
 
 const selected = recovered.slice(0, TARGET_PAGES);
 const migrated = selected.map((row, index) => {
-  if (!Array.isArray(row)) throw new Error(`Invalid legacy page row ${index + 1}`);
   const number = Number(row[0] ?? index + 1);
   const blocks = Array.isArray(row[5]) ? row[5] : [];
   const paragraphs = blocks.map(block => Array.isArray(block) ? String(block[1] ?? '') : String(block ?? '')).filter(Boolean);
@@ -93,17 +108,18 @@ for (let index = 0; index < migrated.length; index += 1) {
 const sourceHash = createHash('sha256').update(base64).digest('hex');
 const selectedHash = createHash('sha256').update(JSON.stringify(selected)).digest('hex');
 const provenance = {
-  schema: 2,
-  source: 'legacy CATS corpus recovered with tolerant gzip flush',
+  schema: 3,
+  source: 'legacy CATS corpus recovered from complete sequential prefix using tolerant gzip flush',
   sourceCommit: SOURCE_COMMIT,
   sourceFiles: names,
   sourceSha256: sourceHash,
   selectedSha256: selectedHash,
-  recoverablePages: recovered.length,
+  recoverableSequentialPages: recovered.length,
+  firstInvalidOffset,
   extractedPages: TARGET_PAGES,
   targetBookPages: 249
 };
 
 await writeFile(join(contentDir, 'pages.json'), `${JSON.stringify(migrated, null, 2)}\n`);
 await writeFile(join(contentDir, 'provenance.json'), `${JSON.stringify(provenance, null, 2)}\n`);
-console.log(`MIGRATE_OK source=${SOURCE_COMMIT.slice(0, 12)} recoverable=${recovered.length} extracted=${TARGET_PAGES} sha256=${selectedHash.slice(0, 12)}`);
+console.log(`MIGRATE_OK source=${SOURCE_COMMIT.slice(0, 12)} recoverableSequential=${recovered.length} extracted=${TARGET_PAGES} sha256=${selectedHash.slice(0, 12)}`);
