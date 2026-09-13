@@ -10,7 +10,7 @@ test('page 58 microlearning is interactive, source-grounded and preserves the ca
   await page.goto('/', { waitUntil: 'networkidle' });
   await loadSavedPage(page, 58);
 
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-multimedia-wave', '5.3');
+  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-multimedia-wave', '5.4');
   const card = page.getByTestId('microlearning-resource');
   await expect(card).toHaveCount(1);
   await expect(card).toHaveAttribute('data-media-id', 'microlearning-high-impact-hypothesis-p58');
