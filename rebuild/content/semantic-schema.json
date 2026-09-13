@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "name": "CATS semantic editorial model",
+  "editorialModel": "part>chapter>page>block",
+  "pageRoles": [
+    "cover",
+    "front-matter",
+    "part-transition",
+    "chapter-opening",
+    "continuation"
+  ],
+  "blockKinds": [
+    "paragraph",
+    "heading",
+    "list-item",
+    "opening",
+    "objectives",
+    "doctrine",
+    "evidence",
+    "practice",
+    "attention",
+    "decide",
+    "case",
+    "guided-analysis",
+    "summary",
+    "review",
+    "figure",
+    "diagram",
+    "audio",
+    "video",
+    "quiz",
+    "external-resource"
+  ],
+  "losslessSourceFields": [
+    "number",
+    "part",
+    "partTitle",
+    "chapter",
+    "title",
+    "cover",
+    "paragraphs[].text"
+  ],
+  "reservedMediaMetadata": {
+    "figure": ["src", "alt", "caption", "credit"],
+    "diagram": ["src", "alt", "caption", "longDescription"],
+    "audio": ["src", "voice", "duration", "transcript"],
+    "video": ["src", "poster", "captions", "transcript", "duration"],
+    "quiz": ["prompt", "options", "feedback", "answerMode"],
+    "external-resource": ["href", "label", "source", "verifiedAt"]
+  },
+  "wave1Rule": "No source text may be rewritten, merged, deleted or reordered during semantic migration."
+}

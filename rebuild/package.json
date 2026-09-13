@@ -12,6 +12,8 @@
     "migrate:150": "node scripts/migrate150.mjs",
     "migrate:155": "node scripts/migrate155.mjs",
     "migrate:249": "node scripts/migrate155.mjs && node scripts/repair-v08-source.mjs && node scripts/reflow-v08-tail.mjs",
+    "semantic:migrate": "node scripts/migrate-semantic.mjs",
+    "semantic:validate": "node scripts/validate-semantic.mjs",
     "validate": "node scripts/validate.mjs",
     "smoke": "node scripts/smoke.mjs",
     "verify:deployment": "node scripts/verify-deployment.mjs",
