@@ -429,5 +429,502 @@
       "5. Faixa etária e significado operacional",
       "O boletim mostra relevância importante do suicídio entre adolescentes e jovens quando comparado a outras causas de morte. Isso não significa que pessoas idosas tenham baixo risco; ao contrário, taxas específicas podem ser altas em determinados"
     ]
+  },
+  {
+    "number": 26,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 3,
+    "title": "Epidemiologia e inteligência para decisão",
+    "paragraphs": [
+      "estratos. A função do dado é sinalizar que prevenção precisa ser sensível ao ciclo de vida e que o CATS deve incluir adaptações para adolescentes, adultos e idosos. Na ocorrência, idade muda a forma de comunicar e articular rede, mas não substitui avaliação. Um adolescente exige atenção a responsáveis, proteção e desenvolvimento; um idoso pode apresentar déficits sensoriais, isolamento e condições clínicas que modificam abordagem. A epidemiologia informa por que essas populações merecem capítulo próprio, não um algoritmo de perigo.",
+      "6. O problema da subnotificação e da classificação",
+      "Dados são produzidos por pessoas e sistemas. Se uma ocorrência é codificada apenas como queda, intoxicação ou ferimento quando havia tentativa de suicídio claramente reconhecida, o evento pode desaparecer da inteligência institucional. A ITO 30 enfatiza codificação adequada no REDS justamente para permitir acompanhamento estatístico e encaminhamento. Subnotificação também pode ocorrer na saúde por barreiras de acesso, estigma, falhas de preenchimento e diferenças de definição. Ao interpretar tendência, o profissional deve considerar mudanças de sistema e qualidade do dado. Um aumento pode refletir aumento real, melhoria de detecção ou ambos.",
+      "7. De dado a inteligência",
+      "Dado isolado é matéria-prima. Inteligência surge quando fontes são verificadas, conectadas, analisadas e transformadas em orientação para decisão. O framework de inteligência em saúde pública da OMS descreve competências de detectar, verificar, analisar e avaliar, combinadas com troca colaborativa de informações. Embora seja um documento de outro domínio, sua lógica ajuda a pensar o uso institucional dos registros de ATS: capturar corretamente, verificar qualidade, analisar padrões, interpretar implicações e comunicar"
+    ]
+  },
+  {
+    "number": 27,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 3,
+    "title": "Epidemiologia e inteligência para decisão",
+    "paragraphs": [
+      "para quem decide. Para o CBMMG, isso pode orientar treinamento, prevenção, campanhas, distribuição de recursos e revisão doutrinária. Mas há uma condição: a qualidade da inteligência nunca será maior que a qualidade do registro que a alimenta.",
+      "DECIDA",
+      "Um batalhão observa aumento de 30% nas ocorrências classificadas como tentativa de suicídio em um ano. Antes de concluir que “o suicídio aumentou 30%”, quais verificações precisam ser feitas? Considere mudança de codificação, cobertura, duplicidades, população, método de contagem e consistência temporal.",
+      "LABORATÓRIO DE DECISÃO",
+      "Considere duas regiões: A registrou 80 ocorrências em população de 200 mil habitantes; B registrou 120 em população de 1 milhão. Calcule a taxa por 100 mil apenas como exercício de compreensão e depois explique por que essa taxa de ocorrência não deve ser chamada automaticamente de “taxa de suicídio”. Liste três informações adicionais necessárias para planejamento.",
+      "DEBRIEFING",
+      "A taxa de ocorrência seria 40 por 100 mil em A e 12 por 100 mil em B, supondo definições e períodos equivalentes. Mas “ocorrência de ATS” não é sinônimo de morte por suicídio nem de notificação de violência autoprovocada. Para planejamento, seria necessário conhecer definições, período, repetição de pessoas/eventos, distribuição geográfica, desfechos, métodos, cobertura do registro e recursos existentes. O exercício mostra como denominadores e definições mudam interpretação.",
+      "O QUE EU LEVO DESTE CAPÍTULO",
+      "• Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+      "• Número, proporção e taxa respondem a perguntas diferentes.",
+      "• O Brasil registrou 15.507 suicídios em 2021; 77,8% eram do sexo masculino."
+    ]
+  },
+  {
+    "number": 28,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 3,
+    "title": "Epidemiologia e inteligência para decisão",
+    "paragraphs": [
+      "• As notificações de violência autoprovocada em 2021 foram majoritariamente femininas; essa base não é equivalente à mortalidade.",
+      "• Minas Gerais apresentou taxa de mortalidade por suicídio de 8,45 por 100 mil em 2021.",
+      "• Registro correto é parte da prevenção e da inteligência institucional.",
+      "• Todo dado precisa de fonte, período, população e medida.",
+      "TESTE-SE",
+      "11. Por que uma taxa populacional não pode ser convertida diretamente em",
+      "risco individual na cena?",
+      "12. Qual é a diferença entre proporção e taxa?",
+      "13. O que explica a coexistência de maior proporção masculina nos óbitos e",
+      "maior proporção feminina nas notificações de violência autoprovocada?",
+      "14. Como erro de codificação no REDS pode afetar política de prevenção?",
+      "15. Quais etapas transformam um conjunto de registros em inteligência",
+      "para decisão?",
+      "Referências principais: Brasil, Ministério da Saúde, 2024; CBMMG, 2021; WHO, 2025.",
+      "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 3",
+      "LEITURA DA CENA",
+      "Qual ideia deste capítulo muda o que você observa ou prioriza? ________________________________________________",
+      "ERRO A EVITAR",
+      "Que automatismo, rótulo ou comportamento pode prejudicar segurança ou vínculo? ________________________________________________",
+      "COMPETÊNCIA",
+      "Qual comportamento observável deverá ser demonstrado na próxima simulação? ________________________________________________",
+      "CRITÉRIO DE SUCESSO",
+      "Que indicador mostrará execução adequada da competência? ________________________________________________",
+      "FEEDBACK / DÚVIDA",
+      "Registre um acerto, um ajuste para a próxima prática ou uma dúvida para o instrutor. ________________________________________________"
+    ]
+  },
+  {
+    "number": 29,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 4,
+    "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+    "paragraphs": [
+      "A crise suicida: dor, ambivalência, desesperança e constrição Compreender processos sem reduzir a pessoa a um mecanismo",
+      "SITUAÇÃO DE ABERTURA",
+      "Helena diz: “eu não quero continuar assim”, mas permanece conversando. Minutos depois afirma: “não tem mais nada”, e logo pergunta o que acontecerá se sair dali. Para um observador apressado, as falas parecem contraditórias. Para quem compreende crise suicida, a coexistência de desejo de interromper sofrimento e movimentos de preservação é uma informação central: a experiência pode ser ambivalente, dinâmica e influenciada pela interação.",
+      "O que você deverá conseguir fazer",
+      "• Descrever crise suicida como estado dinâmico, não identidade permanente.",
+      "• Compreender dor psicológica, desesperança, ambivalência e constrição cognitiva como conceitos úteis à leitura profissional.",
+      "• Evitar explicações neurobiológicas simplificadas ou deterministas.",
+      "• Traduzir conceitos em implicações para comunicação, tempo e reavaliação.",
+      "1. Crise é processo, não diagnóstico",
+      "Crise descreve um período em que demandas percebidas excedem recursos disponíveis de enfrentamento e a capacidade de organizar respostas fica comprometida. Em uma crise suicida, pensamentos e comportamentos relacionados à morte podem tornar-se parte da tentativa de resolver ou interromper um sofrimento percebido como intolerável. Essa formulação não implica que todas as crises tenham a mesma origem, duração ou apresentação. O bombeiro não precisa conhecer toda a história causal para agir. Precisa reconhecer que a pessoa pode estar operando com repertório reduzido de alternativas, sob alta carga emocional e com avaliação do futuro influenciada pelo sofrimento atual. Isso justifica comunicação simples, tempo, redução de estímulos, escuta e busca de segurança - não porque “o cérebro"
+    ]
+  },
+  {
+    "number": 30,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 4,
+    "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+    "paragraphs": [
+      "desligou”, mas porque decisões humanas sob estresse intenso podem tornar-se menos flexíveis e mais estreitas.",
+      "EVIDÊNCIA",
+      "Wenzel e Beck propõem um modelo em que vulnerabilidades, estressores, conteúdos cognitivos e vieses de processamento podem interagir até produzir uma crise. O modelo enfatiza que combinações variam entre indivíduos e que não existe conjunto único de características que garanta comportamento suicida.",
+      "2. Dor psicológica e insuportabilidade",
+      "Na suicidologia, diferentes autores descrevem sofrimento subjetivo intenso como componente frequente de crises. A pessoa pode relatar vergonha, culpa, perda, medo, solidão, fracasso, dor física, conflito ou sensação de aprisionamento. O abordador não precisa escolher qual emoção é “a verdadeira”. Sua tarefa é compreender a experiência narrada e o que ela significa agora. Um erro frequente é responder ao conteúdo com comparação: “isso tem solução”, “há pessoas em situação pior”, “você precisa ser forte”. Mesmo quando bem- intencionadas, essas frases discutem a legitimidade do sofrimento. Uma resposta orientada à compreensão reconhece a experiência e mantém possibilidade: “para você, isso ficou insuportável hoje”; “quero entender o que tornou este momento diferente”.",
+      "NA PRÁTICA",
+      "A palavra “insuportável” indica intensidade percebida, não prova de que a pessoa tomará determinada ação. Use-a para orientar escuta e segurança, não para fazer prognóstico.",
+      "3. Desesperança: quando o futuro perde acessibilidade",
+      "Desesperança não é simplesmente tristeza. Ela envolve expectativas negativas sobre o futuro e percepção de que mudanças positivas são improváveis ou inacessíveis. A literatura cognitiva relaciona desesperança ao comportamento suicida em diversos contextos, mas também mostra que sua importância varia entre pessoas e situações. Na abordagem, isso tem uma implicação prática: discursos abstratos"
+    ]
+  },
+  {
+    "number": 31,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 4,
+    "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+    "paragraphs": [
+      "sobre “o futuro” podem ser pouco úteis quando a pessoa não consegue imaginá-lo. Perguntas concretas sobre próximas horas, hábitos, pessoas e tarefas podem ser mais acessíveis. A ITO 30 inclui a “ponte para o futuro” como ferramenta de diálogo e orienta explorar atividades prazerosas e preparativos concretos. O manual a interpreta como recurso para ampliar representação de continuidade, não como técnica de persuasão automática.",
+      "4. Ambivalência: duas direções podem coexistir",
+      "Ambivalência significa coexistência de tendências, desejos ou avaliações conflitantes. Uma pessoa pode querer que a dor pare e, ao mesmo tempo, aceitar presença; dizer que nada importa e proteger um objeto significativo; pedir distância e manter contato verbal. Esses sinais não devem ser romantizados nem tratados como garantia de desistência. Eles mostram que a situação continua aberta a influência e requer cuidado. O papel do abordador não é vencer um debate entre “vida” e “morte”. É criar condições para que alternativas de segurança permaneçam possíveis. Isso inclui evitar humilhação, preservar escolhas dentro de limites, reduzir pressão e reconhecer mudanças pequenas de cooperação.",
+      "ATENÇÃO",
+      "Não transforme sinais de ambivalência em “fatores de proteção confirmados”. Uma pergunta sobre familiares, um pedido de água ou uma dúvida sobre o que acontecerá depois podem ser importantes, mas precisam ser interpretados no conjunto da cena e reavaliados.",
+      "5. Constrição: quando o campo de alternativas estreita",
+      "Crises podem ser acompanhadas por pensamento dicotômico, dificuldade de gerar soluções, memória sobre experiências passadas pouco acessível e foco intenso no problema atual. Wenzel e Beck revisam literatura sobre déficits de resolução de problemas, estilo cognitivo rígido e vieses. Botega também descreve características como ambivalência, impulsividade e rigidez/constrição em crises"
+    ]
+  },
+  {
+    "number": 32,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 4,
+    "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+    "paragraphs": [
+      "suicidas. Para o abordador, o conceito de constrição justifica uma estratégia de baixa exigência: não apresentar dez soluções; não exigir plano de vida; não confrontar com uma lista de razões; não insistir que a pessoa “pense racionalmente”. Em vez disso, trabalha-se com um próximo passo seguro, uma informação por vez e perguntas que permitam ampliar gradualmente o repertório.",
+      "6. Por que este manual evita “neuroexplicações” fáceis",
+      "É tentador explicar crise dizendo que “a amígdala sequestra o cérebro” ou que “o córtex pré-frontal desliga”. Essas imagens são atraentes porque produzem sensação de mecanismo simples. Porém, comportamento suicida emerge de sistemas psicológicos, sociais, biológicos e contextuais complexos, e a neurociência não autoriza inferir um circuito específico a partir de uma ocorrência individual. O problema pedagógico de uma metáfora excessivamente literal é duplo. Primeiro, ela pode transformar hipótese em certeza. Segundo, pode fazer o aluno acreditar que a técnica funciona porque “reativa” uma região cerebral específica. O manual prefere explicações no nível em que a evidência é mais útil à decisão: sob sofrimento e estresse intensos, atenção e resolução de problemas podem estreitar; comunicação simples, tempo, escuta e redução de pressão tendem a ser mais compatíveis com esse estado.",
+      "EVIDÊNCIA",
+      "A literatura cognitiva oferece modelos de processamento e conteúdo mental; isso não equivale a demonstrar uma sequência neurobiológica única para cada crise. Use o modelo para formular perguntas e hipóteses, não para diagnosticar o cérebro na cena.",
+      "7. O tempo como recurso clínico-operacional",
+      "Ganhar tempo é uma ideia recorrente em negociação de crise porque estados intensos mudam. Tempo permite chegada de recursos, redução de ativação, ampliação de informação e surgimento de alternativas. Mas “ganhar tempo” não significa prolongar conversa"
+    ]
+  },
+  {
+    "number": 33,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 4,
+    "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+    "paragraphs": [
+      "por princípio. A duração precisa servir à segurança e ao objetivo da ocorrência. O abordador observa se o tempo está associado a maior comunicação, menor pressão e possibilidade de saída. Se a situação se torna mais instável ou um gesto indica iminência, o sistema precisa reavaliar transição. O tempo é recurso, não estratégia absoluta.",
+      "8. Da teoria à linguagem",
+      "Conceitos só são úteis se modificarem comunicação. Diante de desesperança, o profissional evita futuro abstrato e procura próximos passos concretos. Diante de constrição, reduz complexidade e trabalha uma alternativa de cada vez. Diante de ambivalência, preserva escolhas seguras e evita ultimatos. Diante de dor psicológica, reconhece sofrimento sem transformá-lo em julgamento sobre se “faz sentido”. A abordagem continua sendo humana e adaptativa. Nenhuma categoria substitui a pergunta: “o que esta pessoa está comunicando agora e o que minha próxima intervenção pode produzir?”",
+      "LABORATÓRIO DE DECISÃO",
+      "Helena diz: “não existe nada depois de hoje”. Três respostas possíveis: A) “Claro que existe, você tem filhos e trabalho”; B) “Você está dizendo que, neste momento, não consegue enxergar nada além do que está doendo agora”; C) “Isso é pensamento distorcido, você precisa raciocinar”. Analise cada resposta em termos de validação, confronto, carga cognitiva e possibilidade de continuidade da conversa.",
+      "DEBRIEFING",
+      "B tende a ser a mais compatível com o capítulo porque descreve a experiência sem concordar com a conclusão e deixa espaço para correção. A pode usar relações importantes como argumento moral e contestar a percepção. C aplica rótulo técnico e transforma a"
+    ]
+  },
+  {
+    "number": 34,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 4,
+    "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+    "paragraphs": [
+      "conversa em correção. Em outro momento, filhos ou trabalho podem ser explorados se Helena os introduzir ou se houver função clara, mas não como prova de que ela “deveria” querer viver.",
+      "O QUE EU LEVO DESTE CAPÍTULO",
+      "• Crise suicida é estado dinâmico e individual, não identidade.",
+      "• Dor psicológica, desesperança, ambivalência e constrição são conceitos de compreensão, não etiquetas diagnósticas.",
+      "• Ambivalência mantém a situação aberta, mas não garante segurança.",
+      "• Constrição favorece comunicação simples e alternativas graduais.",
+      "• Modelos cognitivos ajudam a formular hipóteses; não autorizam inferência neurobiológica específica.",
+      "• Tempo pode ser recurso quando aumenta segurança e possibilidades.",
+      "TESTE-SE",
+      "16. Qual é a diferença entre validar sofrimento e concordar com a conclusão",
+      "suicida?",
+      "17. Como a desesperança pode modificar a forma de perguntar sobre",
+      "futuro?",
+      "18. Por que sinais de ambivalência não devem ser tratados como garantia",
+      "de desistência?",
+      "19. O que a ideia de constrição sugere sobre quantidade e complexidade das",
+      "alternativas oferecidas?",
+      "20. Por que o manual evita explicações como “o cérebro racional desligou”?",
+      "Referências principais: Wenzel & Beck, 2008; Botega, 2015; Corrêa et al., 2022; Scavacini, Reis e Silva, 2021;",
+      "CBMMG, 2021.",
+      "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 4",
+      "LEITURA DA CENA",
+      "Qual ideia deste capítulo muda o que você observa ou prioriza? ________________________________________________",
+      "ERRO A EVITAR",
+      "Que automatismo, rótulo ou comportamento pode prejudicar segurança ou vínculo? ________________________________________________",
+      "COMPETÊNCIA",
+      "Qual comportamento observável deverá ser demonstrado na próxima simulação? ________________________________________________",
+      "CRITÉRIO DE SUCESSO",
+      "Que indicador mostrará execução adequada da competência? ________________________________________________ FEEDBACK / DÚVIDA Registre um acerto, um ajuste para a próxima"
+    ]
+  },
+  {
+    "number": 35,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 4,
+    "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+    "paragraphs": [
+      "prática ou uma dúvida para o instrutor. ________________________________________________"
+    ]
+  },
+  {
+    "number": 36,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "Fatores associados, proteção, risco e limites da avaliação Usar contexto sem transformar listas em oráculos",
+      "SITUAÇÃO DE ABERTURA",
+      "A equipe de coleta informa que Antônio, 72 anos, vive sozinho, perdeu a esposa há um ano, possui doença crônica e reduziu contato com amigos. Um militar conclui: “ele tem vários fatores de risco; então o risco é alto”. Outro lembra que Antônio mantém vínculo com uma filha, participa de uma comunidade religiosa e aceitou conversar. O caso mostra um problema clássico: listas de fatores podem organizar atenção, mas não substituem avaliação da situação presente.",
+      "O que você deverá conseguir fazer",
+      "• Distinguir fator associado, fator de risco, fator precipitante e fator de proteção.",
+      "• Usar listas como apoio à coleta e formulação, não como cálculo automático de risco.",
+      "• Reconhecer limitações da previsão individual do comportamento suicida.",
+      "• Relacionar fatores de proteção a recursos concretos e efetivamente acessíveis.",
+      "• Integrar histórico, contexto, comportamento presente, método e ambiente na avaliação operacional.",
+      "1. O que significa “fator de risco”",
+      "Na linguagem cotidiana, qualquer característica associada a suicídio é frequentemente chamada de fator de risco. Em pesquisa, o termo é mais exigente: para demonstrar risco, uma variável precisa preceder o desfecho e aumentar sua probabilidade em determinado contexto. Wenzel e Beck, por exemplo, distinguem correlatos e vulnerabilidades de fatores de risco quando o desenho de estudo não permite estabelecer precedência temporal. Para o aluno do CATS, a distinção evita falsa certeza. Sexo, idade, transtorno mental, uso de substâncias, isolamento, tentativas anteriores e eventos de vida"
+    ]
+  },
+  {
+    "number": 37,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "podem estar associados ao comportamento suicida em diferentes estudos, mas nenhum fator isolado prediz com segurança o que uma pessoa fará nos próximos minutos.",
+      "EVIDÊNCIA",
+      "Modelos baseados apenas em características demográficas e diagnósticas têm limitações importantes para classificar indivíduos. A literatura enfatiza necessidade de compreender processos e contexto em tempo real, não apenas somar fatores (Wenzel & Beck, 2008).",
+      "2. Predisponentes e precipitantes na ITO 30",
+      "A ITO 30 utiliza a distinção entre fatores predisponentes e precipitantes e orienta a equipe a buscá-los durante observação e coleta de informações. Predisponentes fazem parte do contexto histórico e podem aumentar vulnerabilidade. Precipitantes são acontecimentos ou mudanças mais próximas da crise atual. Didaticamente, essa divisão ajuda a organizar história: “o que torna esta pessoa vulnerável?” e “o que mudou recentemente?”. O perigo surge quando a equipe presume causalidade: “a separação causou a tentativa”, “a dívida é o motivo”. A pessoa pode atribuir significado diferente, e múltiplos eventos podem interagir.",
+      "NA PRÁTICA",
+      "Registre “familiares relatam separação ocorrida há três dias e aumento de isolamento” em vez de “tentativa causada por separação”. A primeira formulação preserva fonte e temporalidade; a segunda afirma causalidade que talvez não tenha sido estabelecida.",
+      "3. Fatores de proteção: potencial não é disponibilidade",
+      "Vínculos familiares, pertencimento comunitário, valores, responsabilidades, acesso a cuidado, habilidades de enfrentamento e projetos podem funcionar como proteção em diferentes contextos. Porém, proteção não é propriedade fixa. Durante uma crise, um vínculo que normalmente protege pode estar conflituoso; uma rede pode existir, mas ser percebida como inacessível; uma responsabilidade pode ser vivida como peso. A ITO 30 orienta coletar"
+    ]
+  },
+  {
+    "number": 38,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "fatores de proteção e reconhece que familiares e amigos podem oferecer informações úteis. O abordador deve verificar significado com a própria pessoa. Em vez de afirmar “você tem seus filhos”, pode explorar “você falou dos seus filhos; o que está acontecendo entre vocês hoje?”. Isso evita usar relações como instrumento de culpa.",
+      "4. Avaliação operacional não é escala clínica",
+      "Profissionais de saúde podem utilizar entrevistas estruturadas, instrumentos e formulação clínica. O bombeiro precisa realizar avaliação operacional: o que ameaça segurança agora? Quais meios, condições ambientais e comportamentos exigem controle? A pessoa está acessível à comunicação? Há terceiros vulneráveis? Quais equipes e especialidades são necessárias? O que mudou desde a última observação? Essa avaliação inclui fatores de risco e proteção, mas não se reduz a eles. O método e o local escolhido, a proximidade física do perigo, mudanças de comportamento, presença de armas, intoxicação, fogo, eletricidade, altura, água e possibilidade de violência podem dominar a decisão operacional.",
+      "DOUTRINA",
+      "A ITO 30 determina avaliação contínua dos riscos inerentes ao método e ao local e orienta que a ocorrência seja considerada insegura, mantendo atenção mesmo quando a pessoa aparenta cooperar.",
+      "5. Por que somar pontos pode enganar",
+      "Uma tentação é criar lista em que cada fator soma um ponto e o resultado classifica risco baixo, moderado ou alto. Essa estratégia parece objetiva, mas pode mascarar fatores críticos. Uma única mudança de cenário - por exemplo, acesso imediato a meio letal ou comportamento que indique iminência - pode ser mais relevante para a decisão do que vários fatores históricos somados. Além disso, “baixo risco” pode ser entendido como permissão para reduzir cuidado. O manual prefere linguagem de necessidades e prioridades:"
+    ]
+  },
+  {
+    "number": 39,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "“há risco de queda”, “há possibilidade de agressão”, “há necessidade de apoio policial”, “há baixa responsividade à comunicação e mudança recente de comportamento”. Essa linguagem conduz ação.",
+      "6. Informação de terceiros: útil e imperfeita",
+      "Familiares, amigos, colegas e solicitantes podem informar histórico, gatilhos percebidos, saúde, vínculos e comportamentos recentes. Essas informações são valiosas, mas podem conter erro, conflito, viés e incompletude. A equipe deve registrar origem: “segundo irmã”, “conforme solicitante”, “informação do serviço de saúde”. O abordador não precisa confrontar a pessoa com cada informação. Ele utiliza o que for relevante para segurança e compreensão e escolhe como introduzir o tema sem quebrar confiança. Algumas informações podem ser melhor manejadas pelo comando ou por profissionais de saúde após estabilização.",
+      "7. Risco para terceiros também importa",
+      "Comportamento inicialmente autodirigido pode coexistir com risco para terceiros, especialmente em contexto de armas, agitação intensa, violência doméstica, intoxicação ou conflito. A ITO 30 orienta apoio policial quando necessário e transfere gerência/negociação em situações com arma de fogo para equipes policiais especializadas. O princípio é simples: preservar a pessoa em crise não exige expor equipe ou terceiros a risco desproporcional. Segurança estabelece o limite dentro do qual a comunicação pode ocorrer.",
+      "8. Avaliação é contínua",
+      "Uma fotografia inicial envelhece rápido. Ao longo de uma abordagem, chegam novas informações, recursos mudam de posição, o ambiente se altera, a pessoa responde ao contato e a própria equipe pode sofrer fadiga. Reavaliar significa comparar estado atual com estado anterior e perguntar: “o que mudou que importa para nossa"
+    ]
+  },
+  {
+    "number": 40,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "decisão?”. Mudanças pequenas podem ter grande significado operacional: aceitar mover-se para posição mais segura, permitir aproximação de equipe de saúde, interromper comunicação, esconder as mãos, aumentar agitação, perguntar sobre o que acontecerá após desistência. Nenhuma mudança deve ser interpretada isoladamente; todas alimentam o ciclo.",
+      "LABORATÓRIO DE DECISÃO",
+      "Antônio apresenta vários fatores históricos associados a suicídio, mas conversa com a equipe e aceita sentar-se longe de um perigo imediato. Um familiar chega e relata que existe uma arma registrada em outro cômodo da casa. Organize sua resposta em quatro categorias: informação histórica; fator potencialmente protetivo; risco operacional atual; decisão de segurança. Explique por que a nova informação pode mudar prioridades sem alterar “a pontuação” de uma escala.",
+      "DEBRIEFING",
+      "O histórico contextualiza vulnerabilidade; o vínculo e a cooperação podem ser recursos; a possível presença de arma é uma informação de segurança que exige verificação e coordenação, podendo demandar apoio policial conforme circunstâncias. A decisão deve focar acesso real, localização, controle da cena e proteção, não em uma soma abstrata de fatores.",
+      "O QUE EU LEVO DESTE CAPÍTULO",
+      "• Associação estatística não equivale a previsão individual.",
+      "• Predisponentes ajudam a compreender vulnerabilidade; precipitantes ajudam a entender mudanças recentes.",
+      "• Fator de proteção só protege quando é significativo e acessível naquela situação.",
+      "• Avaliação operacional prioriza riscos presentes, método, ambiente, comunicação e recursos.",
+      "• Listas e escalas não substituem julgamento profissional e reavaliação."
+    ]
+  },
+  {
+    "number": 41,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "• Informação de terceiros deve ser identificada pela fonte e usada com prudência.",
+      "• Risco para terceiros faz parte da avaliação.",
+      "TESTE-SE",
+      "21. Qual é a diferença entre fator associado e fator de risco em sentido",
+      "estrito?",
+      "22. Por que um vínculo familiar não deve ser tratado automaticamente",
+      "como fator de proteção ativo?",
+      "23. Dê um exemplo de informação ambiental que pode superar vários",
+      "fatores históricos na prioridade operacional.",
+      "24. Como registrar informação de terceiro sem transformá-la em fato",
+      "confirmado?",
+      "25. O que significa avaliação dinâmica de risco no Sistema ATS?",
+      "Referências principais: CBMMG, 2021; Wenzel & Beck, 2008; Botega, 2015; Corrêa et al., 2022.",
+      "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 5",
+      "LEITURA DA CENA",
+      "Qual ideia deste capítulo muda o que você observa ou prioriza? ________________________________________________",
+      "ERRO A EVITAR",
+      "Que automatismo, rótulo ou comportamento pode prejudicar segurança ou vínculo? ________________________________________________",
+      "COMPETÊNCIA",
+      "Qual comportamento observável deverá ser demonstrado na próxima simulação? ________________________________________________",
+      "CRITÉRIO DE SUCESSO",
+      "Que indicador mostrará execução adequada da competência? ________________________________________________",
+      "FEEDBACK / DÚVIDA",
+      "Registre um acerto, um ajuste para a próxima prática ou uma dúvida para o instrutor. ________________________________________________ Pensar além do procedimento Estes interlúdios não acrescentam nova doutrina. Eles aprofundam raciocínio, evidência, comunicação e aprendizagem necessários para aplicar a parte anterior com mais precisão. Aprofundamento 1 — Pensar o suicídio como fenômeno complexo Da procura por uma causa única à formulação multifatorial"
+    ]
+  },
+  {
+    "number": 42,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "1. Complexidade não significa ausência de explicação",
+      "Dizer que o comportamento suicida é multifatorial não é uma forma de evitar explicações. Significa reconhecer que fatores biológicos, psicológicos, relacionais, sociais, culturais e situacionais podem interagir de formas diferentes entre indivíduos e ao longo do tempo. A literatura do acervo do CATS e os documentos de saúde pública convergem na rejeição de explicações monocausais. Para o bombeiro, isso produz uma consequência prática: um evento recente pode ser relevante sem ser “a causa” completa da crise. Uma separação, demissão, conflito ou exposição pública podem funcionar como eventos precipitantes, mas seu significado depende de história, vulnerabilidades, recursos, rede, saúde, acesso a meios e processos cognitivos atuais. O mesmo evento pode ser suportável para uma pessoa e devastador para outra. Por isso, a pergunta profissional não é “qual foi a causa?”, e sim “que conjunto de condições parece estar operando agora e quais delas mudam minha decisão?”.",
+      "2. Predisponente, precipitante e mantenedor",
+      "Uma forma didática de organizar informações é separar condições de longo prazo, acontecimentos próximos à crise e fatores que mantêm sofrimento ou risco no presente. A ITO utiliza linguagem de fatores predisponentes e precipitantes. O manual acrescenta uma terceira lente — mantenedores — como instrumento de estudo, não como categoria normativa. Predisponentes podem incluir história de transtornos, tentativas prévias, adversidades ou padrões duradouros. Precipitantes são eventos próximos que parecem ter contribuído para a crise. Mantenedores são elementos que continuam alimentando sofrimento ou estreitando alternativas, como conflito ainda ativo, exposição pública, dor não tratada ou ausência de rede. Essa organização impede que o primeiro fato descoberto ocupe toda a explicação."
+    ]
+  },
+  {
+    "number": 43,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "3. Proteção também é dinâmica",
+      "Fator de proteção não é amuleto. Ter filhos, religião, trabalho, parceiro ou projeto não garante segurança. O valor protetivo depende da função subjetiva e da disponibilidade concreta daquele recurso. Uma pessoa pode amar os filhos e, em crise, acreditar que seria melhor para eles se ela morresse. Pode ter fé e sentir-se condenada. Pode ter família e sentir-se profundamente isolada. Por isso, fatores de proteção devem ser explorados como perguntas, não como argumentos: “quem costuma estar com você quando as coisas apertam?”, “o que já ajudou em outra época?”, “há algo ou alguém que ainda faça diferença agora?”.",
+      "4. Formulação é mapa provisório",
+      "Em psicologia clínica, formulação organiza hipóteses sobre mecanismos de um caso. No CATS, usamos uma versão mais simples e operacional: mapa provisório de contexto, riscos, respostas e recursos. Não é diagnóstico nem prontuário. Serve para orientar comunicação e segurança. Um bom mapa contém incerteza explícita. “Separação recente relatada pela irmã, ainda não explorada com a pessoa” é melhor que “tentativa por término”. A primeira formulação pode ser corrigida; a segunda fecha cedo demais.",
+      "5. O valor de dizer “não sei ainda”",
+      "Profissionais de emergência trabalham sob pressão por resposta. Ainda assim, reconhecer incerteza é competência. Quando a equipe admite que não sabe se um familiar é protetivo, pode testá-lo de forma segura. Quando presume, pode introduzir fator precipitante. Quando não sabe se há intoxicação, integra saúde e procura evidência. Quando afirma sem base, pode relaxar ou escalar erroneamente. A incerteza útil é acompanhada de plano: o que precisamos verificar, por quem e antes de qual decisão."
+    ]
+  },
+  {
+    "number": 44,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "6. Aplicação ao caso",
+      "Imagine que a equipe sabe três fatos: houve discussão familiar; a pessoa perdeu o emprego; existe diagnóstico psiquiátrico prévio. Nenhum deles deve ser automaticamente “a causa”. O abordador pode começar pela experiência presente: “o que ficou mais difícil hoje?”. A coleta pode verificar cronologia e recursos. A saúde pode avaliar condições clínicas. O comando organiza segurança. A complexidade é distribuída entre funções.",
+      "TESTE-SE",
+      "26. Qual é a diferença entre reconhecer um precipitante e declarar uma",
+      "causa?",
+      "27. Por que fator protetivo deve ser testado no contexto atual?",
+      "28. O que torna uma hipótese operacional revisável?",
+      "29. Dê um exemplo de incerteza que precisa de plano de verificação.",
+      "30. Como a divisão de funções ajuda a trabalhar com complexidade?",
+      "Referências principais: CBMMG, 2021; Wenzel & Beck, 2008; Scavacini, Reis & Silva, 2021.",
+      "Aprofundamento 2 — Alfabetização epidemiológica para o CATS Ler números sem transformar estatística em profecia",
+      "1. Contagem e taxa respondem perguntas diferentes",
+      "Um estado populoso pode ter muitos óbitos e taxa menor que outro estado com menos habitantes. Número absoluto responde “quantos eventos ocorreram”; taxa ajuda a comparar risco populacional levando em conta o tamanho da população. O Boletim Epidemiológico do Ministério da Saúde de 2024 permite enxergar essa distinção ao apresentar contagens nacionais, taxas e variação temporal. Para o oficial ou gestor, ambos importam. Contagem afeta carga de serviço. Taxa ajuda a identificar distribuição relativa. Para o abordador diante de uma pessoa, nenhum deles substitui avaliação da cena."
+    ]
+  },
+  {
+    "number": 45,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "2. Percentual sem denominador pode enganar",
+      "Dizer que houve aumento de 50% parece dramático, mas pode significar passar de dois para três casos. Em municípios pequenos, poucos eventos mudam muito a taxa. Materiais para imprensa do próprio acervo alertam para cautela em comparações de localidades pequenas e para uso de médias de períodos maiores quando apropriado. A pergunta correta diante de um percentual é: 50% de quê, em qual período, em qual população e com quantos eventos?",
+      "3. Notificação não é igual a incidência real",
+      "Sistemas de informação dependem de registro. Lesões autoprovocadas podem ser subnotificadas; óbitos podem ter classificação incompleta; mudanças no sistema podem aumentar detecção sem que todo aumento reflita mudança real do fenômeno. Isso não invalida o dado. Apenas obriga interpretar sua origem. No CBMMG, qualidade do REDS/RAPH ou sistema equivalente influencia indicadores operacionais. Uma corporação só consegue planejar a partir do que registra.",
+      "4. Sexo, idade e método: população não é indivíduo",
+      "O boletim mostra diferenças por sexo e faixa etária em grupos. Isso é útil para prevenção, planejamento e alocação de recursos. É inadequado dizer que um homem “tem mais risco” na cena apenas por ser homem ou que uma mulher “não vai consumar” porque determinadas estatísticas populacionais são diferentes. O indivíduo pode estar fora do padrão e a situação atual possui muito mais informação proximal.",
+      "5. Série temporal e causalidade",
+      "Se a taxa sobe ao mesmo tempo que outro fenômeno social, não significa que um causou o outro. Para afirmar causalidade são necessários desenhos de estudo e análises adequadas. O manual deve"
+    ]
+  },
+  {
+    "number": 46,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "evitar frases como “redes sociais causaram aumento entre jovens” quando a fonte apenas mostra crescimento e discute hipóteses.",
+      "6. Como transformar epidemiologia em decisão institucional",
+      "Dados podem orientar três níveis. Prevenção: identificar grupos e territórios para campanhas ou rede. Preparação: planejar treinamento, materiais e horários. Qualidade: acompanhar registros, desfechos e aderência a protocolo. O objetivo não é ranquear unidades por “quem tem mais suicídio” sem contexto.",
+      "7. Um pequeno checklist de leitura",
+      "Sempre pergunte: fonte oficial? ano? população? número absoluto ou taxa? denominador? definição do evento? possibilidade de subnotificação? comparação justa? intervalo de confiança ou instabilidade? o dado está sendo usado para descrever grupo ou prever indivíduo?",
+      "TESTE-SE",
+      "31. Em que situação uma contagem é mais útil que uma taxa?",
+      "32. Por que municípios pequenos exigem cautela?",
+      "33. Como melhora de notificação pode alterar tendência observada?",
+      "34. Por que um padrão por sexo não deve dirigir sozinho a cena individual?",
+      "35. Quais três usos institucionais da epidemiologia foram propostos?",
+      "Referências principais: Brasil, Ministério da Saúde, 2024; ABP/CFM, cartilha para profissionais de imprensa.",
+      "Aprofundamento 3 — Modelos cognitivos: utilidade e limites Usar teoria para compreender sem transformar conceito em diagnóstico de campo",
+      "1. O modelo de Wenzel e Beck",
+      "Wenzel e Beck propõem um modelo cognitivo do comportamento suicida que integra vulnerabilidades disposicionais, estressores, processos cognitivos associados à psicopatologia e processos mais diretamente relacionados a atos suicidas. O artigo é valioso porque tenta conectar achados empíricos a mecanismos e, ao mesmo tempo,"
+    ]
+  },
+  {
+    "number": 47,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "explicita que diferentes componentes possuem suporte desigual. Para o CATS, a principal contribuição é mostrar que crise não precisa ser explicada por “impulso irracional” ou “falta de força”. Cognições, emoções, contexto e capacidade de resolução podem estreitar alternativas de forma dinâmica.",
+      "2. Desesperança não é frase isolada",
+      "A desesperança aparece na literatura como constructo importante, mas não deve ser reduzida a uma palavra que “prediz” o que ocorrerá nos próximos segundos. Uma fala como “não existe saída” merece atenção e exploração, mas seu significado depende de contexto, comportamento, método, acesso e trajetória da cena. O abordador pode responder ao processo: “agora você não consegue enxergar outra saída; vamos ficar só nos próximos minutos”. Isso é diferente de anunciar para a equipe “ele está desesperançado, então vai tentar”.",
+      "3. Rigidez e resolução de problemas",
+      "Modelos cognitivos descrevem dificuldade de gerar alternativas em algumas crises. Didaticamente, isso explica por que uma lista de conselhos pode falhar: o profissional produz soluções de fora, enquanto a pessoa continua sem conseguir representá-las como possíveis. Perguntas que recuperam exceções, recursos e próximos passos podem ser mais úteis.",
+      "4. Memória e atenção",
+      "Sob sofrimento intenso, a atenção pode ficar dominada por ameaça, perda ou problema. Isso não precisa ser explicado como “córtex desligado”. O que o abordador observa é mais simples: dificuldade de considerar futuro, repetição de tema, baixa flexibilidade, impulsividade ou grande carga emocional. A intervenção deve responder ao fenômeno observável."
+    ]
+  },
+  {
+    "number": 48,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "5. O perigo do neuroverniz",
+      "Termos como “sequestro da amígdala”, “desligamento do pré-frontal” ou “janela de veto de 350 ms” dão sensação de precisão, mas podem exceder o que a evidência permite afirmar em uma ocorrência específica. O manual atual foi auditado justamente por esse problema. Ciência melhora ensino quando reduz erro, não quando fornece metáfora com aparência de certeza.",
+      "6. Modelo é mapa, não fotografia",
+      "Um modelo organiza perguntas: que estressor ocorreu? que interpretação domina? que alternativas a pessoa consegue ver? que recurso está inacessível? que emoção está presente? Ele não revela estado interno automaticamente. O abordador aprende com a resposta da pessoa, não com a teoria sozinha.",
+      "7. Tradução operacional",
+      "Quando alguém diz “não há nada que possa mudar”, o profissional pode explorar exceções, adiar decisão irreversível, recuperar sucesso anterior ou microdecisão. A teoria explica por que ampliar opções pode ser útil; a ITO define o repertório institucional; a pessoa informa qual caminho faz sentido.",
+      "TESTE-SE",
+      "36. Que componentes gerais aparecem no modelo cognitivo de Wenzel e",
+      "Beck?",
+      "37. Por que desesperança não deve ser tratada como marcador",
+      "determinístico?",
+      "38. Como rigidez pode alterar a forma de oferecer alternativas?",
+      "39. O que significa “neuroverniz” no contexto do manual?",
+      "40. Qual é a diferença entre usar um modelo para perguntar e usar um",
+      "modelo para diagnosticar?",
+      "Referências principais: Wenzel & Beck, 2008; CBMMG, 2021.",
+      "Aprofundamento 4 — Ética, dignidade e direitos humanos na cena"
+    ]
+  },
+  {
+    "number": 49,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "Segurança operacional e respeito não são objetivos concorrentes",
+      "1. A pessoa em crise continua sendo sujeito",
+      "Uma ocorrência de alto risco pode induzir a equipe a falar sobre a pessoa como objeto: “pega ele”, “segura”, “tira daí”. Em determinados momentos, ações físicas serão necessárias, mas a pessoa continua tendo nome, história, preferências possíveis e direito à dignidade. O plano de ensino do CFO inclui direitos humanos, sigilo, postura não julgadora e respeito como aspectos atitudinais da competência.",
+      "2. Autonomia não é absoluta nem inexistente",
+      "Emergências podem exigir intervenções protetivas mesmo contra vontade imediata, conforme lei, doutrina e avaliação competente. Isso não significa que todas as escolhas da pessoa desapareçam. Ela pode escolher como ser chamada, quem deseja perto, se prefere sentar ou permanecer em determinado ponto seguro, qual tema quer evitar ou como receber informação. A melhor prática preserva o máximo de autonomia compatível com segurança.",
+      "3. Privacidade é barreira de proteção",
+      "Isolamento da imprensa, controle de filmagens e uso cuidadoso de informações não são preocupação estética. Exposição pode aumentar sofrimento, criar vergonha e produzir dano posterior. Dados de saúde e detalhes íntimos precisam circular pelo princípio de necessidade.",
+      "4. Não discriminar",
+      "Atendimento não muda de qualidade porque a pessoa é usuária frequente, está intoxicada, possui transtorno mental, é privada de liberdade, vive em situação de rua, pertence a minoria ou realizou múltiplas tentativas. Familiaridade com o caso pode aumentar risco de cinismo. “De novo?” é uma frase que revela fadiga da equipe, não dado clínico."
+    ]
+  },
+  {
+    "number": 50,
+    "part": 1,
+    "partTitle": "Compreender o fenômeno",
+    "chapter": 5,
+    "title": "Fatores associados, proteção, risco e limites da avaliação",
+    "paragraphs": [
+      "5. Limites e força proporcional",
+      "Respeito não significa atender qualquer exigência. A equipe pode recusar aproximação insegura, acesso a objeto, saída sem avaliação ou entrada de terceiros. O modo de comunicar limite importa: explique o que pode fazer e por quê, sem ameaça desnecessária.",
+      "6. Linguagem como prática ética",
+      "Termos moralizantes e pejorativos interferem em decisão. “Manipulador” pode reduzir empatia e fazer a equipe negligenciar risco. “Chantagem” pode substituir investigação de necessidade. “Louco” dissolve descrição. Linguagem objetiva é também mecanismo de redução de viés.",
+      "7. Conflitos entre valores",
+      "A pessoa pode expressar crenças políticas, religiosas ou morais diferentes do abordador. O profissional não precisa concordar nem corrigir. A intervenção concentra-se em segurança e experiência relevante. Quando valor do profissional começa a dirigir conversa, é hora de recalibrar ou considerar troca.",
+      "TESTE-SE",
+      "41. Como preservar autonomia possível em uma emergência?",
+      "42. Por que privacidade é componente de segurança?",
+      "43. Que risco existe em classificar uma ocorrência como “de novo”?",
+      "44. Como estabelecer limite sem perder dignidade?",
+      "45. De que forma linguagem influencia viés operacional?",
+      "Referências principais: CBMMG/ABM, 2026; CBMMG, 2021."
+    ]
   }
 ]
