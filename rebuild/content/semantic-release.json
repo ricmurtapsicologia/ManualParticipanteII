@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "wave": 12,
   "stage": "taxonomy-navigation",
-  "status": "candidate",
+  "status": "validated",
   "sourcePages": 249,
   "semanticBlocks": 2224,
   "parts": 7,
@@ -10,8 +10,10 @@
   "sourceBoundaryOverlaps": [5, 11, 20],
   "normalizedTransitionPages": [53, 95, 144],
   "partOpeningPages": [7, 53, 95, 144, 166, 186, 202],
+  "pedagogicalMarkerCount": 165,
   "preservation": "lossless-title-paragraph-and-source-taxonomy",
   "navigation": "hierarchical-part-chapter-supplementary",
   "pedagogicalMarkers": "recovered-from-source-block-kinds",
+  "gate": "semantic-v2+canonical-validate+build+smoke",
   "nextWave": "connect normalized semantic navigation to the reader UI"
 }
