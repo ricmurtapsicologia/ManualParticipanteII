@@ -1,8 +1,8 @@
-name: Rebuild Wave 9 Vercel Cutover Readiness CI
+name: Rebuild Wave 10 Canonical CI
 
 on:
   push:
-    branches: [rebuild-clean-v1]
+    branches: [main]
     paths:
       - 'rebuild/**'
       - 'data*.js'
@@ -48,5 +48,5 @@ jobs:
             echo "Canonical 249-page corpus already persisted"
             exit 0
           fi
-          git commit -m "wave9: persist validated 249-page corpus [skip ci]"
-          git push origin HEAD:rebuild-clean-v1
+          git commit -m "wave10: persist validated 249-page corpus [skip ci]"
+          git push origin HEAD:main

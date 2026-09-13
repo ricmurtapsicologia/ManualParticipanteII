@@ -1,0 +1,65 @@
+name: Manual CATS Production E2E
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rebuild/**'
+      - '.github/workflows/production-e2e.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production-e2e:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rebuild
+    env:
+      E2E_BASE_URL: https://manual-participante-cats-digital.vercel.app
+      EXPECTED_SHA: ${{ github.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Wait for matching Vercel production SHA
+        run: |
+          node - <<'NODE'
+          const base = process.env.E2E_BASE_URL;
+          const expected = process.env.EXPECTED_SHA;
+          const deadline = Date.now() + 8 * 60_000;
+          let last = null;
+          while (Date.now() < deadline) {
+            try {
+              const response = await fetch(`${base}/api/health`, { cache: 'no-store' });
+              if (response.ok) {
+                last = await response.json();
+                if (
+                  last.status === 'ok' &&
+                  last.pages === 249 &&
+                  last.deployment?.environment === 'production' &&
+                  last.deployment?.branch === 'main' &&
+                  last.deployment?.commit === expected
+                ) {
+                  console.log(`VERCEL_SHA_READY ${expected}`);
+                  process.exit(0);
+                }
+              }
+            } catch (error) {
+              last = { error: String(error) };
+            }
+            await new Promise(resolve => setTimeout(resolve, 5000));
+          }
+          throw new Error(`Vercel did not publish expected SHA ${expected}. Last health: ${JSON.stringify(last)}`);
+          NODE
+      - name: Run desktop and mobile E2E
+        run: npm run e2e
