@@ -36,6 +36,8 @@ jobs:
           else
             node scripts/recovery-scan.mjs
           fi
+      - name: v0.8 recovery scan
+        run: node scripts/v08-recovery-scan.mjs
       - name: Migrate canonical pages 1-155
         run: npm run migrate:155
       - name: Validate contracts
@@ -44,7 +46,7 @@ jobs:
         run: npm run build
       - name: Smoke runtime
         run: npm run smoke
-      - name: Persist validated corpus and recovery report
+      - name: Persist validated corpus and recovery reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -52,9 +54,12 @@ jobs:
           if [ -f recovery/history-scan.json ]; then
             git add recovery/history-scan.json recovery/history-scan.md
           fi
+          if [ -f recovery/v08-scan.json ]; then
+            git add recovery/v08-scan.json recovery/v08-scan.md
+          fi
           if git diff --cached --quiet; then
-            echo "Validated corpus and recovery report already persisted"
+            echo "Validated corpus and recovery reports already persisted"
             exit 0
           fi
-          git commit -m "wave8: persist expanded recovery scan and validated 155-page corpus [skip ci]"
+          git commit -m "wave8: persist v0.8 recovery diagnostic and validated 155-page corpus [skip ci]"
           git push origin HEAD:rebuild-clean-v1
