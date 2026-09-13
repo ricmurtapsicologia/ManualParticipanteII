@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "wave": 13,
   "stage": "reader-navigation",
-  "status": "candidate",
+  "status": "validated",
   "sourcePages": 249,
   "semanticBlocks": 2224,
   "parts": 7,
@@ -15,5 +15,6 @@
   "navigation": "hierarchical-reader-ui-part-chapter-pedagogical",
   "readerArtifact": "content/navigation.json",
   "gate": "semantic-v2+navigation-v1+canonical-validate+build+smoke+e2e",
+  "gateResult": "pass",
   "nextWave": "apply DS2 semantic components and continuation-page typography"
 }
