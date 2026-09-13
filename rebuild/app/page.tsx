@@ -14,7 +14,8 @@ type NavSupplement = { id: string; title: string; openingPage: number; pageNumbe
 type NavPart = { id: string; part: number; title: string; openingPage: number; pedagogicalMarkers: PedagogicalMarker[]; chapters: NavChapter[]; supplementarySections: NavSupplement[] };
 type NavigationArtifact = { schemaVersion: number; sourcePageCount: number; chapterCount: number; pedagogicalMarkerCount: number; frontMatter: NavSupplement[]; parts: NavPart[] };
 type MultimediaStep = { order: number; title: string; detail: string };
-type MultimediaResource = { id: string; kind: string; pageNumber: number; title: string; src?: string; alt?: string; steps?: MultimediaStep[]; transverse?: string };
+type MicrolearningChoice = { id: string; label: string; correct: boolean };
+type MultimediaResource = { id: string; kind: string; pageNumber: number; title: string; src?: string; alt?: string; steps?: MultimediaStep[]; transverse?: string; sourceBlockId?: string; prompt?: string; reveal?: string; choices?: MicrolearningChoice[] };
 type MultimediaArtifact = { schemaVersion: number; wave: string; resources: MultimediaResource[] };
 
 const pages = (semanticData as SemanticArtifact).pages;
@@ -72,7 +73,53 @@ function renderSemanticBlocks(blocks: SemanticBlock[]) {
   }
   return output;
 }
+
+function MicrolearningCard({ resource }: { resource: MultimediaResource }) {
+  const [selected, setSelected] = useState<string | null>(null);
+  const choices = resource.choices ?? [];
+  const selectedChoice = choices.find(choice => choice.id === selected) ?? null;
+  const labelId = `${resource.id}-label`;
+  const feedbackId = `${resource.id}-feedback`;
+  if (!resource.prompt || !resource.reveal || choices.length < 2) return null;
+
+  return <section
+    className="pedagogicalBox"
+    data-testid="microlearning-resource"
+    data-media-id={resource.id}
+    data-media-kind="microlearning"
+    aria-labelledby={labelId}
+    style={{ ['--box-accent' as string]: 'var(--ds2-decide)', ['--box-tint' as string]: '#f7f0f8' }}
+  >
+    <div className="pedagogicalHeader">
+      <span className="pedagogicalIcon" aria-hidden="true">?</span>
+      <strong id={labelId}>Microlearning • {resource.title}</strong>
+    </div>
+    <div className="pedagogicalBody">
+      <p data-testid="microlearning-prompt" style={{ fontWeight: 800, textAlign: 'left' }}>{resource.prompt}</p>
+      <div data-testid="microlearning-choices" role="group" aria-label="Escolha uma resposta" style={{ display: 'grid', gap: 8, marginTop: 12 }}>
+        {choices.map(choice => {
+          const active = selected === choice.id;
+          return <button
+            key={choice.id}
+            type="button"
+            data-testid="microlearning-choice"
+            data-choice-id={choice.id}
+            aria-pressed={active}
+            onClick={() => setSelected(choice.id)}
+            style={{ minHeight: 42, padding: '9px 11px', borderRadius: 9, border: `1px solid ${active ? 'var(--ds2-decide)' : 'var(--ds2-line)'}`, background: active ? '#efe2f2' : '#fff', color: 'var(--ds2-ink)', fontWeight: 750, textAlign: 'left', cursor: 'pointer' }}
+          >{choice.label}</button>;
+        })}
+      </div>
+      {selectedChoice && <div id={feedbackId} data-testid="microlearning-feedback" aria-live="polite" style={{ marginTop: 12, padding: '10px 11px', borderRadius: 9, background: selectedChoice.correct ? '#edf6f4' : '#fff4ed', border: `1px solid ${selectedChoice.correct ? 'var(--ds2-teal)' : 'var(--ds2-attention)'}` }}>
+        <strong>{selectedChoice.correct ? 'Correto.' : 'Compare com a resposta canônica.'}</strong>
+        <p style={{ marginTop: 5, textAlign: 'left' }}>{resource.reveal}</p>
+      </div>}
+    </div>
+  </section>;
+}
+
 function renderMultimediaResource(resource: MultimediaResource) {
+  if (resource.kind === 'microlearning') return <MicrolearningCard key={resource.id} resource={resource} />;
   if (resource.kind !== 'infographic' || resource.src !== 'native://ats-system-macro' || !resource.steps?.length) return null;
   const labelId = `${resource.id}-label`;
   const descriptionId = `${resource.id}-description`;

@@ -18,7 +18,7 @@ const fail = message => {
 const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
 
 if (manifest.schemaVersion !== 1) fail(`schemaVersion=${manifest.schemaVersion}`);
-if (manifest.wave !== '5.2') fail(`wave=${manifest.wave}`);
+if (manifest.wave !== '5.3') fail(`wave=${manifest.wave}`);
 if (manifest.policy?.sourceTextFrozen !== true) fail('sourceTextFrozen must be true');
 if (manifest.policy?.accessibilityRequired !== true) fail('accessibilityRequired must be true');
 if (manifest.policy?.ttsPreferredVoice !== 'Antônio') fail('ttsPreferredVoice must be Antônio');
@@ -56,9 +56,32 @@ for (const [index, resource] of manifest.resources.entries()) {
     if (typeof resource.transcript !== 'string' || !resource.transcript.trim()) fail(`resource=${resource.id} missing transcript`);
   }
 
+  const sourcePage = semanticByPage.get(resource.pageNumber);
+  if (!sourcePage) fail(`resource=${resource.id} source page not found`);
+  const canonicalText = normalize((sourcePage.blocks ?? []).map(block => block.text).join(' '));
+
   if (resource.kind === 'microlearning') {
     if (typeof resource.prompt !== 'string' || !resource.prompt.trim()) fail(`resource=${resource.id} missing prompt`);
     if (typeof resource.reveal !== 'string' || !resource.reveal.trim()) fail(`resource=${resource.id} missing reveal`);
+    if (typeof resource.sourceBlockId !== 'string' || !resource.sourceBlockId.trim()) fail(`resource=${resource.id} missing sourceBlockId`);
+    const sourceBlock = (sourcePage.blocks ?? []).find(block => block.id === resource.sourceBlockId);
+    if (!sourceBlock) fail(`resource=${resource.id} sourceBlockId not found=${resource.sourceBlockId}`);
+    const sourceBlockText = normalize(sourceBlock.text);
+    if (!sourceBlockText.includes(normalize(resource.prompt))) fail(`resource=${resource.id} prompt not grounded in source block`);
+    if (!sourceBlockText.includes(normalize(resource.reveal))) fail(`resource=${resource.id} reveal not grounded in source block`);
+    if (!Array.isArray(resource.choices) || resource.choices.length < 2) fail(`resource=${resource.id} requires at least two choices`);
+    const choiceIds = new Set();
+    let correctCount = 0;
+    for (const choice of resource.choices) {
+      if (typeof choice.id !== 'string' || !choice.id.trim()) fail(`resource=${resource.id} choice missing id`);
+      if (choiceIds.has(choice.id)) fail(`resource=${resource.id} duplicate choice id=${choice.id}`);
+      choiceIds.add(choice.id);
+      if (typeof choice.label !== 'string' || !choice.label.trim()) fail(`resource=${resource.id} choice=${choice.id} missing label`);
+      if (!sourceBlockText.includes(normalize(choice.label))) fail(`resource=${resource.id} choice label not grounded=${choice.label}`);
+      if (choice.correct === true) correctCount += 1;
+      else if (choice.correct !== false) fail(`resource=${resource.id} choice=${choice.id} correct must be boolean`);
+    }
+    if (correctCount !== 1) fail(`resource=${resource.id} correct choices=${correctCount}`);
   }
 
   if (typeof resource.src === 'string' && /^https?:/i.test(resource.src) && !resource.src.startsWith('https://')) {
@@ -67,9 +90,6 @@ for (const [index, resource] of manifest.resources.entries()) {
 
   if (typeof resource.src === 'string' && resource.src.startsWith('native://')) {
     if (!nativeRenderers.has(resource.src)) fail(`resource=${resource.id} unknown native renderer=${resource.src}`);
-    const sourcePage = semanticByPage.get(resource.pageNumber);
-    if (!sourcePage) fail(`resource=${resource.id} source page not found`);
-    const canonicalText = normalize((sourcePage.blocks ?? []).map(block => block.text).join(' '));
     if (!Array.isArray(resource.steps) || resource.steps.length === 0) fail(`resource=${resource.id} native renderer requires steps`);
     const orders = new Set();
     for (const step of resource.steps) {
@@ -90,4 +110,4 @@ for (const [index, resource] of manifest.resources.entries()) {
   }
 }
 
-console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} kinds=${canonicalKinds.length} native=${manifest.resources.filter(item => String(item.src ?? '').startsWith('native://')).length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);
+console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} native=${manifest.resources.filter(item => String(item.src ?? '').startsWith('native://')).length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "wave": "5.2",
+  "wave": "5.3",
   "policy": {
     "sourceTextFrozen": true,
     "accessibilityRequired": true,
@@ -26,6 +26,20 @@
         { "order": 7, "title": "Continuidade", "detail": "APH, rede, registro e cuidado." }
       ],
       "transverse": "REAVALIAR QUANDO RISCO, AMBIENTE, COMPORTAMENTO, RECURSOS OU RESPOSTA MUDAREM"
+    },
+    {
+      "id": "microlearning-high-impact-hypothesis-p58",
+      "kind": "microlearning",
+      "pageNumber": 58,
+      "title": "DECIDA • hipótese de alto impacto",
+      "sourceBlockId": "p58-b4",
+      "prompt": "Se o solicitante diz que a pessoa possui uma arma, mas ninguém a viu, trate a informação como irrelevante, como certeza ou como hipótese de alto impacto?",
+      "choices": [
+        { "id": "irrelevant", "label": "Irrelevante", "correct": false },
+        { "id": "certainty", "label": "Certeza", "correct": false },
+        { "id": "high-impact", "label": "Hipótese de alto impacto", "correct": true }
+      ],
+      "reveal": "A resposta mais prudente é hipótese de alto impacto: ela altera posicionamento e necessidade de apoio até ser verificada, sem autorizar afirmar que a arma está presente."
     }
   ]
 }
