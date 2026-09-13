@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "release": "2026.09.13-wave1",
+  "title": "Manual do Participante CATS",
+  "edition": "Edição digital interativa • DS1 • 2026",
+  "complete": false,
+  "targetPages": 249,
+  "availablePages": 15,
+  "expectedParts": 7,
+  "expectedChapters": 34,
+  "chunks": [
+    {
+      "id": "01",
+      "from": 1,
+      "to": 15,
+      "url": "/book/pages-01.json",
+      "sha256": "eb7b8b1f6b1b0b94322854d9a83220dc1c441444ca2518b98f6ea848e484ded6"
+    }
+  ],
+  "source": {
+    "repository": "ricmurtapsicologia/ManualParticipanteII",
+    "branch": "web-book-v1",
+    "recoveryPoint": "6eff9d2e7a8e60bcd2f2dbdd48b23003eb23d94b"
+  }
+}

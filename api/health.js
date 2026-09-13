@@ -1,1 +1,15 @@
-module.exports=(req,res)=>{res.status(200).json({status:'ok',app:'Manual do Participante CATS',format:'web-native',pages:249,viewer:'interactive-book',release:'2026.09.12-restored'});};
+const manifest = require('../book/manifest.json');
+
+module.exports = (_request, response) => {
+  response.setHeader('Cache-Control', 'no-store');
+  response.status(200).json({
+    status: 'ok',
+    app: manifest.title,
+    format: 'web-native',
+    viewer: 'interactive-book',
+    release: manifest.release,
+    complete: manifest.complete,
+    availablePages: manifest.availablePages,
+    targetPages: manifest.targetPages,
+  });
+};

@@ -1,0 +1,14 @@
+{
+  "name": "manual-participante-cats",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build:wave1": "node scripts/build-wave1-slice.mjs",
+    "test": "node scripts/verify-wave1.mjs",
+    "test:smoke": "node scripts/smoke-http.mjs",
+    "start": "node scripts/dev-server.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
