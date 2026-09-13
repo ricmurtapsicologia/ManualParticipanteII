@@ -40,6 +40,8 @@ jobs:
         run: node scripts/v08-recovery-scan.mjs
       - name: Tail resynchronization scan
         run: node scripts/tail-resync-scan.mjs
+      - name: Validate canonical PDF tail boundary
+        run: node scripts/validate-v08-tail.mjs || true
       - name: Migrate canonical pages 1-155
         run: npm run migrate:155
       - name: Validate contracts
@@ -53,14 +55,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add content/pages.json content/provenance.json
-          for report in history-scan v08-scan tail-resync-scan; do
+          git add recovery/v08-tail-source.json
+          for report in history-scan v08-scan tail-resync-scan v08-tail-validation; do
             if [ -f "recovery/${report}.json" ]; then
-              git add "recovery/${report}.json" "recovery/${report}.md"
+              git add "recovery/${report}.json"
+              if [ -f "recovery/${report}.md" ]; then git add "recovery/${report}.md"; fi
             fi
           done
           if git diff --cached --quiet; then
             echo "Validated corpus and recovery reports already persisted"
             exit 0
           fi
-          git commit -m "wave8: persist tail resynchronization diagnostic and validated 155-page corpus [skip ci]"
+          git commit -m "wave8: persist canonical PDF tail validation and validated 155-page corpus [skip ci]"
           git push origin HEAD:rebuild-clean-v1
