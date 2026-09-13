@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add rebuild/content/semantic-pages.json
+          git add content/semantic-pages.json
           if ! git diff --cached --quiet; then
             git commit -m "wave11: persist validated semantic corpus [skip ci]"
             git push origin HEAD:wave11-semantic-architecture

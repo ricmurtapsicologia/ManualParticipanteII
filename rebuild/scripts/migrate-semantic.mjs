@@ -11,7 +11,11 @@ const semantic = buildSemanticDocument(sourcePages, sourceSha256);
 
 await writeFile(outputUrl, `${JSON.stringify(semantic, null, 2)}\n`, 'utf8');
 
+const chapterNote = semantic.manifest.sourceChapterCount === semantic.manifest.expectedEditorialChapterCount
+  ? `chapters=${semantic.manifest.sourceChapterCount}`
+  : `source-chapters=${semantic.manifest.sourceChapterCount} expected-editorial=${semantic.manifest.expectedEditorialChapterCount}`;
+
 console.log(
   `SEMANTIC_MIGRATE_OK pages=${semantic.manifest.pageCount} blocks=${semantic.manifest.blockCount} ` +
-  `parts=${semantic.manifest.partCount} chapters=${semantic.manifest.chapterCount} sha=${sourceSha256.slice(0, 12)}`
+  `parts=${semantic.manifest.partCount} ${chapterNote} sha=${sourceSha256.slice(0, 12)}`
 );
