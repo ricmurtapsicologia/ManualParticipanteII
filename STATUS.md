@@ -5,21 +5,31 @@ Atualizado em 13 de setembro de 2026.
 ## Estado verificável
 
 - Repositório canônico confirmado: `ricmurtapsicologia/ManualParticipanteII`.
-- Recuperação Git: commit `6eff9d2e7a8e60bcd2f2dbdd48b23003eb23d94b`.
-- Recuperação Vercel: deployment `dpl_C86oZjGWoxfRcaK3c3c6JkwFyqFY`.
-- Projeto produtivo reservado: `manual-participante-cats-definitivo` (`prj_O4U8NcOrjeSjkSlhnx0Qow8FAKHK`).
-- O deployment anterior estava `READY`, mas a interface exibia `Failed to fetch` e `/api/book` retornava `404`.
-- A carga GZIP/Base64 anterior estava truncada; por isso `atob` e `DecompressionStream` foram retirados do caminho ativo.
-- Implementação da Onda 1 publicada na branch remota `web-book-v1`, commit `d3e273d3d8dfe80b23c5b20bb28e06affa5ccbca`.
-- Preview da fatia vertical publicado no projeto canônico e concluído pelo Vercel com estado `READY`.
-- Produção, branch `main` e projetos legados permanecem inalterados.
+- Projeto Vercel canônico reservado: `manual-participante-cats-definitivo` (`prj_O4U8NcOrjeSjkSlhnx0Qow8FAKHK`).
+- Branch da Onda 1: `web-book-v1`.
+- Head validado: `61c71143bdb701f33ac9aa9e1fc469af858f4377`.
+- PR #1 permanece aberto, mergeable e em rascunho enquanto os portões finais não forem satisfeitos.
+- Preview Vercel da Onda 1: `dpl_EBPdPDMyRH8sUzbFK7fxCbhdHVz6`, estado `READY`, 12 arquivos de deployment e 2 funções Node.js.
+- O preview respondeu com runtime HTTP 200 em `/api/book`; não há cluster de erro de runtime no projeto.
+- A produção atual continua no deployment legado `dpl_C86oZjGWoxfRcaK3c3c6JkwFyqFY`; a raiz responde HTTP 200, porém `/api/health` responde HTTP 500 e `/api/book` responde 404. Ela não deve ser tratada como a Onda 1 aprovada.
+- O projeto Vercel ainda não está conectado ao GitHub (`link: null`).
+- Produção e projetos legados permanecem preservados; nenhum projeto foi excluído.
 
 ## Onda 1
 
 - Camada 1 — contenção e preservação: concluída.
-- Camada 2 — fonte única e registro de decisões: branch remota consolidada; conexão GitHub → Vercel e integração em `main` aguardam o portão final.
-- Camada 3 — fatia vertical: 15 páginas, capa, sumário e capítulo 1 preparados em JSON normal, com testes locais e smoke HTTP aprovados.
+- Camada 2 — fonte única e registro de decisões: repositório/branch consolidados; conexão GitHub → Vercel ainda pendente.
+- Camada 3 — fatia vertical: 15 páginas, capa, sumário, busca, navegação, progresso, leitura contínua e TTS Antônio implementados; build/test/smoke registrados como PASS.
+- Revisão adicional: o código de TTS falha fechado quando a voz Antônio não é exposta pelo navegador; não há substituição silenciosa por outra voz.
 
-## Próximo portão
+## Portões finais antes do merge
 
-Concluir o E2E autenticado do preview — `/api/health`, `/api/book`, capa, sumário, busca e navegação — e conectar o projeto Vercel ao repositório. Só depois integrar a branch em `main` e avaliar a promoção para produção.
+1. Executar E2E autenticado real no preview, incluindo `/api/health`, `/api/book`, capa, tipografia justificada, sumário, busca, navegação, modo livro, leitura contínua, console e comportamento em celular/desktop.
+2. Confirmar no Android se a voz Antônio é efetivamente exposta pelo navegador. Se não for, implementar provedor TTS que garanta Antônio antes do fechamento.
+3. Conectar diretamente o projeto `manual-participante-cats-definitivo` ao repositório `ricmurtapsicologia/ManualParticipanteII`, com `main` como branch de produção.
+4. Gerar novo preview pelo fluxo GitHub → Vercel e repetir smoke/E2E.
+5. Somente com todos os portões em PASS: retirar o PR do modo rascunho, integrar em `main`, promover para produção e executar read-back pós-produção.
+
+## Regra de encerramento
+
+Onda 1 = CLOSED somente com `E2E PASS + GitHub conectado à Vercel + PR mergeado + produção READY + smoke pós-produção PASS`.
