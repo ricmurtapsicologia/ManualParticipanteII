@@ -16,20 +16,27 @@ const chapterNumbers = [];
 const partOpenings = [];
 let markerCount = 0;
 let supplementaryCount = 0;
+const countMarkers = markers => { markerCount += markers.length; };
+for (const section of navigation.frontMatter) countMarkers(section.pedagogicalMarkers ?? []);
 for (const part of navigation.parts) {
   if (!(part.openingPage >= 1 && part.openingPage <= 249)) fail(`Invalid part opening for part ${part.part}`);
   partOpenings.push(part.openingPage);
+  countMarkers(part.pedagogicalMarkers ?? []);
   for (const chapter of part.chapters) {
     chapterNumbers.push(chapter.chapter);
     if (!chapter.pageNumbers.includes(chapter.openingPage)) fail(`Opening page missing from chapter ${chapter.chapter}`);
     for (const pageNumber of chapter.pageNumbers) if (!(pageNumber >= 1 && pageNumber <= 249)) fail(`Invalid page ${pageNumber}`);
     for (const marker of chapter.pedagogicalMarkers) {
-      markerCount += 1;
       if (!chapter.pageNumbers.includes(marker.pageNumber)) fail(`Marker page outside chapter ${chapter.chapter}`);
       if (!marker.blockId || !marker.kind) fail(`Invalid marker in chapter ${chapter.chapter}`);
     }
+    countMarkers(chapter.pedagogicalMarkers);
   }
   supplementaryCount += part.supplementarySections.length;
+  for (const section of part.supplementarySections) {
+    for (const marker of section.pedagogicalMarkers ?? []) if (!section.pageNumbers.includes(marker.pageNumber)) fail(`Marker page outside supplement ${section.id}`);
+    countMarkers(section.pedagogicalMarkers ?? []);
+  }
 }
 
 const expectedChapters = Array.from({ length: 34 }, (_, index) => index + 1);
