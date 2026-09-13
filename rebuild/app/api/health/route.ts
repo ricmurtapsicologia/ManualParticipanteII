@@ -5,9 +5,9 @@ export function GET() {
     status: 'ok',
     app: 'Manual do Participante CATS',
     architecture: 'rebuild-clean',
-    wave: 3,
-    pages: 25,
+    wave: 4,
+    pages: 50,
     corpus: 'canonical-migrated',
-    release: '2026-09-13-wave-3'
+    release: '2026-09-13-wave-4'
   });
 }
