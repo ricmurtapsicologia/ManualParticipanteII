@@ -13,11 +13,16 @@ pages.forEach((page, index) => {
   if (!page.title || !Array.isArray(page.paragraphs) || page.paragraphs.length === 0) fail(`Invalid page ${index + 1}`);
 });
 if (pages[0].cover !== true) fail('Page 1 must be the cover');
-if (provenance.extractedPages !== 25 || provenance.totalLegacyPages < 25 || !provenance.sourceSha256) fail('Provenance contract mismatch');
+if (provenance.schema !== 3) fail(`Unexpected provenance schema: ${provenance.schema}`);
+if (provenance.extractedPages !== 25) fail('Provenance extractedPages mismatch');
+if (provenance.recoverableSequentialPages < 25) fail(`Insufficient recoverable pages: ${provenance.recoverableSequentialPages}`);
+if (provenance.targetBookPages !== 249) fail(`Unexpected target book size: ${provenance.targetBookPages}`);
+if (!provenance.sourceSha256 || !provenance.selectedSha256 || !provenance.sourceCommit) fail('Provenance hashes/source missing');
 if (!/text-align:justify/.test(css)) fail('Paragraphs are not justified');
 if (!/ant\[oô\]nio/i.test(pageSource)) fail('Antonio voice preference missing');
 if (!/pt-br/i.test(pageSource)) fail('pt-BR fallback missing');
+if (!/data-page-count=\{pages\.length\}/.test(pageSource)) fail('Stable page-count runtime contract missing');
 const executableSurface = pageSource + css;
 if (/cdn\.jsdelivr\.net|https?:\/\/[^'"\s]*jsdelivr/i.test(executableSurface)) fail('jsDelivr dependency detected');
 if (!/status:\s*'ok'/.test(health) || !/pages:\s*25/.test(health) || !/wave:\s*3/.test(health)) fail('Health contract mismatch');
-console.log(`VALIDATE_OK pages=25 sequence=1-25 provenance=${provenance.sourceSha256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok`);
+console.log(`VALIDATE_OK pages=25 sequence=1-25 recoverable=${provenance.recoverableSequentialPages} provenance=${provenance.selectedSha256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok`);
