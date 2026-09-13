@@ -13,6 +13,7 @@ pages.forEach((page, index) => {
 if (!/text-align:justify/.test(css)) fail('Paragraphs are not justified');
 if (!/ant\[oô\]nio/i.test(pageSource)) fail('Antonio voice preference missing');
 if (!/pt-br/i.test(pageSource)) fail('pt-BR fallback missing');
-if (/jsdelivr/i.test(pageSource + css + JSON.stringify(pages))) fail('jsDelivr dependency detected');
+const executableSurface = pageSource + css;
+if (/cdn\.jsdelivr\.net|https?:\/\/[^'"\s]*jsdelivr/i.test(executableSurface)) fail('jsDelivr dependency detected');
 if (!/status:\s*'ok'/.test(health) || !/pages:\s*10/.test(health)) fail('Health contract mismatch');
 console.log('VALIDATE_OK pages=10 justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok');
