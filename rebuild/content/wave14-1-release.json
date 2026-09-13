@@ -1,0 +1,14 @@
+{
+  "wave": 14,
+  "subwave": 1,
+  "stage": "continuation-typography",
+  "status": "validated",
+  "sourcePages": 249,
+  "chapters": 34,
+  "preservation": "no-text-change",
+  "chapterOpeningProbe": 106,
+  "continuationProbe": 107,
+  "gate": "semantic+navigation+build+smoke+desktop-mobile-e2e",
+  "gateResult": "pass",
+  "nextSubwave": "ds2-tokens-colors-iconography"
+}
