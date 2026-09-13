@@ -16,15 +16,15 @@ async function waitFor(url, tries = 40) {
 try {
   const healthRes = await waitFor(`${base}/api/health`);
   const health = await healthRes.json();
-  if (health.status !== 'ok' || health.pages !== 10 || health.architecture !== 'rebuild-clean') throw new Error(`Unexpected health payload: ${JSON.stringify(health)}`);
+  if (health.status !== 'ok' || health.pages !== 25 || health.wave !== 3 || health.architecture !== 'rebuild-clean') throw new Error(`Unexpected health payload: ${JSON.stringify(health)}`);
 
   const homeRes = await fetch(base);
   if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
   const html = await homeRes.text();
-  for (const token of ['Manual do Participante CATS', '10 páginas', 'rebuild-clean-v1']) {
+  for (const token of ['Manual do Participante CATS', '25 páginas reais', 'rebuild-clean-v1', '1 / 25']) {
     if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
   }
-  console.log('SMOKE_OK home=200 health=200 pages=10 architecture=rebuild-clean');
+  console.log('SMOKE_OK home=200 health=200 pages=25 wave=3 architecture=rebuild-clean');
 } finally {
   child.kill('SIGTERM');
   await sleep(300);
