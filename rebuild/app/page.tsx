@@ -83,11 +83,11 @@ export default function Home() {
   const runningRight = current.chapter ? `CAPÍTULO ${current.chapter}` : '2026';
 
   return (
-    <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="7">
+    <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8">
       <header className="top">
         <div className="topin">
           <div className="mark">CATS</div>
-          <div className="brand"><strong>Manual do Participante CATS</strong><span>Rebuild limpo • Onda 7 • 155 páginas reais</span></div>
+          <div className="brand"><strong>Manual do Participante CATS</strong><span>Rebuild limpo • Onda 8 • 249 páginas canônicas</span></div>
           <div className="tools">
             <button onClick={speak} className={speaking ? 'active' : ''} aria-label="Leitura em voz alta">◖)) <span>{speaking ? 'Parar' : 'Ouvir'}</span></button>
             <button onClick={() => setDrawer('search')} aria-label="Pesquisar">⌕ <span>Buscar</span></button>
