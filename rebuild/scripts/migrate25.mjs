@@ -3,22 +3,17 @@ import { execFileSync } from 'node:child_process';
 import { writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { gunzipSync } from 'node:zlib';
+import { constants, gunzipSync } from 'node:zlib';
 
-const SOURCE_COMMIT = '1c4c0239544ac4ba21dd71b4be973abe01624537';
+const SOURCE_COMMIT = '9e6e2a844fbb16adfdce4dec0dbd3c2ec6983111';
+const TARGET_PAGES = 25;
 const here = dirname(fileURLToPath(import.meta.url));
 const rebuildRoot = resolve(here, '..');
 const repoRoot = resolve(rebuildRoot, '..');
 const contentDir = join(rebuildRoot, 'content');
+const git = (...args) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
 
-const git = (...args) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
-const names = git('ls-tree', '--name-only', SOURCE_COMMIT)
-  .split(/\r?\n/)
-  .filter(name => /^data\d+\.js$/i.test(name))
-  .sort((a, b) => Number(a.match(/\d+/)?.[0]) - Number(b.match(/\d+/)?.[0]));
-
-if (!names.length) throw new Error(`No data*.js corpus files found at ${SOURCE_COMMIT}`);
-
+const names = Array.from({ length: 17 }, (_, index) => `data${index + 1}.js`);
 let base64 = '';
 for (const name of names) {
   const source = git('show', `${SOURCE_COMMIT}:${name}`);
@@ -28,54 +23,87 @@ for (const name of names) {
 }
 
 const compressed = Buffer.from(base64, 'base64');
-const decoded = gunzipSync(compressed).toString('utf8');
-const legacy = JSON.parse(decoded);
-if (!legacy || !Array.isArray(legacy.pages) || legacy.pages.length < 25) {
-  throw new Error(`Legacy corpus has ${legacy?.pages?.length ?? 0} pages; expected at least 25`);
+const partialJson = gunzipSync(compressed, { finishFlush: constants.Z_SYNC_FLUSH }).toString('utf8');
+const pagesMarker = ',"pages":[';
+const pagesMarkerAt = partialJson.indexOf(pagesMarker);
+if (pagesMarkerAt < 0) throw new Error('Legacy payload has no recognizable pages array');
+
+const pagesStart = pagesMarkerAt + pagesMarker.length;
+const recovered = [];
+let depth = 0;
+let inString = false;
+let escaped = false;
+let itemStart = -1;
+for (let cursor = pagesStart; cursor < partialJson.length; cursor += 1) {
+  const character = partialJson[cursor];
+  if (inString) {
+    if (escaped) escaped = false;
+    else if (character === '\\') escaped = true;
+    else if (character === '"') inString = false;
+    continue;
+  }
+  if (character === '"') { inString = true; continue; }
+  if (character === '[') {
+    if (depth === 0) itemStart = cursor;
+    depth += 1;
+  } else if (character === ']') {
+    depth -= 1;
+    if (depth === 0 && itemStart >= 0) {
+      recovered.push(JSON.parse(partialJson.slice(itemStart, cursor + 1)));
+      itemStart = -1;
+    }
+  }
 }
 
-const migrated = legacy.pages.slice(0, 25).map((row, index) => {
+console.log(`RECOVERY_SCAN completePages=${recovered.length} partialChars=${partialJson.length} compressedBytes=${compressed.length} base64Mod4=${base64.length % 4}`);
+if (recovered.length < TARGET_PAGES) throw new Error(`Only ${recovered.length} complete pages are safely recoverable; target is ${TARGET_PAGES}`);
+
+const selected = recovered.slice(0, TARGET_PAGES);
+const migrated = selected.map((row, index) => {
   if (!Array.isArray(row)) throw new Error(`Invalid legacy page row ${index + 1}`);
   const number = Number(row[0] ?? index + 1);
+  const blocks = Array.isArray(row[5]) ? row[5] : [];
+  const paragraphs = blocks.map(block => Array.isArray(block) ? String(block[1] ?? '') : String(block ?? '')).filter(Boolean);
   const page = {
     number,
     part: row[1] ?? null,
-    partTitle: row[2] ?? '',
+    partTitle: String(row[2] ?? ''),
     chapter: row[3] ?? null,
     title: String(row[4] || (number === 1 ? 'Manual do Participante CATS' : `Página ${number}`)),
-    paragraphs: Array.isArray(row[5]) ? row[5].map(String).filter(Boolean) : []
+    paragraphs
   };
   if (number === 1) {
     page.cover = true;
-    if (!page.paragraphs.length) {
-      page.paragraphs = [
-        'Curso de Atendimento a Tentativas de Suicídio',
-        'Manual do Participante • Edição Digital Interativa • 2026'
-      ];
-    }
+    page.title = 'Manual do Participante CATS';
+    page.paragraphs = [
+      'Curso de Atendimento a Tentativas de Suicídio',
+      'Manual do Participante • Edição Digital Interativa • 2026'
+    ];
   }
   return page;
 });
 
-for (let i = 0; i < migrated.length; i++) {
-  if (migrated[i].number !== i + 1) throw new Error(`Unexpected page sequence at index ${i}: ${migrated[i].number}`);
-  if (!migrated[i].title) throw new Error(`Missing title at page ${i + 1}`);
-  if (!migrated[i].paragraphs.length) throw new Error(`Missing paragraphs at page ${i + 1}`);
+for (let index = 0; index < migrated.length; index += 1) {
+  const page = migrated[index];
+  if (page.number !== index + 1) throw new Error(`Unexpected page sequence at ${index + 1}: ${page.number}`);
+  if (!page.title || !page.paragraphs.length) throw new Error(`Incomplete page ${index + 1}`);
+  if (JSON.stringify(selected[index]).includes('\uFFFD')) throw new Error(`Replacement character found at page ${index + 1}`);
 }
 
 const sourceHash = createHash('sha256').update(base64).digest('hex');
+const selectedHash = createHash('sha256').update(JSON.stringify(selected)).digest('hex');
 const provenance = {
-  schema: 1,
-  source: 'legacy embedded CATS corpus',
+  schema: 2,
+  source: 'legacy CATS corpus recovered with tolerant gzip flush',
   sourceCommit: SOURCE_COMMIT,
   sourceFiles: names,
   sourceSha256: sourceHash,
-  extractedPages: 25,
-  totalLegacyPages: legacy.pages.length
+  selectedSha256: selectedHash,
+  recoverablePages: recovered.length,
+  extractedPages: TARGET_PAGES,
+  targetBookPages: 249
 };
 
 await writeFile(join(contentDir, 'pages.json'), `${JSON.stringify(migrated, null, 2)}\n`);
 await writeFile(join(contentDir, 'provenance.json'), `${JSON.stringify(provenance, null, 2)}\n`);
-
-console.log(`MIGRATE_OK source=${SOURCE_COMMIT.slice(0, 12)} chunks=${names.length} compressedBytes=${compressed.length} legacyPages=${legacy.pages.length} extracted=25 sha256=${sourceHash.slice(0, 12)}`);
-console.log(`MIGRATE_TITLES ${migrated.map(p => `${p.number}:${p.title}`).join(' | ')}`);
+console.log(`MIGRATE_OK source=${SOURCE_COMMIT.slice(0, 12)} recoverable=${recovered.length} extracted=${TARGET_PAGES} sha256=${selectedHash.slice(0, 12)}`);
