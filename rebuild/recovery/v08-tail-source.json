@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "sourceType": "google-drive-canonical-pdf",
+  "driveFileId": "1PePK8Tic7PGo65fiqf02k8vUzG_Halh0",
+  "sourceTitle": "Manual do Participante CATS - v0.8 - CANÔNICA - SANITIZADA.pdf",
+  "pdfPages": 159,
+  "pdfSha256": "7a8d9a0a0614e18af812ffe1c172b48a87e609b66ec8631eec15cb1ea15becbb",
+  "extractedPages": [
+    {
+      "number": 155,
+      "title": "Referências nucleares",
+      "paragraphs": [
+        "BRASIL. Ministério da Saúde. Panorama dos suicídios e lesões autoprovocadas no Brasil de 2010 a 2021. Boletim Epidemiológico, v. 55, n. 4, 2024.",
+        "CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS. Instrução Técnica Operacional n. 30: Atendimento a Tentativas de Suicídio. 2. ed. Revisão 2026. Versão digital canônica v3.6. Belo Horizonte: CBMMG, 2026.",
+        "CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS. Academia de Bombeiros Militar. Plano de Ensino: Curso de Atendimento a Tentativas de Suicídio — CATS 2026. 46 h/a. Belo Horizonte: CBMMG, 2026.",
+        "CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS. Curso de Atendimento a Tentativas de Suicídio. Aula: Abordagem Técnica — Aspectos gerais. Belo Horizonte: CBMMG, 2026.",
+        "CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS. Curso de Atendimento a Tentativas de Suicídio. Aula: Comunicação dissuasiva. Belo Horizonte: CBMMG, 2026.",
+        "CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS. Curso de Atendimento a Tentativas de Suicídio. Aula: Primeiros Socorros Psicológicos aplicados ao ATS. Belo Horizonte: CBMMG, 2026.",
+        "CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS. Curso de Atendimento a Tentativas de Suicídio. Aula: Prevenção ao comportamento suicida. Belo Horizonte: CBMMG, 2026.",
+        "CENTRO DE VALORIZAÇÃO DA VIDA. O CVV. São Paulo: CVV. Disponível em: https://cvv.org.br/o-cvv/.",
+        "BRASIL. Ministério da Saúde. Suicídio (prevenção). Brasília: Ministério da Saúde. Disponível em: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/suicidio-prevencao.",
+        "CORRÊA, H. et al. Tratado de suicidologia. Belo Horizonte: Ampla, 2022.",
+        "BOTEGA, N. J. Crise suicida: avaliação e manejo. Porto Alegre: Artmed, 2015.",
+        "MUNHOZ, D. M. Abordagem técnica a tentativas de suicídio. São Paulo: Authentic Fire, 2018.",
+        "QUEVEDO, João; CARVALHO, André F. Emergências psiquiátricas. 3. ed. Porto Alegre: Artmed, 2014. 333 p."
+      ]
+    },
+    {
+      "number": 156,
+      "title": "Referências nucleares",
+      "paragraphs": [
+        "DALGALARRONDO, Paulo. Psicopatologia e semiologia dos transtornos mentais. 3. ed. Porto Alegre: Artmed, 2019. 505 p.",
+        "SCAVACINI, K.; REIS, M.; SILVA, D. R. (org.). Atualizações em suicidologia: narrativas, pesquisas e experiências. 2021.",
+        "WENZEL, A.; BECK, A. T. A cognitive model of suicidal behavior: theory and treatment. Applied and Preventive Psychology, v. 12, p. 189–201, 2008.",
+        "ORGANIZAÇÃO MUNDIAL DA SAÚDE; WAR TRAUMA FOUNDATION; WORLD VISION INTERNATIONAL. Primeiros cuidados psicológicos: guia para trabalhadores de campo. Brasília: OPAS, 2015.",
+        "PINTO, Richelmy Murta. Posvenção ao suicídio para militares do Corpo de Bombeiros Militar de Minas Gerais: estudo e proposta de Programa Institucional. Orientador: Júlio César Tóffoli. 2020. 71 f. Monografia (Especialização em Gestão, Proteção e Defesa Civil) — Fundação João Pinheiro, Escola de Governo Professor Paulo Neves de Carvalho, Belo Horizonte, 2020.",
+        "PINTO, Richelmy Murta. Primeiros Socorros Psicológicos entre pares: fundamentos, manejo e implantação institucional para cuidado no cotidiano do trabalho. Material didático de apresentação para a SES, 2026.",
+        "WORLD HEALTH ORGANIZATION; WAR TRAUMA FOUNDATION; WORLD VISION INTERNATIONAL. Psychological first aid: facilitator’s manual for orienting field workers. Geneva: WHO, 2013.",
+        "WORLD HEALTH ORGANIZATION. Public health intelligence competency framework. Geneva: WHO, 2025.",
+        "ASSOCIAÇÃO BRASILEIRA DE PSIQUIATRIA; CONSELHO FEDERAL DE MEDICINA. Comportamento suicida: conhecer para prevenir — orientações para profissionais de imprensa.",
+        "CORPO DE BOMBEIROS MILITAR DO DISTRITO FEDERAL. Manual de atendimento a tentativas de suicídio. 1. ed. Brasília: CBMDF, 2026. Utilizado apenas como benchmark externo."
+      ]
+    },
+    {
+      "number": 157,
+      "title": "Glossário essencial",
+      "paragraphs": [
+        "Sistema ATTS — Sistema de Abordagem Técnica a Tentativas de Suicídio: conjunto integrado de procedimentos técnicos, operacionais e comunicacionais que abrange acionamento, deslocamento, segurança, abordagem de dissuasão, abordagem tática, APH, encaminhamento, registro e posvenção quando cabível.",
+        "Abordagem de dissuasão — Linha operacional verbal e não verbal do Sistema ATTS baseada em vínculo, escuta, perguntas e ferramentas de diálogo, orientada a favorecer desistência voluntária e encaminhamento seguro.",
+        "Comunicação dissuasiva — Expressão didática usada no ensino do CATS para qualificar comunicação dentro da abordagem de dissuasão; não constitui uma terceira linha operacional do Sistema ATTS.",
+        "Abordagem tática — Linha operacional excepcional do Sistema ATTS empregada quando alteração objetiva do risco, risco grave à segurança ou oportunidade tática segura justificam intervenção física, mediante decisão do comandante e competências específicas.",
+        "Ambivalência — Coexistência de tendências, desejos ou avaliações conflitantes; na crise, pode aparecer como abertura simultânea a continuar o ato e a conversar ou considerar alternativas.",
+        "Avaliação dinâmica — Revisão contínua de risco, ambiente, comportamento, recursos e resposta institucional conforme a cena muda.",
+        "Díade — Canal principal de interação entre pessoa em crise e abordador.",
+        "Delimitadores — Bombeiros militares designados para apoiar o controle espacial da cena em locais de risco, de forma integrada à segurança e à equipe tática e sem competir com a comunicação do abordador.",
+        "Pessoa de confiança — Vínculo potencialmente protetivo indicado pelo tentante ou identificado pela guarnição, cuja aproximação depende de avaliação favorável de segurança, vínculo e utilidade técnica.",
+        "RAPS — Rede de Atenção Psicossocial: rede pública do SUS voltada à saúde mental, álcool e outras drogas, considerada para continuidade do cuidado conforme fluxo local e regulação competente.",
+        "Fator de proteção — Condição ou recurso que, para aquela pessoa e contexto, pode contribuir para segurança, apoio ou enfrentamento. Não deve ser presumido apenas pela categoria."
+      ]
+    },
+    {
+      "number": 158,
+      "title": "Glossário essencial",
+      "paragraphs": [
+        "Fator associado/de risco — Variável relacionada estatisticamente a maior probabilidade em grupos; não é previsão individual nem destino.",
+        "Paráfrase — Devolução concisa e provisória do que foi compreendido, aberta à correção da pessoa.",
+        "Primeiros Socorros Psicológicos (PSP) — Apoio humano inicial, prático e não invasivo, orientado por segurança, escuta, ajuda prática e conexão com recursos. A edição brasileira do guia OMS/OPAS utiliza no título a expressão “Primeiros cuidados psicológicos”.",
+        "Posvenção — Ações posteriores a um suicídio voltadas a pessoas e grupos afetados, com suporte, comunicação responsável e prevenção de novos danos.",
+        "Saída honrosa — Condução da pessoa da situação de risco para posição ou local seguro, preservando dignidade, privacidade, respeito e sensação mínima de controle, sem exposição, humilhação ou comemoração diante dela.",
+        "Werther / Papageno — Termos usados para descrever, respectivamente, efeitos potencialmente prejudiciais de certas exposições ao suicídio e efeitos potencialmente protetivos de narrativas de enfrentamento e busca de ajuda."
+      ]
+    },
+    {
+      "number": 159,
+      "title": "Checklist final do participante",
+      "paragraphs": [
+        "☐ Consigo localizar rapidamente a ITO 30 vigente e diferenciar norma de material didático.",
+        "☐ Consigo diferenciar Sistema ATTS, abordagem de dissuasão e abordagem tática.",
+        "☐ Consigo descrever cena e comportamento sem depender de diagnóstico.",
+        "☐ Consigo organizar funções e fluxo de informação.",
+        "☐ Consigo sustentar escuta, perguntas, validação e limites na abordagem de dissuasão sem roteiro rígido.",
+        "☐ Consigo reconhecer quando preciso de especialista ou de outra instituição.",
+        "☐ Consigo adaptar comunicação e ambiente diante de deficiência, neurodivergência, idade e vulnerabilidades sem presumir incapacidade.",
+        "☐ Consigo explicar por que tática não é punição nem etapa automática.",
+        "☐ Consigo planejar a passagem para saúde e registro.",
+        "☐ Consigo aplicar princípios de comunicação responsável.",
+        "☐ Conheço fluxos de cuidado da corporação e limites do apoio entre pares.",
+        "☐ Tenho um plano para revisar e praticar estas competências após o curso."
+      ]
+    }
+  ]
+}
