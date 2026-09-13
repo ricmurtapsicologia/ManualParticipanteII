@@ -1,12 +1,13 @@
 {
   "name": "manual-participante-cats-rebuild",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "migrate:25": "node scripts/migrate25.mjs",
+    "migrate:50": "node scripts/migrate50.mjs",
     "validate": "node scripts/validate.mjs",
     "smoke": "node scripts/smoke.mjs"
   },
