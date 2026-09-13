@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "wave": 11,
+  "stage": "semantic-architecture",
+  "status": "validated",
+  "sourcePages": 249,
+  "semanticBlocks": 2224,
+  "parts": 7,
+  "distinctChapters": 34,
+  "chapterPartPairs": 37,
+  "boundaryChapterOverlaps": [
+    { "chapter": 5, "parts": [1, 2] },
+    { "chapter": 11, "parts": [2, 3] },
+    { "chapter": 20, "parts": [3, 4] }
+  ],
+  "sourcePagesSha256Prefix": "5869733f4283",
+  "preservation": "lossless-title-and-paragraph-text",
+  "nextWave": "normalize transition taxonomy and reconstruct hierarchical navigation"
+}
