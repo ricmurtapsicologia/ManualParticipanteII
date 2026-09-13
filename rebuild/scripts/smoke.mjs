@@ -16,15 +16,15 @@ async function waitFor(url, tries = 40) {
 try {
   const healthRes = await waitFor(`${base}/api/health`);
   const health = await healthRes.json();
-  if (health.status !== 'ok' || health.pages !== 155 || health.wave !== 7 || health.architecture !== 'rebuild-clean') throw new Error(`Unexpected health payload: ${JSON.stringify(health)}`);
+  if (health.status !== 'ok' || health.pages !== 249 || health.wave !== 8 || health.architecture !== 'rebuild-clean' || health.corpus !== 'canonical-hybrid-recovered') throw new Error(`Unexpected health payload: ${JSON.stringify(health)}`);
 
   const homeRes = await fetch(base);
   if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
   const html = await homeRes.text();
-  for (const token of ['Manual do Participante CATS', '155 páginas reais', 'rebuild-clean-v1', 'data-page-count="155"', 'data-wave="7"']) {
+  for (const token of ['Manual do Participante CATS', '249 páginas canônicas', 'rebuild-clean-v1', 'data-page-count="249"', 'data-wave="8"']) {
     if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
   }
-  console.log('SMOKE_OK home=200 health=200 pages=155 wave=7 architecture=rebuild-clean');
+  console.log('SMOKE_OK home=200 health=200 pages=249 wave=8 architecture=rebuild-clean corpus=canonical-hybrid-recovered');
 } finally {
   child.kill('SIGTERM');
   await sleep(300);
