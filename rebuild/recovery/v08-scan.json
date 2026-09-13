@@ -1,0 +1,550 @@
+{
+  "scannerVersion": 1,
+  "snapshot": "fab214fdef6a30b61c4fbbf2746e352fc5eaeac0",
+  "historicalPaths": [
+    "corpus-v08/c01.txt",
+    "corpus-v08/c02.txt",
+    "corpus-v08-final/c00.txt"
+  ],
+  "fileSizes": {
+    "corpus-v08/c01.txt": 12000,
+    "corpus-v08/c02.txt": 11999,
+    "corpus-v08-final/c00.txt": 6000
+  },
+  "canonicalPages": 155,
+  "best": {
+    "label": "corpus-v08/c01.txt",
+    "paths": [
+      "corpus-v08/c01.txt"
+    ],
+    "base64Chars": 12000,
+    "decodedBytes": 9000,
+    "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+    "method": "utf8-direct",
+    "textChars": 8506,
+    "pages": 0,
+    "prefixMatched": 0,
+    "firstInvalidOffset": null,
+    "reason": "pages-marker-missing",
+    "startsWith": "[\u001a=5�\u0007�\u0001H\u001d��ݓm���\n��r\u0006�\u0003��K$��\u00060�k\"T�G����\u0002R�p�@`�� c����a躦�Hy�;�\u0017\nZfA| <\u0014<*\f罨��"
+  },
+  "successful": [],
+  "top": [
+    {
+      "label": "corpus-v08/c01.txt",
+      "paths": [
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 12000,
+      "decodedBytes": 9000,
+      "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+      "method": "utf8-direct",
+      "textChars": 8506,
+      "pages": 0,
+      "prefixMatched": 0,
+      "firstInvalidOffset": null,
+      "reason": "pages-marker-missing",
+      "startsWith": "[\u001a=5�\u0007�\u0001H\u001d��ݓm���\n��r\u0006�\u0003��K$��\u00060�k\"T�G����\u0002R�p�@`�� c����a躦�Hy�;�\u0017\nZfA| <\u0014<*\f罨��"
+    },
+    {
+      "label": "corpus-v08/c01.txt",
+      "paths": [
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 12000,
+      "decodedBytes": 9000,
+      "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+      "method": "gunzip-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c01.txt",
+      "paths": [
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 12000,
+      "decodedBytes": 9000,
+      "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+      "method": "gunzip-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c01.txt",
+      "paths": [
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 12000,
+      "decodedBytes": 9000,
+      "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+      "method": "inflate-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c01.txt",
+      "paths": [
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 12000,
+      "decodedBytes": 9000,
+      "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+      "method": "inflate-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c01.txt",
+      "paths": [
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 12000,
+      "decodedBytes": 9000,
+      "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+      "method": "inflateRaw-full",
+      "error": "invalid distance too far back",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c01.txt",
+      "paths": [
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 12000,
+      "decodedBytes": 9000,
+      "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+      "method": "inflateRaw-sync-flush",
+      "error": "invalid distance too far back",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c01.txt",
+      "paths": [
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 12000,
+      "decodedBytes": 9000,
+      "base64Sha256": "2a2243d10245d08952a9f41388ebb1abf1e4cfda00e222318a6eaad4114e0b7f",
+      "method": "brotli",
+      "error": "unexpected end of file",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c02.txt",
+      "paths": [
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 11999,
+      "decodedBytes": 8999,
+      "base64Sha256": "9876410258e908286ddffa86817772d1b674897300dcbeb2ba92bcacf3502ca4",
+      "method": "utf8-direct",
+      "textChars": 8456,
+      "pages": 0,
+      "prefixMatched": 0,
+      "firstInvalidOffset": null,
+      "reason": "pages-marker-missing",
+      "startsWith": "�o�.�1�P?Q\u001e\\�Pʆ�}\u001a��\u0019\u001c\u0010hņ!�\u0015U�c�\u001f��c;���A\u0019t|��+[ \u0001�\t�\u0004�;K�o߂N��<�$&W\"j\u001egܶ*N�Z�n="
+    },
+    {
+      "label": "corpus-v08/c02.txt",
+      "paths": [
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 11999,
+      "decodedBytes": 8999,
+      "base64Sha256": "9876410258e908286ddffa86817772d1b674897300dcbeb2ba92bcacf3502ca4",
+      "method": "gunzip-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c02.txt",
+      "paths": [
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 11999,
+      "decodedBytes": 8999,
+      "base64Sha256": "9876410258e908286ddffa86817772d1b674897300dcbeb2ba92bcacf3502ca4",
+      "method": "gunzip-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c02.txt",
+      "paths": [
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 11999,
+      "decodedBytes": 8999,
+      "base64Sha256": "9876410258e908286ddffa86817772d1b674897300dcbeb2ba92bcacf3502ca4",
+      "method": "inflate-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c02.txt",
+      "paths": [
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 11999,
+      "decodedBytes": 8999,
+      "base64Sha256": "9876410258e908286ddffa86817772d1b674897300dcbeb2ba92bcacf3502ca4",
+      "method": "inflate-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c02.txt",
+      "paths": [
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 11999,
+      "decodedBytes": 8999,
+      "base64Sha256": "9876410258e908286ddffa86817772d1b674897300dcbeb2ba92bcacf3502ca4",
+      "method": "inflateRaw-full",
+      "error": "invalid distance code",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c02.txt",
+      "paths": [
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 11999,
+      "decodedBytes": 8999,
+      "base64Sha256": "9876410258e908286ddffa86817772d1b674897300dcbeb2ba92bcacf3502ca4",
+      "method": "inflateRaw-sync-flush",
+      "error": "invalid distance code",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08/c02.txt",
+      "paths": [
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 11999,
+      "decodedBytes": 8999,
+      "base64Sha256": "9876410258e908286ddffa86817772d1b674897300dcbeb2ba92bcacf3502ca4",
+      "method": "brotli",
+      "error": "Decompression failed",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08-final/c00.txt",
+      "paths": [
+        "corpus-v08-final/c00.txt"
+      ],
+      "base64Chars": 6000,
+      "decodedBytes": 4500,
+      "base64Sha256": "67800f9325cfb08b528170e5767b8ac9e6a1816228e75fd9d849113e0256cad7",
+      "method": "utf8-direct",
+      "textChars": 4261,
+      "pages": 0,
+      "prefixMatched": 0,
+      "firstInvalidOffset": null,
+      "reason": "pages-marker-missing",
+      "startsWith": "[ŝ\u0014E�q\u0000��fh&R��P\bM9wUQ_Q�\"�V�����K�T���և\n�\u001c5��{I[���,�;e}\fY�`\u001dRm�\u0003k���4C3,\u0003l�\u0007Ѩ�"
+    },
+    {
+      "label": "corpus-v08-final/c00.txt",
+      "paths": [
+        "corpus-v08-final/c00.txt"
+      ],
+      "base64Chars": 6000,
+      "decodedBytes": 4500,
+      "base64Sha256": "67800f9325cfb08b528170e5767b8ac9e6a1816228e75fd9d849113e0256cad7",
+      "method": "gunzip-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08-final/c00.txt",
+      "paths": [
+        "corpus-v08-final/c00.txt"
+      ],
+      "base64Chars": 6000,
+      "decodedBytes": 4500,
+      "base64Sha256": "67800f9325cfb08b528170e5767b8ac9e6a1816228e75fd9d849113e0256cad7",
+      "method": "gunzip-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08-final/c00.txt",
+      "paths": [
+        "corpus-v08-final/c00.txt"
+      ],
+      "base64Chars": 6000,
+      "decodedBytes": 4500,
+      "base64Sha256": "67800f9325cfb08b528170e5767b8ac9e6a1816228e75fd9d849113e0256cad7",
+      "method": "inflate-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08-final/c00.txt",
+      "paths": [
+        "corpus-v08-final/c00.txt"
+      ],
+      "base64Chars": 6000,
+      "decodedBytes": 4500,
+      "base64Sha256": "67800f9325cfb08b528170e5767b8ac9e6a1816228e75fd9d849113e0256cad7",
+      "method": "inflate-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08-final/c00.txt",
+      "paths": [
+        "corpus-v08-final/c00.txt"
+      ],
+      "base64Chars": 6000,
+      "decodedBytes": 4500,
+      "base64Sha256": "67800f9325cfb08b528170e5767b8ac9e6a1816228e75fd9d849113e0256cad7",
+      "method": "inflateRaw-full",
+      "error": "invalid distance too far back",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08-final/c00.txt",
+      "paths": [
+        "corpus-v08-final/c00.txt"
+      ],
+      "base64Chars": 6000,
+      "decodedBytes": 4500,
+      "base64Sha256": "67800f9325cfb08b528170e5767b8ac9e6a1816228e75fd9d849113e0256cad7",
+      "method": "inflateRaw-sync-flush",
+      "error": "invalid distance too far back",
+      "pages": 0
+    },
+    {
+      "label": "corpus-v08-final/c00.txt",
+      "paths": [
+        "corpus-v08-final/c00.txt"
+      ],
+      "base64Chars": 6000,
+      "decodedBytes": 4500,
+      "base64Sha256": "67800f9325cfb08b528170e5767b8ac9e6a1816228e75fd9d849113e0256cad7",
+      "method": "brotli",
+      "error": "unexpected end of file",
+      "pages": 0
+    },
+    {
+      "label": "v08:c01+c02",
+      "paths": [
+        "corpus-v08/c01.txt",
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "633ed1c6340627dc253aa975d78808f43beeae7e89d69ba1a2d5490034b21ea9",
+      "method": "utf8-direct",
+      "textChars": 16962,
+      "pages": 0,
+      "prefixMatched": 0,
+      "firstInvalidOffset": null,
+      "reason": "pages-marker-missing",
+      "startsWith": "[\u001a=5�\u0007�\u0001H\u001d��ݓm���\n��r\u0006�\u0003��K$��\u00060�k\"T�G����\u0002R�p�@`�� c����a躦�Hy�;�\u0017\nZfA| <\u0014<*\f罨��"
+    },
+    {
+      "label": "v08:c01+c02",
+      "paths": [
+        "corpus-v08/c01.txt",
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "633ed1c6340627dc253aa975d78808f43beeae7e89d69ba1a2d5490034b21ea9",
+      "method": "gunzip-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "v08:c01+c02",
+      "paths": [
+        "corpus-v08/c01.txt",
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "633ed1c6340627dc253aa975d78808f43beeae7e89d69ba1a2d5490034b21ea9",
+      "method": "gunzip-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "v08:c01+c02",
+      "paths": [
+        "corpus-v08/c01.txt",
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "633ed1c6340627dc253aa975d78808f43beeae7e89d69ba1a2d5490034b21ea9",
+      "method": "inflate-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "v08:c01+c02",
+      "paths": [
+        "corpus-v08/c01.txt",
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "633ed1c6340627dc253aa975d78808f43beeae7e89d69ba1a2d5490034b21ea9",
+      "method": "inflate-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "v08:c01+c02",
+      "paths": [
+        "corpus-v08/c01.txt",
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "633ed1c6340627dc253aa975d78808f43beeae7e89d69ba1a2d5490034b21ea9",
+      "method": "inflateRaw-full",
+      "error": "invalid distance too far back",
+      "pages": 0
+    },
+    {
+      "label": "v08:c01+c02",
+      "paths": [
+        "corpus-v08/c01.txt",
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "633ed1c6340627dc253aa975d78808f43beeae7e89d69ba1a2d5490034b21ea9",
+      "method": "inflateRaw-sync-flush",
+      "error": "invalid distance too far back",
+      "pages": 0
+    },
+    {
+      "label": "v08:c01+c02",
+      "paths": [
+        "corpus-v08/c01.txt",
+        "corpus-v08/c02.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "633ed1c6340627dc253aa975d78808f43beeae7e89d69ba1a2d5490034b21ea9",
+      "method": "brotli",
+      "error": "Decompression failed",
+      "pages": 0
+    },
+    {
+      "label": "v08:c02+c01",
+      "paths": [
+        "corpus-v08/c02.txt",
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "c0e5a431c54df186e74f72f7f322788fed64253d31f848d1d8720564e4eec139",
+      "method": "utf8-direct",
+      "textChars": 16959,
+      "pages": 0,
+      "prefixMatched": 0,
+      "firstInvalidOffset": null,
+      "reason": "pages-marker-missing",
+      "startsWith": "�o�.�1�P?Q\u001e\\�Pʆ�}\u001a��\u0019\u001c\u0010hņ!�\u0015U�c�\u001f��c;���A\u0019t|��+[ \u0001�\t�\u0004�;K�o߂N��<�$&W\"j\u001egܶ*N�Z�n="
+    },
+    {
+      "label": "v08:c02+c01",
+      "paths": [
+        "corpus-v08/c02.txt",
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "c0e5a431c54df186e74f72f7f322788fed64253d31f848d1d8720564e4eec139",
+      "method": "gunzip-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "v08:c02+c01",
+      "paths": [
+        "corpus-v08/c02.txt",
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "c0e5a431c54df186e74f72f7f322788fed64253d31f848d1d8720564e4eec139",
+      "method": "gunzip-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "v08:c02+c01",
+      "paths": [
+        "corpus-v08/c02.txt",
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "c0e5a431c54df186e74f72f7f322788fed64253d31f848d1d8720564e4eec139",
+      "method": "inflate-full",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "v08:c02+c01",
+      "paths": [
+        "corpus-v08/c02.txt",
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "c0e5a431c54df186e74f72f7f322788fed64253d31f848d1d8720564e4eec139",
+      "method": "inflate-sync-flush",
+      "error": "incorrect header check",
+      "pages": 0
+    },
+    {
+      "label": "v08:c02+c01",
+      "paths": [
+        "corpus-v08/c02.txt",
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "c0e5a431c54df186e74f72f7f322788fed64253d31f848d1d8720564e4eec139",
+      "method": "inflateRaw-full",
+      "error": "invalid distance code",
+      "pages": 0
+    },
+    {
+      "label": "v08:c02+c01",
+      "paths": [
+        "corpus-v08/c02.txt",
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "c0e5a431c54df186e74f72f7f322788fed64253d31f848d1d8720564e4eec139",
+      "method": "inflateRaw-sync-flush",
+      "error": "invalid distance code",
+      "pages": 0
+    },
+    {
+      "label": "v08:c02+c01",
+      "paths": [
+        "corpus-v08/c02.txt",
+        "corpus-v08/c01.txt"
+      ],
+      "base64Chars": 23999,
+      "decodedBytes": 17999,
+      "base64Sha256": "c0e5a431c54df186e74f72f7f322788fed64253d31f848d1d8720564e4eec139",
+      "method": "brotli",
+      "error": "Decompression failed",
+      "pages": 0
+    }
+  ]
+}
