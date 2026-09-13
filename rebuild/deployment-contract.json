@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "stage": "vercel-cutover-readiness",
+  "projectName": "manual-participante-cats-digital",
+  "teamId": "team_JRb3bMdqrQWOEUjMGGh0kQHV",
+  "repository": "ricmurtapsicologia/ManualParticipanteII",
+  "productionBranch": "rebuild-clean-v1",
+  "rootDirectory": "rebuild",
+  "framework": "nextjs",
+  "nodeVersion": "24.x",
+  "expected": {
+    "status": "ok",
+    "architecture": "rebuild-clean",
+    "wave": 8,
+    "pages": 249,
+    "corpus": "canonical-hybrid-recovered",
+    "environment": "production",
+    "branch": "rebuild-clean-v1"
+  },
+  "rollback": {
+    "projectId": "prj_O4U8NcOrjeSjkSlhnx0Qow8FAKHK",
+    "productionDeploymentId": "dpl_C86oZjGWoxfRcaK3c3c6JkwFyqFY",
+    "productionUrl": "manual-participante-cats-definitivo-flpazncd0.vercel.app"
+  },
+  "policy": {
+    "doNotModifyOldProductionBeforeGate": true,
+    "doNotReuseProbeProjects": true,
+    "requireGitIntegration": true,
+    "requireRemoteHealthProof": true
+  }
+}
