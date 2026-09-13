@@ -4,7 +4,7 @@
   "projectName": "manual-participante-cats-digital",
   "teamId": "team_JRb3bMdqrQWOEUjMGGh0kQHV",
   "repository": "ricmurtapsicologia/ManualParticipanteII",
-  "productionBranch": "rebuild-clean-v1",
+  "productionBranch": "main",
   "rootDirectory": "rebuild",
   "framework": "nextjs",
   "nodeVersion": "24.x",
@@ -15,7 +15,7 @@
     "pages": 249,
     "corpus": "canonical-hybrid-recovered",
     "environment": "production",
-    "branch": "rebuild-clean-v1"
+    "branch": "main"
   },
   "rollback": {
     "projectId": "prj_O4U8NcOrjeSjkSlhnx0Qow8FAKHK",
