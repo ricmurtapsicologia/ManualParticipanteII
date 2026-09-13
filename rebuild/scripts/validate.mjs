@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 const pages = JSON.parse(await readFile(new URL('../content/pages.json', import.meta.url), 'utf8'));
 const provenance = JSON.parse(await readFile(new URL('../content/provenance.json', import.meta.url), 'utf8'));
 const pageSource = await readFile(new URL('../app/page.tsx', import.meta.url), 'utf8');
+const wave54Source = await readFile(new URL('../app/wave54.tsx', import.meta.url), 'utf8');
 const css = await readFile(new URL('../app/globals.css', import.meta.url), 'utf8');
 const health = await readFile(new URL('../app/api/health/route.ts', import.meta.url), 'utf8');
 const deployContract = JSON.parse(await readFile(new URL('../deployment-contract.json', import.meta.url), 'utf8'));
@@ -36,13 +37,14 @@ if (provenance.recoveredTail?.sourceDerived !== true) fail('Recovered tail must 
 if (provenance.recoveredTail?.algorithm !== 'deterministic balanced paragraph reflow v1') fail('Unexpected reflow algorithm');
 
 if (!/text-align:justify/.test(css)) fail('Paragraphs are not justified');
-if (!/ant\[oô\]nio/i.test(pageSource)) fail('Antonio voice preference missing');
-if (!/pt-br/i.test(pageSource)) fail('pt-BR fallback missing');
+const ttsSurface = `${pageSource}\n${wave54Source}`;
+if (!ttsSurface.includes('Antônio')) fail('Antonio voice preference missing');
+if (!/pt-BR/i.test(ttsSurface)) fail('pt-BR fallback missing');
 if (!/data-page-count=\{pages\.length\}/.test(pageSource)) fail('Stable page-count runtime contract missing');
 if (!/data-wave="8"/.test(pageSource)) fail('Wave 8 runtime marker missing');
 if (!/data-editorial-wave="13"/.test(pageSource)) fail('Wave 13 editorial marker missing');
 if (!pageSource.includes('navigationData') || !pageSource.includes('hierarchical-toc')) fail('Hierarchical navigation contract missing from reader');
-const executableSurface = pageSource + css;
+const executableSurface = pageSource + wave54Source + css;
 if (/cdn\.jsdelivr\.net|https?:\/\/[^'"\s]*jsdelivr/i.test(executableSurface)) fail('jsDelivr dependency detected');
 if (!/status:\s*'ok'/.test(health) || !/pages:\s*249/.test(health) || !/wave:\s*8/.test(health)) fail('Health contract mismatch');
 for (const envName of ['VERCEL_ENV', 'VERCEL_GIT_COMMIT_REF', 'VERCEL_GIT_COMMIT_SHA']) if (!health.includes(envName)) fail(`Health deployment proof missing ${envName}`);
