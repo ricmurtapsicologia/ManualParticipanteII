@@ -1,13 +1,14 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "name": "CATS semantic editorial model",
   "editorialModel": "part>chapter>page>block",
   "pageRoles": [
     "cover",
     "front-matter",
-    "part-transition",
+    "part-opening",
     "chapter-opening",
-    "continuation"
+    "continuation",
+    "supplementary"
   ],
   "blockKinds": [
     "paragraph",
@@ -31,6 +32,19 @@
     "quiz",
     "external-resource"
   ],
+  "pedagogicalBlockKinds": [
+    "opening",
+    "objectives",
+    "doctrine",
+    "evidence",
+    "practice",
+    "attention",
+    "decide",
+    "case",
+    "guided-analysis",
+    "summary",
+    "review"
+  ],
   "losslessSourceFields": [
     "number",
     "part",
@@ -38,8 +52,25 @@
     "chapter",
     "title",
     "cover",
-    "paragraphs[].text"
+    "paragraphs[]"
   ],
+  "editorialTaxonomyFields": [
+    "editorial.part",
+    "editorial.partTitle",
+    "editorial.chapter",
+    "editorial.taxonomyAdjusted",
+    "editorial.normalizationReason"
+  ],
+  "navigationModel": {
+    "frontMatter": "contiguous source sections before Part 1",
+    "parts": "7 normalized editorial parts",
+    "partOpenings": "one dedicated opening page per part",
+    "chapters": "34 unique chapter entries, each assigned to exactly one part",
+    "supplementarySections": "chapter-zero sections after the numbered chapters",
+    "toc": "hierarchical Part > Chapter/Supplementary Section without duplicate chapter entries"
+  },
+  "taxonomyNormalizationRule": "Source taxonomy is immutable. A dedicated part-opening page that carries the previous chapter number receives editorial.chapter=0 while source chapter metadata remains unchanged.",
+  "wave2Rule": "No source title, paragraph, source part, source chapter, or source ordering may be rewritten, merged, deleted, or reordered while normalizing editorial taxonomy and navigation.",
   "reservedMediaMetadata": {
     "figure": ["src", "alt", "caption", "credit"],
     "diagram": ["src", "alt", "caption", "longDescription"],
@@ -47,6 +78,5 @@
     "video": ["src", "poster", "captions", "transcript", "duration"],
     "quiz": ["prompt", "options", "feedback", "answerMode"],
     "external-resource": ["href", "label", "source", "verifiedAt"]
-  },
-  "wave1Rule": "No source text may be rewritten, merged, deleted or reordered during semantic migration."
+  }
 }

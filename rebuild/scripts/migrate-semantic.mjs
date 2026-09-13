@@ -11,17 +11,15 @@ const semantic = buildSemanticDocument(sourcePages, sourceSha256);
 
 await writeFile(outputUrl, `${JSON.stringify(semantic, null, 2)}\n`, 'utf8');
 
-const overlaps = semantic.manifest.boundaryChapterOverlaps
+const normalizedTransitions = semantic.normalization.transitionNormalizations.map(item => item.page).join(',');
+const sourceOverlaps = semantic.manifest.sourceBoundaryChapterOverlaps
   .map(item => `${item.chapter}:[${item.parts.join(',')}]`)
   .join(';');
 
 console.log(
-  `SEMANTIC_MIGRATE_OK pages=${semantic.manifest.pageCount} blocks=${semantic.manifest.blockCount} ` +
+  `SEMANTIC_V2_MIGRATE_OK pages=${semantic.manifest.pageCount} blocks=${semantic.manifest.blockCount} ` +
   `parts=${semantic.manifest.partCount} chapters=${semantic.manifest.distinctChapterNumberCount} ` +
-  `chapter-part-pairs=${semantic.manifest.sourceChapterPairCount} overlaps=${overlaps || 'none'} ` +
-  `sha=${sourceSha256.slice(0, 12)}`
+  `source-overlaps=${sourceOverlaps || 'none'} normalized-overlaps=${semantic.manifest.normalizedBoundaryChapterOverlaps.length} ` +
+  `transition-normalizations=${normalizedTransitions || 'none'} toc=${semantic.manifest.tocPartCount}>${semantic.manifest.tocChapterCount} ` +
+  `pedagogical-markers=${semantic.manifest.pedagogicalMarkerCount} sha=${sourceSha256.slice(0, 12)}`
 );
-
-if (semantic.manifest.editorialAnomalies.length) {
-  console.log(`SEMANTIC_ANOMALIES ${JSON.stringify(semantic.manifest.editorialAnomalies)}`);
-}

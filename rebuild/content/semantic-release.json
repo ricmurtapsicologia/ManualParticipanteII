@@ -1,19 +1,17 @@
 {
-  "schemaVersion": 1,
-  "wave": 11,
-  "stage": "semantic-architecture",
-  "status": "validated",
+  "schemaVersion": 2,
+  "wave": 12,
+  "stage": "taxonomy-navigation",
+  "status": "candidate",
   "sourcePages": 249,
   "semanticBlocks": 2224,
   "parts": 7,
-  "distinctChapters": 34,
-  "chapterPartPairs": 37,
-  "boundaryChapterOverlaps": [
-    { "chapter": 5, "parts": [1, 2] },
-    { "chapter": 11, "parts": [2, 3] },
-    { "chapter": 20, "parts": [3, 4] }
-  ],
-  "sourcePagesSha256Prefix": "5869733f4283",
-  "preservation": "lossless-title-and-paragraph-text",
-  "nextWave": "normalize transition taxonomy and reconstruct hierarchical navigation"
+  "chapters": 34,
+  "sourceBoundaryOverlaps": [5, 11, 20],
+  "normalizedTransitionPages": [53, 95, 144],
+  "partOpeningPages": [7, 53, 95, 144, 166, 186, 202],
+  "preservation": "lossless-title-paragraph-and-source-taxonomy",
+  "navigation": "hierarchical-part-chapter-supplementary",
+  "pedagogicalMarkers": "recovered-from-source-block-kinds",
+  "nextWave": "connect normalized semantic navigation to the reader UI"
 }
