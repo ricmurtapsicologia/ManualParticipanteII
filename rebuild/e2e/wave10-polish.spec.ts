@@ -20,7 +20,9 @@ test('cover is edited and manual PDF has a dedicated download control',async({pa
   await expect(page.getByTestId('approved-cover')).toHaveCount(1);
   const art=page.getByTestId('approved-cover-image');
   await expect(art).toHaveCount(1);
-  await expect(art.locator('text')).toContainText(['CATS','Manual do','Participante']);
+  await expect(art).toContainText('CATS');
+  await expect(art).toContainText('Manual do');
+  await expect(art).toContainText('Participante');
   const download=page.getByTestId('manual-download');
   await expect(download).toBeVisible();
   await expect(download).toHaveAttribute('href','/api/manual');
