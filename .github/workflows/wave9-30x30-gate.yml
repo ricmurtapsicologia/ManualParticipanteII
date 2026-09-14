@@ -1,0 +1,70 @@
+name: Manual CATS Wave 9 Canonical 30x30 Gate
+
+on:
+  push:
+    branches:
+      - main
+      - 'wave19-*'
+    paths:
+      - 'rebuild/**'
+      - '.github/workflows/wave9-30x30-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wave9-30x30:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rebuild
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Rebuild canonical semantic baseline
+        run: |
+          npm run semantic:migrate
+          npm run semantic:validate
+          npm run multimedia:validate
+          npm run editorial:audit
+          npm run validate
+      - name: Build Wave 7 and Wave 8 validated runtime
+        run: npm run build
+      - name: Smoke test
+        run: npm run smoke
+      - name: Wave 9 static canonical 30x30 audit
+        run: node scripts/audit-wave9-30x30.mjs
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local production server
+        shell: bash
+        run: |
+          export VERCEL=1
+          export VERCEL_ENV=production
+          export VERCEL_GIT_COMMIT_REF=main
+          export VERCEL_GIT_COMMIT_SHA=$(git rev-parse HEAD)
+          export VERCEL_PROJECT_PRODUCTION_URL=manual-participante-cats-digital.vercel.app
+          npm start -- -p 3000 >/tmp/wave9-cats.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/api/health >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/wave9-cats.log
+          exit 1
+      - name: E2E desktop and mobile — content, responsive, accessibility, links, performance and regression
+        run: E2E_BASE_URL=http://127.0.0.1:3000 npm run e2e
+      - name: Close Wave 9 only after full green gate
+        env:
+          WAVE9_E2E_PASSED: '1'
+        run: |
+          node scripts/close-wave9-30x30.mjs
+          cat .wave9-final-report.json
