@@ -1,6 +1,6 @@
 {
-  "schema": 1,
-  "stage": "vercel-cutover-readiness",
+  "schema": 2,
+  "stage": "wave10-final-release",
   "projectName": "manual-participante-cats-digital",
   "teamId": "team_JRb3bMdqrQWOEUjMGGh0kQHV",
   "repository": "ricmurtapsicologia/ManualParticipanteII",
@@ -11,8 +11,10 @@
   "expected": {
     "status": "ok",
     "architecture": "rebuild-clean",
-    "wave": 8,
-    "pages": 249,
+    "wave": 10,
+    "pages": 246,
+    "chapters": 34,
+    "removedFrontMatterPages": [2, 4, 5],
     "corpus": "canonical-hybrid-recovered",
     "environment": "production",
     "branch": "main"
@@ -26,6 +28,8 @@
     "doNotModifyOldProductionBeforeGate": true,
     "doNotReuseProbeProjects": true,
     "requireGitIntegration": true,
-    "requireRemoteHealthProof": true
+    "requireRemoteHealthProof": true,
+    "requireWave10Static30x30": true,
+    "requireWave10DesktopMobileE2E": true
   }
 }
