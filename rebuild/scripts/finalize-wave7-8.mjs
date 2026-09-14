@@ -12,7 +12,6 @@ if (!Array.isArray(pages) || pages.length !== 249) throw new Error(`Expected 249
 const norm = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/\s+/g, ' ').trim();
 const isObjectives = block => block?.kind === 'objectives' || norm(block?.text) === 'O QUE VOCE DEVERA CONSEGUIR FAZER' || norm(block?.text) === 'OBJETIVOS' || norm(block?.text) === 'OBJETIVOS DO CAPITULO';
 const isSummary = block => block?.kind === 'summary' || ['O QUE EU LEVO DESTE CAPITULO','SINTESE DO CAPITULO','RESUMO DO CAPITULO'].includes(norm(block?.text));
-const isReview = block => block?.kind === 'review' || ['TESTE-SE','QUESTOES DE REVISAO'].includes(norm(block?.text));
 const pedagogicalKinds = new Set(['opening','objectives','doctrine','evidence','practice','attention','decide','case','guided-analysis','summary','review']);
 
 function takeListSection(page, start, predicate) {
@@ -31,30 +30,8 @@ function takeListSection(page, start, predicate) {
   return section;
 }
 
-function removeLegacyReview(page) {
-  const out = [];
-  let skipping = false;
-  for (const block of page.blocks) {
-    const text = block.text.trim();
-    if (isReview(block)) { skipping = true; continue; }
-    if (skipping) {
-      if (/^Referências principais:/iu.test(text) || /^Fontes nucleares do capítulo:/iu.test(text) || /^APLICAÇÃO E TRANSFERÊNCIA/iu.test(text) || (pedagogicalKinds.has(block.kind) && block.kind !== 'review')) {
-        skipping = false;
-        out.push(block);
-        continue;
-      }
-      if (/^\d+\.\s/u.test(text)) continue;
-      if (/^(?:\d+\.\s+.*\?\s*){2,}/u.test(text)) continue;
-      continue;
-    }
-    out.push(block);
-  }
-  page.blocks = out;
-}
-
 let objectiveChapters = 0;
 let summaryChapters = 0;
-let removedReviews = 0;
 const chapterMeta = [];
 for (let chapter = 1; chapter <= 34; chapter += 1) {
   const chapterPages = pages.filter(page => page.chapter === chapter).sort((a,b) => a.number - b.number);
@@ -88,12 +65,6 @@ for (let chapter = 1; chapter <= 34; chapter += 1) {
   for (let i = 1; i < summarySection.length; i += 1) {
     if (/^•\s/u.test(summarySection[i].text)) summarySection[i].kind = 'list-item';
   }
-
-  for (const page of chapterPages) {
-    const before = page.blocks.length;
-    removeLegacyReview(page);
-    removedReviews += Math.max(0, before - page.blocks.length);
-  }
   ending.blocks.push(...summarySection);
   summaryChapters += 1;
   chapterMeta.push({ chapter, title: opening.title, openingPage: opening.number, endingPage: ending.number });
@@ -106,7 +77,7 @@ artifact.runtimeEditorial = {
   coverage: '1-249',
   chapterObjectives: objectiveChapters,
   chapterSummaries: summaryChapters,
-  legacyOpenEndedReviewsRemoved: removedReviews,
+  legacyOpenEndedReviewsPreserved: true,
   chapterLeafStarts: 34,
   doctrineChanged: false,
   wave8VisualStatus: 'complete',
@@ -114,4 +85,4 @@ artifact.runtimeEditorial = {
 };
 artifact.chapterEditorial = chapterMeta;
 fs.writeFileSync(semanticPath, `${JSON.stringify(artifact, null, 2)}\n`);
-console.log(`WAVE7_FINALIZE_OK chapters=34 objectives=${objectiveChapters} summaries=${summaryChapters} leaf-starts=34 reviews-replaced=${removedReviews} doctrine-changed=false`);
+console.log(`WAVE7_FINALIZE_OK chapters=34 objectives=${objectiveChapters} summaries=${summaryChapters} leaf-starts=34 legacy-reviews=preserved doctrine-changed=false`);
