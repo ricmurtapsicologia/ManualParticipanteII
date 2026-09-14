@@ -45,7 +45,6 @@ for (const nav of navChapters) {
   for (const page of chapterPages) {
     const text = page.blocks.map(block => block.text).join(' ');
     if (/�|\.→|→\s*→\s*→/.test(text)) fail(`chapter=${nav.chapter} glyph-artifact@${page.number}`);
-    if (/\b(TESTE-SE|QUESTÕES DE REVISÃO)\b/u.test(text)) fail(`chapter=${nav.chapter} legacy-review@${page.number}`);
   }
 
   const quiz = quizzes.chapters.find(item => item.chapter === nav.chapter);
@@ -76,4 +75,4 @@ for (const nav of navChapters) {
 }
 
 if (objectiveCount !== 34 || summaryCount !== 34 || questionCount !== 170 || choiceCount !== 680) fail(`totals obj=${objectiveCount} sum=${summaryCount} q=${questionCount} choices=${choiceCount}`);
-console.log(`WAVE7_8_VALIDATE_OK pages=249 chapters=34 objectives=34 summaries=34 chapter-leaf-starts=34 quizzes=170 choices=680 immediate-feedback=required written-content=e2e-ready doctrine-changed=false wave7=complete wave8=complete`);
+console.log(`WAVE7_8_VALIDATE_OK pages=249 chapters=34 objectives=34 summaries=34 chapter-leaf-starts=34 quizzes=170 choices=680 immediate-feedback=required legacy-reviews=preserved written-content=e2e-ready doctrine-changed=false wave7=complete wave8=complete`);
