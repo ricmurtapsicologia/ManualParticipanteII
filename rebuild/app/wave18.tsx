@@ -8,18 +8,21 @@ export type ChapterQuizData = { chapter: number; title: string; openingPage: num
 
 export function ChapterQuiz({ quiz }: { quiz: ChapterQuizData }) {
   const [answers, setAnswers] = useState<Record<string,string>>({});
+  const answered = Object.keys(answers).filter(id => quiz.questions.some(question => question.id === id)).length;
+
   return <section className="chapterQuiz" data-testid="chapter-quiz" data-chapter={quiz.chapter} aria-labelledby={`chapter-quiz-${quiz.chapter}`}>
     <div className="chapterQuizHead">
-      <span className="chapterQuizEyebrow">Verificação de aprendizagem</span>
-      <h3 id={`chapter-quiz-${quiz.chapter}`}>5 questões de múltipla escolha</h3>
-      <p>Selecione uma alternativa. A correção aparece imediatamente.</p>
+      <div className="chapterQuizMeta"><span>Autoavaliação do capítulo</span><span>{answered} de 5 respondidas</span></div>
+      <h3 id={`chapter-quiz-${quiz.chapter}`}>Verificação de aprendizagem</h3>
+      <p>São cinco questões, com quatro alternativas cada. Selecione uma opção e confira o feedback imediatamente.</p>
+      <div className="chapterQuizProgress" aria-hidden="true"><span style={{ width: `${(answered / 5) * 100}%` }} /></div>
     </div>
     <div className="chapterQuizQuestions">
       {quiz.questions.map((question, questionIndex) => {
         const selectedId = answers[question.id] ?? null;
         const selected = question.choices.find(choice => choice.id === selectedId) ?? null;
         return <fieldset className="chapterQuizQuestion" data-testid="chapter-quiz-question" key={question.id}>
-          <legend><span>{questionIndex + 1}.</span> {question.prompt}</legend>
+          <legend><span className="chapterQuizQuestionNo">Questão {questionIndex + 1} de 5</span><span className="chapterQuizPrompt">{question.prompt}</span></legend>
           <div className="chapterQuizChoices" role="radiogroup" aria-label={`Questão ${questionIndex + 1}`}>
             {question.choices.map(choice => {
               const chosen = selectedId === choice.id;
@@ -37,8 +40,8 @@ export function ChapterQuiz({ quiz }: { quiz: ChapterQuizData }) {
             })}
           </div>
           {selected && <div className="chapterQuizFeedback" data-testid="chapter-quiz-feedback" data-result={selected.correct ? 'correct' : 'incorrect'} aria-live="polite">
-            <span className="chapterQuizResult">{selected.correct ? 'Correto.' : 'Resposta incorreta.'}</span>
-            <span>{question.feedback}</span>
+            <span className="chapterQuizResult">{selected.correct ? 'Correto' : 'Revise esta ideia'}</span>
+            <p>{question.feedback}</p>
           </div>}
         </fieldset>;
       })}
