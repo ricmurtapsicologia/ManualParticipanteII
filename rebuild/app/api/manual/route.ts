@@ -36,9 +36,11 @@ function buildLogicalPages(){
     push({text:'',font:'F1',size:5,leading:8});
     for(const block of source.blocks){
       const text=latin(block.text); if(!text)continue;
-      const isHeading=block.kind==='heading'; const isMarker=['opening','objectives','doctrine','evidence','practice','attention','decide','case','guided-analysis','summary','review'].includes(block.kind);
-      const max=isHeading||isMarker?60:96; const size=isHeading?12:isMarker?10:9; const leading=isHeading?17:isMarker?15:12.5; const font:isHeading extends true?'F2':'F1'='F1' as never;
-      const chosenFont:(typeof font)=undefined as never;
+      const isHeading=block.kind==='heading';
+      const isMarker=['opening','objectives','doctrine','evidence','practice','attention','decide','case','guided-analysis','summary','review'].includes(block.kind);
+      const max=isHeading||isMarker?60:96;
+      const size=isHeading?12:isMarker?10:9;
+      const leading=isHeading?17:isMarker?15:12.5;
       const f:'F1'|'F2'=(isHeading||isMarker)?'F2':'F1';
       if(isHeading)push({text:'',font:'F1',size:4,leading:5});
       for(const line of wrap(text,max))push({text:line,font:f,size,leading,color:isMarker?'0.08 0.32 0.31':'0.12 0.17 0.17',indent:block.kind==='list-item'?10:0});
