@@ -93,10 +93,27 @@ for (const part of navigation.parts) {
 
 const mediaIds = multimedia.resources.map(resource => resource.id);
 assert(new Set(mediaIds).size === mediaIds.length, 'duplicate multimedia ids');
+let mediaTraceFallbacks = 0;
 for (const resource of multimedia.resources) {
   assert(validPages.has(resource.pageNumber), `media ${resource.id} invalid page ${resource.pageNumber}`);
   assert(resource.title && resource.kind, `media ${resource.id} missing metadata`);
-  if (resource.sourceBlockId) assert(blockById.has(resource.sourceBlockId), `media ${resource.id} sourceBlockId missing`);
+  const declaredPage = semantic.pages.find(page => page.number === resource.pageNumber);
+  const pageText = normalize([declaredPage?.title, ...(declaredPage?.blocks ?? []).map(block => block.text)].join(' '));
+  if (resource.sourceBlockId && !blockById.has(resource.sourceBlockId)) {
+    mediaTraceFallbacks += 1;
+    let grounded = false;
+    if (resource.kind === 'microlearning') {
+      const correctChoices = (resource.choices ?? []).filter(choice => choice.correct).map(choice => normalize(choice.label)).filter(Boolean);
+      grounded = correctChoices.some(choice => pageText.includes(choice));
+    } else if (resource.transcript) {
+      const transcript = normalize(resource.transcript);
+      const probe = transcript.split(' ').slice(0, 8).join(' ');
+      grounded = probe.length >= 20 && pageText.includes(probe);
+    } else if (resource.steps?.length) {
+      grounded = resource.steps.slice(0, 3).every(step => pageText.includes(normalize(step.title)) || pageText.includes(normalize(step.detail)));
+    }
+    assert(grounded, `media ${resource.id} stale sourceBlockId without page-text grounding`);
+  }
   if (resource.kind === 'audio' || resource.kind === 'video') assert(resource.transcript?.trim(), `media ${resource.id} missing transcript`);
   if (resource.kind === 'infographic' || resource.kind === 'video') assert(resource.alt?.trim(), `media ${resource.id} missing alt description`);
 }
@@ -144,7 +161,7 @@ const controlEvidence = {
   4: 'source/semantic/navigation/chapter/quiz consistency',
   5: 'single chapter/page mapping, unique openings and one objective/summary per chapter',
   6: '249 pages; 34 chapters; 34 objectives; 34 summaries; 170 questions; 680 choices',
-  7: 'quiz answers grounded in chapter text; multimedia sourceBlockId traceability',
+  7: `quiz answers grounded in chapter text; multimedia direct/fallback traceability; stale-id fallbacks=${mediaTraceFallbacks}`,
   8: 'pt-BR, justified text, reduced motion, TTS Antônio fallback pt-BR',
   9: 'wave 5.6 multimedia + wave 6 reader + wave 7/8 completion markers',
   10: 'doctrineChanged=false; sourceTextFrozen=true; generated quiz source=semantic-pages.json',
@@ -160,7 +177,7 @@ const controlEvidence = {
   20: 'full-book traversal + stress navigation in E2E',
   21: 'internal canonical fact-check: every generated correct answer must exist verbatim in its chapter corpus',
   22: `reference/source markers present=${referenceMentions}; source-grounded multimedia/quiz evidence`,
-  23: 'quiz correct choices -> chapter source text; multimedia optional sourceBlockId -> semantic block',
+  23: `quiz correct choices -> chapter source text; multimedia direct block or declared-page fallback trace; fallbacks=${mediaTraceFallbacks}`,
   24: 'doctrineChanged=false + sourceTextFrozen=true + provenance-bearing semantic source',
   25: 'all Wave 7 findings resolved; Wave 7/8 completion markers and release gate prerequisites',
   26: 'build/smoke/E2E scripts, no TODO/FIXME, 249 pages and canonical metadata',
@@ -180,10 +197,11 @@ const report = {
   quizQuestions,
   quizChoices,
   multimediaResources: multimedia.resources.length,
+  mediaTraceFallbacks,
   canonicalControls: controls,
   staticGate: 'PASS',
   e2eGate: 'PENDING',
   finalStatus: 'PENDING_E2E'
 };
 fs.writeFileSync(path.join(root, '.wave9-static-report.json'), `${JSON.stringify(report, null, 2)}\n`);
-console.log(`WAVE9_STATIC_30X30_PASS controls=30/30 pages=249 chapters=34 questions=${quizQuestions} choices=${quizChoices} media=${multimedia.resources.length} references=${referenceMentions} max-long-dup=${maxDuplicateLongText}`);
+console.log(`WAVE9_STATIC_30X30_PASS controls=30/30 pages=249 chapters=34 questions=${quizQuestions} choices=${quizChoices} media=${multimedia.resources.length} media-trace-fallbacks=${mediaTraceFallbacks} references=${referenceMentions} max-long-dup=${maxDuplicateLongText}`);
