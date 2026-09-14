@@ -118,11 +118,11 @@ test('downloadable PDF has ITE44 front matter and physical TOC contract', async 
   const firstChapterPage = physical.get(1) ?? 0;
   const frontCommands = pageCommands.slice(0, firstChapterPage - 1).flat();
   for (let chapter = 1; chapter <= 34; chapter += 1) {
-    const start = frontCommands.findIndex(command => command.startsWith(`Capítulo ${chapter}  `));
+    const start = frontCommands.findIndex(command => command.startsWith(`Capítulo ${chapter} `));
     expect(start, `TOC entry for chapter ${chapter}`).toBeGreaterThanOrEqual(0);
     let end = frontCommands.length;
     for (let next = chapter + 1; next <= 34; next += 1) {
-      const candidate = frontCommands.findIndex((command, index) => index > start && command.startsWith(`Capítulo ${next}  `));
+      const candidate = frontCommands.findIndex((command, index) => index > start && command.startsWith(`Capítulo ${next} `));
       if (candidate >= 0) { end = candidate; break; }
     }
     const expected = String(physical.get(chapter));
