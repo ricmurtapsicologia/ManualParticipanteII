@@ -38,24 +38,8 @@ for (const page of pages) {
   }
 }
 
-// Split flattened objective blocks into a pedagogical header plus individual list items.
-for (const page of pages) {
-  for (let index = 0; index < page.blocks.length; index += 1) {
-    const block = page.blocks[index];
-    const label = 'O que você deverá conseguir fazer';
-    if (!block.text.startsWith(`${label} `) || !block.text.includes('•')) continue;
-    const items = block.text.slice(label.length).split('•').map(clean).filter(Boolean);
-    if (!items.length) continue;
-    page.blocks.splice(index, 1,
-      synthetic(block, 'objectives-label', label, 'objectives'),
-      ...items.map((item, itemIndex) => synthetic(block, `objective-${itemIndex + 1}`, `• ${item}`, 'list-item')));
-    objectives += items.length;
-    index += items.length;
-  }
-}
-
-// Some recovered blocks had the pedagogical label and body in the same source paragraph.
 const markerKinds = new Map([
+  ['O que você deverá conseguir fazer', 'objectives'],
   ['DOUTRINA', 'doctrine'],
   ['EVIDÊNCIA', 'evidence'],
   ['NA PRÁTICA', 'practice'],
@@ -66,6 +50,21 @@ const markerKinds = new Map([
   ['SÍNTESE DO CAPÍTULO', 'summary'],
   ['QUESTÕES DE REVISÃO', 'review']
 ]);
+
+// The previous pass already separated many labels as generic headings. Recover their semantic kinds.
+for (const page of pages) {
+  if (page.number < 158) continue;
+  for (const block of page.blocks) {
+    const kind = markerKinds.get(block.text);
+    if (kind && block.kind !== kind) {
+      block.kind = kind;
+      block.id = `${block.id}-w7h-${kind}`;
+      markers += 1;
+    }
+  }
+}
+
+// Some recovered blocks still carry label + body in one source block. Split them without changing words.
 for (const page of pages) {
   if (page.number < 158) continue;
   for (let index = 0; index < page.blocks.length; index += 1) {
@@ -83,9 +82,22 @@ for (const page of pages) {
   }
 }
 
-// Summaries in the recovered tail often arrived as one bullet string. Keep the words, restore the list structure.
+// Objective bodies in the recovered tail are often one bullet string; restore individual list items.
 for (const page of pages) {
   if (page.number < 158 || page.number > 216) continue;
+  const objectiveIndex = page.blocks.findIndex(block => block.kind === 'objectives' && block.text === 'O que você deverá conseguir fazer');
+  if (objectiveIndex < 0) continue;
+  const body = page.blocks[objectiveIndex + 1];
+  if (!body || !body.text.includes('•')) continue;
+  const items = body.text.split('•').map(clean).filter(Boolean);
+  if (!items.length) continue;
+  page.blocks.splice(objectiveIndex + 1, 1, ...items.map((item, itemIndex) => synthetic(body, `objective-${itemIndex + 1}`, `• ${item}`, 'list-item')));
+  objectives += items.length;
+}
+
+// Summaries in the recovered tail often arrived as one bullet string. Keep the words, restore the list structure.
+for (const page of pages) {
+  if (page.number < 157 || page.number > 216) continue;
   const summaryIndex = page.blocks.findIndex(block => block.kind === 'summary' && block.text === 'SÍNTESE DO CAPÍTULO');
   if (summaryIndex < 0) continue;
   const body = page.blocks[summaryIndex + 1];
@@ -121,24 +133,18 @@ function splitReviewBlock(page, index) {
 // Review questions are editorial units, not a single run-on paragraph.
 for (const page of pages) {
   if (page.number < 157 || page.number > 216) continue;
-  let active = false;
-  for (let index = 0; index < page.blocks.length; index += 1) {
-    const block = page.blocks[index];
-    if (block.kind === 'review' || block.text === 'QUESTÕES DE REVISÃO') {
-      active = true;
-      continue;
-    }
-    if (!active) continue;
-    if (block.kind === 'case' || block.kind === 'summary' || block.kind === 'guided-analysis') break;
+  const reviewIndex = page.blocks.findIndex(block => block.kind === 'review' && block.text === 'QUESTÕES DE REVISÃO');
+  if (reviewIndex < 0) continue;
+  for (let index = reviewIndex + 1; index < page.blocks.length; index += 1) {
     const count = splitReviewBlock(page, index);
     if (count) {
       reviewQuestions += count;
-      while (index + 1 < page.blocks.length && page.blocks[index + 1].id.includes('-w7h-review-question-')) index += 1;
+      index += count - 1;
     }
   }
 }
 
-// The answer key (217–239) is reorganized without changing any answer content.
+// The answer key (217–239) is reorganized without changing answer content.
 for (const page of pages) {
   if (page.number < 217 || page.number > 239) continue;
   for (let index = 0; index < page.blocks.length; index += 1) {
@@ -172,7 +178,7 @@ for (const page of pages) {
 }
 
 // Avoid rendering an entire explanatory paragraph as H3 when extraction fused a numbered section heading with its body.
-// Visual heading/body separation for these recovered-tail paragraphs is explicitly a Wave 8 task.
+// Fine visual heading/body separation for these recovered-tail paragraphs is explicitly a Wave 8 task.
 for (const page of pages) {
   if (page.number < 158 || page.number > 216) continue;
   for (const block of page.blocks) {
