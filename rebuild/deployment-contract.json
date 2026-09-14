@@ -1,6 +1,6 @@
 {
-  "schema": 1,
-  "stage": "vercel-cutover-readiness",
+  "schema": 2,
+  "stage": "definitive-release",
   "projectName": "manual-participante-cats-digital",
   "teamId": "team_JRb3bMdqrQWOEUjMGGh0kQHV",
   "repository": "ricmurtapsicologia/ManualParticipanteII",
@@ -10,10 +10,8 @@
   "nodeVersion": "24.x",
   "expected": {
     "status": "ok",
-    "architecture": "rebuild-clean",
-    "wave": 8,
     "pages": 249,
-    "corpus": "canonical-hybrid-recovered",
+    "release": "2026.09",
     "environment": "production",
     "branch": "main"
   },
