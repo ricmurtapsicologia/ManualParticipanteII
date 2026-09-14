@@ -13,7 +13,7 @@ import { ChapterQuiz, type ChapterQuizData } from './wave18';
 import { ChapterMicrolearningCard, ApplicationTransferCard, ChapterResourceCard, type ChapterEnrichment } from './wave10';
 
 type SemanticBlock = { id: string; kind: string; sourceIndex: number; text: string; url?: string };
-type SemanticPage = { number: number; part?: number | null; partTitle?: string; chapter?: number | null; title: string; cover?: boolean; blocks: SemanticBlock[] };
+type SemanticPage = { number: number; part?: number | null; partTitle?: string; chapter?: number | null; title: string; cover?: boolean; pageRole?: string; blocks: SemanticBlock[] };
 type SemanticArtifact = { pages: SemanticPage[] };
 type PedagogicalMarker = { kind: string; pageNumber: number; blockId: string };
 type NavChapter = { chapter: number; title: string; openingPage: number; pageNumbers: number[]; pedagogicalMarkers: PedagogicalMarker[] };
