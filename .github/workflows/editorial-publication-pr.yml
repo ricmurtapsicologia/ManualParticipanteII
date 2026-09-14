@@ -27,11 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Layer 1 — editorial and semantic audit
-        run: node scripts/audit-publication-3layer.mjs
-
       - name: Build production application
         run: npm run build
+
+      - name: Layer 1 — editorial and semantic audit
+        run: node scripts/audit-publication-3layer.mjs
 
       - name: Smoke test
         run: npm run smoke
