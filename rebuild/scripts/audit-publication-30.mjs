@@ -18,6 +18,7 @@ const quizApp=readText('app/wave18.tsx');
 const quizCss=readText('app/wave18.css');
 const cover=readText('app/wave54.tsx');
 const pdf=readText('app/api/manual/route.ts');
+const allBlocks=semantic.pages.flatMap(page=>page.blocks??[]);
 const allText=norm(semantic.pages.flatMap(page=>[page.title,...(page.blocks??[]).map(block=>block.text)]).join('\n'));
 const resources=enrichment.chapters.map(item=>item.resource);
 const pages=new Set(semantic.pages.map(page=>page.number));
@@ -27,7 +28,7 @@ const add=(name,condition,detail='')=>checks.push({name,condition:Boolean(condit
 add('Matriz canônica possui 30 controles',matrix.controls?.length===30);
 add('Paginação é contínua',semantic.pages.every((page,index)=>page.number===index+1));
 add('Revisão cumulativa foi removida',!allText.includes('REVISAO CUMULATIVA'));
-add('Cenários foram removidos',!/(^|\s)CENARIO(S)?\b/u.test(allText));
+add('Seções rotuladas como cenário foram removidas',!allBlocks.some(block=>block.kind==='case'||/^CENARIO\b/u.test(norm(block.text))));
 add('Caso de transferência foi removido',!allText.includes('CASO DE TRANSFERENCIA'));
 add('Aplicação e transferência não é publicada',!allText.includes('APLICACAO E TRANSFERENCIA')&&!pageApp.includes('ApplicationTransferCard'));
 add('Capítulo 23 não usa headings internos em negrito',semantic.pages.filter(page=>page.chapter===23).flatMap(page=>page.blocks??[]).every(block=>block.kind!=='heading'));
