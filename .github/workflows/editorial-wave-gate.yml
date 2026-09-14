@@ -3,9 +3,11 @@ name: Manual CATS Editorial Wave Gate
 on:
   push:
     branches:
+      - main
       - 'wave14-*'
       - 'wave15-*'
       - 'wave16-*'
+      - 'wave17-*'
     paths:
       - 'rebuild/**'
       - '.github/workflows/editorial-wave-gate.yml'
