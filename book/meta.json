@@ -1,0 +1,211 @@
+{
+  "parts": [
+    {
+      "number": 1,
+      "page": 7,
+      "title": "Compreender o fenômeno"
+    },
+    {
+      "number": 2,
+      "page": 53,
+      "title": "Compreender a ocorrência"
+    },
+    {
+      "number": 3,
+      "page": 95,
+      "title": "Abordagem de dissuasão"
+    },
+    {
+      "number": 4,
+      "page": 144,
+      "title": "Abordagem tática e riscos"
+    },
+    {
+      "number": 5,
+      "page": 172,
+      "title": "Pessoas e contextos"
+    },
+    {
+      "number": 6,
+      "page": 197,
+      "title": "Depois da crise"
+    },
+    {
+      "number": 7,
+      "page": 221,
+      "title": "Integração e consolidação"
+    }
+  ],
+  "chapters": [
+    {
+      "number": 1,
+      "page": 8,
+      "title": "O CATS e a prática profissional"
+    },
+    {
+      "number": 2,
+      "page": 16,
+      "title": "Comportamento suicida: conceitos e linguagem"
+    },
+    {
+      "number": 3,
+      "page": 22,
+      "title": "Epidemiologia e inteligência para decisão"
+    },
+    {
+      "number": 4,
+      "page": 29,
+      "title": "A crise suicida: dor, ambivalência, desesperança e constrição"
+    },
+    {
+      "number": 5,
+      "page": 36,
+      "title": "Fatores associados, proteção, risco e limites da avaliação"
+    },
+    {
+      "number": 6,
+      "page": 54,
+      "title": "Do acionamento ao estabelecimento"
+    },
+    {
+      "number": 7,
+      "page": 60,
+      "title": "Observação inicial, passagem de comando e avaliação"
+    },
+    {
+      "number": 8,
+      "page": 66,
+      "title": "Isolamento, espaços de comunicação e avaliação dinâmica"
+    },
+    {
+      "number": 9,
+      "page": 72,
+      "title": "Funções, comando e coordenação"
+    },
+    {
+      "number": 10,
+      "page": 78,
+      "title": "Coleta de informações e apoio à decisão"
+    },
+    {
+      "number": 11,
+      "page": 83,
+      "title": "Integração interinstitucional"
+    },
+    {
+      "number": 12,
+      "page": 96,
+      "title": "O abordador e a preparação para o contato"
+    },
+    {
+      "number": 13,
+      "page": 101,
+      "title": "Aproximação, silêncio inicial e apresentação"
+    },
+    {
+      "number": 14,
+      "page": 106,
+      "title": "Perguntas e escuta"
+    },
+    {
+      "number": 15,
+      "page": 111,
+      "title": "Validação e paráfrase"
+    },
+    {
+      "number": 16,
+      "page": 115,
+      "title": "Ferramentas de diálogo da ITO 30"
+    },
+    {
+      "number": 17,
+      "page": 120,
+      "title": "Ambivalência, alternativas e microdecisões"
+    },
+    {
+      "number": 18,
+      "page": 124,
+      "title": "Silêncio, resistência, impasse e ruptura"
+    },
+    {
+      "number": 19,
+      "page": 128,
+      "title": "Agitação, retraimento e alterações perceptivas"
+    },
+    {
+      "number": 20,
+      "page": 132,
+      "title": "Troca do abordador e transição para abordagem tática"
+    },
+    {
+      "number": 21,
+      "page": 145,
+      "title": "Princípios e segurança da abordagem tática"
+    },
+    {
+      "number": 22,
+      "page": 150,
+      "title": "Precipitação e ambiente vertical"
+    },
+    {
+      "number": 23,
+      "page": 154,
+      "title": "Água, enforcamento, incêndio, eletricidade e intoxicação"
+    },
+    {
+      "number": 24,
+      "page": 158,
+      "title": "Arma branca, arma de fogo e risco de violência"
+    },
+    {
+      "number": 25,
+      "page": 162,
+      "title": "Entrada, contenção, lesões, APH e óbito"
+    },
+    {
+      "number": 26,
+      "page": 173,
+      "title": "Crianças e adolescentes"
+    },
+    {
+      "number": 27,
+      "page": 178,
+      "title": "Pessoas idosas e pessoas com deficiência"
+    },
+    {
+      "number": 28,
+      "page": 183,
+      "title": "Intoxicação, agitação e alterações do pensamento"
+    },
+    {
+      "number": 29,
+      "page": 187,
+      "title": "Violência doméstica, cultura, espiritualidade e contexto social"
+    },
+    {
+      "number": 30,
+      "page": 198,
+      "title": "Desistência, resgate, encaminhamento e registro"
+    },
+    {
+      "number": 31,
+      "page": 203,
+      "title": "Comunicação responsável, imprensa, Werther e Papageno"
+    },
+    {
+      "number": 32,
+      "page": 208,
+      "title": "Primeiros Socorros Psicológicos, pós-ocorrência e posvenção"
+    },
+    {
+      "number": 33,
+      "page": 222,
+      "title": "Casos longitudinais integradores"
+    },
+    {
+      "number": 34,
+      "page": 232,
+      "title": "Síntese do Sistema ATS e matriz final de competências"
+    }
+  ]
+}

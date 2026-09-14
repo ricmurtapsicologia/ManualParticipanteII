@@ -1,1 +1,369 @@
-(()=>{'use strict';const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],E=s=>String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));let book,page=1,mode='book',dbl=false,busy=false,speak=false;const labs=['DOUTRINA','EVIDÊNCIA','NA PRÁTICA','ATENÇÃO','DECIDA','TESTE-SE','DEBRIEFING','SITUAÇÃO DE ABERTURA','O QUE EU LEVO DESTE CAPÍTULO'];function toast(t){let e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2200)}async function load(){let raw=atob(window.B),u=Uint8Array.from(raw,c=>c.charCodeAt(0)),st=new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip')),l=JSON.parse(await new Response(st).text());book={meta:l.meta,pages:l.pages.map(a=>({number:a[0],part:a[1],partTitle:a[2],chapter:a[3],title:a[4],paragraphs:a[5]}))};let lo={};try{lo=JSON.parse(localStorage.catsProgress||'{}')}catch{}page=+(lo.page||1);mode=lo.mode||'book';resp();toc();bind();setMode(mode);toast('249 páginas carregadas')}function resp(){dbl=matchMedia('(min-width:980px)').matches;if(dbl&&page>1&&page%2)page--}function par(t){let U=t.toLocaleUpperCase('pt-BR'),l=labs.find(x=>U.startsWith(x));if(l){let b=t.slice(l.length).replace(/^\s*[•:—-]?\s*/,'');return `<div class="sem"><b>${E(l)}</b>${b?`<p>${E(b)}</p>`:''}</div>`}return `<p${/^Referências principais:/i.test(t)?' class="ref"':''}>${E(t)}</p>`}function enh(n){if(n===12)return '<div class="enh"><h3>Microlearning — Observar antes de interpretar</h3><div class="chips"><span>OBSERVE</span><b>→</b><span>PRIORIZE</span><b>→</b><span>DECIDA</span><b>→</b><span>REAVALIE</span></div></div>';if(n===54)return '<div class="enh"><h3>Sistema ATS — visão de processo</h3><div class="chips"><span>Acionamento</span><span>Deslocamento</span><span>Estabelecimento</span><span>Avaliação</span><span>Abordagem</span><span>Transição</span><span>Encerramento</span></div></div>';if(n===106)return '<div class="enh"><h3>Áudio do ecossistema CATS — Perguntas e diálogo</h3><audio controls preload="none" src="https://raw.githubusercontent.com/ricmurtapsicologia/Curso-ATS/main/audio/n2/e2-04-perguntas-e-dialogo.mp3"></audio></div>';if(n===203)return '<div class="enh"><h3>Vídeo complementar • OMS</h3><iframe src="https://www.youtube-nocookie.com/embed/Fy7n8SfwS_A" loading="lazy" allowfullscreen></iframe></div>';if(n===208)return '<div class="enh"><h3>Primeiros Socorros Psicológicos</h3><div class="chips"><span>OLHAR</span><b>→</b><span>ESCUTAR</span><b>→</b><span>CONECTAR</span></div></div>';return ''}function pg(p,side='single'){if(p.number===1)return `<article class="page ${side} cover"><div style="height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:42px 34px;background:linear-gradient(155deg,#12171b,#202931 55%,#8d3f13);color:white"><div style="font-size:11px;letter-spacing:.18em">CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS</div><div><div style="font-size:clamp(64px,12vw,118px);font-weight:900;line-height:.85">CATS</div><div style="font-size:18px;margin-top:20px;max-width:420px">CURSO DE ATENDIMENTO A TENTATIVAS DE SUICÍDIO</div><div style="margin-top:12px;color:#ff9d57;font-weight:800">MANUAL DO PARTICIPANTE</div></div><div style="display:flex;justify-content:space-between;align-items:end"><span>EDIÇÃO DIGITAL INTERATIVA</span><b style="font-size:24px">2026</b></div></div><div class="hint">Arraste a folha ou toque em › para abrir</div></article>`;return `<article class="page ${side}"><div class="head"><span>${p.part?'PARTE '+p.part+' • '+E(p.partTitle):'CATS • MANUAL DO PARTICIPANTE'}</span><b>${p.chapter?'CAPÍTULO '+p.chapter:'2026'}</b></div><h2>${E(p.title)}</h2>${enh(p.number)}${p.paragraphs.map(par).join('')}<div class="foot"><span>CATS em Ação</span><b>${p.number}</b></div></article>`}function norm(n){n=Math.max(1,Math.min(249,n));if(dbl&&n>1&&n%2)n--;return n}function render(){page=norm(page);$('#count').textContent=dbl&&page>1?`${page}–${Math.min(249,page+1)} / 249`:`${page} / 249`;$('#prog').style.width=(page/249*100)+'%';$('#prev').disabled=page<=1;$('#next').disabled=page>=249;if(mode==='book')$('#spread').innerHTML=dbl&&page>1?pg(book.pages[page-1],'left')+(page<249?pg(book.pages[page],'right'):''):pg(book.pages[page-1]);save()}function turn(d){if(busy||mode!=='book')return;let t=page+(d==='n'?(dbl?2:1):-(dbl?2:1));if(t<1||t>249)return;busy=true;let e=d==='n'?$('#spread .right,#spread .single'):$('#spread .left,#spread .single');if(e)e.classList.add('turn');setTimeout(()=>{page=t;render();busy=false},360)}function go(n){page=norm(n);close();if(mode==='scroll')document.getElementById('s'+page)?.scrollIntoView({behavior:'smooth'});else render()}function save(){try{localStorage.catsProgress=JSON.stringify({page,mode})}catch{}}function toc(){let h='';for(let p of book.meta.parts){h+=`<button class="part" data-p="${p.page}">Parte ${p.number} — ${E(p.title)}<small>${p.page}</small></button>`;let nx=book.meta.parts[p.number]?.page||999;for(let c of book.meta.chapters.filter(c=>c.page>=p.page&&c.page<nx))h+=`<button data-p="${c.page}">Cap. ${c.number} — ${E(c.title)}<small>${c.page}</small></button>`}$('#toc').innerHTML=h;$$('[data-p]').forEach(b=>b.onclick=()=>go(+b.dataset.p))}function buildScroll(){if($('#scroll').dataset.b)return;$('#scroll').innerHTML=book.pages.map(p=>`<div id="s${p.number}">${pg(p)}</div>`).join('');$('#scroll').dataset.b=1}function setMode(m){mode=m;if(m==='scroll'){buildScroll();$('#stage').classList.add('hidden');$('#nav').classList.add('hidden');$('#scroll').classList.add('on');$('#scrollB').classList.add('on');$('#bookB').classList.remove('on');setTimeout(()=>document.getElementById('s'+page)?.scrollIntoView(),20)}else{$('#stage').classList.remove('hidden');$('#nav').classList.remove('hidden');$('#scroll').classList.remove('on');$('#bookB').classList.add('on');$('#scrollB').classList.remove('on');render()}save()}function open(id){$('#'+id).classList.add('on')}function close(){$$('.drawer').forEach(x=>x.classList.remove('on'))}function search(q){q=q.trim().toLocaleLowerCase('pt-BR');if(q.length<2)return $('#hits').innerHTML='';let a=[];for(let p of book.pages){let t=[p.title,...p.paragraphs].join(' '),i=t.toLocaleLowerCase('pt-BR').indexOf(q);if(i>=0)a.push([p.number,p.title,t.slice(Math.max(0,i-55),i+130)]);if(a.length===40)break}$('#hits').innerHTML=a.map(x=>`<button data-h="${x[0]}"><b>P. ${x[0]} • ${E(x[1])}</b><p>${E(x[2])}…</p></button>`).join('');$$('[data-h]').forEach(b=>b.onclick=()=>go(+b.dataset.h))}function tts(){if(!('speechSynthesis'in window)){toast('TTS não disponível neste navegador');return}if(speak){speechSynthesis.cancel();speak=false;return}speak=true;let p=book.pages[page-1],u=new SpeechSynthesisUtterance([p.title,...p.paragraphs].join('. '));u.lang='pt-BR';u.rate=.96;u.onend=()=>speak=false;speechSynthesis.speak(u);toast('Voz sintética do dispositivo')}function bind(){$('#prev').onclick=()=>turn('p');$('#next').onclick=()=>turn('n');$('#tocB').onclick=()=>open('tocD');$('#searchB').onclick=()=>open('searchD');$('#speakB').onclick=tts;$('#bookB').onclick=()=>setMode('book');$('#scrollB').onclick=()=>setMode('scroll');$$('[data-x]').forEach(x=>x.onclick=close);$('#q').oninput=e=>search(e.target.value);let x;$('#stage').onpointerdown=e=>x=e.clientX;$('#stage').onpointerup=e=>{if(x==null)return;let d=e.clientX-x;x=null;if(Math.abs(d)>45)turn(d<0?'n':'p')};onkeydown=e=>{if(e.key==='ArrowRight')turn('n');if(e.key==='ArrowLeft')turn('p');if(e.key==='Escape')close()};matchMedia('(min-width:980px)').onchange=()=>{resp();render()}}load().catch(e=>{$('#spread').innerHTML=`<article class="page single"><h2>Falha ao carregar</h2><p>${E(e.message)}</p></article>`})})();
+(async () => {
+  'use strict';
+
+  const $ = (selector) => document.querySelector(selector);
+  const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+  const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[character]));
+
+  async function fetchJson(url, cache = 'force-cache') {
+    const response = await fetch(url, { cache });
+    if (!response.ok) throw new Error(`Falha ao carregar ${url}: HTTP ${response.status}`);
+    return response.json();
+  }
+
+  async function fetchChunk(chunk) {
+    const response = await fetch(chunk.url, { cache: 'force-cache' });
+    if (!response.ok) throw new Error(`Falha ao carregar ${chunk.url}: HTTP ${response.status}`);
+    const source = await response.text();
+    if (chunk.sha256 && window.crypto?.subtle) {
+      const bytes = new TextEncoder().encode(source);
+      const digest = await window.crypto.subtle.digest('SHA-256', bytes);
+      const actual = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+      if (actual !== chunk.sha256) throw new Error(`Integridade inválida no bloco ${chunk.id}.`);
+    }
+    return JSON.parse(source);
+  }
+
+  const manifest = await fetchJson('/api/book', 'no-store');
+  if (!Array.isArray(manifest.chunks) || manifest.chunks.length === 0) {
+    throw new Error('O manifesto não informa blocos de conteúdo.');
+  }
+  const loadedChunks = await Promise.all(manifest.chunks.map(fetchChunk));
+  const pageRows = loadedChunks.flat();
+  if (pageRows.length !== manifest.availablePages) {
+    throw new Error(`Manifesto informa ${manifest.availablePages} páginas, mas ${pageRows.length} foram recebidas.`);
+  }
+  pageRows.forEach((row, index) => {
+    if (!Array.isArray(row) || row[0] !== index + 1) throw new Error(`Sequência inválida na página ${index + 1}.`);
+  });
+
+  const classify = (value) => {
+    const text = String(value || '').trim();
+    const upper = text.toLocaleUpperCase('pt-BR');
+    if (/^CAPÍTULO\s+\d+/.test(upper)) return { type: 'chapter', text };
+    if (/^REFERÊNCIAS? PRINCIPAIS?:/i.test(text)) return { type: 'ref', text };
+    if (/^\d+\.\s+/.test(text)) return { type: 'sub', text };
+    if (/^[A-ZÁÀÃÂÉÊÍÓÔÕÚÇ0-9 —–-]{4,}$/.test(text) && text === upper) return { type: 'section', text };
+    if (/^[•▪◦]\s*/.test(text)) return { type: 'bullet', text: text.replace(/^[•▪◦]\s*/, '') };
+    return { type: 'paragraph', text };
+  };
+  const mapPart = (value) => Array.isArray(value)
+    ? { number: value[0], page: value[1], title: value[2] }
+    : value;
+  const mapChapter = (value) => Array.isArray(value)
+    ? { number: value[0], page: value[1], title: value[2] }
+    : value;
+
+  const BOOK = {
+    title: manifest.title,
+    edition: manifest.edition,
+    release: manifest.release,
+    complete: manifest.complete,
+    targetPages: manifest.targetPages,
+    parts: (manifest.meta?.parts || []).map(mapPart),
+    chapters: (manifest.meta?.chapters || []).map(mapChapter),
+    pages: pageRows.map((row) => ({
+      number: row[0],
+      part: row[1],
+      partTitle: row[2],
+      chapter: row[3],
+      title: row[4],
+      blocks: (row[5] || []).map((block) => Array.isArray(block)
+        ? { type: block[0], text: block[1] }
+        : classify(block)),
+    })),
+  };
+  const TOTAL = BOOK.pages.length;
+  const COVER = `data:image/webp;base64,${window.C || ''}`;
+  $('#goto').max = String(TOTAL);
+  $('#bookStatus').innerHTML = `<i class="statusdot"></i>${TOTAL} páginas validadas • acervo-alvo ${BOOK.targetPages}`;
+  let page = 1;
+  let mode = 'book';
+  let doublePage = false;
+  let busy = false;
+  let speaking = false;
+  let speechPending = false;
+  const TTS_VOICE_NAME = 'Antônio';
+
+  const saved = (() => {
+    try { return JSON.parse(localStorage.getItem('catsBookProgress') || '{}'); } catch { return {}; }
+  })();
+  const hashPage = () => {
+    const match = location.hash.match(/p=(\d+)/);
+    return match ? Number(match[1]) : null;
+  };
+  page = Math.min(TOTAL, Math.max(1, hashPage() || saved.page || 1));
+  mode = saved.mode || 'book';
+
+  function toast(text) {
+    const element = $('#toast');
+    element.textContent = text;
+    element.classList.add('on');
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => element.classList.remove('on'), 2200);
+  }
+
+  function save() {
+    try {
+      localStorage.setItem('catsBookProgress', JSON.stringify({ page, mode, release: BOOK.release, updatedAt: Date.now() }));
+    } catch {}
+    history.replaceState(null, '', `#p=${page}`);
+  }
+
+  function blockHtml(block) {
+    if (block.type === 'section') return `<div class="section">${escapeHtml(block.text)}</div>`;
+    if (block.type === 'sub') return `<div class="sub">${escapeHtml(block.text)}</div>`;
+    if (block.type === 'bullet') return `<div class="bullet"><span>${escapeHtml(block.text)}</span></div>`;
+    if (block.type === 'ref') return `<p class="ref">${escapeHtml(block.text)}</p>`;
+    if (block.type === 'chapter') return `<div class="kicker">${escapeHtml(block.text)}</div>`;
+    return `<p>${escapeHtml(block.text)}</p>`;
+  }
+
+  function enhancement(number) {
+    if (number === 6) return '<div class="enh"><h3>Mapa do manual</h3><div class="flow"><span class="chip">Fenômeno</span><span class="arrow">→</span><span class="chip">Ocorrência</span><span class="arrow">→</span><span class="chip">Abordagem</span><span class="arrow">→</span><span class="chip">Tática</span><span class="arrow">→</span><span class="chip">Contextos</span><span class="arrow">→</span><span class="chip">Pós-crise</span><span class="arrow">→</span><span class="chip">Integração</span></div></div>';
+    return '';
+  }
+
+  function pageHtml(item, side = 'single', scroll = false) {
+    const className = scroll ? 'scrollpage' : 'page';
+    if (item.number === 1) {
+      return `<article id="s1" class="${className} cover ${side}"><img alt="Capa oficial do Manual do Participante CATS" src="${COVER}"></article>`;
+    }
+    const body = item.blocks.map(blockHtml).join('');
+    return `<article id="s${item.number}" class="${className} ${side}"><div class="running"><span>${item.part ? `Parte ${item.part} • ${escapeHtml(item.partTitle)}` : 'CATS • Manual do Participante'}</span><span>${item.chapter ? `Cap. ${item.chapter}` : '2026'}</span></div><div class="kicker">${item.chapter ? `CAPÍTULO ${item.chapter}` : 'CATS'}</div><h2>${escapeHtml(item.title)}</h2>${enhancement(item.number)}${body}<div class="pageno">${item.number}</div></article>`;
+  }
+
+  function responsive() {
+    doublePage = matchMedia('(min-width:980px)').matches;
+    if (doublePage && page > 1 && page % 2 === 1) page -= 1;
+  }
+
+  function normalize(number) {
+    let normalized = Math.min(TOTAL, Math.max(1, Number(number) || 1));
+    if (doublePage && normalized > 1 && normalized % 2 === 1) normalized -= 1;
+    return normalized;
+  }
+
+  function render() {
+    page = normalize(page);
+    const spread = $('#spread');
+    if (page === 1 || !doublePage) spread.innerHTML = pageHtml(BOOK.pages[page - 1], 'single');
+    else spread.innerHTML = pageHtml(BOOK.pages[page - 1], 'left') + (page < TOTAL ? pageHtml(BOOK.pages[page], 'right') : '');
+    $('#count').textContent = `${doublePage && page > 1 ? `${page}–${Math.min(TOTAL, page + 1)}` : page} / ${TOTAL}`;
+    $('#goto').value = page;
+    $('#prev').disabled = page <= 1;
+    $('#next').disabled = doublePage && page > 1 ? page + 1 >= TOTAL : page >= TOTAL;
+    $('#progress').style.width = `${Math.max(1, page / TOTAL * 100)}%`;
+    save();
+  }
+
+  function turn(direction) {
+    if (busy || mode !== 'book') return;
+    const step = doublePage && page > 1 ? 2 : 1;
+    const target = page + (direction === 'next' ? step : -step);
+    if (target < 1 || target > TOTAL) return;
+    busy = true;
+    const element = direction === 'next' ? $('#spread .right,#spread .single') : $('#spread .left,#spread .single');
+    if (element) element.classList.add(direction === 'next' ? 'turn-next' : 'turn-prev');
+    setTimeout(() => { page = target; render(); busy = false; }, 260);
+  }
+
+  function closeDrawers() {
+    $$('.drawer').forEach((drawer) => drawer.classList.remove('on'));
+    if (document.activeElement?.matches('input')) document.activeElement.blur();
+  }
+
+  function goToPage(number) {
+    page = normalize(number);
+    closeDrawers();
+    if (mode === 'scroll') {
+      buildScroll();
+      requestAnimationFrame(() => $(`#s${page}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      save();
+    } else render();
+  }
+
+  function buildToc() {
+    let html = '';
+    const availableParts = BOOK.parts.filter((part) => part.page <= TOTAL);
+    for (const part of availableParts) {
+      html += `<button class="part" data-p="${part.page}"><span>Parte ${part.number} — ${escapeHtml(part.title)}</span><small>${part.page}</small></button>`;
+      const nextPart = BOOK.parts.find((candidate) => candidate.number === part.number + 1)?.page || Infinity;
+      for (const chapter of BOOK.chapters.filter((candidate) => candidate.page >= part.page && candidate.page < nextPart && candidate.page <= TOTAL)) {
+        html += `<button data-p="${chapter.page}"><span>Cap. ${chapter.number} — ${escapeHtml(chapter.title)}</span><small>${chapter.page}</small></button>`;
+      }
+    }
+    $('#toc').innerHTML = html;
+    $$('#toc [data-p]').forEach((button) => { button.onclick = () => goToPage(button.dataset.p); });
+  }
+
+  function search(query) {
+    const normalized = query.trim().toLocaleLowerCase('pt-BR');
+    if (normalized.length < 2) {
+      $('#hits').innerHTML = '<p style="padding:16px;color:#647374">Digite pelo menos 2 caracteres.</p>';
+      return;
+    }
+    const results = [];
+    for (const item of BOOK.pages) {
+      const text = [item.title, ...item.blocks.map((block) => block.text)].join(' ');
+      const index = text.toLocaleLowerCase('pt-BR').indexOf(normalized);
+      if (index >= 0) results.push({ number: item.number, title: item.title, excerpt: text.slice(Math.max(0, index - 75), index + 170) });
+      if (results.length >= 60) break;
+    }
+    $('#hits').innerHTML = results.length
+      ? results.map((result) => `<button data-h="${result.number}"><b>P. ${result.number} • ${escapeHtml(result.title)}</b><p>${escapeHtml(result.excerpt)}…</p></button>`).join('')
+      : '<p style="padding:16px;color:#647374">Nenhum resultado.</p>';
+    $$('#hits [data-h]').forEach((button) => { button.onclick = () => goToPage(button.dataset.h); });
+  }
+
+  function buildScroll() {
+    const element = $('#scroll');
+    if (element.dataset.built) return;
+    element.innerHTML = BOOK.pages.map((item) => pageHtml(item, 'single', true)).join('');
+    element.dataset.built = '1';
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.45) {
+          const number = Number(entry.target.id.slice(1));
+          if (number) { page = number; $('#progress').style.width = `${Math.max(1, page / TOTAL * 100)}%`; save(); }
+        }
+      }
+    }, { threshold: [0.5] });
+    $$('#scroll .scrollpage').forEach((element) => observer.observe(element));
+  }
+
+  function setMode(nextMode) {
+    mode = nextMode;
+    if (nextMode === 'scroll') {
+      buildScroll();
+      $('#workspace').classList.add('hidden');
+      $('#nav').classList.add('hidden');
+      $('#scroll').classList.add('on');
+      $('#scrollB').classList.add('active');
+      $('#bookB').classList.remove('active');
+      setTimeout(() => $(`#s${page}`)?.scrollIntoView({ block: 'start' }), 30);
+    } else {
+      $('#workspace').classList.remove('hidden');
+      $('#nav').classList.remove('hidden');
+      $('#scroll').classList.remove('on');
+      $('#bookB').classList.add('active');
+      $('#scrollB').classList.remove('active');
+      render();
+    }
+    save();
+  }
+
+  function openDrawer(id) {
+    $(`#${id}`).classList.add('on');
+    setTimeout(() => $(`#${id} input`)?.focus(), 100);
+  }
+
+  const normalizeVoiceName = (value) => String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase('pt-BR');
+
+  function findAntonioVoice() {
+    return window.speechSynthesis.getVoices().find((voice) => {
+      const identity = normalizeVoiceName(`${voice.name} ${voice.voiceURI}`);
+      const language = String(voice.lang || '').replace('_', '-').toLowerCase();
+      return identity.includes('antonio') && language.startsWith('pt-br');
+    }) || null;
+  }
+
+  async function resolveAntonioVoice() {
+    const available = findAntonioVoice();
+    if (available) return available;
+    await new Promise((resolve) => {
+      let finished = false;
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timer);
+        window.speechSynthesis.removeEventListener?.('voiceschanged', finish);
+        resolve();
+      };
+      const timer = setTimeout(finish, 1200);
+      window.speechSynthesis.addEventListener?.('voiceschanged', finish, { once: true });
+      window.speechSynthesis.getVoices();
+    });
+    return findAntonioVoice();
+  }
+
+  async function textToSpeech() {
+    if (!('speechSynthesis' in window)) { toast('Leitura em voz alta indisponível neste navegador.'); return; }
+    if (speaking) { window.speechSynthesis.cancel(); speaking = false; toast('Leitura interrompida.'); return; }
+    if (speechPending) return;
+    speechPending = true;
+    const voice = await resolveAntonioVoice();
+    speechPending = false;
+    if (!voice) { toast('A voz Antônio não está disponível neste navegador.'); return; }
+    const item = BOOK.pages[page - 1];
+    const text = [item.title, ...item.blocks.filter((block) => !['ref', 'chapter'].includes(block.type)).map((block) => block.text)].join('. ').slice(0, 12000);
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.voice = voice;
+    utterance.lang = voice.lang || 'pt-BR';
+    utterance.rate = 0.96;
+    utterance.onend = () => { speaking = false; };
+    utterance.onerror = () => { speaking = false; toast('Não foi possível iniciar a voz Antônio.'); };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+    speaking = true;
+    toast('Leitura iniciada com a voz Antônio. Toque novamente para parar.');
+  }
+
+  function bind() {
+    $('#prev').onclick = () => turn('prev');
+    $('#next').onclick = () => turn('next');
+    $('#tocB').onclick = () => openDrawer('tocD');
+    $('#searchB').onclick = () => openDrawer('searchD');
+    $('#speakB').onclick = textToSpeech;
+    $('#bookB').onclick = () => setMode('book');
+    $('#scrollB').onclick = () => setMode('scroll');
+    $('#goto').onchange = (event) => goToPage(event.target.value);
+    $('#q').oninput = (event) => search(event.target.value);
+    $$('[data-close]').forEach((element) => { element.onclick = closeDrawers; });
+    $$('.shade').forEach((element) => { element.onclick = closeDrawers; });
+    let pointerStart = null;
+    $('#stage').addEventListener('pointerdown', (event) => { pointerStart = event.clientX; });
+    $('#stage').addEventListener('pointerup', (event) => {
+      if (pointerStart == null) return;
+      const distance = event.clientX - pointerStart;
+      pointerStart = null;
+      if (Math.abs(distance) > 60) turn(distance < 0 ? 'next' : 'prev');
+    });
+    addEventListener('keydown', (event) => {
+      if (event.target.matches('input')) return;
+      if (event.key === 'ArrowRight' || event.key === 'PageDown') turn('next');
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') turn('prev');
+      if (event.key === 'Escape') closeDrawers();
+      if (event.key === '/') { event.preventDefault(); openDrawer('searchD'); }
+    });
+    addEventListener('hashchange', () => { const number = hashPage(); if (number && number !== page) goToPage(number); });
+    matchMedia('(min-width:980px)').addEventListener('change', () => { responsive(); if (mode === 'book') render(); });
+  }
+
+  $('#goto').max = TOTAL;
+  $('#bookStatus').textContent = BOOK.complete
+    ? `Livro digital • ${TOTAL} páginas • 2026`
+    : `Onda 1 validada • ${TOTAL} de ${BOOK.targetPages} páginas`;
+  responsive();
+  buildToc();
+  bind();
+  setMode(mode);
+  setTimeout(() => toast(`Fatia vertical carregada • ${TOTAL} páginas íntegras`), 350);
+  window.__CATS_TEST__ = {
+    book: BOOK,
+    manifest,
+    getState: () => ({ page, mode, doublePage, total: TOTAL, target: BOOK.targetPages }),
+    getTtsStatus: () => ({ preferredVoice: TTS_VOICE_NAME, activeVoice: findAntonioVoice()?.name || null }),
+    goToPage,
+    search,
+  };
+})().catch((error) => {
+  console.error(error);
+  const spread = document.getElementById('spread');
+  if (spread) spread.innerHTML = `<article class="page single"><h2>Falha ao carregar o livro</h2><p>${String(error.message || error)}</p></article>`;
+});
