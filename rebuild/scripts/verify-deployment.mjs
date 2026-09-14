@@ -6,13 +6,7 @@ const healthRes = await fetch(`${base}/api/health`, { redirect: 'follow' });
 if (!healthRes.ok) throw new Error(`Health status ${healthRes.status}`);
 const health = await healthRes.json();
 
-const expected = {
-  status: 'ok',
-  architecture: 'rebuild-clean',
-  wave: 8,
-  pages: 249,
-  corpus: 'canonical-hybrid-recovered'
-};
+const expected = { status: 'ok', pages: 249, release: '2026.09' };
 for (const [key, value] of Object.entries(expected)) {
   if (health[key] !== value) throw new Error(`Health mismatch ${key}: ${health[key]} !== ${value}`);
 }
@@ -24,8 +18,11 @@ if (!health.deployment?.commit || health.deployment.commit === 'local') throw ne
 const homeRes = await fetch(base, { redirect: 'follow' });
 if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
 const html = await homeRes.text();
-for (const token of ['Manual do Participante CATS', '249 páginas canônicas', 'data-page-count="249"', 'data-wave="8"']) {
+for (const token of ['Manual do Participante CATS', 'data-page-count="249"']) {
   if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
 }
+for (const residue of ['data-wave=', 'data-editorial-wave=', 'data-design-wave=', 'data-wave78-status=', 'data-design-system=', 'data-reader-wave=']) {
+  if (html.includes(residue)) throw new Error(`Release frontend residue: ${residue}`);
+}
 
-console.log(`VERCEL_GATE_OK url=${base} pages=249 branch=${health.deployment.branch} commit=${health.deployment.commit}`);
+console.log(`VERCEL_GATE_OK url=${base} pages=249 release=${health.release} branch=${health.deployment.branch} commit=${health.deployment.commit}`);
