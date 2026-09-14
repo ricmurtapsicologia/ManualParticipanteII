@@ -132,7 +132,8 @@ for (const number of [14, 15, 20]) {
       consumed += 1;
       if (merged.endsWith('?')) break;
     }
-    if (consumed > 0 && merged.endsWith('?')) {
+    if (consumed > 0) {
+      if (!merged.endsWith('?')) merged = merged.replace(/[.!;:]$/, '') + '?';
       p.blocks.splice(index, consumed + 1, synthetic(block, `question-${questionNo}`, merged, block.kind));
     }
   }
