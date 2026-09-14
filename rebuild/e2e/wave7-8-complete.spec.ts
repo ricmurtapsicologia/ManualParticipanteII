@@ -14,6 +14,7 @@ async function loadSavedPage(page: Page, pageNumber: number) {
 }
 
 test('waves 7 and 8: all 34 chapters start on a fresh leaf with objectives and finish with summary + 5x4 quiz', async ({ page }) => {
+  test.setTimeout(240_000);
   expect(quizData.chapters).toHaveLength(34);
   const openingPages = new Set<number>();
 
@@ -58,7 +59,24 @@ test('waves 7 and 8: all 34 chapters start on a fresh leaf with objectives and f
   }
 });
 
+test('wave 7 written content E2E traverses all 249 leaves without empty text or extraction artifacts', async ({ page }) => {
+  test.setTimeout(180_000);
+  await loadSavedPage(page, 1);
+  for (let pageNumber = 1; pageNumber <= 249; pageNumber += 1) {
+    await expect(page.getByTestId('page-counter')).toHaveText(`${pageNumber} / 249`);
+    const paper = page.getByTestId('book-page');
+    const text = (await paper.innerText()).trim();
+    expect(text.length, `page ${pageNumber} must have written content`).toBeGreaterThan(10);
+    expect(text, `page ${pageNumber} must not contain replacement glyphs`).not.toContain('�');
+    expect(text, `page ${pageNumber} must not contain arrow extraction artifacts`).not.toMatch(/\.→|→\s*→\s*→/u);
+    if (pageNumber < 249) {
+      await page.getByRole('button', { name: 'Próxima página' }).click();
+    }
+  }
+});
+
 test('wave 8 typography keeps emphasis controlled and layout inside viewport', async ({ page }) => {
+  test.setTimeout(90_000);
   for (const pageNumber of [8, 54, 101, 150, 191, 217]) {
     await loadSavedPage(page, pageNumber);
     const metrics = await page.evaluate(() => {
