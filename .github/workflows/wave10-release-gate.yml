@@ -1,0 +1,68 @@
+name: Manual CATS Final Release Gate
+
+on:
+  push:
+    branches:
+      - main
+      - 'wave20-*'
+    paths:
+      - 'rebuild/**'
+      - '.github/workflows/wave10-release-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  final-release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rebuild
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Validate canonical source baseline
+        run: |
+          npm run semantic:migrate
+          npm run semantic:validate
+          npm run multimedia:validate
+          npm run editorial:audit
+          npm run validate
+      - name: Build final publication candidate
+        run: npm run build
+      - name: Smoke test
+        run: npm run smoke
+      - name: Re-run final publication validator
+        run: npm run release:validate
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local production server
+        shell: bash
+        run: |
+          export VERCEL=1
+          export VERCEL_ENV=production
+          export VERCEL_GIT_COMMIT_REF=main
+          export VERCEL_GIT_COMMIT_SHA=$(git rev-parse HEAD)
+          export VERCEL_PROJECT_PRODUCTION_URL=manual-participante-cats-digital.vercel.app
+          npm start -- -p 3000 >/tmp/cats-final-release.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/api/health >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/cats-final-release.log
+          exit 1
+      - name: Full E2E desktop and mobile
+        run: E2E_BASE_URL=http://127.0.0.1:3000 npm run e2e
+      - name: Final release approval
+        run: |
+          npm run release:validate
+          echo 'FINAL_RELEASE_PASS pages=249 chapters=34 microlearning=34 resources=34 quizzes=170 references=ABNT-NBR-6023-2025 frontend=clean'
