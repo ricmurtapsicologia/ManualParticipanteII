@@ -4,9 +4,11 @@ import { useEffect, useMemo, useState } from 'react';
 import semanticData from '../content/semantic-pages.json';
 import navigationData from '../content/navigation.json';
 import multimediaData from '../content/multimedia-manifest.json';
+import quizData from '../content/chapter-quizzes.json';
 import { ApprovedCover, AudioResourceCard, selectPreferredVoice, type Wave54AudioResource } from './wave54';
 import { VideoResourceCard, type Wave55VideoResource } from './wave55';
 import { useReaderPageTurn } from './wave16';
+import { ChapterQuiz, type ChapterQuizData } from './wave18';
 
 type SemanticBlock = { id: string; kind: string; sourceIndex: number; text: string };
 type SemanticPage = { number: number; part?: number | null; partTitle?: string; chapter?: number | null; title: string; cover?: boolean; blocks: SemanticBlock[] };
@@ -20,15 +22,17 @@ type MultimediaStep = { order: number; title: string; detail: string };
 type MicrolearningChoice = { id: string; label: string; correct: boolean };
 type MultimediaResource = { id: string; kind: string; pageNumber: number; title: string; src?: string; alt?: string; steps?: MultimediaStep[]; transverse?: string; sourceBlockId?: string; prompt?: string; reveal?: string; choices?: MicrolearningChoice[]; transcript?: string; preferredVoice?: string; fallbackLang?: string };
 type MultimediaArtifact = { schemaVersion: number; wave: string; resources: MultimediaResource[] };
+type QuizArtifact = { schemaVersion: number; wave: string; chapters: ChapterQuizData[] };
 
 const pages = (semanticData as SemanticArtifact).pages;
 const navigation = navigationData as NavigationArtifact;
 const multimedia = multimediaData as MultimediaArtifact;
+const quizzes = quizData as QuizArtifact;
 const pageNumberToIndex = new Map(pages.map((item, index) => [item.number ?? index + 1, index]));
 const markerLabels: Record<string, string> = {
-  opening: 'Situação de abertura', objectives: 'Objetivos', doctrine: 'Doutrina', evidence: 'Evidência',
+  opening: 'Situação de abertura', objectives: 'Objetivos do capítulo', doctrine: 'Doutrina', evidence: 'Evidência',
   practice: 'Na prática', attention: 'Atenção', decide: 'Decida', case: 'Caso para decisão',
-  'guided-analysis': 'Análise orientadora', summary: 'Síntese', review: 'Questões de revisão'
+  'guided-analysis': 'Análise orientadora', summary: 'Resumo do capítulo', review: 'Questões de revisão'
 };
 const markerIcons: Record<string, string> = {
   opening: '◐', objectives: '◎', doctrine: '§', evidence: '◆', practice: '▶', attention: '!',
@@ -160,6 +164,7 @@ export default function Home() {
   const currentPartNumber = currentPart?.part ?? null;
   const currentChapter = currentPart?.chapters.find(chapter => chapter.pageNumbers.includes(currentPageNumber)) ?? null;
   const pageMedia = multimedia.resources.filter(resource => resource.pageNumber === currentPageNumber);
+  const currentQuiz = currentChapter ? quizzes.chapters.find(item => item.chapter === currentChapter.chapter && item.endingPage === currentPageNumber) ?? null : null;
 
   useEffect(() => { const saved = Number(localStorage.getItem('cats-rebuild-page')); if (Number.isInteger(saved) && saved >= 0 && saved < pages.length) setPage(saved); }, []);
   useEffect(() => { localStorage.setItem('cats-rebuild-page', String(page)); }, [page]);
@@ -210,7 +215,7 @@ export default function Home() {
   const runningRight = currentChapter ? `CAPÍTULO ${currentChapter.chapter}` : currentPart ? `PARTE ${currentPart.part}` : '2026';
   const pageRole = current.cover ? 'cover' : currentChapter ? (currentChapter.openingPage === currentPageNumber ? 'chapter-opening' : 'chapter-continuation') : currentPart?.openingPage === currentPageNumber ? 'part-opening' : 'standard';
 
-  return <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8" data-editorial-wave="13" data-design-system="DS2" data-design-subwave="4.3" data-semantic-renderer="blocks" data-multimedia-wave={multimedia.wave} data-reader-wave="6">
+  return <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8" data-editorial-wave="7" data-design-wave="8" data-wave78-status="complete" data-design-system="DS2" data-design-subwave="8" data-semantic-renderer="blocks" data-multimedia-wave={multimedia.wave} data-reader-wave="6">
     <header className="top"><div className="topin"><div className="mark">CATS</div><div className="brand"><strong>Manual do Participante CATS</strong><span>Edição Digital Interativa • 249 páginas</span></div><div className="tools"><button onClick={speak} className={speaking ? 'active' : ''} aria-label="Leitura em voz alta">◖)) <span>{speaking ? 'Parar' : 'Ouvir'}</span></button><button onClick={() => setDrawer('search')} aria-label="Pesquisar">⌕ <span>Buscar</span></button><button onClick={() => setDrawer('toc')} aria-label="Sumário">☰ <span>Sumário</span></button></div></div><div className="progressTrack"><div className="progress" style={{ width: `${progress}%` }} /></div></header>
     <main className="main"><div className="book"><div
       className={`readerSurface${readerTurn.className ? ` ${readerTurn.className}` : ''}`}
@@ -224,7 +229,7 @@ export default function Home() {
       aria-label={`Leitor do Manual CATS, página ${currentPageNumber} de ${pages.length}`}
       aria-describedby="reader-instructions"
       {...readerTurn.gestureProps}
-    ><article className={`page${current.cover ? ' cover' : ''}${pageRole === 'chapter-opening' ? ' chapterOpening' : ''}${pageRole === 'chapter-continuation' ? ' chapterContinuation' : ''}`} lang="pt-BR" data-testid="book-page" data-page-role={pageRole}>{current.cover ? <ApprovedCover /> : <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div>{pageRole === 'chapter-continuation' && currentChapter ? <div className="continuationHeading" data-testid="continuation-heading"><span>Capítulo {currentChapter.chapter}</span><strong>Continuação</strong></div> : <h2 data-testid={pageRole === 'chapter-opening' ? 'chapter-title' : undefined}>{current.title}</h2>}{pageMedia.length > 0 && <div className="multimediaLayer" data-testid="multimedia-layer">{pageMedia.map(renderMultimediaResource)}</div>}{renderSemanticBlocks(current.blocks)}<div className="pageno">{currentPageNumber}</div></>}</article><div className="readerAnnouncement" aria-live="polite" aria-atomic="true" data-testid="reader-announcement">Página {currentPageNumber} de {pages.length}</div></div></div><div className="status" id="reader-instructions"><span className="readerGestureHint"><span className="gestureWord">Deslize ou arraste</span> para virar a página, clique nas bordas ou use <span className="kbd">←</span> <span className="kbd">→</span>. <span className="kbd">/</span> abre a busca.</span></div></main>
+    ><article className={`page${current.cover ? ' cover' : ''}${pageRole === 'chapter-opening' ? ' chapterOpening' : ''}${pageRole === 'chapter-continuation' ? ' chapterContinuation' : ''}`} lang="pt-BR" data-testid="book-page" data-page-role={pageRole}>{current.cover ? <ApprovedCover /> : <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div>{pageRole === 'chapter-continuation' && currentChapter ? <div className="continuationHeading" data-testid="continuation-heading"><span>Capítulo {currentChapter.chapter}</span><strong>Continuação</strong></div> : <h2 data-testid={pageRole === 'chapter-opening' ? 'chapter-title' : undefined}>{current.title}</h2>}{pageMedia.length > 0 && <div className="multimediaLayer" data-testid="multimedia-layer">{pageMedia.map(renderMultimediaResource)}</div>}{renderSemanticBlocks(current.blocks)}{currentQuiz && <ChapterQuiz quiz={currentQuiz} />}<div className="pageno">{currentPageNumber}</div></>}</article><div className="readerAnnouncement" aria-live="polite" aria-atomic="true" data-testid="reader-announcement">Página {currentPageNumber} de {pages.length}</div></div></div><div className="status" id="reader-instructions"><span className="readerGestureHint"><span className="gestureWord">Deslize ou arraste</span> para virar a página, clique nas bordas ou use <span className="kbd">←</span> <span className="kbd">→</span>. <span className="kbd">/</span> abre a busca.</span></div></main>
     <nav className="nav" aria-label="Navegação do livro"><button onClick={() => go(page - 1)} disabled={page === 0} aria-label="Página anterior">‹</button><div className="counter" data-testid="page-counter">{page + 1} / {pages.length}</div><button onClick={() => go(page + 1)} disabled={page === pages.length - 1} aria-label="Próxima página">›</button></nav>
     {drawer && <div className="drawer" role="dialog" aria-modal="true" onMouseDown={e => { if (e.target === e.currentTarget) setDrawer(null); }}><aside className="panel"><div className="panelHead"><strong>{drawer === 'toc' ? 'Sumário' : 'Pesquisar'}</strong><button onClick={() => setDrawer(null)}>Fechar</button></div>{drawer === 'toc' ? <div className="toc" data-testid="hierarchical-toc">
       <button className={`tocPrimary${currentPageNumber === 1 ? ' current' : ''}`} onClick={() => goPageNumber(1)}><strong>Capa</strong><span>p. 1</span></button>
