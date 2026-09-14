@@ -5,6 +5,7 @@ on:
     branches:
       - 'wave14-*'
       - 'wave15-*'
+      - 'wave16-*'
     paths:
       - 'rebuild/**'
       - '.github/workflows/editorial-wave-gate.yml'
