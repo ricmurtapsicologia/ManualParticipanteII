@@ -10,16 +10,17 @@ export function ChapterQuiz({ quiz }: { quiz: ChapterQuizData }) {
   const [answers, setAnswers] = useState<Record<string,string>>({});
   return <section className="chapterQuiz" data-testid="chapter-quiz" data-chapter={quiz.chapter} aria-labelledby={`chapter-quiz-${quiz.chapter}`}>
     <div className="chapterQuizHead">
-      <span className="chapterQuizEyebrow">Verificação de aprendizagem</span>
-      <h3 id={`chapter-quiz-${quiz.chapter}`}>5 questões de múltipla escolha</h3>
-      <p>Selecione uma alternativa. A correção aparece imediatamente.</p>
+      <span className="chapterQuizEyebrow">Teste do capítulo</span>
+      <h3 id={`chapter-quiz-${quiz.chapter}`}>Verifique compreensão e decisão</h3>
+      <p>Responda uma questão por vez. Use o retorno imediato para identificar o que merece revisão.</p>
     </div>
     <div className="chapterQuizQuestions">
       {quiz.questions.map((question, questionIndex) => {
         const selectedId = answers[question.id] ?? null;
         const selected = question.choices.find(choice => choice.id === selectedId) ?? null;
         return <fieldset className="chapterQuizQuestion" data-testid="chapter-quiz-question" key={question.id}>
-          <legend><span>{questionIndex + 1}.</span> {question.prompt}</legend>
+          <div className="chapterQuizQuestionMeta">Questão {questionIndex + 1} de {quiz.questions.length}</div>
+          <legend>{question.prompt}</legend>
           <div className="chapterQuizChoices" role="radiogroup" aria-label={`Questão ${questionIndex + 1}`}>
             {question.choices.map(choice => {
               const chosen = selectedId === choice.id;
@@ -37,7 +38,7 @@ export function ChapterQuiz({ quiz }: { quiz: ChapterQuizData }) {
             })}
           </div>
           {selected && <div className="chapterQuizFeedback" data-testid="chapter-quiz-feedback" data-result={selected.correct ? 'correct' : 'incorrect'} aria-live="polite">
-            <span className="chapterQuizResult">{selected.correct ? 'Correto.' : 'Resposta incorreta.'}</span>
+            <span className="chapterQuizResult">{selected.correct ? 'Resposta adequada.' : 'Revise a explicação.'}</span>
             <span>{question.feedback}</span>
           </div>}
         </fieldset>;
