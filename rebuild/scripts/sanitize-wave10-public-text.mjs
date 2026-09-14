@@ -43,6 +43,7 @@ function sanitize(value) {
 }
 
 let changed = 0;
+let linksUpdated = 0;
 for (const page of artifact.pages) {
   if (page.number >= 239 && page.number <= 241) continue;
   page.title = sanitize(page.title);
@@ -50,6 +51,16 @@ for (const page of artifact.pages) {
     const next = sanitize(block.text);
     if (next !== block.text) changed += 1;
     block.text = next;
+    if (block.kind === 'external-link' && block.url === 'https://gto.bombeiros.mg.gov.br/') {
+      block.url = 'https://gto.bombeiros.mg.gov.br/atendimento-tentativa-suicidio';
+      linksUpdated += 1;
+    }
+    if (block.kind === 'external-link' && block.url === 'https://www.youtube.com/watch?v=11-Lz-DxkgE') {
+      block.url = 'https://www.youtube.com/watch?v=srf0lrtjVvw';
+      linksUpdated += 1;
+    }
+    if (/^CBMMG — Grupo Temático Operacional$/u.test(block.text)) block.text = 'CBMMG — Atendimento a Tentativas de Suicídio';
+    if (/^OMS — lançamento do LIVE LIFE no YouTube$/u.test(block.text)) block.text = 'OMS — prevenção do suicídio e enfrentamento da perda (vídeo)';
   }
 }
 
@@ -61,4 +72,4 @@ for (const [pattern, label] of [
 }
 
 fs.writeFileSync(semanticPath, `${JSON.stringify(artifact, null, 2)}\n`);
-console.log(`WAVE10_PUBLIC_SANITIZE_OK pages=246 changed=${changed} normative-attribution=direct backstage=zero`);
+console.log(`WAVE10_PUBLIC_SANITIZE_OK pages=246 changed=${changed} links-updated=${linksUpdated} normative-attribution=direct backstage=zero`);
