@@ -58,12 +58,15 @@ if (artifact.navigation?.parts) {
   }));
 }
 
+const bibliographyStandard = 'ABNT NBR 6023:2018, versão corrigida 2:2020';
 artifact.runtimeEditorial = {
   ...(artifact.runtimeEditorial ?? {}),
   publicPageCount: 246,
   removedFrontMatterPages: [2, 4, 5],
-  removalReason: 'author-approved final release cleanup'
+  removalReason: 'author-approved final release cleanup',
+  bibliographyStandard
 };
+artifact.bibliography = { ...(artifact.bibliography ?? {}), standard: bibliographyStandard };
 
 if (!Array.isArray(multimedia.resources)) throw new Error('Wave10 multimedia resources missing');
 const beforeMedia = multimedia.resources.length;
@@ -82,4 +85,4 @@ if (!/COMANDANTE-GERAL DO CBMMG/iu.test(removedText) || !/HIERARQUIA DE FONTES/i
 
 fs.writeFileSync(semanticPath, `${JSON.stringify(artifact, null, 2)}\n`);
 fs.writeFileSync(multimediaPath, `${JSON.stringify(multimedia, null, 2)}\n`);
-console.log(`WAVE10_PAGE_REMOVAL_OK removed=2,4,5 pages=246 multimedia=${beforeMedia}->${multimedia.resources.length} remapped=true`);
+console.log(`WAVE10_PAGE_REMOVAL_OK removed=2,4,5 pages=246 multimedia=${beforeMedia}->${multimedia.resources.length} remapped=true bibliography=ABNT-NBR-6023-2018-corrigida-2020`);
