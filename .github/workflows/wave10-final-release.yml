@@ -1,0 +1,71 @@
+name: Manual CATS Wave 10 Final Release
+
+on:
+  push:
+    branches:
+      - main
+      - 'wave10-*'
+    paths:
+      - 'rebuild/**'
+      - '.github/workflows/wave10-final-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wave10-final:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: rebuild
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Rebuild canonical semantic baseline
+        run: |
+          npm run semantic:migrate
+          npm run semantic:validate
+          npm run multimedia:validate
+          npm run editorial:audit
+          npm run validate
+      - name: Build definitive Wave 10 runtime
+        run: npm run build
+      - name: Smoke test
+        run: npm run smoke
+      - name: Canonical Wave 10 audit 30x30
+        run: npm run wave10:audit
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local production server
+        shell: bash
+        run: |
+          export VERCEL=1
+          export VERCEL_ENV=production
+          export VERCEL_GIT_COMMIT_REF=main
+          export VERCEL_GIT_COMMIT_SHA=$(git rev-parse HEAD)
+          export VERCEL_PROJECT_PRODUCTION_URL=manual-participante-cats-digital.vercel.app
+          npm start -- -p 3000 >/tmp/wave10-cats.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/api/health >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/wave10-cats.log
+          exit 1
+      - name: E2E desktop and mobile — full final suite
+        run: E2E_BASE_URL=http://127.0.0.1:3000 npm run e2e
+      - name: Close local validation gate
+        env:
+          WAVE10_E2E_PASSED: '1'
+        run: |
+          node scripts/close-wave10.mjs
+          cat .wave10-final-report.json
