@@ -6,6 +6,7 @@ import navigationData from '../content/navigation.json';
 import multimediaData from '../content/multimedia-manifest.json';
 import { ApprovedCover, AudioResourceCard, selectPreferredVoice, type Wave54AudioResource } from './wave54';
 import { VideoResourceCard, type Wave55VideoResource } from './wave55';
+import { useReaderPageTurn } from './wave16';
 
 type SemanticBlock = { id: string; kind: string; sourceIndex: number; text: string };
 type SemanticPage = { number: number; part?: number | null; partTitle?: string; chapter?: number | null; title: string; cover?: boolean; blocks: SemanticBlock[] };
@@ -151,6 +152,7 @@ export default function Home() {
   const [query, setQuery] = useState('');
   const [speaking, setSpeaking] = useState(false);
   const [openParts, setOpenParts] = useState<Record<number, boolean>>({ 1: true });
+  const readerTurn = useReaderPageTurn({ page, pageCount: pages.length, setPage });
 
   const current = pages[page];
   const currentPageNumber = current.number ?? page + 1;
@@ -164,20 +166,23 @@ export default function Home() {
   useEffect(() => { if (drawer !== 'toc' || !currentPartNumber) return; setOpenParts(previous => previous[currentPartNumber] ? previous : { ...previous, [currentPartNumber]: true }); }, [drawer, currentPartNumber]);
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowRight') setPage(p => Math.min(pages.length - 1, p + 1));
-      if (event.key === 'ArrowLeft') setPage(p => Math.max(0, p - 1));
-      if (event.key === '/' && !drawer) { event.preventDefault(); setDrawer('search'); }
-      if (event.key === 'Escape') setDrawer(null);
+      const target = event.target as HTMLElement | null;
+      const interactive = Boolean(target?.closest('input,textarea,select,button,[contenteditable="true"]'));
+      if (event.key === 'Escape') { setDrawer(null); return; }
+      if (drawer) return;
+      if (event.key === 'ArrowRight' && !interactive) { event.preventDefault(); readerTurn.turnBy(1); }
+      if (event.key === 'ArrowLeft' && !interactive) { event.preventDefault(); readerTurn.turnBy(-1); }
+      if (event.key === '/' && !interactive) { event.preventDefault(); setDrawer('search'); }
     };
     window.addEventListener('keydown', onKey); return () => window.removeEventListener('keydown', onKey);
-  }, [drawer]);
+  }, [drawer, readerTurn.turnBy]);
 
   const results = useMemo(() => {
     const q = normalize(query.trim());
     if (q.length < 2) return [];
     return pages.map((item, index) => ({ item, index })).filter(({ item }) => normalize([item.title, ...item.blocks.map(block => block.text)].join(' ')).includes(q));
   }, [query]);
-  const go = (index: number) => { setPage(Math.min(pages.length - 1, Math.max(0, index))); setDrawer(null); };
+  const go = (index: number) => { readerTurn.go(index); setDrawer(null); };
   const goPageNumber = (pageNumber: number) => go(pageNumberToIndex.get(pageNumber) ?? pageNumber - 1);
   const renderMarkers = (markers: PedagogicalMarker[]) => markers.length > 0 ? (
     <div className="tocMarkers">{markers.map(marker => {
@@ -205,9 +210,21 @@ export default function Home() {
   const runningRight = currentChapter ? `CAPÍTULO ${currentChapter.chapter}` : currentPart ? `PARTE ${currentPart.part}` : '2026';
   const pageRole = current.cover ? 'cover' : currentChapter ? (currentChapter.openingPage === currentPageNumber ? 'chapter-opening' : 'chapter-continuation') : currentPart?.openingPage === currentPageNumber ? 'part-opening' : 'standard';
 
-  return <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8" data-editorial-wave="13" data-design-system="DS2" data-design-subwave="4.3" data-semantic-renderer="blocks" data-multimedia-wave={multimedia.wave}>
+  return <div className="shell" data-testid="reader-shell" data-page-count={pages.length} data-wave="8" data-editorial-wave="13" data-design-system="DS2" data-design-subwave="4.3" data-semantic-renderer="blocks" data-multimedia-wave={multimedia.wave} data-reader-wave="6">
     <header className="top"><div className="topin"><div className="mark">CATS</div><div className="brand"><strong>Manual do Participante CATS</strong><span>Edição Digital Interativa • 249 páginas</span></div><div className="tools"><button onClick={speak} className={speaking ? 'active' : ''} aria-label="Leitura em voz alta">◖)) <span>{speaking ? 'Parar' : 'Ouvir'}</span></button><button onClick={() => setDrawer('search')} aria-label="Pesquisar">⌕ <span>Buscar</span></button><button onClick={() => setDrawer('toc')} aria-label="Sumário">☰ <span>Sumário</span></button></div></div><div className="progressTrack"><div className="progress" style={{ width: `${progress}%` }} /></div></header>
-    <main className="main"><div className="book"><article className={`page${current.cover ? ' cover' : ''}${pageRole === 'chapter-opening' ? ' chapterOpening' : ''}${pageRole === 'chapter-continuation' ? ' chapterContinuation' : ''}`} lang="pt-BR" data-testid="book-page" data-page-role={pageRole}>{current.cover ? <ApprovedCover /> : <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div>{pageRole === 'chapter-continuation' && currentChapter ? <div className="continuationHeading" data-testid="continuation-heading"><span>Capítulo {currentChapter.chapter}</span><strong>Continuação</strong></div> : <h2 data-testid={pageRole === 'chapter-opening' ? 'chapter-title' : undefined}>{current.title}</h2>}{pageMedia.length > 0 && <div className="multimediaLayer" data-testid="multimedia-layer">{pageMedia.map(renderMultimediaResource)}</div>}{renderSemanticBlocks(current.blocks)}<div className="pageno">{currentPageNumber}</div></>}</article></div><div className="status">Use <span className="kbd">←</span> <span className="kbd">→</span> para navegar. <span className="kbd">/</span> abre a busca. Conteúdo canônico.</div></main>
+    <main className="main"><div className="book"><div
+      className={`readerSurface${readerTurn.className ? ` ${readerTurn.className}` : ''}`}
+      data-testid="reader-surface"
+      data-reader-wave="6"
+      data-turn-direction={readerTurn.direction ?? 'idle'}
+      data-dragging={readerTurn.dragging ? 'true' : 'false'}
+      style={readerTurn.style}
+      tabIndex={0}
+      role="region"
+      aria-label={`Leitor do Manual CATS, página ${currentPageNumber} de ${pages.length}`}
+      aria-describedby="reader-instructions"
+      {...readerTurn.gestureProps}
+    ><article className={`page${current.cover ? ' cover' : ''}${pageRole === 'chapter-opening' ? ' chapterOpening' : ''}${pageRole === 'chapter-continuation' ? ' chapterContinuation' : ''}`} lang="pt-BR" data-testid="book-page" data-page-role={pageRole}>{current.cover ? <ApprovedCover /> : <><div className="running"><span>{runningLeft}</span><span>{runningRight}</span></div>{pageRole === 'chapter-continuation' && currentChapter ? <div className="continuationHeading" data-testid="continuation-heading"><span>Capítulo {currentChapter.chapter}</span><strong>Continuação</strong></div> : <h2 data-testid={pageRole === 'chapter-opening' ? 'chapter-title' : undefined}>{current.title}</h2>}{pageMedia.length > 0 && <div className="multimediaLayer" data-testid="multimedia-layer">{pageMedia.map(renderMultimediaResource)}</div>}{renderSemanticBlocks(current.blocks)}<div className="pageno">{currentPageNumber}</div></>}</article><div className="readerAnnouncement" aria-live="polite" aria-atomic="true" data-testid="reader-announcement">Página {currentPageNumber} de {pages.length}</div></div></div><div className="status" id="reader-instructions"><span className="readerGestureHint"><span className="gestureWord">Deslize ou arraste</span> para virar a página, clique nas bordas ou use <span className="kbd">←</span> <span className="kbd">→</span>. <span className="kbd">/</span> abre a busca.</span></div></main>
     <nav className="nav" aria-label="Navegação do livro"><button onClick={() => go(page - 1)} disabled={page === 0} aria-label="Página anterior">‹</button><div className="counter" data-testid="page-counter">{page + 1} / {pages.length}</div><button onClick={() => go(page + 1)} disabled={page === pages.length - 1} aria-label="Próxima página">›</button></nav>
     {drawer && <div className="drawer" role="dialog" aria-modal="true" onMouseDown={e => { if (e.target === e.currentTarget) setDrawer(null); }}><aside className="panel"><div className="panelHead"><strong>{drawer === 'toc' ? 'Sumário' : 'Pesquisar'}</strong><button onClick={() => setDrawer(null)}>Fechar</button></div>{drawer === 'toc' ? <div className="toc" data-testid="hierarchical-toc">
       <button className={`tocPrimary${currentPageNumber === 1 ? ' current' : ''}`} onClick={() => goPageNumber(1)}><strong>Capa</strong><span>p. 1</span></button>
