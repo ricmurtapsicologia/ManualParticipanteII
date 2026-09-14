@@ -31,8 +31,14 @@ for (const number of [9, 12, 14, 17, 18, 19, 20, 26]) {
   const first = page(number).blocks[0]?.text?.trim() ?? '';
   if (/^[a-záàâãéêíóôõúç“”]/u.test(first)) fail(`lowercase-continuation=${number}`);
 }
-if (!text(24).includes('4. Violência autoprovocada notificada não é igual a suicídio consumado')) fail('p24-heading');
-if (text(24).includes('consumado Em 2021')) fail('p24-body-prefix');
+{
+  const blocks = page(24).blocks;
+  const headingIndex = blocks.findIndex(block => block.text === '4. Violência autoprovocada notificada não é igual a suicídio consumado');
+  if (headingIndex < 0) fail('p24-heading');
+  const following = blocks[headingIndex + 1]?.text?.trim() ?? '';
+  if (!following.startsWith('Em 2021,')) fail(`p24-body-start=${following.slice(0, 32) || 'missing'}`);
+  if (following.startsWith('consumado ')) fail('p24-body-prefix');
+}
 
 for (const [number, questions] of [[14,[1,2,3]],[15,[4,5]],[20,[6,7,8,9,10]]]) {
   const blocks = page(number).blocks;
