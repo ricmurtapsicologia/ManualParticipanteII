@@ -100,3 +100,38 @@ test('wave 7.2 restores interlude hierarchy and TESTE-SE questions 11 to 40', as
   paper = await loadPage(page, 46);
   await expect(paper.getByRole('heading', { name: 'Aprofundamento 3 — Modelos cognitivos: utilidade e limites' })).toBeVisible();
 });
+
+test('wave 7.3 repairs operational chapter extraction and assessment units', async ({ page }) => {
+  let paper = await loadPage(page, 55);
+  await expect(paper).toContainText('1. O primeiro contato pode ocorrer sem que a pessoa em crise esteja na linha');
+  await expect(paper).toContainText('A ITO 30 atribui ao sistema de despacho e à guarnição');
+
+  for (const [pageNumber, questions] of [
+    [59,[46,47,48,49,50]],
+    [65,[51,52,53,54,55]],
+    [70,[56,57,58,59,60]]
+  ] as Array<[number, number[]]>) await assertCompleteQuestions(page, pageNumber, questions);
+
+  paper = await loadPage(page, 68);
+  await expect(paper).toContainText('4. Werther não é palavra para censurar; é razão para comunicar com cuidado');
+  await expect(paper).toContainText('O chamado efeito Werther descreve');
+
+  paper = await loadPage(page, 72);
+  for (const item of ['Comando — prioridades • segurança • recursos • decisão','Abordador — díade e comunicação','Auxiliar — escuta, apoio e filtro','Segurança — EPI, riscos, rota de fuga','Tática — prontidão e oportunidade','Coleta de informação — dados úteis e verificação','Integração/APH — rede e continuidade']) await expect(paper).toContainText(item);
+
+  paper = await loadPage(page, 74);
+  await expect(paper).toContainText('5. Coleta de informações: ampliar conhecimento sem transformar a pessoa em prontuário ambulante');
+
+  paper = await loadPage(page, 75);
+  expect((await paper.innerText()).trim()).not.toMatch(/^sensação\b/i);
+});
+
+test('wave 7.10 preserves every editorial batch boundary through page 249', async ({ page }) => {
+  const checkpoints = [51,75,76,100,101,125,126,150,151,175,176,200,201,225,226,249];
+  for (const pageNumber of checkpoints) {
+    const paper = await loadPage(page, pageNumber);
+    const content = (await paper.innerText()).trim();
+    expect(content.length, `page ${pageNumber} should contain editorial content`).toBeGreaterThan(20);
+    expect(content, `page ${pageNumber} should not contain replacement glyphs`).not.toContain('�');
+  }
+});
