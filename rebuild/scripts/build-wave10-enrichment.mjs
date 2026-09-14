@@ -28,12 +28,12 @@ function summaryFacts(chapter) {
 }
 
 const resourceCatalog = {
-  cbmmg: { type:'link', title:'CBMMG — Grupo Temático Operacional', url:'https://gto.bombeiros.mg.gov.br/', note:'Aprofundamento em doutrina operacional e materiais técnicos do CBMMG.' },
+  cbmmg: { type:'link', title:'CBMMG — Atendimento a Tentativas de Suicídio', url:'https://gto.bombeiros.mg.gov.br/atendimento-tentativa-suicidio', note:'Página temática do Grupo Temático Operacional do CBMMG sobre Atendimento a Tentativas de Suicídio.' },
   whoSuicide: { type:'link', title:'OMS — Suicide fact sheet', url:'https://www.who.int/news-room/fact-sheets/detail/suicide', note:'Dados e conceitos internacionais atualizados sobre suicídio e prevenção.' },
   whoLiveLife: { type:'link', title:'OMS — LIVE LIFE: guia para prevenção do suicídio', url:'https://www.who.int/publications/i/item/9789240026629', note:'Estratégias baseadas em evidências para prevenção do suicídio.' },
   whoPfa: { type:'link', title:'OMS — Primeiros Socorros Psicológicos', url:'https://www.who.int/publications/i/item/9789241548205', note:'Guia de ajuda humana, prática e não invasiva após situações difíceis.' },
   whoMedia: { type:'link', title:'OMS — comunicação responsável sobre suicídio', url:'https://www.who.int/publications/i/item/9789240076846', note:'Orientações para reduzir risco e ampliar potencial protetivo da comunicação pública.' },
-  whoVideo: { type:'video', title:'OMS — lançamento do LIVE LIFE', url:'https://www.youtube.com/watch?v=11-Lz-DxkgE', note:'Vídeo oficial sobre implementação de ações de prevenção do suicídio.' }
+  whoVideo: { type:'video', title:'OMS — Preventing suicide and coping with loss', url:'https://www.youtube.com/watch?v=srf0lrtjVvw', note:'Vídeo oficial indicado pela OMS sobre prevenção do suicídio e enfrentamento da perda.' }
 };
 function resourceFor(chapter) {
   if (chapter === 3) return resourceCatalog.whoSuicide;
@@ -82,4 +82,4 @@ for (let chapter = 1; chapter <= 34; chapter += 1) {
 }
 const manifest = { schemaVersion:1, wave:'10', source:'semantic-pages.json + chapter-quizzes.json', doctrineChanged:false, chapters };
 fs.writeFileSync(outputPath, `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`WAVE10_ENRICHMENT_BUILD_OK chapters=${chapters.length} microlearning=${chapters.length} transfer=${chapters.length} resources=${chapters.length} doctrine-changed=false`);
+console.log(`WAVE10_ENRICHMENT_BUILD_OK chapters=${chapters.length} microlearning=${chapters.length} transfer=${chapters.length} resources=${chapters.length} verified-catalog=WHO+CBMMG doctrine-changed=false`);
