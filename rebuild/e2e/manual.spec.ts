@@ -33,7 +33,10 @@ test('production health and direct URL are canonical', async ({ page, request })
 
   await gotoBook(page, '?e2e=direct');
   await expect(page).toHaveTitle('Manual do Participante CATS | Edição Digital');
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-editorial-wave', '13');
+  const shell = page.getByTestId('reader-shell');
+  await expect(shell).toHaveAttribute('data-editorial-wave', '7');
+  await expect(shell).toHaveAttribute('data-design-wave', '8');
+  await expect(shell).toHaveAttribute('data-wave78-status', 'complete');
 });
 
 test('key pages 1, 2, 10, 50, 100, 150, 200 and 249 render', async ({ page }) => {
@@ -54,7 +57,7 @@ test('hierarchical table of contents, navigation and search work end to end', as
   await expect(page.getByTestId('hierarchical-toc')).toBeVisible();
   await expect(page.getByTestId('toc-part')).toHaveCount(7);
   await expect(page.getByTestId('toc-chapter')).toHaveCount(34);
-  await expect(page.getByTestId('toc-marker')).toHaveCount(165);
+  await expect(page.getByTestId('toc-marker')).toHaveCount(216);
 
   const part3 = page.getByTestId('toc-part').filter({ hasText: 'Parte 3' });
   await part3.locator(':scope > summary').click();
