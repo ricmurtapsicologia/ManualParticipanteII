@@ -17,6 +17,7 @@
     "navigation:build": "node scripts/build-navigation.mjs",
     "navigation:validate": "node scripts/validate-navigation.mjs",
     "multimedia:validate": "node scripts/validate-multimedia.mjs",
+    "editorial:audit": "node scripts/audit-editorial-wave7.mjs",
     "validate": "node scripts/validate.mjs",
     "smoke": "node scripts/smoke.mjs",
     "verify:deployment": "node scripts/verify-deployment.mjs",
