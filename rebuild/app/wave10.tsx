@@ -9,8 +9,7 @@ export type ChapterEnrichment = {
   openingPage: number;
   endingPage: number;
   microlearning: { id:string; pageNumber:number; title:string; prompt:string; choices:EnrichmentChoice[]; reveal:string };
-  transfer: { id:string; pageNumber:number; title:string; apply:string; transfer:string; verify:string };
-  resource: { id:string; pageNumber:number; type:'link'|'video'; title:string; url:string; note:string; language?:'pt-BR' };
+  resource: { id:string; pageNumber:number; type:'link'; title:string; url:string; note:string; language?:'pt-BR' };
 };
 
 export function ChapterMicrolearningCard({ data }: { data: ChapterEnrichment['microlearning'] }) {
@@ -35,18 +34,6 @@ export function ChapterMicrolearningCard({ data }: { data: ChapterEnrichment['mi
       <span className="w10FeedbackState">{choice.correct ? 'Correto.' : 'Revise o ponto-chave.'}</span>
       <span>{data.reveal}</span>
     </div>}
-  </section>;
-}
-
-export function ApplicationTransferCard({ data }: { data: ChapterEnrichment['transfer'] }) {
-  return <section className="w10Transfer" data-testid="application-transfer" aria-labelledby={`${data.id}-title`}>
-    <div className="w10Kicker">Aprender para usar</div>
-    <h3 id={`${data.id}-title`}>{data.title}</h3>
-    <div className="w10TransferGrid">
-      <div><span className="w10Step">1</span><h4>Aplicar</h4><p>{data.apply}</p></div>
-      <div><span className="w10Step">2</span><h4>Transferir</h4><p>{data.transfer}</p></div>
-      <div><span className="w10Step">3</span><h4>Verificar</h4><p>{data.verify}</p></div>
-    </div>
   </section>;
 }
 

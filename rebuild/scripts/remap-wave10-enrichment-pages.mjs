@@ -14,8 +14,8 @@ for(const item of enrichment.chapters){
   item.openingPage=pages[0].number;
   item.endingPage=pages.at(-1).number;
   item.microlearning.pageNumber=pages[Math.floor(pages.length/2)].number;
-  item.transfer.pageNumber=pages.at(-1).number;
+  if(item.transfer) item.transfer.pageNumber=pages.at(-1).number;
   item.resource.pageNumber=pages.at(-1).number;
 }
 fs.writeFileSync(enrichmentPath,JSON.stringify(enrichment,null,2)+'\n');
-console.log('WAVE10_ENRICHMENT_REMAP_OK chapters=34 pagination=final-246');
+console.log(`WAVE10_ENRICHMENT_REMAP_OK chapters=${enrichment.chapters.length} pagination=final-${semantic.pages.length}`);

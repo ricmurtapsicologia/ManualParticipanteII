@@ -1,4 +1,4 @@
-name: Editorial Publication 3-Layer Gate
+name: Publication 30-90-6 + E2E Gate
 
 on:
   pull_request:
@@ -11,7 +11,7 @@ on:
 jobs:
   publication-gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     defaults:
       run:
         working-directory: rebuild
@@ -30,8 +30,11 @@ jobs:
       - name: Build production application
         run: npm run build
 
-      - name: Layer 1 — editorial and semantic audit
-        run: node scripts/audit-publication-3layer.mjs
+      - name: Layer 1 — 30 editorial controls
+        run: npm run audit:30
+
+      - name: Layer 2 — 90 content and integrity controls
+        run: npm run audit:90
 
       - name: Smoke test
         run: npm run smoke
@@ -50,12 +53,12 @@ jobs:
           cat /tmp/cats-publication-server.log
           exit 1
 
-      - name: Layer 2 and 3 — PDF runtime and reader integration
+      - name: Layer 3 — 6 runtime release controls
         env:
           BASE_URL: http://127.0.0.1:3310
-        run: node scripts/audit-publication-3layer.mjs
+        run: npm run audit:6
 
-      - name: E2E desktop and mobile
+      - name: E2E — complete desktop and mobile traversal
         env:
           E2E_BASE_URL: http://127.0.0.1:3310
         run: npm run e2e:final
@@ -64,4 +67,4 @@ jobs:
         if: always()
         run: |
           if [ -f /tmp/cats-publication-server.pid ]; then kill $(cat /tmp/cats-publication-server.pid) || true; fi
-          if [ -f /tmp/cats-publication-server.log ]; then tail -80 /tmp/cats-publication-server.log; fi
+          if [ -f /tmp/cats-publication-server.log ]; then tail -100 /tmp/cats-publication-server.log; fi
