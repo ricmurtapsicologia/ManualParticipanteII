@@ -7,13 +7,12 @@ async function loadSavedPage(page: import('@playwright/test').Page, pageNumber: 
   await expect(page.getByTestId('page-counter')).toHaveText(`${pageNumber} / 249`);
 }
 
-test('wave 6 exposes accessible ebook navigation and keyboard page turns', async ({ page }) => {
+test('reader exposes accessible ebook navigation and keyboard page turns', async ({ page }) => {
   await loadSavedPage(page, 10);
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-reader-wave', '6');
   const surface = page.getByTestId('reader-surface');
-  await expect(surface).toHaveAttribute('data-reader-wave', '6');
   await expect(surface).toHaveAttribute('role', 'region');
   await expect(surface).toHaveAttribute('aria-describedby', 'reader-instructions');
+  await expect(surface).toHaveAttribute('aria-label', /página 10 de 249/i);
 
   await page.keyboard.press('ArrowRight');
   await expect(page.getByTestId('page-counter')).toHaveText('11 / 249');
@@ -24,12 +23,11 @@ test('wave 6 exposes accessible ebook navigation and keyboard page turns', async
   await expect(page.getByTestId('page-counter')).toHaveText('10 / 249');
 });
 
-test('wave 6 edge click and drag both turn pages without breaking persistence', async ({ page }) => {
+test('edge click and drag both turn pages without breaking persistence', async ({ page }) => {
   await loadSavedPage(page, 20);
   const surface = page.getByTestId('reader-surface');
   const box = await surface.boundingBox();
   expect(box).toBeTruthy();
-
   await surface.click({ position: { x: box!.width - 3, y: Math.min(120, box!.height / 3) } });
   await expect(page.getByTestId('page-counter')).toHaveText('21 / 249');
 
@@ -43,16 +41,14 @@ test('wave 6 edge click and drag both turn pages without breaking persistence', 
   await expect(surface).toHaveAttribute('data-dragging', 'true');
   await page.mouse.up();
   await expect(page.getByTestId('page-counter')).toHaveText('22 / 249');
-
   await page.reload({ waitUntil: 'networkidle' });
   await expect(page.getByTestId('page-counter')).toHaveText('22 / 249');
 });
 
-test('wave 6 preserves editing controls and narrow mobile layout', async ({ page }) => {
+test('reader preserves controls and narrow mobile layout', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 740 });
   await loadSavedPage(page, 54);
   await expect(page.getByTestId('video-resource')).toHaveCount(1);
-
   await page.getByRole('button', { name: 'Pesquisar' }).click();
   const search = page.locator('input.search');
   await search.fill('sistema');
