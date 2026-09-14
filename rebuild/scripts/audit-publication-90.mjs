@@ -25,6 +25,7 @@ for(let chapter=1;chapter<=34;chapter+=1){
   add(`Capítulo ${chapter}: quiz íntegro`,quiz?.questions?.length===5&&quiz.questions.every(question=>question.choices?.length===4&&question.choices.filter(choice=>choice.correct).length===1));
 }
 
+const allBlocks=semantic.pages.flatMap(page=>page.blocks??[]);
 const allText=norm(semantic.pages.flatMap(page=>[page.title,...(page.blocks??[]).map(block=>block.text)]).join('\n'));
 const pageSet=new Set(semantic.pages.map(page=>page.number));
 const resources=enrichment.chapters.map(item=>item.resource);
@@ -36,7 +37,7 @@ const globalChecks=[
   ['34 quizzes',quizzes.chapters?.length===34],
   ['34 enriquecimentos',enrichment.chapters?.length===34],
   ['Sem revisão cumulativa',!allText.includes('REVISAO CUMULATIVA')],
-  ['Sem cenário',!/(^|\s)CENARIO(S)?\b/u.test(allText)],
+  ['Sem seção rotulada cenário',!allBlocks.some(block=>block.kind==='case'||/^CENARIO\b/u.test(norm(block.text)))],
   ['Sem caso de transferência',!allText.includes('CASO DE TRANSFERENCIA')],
   ['Sem aplicação e transferência',!allText.includes('APLICACAO E TRANSFERENCIA')],
   ['Sem páginas vazias',semantic.pages.every(page=>clean(page.title)||(page.blocks??[]).some(block=>clean(block.text)))],
