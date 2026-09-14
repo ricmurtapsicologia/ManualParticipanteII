@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "name": "Auditoria canônica 30/30 institucional/técnica",
+  "source": {
+    "artifact": "AUDITORIA_CATS_v1.0_30-30_90-90.md",
+    "auditDate": "2026-09-04",
+    "note": "Matriz recuperada da biblioteca do projeto; os nomes dos 30 controles foram preservados. Evidências e critérios de aprovação devem ser atualizados para a edição digital corrente sem alterar a identidade dos testes."
+  },
+  "controls": [
+    { "id": 1, "name": "Smoke test" },
+    { "id": 2, "name": "Pinpoint audit" },
+    { "id": 3, "name": "Deep audit" },
+    { "id": 4, "name": "Consistency test" },
+    { "id": 5, "name": "Contradiction scan" },
+    { "id": 6, "name": "Completeness audit" },
+    { "id": 7, "name": "Traceability audit" },
+    { "id": 8, "name": "Compliance test" },
+    { "id": 9, "name": "Regression test" },
+    { "id": 10, "name": "Change-impact analysis" },
+    { "id": 11, "name": "Cross-reference audit" },
+    { "id": 12, "name": "Link integrity test" },
+    { "id": 13, "name": "Visual QA" },
+    { "id": 14, "name": "Accessibility audit" },
+    { "id": 15, "name": "Usability test" },
+    { "id": 16, "name": "Cognitive-load audit" },
+    { "id": 17, "name": "Narrative-flow test" },
+    { "id": 18, "name": "Red-team review" },
+    { "id": 19, "name": "Edge-case test" },
+    { "id": 20, "name": "Scenario stress test" },
+    { "id": 21, "name": "Fact-check audit" },
+    { "id": 22, "name": "Citation audit" },
+    { "id": 23, "name": "Source-to-claim test" },
+    { "id": 24, "name": "Legal defensibility test" },
+    { "id": 25, "name": "Decision-readiness test" },
+    { "id": 26, "name": "Publication preflight" },
+    { "id": 27, "name": "Version-drift audit" },
+    { "id": 28, "name": "Canonical-template test" },
+    { "id": 29, "name": "Duplication/redundancy scan" },
+    { "id": 30, "name": "Terminology audit" }
+  ]
+}
