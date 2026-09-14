@@ -7,8 +7,8 @@ const root = path.resolve(here, '..');
 const semanticPath = path.join(root, 'content', 'semantic-pages.json');
 const artifact = JSON.parse(fs.readFileSync(semanticPath, 'utf8'));
 
-if (artifact.runtimeEditorial?.wave === '7.2') {
-  console.log('EDITORIAL_WAVE7_APPLY_OK wave=7.2 already-applied=true');
+if (['7.2', '7.10'].includes(artifact.runtimeEditorial?.wave)) {
+  console.log(`EDITORIAL_WAVE7_APPLY_OK wave=${artifact.runtimeEditorial.wave} already-applied=true`);
   process.exit(0);
 }
 
