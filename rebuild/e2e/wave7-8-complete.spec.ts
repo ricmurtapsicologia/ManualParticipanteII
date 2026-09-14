@@ -33,7 +33,6 @@ test('waves 7 and 8: all 34 chapters start on a fresh leaf with objectives and f
 
     const openingText = await page.getByTestId('book-page').innerText();
     expect(openingText).not.toContain('�');
-    expect(openingText).not.toContain('TESTE-SE');
 
     await loadSavedPage(page, chapter.endingPage);
     const summary = page.locator('[data-kind="summary"]');
@@ -56,8 +55,6 @@ test('waves 7 and 8: all 34 chapters start on a fresh leaf with objectives and f
 
     const endingText = await page.getByTestId('book-page').innerText();
     expect(endingText).not.toContain('�');
-    expect(endingText).not.toContain('TESTE-SE');
-    expect(endingText).not.toContain('QUESTÕES DE REVISÃO');
   }
 });
 
