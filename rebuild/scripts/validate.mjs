@@ -42,7 +42,9 @@ if (!ttsSurface.includes('Antônio')) fail('Antonio voice preference missing');
 if (!/pt-BR/i.test(ttsSurface)) fail('pt-BR fallback missing');
 if (!/data-page-count=\{pages\.length\}/.test(pageSource)) fail('Stable page-count runtime contract missing');
 if (!/data-wave="8"/.test(pageSource)) fail('Wave 8 runtime marker missing');
-if (!/data-editorial-wave="13"/.test(pageSource)) fail('Wave 13 editorial marker missing');
+if (!/data-editorial-wave="7"/.test(pageSource)) fail('Wave 7 editorial completion marker missing');
+if (!/data-design-wave="8"/.test(pageSource)) fail('Wave 8 design completion marker missing');
+if (!/data-wave78-status="complete"/.test(pageSource)) fail('Wave 7/8 completion status missing');
 if (!pageSource.includes('navigationData') || !pageSource.includes('hierarchical-toc')) fail('Hierarchical navigation contract missing from reader');
 const executableSurface = pageSource + wave54Source + css;
 if (/cdn\.jsdelivr\.net|https?:\/\/[^'"\s]*jsdelivr/i.test(executableSurface)) fail('jsDelivr dependency detected');
@@ -54,4 +56,4 @@ if (deployContract.expected?.pages !== 249 || deployContract.expected?.environme
 if (!deployVerifier.includes("health.deployment?.branch !== 'main'")) fail('Remote verifier main-branch gate missing');
 if (!deployVerifier.includes("health.deployment?.environment !== 'production'")) fail('Remote verifier production gate missing');
 
-console.log(`VALIDATE_OK pages=249 legacy-prefix=155 recovered-tail=94 source=${SOURCE_SHA256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok vercel-proof=armed editorial-wave=13 navigation=hierarchical`);
+console.log(`VALIDATE_OK pages=249 legacy-prefix=155 recovered-tail=94 source=${SOURCE_SHA256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok vercel-proof=armed editorial-wave=7 design-wave=8 navigation=hierarchical`);
