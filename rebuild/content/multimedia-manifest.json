@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "wave": "5.5",
+  "wave": "5.6",
   "policy": {
     "sourceTextFrozen": true,
     "accessibilityRequired": true,
@@ -70,6 +70,95 @@
       "preferredVoice": "Antônio",
       "fallbackLang": "pt-BR",
       "transcript": "Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único. Enquanto uma pessoa está em crise, a equipe precisa proteger a cena, compreender o que está acontecendo, coordenar recursos, comunicar-se com cuidado, manejar incerteza e preparar a continuidade do cuidado. O Curso de Atendimento a Tentativas de Suicídio (CATS) existe para transformar esse conjunto de exigências em desempenho profissional organizado. O objetivo não é ensinar uma coleção de frases ou técnicas isoladas, mas formar um raciocínio que possa ser usado quando a cena muda, quando a informação é incompleta e quando o tempo exerce pressão."
+    },
+    {
+      "id": "audio-approach-boundary-p101",
+      "kind": "audio",
+      "pageNumber": 101,
+      "title": "Aproximação e limite relacional",
+      "src": "native://speech-synthesis",
+      "sourceBlockId": "p101-b3",
+      "preferredVoice": "Antônio",
+      "fallbackLang": "pt-BR",
+      "transcript": "André consegue estabelecer contato visual com Helena a distância. Ela olha rapidamente e volta a observar o trânsito abaixo. Quando ele avança alguns passos, ela diz: “fica aí”. O que parece uma ordem simples é também informação: Helena percebeu a aproximação, está comunicando limite e ainda não rompeu o canal."
+    },
+    {
+      "id": "audio-vertical-attention-p152",
+      "kind": "audio",
+      "pageNumber": 152,
+      "title": "Ambiente vertical • atenção",
+      "src": "native://speech-synthesis",
+      "sourceBlockId": "p152-b3",
+      "preferredVoice": "Antônio",
+      "fallbackLang": "pt-BR",
+      "transcript": "Em ambientes verticais, evite raciocínio do tipo “já fizemos assim em outra ponte”. Estruturas, energia, altura, acesso e riscos mudam. A solução deve ser validada para a cena atual."
+    },
+    {
+      "id": "audio-violence-high-impact-p185",
+      "kind": "audio",
+      "pageNumber": 185,
+      "title": "Violência doméstica • decisão e proteção",
+      "src": "native://speech-synthesis",
+      "sourceBlockId": "p185-b4",
+      "preferredVoice": "Antônio",
+      "fallbackLang": "pt-BR",
+      "transcript": "A fala de Paula é informação de alto impacto. O parceiro deve permanecer fora do espaço crítico; equipe coleta histórico de violência e aciona segurança/rede apropriada; o abordador valida medo e não promete reconciliação. Qualquer participação futura dependeria de avaliação de risco e desejo de Paula, não da insistência do companheiro."
+    },
+    {
+      "id": "microlearning-observable-language-p217",
+      "kind": "microlearning",
+      "pageNumber": 217,
+      "title": "Linguagem observável",
+      "sourceBlockId": "p217-b4",
+      "prompt": "Por que descrever comportamentos observáveis costuma ser superior a usar rótulos diagnósticos na comunicação operacional?",
+      "choices": [
+        { "id": "auditable", "label": "mais auditáveis e compartilháveis", "correct": true },
+        { "id": "labels", "label": "rótulos diagnósticos", "correct": false },
+        { "id": "diagnosis", "label": "diagnóstico clínico", "correct": false }
+      ],
+      "reveal": "Descrições observáveis são mais auditáveis e compartilháveis, reduzem inferências precipitadas e mantêm o bombeiro no seu escopo operacional sem depender de diagnóstico clínico."
+    },
+    {
+      "id": "microlearning-validation-p219",
+      "kind": "microlearning",
+      "pageNumber": 219,
+      "title": "Validar sem endossar",
+      "sourceBlockId": "p219-b1",
+      "prompt": "Qual é a diferença entre validar sofrimento e concordar com a conclusão suicida?",
+      "choices": [
+        { "id": "recognize", "label": "reconhecer a experiência e a emoção comunicadas como compreensíveis naquele contexto", "correct": true },
+        { "id": "endorse", "label": "endossar a conclusão de que morrer é a solução", "correct": false },
+        { "id": "confirm", "label": "confirmar ou apoiar essa decisão", "correct": false }
+      ],
+      "reveal": "Validar sofrimento é reconhecer a experiência e a emoção comunicadas como compreensíveis naquele contexto, sem endossar a conclusão de que morrer é a solução."
+    },
+    {
+      "id": "microlearning-remote-judgment-p220",
+      "kind": "microlearning",
+      "pageNumber": 220,
+      "title": "Julgamento remoto e averiguação",
+      "sourceBlockId": "p220-b3",
+      "prompt": "Por que o chamado de tentativa de suicídio não deve ser descartado apenas por julgamento remoto sobre sua “seriedade”?",
+      "choices": [
+        { "id": "verify", "label": "averiguação, segurança e avaliação no local", "correct": true },
+        { "id": "remote", "label": "julgamento remoto", "correct": false },
+        { "id": "caller", "label": "interpretações do solicitante", "correct": false }
+      ],
+      "reveal": "Porque informação remota é incompleta e interpretações do solicitante não substituem verificação da situação."
+    },
+    {
+      "id": "microlearning-command-handover-p221",
+      "kind": "microlearning",
+      "pageNumber": 221,
+      "title": "Passagem de comando útil",
+      "sourceBlockId": "p221-b4",
+      "prompt": "O que diferencia passagem de comando informativa de uma passagem realmente útil para decisão?",
+      "choices": [
+        { "id": "organize", "label": "organiza situação atual, riscos, linha operacional em curso, resposta do tentante, ações já realizadas, funções, recursos, apoios e prioridades", "correct": true },
+        { "id": "noise", "label": "Rótulos e detalhes sem efeito decisório", "correct": false },
+        { "id": "facts", "label": "apenas relata fatos", "correct": false }
+      ],
+      "reveal": "A passagem útil não apenas relata fatos: organiza situação atual, riscos, linha operacional em curso, resposta do tentante, ações já realizadas, funções, recursos, apoios e prioridades que exigem reavaliação pelo novo comandante."
     }
   ]
 }
