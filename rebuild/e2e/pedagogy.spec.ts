@@ -12,7 +12,7 @@ test('pedagogical blocks render as DS2 components without text loss', async ({ p
   await expect(opening).toHaveAttribute('data-kind', 'opening');
   await expect(opening).toContainText('Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único.');
 
-  const objectives = page.getByTestId('pedagogical-box').filter({ has: page.getByText('O que você deverá conseguir fazer', { exact: true }) });
+  const objectives = page.getByTestId('pedagogical-box').filter({ has: page.getByText('OBJETIVOS DO CAPÍTULO', { exact: true }) });
   await expect(objectives).toHaveAttribute('data-kind', 'objectives');
   await expect(objectives.locator('[data-kind="list-item"]')).toHaveCount(5);
 
