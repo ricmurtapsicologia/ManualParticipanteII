@@ -1,0 +1,69 @@
+name: Editorial Publication 3-Layer Gate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'rebuild/**'
+      - '.github/workflows/editorial-publication-pr.yml'
+  workflow_dispatch:
+
+jobs:
+  publication-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: rebuild
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: rebuild/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Layer 1 — editorial and semantic audit
+        run: node scripts/audit-publication-3layer.mjs
+
+      - name: Build production application
+        run: npm run build
+
+      - name: Smoke test
+        run: npm run smoke
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Start production server
+        run: |
+          npm run start -- -p 3310 > /tmp/cats-publication-server.log 2>&1 &
+          echo $! > /tmp/cats-publication-server.pid
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3310/api/health >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/cats-publication-server.log
+          exit 1
+
+      - name: Layer 2 and 3 — PDF runtime and reader integration
+        env:
+          BASE_URL: http://127.0.0.1:3310
+        run: node scripts/audit-publication-3layer.mjs
+
+      - name: E2E desktop and mobile
+        env:
+          E2E_BASE_URL: http://127.0.0.1:3310
+        run: npm run e2e:final
+
+      - name: Stop production server
+        if: always()
+        run: |
+          if [ -f /tmp/cats-publication-server.pid ]; then kill $(cat /tmp/cats-publication-server.pid) || true; fi
+          if [ -f /tmp/cats-publication-server.log ]; then tail -80 /tmp/cats-publication-server.log; fi
