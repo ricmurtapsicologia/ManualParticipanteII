@@ -38,10 +38,21 @@ A Onda 5 enriquece o Manual do Participante CATS sem alterar o corpus textual ca
 - O vídeo complementa o infográfico e o texto canônico; não substitui nenhum deles e não introduz doutrina nova.
 - A versão nativa é deliberadamente reversível e funciona sem ativo MP4 externo. Um arquivo de vídeo institucional poderá substituir o renderer no futuro mantendo o mesmo contrato de `id`, página e transcrição.
 
+## Subonda 5.6 — distribuição seletiva e aprendizagem ativa
+
+A 5.6 não transforma o manual em uma sequência de widgets. A distribuição é deliberadamente seletiva e usa somente trechos já existentes no corpus canônico.
+
+- Áudio acessível é expandido para três pontos de alta utilidade didática: página 101 (`p101-b3`, aproximação e limite relacional), página 152 (`p152-b3`, atenção em ambiente vertical) e página 185 (`p185-b4`, decisão e proteção em contexto de violência doméstica).
+- Cada novo áudio usa `native://speech-synthesis`, transcrição idêntica ao bloco-fonte, preferência por Antônio e fallback `pt-BR`.
+- Aprendizagem ativa é expandida na seção de consolidação por quatro microlearnings fonte-rastreados: páginas 217, 219, 220 e 221.
+- Cada microlearning reutiliza pergunta, alternativas textuais e resposta orientadora contidas no mesmo bloco canônico. Não há criação de doutrina, resposta clínica nova ou síntese externa ao manual.
+- A distribuição mantém densidade baixa: não se adicionam recursos a todas as páginas; os pontos escolhidos representam comunicação observável, validação sem endosso, julgamento remoto/averiguação e passagem de comando útil.
+- A subonda não adiciona novo vídeo, infográfico externo ou dependência de CDN.
+
 ## Gate para cada subonda
 
 Executar migração semântica, validação semântica, geração/validação da navegação, `multimedia:validate`, validação geral, build, smoke e E2E desktop/mobile. A promoção ao `main` só ocorre com todos os gates verdes e diff compatível com o escopo da subonda.
 
 ## Estratégia de implantação
 
-A 5.1 estabeleceu o contrato multimídia; 5.2 homologou o primeiro infográfico; 5.3 homologou o primeiro microlearning; 5.4 homologou a capa oficial e o primeiro áudio acessível; 5.5 introduz o primeiro vídeo didático incorporado. A produção permanece na última versão homologada até a conclusão dos gates da branch da subonda.
+A 5.1 estabeleceu o contrato multimídia; 5.2 homologou o primeiro infográfico; 5.3 homologou o primeiro microlearning; 5.4 homologou a capa oficial e o primeiro áudio acessível; 5.5 introduziu o primeiro vídeo didático incorporado; 5.6 distribui seletivamente áudio e recuperação ativa sem descongelar o texto-fonte. A produção permanece na última versão homologada até a conclusão dos gates da branch da subonda.
