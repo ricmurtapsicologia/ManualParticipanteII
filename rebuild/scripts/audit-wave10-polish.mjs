@@ -45,5 +45,16 @@ const manualRoute=readText('app/api/manual/route.ts');
 if(!pageSource.includes('data-testid="manual-download"')||!pageSource.includes('href="/api/manual"')) throw new Error('Wave10 polish manual download control missing');
 if(!coverSource.includes('data-testid="approved-cover"')||!coverSource.includes('CATS')) throw new Error('Wave10 polish edited cover missing');
 if(coverSource.includes('approvedCoverDataUrl')) throw new Error('Wave10 polish legacy cover still active');
-if(!manualRoute.includes('application/pdf')||!manualRoute.includes('Manual-do-Participante-CATS.pdf')) throw new Error('Wave10 polish PDF route contract missing');
-console.log(`WAVE10_POLISH_AUDIT_PASS chapters=34 chapter-sequence=1-34 numbered-headings=${numberedHeadings} resources=34 unique=34 language=pt-BR gto=excluded cover=edited manual-download=pdf`);
+
+// Camada editorial/documental: contrato do PDF e elementos de publicação.
+if(!manualRoute.includes("'Content-Type': 'application/pdf'")) throw new Error('Publication PDF content type missing');
+if(!manualRoute.includes('Manual-do-Participante-CATS-Edicao-Digital-2026.pdf')) throw new Error('Publication PDF filename missing');
+for(const token of ['buildLayout','Sumário','PROJETO EDITORIAL','Times-Roman','justify','renderFigure','INFOGRÁFICO','publication-grade-2026']){
+  if(!manualRoute.includes(token)) throw new Error(`Publication editorial contract missing: ${token}`);
+}
+for(const figure of ["'psp'","'risk'","'network'","'communication'","'crisis'","'continuity'"]){
+  if(!manualRoute.includes(figure)) throw new Error(`Publication figure family missing: ${figure}`);
+}
+if(/Pinterest|pixabay/iu.test(manualRoute)) throw new Error('Publication PDF must not depend on decorative external imagery');
+
+console.log(`WAVE10_POLISH_AUDIT_PASS chapters=34 chapter-sequence=1-34 numbered-headings=${numberedHeadings} resources=34 unique=34 language=pt-BR gto=excluded cover=edited manual-download=publication-grade-pdf figures=semantic-vector`);

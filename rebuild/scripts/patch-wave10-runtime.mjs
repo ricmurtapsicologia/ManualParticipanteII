@@ -23,4 +23,17 @@ if(source.includes(toolsBefore)) source=source.replace(toolsBefore,toolsAfter);
 if(!source.includes('data-testid="manual-download"')) throw new Error('Wave10 manual download control not installed');
 
 fs.writeFileSync(pagePath, source);
-console.log('WAVE10_RUNTIME_PATCH_OK page-label=dynamic enrichment=page-number manual-download=pdf backstage=unchanged');
+
+// Hotfix editorial: a variável `current` é atualizada por closures do paginador e o
+// TypeScript 5.9/Next 16 pode estreitá-la incorretamente para `never` neste ponto.
+// A página sem abertura de capítulo deve exibir seu título sempre que ele existir;
+// a própria paginação controla continuidade e evita impacto no conteúdo.
+const manualRoutePath = path.join(root, 'app', 'api', 'manual', 'route.ts');
+let manualRoute = fs.readFileSync(manualRoutePath, 'utf8');
+const titleRendererBefore = "if (source.title && normalize(source.title) !== normalize(current?.title ?? '')) add({ kind: 'heading', text: source.title, level: 2 }, meta);";
+const titleRendererAfter = "if (source.title) add({ kind: 'heading', text: source.title, level: 2 }, meta);";
+if (manualRoute.includes(titleRendererBefore)) manualRoute = manualRoute.replace(titleRendererBefore, titleRendererAfter);
+if (!manualRoute.includes(titleRendererAfter)) throw new Error('Publication PDF title renderer hotfix not installed');
+fs.writeFileSync(manualRoutePath, manualRoute);
+
+console.log('WAVE10_RUNTIME_PATCH_OK page-label=dynamic enrichment=page-number manual-download=pdf publication-title-renderer=stable backstage=unchanged');

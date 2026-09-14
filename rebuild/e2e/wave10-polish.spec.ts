@@ -15,7 +15,15 @@ async function loadSavedPage(page:Page,pageNumber:number){
   await expect(page.getByTestId('reader-surface')).toHaveAttribute('data-turn-direction','idle');
 }
 
-test('cover is edited and manual PDF has a dedicated download control',async({page,request})=>{
+function decodePdfHexText(buffer:Buffer){
+  const raw=buffer.toString('latin1');
+  const chunks=[...raw.matchAll(/<([0-9A-F]{4,})>/g)].map(match=>{
+    try{return Buffer.from(match[1],'hex').toString('latin1')}catch{return ''}
+  });
+  return {raw,text:chunks.join('\n')};
+}
+
+test('cover is edited and publication-grade manual PDF has a dedicated download control',async({page,request})=>{
   await loadSavedPage(page,1);
   await expect(page.getByTestId('approved-cover')).toHaveCount(1);
   const art=page.getByTestId('approved-cover-image');
@@ -30,10 +38,17 @@ test('cover is edited and manual PDF has a dedicated download control',async({pa
   const response=await request.get('/api/manual');
   expect(response.status()).toBe(200);
   expect(response.headers()['content-type']).toContain('application/pdf');
-  expect(response.headers()['content-disposition']).toContain('Manual-do-Participante-CATS.pdf');
+  expect(response.headers()['content-disposition']).toContain('Manual-do-Participante-CATS-Edicao-Digital-2026.pdf');
+  expect(response.headers()['x-cats-editorial-edition']).toBe('publication-grade-2026');
   const body=await response.body();
-  expect(body.length).toBeGreaterThan(50000);
+  expect(body.length).toBeGreaterThan(100000);
   expect(body.subarray(0,8).toString('latin1')).toContain('%PDF-1.4');
+  const decoded=decodePdfHexText(body);
+  expect((decoded.raw.match(/\/Type \/Page\b/g)||[]).length).toBeGreaterThan(80);
+  expect(decoded.text).toContain('Manual do Participante CATS');
+  expect(decoded.text).toContain('Sumário');
+  expect(decoded.text).toContain('PROJETO EDITORIAL');
+  expect((decoded.raw.match(/\sTw\s/g)||[]).length).toBeGreaterThan(100);
 });
 
 test('all 34 chapter resources are unique, written, Portuguese and never point to GTO',async({page})=>{
