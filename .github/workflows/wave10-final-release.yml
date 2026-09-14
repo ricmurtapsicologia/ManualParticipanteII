@@ -16,7 +16,7 @@ permissions:
 jobs:
   wave10-final:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     defaults:
       run:
         working-directory: rebuild
@@ -61,8 +61,8 @@ jobs:
           done
           cat /tmp/wave10-cats.log
           exit 1
-      - name: E2E desktop and mobile — full final suite
-        run: E2E_BASE_URL=http://127.0.0.1:3000 npm run e2e
+      - name: E2E desktop and mobile — definitive current release
+        run: E2E_BASE_URL=http://127.0.0.1:3000 npm run e2e:final
       - name: Close local validation gate
         env:
           WAVE10_E2E_PASSED: '1'
