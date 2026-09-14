@@ -47,7 +47,65 @@
       "type": "didactic-map",
       "status": "open",
       "observation": "O mapa do manual aparece comprimido em texto corrido com setas e enumeração, devendo ser reestruturado editorialmente e encaminhado à Onda 8 para tratamento visual."
+    },
+    {
+      "id": "w7-batch71-cross-page-sentence-fragmentation",
+      "pages": [8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 20, 25],
+      "severity": "high",
+      "type": "page-continuity",
+      "status": "open",
+      "observation": "Há múltiplas quebras de frase ou parágrafo entre páginas consecutivas. Em leitor de uma página por vez, a continuidade fica dependente da virada e reduz a autonomia semântica da página."
+    },
+    {
+      "id": "w7-batch71-opening-title-subtitle-merge",
+      "pages": [8, 16, 22],
+      "severity": "medium",
+      "type": "heading-hierarchy",
+      "status": "open",
+      "observation": "Aberturas de capítulo unem título e subtítulo no mesmo bloco textual, reduzindo a distinção hierárquica."
+    },
+    {
+      "id": "w7-p24-section-heading-fragmentation",
+      "pages": [24],
+      "severity": "high",
+      "type": "heading-fragmentation",
+      "status": "open",
+      "observation": "O título 'Violência autoprovocada notificada não é igual a suicídio consumado' está quebrado entre o bloco de heading e o início do parágrafo seguinte."
+    },
+    {
+      "id": "w7-batch71-assessment-line-fragmentation",
+      "pages": [14, 15, 20],
+      "severity": "medium",
+      "type": "assessment-readability",
+      "status": "open",
+      "observation": "Itens TESTE-SE aparecem quebrados em múltiplos blocos/linhas, o que prejudica leitura contínua e futura interatividade."
     }
   ],
-  "reviewedPages": []
+  "reviewedPages": [
+    { "pageNumber": 1, "status": "approved", "note": "Capa: sem pendência editorial textual no lote 7.1." },
+    { "pageNumber": 2, "status": "approved", "note": "Créditos: estrutura editorial íntegra; atualização nominal institucional permanece fora do escopo desta revisão textual." },
+    { "pageNumber": 3, "status": "requires-content-change", "note": "Separar heading inicial do corpo e preservar os marcadores pedagógicos." },
+    { "pageNumber": 4, "status": "requires-content-change", "note": "Reestruturar hierarquia/lista e remover quebra de conteúdo para a página 5." },
+    { "pageNumber": 5, "status": "requires-content-change", "note": "Página órfã composta por continuação de frase; requer reflow editorial." },
+    { "pageNumber": 6, "status": "requires-content-change", "note": "Mapa do manual precisa de estrutura textual legível; visual detalhado fica para Onda 8." },
+    { "pageNumber": 7, "status": "approved", "note": "Abertura da Parte 1 editorialmente coerente." },
+    { "pageNumber": 8, "status": "requires-content-change", "note": "Separar título/subtítulo e evitar quebra do parágrafo final para a página 9." },
+    { "pageNumber": 9, "status": "requires-content-change", "note": "Inicia como continuação de página anterior; requer reflow." },
+    { "pageNumber": 10, "status": "approved", "note": "Conteúdo editorialmente coeso no primeiro passe." },
+    { "pageNumber": 11, "status": "requires-content-change", "note": "Bloco ATENÇÃO termina no meio da formulação e continua na página 12." },
+    { "pageNumber": 12, "status": "requires-content-change", "note": "Começa como continuação do box anterior; requer reflow." },
+    { "pageNumber": 13, "status": "requires-content-change", "note": "Laboratório termina no meio da frase e continua na página 14." },
+    { "pageNumber": 14, "status": "requires-content-change", "note": "Começa como continuação e TESTE-SE possui itens fragmentados." },
+    { "pageNumber": 15, "status": "requires-content-change", "note": "Continuação do TESTE-SE deve ser recomposta em itens integrais." },
+    { "pageNumber": 16, "status": "requires-content-change", "note": "Título/subtítulo fundidos e parágrafo final continua na página 17." },
+    { "pageNumber": 17, "status": "requires-content-change", "note": "Começa e termina com continuações de frase entre páginas." },
+    { "pageNumber": 18, "status": "requires-content-change", "note": "Começa e termina com continuações de frase entre páginas." },
+    { "pageNumber": 19, "status": "requires-content-change", "note": "Começa como continuação e laboratório termina na página seguinte." },
+    { "pageNumber": 20, "status": "requires-content-change", "note": "Começa como continuação e itens TESTE-SE estão fragmentados." },
+    { "pageNumber": 21, "status": "approved", "note": "Página de aplicação e transferência editorialmente íntegra no primeiro passe." },
+    { "pageNumber": 22, "status": "requires-content-change", "note": "Separar título e subtítulo da abertura do capítulo." },
+    { "pageNumber": 23, "status": "approved", "note": "Dados e explicação mantêm unidade editorial no primeiro passe." },
+    { "pageNumber": 24, "status": "requires-content-change", "note": "Recompor heading 'suicídio consumado' e reduzir fragmentação interna de parágrafos." },
+    { "pageNumber": 25, "status": "requires-content-change", "note": "Parágrafo final termina no meio da frase e continua na página 26." }
+  ]
 }
