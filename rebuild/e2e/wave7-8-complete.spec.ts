@@ -11,6 +11,7 @@ async function loadSavedPage(page: Page, pageNumber: number) {
   await page.evaluate(number => localStorage.setItem('cats-rebuild-page', String(number - 1)), pageNumber);
   await page.reload({ waitUntil: 'networkidle' });
   await expect(page.getByTestId('page-counter')).toHaveText(`${pageNumber} / 249`);
+  await expect(page.getByTestId('reader-surface')).toHaveAttribute('data-turn-direction', 'idle');
 }
 
 test('waves 7 and 8 E2E every written leaf, all chapter starts, objectives, summaries and 5x4 quizzes', async ({ page }) => {
@@ -27,6 +28,7 @@ test('waves 7 and 8 E2E every written leaf, all chapter starts, objectives, summ
 
   for (let pageNumber = 1; pageNumber <= 249; pageNumber += 1) {
     await expect(page.getByTestId('page-counter')).toHaveText(`${pageNumber} / 249`);
+    await expect(page.getByTestId('reader-surface')).toHaveAttribute('data-turn-direction', 'idle');
     const paper = page.getByTestId('book-page');
     const text = (await paper.innerText()).trim();
     expect(text.length, `page ${pageNumber} must have written content`).toBeGreaterThan(10);
