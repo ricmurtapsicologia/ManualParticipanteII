@@ -164,7 +164,7 @@ export default function Home() {
   const currentPartNumber = currentPart?.part ?? null;
   const currentChapter = currentPart?.chapters.find(chapter => chapter.pageNumbers.includes(currentPageNumber)) ?? null;
   const pageMedia = multimedia.resources.filter(resource => resource.pageNumber === currentPageNumber);
-  const currentQuiz = currentChapter ? quizzes.chapters.find(item => item.chapter === currentChapter.chapter && item.endingPage === currentPageNumber) ?? null : null;
+  const currentQuiz = quizzes.chapters.find(item => item.endingPage === currentPageNumber) ?? null;
 
   useEffect(() => { const saved = Number(localStorage.getItem('cats-rebuild-page')); if (Number.isInteger(saved) && saved >= 0 && saved < pages.length) setPage(saved); }, []);
   useEffect(() => { localStorage.setItem('cats-rebuild-page', String(page)); }, [page]);
