@@ -7,7 +7,6 @@ const wave54Source = await readFile(new URL('../app/wave54.tsx', import.meta.url
 const css = await readFile(new URL('../app/globals.css', import.meta.url), 'utf8');
 const health = await readFile(new URL('../app/api/health/route.ts', import.meta.url), 'utf8');
 const deployContract = JSON.parse(await readFile(new URL('../deployment-contract.json', import.meta.url), 'utf8'));
-const deployVerifier = await readFile(new URL('./verify-deployment.mjs', import.meta.url), 'utf8');
 
 const SOURCE_SHA256 = '892511fd392b8a3cbca876803244e3297c683f214f79f44823a3e29ff56e6be8';
 const PDF_SHA256 = '7a8d9a0a0614e18af812ffe1c172b48a87e609b66ec8631eec15cb1ea15becbb';
@@ -41,19 +40,15 @@ const ttsSurface = `${pageSource}\n${wave54Source}`;
 if (!ttsSurface.includes('Antônio')) fail('Antonio voice preference missing');
 if (!/pt-BR/i.test(ttsSurface)) fail('pt-BR fallback missing');
 if (!/data-page-count=\{pages\.length\}/.test(pageSource)) fail('Stable page-count runtime contract missing');
-if (!/data-wave="8"/.test(pageSource)) fail('Wave 8 runtime marker missing');
-if (!/data-editorial-wave="7"/.test(pageSource)) fail('Wave 7 editorial completion marker missing');
-if (!/data-design-wave="8"/.test(pageSource)) fail('Wave 8 design completion marker missing');
-if (!/data-wave78-status="complete"/.test(pageSource)) fail('Wave 7/8 completion status missing');
+if (!/data-product="manual-participante-cats"/.test(pageSource)) fail('Stable product marker missing');
+if (/data-(?:wave|editorial-wave|design-wave|wave78-status|reader-wave)=/.test(pageSource)) fail('Internal release marker exposed in frontend');
 if (!pageSource.includes('navigationData') || !pageSource.includes('hierarchical-toc')) fail('Hierarchical navigation contract missing from reader');
 const executableSurface = pageSource + wave54Source + css;
 if (/cdn\.jsdelivr\.net|https?:\/\/[^'"\s]*jsdelivr/i.test(executableSurface)) fail('jsDelivr dependency detected');
-if (!/status:\s*'ok'/.test(health) || !/pages:\s*249/.test(health) || !/wave:\s*8/.test(health)) fail('Health contract mismatch');
-for (const envName of ['VERCEL_ENV', 'VERCEL_GIT_COMMIT_REF', 'VERCEL_GIT_COMMIT_SHA']) if (!health.includes(envName)) fail(`Health deployment proof missing ${envName}`);
+if (!/status:\s*'ok'/.test(health) || !/pages:\s*249/.test(health) || !/release:\s*'1\.0\.0'/.test(health)) fail('Health contract mismatch');
+if (/\b(?:wave|architecture|corpus|branch|commit)\s*:/i.test(health)) fail('Public health exposes internal metadata');
 if (deployContract.projectName !== 'manual-participante-cats-digital') fail('Unexpected Vercel project name contract');
 if (deployContract.productionBranch !== 'main' || deployContract.rootDirectory !== 'rebuild') fail('Vercel Git/root contract mismatch');
 if (deployContract.expected?.pages !== 249 || deployContract.expected?.environment !== 'production' || deployContract.expected?.branch !== 'main') fail('Vercel expected-state contract mismatch');
-if (!deployVerifier.includes("health.deployment?.branch !== 'main'")) fail('Remote verifier main-branch gate missing');
-if (!deployVerifier.includes("health.deployment?.environment !== 'production'")) fail('Remote verifier production gate missing');
 
-console.log(`VALIDATE_OK pages=249 legacy-prefix=155 recovered-tail=94 source=${SOURCE_SHA256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok vercel-proof=armed editorial-wave=7 design-wave=8 navigation=hierarchical`);
+console.log(`VALIDATE_OK pages=249 legacy-prefix=155 recovered-tail=94 source=${SOURCE_SHA256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent public-metadata=clean navigation=hierarchical release=1.0.0`);
