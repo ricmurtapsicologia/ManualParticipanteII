@@ -60,6 +60,31 @@ for (const source of originalPages) {
 
 const numberMap = new Map();
 kept.forEach((page, index) => { numberMap.set(page.number, index + 1); page.number = index + 1; });
+const mapPages = values => (values ?? []).map(value => numberMap.get(value)).filter(Number.isInteger);
+const mapOpening = value => numberMap.get(value) ?? null;
+
+if (semantic.navigation) {
+  semantic.navigation.frontMatter = (semantic.navigation.frontMatter ?? [])
+    .map(section => {
+      const pageNumbers = mapPages(section.pageNumbers);
+      return { ...section, openingPage: pageNumbers[0] ?? mapOpening(section.openingPage), pageNumbers };
+    })
+    .filter(section => section.pageNumbers.length > 0);
+
+  semantic.navigation.parts = (semantic.navigation.parts ?? []).map(part => {
+    const openingPages = mapPages(part.openingPages);
+    const chapters = (part.chapters ?? []).map(chapter => {
+      const pageNumbers = mapPages(chapter.pageNumbers);
+      return { ...chapter, openingPage: pageNumbers[0] ?? mapOpening(chapter.openingPage), pageNumbers };
+    }).filter(chapter => chapter.pageNumbers.length > 0);
+    const supplementarySections = (part.supplementarySections ?? []).map(section => {
+      const pageNumbers = mapPages(section.pageNumbers);
+      return { ...section, openingPage: pageNumbers[0] ?? mapOpening(section.openingPage), pageNumbers };
+    }).filter(section => section.pageNumbers.length > 0);
+    return { ...part, openingPages, chapters, supplementarySections };
+  });
+}
+
 semantic.pages = kept;
 semantic.manifest = { ...(semantic.manifest ?? {}), pageCount: kept.length };
 semantic.runtimeEditorial = {
@@ -104,4 +129,4 @@ addInfographic(32, 'cats-psp-flow', 'Primeiros Socorros Psicológicos • sequê
 
 write('semantic-pages.json', semantic);
 write('multimedia-manifest.json', multimedia);
-console.log(`PUBLICATION_CONTENT_HOTFIX_OK pages=${oldCount}->${kept.length} removed=${removedOldNumbers.length} review=removed scenario=removed tactical=regular video=0 infographics=${multimedia.resources.filter(r=>r.kind==='infographic').length}`);
+console.log(`PUBLICATION_CONTENT_HOTFIX_OK pages=${oldCount}->${kept.length} removed=${removedOldNumbers.length} review=removed scenario=removed tactical=regular video=0 infographics=${multimedia.resources.filter(r=>r.kind==='infographic').length} navigation=remapped`);
