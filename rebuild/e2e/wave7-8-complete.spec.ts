@@ -14,17 +14,15 @@ async function loadSavedPage(page: Page, pageNumber: number) {
   await expect(page.getByTestId('reader-surface')).toHaveAttribute('data-turn-direction', 'idle');
 }
 
-test('waves 7 and 8 E2E every written leaf, all chapter starts, objectives, summaries and 5x4 quizzes', async ({ page }) => {
-  test.setTimeout(240_000);
+test('waves 7 and 8 remain intact across every written leaf, chapter opening, summary and 5x4 assessment', async ({ page }) => {
+  test.setTimeout(300_000);
   expect(quizData.chapters).toHaveLength(34);
   const openings = new Map(quizData.chapters.map(chapter => [chapter.openingPage, chapter]));
   const endings = new Map(quizData.chapters.map(chapter => [chapter.endingPage, chapter]));
   expect(new Set(quizData.chapters.map(chapter => chapter.openingPage)).size).toBe(34);
 
   await loadSavedPage(page, 1);
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-editorial-wave', '7');
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-design-wave', '8');
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-wave78-status', 'complete');
+  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-page-count', '249');
 
   for (let pageNumber = 1; pageNumber <= 249; pageNumber += 1) {
     await expect(page.getByTestId('page-counter')).toHaveText(`${pageNumber} / 249`);
@@ -52,29 +50,27 @@ test('waves 7 and 8 E2E every written leaf, all chapter starts, objectives, summ
       const quiz = page.getByTestId('chapter-quiz');
       await expect(quiz).toHaveCount(1);
       await expect(quiz).toHaveAttribute('data-chapter', String(endingChapter.chapter));
-      const questions = quiz.getByTestId('chapter-quiz-question');
-      await expect(questions).toHaveCount(5);
       expect(endingChapter.questions).toHaveLength(5);
       for (let index = 0; index < 5; index += 1) {
-        const question = questions.nth(index);
+        const question = quiz.getByTestId('chapter-quiz-question');
+        await expect(question).toHaveCount(1);
+        await expect(question).toHaveAttribute('data-question-index', String(index + 1));
         const choices = question.getByTestId('chapter-quiz-choice');
         await expect(choices).toHaveCount(4);
         await choices.first().click();
         await expect(question.getByTestId('chapter-quiz-feedback')).toBeVisible();
+        if (index < 4) await quiz.getByRole('button', { name: 'Próxima questão' }).click();
       }
+      await expect(quiz.getByTestId('chapter-quiz-answered')).toContainText('5 respondidas');
     }
 
-    const metrics = await page.evaluate(() => ({
-      viewportWidth: document.documentElement.clientWidth,
-      scrollWidth: document.documentElement.scrollWidth
-    }));
+    const metrics = await page.evaluate(() => ({ viewportWidth: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth }));
     expect(metrics.scrollWidth, `page ${pageNumber} must fit viewport`).toBeLessThanOrEqual(metrics.viewportWidth + 1);
-
     if (pageNumber < 249) await page.getByRole('button', { name: 'Próxima página' }).click();
   }
 });
 
-test('wave 8 typography keeps emphasis controlled on representative chapter, media and appendix leaves', async ({ page }) => {
+test('final typography keeps emphasis controlled on representative chapter, media and appendix leaves', async ({ page }) => {
   test.setTimeout(90_000);
   for (const pageNumber of [8, 54, 101, 150, 191, 217, 249]) {
     await loadSavedPage(page, pageNumber);
@@ -82,14 +78,10 @@ test('wave 8 typography keeps emphasis controlled on representative chapter, med
       const paper = document.querySelector<HTMLElement>('[data-testid="book-page"]');
       const text = paper?.innerText ?? '';
       const strongText = [...(paper?.querySelectorAll('strong') ?? [])].map(node => node.textContent ?? '').join(' ');
-      const strongWeight = paper?.querySelector('strong') ? getComputedStyle(paper.querySelector('strong') as Element).fontWeight : '0';
-      return {
-        textLength: text.length,
-        strongLength: strongText.length,
-        strongWeight
-      };
+      const weights = [...(paper?.querySelectorAll('strong') ?? [])].map(node => Number(getComputedStyle(node).fontWeight));
+      return { textLength:text.length, strongLength:strongText.length, maxWeight:Math.max(0,...weights) };
     });
-    expect(metrics.strongLength / Math.max(metrics.textLength, 1)).toBeLessThan(0.24);
-    expect(Number(metrics.strongWeight)).toBeLessThanOrEqual(650);
+    expect(metrics.strongLength / Math.max(metrics.textLength, 1)).toBeLessThan(0.22);
+    expect(metrics.maxWeight).toBeLessThanOrEqual(650);
   }
 });
