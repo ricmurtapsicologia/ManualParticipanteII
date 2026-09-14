@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { approvedCoverDataUrl } from './cover-data';
 
 export type Wave54AudioResource = {
   id: string;
@@ -28,11 +27,36 @@ export function selectPreferredVoice(preferredName = 'Antônio', fallbackLang = 
 export function ApprovedCover() {
   return (
     <figure className="wave54Cover" data-testid="approved-cover">
-      <img
-        src={approvedCoverDataUrl}
-        alt="Capa oficial do Manual do Participante CATS, com militares do Corpo de Bombeiros Militar de Minas Gerais atendendo uma pessoa em crise."
-        data-testid="approved-cover-image"
-      />
+      <svg className="wave54CoverArt" viewBox="0 0 800 1000" role="img" aria-labelledby="cats-cover-title cats-cover-desc" data-testid="approved-cover-image">
+        <title id="cats-cover-title">Capa do Manual do Participante CATS</title>
+        <desc id="cats-cover-desc">Capa institucional em verde escuro e laranja, com composição gráfica inspirada em capacete de bombeiro e foco em escuta, técnica, segurança e humanidade.</desc>
+        <defs>
+          <linearGradient id="cats-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#062f31"/><stop offset="1" stopColor="#01191b"/></linearGradient>
+          <linearGradient id="cats-glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ff7a00"/><stop offset="1" stopColor="#d95200"/></linearGradient>
+        </defs>
+        <rect width="800" height="1000" fill="url(#cats-bg)"/>
+        <rect x="0" y="0" width="800" height="16" fill="#ff7300"/>
+        <rect x="64" y="660" width="7" height="220" rx="3" fill="#ff7300"/>
+        <circle cx="650" cy="180" r="210" fill="#0a4648" opacity=".38"/>
+        <circle cx="690" cy="220" r="125" fill="#0e5557" opacity=".25"/>
+        <g opacity=".98">
+          <path d="M95 590c20-125 104-205 225-205s205 80 225 205H95Z" fill="url(#cats-glow)"/>
+          <path d="M145 590c15-92 78-151 175-151s160 59 175 151H145Z" fill="#0a2729"/>
+          <rect x="118" y="565" width="404" height="54" rx="24" fill="#101b1c"/>
+          <rect x="250" y="520" width="140" height="38" rx="12" fill="#ff7300"/>
+          <path d="M182 610h278l60 116H122l60-116Z" fill="#071d1f"/>
+          <path d="M225 622h192l30 92H195l30-92Z" fill="#0f3a3c"/>
+        </g>
+        <text x="72" y="112" fill="#ff7300" fontSize="26" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="2">CATS</text>
+        <text x="72" y="166" fill="#f4f2e9" fontSize="46" fontWeight="700" fontFamily="Arial, sans-serif">Manual do</text>
+        <text x="72" y="216" fill="#f4f2e9" fontSize="46" fontWeight="700" fontFamily="Arial, sans-serif">Participante</text>
+        <text x="72" y="266" fill="#bcd0cb" fontSize="21" fontFamily="Arial, sans-serif">Atendimento a Tentativas de Suicídio</text>
+        <line x1="72" y1="302" x2="500" y2="302" stroke="#ff7300" strokeWidth="5"/>
+        <text x="72" y="342" fill="#d9e4e1" fontSize="16" fontFamily="Arial, sans-serif" letterSpacing="2">ESCUTA  •  TÉCNICA  •  SEGURANÇA  •  HUMANIDADE</text>
+        <text x="72" y="900" fill="#f4f2e9" fontSize="18" fontWeight="700" fontFamily="Arial, sans-serif">CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS</text>
+        <text x="72" y="936" fill="#a8beb9" fontSize="15" fontFamily="Arial, sans-serif">Edição digital interativa</text>
+        <text x="700" y="936" textAnchor="end" fill="#ff7300" fontSize="18" fontWeight="700" fontFamily="Arial, sans-serif">2026</text>
+      </svg>
       <figcaption className="srOnly">Manual do Participante do Curso de Atendimento a Tentativas de Suicídio - CATS.</figcaption>
     </figure>
   );
