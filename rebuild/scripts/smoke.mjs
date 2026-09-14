@@ -16,16 +16,20 @@ async function waitFor(url, tries = 40) {
 try {
   const healthRes = await waitFor(`${base}/api/health`);
   const health = await healthRes.json();
-  if (health.status !== 'ok' || health.pages !== 249 || health.wave !== 8 || health.architecture !== 'rebuild-clean' || health.corpus !== 'canonical-hybrid-recovered') throw new Error(`Unexpected health payload: ${JSON.stringify(health)}`);
-  if (health.deployment?.platform !== 'local' || health.deployment?.environment !== 'local' || health.deployment?.branch !== 'local' || health.deployment?.commit !== 'local') throw new Error(`Unexpected local deployment proof: ${JSON.stringify(health.deployment)}`);
+  if (health.status !== 'ok' || health.pages !== 249 || health.app !== 'Manual do Participante CATS' || health.release !== '1.0.0') throw new Error(`Unexpected health payload: ${JSON.stringify(health)}`);
+  const forbiddenHealthKeys = ['wave','architecture','corpus','branch','commit'];
+  for (const key of forbiddenHealthKeys) if (Object.prototype.hasOwnProperty.call(health, key)) throw new Error(`Public health exposes internal key: ${key}`);
 
   const homeRes = await fetch(base);
   if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
   const html = await homeRes.text();
-  for (const token of ['Manual do Participante CATS', 'Edição Digital Interativa', 'data-page-count="249"', 'data-wave="8"', 'data-editorial-wave="7"', 'data-design-wave="8"', 'data-wave78-status="complete"']) {
+  for (const token of ['Manual do Participante CATS', 'Edição Digital Interativa', 'data-page-count="249"', 'data-product="manual-participante-cats"']) {
     if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
   }
-  console.log('SMOKE_OK home=200 health=200 pages=249 runtime-wave=8 editorial-wave=7 design-wave=8 wave78=complete architecture=rebuild-clean corpus=canonical-hybrid-recovered navigation=hierarchical deployment-proof=local');
+  for (const token of ['data-wave=', 'data-editorial-wave=', 'data-design-wave=', 'data-wave78-status=', 'data-reader-wave=']) {
+    if (html.includes(token)) throw new Error(`Home exposes internal marker: ${token}`);
+  }
+  console.log('SMOKE_OK home=200 health=200 pages=249 public-metadata=clean product=manual-participante-cats release=1.0.0');
 } finally {
   child.kill('SIGTERM');
   await sleep(300);
