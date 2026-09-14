@@ -17,5 +17,10 @@ const enrichmentAfter = `  const pageMicrolearning = enrichment.chapters.find(it
 if (source.includes(enrichmentBefore)) source = source.replace(enrichmentBefore, enrichmentAfter);
 if (!source.includes(enrichmentAfter)) throw new Error('Wave10 page-number enrichment rendering not installed');
 
+const toolsBefore='<div className="tools"><button onClick={speak}';
+const toolsAfter='<div className="tools"><a className="manualDownload" href="/api/manual" download="Manual-do-Participante-CATS.pdf" data-testid="manual-download" aria-label="Baixar Manual do Participante CATS em PDF">⇩ <span>Baixar PDF</span></a><button onClick={speak}';
+if(source.includes(toolsBefore)) source=source.replace(toolsBefore,toolsAfter);
+if(!source.includes('data-testid="manual-download"')) throw new Error('Wave10 manual download control not installed');
+
 fs.writeFileSync(pagePath, source);
-console.log('WAVE10_RUNTIME_PATCH_OK page-label=dynamic enrichment=page-number backstage=unchanged');
+console.log('WAVE10_RUNTIME_PATCH_OK page-label=dynamic enrichment=page-number manual-download=pdf backstage=unchanged');
