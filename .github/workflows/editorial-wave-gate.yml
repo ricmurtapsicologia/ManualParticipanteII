@@ -33,13 +33,14 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Validate semantic, navigation and multimedia contracts
+      - name: Validate semantic, navigation, multimedia and editorial contracts
         run: |
           npm run semantic:migrate
           npm run semantic:validate
           npm run navigation:build
           npm run navigation:validate
           npm run multimedia:validate
+          npm run editorial:audit
           npm run validate
       - name: Build and smoke
         run: |
