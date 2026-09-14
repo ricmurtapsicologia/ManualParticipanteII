@@ -10,7 +10,7 @@ test('page 54 exposes the source-grounded native didactic video with transcript 
   await page.goto('/', { waitUntil: 'networkidle' });
   await loadSavedPage(page, 54);
 
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-multimedia-wave', '5.5');
+  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-multimedia-wave', '5.6');
   const video = page.getByTestId('video-resource');
   await expect(video).toHaveCount(1);
   await expect(video).toHaveAttribute('data-media-id', 'video-ats-operational-flow-p54');
