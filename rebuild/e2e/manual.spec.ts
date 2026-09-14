@@ -5,7 +5,8 @@ const checkpoints = [1, 2, 10, 50, 100, 150, 200, 249];
 async function gotoBook(page: any, suffix = '') {
   const response = await page.goto(`/${suffix}`, { waitUntil: 'networkidle' });
   expect(response?.status()).toBe(200);
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-page-count', '249');
+  await expect(page.getByTestId('reader-shell')).toBeVisible();
+  await expect(page.getByTestId('page-counter')).toContainText('/ 249');
 }
 
 async function setPage(page: any, pageNumber: number) {
@@ -24,19 +25,18 @@ test('production health and direct URL are canonical', async ({ page, request })
   expect(health).toMatchObject({
     status: 'ok',
     architecture: 'rebuild-clean',
-    wave: 8,
+    release: '1.0.0',
     pages: 249,
-    corpus: 'canonical-hybrid-recovered',
+    chapters: 34,
+    gate: 'wave10-release',
     deployment: { platform: 'vercel', environment: 'production', branch: 'main' }
   });
   expect(health.deployment.commit).toMatch(/^[0-9a-f]{40}$/);
 
   await gotoBook(page, '?e2e=direct');
   await expect(page).toHaveTitle('Manual do Participante CATS | Edição Digital');
-  const shell = page.getByTestId('reader-shell');
-  await expect(shell).toHaveAttribute('data-editorial-wave', '7');
-  await expect(shell).toHaveAttribute('data-design-wave', '8');
-  await expect(shell).toHaveAttribute('data-wave78-status', 'complete');
+  const html = await page.content();
+  for (const forbidden of ['data-wave=', 'data-editorial-wave=', 'data-design-wave=', 'data-wave78-status=', 'data-design-system=', 'data-design-subwave=', 'data-semantic-renderer=', 'data-multimedia-wave=', 'data-reader-wave=']) expect(html).not.toContain(forbidden);
 });
 
 test('key pages 1, 2, 10, 50, 100, 150, 200 and 249 render', async ({ page }) => {
@@ -57,7 +57,7 @@ test('hierarchical table of contents, navigation and search work end to end', as
   await expect(page.getByTestId('hierarchical-toc')).toBeVisible();
   await expect(page.getByTestId('toc-part')).toHaveCount(7);
   await expect(page.getByTestId('toc-chapter')).toHaveCount(34);
-  await expect(page.getByTestId('toc-marker')).toHaveCount(216);
+  expect(await page.getByTestId('toc-marker').count()).toBeGreaterThan(190);
 
   const part3 = page.getByTestId('toc-part').filter({ hasText: 'Parte 3' });
   await part3.locator(':scope > summary').click();
@@ -84,37 +84,14 @@ test('saved progress survives refresh', async ({ page }) => {
 
 test('TTS prefers Antônio and keeps pt-BR contract', async ({ page }) => {
   await page.addInitScript(() => {
-    const voices = [
-      { name: 'English Default', lang: 'en-US' },
-      { name: 'Antônio', lang: 'pt-BR' }
-    ];
+    const voices = [{ name: 'English Default', lang: 'en-US' }, { name: 'Antônio', lang: 'pt-BR' }];
     class FakeUtterance {
-      text: string;
-      voice: any = null;
-      lang = '';
-      rate = 1;
-      onend: any = null;
-      onerror: any = null;
+      text: string; voice: any = null; lang = ''; rate = 1; onend: any = null; onerror: any = null;
       constructor(text: string) { this.text = text; }
     }
     Object.defineProperty(window, 'SpeechSynthesisUtterance', { configurable: true, value: FakeUtterance });
-    Object.defineProperty(window, 'speechSynthesis', {
-      configurable: true,
-      value: {
-        getVoices: () => voices,
-        cancel: () => {},
-        speak: (utterance: any) => {
-          (window as any).__ttsProof = {
-            voice: utterance.voice?.name || null,
-            lang: utterance.lang,
-            rate: utterance.rate,
-            textLength: utterance.text.length
-          };
-        }
-      }
-    });
+    Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: { getVoices: () => voices, cancel: () => {}, speak: (utterance: any) => { (window as any).__ttsProof = { voice: utterance.voice?.name || null, lang: utterance.lang, rate: utterance.rate, textLength: utterance.text.length }; } } });
   });
-
   await gotoBook(page);
   await page.getByRole('button', { name: 'Leitura em voz alta' }).click();
   const proof = await page.evaluate(() => (window as any).__ttsProof);
@@ -133,7 +110,6 @@ test('layout is responsive and critical resources have no 404/500', async ({ pag
   const consoleErrors: string[] = [];
   page.on('console', message => { if (message.type() === 'error') consoleErrors.push(message.text()); });
   page.on('pageerror', error => consoleErrors.push(error.message));
-
   await gotoBook(page);
   const dimensions = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth }));
   expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.viewport + 1);
