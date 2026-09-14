@@ -48,7 +48,7 @@ source = source
 if (!source.includes('const currentLearningResource')) {
   replaceRequired(
     "  const currentQuiz = quizzes.chapters.find(item => item.endingPage === currentPageNumber) ?? null;",
-    "  const currentQuiz = quizzes.chapters.find(item => item.endingPage === currentPageNumber) ?? null;\n  const currentLearningResource = currentChapter ? chapterResources.chapters.find(item => item.chapter === currentChapter.chapter) ?? null : null;\n  const currentChapterPages = currentChapter ? pages.filter(item => item.chapter === currentChapter.chapter) : [];\n  const objectiveBlock = currentChapterPages.flatMap(item => item.blocks).find((block, index, blocks) => block.kind === 'list-item' && index > 0 && blocks[index - 1]?.kind === 'objectives') ?? currentChapterPages.flatMap(item => item.blocks).find(block => block.kind === 'list-item') ?? null;\n  const summaryBlocks = currentChapterPages.flatMap(item => item.blocks);\n  const summaryIndex = summaryBlocks.findIndex(block => block.kind === 'summary');\n  const summaryBlock = summaryIndex >= 0 ? summaryBlocks.slice(summaryIndex + 1).find(block => block.kind === 'list-item') ?? null : null;",
+    "  const currentQuiz = quizzes.chapters.find(item => item.endingPage === currentPageNumber) ?? null;\n  const currentLearningResource = currentChapter ? chapterResources.chapters.find(item => item.chapter === currentChapter.chapter) ?? null : null;\n  const currentChapterPages = currentChapter ? pages.filter(item => item.chapter === currentChapter.chapter) : [];\n  const objectiveBlocks = currentChapterPages.flatMap(item => item.blocks);\n  const objectiveIndex = objectiveBlocks.findIndex(block => block.kind === 'objectives');\n  const objectiveBlock = objectiveIndex >= 0 ? objectiveBlocks.slice(objectiveIndex + 1).find(block => block.kind === 'list-item') ?? null : null;\n  const summaryBlocks = currentChapterPages.flatMap(item => item.blocks);\n  const summaryIndex = summaryBlocks.findIndex(block => block.kind === 'summary');\n  const summaryBlock = summaryIndex >= 0 ? summaryBlocks.slice(summaryIndex + 1).find(block => block.kind === 'list-item') ?? null : null;",
     'chapter learning state'
   );
 }
@@ -71,4 +71,17 @@ for (const pattern of forbiddenFrontendMarkers) {
 }
 
 fs.writeFileSync(pagePath, source);
-console.log('WAVE10_FRONTEND_APPLY_OK backstage-metadata=removed chapter-learning=34-capable references=styled answer-key=structured');
+
+const manualSpecPath = path.join(root, 'e2e', 'manual.spec.ts');
+let manualSpec = fs.readFileSync(manualSpecPath, 'utf8');
+manualSpec = manualSpec.replace(
+  "    architecture: 'rebuild-clean',\n    wave: 8,\n    pages: 249,\n    corpus: 'canonical-hybrid-recovered',",
+  "    pages: 249,\n    release: '2026.09',"
+);
+manualSpec = manualSpec.replace(
+  "  const shell = page.getByTestId('reader-shell');\n  await expect(shell).toHaveAttribute('data-editorial-wave', '7');\n  await expect(shell).toHaveAttribute('data-design-wave', '8');\n  await expect(shell).toHaveAttribute('data-wave78-status', 'complete');",
+  "  const shell = page.getByTestId('reader-shell');\n  await expect(shell).toHaveAttribute('data-page-count', '249');\n  await expect(shell).not.toHaveAttribute('data-wave', /.+/);\n  await expect(shell).not.toHaveAttribute('data-editorial-wave', /.+/);\n  await expect(shell).not.toHaveAttribute('data-design-wave', /.+/);"
+);
+fs.writeFileSync(manualSpecPath, manualSpec);
+
+console.log('WAVE10_FRONTEND_APPLY_OK backstage-metadata=removed chapter-learning=34-capable references=styled answer-key=structured regression=updated');
