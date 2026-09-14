@@ -6,10 +6,10 @@ export function GET() {
     status: 'ok',
     app: 'Manual do Participante CATS',
     architecture: 'rebuild-clean',
-    wave: 8,
+    release: '1.0.0',
     pages: 249,
-    corpus: 'canonical-hybrid-recovered',
-    release: '2026-09-13-wave-8',
+    chapters: 34,
+    gate: 'wave10-release',
     deployment: {
       platform: process.env.VERCEL ? 'vercel' : 'local',
       environment: process.env.VERCEL_ENV ?? 'local',
