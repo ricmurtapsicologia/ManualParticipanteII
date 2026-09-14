@@ -3356,13 +3356,13 @@
           "id": "p15-b1-w7-question-4",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "4. Dê um exemplo de informação nova que obrigaria a equipe a reiniciar o ciclo de avaliação?"
+          "text": "8. Dê um exemplo de informação nova que obrigaria a equipe a reiniciar o ciclo de avaliação?"
         },
         {
           "id": "p15-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "5. Por que o encerramento da cena não representa o fim do cuidado?"
+          "text": "9. Por que o encerramento da cena não representa o fim do cuidado?"
         },
         {
           "id": "p15-b4",
@@ -3944,7 +3944,7 @@
           "id": "p24-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "2021. A variação entre 2010 e 2021 foi de 44,9%. A média nacional,"
+          "text": "4. A variação entre 2010 e 2021 foi de 44,9%. A média nacional,"
         },
         {
           "id": "p24-b4",
@@ -3968,7 +3968,7 @@
           "id": "p24-b7-w7-complete",
           "kind": "heading",
           "sourceIndex": 6,
-          "text": "4. Violência autoprovocada notificada não é igual a suicídio consumado"
+          "text": "5. Violência autoprovocada notificada não é igual a suicídio consumado"
         },
         {
           "id": "p24-b8-w7-body",
@@ -4004,7 +4004,7 @@
           "id": "p25-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "5. Faixa etária e significado operacional"
+          "text": "6. Faixa etária e significado operacional"
         },
         {
           "id": "p25-b3-w7-join-26",
@@ -4034,7 +4034,7 @@
           "id": "p26-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "6. O problema da subnotificação e da classificação"
+          "text": "7. O problema da subnotificação e da classificação"
         },
         {
           "id": "p26-b3",
@@ -4046,7 +4046,7 @@
           "id": "p26-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "7. De dado a inteligência"
+          "text": "8. De dado a inteligência"
         },
         {
           "id": "p26-b5-w7-join-27",
@@ -4915,7 +4915,7 @@
           "id": "p42-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "1. Complexidade não significa ausência de explicação"
+          "text": "9. Complexidade não significa ausência de explicação"
         },
         {
           "id": "p42-b2",
@@ -4927,7 +4927,7 @@
           "id": "p42-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "2. Predisponente, precipitante e mantenedor"
+          "text": "10. Predisponente, precipitante e mantenedor"
         },
         {
           "id": "p42-b4",
@@ -4957,7 +4957,7 @@
           "id": "p43-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "3. Proteção também é dinâmica"
+          "text": "11. Proteção também é dinâmica"
         },
         {
           "id": "p43-b2",
@@ -4969,7 +4969,7 @@
           "id": "p43-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "4. Formulação é mapa provisório"
+          "text": "12. Formulação é mapa provisório"
         },
         {
           "id": "p43-b4",
@@ -4981,7 +4981,7 @@
           "id": "p43-b5",
           "kind": "heading",
           "sourceIndex": 4,
-          "text": "5. O valor de dizer “não sei ainda”"
+          "text": "13. O valor de dizer “não sei ainda”"
         },
         {
           "id": "p43-b6",
@@ -5011,7 +5011,7 @@
           "id": "p44-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "6. Aplicação ao caso"
+          "text": "14. Aplicação ao caso"
         },
         {
           "id": "p44-b2",
@@ -5041,7 +5041,7 @@
           "id": "p45-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "2. Percentual sem denominador pode enganar"
+          "text": "15. Percentual sem denominador pode enganar"
         },
         {
           "id": "p45-b2",
@@ -5053,7 +5053,7 @@
           "id": "p45-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "3. Notificação não é igual a incidência real"
+          "text": "16. Notificação não é igual a incidência real"
         },
         {
           "id": "p45-b4",
@@ -5065,7 +5065,7 @@
           "id": "p45-b5",
           "kind": "heading",
           "sourceIndex": 4,
-          "text": "4. Sexo, idade e método: população não é indivíduo"
+          "text": "17. Sexo, idade e método: população não é indivíduo"
         },
         {
           "id": "p45-b6",
@@ -5077,7 +5077,7 @@
           "id": "p45-b7",
           "kind": "heading",
           "sourceIndex": 6,
-          "text": "5. Série temporal e causalidade"
+          "text": "18. Série temporal e causalidade"
         },
         {
           "id": "p45-b8-w7-join-46",
@@ -5107,7 +5107,7 @@
           "id": "p46-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "6. Como transformar epidemiologia em decisão institucional"
+          "text": "19. Como transformar epidemiologia em decisão institucional"
         },
         {
           "id": "p46-b3",
@@ -5119,7 +5119,7 @@
           "id": "p46-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "7. Um pequeno checklist de leitura"
+          "text": "20. Um pequeno checklist de leitura"
         },
         {
           "id": "p46-b5",
@@ -5149,7 +5149,7 @@
           "id": "p47-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "2. Desesperança não é frase isolada"
+          "text": "21. Desesperança não é frase isolada"
         },
         {
           "id": "p47-b3",
@@ -5161,7 +5161,7 @@
           "id": "p47-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "3. Rigidez e resolução de problemas"
+          "text": "22. Rigidez e resolução de problemas"
         },
         {
           "id": "p47-b5",
@@ -5173,7 +5173,7 @@
           "id": "p47-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "4. Memória e atenção"
+          "text": "23. Memória e atenção"
         },
         {
           "id": "p47-b7",
@@ -5203,7 +5203,7 @@
           "id": "p48-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "5. O perigo do neuroverniz"
+          "text": "24. O perigo do neuroverniz"
         },
         {
           "id": "p48-b2",
@@ -5215,7 +5215,7 @@
           "id": "p48-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "6. Modelo é mapa, não fotografia"
+          "text": "25. Modelo é mapa, não fotografia"
         },
         {
           "id": "p48-b4",
@@ -5227,7 +5227,7 @@
           "id": "p48-b5",
           "kind": "heading",
           "sourceIndex": 4,
-          "text": "7. Tradução operacional"
+          "text": "26. Tradução operacional"
         },
         {
           "id": "p48-b6",
@@ -5263,7 +5263,7 @@
           "id": "p49-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "1. A pessoa em crise continua sendo sujeito"
+          "text": "27. A pessoa em crise continua sendo sujeito"
         },
         {
           "id": "p49-b3",
@@ -5275,7 +5275,7 @@
           "id": "p49-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "2. Autonomia não é absoluta nem inexistente"
+          "text": "28. Autonomia não é absoluta nem inexistente"
         },
         {
           "id": "p49-b5",
@@ -5287,7 +5287,7 @@
           "id": "p49-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "3. Privacidade é barreira de proteção"
+          "text": "29. Privacidade é barreira de proteção"
         },
         {
           "id": "p49-b7",
@@ -5299,7 +5299,7 @@
           "id": "p49-b8",
           "kind": "heading",
           "sourceIndex": 7,
-          "text": "4. Não discriminar"
+          "text": "30. Não discriminar"
         },
         {
           "id": "p49-b9",
@@ -5329,7 +5329,7 @@
           "id": "p50-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "5. Limites e força proporcional"
+          "text": "31. Limites e força proporcional"
         },
         {
           "id": "p50-b2",
@@ -5341,7 +5341,7 @@
           "id": "p50-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "6. Linguagem como prática ética"
+          "text": "32. Linguagem como prática ética"
         },
         {
           "id": "p50-b4",
@@ -5353,7 +5353,7 @@
           "id": "p50-b5",
           "kind": "heading",
           "sourceIndex": 4,
-          "text": "7. Conflitos entre valores"
+          "text": "33. Conflitos entre valores"
         },
         {
           "id": "p50-b6",
@@ -7759,13 +7759,13 @@
           "id": "p87-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "71. Quando pode ser adequado manter um interlocutor de outra instituição?"
+          "text": "9. Quando pode ser adequado manter um interlocutor de outra instituição?"
         },
         {
           "id": "p87-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "72. Por que integrar saúde cedo mesmo quando o resgate ainda não"
+          "text": "10. Por que integrar saúde cedo mesmo quando o resgate ainda não"
         },
         {
           "id": "p87-b3",
@@ -7777,19 +7777,19 @@
           "id": "p87-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "73. Como transformar disputa institucional em discussão técnica?"
+          "text": "11. Como transformar disputa institucional em discussão técnica?"
         },
         {
           "id": "p87-b5",
           "kind": "heading",
           "sourceIndex": 4,
-          "text": "74. Que tipo de informação precisa acompanhar a transição para a saúde?"
+          "text": "12. Que tipo de informação precisa acompanhar a transição para a saúde?"
         },
         {
           "id": "p87-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "75. O que significa tornar a integração “invisível” para a pessoa em crise?"
+          "text": "13. O que significa tornar a integração “invisível” para a pessoa em crise?"
         },
         {
           "id": "p87-b7",
@@ -7825,7 +7825,7 @@
           "id": "p87-b19",
           "kind": "heading",
           "sourceIndex": 18,
-          "text": "1. Emergência não oferece o luxo da certeza"
+          "text": "14. Emergência não oferece o luxo da certeza"
         },
         {
           "id": "p87-b20-w7f-join-88",
@@ -7855,7 +7855,7 @@
           "id": "p88-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "2. Probabilidade e consequência"
+          "text": "15. Probabilidade e consequência"
         },
         {
           "id": "p88-b3",
@@ -7867,7 +7867,7 @@
           "id": "p88-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "3. Reversibilidade das decisões"
+          "text": "16. Reversibilidade das decisões"
         },
         {
           "id": "p88-b5",
@@ -7879,7 +7879,7 @@
           "id": "p88-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "4. Horizonte de decisão"
+          "text": "17. Horizonte de decisão"
         },
         {
           "id": "p88-b7",
@@ -7891,7 +7891,7 @@
           "id": "p88-b8",
           "kind": "heading",
           "sourceIndex": 7,
-          "text": "5. Atualização bayesiana sem matemática"
+          "text": "18. Atualização bayesiana sem matemática"
         },
         {
           "id": "p88-b9",
@@ -7921,7 +7921,7 @@
           "id": "p89-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "6. Regra de linguagem"
+          "text": "19. Regra de linguagem"
         },
         {
           "id": "p89-b2",
@@ -7951,7 +7951,7 @@
           "id": "p90-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "4. Efeito halo e estigma"
+          "text": "20. Efeito halo e estigma"
         },
         {
           "id": "p90-b2",
@@ -7963,7 +7963,7 @@
           "id": "p90-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "5. Viés de resultado"
+          "text": "21. Viés de resultado"
         },
         {
           "id": "p90-b4",
@@ -7975,7 +7975,7 @@
           "id": "p90-b5",
           "kind": "heading",
           "sourceIndex": 4,
-          "text": "6. Pressão de encerramento"
+          "text": "22. Pressão de encerramento"
         },
         {
           "id": "p90-b6",
@@ -8005,7 +8005,7 @@
           "id": "p91-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "2. Informação para o abordador"
+          "text": "23. Informação para o abordador"
         },
         {
           "id": "p91-b2",
@@ -8017,7 +8017,7 @@
           "id": "p91-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "3. Informação para o comando"
+          "text": "24. Informação para o comando"
         },
         {
           "id": "p91-b4",
@@ -8029,7 +8029,7 @@
           "id": "p91-b5",
           "kind": "heading",
           "sourceIndex": 4,
-          "text": "4. Comunicação fechada"
+          "text": "25. Comunicação fechada"
         },
         {
           "id": "p91-b6",
@@ -8041,7 +8041,7 @@
           "id": "p91-b7",
           "kind": "heading",
           "sourceIndex": 6,
-          "text": "5. Mudança de plano deve ser anunciada"
+          "text": "26. Mudança de plano deve ser anunciada"
         },
         {
           "id": "p91-b8",
@@ -8053,7 +8053,7 @@
           "id": "p91-b9",
           "kind": "heading",
           "sourceIndex": 8,
-          "text": "6. Registro de decisão"
+          "text": "27. Registro de decisão"
         },
         {
           "id": "p91-b10",
@@ -8083,7 +8083,7 @@
           "id": "p92-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "90. Como registro simples ajuda em cenas longas?"
+          "text": "28. Como registro simples ajuda em cenas longas?"
         },
         {
           "id": "p92-b2",
@@ -11202,7 +11202,7 @@
           "id": "p137-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "1. Presença"
+          "text": "9. Presença"
         },
         {
           "id": "p137-b3",
@@ -11214,7 +11214,7 @@
           "id": "p137-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "2. Pergunta aberta e fechada"
+          "text": "10. Pergunta aberta e fechada"
         },
         {
           "id": "p137-b5",
@@ -11226,7 +11226,7 @@
           "id": "p137-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "3. Reflexão de conteúdo"
+          "text": "11. Reflexão de conteúdo"
         },
         {
           "id": "p137-b7",
@@ -11238,7 +11238,7 @@
           "id": "p137-b8",
           "kind": "heading",
           "sourceIndex": 7,
-          "text": "4. Reflexão de emoção"
+          "text": "12. Reflexão de emoção"
         },
         {
           "id": "p137-b9",
@@ -11250,7 +11250,7 @@
           "id": "p137-b10",
           "kind": "heading",
           "sourceIndex": 9,
-          "text": "5. Sumário"
+          "text": "13. Sumário"
         },
         {
           "id": "p137-b11",
@@ -11280,7 +11280,7 @@
           "id": "p138-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "6. Pausa"
+          "text": "14. Pausa"
         },
         {
           "id": "p138-b2",
@@ -11292,7 +11292,7 @@
           "id": "p138-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "7. Feedback imediato"
+          "text": "15. Feedback imediato"
         },
         {
           "id": "p138-b4",
@@ -11322,7 +11322,7 @@
           "id": "p139-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "3. Perguntas em série"
+          "text": "16. Perguntas em série"
         },
         {
           "id": "p139-b3",
@@ -11334,7 +11334,7 @@
           "id": "p139-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "4. Conselho disfarçado"
+          "text": "17. Conselho disfarçado"
         },
         {
           "id": "p139-b5",
@@ -11346,7 +11346,7 @@
           "id": "p139-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "5. Validação vazia"
+          "text": "18. Validação vazia"
         },
         {
           "id": "p139-b7",
@@ -11358,7 +11358,7 @@
           "id": "p139-b8",
           "kind": "heading",
           "sourceIndex": 7,
-          "text": "6. Treino com pausa"
+          "text": "19. Treino com pausa"
         },
         {
           "id": "p139-b9",
@@ -11394,7 +11394,7 @@
           "id": "p140-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "1. O profissional também reage"
+          "text": "20. O profissional também reage"
         },
         {
           "id": "p140-b3",
@@ -11406,7 +11406,7 @@
           "id": "p140-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "2. Sinais pessoais"
+          "text": "21. Sinais pessoais"
         },
         {
           "id": "p140-b5",
@@ -11418,7 +11418,7 @@
           "id": "p140-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "3. Microchecagem"
+          "text": "22. Microchecagem"
         },
         {
           "id": "p140-b7",
@@ -11430,7 +11430,7 @@
           "id": "p140-b8",
           "kind": "heading",
           "sourceIndex": 7,
-          "text": "4. Uso do auxiliar"
+          "text": "23. Uso do auxiliar"
         },
         {
           "id": "p140-b9",
@@ -11442,7 +11442,7 @@
           "id": "p140-b10",
           "kind": "heading",
           "sourceIndex": 9,
-          "text": "5. Troca como competência"
+          "text": "24. Troca como competência"
         },
         {
           "id": "p140-b11",
@@ -11454,7 +11454,7 @@
           "id": "p140-b12",
           "kind": "heading",
           "sourceIndex": 11,
-          "text": "6. Depois da cena"
+          "text": "25. Depois da cena"
         },
         {
           "id": "p140-b13",
@@ -15233,7 +15233,7 @@
           "id": "p203-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "2. Caso Helena — ambiente elevado, exposição pública e ambivalência"
+          "text": "1. Caso Helena — ambiente elevado, exposição pública e ambivalência"
         }
       ]
     },
@@ -15341,7 +15341,7 @@
           "id": "p205-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "3. Caso Marcos — hostilidade e risco de violência"
+          "text": "2. Caso Marcos — hostilidade e risco de violência"
         },
         {
           "id": "p205-b5",
@@ -15407,7 +15407,7 @@
           "id": "p206-b3",
           "kind": "heading",
           "sourceIndex": 2,
-          "text": "4. Caso Gabriel — adolescente, vergonha e rede"
+          "text": "3. Caso Gabriel — adolescente, vergonha e rede"
         },
         {
           "id": "p206-b4",
@@ -15473,7 +15473,7 @@
           "id": "p207-b1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "5. Caso Antônio — idoso, perda e barreira auditiva"
+          "text": "4. Caso Antônio — idoso, perda e barreira auditiva"
         },
         {
           "id": "p207-b2",
@@ -15515,7 +15515,7 @@
           "id": "p207-b8",
           "kind": "heading",
           "sourceIndex": 7,
-          "text": "6. Caso Júlia — intoxicação e deterioração"
+          "text": "5. Caso Júlia — intoxicação e deterioração"
         },
         {
           "id": "p207-b9",
@@ -15575,7 +15575,7 @@
           "id": "p208-b4",
           "kind": "heading",
           "sourceIndex": 3,
-          "text": "7. Caso Roberto — alterações perceptivas e comunicação concreta"
+          "text": "6. Caso Roberto — alterações perceptivas e comunicação concreta"
         },
         {
           "id": "p208-b5",
@@ -15611,7 +15611,7 @@
           "id": "p208-b10",
           "kind": "heading",
           "sourceIndex": 9,
-          "text": "8. Caso Paula — violência doméstica e proteção"
+          "text": "7. Caso Paula — violência doméstica e proteção"
         },
         {
           "id": "p208-b11",
@@ -15671,7 +15671,7 @@
           "id": "p209-b6",
           "kind": "heading",
           "sourceIndex": 5,
-          "text": "9. Caso André — o abordador também é parte do sistema"
+          "text": "8. Caso André — o abordador também é parte do sistema"
         },
         {
           "id": "p209-b7",
@@ -15995,7 +15995,7 @@
           "id": "p215-b2",
           "kind": "heading",
           "sourceIndex": 1,
-          "text": "10. O que precisa permanecer na memória sem o manual Você não precisa memorizar o manual inteiro. Precisa manter alguns princípios acessíveis:"
+          "text": "1. O que precisa permanecer na memória sem o manual Você não precisa memorizar o manual inteiro. Precisa manter alguns princípios acessíveis:"
         },
         {
           "id": "p215-b3",
@@ -18620,5 +18620,182 @@
       "planos de ensino"
     ],
     "entries": 15
+  },
+  "wave10ChapterStructure": {
+    "status": "normalized",
+    "chapterSequence": "1-34",
+    "numberedHeadingRule": "contiguous-per-chapter",
+    "report": [
+      {
+        "chapter": 1,
+        "numberedHeadings": 9,
+        "normalized": 2
+      },
+      {
+        "chapter": 2,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 3,
+        "numberedHeadings": 8,
+        "normalized": 5
+      },
+      {
+        "chapter": 4,
+        "numberedHeadings": 8,
+        "normalized": 0
+      },
+      {
+        "chapter": 5,
+        "numberedHeadings": 33,
+        "normalized": 25
+      },
+      {
+        "chapter": 6,
+        "numberedHeadings": 6,
+        "normalized": 0
+      },
+      {
+        "chapter": 7,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 8,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 9,
+        "numberedHeadings": 9,
+        "normalized": 0
+      },
+      {
+        "chapter": 10,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 11,
+        "numberedHeadings": 28,
+        "normalized": 20
+      },
+      {
+        "chapter": 12,
+        "numberedHeadings": 6,
+        "normalized": 0
+      },
+      {
+        "chapter": 13,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 14,
+        "numberedHeadings": 9,
+        "normalized": 0
+      },
+      {
+        "chapter": 15,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 16,
+        "numberedHeadings": 8,
+        "normalized": 0
+      },
+      {
+        "chapter": 17,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 18,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 19,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 20,
+        "numberedHeadings": 25,
+        "normalized": 17
+      },
+      {
+        "chapter": 21,
+        "numberedHeadings": 5,
+        "normalized": 0
+      },
+      {
+        "chapter": 22,
+        "numberedHeadings": 6,
+        "normalized": 0
+      },
+      {
+        "chapter": 23,
+        "numberedHeadings": 7,
+        "normalized": 0
+      },
+      {
+        "chapter": 24,
+        "numberedHeadings": 0,
+        "normalized": 0
+      },
+      {
+        "chapter": 25,
+        "numberedHeadings": 0,
+        "normalized": 0
+      },
+      {
+        "chapter": 26,
+        "numberedHeadings": 0,
+        "normalized": 0
+      },
+      {
+        "chapter": 27,
+        "numberedHeadings": 0,
+        "normalized": 0
+      },
+      {
+        "chapter": 28,
+        "numberedHeadings": 0,
+        "normalized": 0
+      },
+      {
+        "chapter": 29,
+        "numberedHeadings": 0,
+        "normalized": 0
+      },
+      {
+        "chapter": 30,
+        "numberedHeadings": 0,
+        "normalized": 0
+      },
+      {
+        "chapter": 31,
+        "numberedHeadings": 0,
+        "normalized": 0
+      },
+      {
+        "chapter": 32,
+        "numberedHeadings": 4,
+        "normalized": 0
+      },
+      {
+        "chapter": 33,
+        "numberedHeadings": 8,
+        "normalized": 8
+      },
+      {
+        "chapter": 34,
+        "numberedHeadings": 1,
+        "normalized": 1
+      }
+    ]
   }
 }
