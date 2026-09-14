@@ -3,6 +3,7 @@ import './globals.css';
 import './ds2.css';
 import './wave54.css';
 import './wave16.css';
+import './wave18.css';
 
 export const metadata: Metadata = {
   title: 'Manual do Participante CATS | Edição Digital',
