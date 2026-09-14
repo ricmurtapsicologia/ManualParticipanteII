@@ -7,6 +7,7 @@ const root = path.resolve(here, '..');
 const pages = JSON.parse(fs.readFileSync(path.join(root, 'content', 'pages.json'), 'utf8'));
 const semantic = JSON.parse(fs.readFileSync(path.join(root, 'content', 'semantic-pages.json'), 'utf8'));
 const review = JSON.parse(fs.readFileSync(path.join(root, 'content', 'editorial-wave7-review.json'), 'utf8'));
+const matrix = JSON.parse(fs.readFileSync(path.join(root, 'content', 'canonical-30x30.json'), 'utf8'));
 
 const fail = message => {
   console.error(`EDITORIAL_WAVE7_AUDIT_FAIL ${message}`);
@@ -16,6 +17,11 @@ const fail = message => {
 if (!Array.isArray(pages) || pages.length !== 249) fail(`pages=${pages?.length ?? 'invalid'}`);
 if (!Array.isArray(semantic.pages) || semantic.pages.length !== 249) fail(`semantic-pages=${semantic.pages?.length ?? 'invalid'}`);
 if (review.schemaVersion !== 1 || review.wave !== '7' || review.pageCount !== 249) fail('invalid review manifest header');
+if (!Array.isArray(matrix.controls) || matrix.controls.length !== 30) fail(`canonical-30x30=${matrix.controls?.length ?? 'invalid'}`);
+for (let index = 0; index < 30; index += 1) {
+  const control = matrix.controls[index];
+  if (control?.id !== index + 1 || typeof control?.name !== 'string' || !control.name.trim()) fail(`canonical-control=${index + 1}`);
+}
 
 for (let index = 0; index < pages.length; index += 1) {
   const page = pages[index];
@@ -64,4 +70,4 @@ const lowercaseContinuations = pages.filter(page => {
 }).map(page => page.number);
 const suspiciousGlyphPages = pages.filter(page => page.paragraphs.some(text => /�|\.→|→\s*→\s*→/.test(text))).map(page => page.number);
 
-console.log(`EDITORIAL_WAVE7_AUDIT_OK pages=249 batches=${review.batches.length} reviewed=${reviewedPages.length} findings=${findingIds.size} heuristic-orphans=${heuristicOrphans.join(',') || 'none'} lowercase-continuations=${lowercaseContinuations.join(',') || 'none'} suspicious-glyphs=${suspiciousGlyphPages.join(',') || 'none'} canonical-30x30=${review.policy?.canonical3030Gate ?? 'unknown'}`);
+console.log(`EDITORIAL_WAVE7_AUDIT_OK pages=249 batches=${review.batches.length} reviewed=${reviewedPages.length} findings=${findingIds.size} heuristic-orphans=${heuristicOrphans.join(',') || 'none'} lowercase-continuations=${lowercaseContinuations.join(',') || 'none'} suspicious-glyphs=${suspiciousGlyphPages.join(',') || 'none'} canonical-30x30=restored:30 final-execution=${review.policy?.canonical3030Gate ?? 'unknown'}`);

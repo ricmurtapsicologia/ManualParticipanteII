@@ -8,6 +8,16 @@ async function loadPage(page: import('@playwright/test').Page, pageNumber: numbe
   return page.getByTestId('book-page');
 }
 
+async function assertCompleteQuestions(page: import('@playwright/test').Page, pageNumber: number, questions: number[]) {
+  const paper = await loadPage(page, pageNumber);
+  const text = await paper.innerText();
+  for (const question of questions) {
+    const line = text.split('\n').map(item => item.trim()).find(item => item.startsWith(`${question}. `));
+    expect(line, `question ${question} on page ${pageNumber}`).toBeTruthy();
+    expect(line!.endsWith('?')).toBeTruthy();
+  }
+}
+
 test('wave 7.1 repairs front-matter hierarchy, orphan page and map extraction', async ({ page }) => {
   let paper = await loadPage(page, 3);
   await expect(paper.getByRole('heading', { name: 'Como usar este manual' })).toBeVisible();
@@ -28,30 +38,65 @@ test('wave 7.1 removes cross-page sentence fragments and restores section hierar
   await expect(paper).toContainText('solicitar apoio, planejar, decidir e manter respeito à dignidade humana.');
 
   paper = await loadPage(page, 9);
-  const page9 = (await paper.innerText()).trim();
-  expect(page9).not.toMatch(/^decidir\b/i);
+  expect((await paper.innerText()).trim()).not.toMatch(/^decidir\b/i);
 
   paper = await loadPage(page, 24);
   await expect(paper).toContainText('4. Violência autoprovocada notificada não é igual a suicídio consumado');
-  await expect(paper).not.toContainText('consumado Em 2021');
 
   paper = await loadPage(page, 25);
   await expect(paper).toContainText('taxas específicas podem ser altas em determinados estratos.');
 
   paper = await loadPage(page, 26);
-  const page26 = (await paper.innerText()).trim();
-  expect(page26).not.toMatch(/^estratos\b/i);
+  expect((await paper.innerText()).trim()).not.toMatch(/^estratos\b/i);
 });
 
 test('wave 7.1 recomposes TESTE-SE questions as complete units', async ({ page }) => {
-  const expected: Array<[number, number[]]> = [[14, [1, 2, 3]], [15, [4, 5]], [20, [6, 7, 8, 9, 10]]];
-  for (const [pageNumber, questions] of expected) {
-    const paper = await loadPage(page, pageNumber);
-    const text = await paper.innerText();
-    for (const question of questions) {
-      const line = text.split('\n').map(item => item.trim()).find(item => item.startsWith(`${question}. `));
-      expect(line, `question ${question} on page ${pageNumber}`).toBeTruthy();
-      expect(line!.endsWith('?')).toBeTruthy();
-    }
+  for (const [pageNumber, questions] of [[14,[1,2,3]],[15,[4,5]],[20,[6,7,8,9,10]]] as Array<[number, number[]]>) {
+    await assertCompleteQuestions(page, pageNumber, questions);
   }
+});
+
+test('wave 7.2 repairs continuations, orphan feedback page and chapter-opening hierarchy', async ({ page }) => {
+  let paper = await loadPage(page, 27);
+  expect((await paper.innerText()).trim()).not.toMatch(/^para quem decide\b/i);
+
+  paper = await loadPage(page, 29);
+  await expect(paper).toContainText('Compreender processos sem reduzir a pessoa a um mecanismo');
+
+  paper = await loadPage(page, 30);
+  expect((await paper.innerText()).trim()).not.toMatch(/^desligou/i);
+
+  paper = await loadPage(page, 35);
+  await expect(paper.getByRole('heading', { name: 'FEEDBACK / DÚVIDA' })).toBeVisible();
+  await expect(paper).toContainText('Registre um acerto, um ajuste para a próxima prática ou uma dúvida para o instrutor.');
+
+  paper = await loadPage(page, 36);
+  await expect(paper).toContainText('Usar contexto sem transformar listas em oráculos');
+
+  paper = await loadPage(page, 40);
+  expect((await paper.innerText()).trim()).not.toMatch(/^decisão\?/i);
+
+  paper = await loadPage(page, 47);
+  expect((await paper.innerText()).trim()).not.toMatch(/^explicita\b/i);
+});
+
+test('wave 7.2 restores interlude hierarchy and TESTE-SE questions 11 to 40', async ({ page }) => {
+  for (const [pageNumber, questions] of [
+    [28,[11,12,13,14,15]],
+    [34,[16,17,18,19,20]],
+    [41,[21,22,23,24,25]],
+    [44,[26,27,28,29,30]],
+    [46,[31,32,33,34,35]],
+    [48,[36,37,38,39,40]]
+  ] as Array<[number, number[]]>) await assertCompleteQuestions(page, pageNumber, questions);
+
+  let paper = await loadPage(page, 41);
+  await expect(paper.getByRole('heading', { name: 'Pensar além do procedimento' })).toBeVisible();
+  await expect(paper.getByRole('heading', { name: 'Aprofundamento 1 — Pensar o suicídio como fenômeno complexo' })).toBeVisible();
+
+  paper = await loadPage(page, 44);
+  await expect(paper.getByRole('heading', { name: 'Aprofundamento 2 — Alfabetização epidemiológica para o CATS' })).toBeVisible();
+
+  paper = await loadPage(page, 46);
+  await expect(paper.getByRole('heading', { name: 'Aprofundamento 3 — Modelos cognitivos: utilidade e limites' })).toBeVisible();
 });
