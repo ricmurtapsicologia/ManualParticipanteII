@@ -10,7 +10,7 @@ export type ChapterEnrichment = {
   endingPage: number;
   microlearning: { id:string; pageNumber:number; title:string; prompt:string; choices:EnrichmentChoice[]; reveal:string };
   transfer: { id:string; pageNumber:number; title:string; apply:string; transfer:string; verify:string };
-  resource: { id:string; pageNumber:number; type:'link'|'video'; title:string; url:string; note:string };
+  resource: { id:string; pageNumber:number; type:'link'|'video'; title:string; url:string; note:string; language?:'pt-BR' };
 };
 
 export function ChapterMicrolearningCard({ data }: { data: ChapterEnrichment['microlearning'] }) {
@@ -51,8 +51,8 @@ export function ApplicationTransferCard({ data }: { data: ChapterEnrichment['tra
 }
 
 export function ChapterResourceCard({ data }: { data: ChapterEnrichment['resource'] }) {
-  return <aside className="w10Resource" data-testid="chapter-resource">
-    <div><span className="w10ResourceType">{data.type === 'video' ? 'Vídeo recomendado' : 'Aprofundamento'}</span><h3>{data.title}</h3><p>{data.note}</p></div>
-    <a href={data.url} target="_blank" rel="noopener noreferrer" data-testid="chapter-resource-link">{data.type === 'video' ? 'Assistir' : 'Abrir recurso'} <span aria-hidden="true">↗</span></a>
+  return <aside className="w10Resource" data-testid="chapter-resource" data-resource-language={data.language ?? 'pt-BR'}>
+    <div><span className="w10ResourceType">Material escrito em português</span><h3>{data.title}</h3><p>{data.note}</p></div>
+    <a href={data.url} target="_blank" rel="noopener noreferrer" data-testid="chapter-resource-link" lang="pt-BR">Abrir material <span aria-hidden="true">↗</span></a>
   </aside>;
 }
