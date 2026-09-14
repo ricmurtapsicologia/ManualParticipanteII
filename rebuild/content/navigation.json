@@ -4,7 +4,7 @@
   "sourcePageCount": 249,
   "sourceSha256": "5869733f428387c180d293db12783a988019ec9eb2fc477a8dfe431400b52cf3",
   "chapterCount": 34,
-  "pedagogicalMarkerCount": 165,
+  "pedagogicalMarkerCount": 216,
   "generatedFrom": "content/semantic-pages.json",
   "frontMatter": [
     {
@@ -71,14 +71,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 8,
-              "blockId": "p8-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 8,
               "blockId": "p8-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 8,
+              "blockId": "p8-b2"
             },
             {
               "kind": "doctrine",
@@ -99,6 +99,11 @@
               "kind": "practice",
               "pageNumber": 13,
               "blockId": "p13-b1"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 15,
+              "blockId": "p14-b4"
             }
           ]
         },
@@ -116,14 +121,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 16,
-              "blockId": "p16-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 16,
               "blockId": "p16-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 16,
+              "blockId": "p16-b2"
             },
             {
               "kind": "doctrine",
@@ -134,6 +139,11 @@
               "kind": "attention",
               "pageNumber": 18,
               "blockId": "p18-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 21,
+              "blockId": "p20-b4"
             }
           ]
         },
@@ -152,14 +162,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 22,
-              "blockId": "p22-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 22,
               "blockId": "p22-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 22,
+              "blockId": "p22-b2"
             },
             {
               "kind": "evidence",
@@ -175,6 +185,11 @@
               "kind": "decide",
               "pageNumber": 27,
               "blockId": "p27-b2"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 28,
+              "blockId": "p27-b8"
             }
           ]
         },
@@ -193,14 +208,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 29,
-              "blockId": "p29-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 29,
               "blockId": "p29-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 29,
+              "blockId": "p29-b2"
             },
             {
               "kind": "evidence",
@@ -221,6 +236,11 @@
               "kind": "evidence",
               "pageNumber": 32,
               "blockId": "p32-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 35,
+              "blockId": "p34-b2"
             }
           ]
         },
@@ -249,14 +269,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 36,
-              "blockId": "p36-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 36,
               "blockId": "p36-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 36,
+              "blockId": "p36-b2"
             },
             {
               "kind": "evidence",
@@ -283,7 +303,13 @@
       "part": 2,
       "title": "Compreender a ocorrência",
       "openingPage": 53,
-      "pedagogicalMarkers": [],
+      "pedagogicalMarkers": [
+        {
+          "kind": "summary",
+          "pageNumber": 53,
+          "blockId": "p40-b6"
+        }
+      ],
       "chapters": [
         {
           "chapter": 6,
@@ -299,14 +325,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 54,
-              "blockId": "p54-b5"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 54,
               "blockId": "p54-b7"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 54,
+              "blockId": "p54-b5"
             },
             {
               "kind": "doctrine",
@@ -327,6 +353,11 @@
               "kind": "decide",
               "pageNumber": 58,
               "blockId": "p58-b3"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 59,
+              "blockId": "p58-b9"
             }
           ]
         },
@@ -344,14 +375,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 60,
-              "blockId": "p60-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 60,
               "blockId": "p60-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 60,
+              "blockId": "p60-b2"
             },
             {
               "kind": "doctrine",
@@ -367,6 +398,11 @@
               "kind": "attention",
               "pageNumber": 63,
               "blockId": "p63-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 65,
+              "blockId": "p65-b2"
             }
           ]
         },
@@ -384,14 +420,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 66,
-              "blockId": "p66-b10"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 66,
               "blockId": "p66-b12"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 66,
+              "blockId": "p66-b10"
             },
             {
               "kind": "doctrine",
@@ -407,6 +443,11 @@
               "kind": "decide",
               "pageNumber": 69,
               "blockId": "p69-b2"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 71,
+              "blockId": "p70-b4"
             }
           ]
         },
@@ -424,14 +465,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 72,
-              "blockId": "p72-b6"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 72,
               "blockId": "p72-b8"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 72,
+              "blockId": "p72-b6"
             },
             {
               "kind": "doctrine",
@@ -442,6 +483,11 @@
               "kind": "practice",
               "pageNumber": 74,
               "blockId": "p74-b5"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 77,
+              "blockId": "p77-b2"
             }
           ]
         },
@@ -458,14 +504,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 78,
-              "blockId": "p78-b10"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 78,
               "blockId": "p78-b12"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 78,
+              "blockId": "p78-b10"
             },
             {
               "kind": "evidence",
@@ -481,6 +527,11 @@
               "kind": "attention",
               "pageNumber": 80,
               "blockId": "p80-b8"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 82,
+              "blockId": "p82-b2"
             }
           ]
         },
@@ -504,14 +555,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 83,
-              "blockId": "p83-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 83,
               "blockId": "p83-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 83,
+              "blockId": "p83-b2"
             },
             {
               "kind": "doctrine",
@@ -533,7 +584,13 @@
       "part": 3,
       "title": "Abordagem de dissuasão",
       "openingPage": 95,
-      "pedagogicalMarkers": [],
+      "pedagogicalMarkers": [
+        {
+          "kind": "summary",
+          "pageNumber": 95,
+          "blockId": "p86-b6"
+        }
+      ],
       "chapters": [
         {
           "chapter": 12,
@@ -548,14 +605,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 96,
-              "blockId": "p96-b4"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 96,
               "blockId": "p96-b6"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 96,
+              "blockId": "p96-b4"
             },
             {
               "kind": "doctrine",
@@ -571,6 +628,11 @@
               "kind": "attention",
               "pageNumber": 99,
               "blockId": "p99-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 100,
+              "blockId": "p99-b10"
             }
           ]
         },
@@ -587,14 +649,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 101,
-              "blockId": "p101-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 101,
               "blockId": "p101-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 101,
+              "blockId": "p101-b2"
             },
             {
               "kind": "doctrine",
@@ -610,6 +672,11 @@
               "kind": "evidence",
               "pageNumber": 103,
               "blockId": "p103-b7"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 105,
+              "blockId": "p104-b4"
             }
           ]
         },
@@ -626,14 +693,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 106,
-              "blockId": "p106-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 106,
               "blockId": "p106-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 106,
+              "blockId": "p106-b2"
             },
             {
               "kind": "doctrine",
@@ -644,6 +711,11 @@
               "kind": "practice",
               "pageNumber": 108,
               "blockId": "p108-b5"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 110,
+              "blockId": "p110-b2"
             }
           ]
         },
@@ -659,14 +731,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 111,
-              "blockId": "p111-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 111,
               "blockId": "p111-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 111,
+              "blockId": "p111-b2"
             },
             {
               "kind": "attention",
@@ -682,6 +754,11 @@
               "kind": "practice",
               "pageNumber": 113,
               "blockId": "p113-b6"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 114,
+              "blockId": "p113-b12"
             }
           ]
         },
@@ -698,14 +775,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 115,
-              "blockId": "p115-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 115,
               "blockId": "p115-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 115,
+              "blockId": "p115-b2"
             },
             {
               "kind": "doctrine",
@@ -716,6 +793,11 @@
               "kind": "evidence",
               "pageNumber": 117,
               "blockId": "p117-b5"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 119,
+              "blockId": "p118-b7"
             }
           ]
         },
@@ -731,14 +813,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 120,
-              "blockId": "p120-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 120,
               "blockId": "p120-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 120,
+              "blockId": "p120-b2"
             },
             {
               "kind": "practice",
@@ -749,6 +831,11 @@
               "kind": "evidence",
               "pageNumber": 122,
               "blockId": "p122-b3"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 123,
+              "blockId": "p122-b11"
             }
           ]
         },
@@ -764,14 +851,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 124,
-              "blockId": "p124-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 124,
               "blockId": "p124-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 124,
+              "blockId": "p124-b2"
             },
             {
               "kind": "practice",
@@ -782,6 +869,11 @@
               "kind": "doctrine",
               "pageNumber": 126,
               "blockId": "p126-b3"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 127,
+              "blockId": "p126-b11"
             }
           ]
         },
@@ -797,14 +889,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 128,
-              "blockId": "p128-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 128,
               "blockId": "p128-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 128,
+              "blockId": "p128-b2"
             },
             {
               "kind": "doctrine",
@@ -815,6 +907,11 @@
               "kind": "evidence",
               "pageNumber": 130,
               "blockId": "p130-b2"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 131,
+              "blockId": "p131-b1"
             }
           ]
         },
@@ -838,14 +935,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 132,
-              "blockId": "p132-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 132,
               "blockId": "p132-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 132,
+              "blockId": "p132-b2"
             },
             {
               "kind": "practice",
@@ -872,7 +969,13 @@
       "part": 4,
       "title": "Abordagem tática e riscos",
       "openingPage": 144,
-      "pedagogicalMarkers": [],
+      "pedagogicalMarkers": [
+        {
+          "kind": "summary",
+          "pageNumber": 144,
+          "blockId": "p136-b2"
+        }
+      ],
       "chapters": [
         {
           "chapter": 21,
@@ -887,14 +990,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 145,
-              "blockId": "p145-b4"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 145,
               "blockId": "p145-b6"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 145,
+              "blockId": "p145-b4"
             },
             {
               "kind": "doctrine",
@@ -905,6 +1008,11 @@
               "kind": "attention",
               "pageNumber": 147,
               "blockId": "p147-b4"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 149,
+              "blockId": "p148-b6"
             }
           ]
         },
@@ -920,14 +1028,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 150,
-              "blockId": "p150-b12"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 150,
               "blockId": "p150-b14"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 150,
+              "blockId": "p150-b12"
             },
             {
               "kind": "doctrine",
@@ -938,6 +1046,11 @@
               "kind": "attention",
               "pageNumber": 152,
               "blockId": "p152-b2"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 153,
+              "blockId": "p153-b2"
             }
           ]
         },
@@ -953,14 +1066,14 @@
           ],
           "pedagogicalMarkers": [
             {
-              "kind": "opening",
-              "pageNumber": 154,
-              "blockId": "p154-b2"
-            },
-            {
               "kind": "objectives",
               "pageNumber": 154,
               "blockId": "p154-b4"
+            },
+            {
+              "kind": "opening",
+              "pageNumber": 154,
+              "blockId": "p154-b2"
             },
             {
               "kind": "doctrine",
@@ -983,14 +1096,14 @@
               "blockId": "p157-b3"
             },
             {
-              "kind": "summary",
-              "pageNumber": 157,
-              "blockId": "p157-b5"
-            },
-            {
               "kind": "review",
               "pageNumber": 157,
               "blockId": "p157-b7"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 157,
+              "blockId": "p157-b5"
             }
           ]
         },
@@ -1006,6 +1119,16 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 158,
+              "blockId": "p158-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 159,
+              "blockId": "p159-b2-w7f-marker-1-w7h-doctrine"
+            },
+            {
               "kind": "case",
               "pageNumber": 161,
               "blockId": "p161-b1"
@@ -1016,14 +1139,14 @@
               "blockId": "p161-b3"
             },
             {
-              "kind": "summary",
-              "pageNumber": 161,
-              "blockId": "p161-b5"
-            },
-            {
               "kind": "review",
               "pageNumber": 161,
               "blockId": "p161-b7"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 161,
+              "blockId": "p161-b5"
             }
           ]
         },
@@ -1039,6 +1162,21 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 162,
+              "blockId": "p162-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 163,
+              "blockId": "p163-b1-w7f-marker-0-w7h-doctrine"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 165,
+              "blockId": "p165-b1-w7f-marker-0-w7h-practice"
+            },
+            {
               "kind": "case",
               "pageNumber": 165,
               "blockId": "p165-b2"
@@ -1049,14 +1187,14 @@
               "blockId": "p165-b4"
             },
             {
-              "kind": "summary",
-              "pageNumber": 165,
-              "blockId": "p165-b6"
-            },
-            {
               "kind": "review",
               "pageNumber": 165,
               "blockId": "p165-b8"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 165,
+              "blockId": "p165-b6"
             }
           ]
         }
@@ -1083,6 +1221,26 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 167,
+              "blockId": "p167-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 168,
+              "blockId": "p168-b1-w7f-marker-0-w7h-evidence"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 169,
+              "blockId": "p169-b1-w7f-marker-0-w7h-practice"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 170,
+              "blockId": "p170-b2-w7f-marker-1-w7h-attention"
+            },
+            {
               "kind": "case",
               "pageNumber": 171,
               "blockId": "p171-b1"
@@ -1093,14 +1251,14 @@
               "blockId": "p171-b3"
             },
             {
-              "kind": "summary",
-              "pageNumber": 171,
-              "blockId": "p171-b5"
-            },
-            {
               "kind": "review",
               "pageNumber": 171,
               "blockId": "p171-b7"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 171,
+              "blockId": "p171-b5"
             }
           ]
         },
@@ -1117,6 +1275,21 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 172,
+              "blockId": "p172-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 173,
+              "blockId": "p173-b3-w7f-marker-2-w7h-practice"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 175,
+              "blockId": "p175-b3-w7f-marker-2-w7h-evidence"
+            },
+            {
               "kind": "case",
               "pageNumber": 176,
               "blockId": "p176-b2"
@@ -1127,14 +1300,14 @@
               "blockId": "p176-b4"
             },
             {
-              "kind": "summary",
-              "pageNumber": 176,
-              "blockId": "p176-b6"
-            },
-            {
               "kind": "review",
               "pageNumber": 176,
               "blockId": "p176-b8"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 176,
+              "blockId": "p176-b6"
             }
           ]
         },
@@ -1150,6 +1323,21 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 177,
+              "blockId": "p177-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 178,
+              "blockId": "p178-b3-w7f-marker-2-w7h-doctrine"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 179,
+              "blockId": "p179-b4-w7f-marker-3-w7h-evidence"
+            },
+            {
               "kind": "case",
               "pageNumber": 180,
               "blockId": "p180-b2"
@@ -1160,14 +1348,14 @@
               "blockId": "p180-b4"
             },
             {
-              "kind": "summary",
-              "pageNumber": 180,
-              "blockId": "p180-b6"
-            },
-            {
               "kind": "review",
               "pageNumber": 180,
               "blockId": "p180-b8"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 180,
+              "blockId": "p180-b6"
             }
           ]
         },
@@ -1184,6 +1372,21 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 181,
+              "blockId": "p181-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 183,
+              "blockId": "p183-b1-w7f-marker-0-w7h-evidence"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 183,
+              "blockId": "p183-b4-w7f-marker-4-w7h-attention"
+            },
+            {
               "kind": "case",
               "pageNumber": 185,
               "blockId": "p185-b1"
@@ -1194,14 +1397,14 @@
               "blockId": "p185-b3"
             },
             {
-              "kind": "summary",
-              "pageNumber": 185,
-              "blockId": "p185-b5"
-            },
-            {
               "kind": "review",
               "pageNumber": 185,
               "blockId": "p185-b8"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 185,
+              "blockId": "p185-b5"
             }
           ]
         }
@@ -1227,6 +1430,21 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 187,
+              "blockId": "p187-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 188,
+              "blockId": "p188-b1-w7f-marker-0-w7h-doctrine"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 189,
+              "blockId": "p189-b4-w7f-marker-3-w7h-practice"
+            },
+            {
               "kind": "case",
               "pageNumber": 190,
               "blockId": "p190-b2"
@@ -1237,14 +1455,14 @@
               "blockId": "p190-b4"
             },
             {
-              "kind": "summary",
-              "pageNumber": 190,
-              "blockId": "p190-b6"
-            },
-            {
               "kind": "review",
               "pageNumber": 190,
               "blockId": "p190-b9"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 190,
+              "blockId": "p190-b6"
             }
           ]
         },
@@ -1260,6 +1478,21 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 191,
+              "blockId": "p191-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "evidence",
+              "pageNumber": 192,
+              "blockId": "p192-b1-w7f-marker-0-w7h-evidence"
+            },
+            {
+              "kind": "practice",
+              "pageNumber": 193,
+              "blockId": "p193-b4-w7f-marker-3-w7h-practice"
+            },
+            {
               "kind": "case",
               "pageNumber": 194,
               "blockId": "p194-b2"
@@ -1270,14 +1503,14 @@
               "blockId": "p194-b4"
             },
             {
-              "kind": "summary",
-              "pageNumber": 194,
-              "blockId": "p194-b6"
-            },
-            {
               "kind": "review",
               "pageNumber": 194,
               "blockId": "p194-b8"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 194,
+              "blockId": "p194-b6"
             }
           ]
         },
@@ -1296,6 +1529,21 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 195,
+              "blockId": "p195-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
+              "kind": "attention",
+              "pageNumber": 197,
+              "blockId": "p197-b3-w7f-marker-2-w7h-attention"
+            },
+            {
+              "kind": "doctrine",
+              "pageNumber": 198,
+              "blockId": "p198-b3-w7f-marker-2-w7h-doctrine"
+            },
+            {
               "kind": "case",
               "pageNumber": 200,
               "blockId": "p200-b4"
@@ -1306,14 +1554,14 @@
               "blockId": "p201-b2"
             },
             {
-              "kind": "summary",
-              "pageNumber": 201,
-              "blockId": "p201-b4"
-            },
-            {
               "kind": "review",
               "pageNumber": 201,
               "blockId": "p201-b6"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 201,
+              "blockId": "p201-b4"
             }
           ]
         }
@@ -1342,6 +1590,11 @@
             210
           ],
           "pedagogicalMarkers": [
+            {
+              "kind": "objectives",
+              "pageNumber": 203,
+              "blockId": "p203-b3-w7f-marker-2-w7h-objectives"
+            },
             {
               "kind": "guided-analysis",
               "pageNumber": 205,
@@ -1383,14 +1636,14 @@
               "blockId": "p210-b1"
             },
             {
-              "kind": "summary",
-              "pageNumber": 210,
-              "blockId": "p210-b5"
-            },
-            {
               "kind": "review",
               "pageNumber": 210,
               "blockId": "p210-b7"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 210,
+              "blockId": "p210-b5"
             }
           ]
         },
@@ -1408,19 +1661,24 @@
           ],
           "pedagogicalMarkers": [
             {
+              "kind": "objectives",
+              "pageNumber": 211,
+              "blockId": "p211-b3-w7f-marker-2-w7h-objectives"
+            },
+            {
               "kind": "guided-analysis",
               "pageNumber": 216,
               "blockId": "p216-b2"
             },
             {
-              "kind": "summary",
-              "pageNumber": 216,
-              "blockId": "p216-b4"
-            },
-            {
               "kind": "review",
               "pageNumber": 216,
               "blockId": "p216-b6"
+            },
+            {
+              "kind": "summary",
+              "pageNumber": 216,
+              "blockId": "p216-b4"
             }
           ]
         }
