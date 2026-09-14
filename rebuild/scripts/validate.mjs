@@ -40,15 +40,14 @@ if (!/text-align:justify/.test(css)) fail('Paragraphs are not justified');
 const ttsSurface = `${pageSource}\n${wave54Source}`;
 if (!ttsSurface.includes('Antônio')) fail('Antonio voice preference missing');
 if (!/pt-BR/i.test(ttsSurface)) fail('pt-BR fallback missing');
-if (!/data-page-count=\{pages\.length\}/.test(pageSource)) fail('Stable page-count runtime contract missing');
-if (!/data-wave="8"/.test(pageSource)) fail('Wave 8 runtime marker missing');
-if (!/data-editorial-wave="7"/.test(pageSource)) fail('Wave 7 editorial completion marker missing');
-if (!/data-design-wave="8"/.test(pageSource)) fail('Wave 8 design completion marker missing');
-if (!/data-wave78-status="complete"/.test(pageSource)) fail('Wave 7/8 completion status missing');
+for (const forbidden of ['data-page-count=', 'data-wave=', 'data-editorial-wave=', 'data-design-wave=', 'data-wave78-status=', 'data-design-system=', 'data-design-subwave=', 'data-semantic-renderer=', 'data-multimedia-wave=', 'data-reader-wave=']) {
+  if (pageSource.includes(forbidden)) fail(`Frontend release residue remains: ${forbidden}`);
+}
 if (!pageSource.includes('navigationData') || !pageSource.includes('hierarchical-toc')) fail('Hierarchical navigation contract missing from reader');
+if (!pageSource.includes('page-counter') || !pageSource.includes('pages.length')) fail('Stable 249-page reader contract missing');
 const executableSurface = pageSource + wave54Source + css;
 if (/cdn\.jsdelivr\.net|https?:\/\/[^'"\s]*jsdelivr/i.test(executableSurface)) fail('jsDelivr dependency detected');
-if (!/status:\s*'ok'/.test(health) || !/pages:\s*249/.test(health) || !/wave:\s*8/.test(health)) fail('Health contract mismatch');
+if (!/status:\s*'ok'/.test(health) || !/pages:\s*249/.test(health) || !/chapters:\s*34/.test(health) || !/release:\s*'1\.0\.0'/.test(health) || !/gate:\s*'wave10-release'/.test(health)) fail('Health release contract mismatch');
 for (const envName of ['VERCEL_ENV', 'VERCEL_GIT_COMMIT_REF', 'VERCEL_GIT_COMMIT_SHA']) if (!health.includes(envName)) fail(`Health deployment proof missing ${envName}`);
 if (deployContract.projectName !== 'manual-participante-cats-digital') fail('Unexpected Vercel project name contract');
 if (deployContract.productionBranch !== 'main' || deployContract.rootDirectory !== 'rebuild') fail('Vercel Git/root contract mismatch');
@@ -56,4 +55,4 @@ if (deployContract.expected?.pages !== 249 || deployContract.expected?.environme
 if (!deployVerifier.includes("health.deployment?.branch !== 'main'")) fail('Remote verifier main-branch gate missing');
 if (!deployVerifier.includes("health.deployment?.environment !== 'production'")) fail('Remote verifier production gate missing');
 
-console.log(`VALIDATE_OK pages=249 legacy-prefix=155 recovered-tail=94 source=${SOURCE_SHA256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=ok vercel-proof=armed editorial-wave=7 design-wave=8 navigation=hierarchical`);
+console.log(`VALIDATE_OK pages=249 legacy-prefix=155 recovered-tail=94 source=${SOURCE_SHA256.slice(0, 12)} justify=ok tts=Antonio->pt-BR jsdelivr=absent health=release-1.0.0 vercel-proof=armed frontend-release-residue=0 navigation=hierarchical`);
