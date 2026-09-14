@@ -33,7 +33,7 @@ const parts = semantic.navigation.parts.map(part => ({
     title: chapter.title,
     openingPage: chapter.openingPage,
     pageNumbers: chapter.pageNumbers,
-    pedagogicalMarkers: chapter.pedagogicalMarkers.map(marker => ({ kind: marker.kind, pageNumber: marker.pageNumber, blockId: marker.blockId }))
+    pedagogicalMarkers: markersForPages(chapter.pageNumbers)
   })),
   supplementarySections: part.supplementarySections.map(section => ({
     id: section.id,
@@ -44,17 +44,26 @@ const parts = semantic.navigation.parts.map(part => ({
   }))
 }));
 
+const markerCount = [
+  ...frontMatter.flatMap(section => section.pedagogicalMarkers ?? []),
+  ...parts.flatMap(part => [
+    ...(part.pedagogicalMarkers ?? []),
+    ...part.chapters.flatMap(chapter => chapter.pedagogicalMarkers ?? []),
+    ...part.supplementarySections.flatMap(section => section.pedagogicalMarkers ?? [])
+  ])
+].length;
+
 const artifact = {
   schemaVersion: 1,
   sourceSemanticSchemaVersion: semantic.schemaVersion,
   sourcePageCount: semantic.manifest.pageCount,
   sourceSha256: semantic.source.sha256,
   chapterCount: semantic.manifest.tocChapterCount,
-  pedagogicalMarkerCount: semantic.manifest.pedagogicalMarkerCount,
+  pedagogicalMarkerCount: markerCount,
   generatedFrom: 'content/semantic-pages.json',
   frontMatter,
   parts
 };
 
 await writeFile(new URL('../content/navigation.json', import.meta.url), `${JSON.stringify(artifact, null, 2)}\n`, 'utf8');
-console.log(`NAVIGATION_BUILD_OK parts=${parts.length} chapters=${artifact.chapterCount} markers=${artifact.pedagogicalMarkerCount} pages=${artifact.sourcePageCount}`);
+console.log(`NAVIGATION_BUILD_OK parts=${parts.length} chapters=${artifact.chapterCount} markers=${markerCount} pages=${artifact.sourcePageCount}`);
