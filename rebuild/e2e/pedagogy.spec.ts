@@ -5,7 +5,7 @@ test('pedagogical blocks render as DS2 components without text loss', async ({ p
   await page.goto('/');
 
   const shell = page.getByTestId('reader-shell');
-  await expect(shell).toHaveAttribute('data-design-subwave', '4.3');
+  await expect(shell).toHaveAttribute('data-design-subwave', '8');
   await expect(page.getByTestId('page-counter')).toHaveText('8 / 249');
 
   const opening = page.getByTestId('pedagogical-box').filter({ has: page.getByText('SITUAÇÃO DE ABERTURA', { exact: true }) });
