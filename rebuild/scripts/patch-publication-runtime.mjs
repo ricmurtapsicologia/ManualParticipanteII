@@ -34,7 +34,7 @@ if(!page.includes(cleanEnrichment)) throw new Error('PUBLICATION_PATCH_FAIL enri
 page=page.replace("import { VideoResourceCard, type Wave55VideoResource } from './wave55';\n",'');
 page=page.replace("import { ChapterMicrolearningCard, ApplicationTransferCard, ChapterResourceCard, type ChapterEnrichment } from './wave10';","import { ChapterMicrolearningCard, ChapterResourceCard, type ChapterEnrichment } from './wave10';");
 page=page.replace("  if (resource.kind === 'video' && resource.src === 'native://ats-system-video' && resource.transcript && resource.steps?.length) return <VideoResourceCard key={resource.id} resource={resource as Wave55VideoResource} />;\n",'');
-page=page.replace("if (resource.kind !== 'infographic' || resource.src !== 'native://ats-system-macro' || !resource.steps?.length) return null;","if (resource.kind !== 'infographic' || !['native://ats-system-macro','native://cats-infographic'].includes(resource.src) || !resource.steps?.length) return null;");
+page=page.replace("if (resource.kind !== 'infographic' || resource.src !== 'native://ats-system-macro' || !resource.steps?.length) return null;","if (resource.kind !== 'infographic' || !['native://ats-system-macro','native://cats-infographic'].includes(resource.src ?? '') || !resource.steps?.length) return null;");
 page=page.replace('{pageMicrolearning && <ChapterMicrolearningCard data={pageMicrolearning} />}','{pageMicrolearning && <ChapterMicrolearningCard key={pageMicrolearning.id} data={pageMicrolearning} />}');
 page=page.replace('{pageTransfer && <ApplicationTransferCard data={pageTransfer} />}','');
 page=page.replace('{currentQuiz && <ChapterQuiz quiz={currentQuiz} />}','{currentQuiz && <ChapterQuiz key={currentQuiz.chapter} quiz={currentQuiz} />}');
