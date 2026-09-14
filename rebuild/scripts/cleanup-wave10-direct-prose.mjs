@@ -12,6 +12,8 @@ const rewrites = [
   [/\bA ITO 30 inclui\s+/giu, 'O atendimento inclui '],
   [/\bA ITO inclui\s+/giu, 'O atendimento inclui ']
 ];
+const residualPattern = /\b(?:A|Conforme a)\s+ITO(?:\s+30(?:\/2026)?)?\s+(?:prev[eê]|orienta|define|recomenda|estabelece|determina|indica|preconiza|inclui|chama)/iu;
+const residuals = [];
 
 for (const page of artifact.pages ?? []) {
   for (const block of page.blocks ?? []) {
@@ -24,8 +26,10 @@ for (const page of artifact.pages ?? []) {
       }
     }
     block.text = text;
+    if (residualPattern.test(text)) residuals.push({page:page.number,block:block.id,text});
   }
 }
 
 fs.writeFileSync(semanticPath, `${JSON.stringify(artifact, null, 2)}\n`);
-console.log(`WAVE10_DIRECT_PROSE_OK rewrites=${changed}`);
+for (const item of residuals) console.log(`WAVE10_ITO_RESIDUAL page=${item.page} block=${item.block} text=${JSON.stringify(item.text)}`);
+console.log(`WAVE10_DIRECT_PROSE_OK rewrites=${changed} residuals=${residuals.length}`);
