@@ -53,8 +53,8 @@ add('PDF usa margens ITE 44 de 2,5 cm',pdf.includes('const MARGIN_X = 70.87;'));
 add('PDF usa corpo 12 pt',pdf.includes("const font = opts.font ?? 'F1'; const size = opts.size ?? 12"));
 add('PDF usa espaçamento 1,5 equivalente a 18 pt',pdf.includes('const leading = opts.leading ?? 18'));
 add('PDF usa recuo de primeira linha 1,25 cm',pdf.includes('firstLineIndent: 35.43'));
-add('PDF calcula altura real dos títulos para evitar overlap',pdf.includes('Math.min(maxLines, wrapWidth(item.text'));
-add('PDF identifica edição ITE 44',pdf.includes("publication-grade-ite44-2026"));
+add('PDF calcula altura real dos títulos e não trunca linhas',pdf.includes('wrapWidth(item.text, maxW, size, font).length * leading + 10')&&pdf.includes('for (const l of lines)')&&!pdf.includes('lines.slice(0, item.level === 1 ? 3 : 4)'));
+add('PDF identifica edição ITE 44 com autores, prefácio e sumário físico',pdf.includes("publication-grade-ite44-frontmatter-2026")&&pdf.includes('AUTORIA INSTITUCIONAL')&&pdf.includes('PREFÁCIO DO COORDENADOR')&&pdf.includes('pdfIndex = out.findIndex'));
 
 if(checks.length!==30) throw new Error(`AUDIT_30_INTERNAL count=${checks.length}`);
 const failed=checks.filter(check=>!check.condition);
