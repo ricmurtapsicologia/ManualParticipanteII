@@ -29,11 +29,11 @@ const firstChapterPage=chapterPhysicalPages.get(1)??0;
 const frontCommands=firstChapterPage>1?pageCommands.slice(0,firstChapterPage-1).flat():[];
 let tocMatches=chapterPhysicalPages.size===34&&!allText.includes('__PDF_PAGE_');
 for(let chapter=1;chapter<=34&&tocMatches;chapter+=1){
-  const start=frontCommands.findIndex(command=>command.startsWith(`Capítulo ${chapter}  `));
+  const start=frontCommands.findIndex(command=>command.startsWith(`Capítulo ${chapter} `));
   if(start<0){tocMatches=false;break;}
   let end=frontCommands.length;
   for(let next=chapter+1;next<=34;next+=1){
-    const candidate=frontCommands.findIndex((command,index)=>index>start&&command.startsWith(`Capítulo ${next}  `));
+    const candidate=frontCommands.findIndex((command,index)=>index>start&&command.startsWith(`Capítulo ${next} `));
     if(candidate>=0){end=candidate;break;}
   }
   const expected=String(chapterPhysicalPages.get(chapter));
