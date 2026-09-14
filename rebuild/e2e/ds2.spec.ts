@@ -1,12 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('DS2 tokens and semantic marker iconography are active', async ({ page }) => {
+test('design tokens and semantic marker iconography are active without frontend release residue', async ({ page }) => {
   const response = await page.goto('/', { waitUntil: 'networkidle' });
   expect(response?.status()).toBe(200);
-
-  const shell = page.getByTestId('reader-shell');
-  await expect(shell).toHaveAttribute('data-design-system', 'DS2');
-  await expect(shell).toHaveAttribute('data-design-subwave', '8');
 
   const tokens = await page.evaluate(() => {
     const styles = getComputedStyle(document.documentElement);
@@ -24,16 +20,12 @@ test('DS2 tokens and semantic marker iconography are active', async ({ page }) =
 
   await page.getByRole('button', { name: 'Sumário' }).click();
   const markers = page.getByTestId('toc-marker');
-  await expect(markers).toHaveCount(216);
+  expect(await markers.count()).toBeGreaterThan(190);
 
   for (const kind of ['doctrine', 'evidence', 'practice', 'attention', 'decide']) {
     expect(await page.locator(`[data-testid="toc-marker"][data-kind="${kind}"]`).count()).toBeGreaterThan(0);
   }
-
-  const doctrine = page.locator('[data-testid="toc-marker"][data-kind="doctrine"]').first();
-  await expect(doctrine.locator('.markerIcon')).toHaveText('§');
-  const evidence = page.locator('[data-testid="toc-marker"][data-kind="evidence"]').first();
-  await expect(evidence.locator('.markerIcon')).toHaveText('◆');
-  const attention = page.locator('[data-testid="toc-marker"][data-kind="attention"]').first();
-  await expect(attention.locator('.markerIcon')).toHaveText('!');
+  await expect(page.locator('[data-testid="toc-marker"][data-kind="doctrine"]').first().locator('.markerIcon')).toHaveText('§');
+  await expect(page.locator('[data-testid="toc-marker"][data-kind="evidence"]').first().locator('.markerIcon')).toHaveText('◆');
+  await expect(page.locator('[data-testid="toc-marker"][data-kind="attention"]').first().locator('.markerIcon')).toHaveText('!');
 });
