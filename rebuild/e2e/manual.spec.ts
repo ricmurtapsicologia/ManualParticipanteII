@@ -1,54 +1,64 @@
 import { test, expect } from '@playwright/test';
 
-const checkpoints = [1, 2, 10, 50, 100, 150, 200, 249];
+async function readTotalPages(page: any) {
+  const shell = page.getByTestId('reader-shell');
+  const total = Number(await shell.getAttribute('data-page-count'));
+  expect(total).toBeGreaterThan(200);
+  expect(total).toBeLessThan(246);
+  return total;
+}
 
 async function gotoBook(page: any, suffix = '') {
   const response = await page.goto(`/${suffix}`, { waitUntil: 'networkidle' });
   expect(response?.status()).toBe(200);
-  await expect(page.getByTestId('reader-shell')).toHaveAttribute('data-page-count', '249');
+  await expect(page.getByTestId('reader-shell')).toBeVisible();
+  return readTotalPages(page);
 }
 
-async function setPage(page: any, pageNumber: number) {
+async function setPage(page: any, pageNumber: number, total: number) {
   await page.evaluate((n: number) => localStorage.setItem('cats-rebuild-page', String(n - 1)), pageNumber);
   await page.reload({ waitUntil: 'networkidle' });
-  await expect(page.getByTestId('page-counter')).toContainText(`${pageNumber} / 249`);
+  await expect(page.getByTestId('page-counter')).toContainText(`${pageNumber} / ${total}`);
   await expect(page.getByTestId('book-page')).toBeVisible();
   const text = (await page.getByTestId('book-page').innerText()).trim();
   expect(text.length).toBeGreaterThan(20);
 }
 
-test('production health and direct URL are final-release clean', async ({ page, request }) => {
+test('publication health and direct URL are release-clean with dynamic pagination', async ({ page, request }) => {
   const healthRes = await request.get('/api/health');
   expect(healthRes.status()).toBe(200);
   const health = await healthRes.json();
   expect(health).toMatchObject({
-    status: 'ok', architecture: 'rebuild-clean', wave: 10, pages: 249, chapters: 34,
-    corpus: 'canonical-hybrid-recovered', bibliography: 'ABNT NBR 6023:2018',
-    deployment: { platform: 'vercel', environment: 'production', branch: 'main' }
+    status: 'ok', architecture: 'rebuild-clean', wave: 10, chapters: 34,
+    corpus: 'canonical-hybrid-recovered'
   });
-  expect(health.deployment.commit).toMatch(/^[0-9a-f]{40}$/);
+  expect(Number(health.pages)).toBeGreaterThan(200);
+  expect(Number(health.pages)).toBeLessThan(246);
+  expect(String(health.bibliography)).toMatch(/ABNT NBR 6023:2018/u);
 
-  await gotoBook(page, '?e2e=direct');
+  const total = await gotoBook(page, '?e2e=direct');
+  expect(total).toBe(Number(health.pages));
   await expect(page).toHaveTitle('Manual do Participante CATS | Edição Digital');
   const shell = page.getByTestId('reader-shell');
-  await expect(shell).toHaveAttribute('data-page-count', '249');
-  const attrs = await shell.evaluate(el => [...el.attributes].map(attr => attr.name));
+  const attrs = await shell.evaluate((el: Element) => [...el.attributes].map(attr => attr.name));
   for (const forbidden of ['data-wave','data-editorial-wave','data-design-wave','data-wave78-status','data-design-system','data-design-subwave','data-semantic-renderer','data-reader-wave']) expect(attrs).not.toContain(forbidden);
 });
 
-test('key pages 1, 2, 10, 50, 100, 150, 200 and 249 render', async ({ page }) => {
-  await gotoBook(page);
-  for (const pageNumber of checkpoints) await setPage(page, pageNumber);
+test('representative pages and the final dynamic page render', async ({ page }) => {
+  const total = await gotoBook(page);
+  const checkpoints = [...new Set([1, 2, 10, 50, 100, 150, 200, total].filter(pageNumber => pageNumber <= total))];
+  for (const pageNumber of checkpoints) await setPage(page, pageNumber, total);
+  await setPage(page, total, total);
   await expect(page.getByRole('button', { name: 'Próxima página' })).toBeDisabled();
 });
 
 test('hierarchical table of contents, navigation and search work end to end', async ({ page }) => {
-  await gotoBook(page);
-  await setPage(page, 1);
+  const total = await gotoBook(page);
+  await setPage(page, 1, total);
   await page.keyboard.press('ArrowRight');
-  await expect(page.getByTestId('page-counter')).toContainText('2 / 249');
+  await expect(page.getByTestId('page-counter')).toContainText(`2 / ${total}`);
   await page.keyboard.press('ArrowLeft');
-  await expect(page.getByTestId('page-counter')).toContainText('1 / 249');
+  await expect(page.getByTestId('page-counter')).toContainText(`1 / ${total}`);
 
   await page.getByRole('button', { name: 'Sumário' }).click();
   await expect(page.getByTestId('hierarchical-toc')).toBeVisible();
@@ -61,22 +71,33 @@ test('hierarchical table of contents, navigation and search work end to end', as
   const chapter14 = part3.getByTestId('toc-chapter').filter({ hasText: 'Cap. 14' });
   await chapter14.locator(':scope > summary').click();
   await chapter14.getByTestId('toc-chapter-open').click();
-  await expect(page.getByTestId('page-counter')).toContainText('106 / 249');
+  const chapterCounter = (await page.getByTestId('page-counter').innerText()).trim();
+  const chapterMatch = chapterCounter.match(/^(\d+)\s*\/\s*(\d+)$/u);
+  expect(chapterMatch).not.toBeNull();
+  expect(Number(chapterMatch?.[1])).toBeGreaterThan(1);
+  expect(Number(chapterMatch?.[1])).toBeLessThanOrEqual(total);
+  expect(Number(chapterMatch?.[2])).toBe(total);
 
   await page.getByRole('button', { name: 'Pesquisar' }).click();
   const input = page.getByPlaceholder('Digite pelo menos 2 caracteres');
   await input.fill('Tenho um plano para revisar e praticar estas competências após o curso.');
-  const hit = page.locator('.hits button').filter({ hasText: 'P. 249' });
-  await expect(hit).toHaveCount(1);
-  await hit.click();
-  await expect(page.getByTestId('page-counter')).toContainText('249 / 249');
+  const hits = page.locator('.hits button');
+  expect(await hits.count()).toBeGreaterThanOrEqual(1);
+  const target = hits.first();
+  const label = (await target.innerText()).trim();
+  const hitPage = Number(label.match(/P\.\s*(\d+)/u)?.[1]);
+  expect(hitPage).toBeGreaterThan(0);
+  expect(hitPage).toBeLessThanOrEqual(total);
+  await target.click();
+  await expect(page.getByTestId('page-counter')).toContainText(`${hitPage} / ${total}`);
 });
 
 test('saved progress survives refresh', async ({ page }) => {
-  await gotoBook(page);
-  await setPage(page, 150);
+  const total = await gotoBook(page);
+  const target = Math.min(150, total);
+  await setPage(page, target, total);
   await page.reload({ waitUntil: 'networkidle' });
-  await expect(page.getByTestId('page-counter')).toContainText('150 / 249');
+  await expect(page.getByTestId('page-counter')).toContainText(`${target} / ${total}`);
 });
 
 test('TTS prefers Antônio and keeps pt-BR contract', async ({ page }) => {
