@@ -2,7 +2,7 @@ name: QEP Release Gate
 
 on:
   push:
-    branches: [saneamento/qep-fase1, saneamento/qep-fase1-execucao]
+    branches: [saneamento/qep-fase1]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -12,7 +12,6 @@ permissions:
 
 jobs:
   qep-gate:
-    if: ${{ github.event_name != 'push' || github.ref != 'refs/heads/saneamento/qep-fase1-execucao' || contains(github.event.head_commit.message, '[materialized]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     defaults:
