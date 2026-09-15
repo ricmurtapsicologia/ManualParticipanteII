@@ -1,0 +1,26 @@
+import { test, expect } from '@playwright/test';
+
+test('reader exposes approved cover and both publication downloads', async ({ page }) => {
+  await page.goto('/', { waitUntil:'networkidle' });
+  await page.evaluate(() => localStorage.setItem('cats-rebuild-page','0'));
+  await page.reload({ waitUntil:'networkidle' });
+  const shell = page.getByTestId('reader-shell');
+  const total = Number(await shell.getAttribute('data-page-count'));
+  expect(total).toBeGreaterThan(200);
+  expect(total).toBeLessThan(246);
+  await expect(page.getByTestId('approved-cover-image')).toHaveAttribute('src',/^data:image\/webp;base64,/);
+  await expect(page.getByTestId('manual-download')).toHaveAttribute('href','/api/manual');
+  await expect(page.getByTestId('epub-download')).toHaveAttribute('href','/api/epub');
+});
+
+test('EPUB 3 download is self-contained and includes approved cover', async ({ request }) => {
+  const response = await request.get('/api/epub');
+  expect(response.status()).toBe(200);
+  expect(response.headers()['content-type']).toContain('application/epub+zip');
+  expect(response.headers()['x-cats-epub-edition']).toBe('publication-grade-epub3-2026');
+  const body = await response.body();
+  expect(body.length).toBeGreaterThan(100_000);
+  expect(body.subarray(0,2).toString('latin1')).toBe('PK');
+  const binary = body.toString('latin1');
+  for (const token of ['mimetype','META-INF/container.xml','OEBPS/content.opf','OEBPS/nav.xhtml','OEBPS/manual.xhtml','OEBPS/cover.webp']) expect(binary).toContain(token);
+});

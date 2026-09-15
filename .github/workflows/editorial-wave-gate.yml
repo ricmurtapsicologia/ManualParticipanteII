@@ -1,68 +1,22 @@
-name: Manual CATS Editorial Wave Gate
+name: Manual CATS Legacy Editorial Gate (manual only)
 
 on:
-  push:
-    branches:
-      - main
-      - 'wave14-*'
-      - 'wave15-*'
-      - 'wave16-*'
-      - 'wave17-*'
-      - 'wave18-*'
-    paths:
-      - 'rebuild/**'
-      - '.github/workflows/editorial-wave-gate.yml'
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  editorial-gate:
+  legacy-editorial-check:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: rebuild
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-      - name: Setup Node
-        uses: actions/setup-node@v7
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
-      - name: Validate semantic, navigation, multimedia and editorial contracts
-        run: |
-          npm run semantic:migrate
-          npm run semantic:validate
-          npm run navigation:build
-          npm run navigation:validate
-          npm run multimedia:validate
-          npm run editorial:audit
-          npm run validate
-      - name: Build and smoke
-        run: |
-          npm run build
-          npm run smoke
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-      - name: Start local production server
-        shell: bash
-        run: |
-          export VERCEL=1
-          export VERCEL_ENV=production
-          export VERCEL_GIT_COMMIT_REF=main
-          export VERCEL_GIT_COMMIT_SHA=$(git rev-parse HEAD)
-          export VERCEL_PROJECT_PRODUCTION_URL=manual-participante-cats-digital.vercel.app
-          npm start -- -p 3000 >/tmp/editorial-wave-next.log 2>&1 &
-          for i in {1..30}; do
-            if curl -fsS http://127.0.0.1:3000/api/health >/dev/null; then exit 0; fi
-            sleep 1
-          done
-          cat /tmp/editorial-wave-next.log
-          exit 1
-      - name: Run desktop and mobile E2E
-        run: E2E_BASE_URL=http://127.0.0.1:3000 npm run e2e
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - run: npm run smoke

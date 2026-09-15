@@ -1,6 +1,6 @@
 {
-  "schema": 2,
-  "stage": "wave10-final-release",
+  "schema": 3,
+  "stage": "canonical-single-deployment-release",
   "projectName": "manual-participante-cats-digital",
   "teamId": "team_JRb3bMdqrQWOEUjMGGh0kQHV",
   "repository": "ricmurtapsicologia/ManualParticipanteII",
@@ -11,25 +11,27 @@
   "expected": {
     "status": "ok",
     "architecture": "rebuild-clean",
-    "wave": 10,
-    "pages": 246,
+    "pagesPolicy": "derived-from-semantic-pages",
+    "pagesMinExclusive": 200,
+    "pagesMaxExclusive": 246,
     "chapters": 34,
-    "removedFrontMatterPages": [2, 4, 5],
     "corpus": "canonical-hybrid-recovered",
     "environment": "production",
-    "branch": "main"
-  },
-  "rollback": {
-    "projectId": "prj_O4U8NcOrjeSjkSlhnx0Qow8FAKHK",
-    "productionDeploymentId": "dpl_C86oZjGWoxfRcaK3c3c6JkwFyqFY",
-    "productionUrl": "manual-participante-cats-definitivo-flpazncd0.vercel.app"
+    "branch": "main",
+    "pdf": "ITE44",
+    "epub": "EPUB3",
+    "cover": "approved-firefighters",
+    "ttsVoice": "Antônio-required"
   },
   "policy": {
-    "doNotModifyOldProductionBeforeGate": true,
-    "doNotReuseProbeProjects": true,
+    "singleProductionDeployment": true,
+    "noPreviewValidation": true,
+    "noAutomatedCommitBackToMain": true,
     "requireGitIntegration": true,
     "requireRemoteHealthProof": true,
-    "requireWave10Static30x30": true,
-    "requireWave10DesktopMobileE2E": true
+    "requireAudit30": true,
+    "requireAudit90": true,
+    "requireAudit6": true,
+    "requireDesktopMobileE2E": true
   }
 }

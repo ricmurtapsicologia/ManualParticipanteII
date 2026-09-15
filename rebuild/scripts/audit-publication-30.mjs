@@ -17,7 +17,9 @@ const pageApp=readText('app/page.tsx');
 const quizApp=readText('app/wave18.tsx');
 const quizCss=readText('app/wave18.css');
 const cover=readText('app/wave54.tsx');
+const layout=readText('app/layout.tsx');
 const pdf=readText('app/api/manual/route.ts');
+const epub=readText('app/api/epub/route.ts');
 const allBlocks=semantic.pages.flatMap(page=>page.blocks??[]);
 const allText=norm(semantic.pages.flatMap(page=>[page.title,...(page.blocks??[]).map(block=>block.text)]).join('\n'));
 const resources=enrichment.chapters.map(item=>item.resource);
@@ -26,7 +28,7 @@ const checks=[];
 const add=(name,condition,detail='')=>checks.push({name,condition:Boolean(condition),detail});
 
 add('Matriz canônica possui 30 controles',matrix.controls?.length===30);
-add('Paginação é contínua',semantic.pages.every((page,index)=>page.number===index+1));
+add('Paginação é contínua e leitor usa contagem dinâmica',semantic.pages.every((page,index)=>page.number===index+1)&&pageApp.includes('{pages.length} páginas')&&!/\b(?:223|246|249) páginas\b/u.test(layout));
 add('Revisão cumulativa foi removida',!allText.includes('REVISAO CUMULATIVA'));
 add('Seções rotuladas como cenário foram removidas',!allBlocks.some(block=>block.kind==='case'||/^CENARIO\b/u.test(norm(block.text))));
 add('Caso de transferência foi removido',!allText.includes('CASO DE TRANSFERENCIA'));
@@ -34,7 +36,7 @@ add('Aplicação e transferência não é publicada',!allText.includes('APLICACA
 add('Capítulo 23 não usa headings internos em negrito',semantic.pages.filter(page=>page.chapter===23).flatMap(page=>page.blocks??[]).every(block=>block.kind!=='heading'));
 add('Não existem páginas sem conteúdo escrito',semantic.pages.every(page=>String(page.title??'').trim()||(page.blocks??[]).some(block=>String(block.text??'').trim())));
 add('Não existe mídia em vídeo',!(multimedia.resources??[]).some(resource=>resource.kind==='video')&&!pageApp.includes('VideoResourceCard'));
-add('Materiais complementares são pt-BR',resources.every(resource=>resource?.language==='pt-BR'));
+add('Materiais complementares são pt-BR',resources.length===34&&resources.every(resource=>resource?.language==='pt-BR'));
 add('Não há link direto para material WHO em inglês',resources.every(resource=>!/who\.int\//iu.test(resource?.url??'')));
 add('VIVA usa página oficial ativa do Ministério da Saúde',resources.some(resource=>resource?.url==='https://www.gov.br/saude/pt-br/composicao/svsa/inqueritos-de-saude/viva-sinan'));
 add('VIVA possui título editorial corrigido',resources.some(resource=>/VIVA\/SINAN/iu.test(resource?.title??'')));
@@ -47,16 +49,16 @@ add('Quiz reinicia ao trocar de capítulo',quizApp.includes('useEffect')&&quizAp
 add('Quiz é remontado por capítulo',pageApp.includes('key={currentQuiz.chapter}'));
 add('Pergunta do quiz não está em negrito',/chapterQuizQuestion legend\{[^}]*font-weight:400/u.test(quizCss));
 add('Feedback aparece imediatamente no bloco da questão',quizApp.indexOf('chapterQuizFeedback')>quizApp.indexOf('chapterQuizChoices'));
-add('Capa usa marca CATS',cover.includes('data-testid="cats-logo"')&&cover.includes('ATENDIMENTO A TENTATIVAS DE SUICÍDIO'));
-add('Capa não contém desenho antigo de capacete',!cover.includes('M95 590c20-125'));
+add('Capa aprovada com bombeiros está integrada ao reader',cover.includes("approvedCoverDataUrl")&&cover.includes('data-testid="cats-logo"')&&cover.includes('Capa oficial do Manual do Participante CATS'));
+add('TTS exige Antônio sem fallback silencioso',cover.includes('return preferred')&&cover.includes('throw new Error(message)')&&!cover.includes('exactFallback')&&!cover.includes('genericPortuguese'));
 add('PDF usa margens ITE 44 de 2,5 cm',pdf.includes('const MARGIN_X = 70.87;'));
 add('PDF usa corpo 12 pt',pdf.includes("const font = opts.font ?? 'F1'; const size = opts.size ?? 12"));
 add('PDF usa espaçamento 1,5 equivalente a 18 pt',pdf.includes('const leading = opts.leading ?? 18'));
 add('PDF usa recuo de primeira linha 1,25 cm',pdf.includes('firstLineIndent: 35.43'));
 add('PDF calcula altura real dos títulos e não trunca linhas',pdf.includes('wrapWidth(item.text, maxW, size, font).length * leading + 10')&&pdf.includes('for (const l of lines)')&&!pdf.includes('lines.slice(0, item.level === 1 ? 3 : 4)'));
-add('PDF identifica edição ITE 44 com autores, prefácio e sumário físico',pdf.includes("publication-grade-ite44-frontmatter-2026")&&pdf.includes('AUTORIA INSTITUCIONAL')&&pdf.includes('PREFÁCIO DO COORDENADOR')&&pdf.includes('pdfIndex = out.findIndex'));
+add('PDF/EPUB fecham o contrato editorial e usam a capa aprovada',pdf.includes("publication-grade-ite44-frontmatter-2026")&&pdf.includes('AUTORIA INSTITUCIONAL')&&pdf.includes('PREFÁCIO DO COORDENADOR')&&pdf.includes('pdfIndex = out.findIndex')&&pdf.includes("centered('CATS'")&&epub.includes('publication-grade-epub3-2026')&&epub.includes('approvedCoverDataUrl')&&pageApp.includes('data-testid="epub-download"'));
 
 if(checks.length!==30) throw new Error(`AUDIT_30_INTERNAL count=${checks.length}`);
 const failed=checks.filter(check=>!check.condition);
 if(failed.length) throw new Error(`AUDIT_30_FAIL ${failed.map((check,index)=>`${index+1}:${check.name}`).join(' | ')}`);
-console.log(`AUDIT_PUBLICATION_30_PASS controls=${checks.length}/30 pages=${semantic.pages.length} chapters=${navigation.chapterCount} quizzes=${quizzes.chapters?.length??0}`);
+console.log(`AUDIT_PUBLICATION_30_PASS controls=${checks.length}/30 pages=${semantic.pages.length} chapters=${navigation.chapterCount} quizzes=${quizzes.chapters?.length??0} epub=ok cover=approved tts=Antonio-only`);

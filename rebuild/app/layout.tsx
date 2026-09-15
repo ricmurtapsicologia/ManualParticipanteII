@@ -8,7 +8,7 @@ import './wave10.css';
 
 export const metadata: Metadata = {
   title: 'Manual do Participante CATS | Edição Digital',
-  description: 'Manual do Participante CATS — edição digital interativa com 246 páginas.'
+  description: 'Manual do Participante CATS — edição digital interativa e atualizada.'
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

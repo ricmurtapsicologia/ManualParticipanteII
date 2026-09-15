@@ -6,13 +6,16 @@ const get=async path=>{const response=await fetch(`${base}${path}`,{redirect:'fo
 const decodeCommands=stream=>[...stream.matchAll(/<([0-9A-F]+)>/g)].map(match=>Buffer.from(match[1],'hex').toString('latin1'));
 
 const health=await get('/api/health');
-add('Health endpoint responde 200',health.response.status===200);
+let healthJson={};
+try{healthJson=JSON.parse(health.body.toString('utf8'));}catch{}
+add('Health endpoint responde 200 com paginação dinâmica válida',health.response.status===200&&Number.isInteger(healthJson.pages)&&healthJson.pages>200&&healthJson.pages<246&&healthJson.chapters===34);
 const home=await get('/');
 const html=home.body.toString('utf8');
-add('Reader responde e não publica estruturas removidas',home.response.status===200&&!/Revisão cumulativa|Caso de transferência|ApplicationTransferCard/iu.test(html));
-add('Reader publica a marca CATS e o download do manual',/Manual do Participante CATS/u.test(html)&&/Baixar PDF/u.test(html));
+add('Reader responde sem estruturas removidas e usa a capa aprovada',home.response.status===200&&!/Revisão cumulativa|Caso de transferência|ApplicationTransferCard/iu.test(html)&&/data:image\/webp;base64,/u.test(html));
+add('Reader publica downloads PDF e EPUB e não fixa contagem antiga',/Baixar PDF/u.test(html)&&/Baixar EPUB/u.test(html)&&new RegExp(`data-page-count="${healthJson.pages}"`,'u').test(html)&&!/Edição Digital Interativa • (?:223|246|249) páginas/u.test(html));
 const pdf=await get('/api/manual');
-add('PDF responde com contrato editorial ITE44 e front matter',pdf.response.status===200&&/application\/pdf/iu.test(pdf.response.headers.get('content-type')??'')&&pdf.response.headers.get('x-cats-editorial-edition')==='publication-grade-ite44-frontmatter-2026');
+const epub=await get('/api/epub');
+add('PDF e EPUB respondem com seus contratos editoriais',pdf.response.status===200&&/application\/pdf/iu.test(pdf.response.headers.get('content-type')??'')&&pdf.response.headers.get('x-cats-editorial-edition')==='publication-grade-ite44-frontmatter-2026'&&epub.response.status===200&&/application\/epub\+zip/iu.test(epub.response.headers.get('content-type')??'')&&epub.response.headers.get('x-cats-epub-edition')==='publication-grade-epub3-2026'&&epub.body.length>100000&&epub.body.subarray(0,2).toString('latin1')==='PK');
 const binary=pdf.body.toString('latin1');
 const streams=[...binary.matchAll(/stream\n([\s\S]*?)\nendstream/g)].map(match=>match[1]);
 const pageCommands=streams.map(decodeCommands);
@@ -45,4 +48,4 @@ add('Sumário aponta para as 34 páginas físicas corretas do PDF',tocMatches);
 if(checks.length!==6) throw new Error(`AUDIT_6_INTERNAL count=${checks.length}`);
 const failed=checks.filter(check=>!check.condition);
 if(failed.length) throw new Error(`AUDIT_6_FAIL ${failed.map((check,index)=>`${index+1}:${check.name}`).join(' | ')}`);
-console.log('AUDIT_PUBLICATION_6_PASS controls=6/6 runtime=ok pdf=ite44 frontmatter=ok toc=physical-pages reader=clean');
+console.log(`AUDIT_PUBLICATION_6_PASS controls=6/6 pages=${healthJson.pages} runtime=ok pdf=ite44 epub=epub3 cover=approved toc=physical-pages`);

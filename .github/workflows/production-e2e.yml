@@ -1,4 +1,4 @@
-name: Manual CATS Production E2E
+name: Manual CATS Production Verification
 
 on:
   push:
@@ -12,8 +12,9 @@ permissions:
   contents: read
 
 jobs:
-  production-e2e:
+  production-verification:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: rebuild
@@ -36,30 +37,26 @@ jobs:
           node - <<'NODE'
           const base = process.env.E2E_BASE_URL;
           const expected = process.env.EXPECTED_SHA;
-          const deadline = Date.now() + 8 * 60_000;
+          const deadline = Date.now() + 10 * 60_000;
           let last = null;
           while (Date.now() < deadline) {
             try {
               const response = await fetch(`${base}/api/health`, { cache: 'no-store' });
               if (response.ok) {
                 last = await response.json();
-                if (
-                  last.status === 'ok' &&
-                  last.pages === 249 &&
-                  last.deployment?.environment === 'production' &&
-                  last.deployment?.branch === 'main' &&
-                  last.deployment?.commit === expected
-                ) {
-                  console.log(`VERCEL_SHA_READY ${expected}`);
+                if (last.status === 'ok' && Number.isInteger(last.pages) && last.pages > 200 && last.pages < 246 && last.chapters === 34 && last.deployment?.environment === 'production' && last.deployment?.branch === 'main' && last.deployment?.commit === expected) {
+                  console.log(`VERCEL_SHA_READY ${expected} pages=${last.pages}`);
                   process.exit(0);
                 }
               }
-            } catch (error) {
-              last = { error: String(error) };
-            }
+            } catch (error) { last = { error: String(error) }; }
             await new Promise(resolve => setTimeout(resolve, 5000));
           }
           throw new Error(`Vercel did not publish expected SHA ${expected}. Last health: ${JSON.stringify(last)}`);
           NODE
-      - name: Run desktop and mobile E2E
-        run: npm run e2e
+      - name: Verify deployed contracts
+        run: npm run verify:deployment -- "$E2E_BASE_URL"
+      - name: Audit 6/6 in production
+        run: BASE_URL="$E2E_BASE_URL" npm run audit:6
+      - name: E2E final desktop and mobile
+        run: E2E_BASE_URL="$E2E_BASE_URL" npm run e2e:final

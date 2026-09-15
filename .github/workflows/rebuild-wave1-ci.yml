@@ -1,60 +1,22 @@
-name: Rebuild Wave 13 Canonical CI
+name: Manual CATS Legacy Rebuild CI (manual only)
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'rebuild/**'
-      - 'data*.js'
-      - '.github/workflows/rebuild-wave1-ci.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  migrate-validate-build-smoke:
+  legacy-check:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: rebuild
     steps:
-      - name: Checkout full history
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
-      - name: Migrate canonical 249-page corpus
-        run: npm run migrate:249
-      - name: Migrate semantic editorial corpus
-        run: npm run semantic:migrate
-      - name: Validate lossless semantic architecture
-        run: npm run semantic:validate
-      - name: Build compact reader navigation
-        run: npm run navigation:build
-      - name: Validate hierarchical reader navigation
-        run: npm run navigation:validate
-      - name: Validate corpus, runtime and Vercel cutover contracts
-        run: npm run validate
-      - name: Build
-        run: npm run build
-      - name: Smoke runtime
-        run: npm run smoke
-      - name: Persist validated canonical corpus and navigation
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          rm -f recovery/v08-tail-source.b64.part5a recovery/v08-tail-source.b64.part5b
-          git add content/pages.json content/provenance.json content/semantic-pages.json content/navigation.json recovery/v08-tail-source.b64.part5
-          git add -u recovery/v08-tail-source.b64.part5a recovery/v08-tail-source.b64.part5b || true
-          if git diff --cached --quiet; then
-            echo "Canonical, semantic and navigation artifacts already persisted"
-            exit 0
-          fi
-          git commit -m "wave13: persist validated corpus and reader navigation [skip ci]"
-          git push origin HEAD:main
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - run: npm run smoke
