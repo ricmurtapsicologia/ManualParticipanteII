@@ -9,7 +9,8 @@ const PDF_NAME = 'Manual-do-Participante-CATS-Edicao-Digital-2026.pdf';
 export async function GET() {
   const filePath = path.join(process.cwd(), 'public', 'downloads', PDF_NAME);
   const pdf = await readFile(filePath);
-  return new Response(pdf, {
+  const body = Uint8Array.from(pdf);
+  return new Response(body, {
     headers: {
       'Content-Type': 'application/pdf',
       'Content-Language': 'pt-BR',
