@@ -36,12 +36,12 @@ test('acessibilidade: skip link, busca rotulada, focus trap e retorno do foco', 
 
 test('axe não encontra violações críticas ou sérias', async ({ page }) => {
   await open(page);
-  const result = await new AxeBuilder({ page }).analyze();
+  const result = await new AxeBuilder({ page: page as any }).analyze();
   const blocking = result.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
   expect(blocking, JSON.stringify(blocking, null, 2)).toEqual([]);
 
   await page.getByRole('button', { name: 'Pesquisar' }).click();
-  const dialogResult = await new AxeBuilder({ page }).include('.drawer').analyze();
+  const dialogResult = await new AxeBuilder({ page: page as any }).include('.drawer').analyze();
   const dialogBlocking = dialogResult.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
   expect(dialogBlocking, JSON.stringify(dialogBlocking, null, 2)).toEqual([]);
 });
