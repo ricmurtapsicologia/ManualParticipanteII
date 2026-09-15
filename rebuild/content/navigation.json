@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "sourceSemanticSchemaVersion": 2,
-  "sourcePageCount": 246,
+  "sourcePageCount": 223,
   "sourceSha256": "5869733f428387c180d293db12783a988019ec9eb2fc477a8dfe431400b52cf3",
   "chapterCount": 34,
-  "pedagogicalMarkerCount": 205,
+  "pedagogicalMarkerCount": 195,
   "generatedFrom": "content/semantic-pages.json",
   "frontMatter": [
     {
@@ -1083,11 +1083,6 @@
               "blockId": "p155-b9"
             },
             {
-              "kind": "case",
-              "pageNumber": 154,
-              "blockId": "p157-b1"
-            },
-            {
               "kind": "guided-analysis",
               "pageNumber": 154,
               "blockId": "p157-b3"
@@ -1119,11 +1114,6 @@
               "kind": "doctrine",
               "pageNumber": 156,
               "blockId": "p159-b2-w7f-marker-1-w7h-doctrine"
-            },
-            {
-              "kind": "case",
-              "pageNumber": 158,
-              "blockId": "p161-b1"
             },
             {
               "kind": "guided-analysis",
@@ -1162,11 +1152,6 @@
               "kind": "practice",
               "pageNumber": 162,
               "blockId": "p165-b1-w7f-marker-0-w7h-practice"
-            },
-            {
-              "kind": "case",
-              "pageNumber": 162,
-              "blockId": "p165-b2"
             },
             {
               "kind": "guided-analysis",
@@ -1223,11 +1208,6 @@
               "blockId": "p170-b2-w7f-marker-1-w7h-attention"
             },
             {
-              "kind": "case",
-              "pageNumber": 168,
-              "blockId": "p171-b1"
-            },
-            {
               "kind": "guided-analysis",
               "pageNumber": 168,
               "blockId": "p171-b3"
@@ -1265,11 +1245,6 @@
               "kind": "evidence",
               "pageNumber": 172,
               "blockId": "p175-b3-w7f-marker-2-w7h-evidence"
-            },
-            {
-              "kind": "case",
-              "pageNumber": 173,
-              "blockId": "p176-b2"
             },
             {
               "kind": "guided-analysis",
@@ -1310,11 +1285,6 @@
               "blockId": "p179-b4-w7f-marker-3-w7h-evidence"
             },
             {
-              "kind": "case",
-              "pageNumber": 177,
-              "blockId": "p180-b2"
-            },
-            {
               "kind": "guided-analysis",
               "pageNumber": 177,
               "blockId": "p180-b4"
@@ -1352,11 +1322,6 @@
               "kind": "attention",
               "pageNumber": 180,
               "blockId": "p183-b4-w7f-marker-4-w7h-attention"
-            },
-            {
-              "kind": "case",
-              "pageNumber": 182,
-              "blockId": "p185-b1"
             },
             {
               "kind": "guided-analysis",
@@ -1407,11 +1372,6 @@
               "blockId": "p189-b4-w7f-marker-3-w7h-practice"
             },
             {
-              "kind": "case",
-              "pageNumber": 187,
-              "blockId": "p190-b2"
-            },
-            {
               "kind": "guided-analysis",
               "pageNumber": 187,
               "blockId": "p190-b4"
@@ -1448,11 +1408,6 @@
               "kind": "practice",
               "pageNumber": 190,
               "blockId": "p193-b4-w7f-marker-3-w7h-practice"
-            },
-            {
-              "kind": "case",
-              "pageNumber": 191,
-              "blockId": "p194-b2"
             },
             {
               "kind": "guided-analysis",
@@ -1499,11 +1454,6 @@
               "kind": "evidence",
               "pageNumber": 196,
               "blockId": "w10-p199-e1"
-            },
-            {
-              "kind": "case",
-              "pageNumber": 197,
-              "blockId": "w10-p200-c1"
             },
             {
               "kind": "guided-analysis",
@@ -1627,75 +1577,44 @@
       ],
       "supplementarySections": [
         {
-          "id": "part-7-supplement-1",
-          "title": "Respostas orientadoras às questões de revisão",
+          "id": "part-7-supplement-2",
+          "title": "Recursos digitais do participante",
           "openingPage": 214,
           "pageNumbers": [
             214,
-            215,
-            216,
-            217,
-            218,
-            219,
-            220,
-            221,
-            222,
-            223,
-            224,
-            225,
-            226,
-            227,
-            228,
-            229,
-            230,
-            231,
-            232,
-            233,
-            234,
-            235,
-            236
-          ],
-          "pedagogicalMarkers": []
-        },
-        {
-          "id": "part-7-supplement-2",
-          "title": "Recursos digitais do participante",
-          "openingPage": 237,
-          "pageNumbers": [
-            237,
-            238
+            215
           ],
           "pedagogicalMarkers": []
         },
         {
           "id": "part-7-supplement-3",
           "title": "Referências nucleares",
-          "openingPage": 239,
+          "openingPage": 216,
           "pageNumbers": [
-            239,
-            240,
-            241
+            216,
+            217,
+            218
           ],
           "pedagogicalMarkers": []
         },
         {
           "id": "part-7-supplement-4",
           "title": "Glossário essencial",
-          "openingPage": 242,
+          "openingPage": 219,
           "pageNumbers": [
-            242,
-            243,
-            244
+            219,
+            220,
+            221
           ],
           "pedagogicalMarkers": []
         },
         {
           "id": "part-7-supplement-5",
           "title": "Checklist final do participante",
-          "openingPage": 245,
+          "openingPage": 222,
           "pageNumbers": [
-            245,
-            246
+            222,
+            223
           ],
           "pedagogicalMarkers": []
         }
