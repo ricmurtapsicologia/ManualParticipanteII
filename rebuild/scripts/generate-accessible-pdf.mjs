@@ -29,6 +29,7 @@ const X = 58;
 const WIDTH = PAGE.width - X * 2;
 const TOP = 86;
 const BOTTOM = 68;
+const FOOTER_MARGIN = 28;
 const MAX_Y = PAGE.height - BOTTOM;
 const COLORS = { ink:'#183537', teal:'#104b4c', muted:'#6d7a79', line:'#d9ddd8', orange:'#e86d2b', deep:'#052b2d', aqua:'#74d3cc' };
 const fixedDate = new Date('2026-09-15T00:00:00.000Z');
@@ -109,12 +110,12 @@ function drawCover(doc,parent,page) {
 }
 
 async function makePdf() {
-  const doc=new PDFDocument({autoFirstPage:false,size:[PAGE.width,PAGE.height],margins:{top:TOP,right:X,bottom:BOTTOM,left:X},pdfVersion:'1.7',tagged:true,subset:'PDF/UA',lang:'pt-BR',displayTitle:true,compress:true,info:{Title:'Manual do Participante CATS — Edição Digital 2026',Author:'Corpo de Bombeiros Militar de Minas Gerais',Subject:'Formação especializada CATS/ATS — Manual do Participante',Keywords:'CATS, ATS, CBMMG, abordagem técnica, tentativa de suicídio, formação',CreationDate:fixedDate,ModDate:fixedDate,Edition:'2026',Version:'2026.09.15-qep',Identifier:'CBMMG-CATS-MP-2026-QEP'}});
+  const doc=new PDFDocument({autoFirstPage:false,size:[PAGE.width,PAGE.height],margins:{top:TOP,right:X,bottom:FOOTER_MARGIN,left:X},pdfVersion:'1.7',tagged:true,subset:'PDF/UA',lang:'pt-BR',displayTitle:true,compress:true,info:{Title:'Manual do Participante CATS — Edição Digital 2026',Author:'Corpo de Bombeiros Militar de Minas Gerais',Subject:'Formação especializada CATS/ATS — Manual do Participante',Keywords:'CATS, ATS, CBMMG, abordagem técnica, tentativa de suicídio, formação',CreationDate:fixedDate,ModDate:fixedDate,Edition:'2026',Version:'2026.09.15-qep',Identifier:'CBMMG-CATS-MP-2026-QEP'}});
   doc.registerFont('Sans',regularSans); doc.registerFont('SansBold',boldSans); doc.registerFont('Serif',regularSerif); doc.registerFont('SerifBold',boldSerif);
   const chunks=[]; doc.on('data',chunk=>chunks.push(chunk)); const finished=new Promise((resolve,reject)=>{doc.on('end',resolve);doc.on('error',reject);});
   const auditPages=[]; const documentStruct=doc.struct('Document',{title:'Manual do Participante CATS — Edição Digital 2026',lang:'pt-BR'}); doc.addStructure(documentStruct); const partStructs=new Map();
   for (const page of pages) {
-    doc.addPage({size:[PAGE.width,PAGE.height],margins:{top:TOP,right:X,bottom:BOTTOM,left:X}}); doc.addNamedDestination(safeDest(page.number));
+    doc.addPage({size:[PAGE.width,PAGE.height],margins:{top:TOP,right:X,bottom:FOOTER_MARGIN,left:X}}); doc.addNamedDestination(safeDest(page.number));
     const section=doc.struct('Sect',{title:clean(page.title||`Página ${page.number}`),lang:'pt-BR'});
     if (page.part) { if (!partStructs.has(page.part)) { const partStruct=doc.struct('Part',{title:`Parte ${page.part}${page.partTitle?` — ${clean(page.partTitle)}`:''}`,lang:'pt-BR'}); documentStruct.add(partStruct); partStructs.set(page.part,partStruct); } partStructs.get(page.part).add(section); } else documentStruct.add(section);
     if (page.cover) { drawCover(doc,section,page); section.end(); auditPages.push({page:page.number,bodySize:null,maxY:doc.y,sourceBlocks:(page.blocks??[]).length,overflow:false,cover:true}); continue; }
