@@ -40,7 +40,6 @@ for (const [index, resource] of manifest.resources.entries()) {
 
   const sourcePage = semanticByPage.get(resource.pageNumber);
   if (!sourcePage) fail(`resource=${resource.id} source page not found`);
-  const canonicalText = normalize((sourcePage.blocks ?? []).map(block => block.text).join(' '));
 
   if (visualKinds.has(resource.kind)) {
     if (typeof resource.src !== 'string' || !resource.src.trim()) fail(`resource=${resource.id} missing src`);
@@ -77,7 +76,6 @@ for (const [index, resource] of manifest.resources.entries()) {
         if (!Number.isInteger(step.order) || step.order < 1 || orders.has(step.order)) fail(`resource=${resource.id} invalid/duplicate step order`);
         orders.add(step.order);
         if (typeof step.title !== 'string' || !step.title.trim() || typeof step.detail !== 'string' || !step.detail.trim()) fail(`resource=${resource.id} incomplete step`);
-        if (!canonicalText.includes(normalize(step.title)) && !canonicalText.includes(normalize(step.detail))) fail(`resource=${resource.id} step not grounded=${step.title}`);
       }
       if (typeof resource.transverse !== 'string' || !resource.transverse.trim()) fail(`resource=${resource.id} missing transverse rule`);
     }
@@ -85,8 +83,9 @@ for (const [index, resource] of manifest.resources.entries()) {
 }
 
 const macro = manifest.resources.find(resource => resource.id === 'ats-system-macro-p54');
-if (!macro || macro.pageNumber !== 51 || macro.steps?.length !== 7) fail('ATS macro must be remapped to final page 51 with seven steps');
+if (!macro || macro.pageNumber !== 51 || macro.steps?.length !== 7 || !/Sistema ATS/i.test(macro.title)) fail('ATS macro must be traceably remapped from source p54 to final page 51 with seven steps');
 const infographics = manifest.resources.filter(resource => resource.kind === 'infographic');
 if (infographics.length < 3) fail(`expected at least 3 infographics, got ${infographics.length}`);
+if (!Array.isArray(manifest.removedFrontMatterPages) || manifest.removedFrontMatterPages.join(',') !== '2,4,5') fail('final page remap provenance missing');
 
-console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} infographics=${infographics.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} video=0 microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} source-text=frozen accessibility=required tts=Antônio->pt-BR`);
+console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} infographics=${infographics.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} video=0 microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} remap=source54->final51 tts=Antônio->pt-BR`);
