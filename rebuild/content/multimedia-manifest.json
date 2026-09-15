@@ -18,7 +18,7 @@
     {
       "id": "ats-system-macro-p54",
       "kind": "infographic",
-      "pageNumber": 51,
+      "pageNumber": 48,
       "title": "Sistema ATS • visão macro",
       "src": "native://ats-system-macro",
       "alt": "Infográfico do Sistema ATS com sete fases operacionais e reavaliação dinâmica transversal.",
@@ -64,7 +64,7 @@
     {
       "id": "microlearning-high-impact-hypothesis-p58",
       "kind": "microlearning",
-      "pageNumber": 55,
+      "pageNumber": 52,
       "title": "DECIDA • hipótese de alto impacto",
       "sourceBlockId": "p58-b4",
       "prompt": "Se o solicitante diz que a pessoa possui uma arma, mas ninguém a viu, trate a informação como irrelevante, como certeza ou como hipótese de alto impacto?",
@@ -88,20 +88,9 @@
       "reveal": "A resposta mais prudente é hipótese de alto impacto: ela altera posicionamento e necessidade de apoio até ser verificada, sem autorizar afirmar que a arma está presente."
     },
     {
-      "id": "audio-opening-cats-p8",
-      "kind": "audio",
-      "pageNumber": 5,
-      "title": "O CATS e a prática profissional",
-      "src": "native://speech-synthesis",
-      "sourceBlockId": "p8-b3",
-      "preferredVoice": "Antônio",
-      "fallbackLang": "pt-BR",
-      "transcript": "Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único. Enquanto uma pessoa está em crise, a equipe precisa proteger a cena, compreender o que está acontecendo, coordenar recursos, comunicar-se com cuidado, manejar incerteza e preparar a continuidade do cuidado. O Curso de Atendimento a Tentativas de Suicídio (CATS) existe para transformar esse conjunto de exigências em desempenho profissional organizado. O objetivo não é ensinar uma coleção de frases ou técnicas isoladas, mas formar um raciocínio que possa ser usado quando a cena muda, quando a informação é incompleta e quando o tempo exerce pressão."
-    },
-    {
       "id": "audio-approach-boundary-p101",
       "kind": "audio",
-      "pageNumber": 98,
+      "pageNumber": 95,
       "title": "Aproximação e limite relacional",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p101-b3",
@@ -112,7 +101,7 @@
     {
       "id": "audio-vertical-attention-p152",
       "kind": "audio",
-      "pageNumber": 149,
+      "pageNumber": 146,
       "title": "Ambiente vertical • atenção",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p152-b3",
@@ -123,7 +112,7 @@
     {
       "id": "audio-violence-high-impact-p185",
       "kind": "audio",
-      "pageNumber": 182,
+      "pageNumber": 179,
       "title": "Violência doméstica • decisão e proteção",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p185-b4",
@@ -134,7 +123,7 @@
     {
       "id": "cats-tactical-decision-flow",
       "kind": "infographic",
-      "pageNumber": 151,
+      "pageNumber": 148,
       "title": "Abordagem tática • decisão proporcional ao risco",
       "src": "native://cats-infographic",
       "alt": "Fluxograma para organizar observação, confirmação de risco, oportunidade, intervenção e reavaliação na abordagem tática.",
@@ -170,7 +159,7 @@
     {
       "id": "cats-psp-flow",
       "kind": "infographic",
-      "pageNumber": 192,
+      "pageNumber": 189,
       "title": "Primeiros Socorros Psicológicos • sequência prática",
       "src": "native://cats-infographic",
       "alt": "Fluxograma de Primeiros Socorros Psicológicos com preparar, olhar, escutar e conectar.",
