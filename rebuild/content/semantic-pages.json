@@ -5442,7 +5442,7 @@
         },
         {
           "id": "p49-pr1-2",
-          "kind": "case",
+          "kind": "guided-analysis",
           "sourceIndex": 1,
           "text": "CASO PARA ANÁLISE"
         },
@@ -11718,9 +11718,9 @@
         },
         {
           "id": "p139-pr1-2",
-          "kind": "case",
+          "kind": "guided-analysis",
           "sourceIndex": 1,
-          "text": "CENÁRIO"
+          "text": "EXERCÍCIO SITUACIONAL"
         },
         {
           "id": "p139-pr1-3",
