@@ -26,7 +26,7 @@ jobs:
       - name: Materialize canonical publication artifacts
         working-directory: rebuild
         run: |
-          npm run content:transform
+          npm run content:materialize
           npm run audit:30
           npm run audit:90
           npm run audit:6
