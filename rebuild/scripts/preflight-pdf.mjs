@@ -24,7 +24,7 @@ const checks = [
   ['language', has(/\/Lang\b/), 'Idioma de documento presente'],
   ['xmp', has(/\/Metadata\b/), 'Stream XMP presente'],
   ['outlines', has(/\/Outlines\b/), 'Bookmarks/outlines presentes'],
-  ['links', count(/\/Subtype\s*\/Link\b/g) > 0, 'Links reais presentes'],
+  ['navigation-destinations', has(/\/Dests\b/) && has(/\/Names\b/), 'Destinos nomeados presentes; URLs permanecem textuais no PDF e interativas na edição web'],
   ['embedded-fonts', has(/\/FontFile2\b|\/FontFile3\b/), 'Fontes incorporadas/subsetadas'],
   ['no-base14-helvetica', !has(/\/BaseFont\s*\/(Helvetica|Times-Roman|Times-Bold|Courier)\b/), 'Sem Base14 como fonte de conteúdo'],
   ['unicode-cmap', has(/\/ToUnicode\b/), 'Mapeamento ToUnicode presente'],
