@@ -18,7 +18,7 @@
     {
       "id": "ats-system-macro-p54",
       "kind": "infographic",
-      "pageNumber": 33,
+      "pageNumber": 30,
       "title": "Sistema ATS • visão macro",
       "src": "native://ats-system-macro",
       "alt": "Infográfico do Sistema ATS com sete fases operacionais e reavaliação dinâmica transversal.",
@@ -64,7 +64,7 @@
     {
       "id": "microlearning-high-impact-hypothesis-p58",
       "kind": "microlearning",
-      "pageNumber": 37,
+      "pageNumber": 34,
       "title": "DECIDA • hipótese de alto impacto",
       "sourceBlockId": "p58-b4",
       "prompt": "Se o solicitante diz que a pessoa possui uma arma, mas ninguém a viu, trate a informação como irrelevante, como certeza ou como hipótese de alto impacto?",
@@ -90,7 +90,7 @@
     {
       "id": "audio-approach-boundary-p101",
       "kind": "audio",
-      "pageNumber": 80,
+      "pageNumber": 77,
       "title": "Aproximação e limite relacional",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p101-b3",
@@ -101,7 +101,7 @@
     {
       "id": "audio-vertical-attention-p152",
       "kind": "audio",
-      "pageNumber": 131,
+      "pageNumber": 128,
       "title": "Ambiente vertical • atenção",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p152-b3",
@@ -112,7 +112,7 @@
     {
       "id": "audio-violence-high-impact-p185",
       "kind": "audio",
-      "pageNumber": 164,
+      "pageNumber": 161,
       "title": "Violência doméstica • decisão e proteção",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p185-b4",
@@ -123,7 +123,7 @@
     {
       "id": "cats-tactical-decision-flow",
       "kind": "infographic",
-      "pageNumber": 133,
+      "pageNumber": 130,
       "title": "Abordagem tática • decisão proporcional ao risco",
       "src": "native://cats-infographic",
       "alt": "Fluxograma para organizar observação, confirmação de risco, oportunidade, intervenção e reavaliação na abordagem tática.",
@@ -159,7 +159,7 @@
     {
       "id": "cats-psp-flow",
       "kind": "infographic",
-      "pageNumber": 174,
+      "pageNumber": 171,
       "title": "Primeiros Socorros Psicológicos • sequência prática",
       "src": "native://cats-infographic",
       "alt": "Fluxograma de Primeiros Socorros Psicológicos com preparar, olhar, escutar e conectar.",
