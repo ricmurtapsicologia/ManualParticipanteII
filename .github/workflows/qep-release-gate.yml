@@ -53,6 +53,18 @@ jobs:
           mkdir -p reports
           docker run --rm -v "$PWD:/data" ghcr.io/verapdf/cli:v1.30.2 --format json --flavour ua1 "/data/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf" > reports/verapdf.json
           jq -e '.. | objects | select(has("isCompliant")) | .isCompliant == true' reports/verapdf.json >/dev/null
+      - name: Runtime smoke 6/6
+        run: |
+          npm run start -- -p 3100 > /tmp/cats-next.log 2>&1 &
+          PID=$!
+          trap 'kill $PID 2>/dev/null || true' EXIT
+          for i in {1..40}; do
+            if curl -fsS http://127.0.0.1:3100/api/health >/dev/null; then break; fi
+            sleep 1
+          done
+          BASE_URL=http://127.0.0.1:3100 npm run audit:6
+          kill $PID 2>/dev/null || true
+          trap - EXIT
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium firefox webkit
       - name: Cross-browser accessibility and E2E
