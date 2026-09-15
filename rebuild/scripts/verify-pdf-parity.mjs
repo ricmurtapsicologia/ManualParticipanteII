@@ -19,7 +19,12 @@ const extracted = await readFile(textPath, 'utf8');
 const normalize = value => String(value ?? '')
   .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
   .replace(/[\u00ad\u200b]/g, '')
-  .replace(/-\s*\n\s*/g, '')
+  // PDFKit não hifeniza palavras automaticamente: um hífen no fim da linha é lexical e deve ser preservado.
+  .replace(/-\s*\n\s*/g, '-')
+  // URLs, siglas compostas e caminhos podem quebrar visualmente após uma barra sem haver espaço no original.
+  .replace(/\/\s*\n\s*/g, '/')
+  // O glifo da caixa é visível no PDF, mas o pdftotext/poppler não o expõe de forma estável.
+  .replace(/[☐□]/g, '')
   .replace(/\s+/g, ' ').trim().toLowerCase();
 const pdfText = normalize(extracted);
 const blocks = (semantic.pages ?? []).flatMap(page => [
