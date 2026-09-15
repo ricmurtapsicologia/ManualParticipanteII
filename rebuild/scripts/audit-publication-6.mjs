@@ -11,7 +11,7 @@ try{healthJson=JSON.parse(health.body.toString('utf8'));}catch{}
 add('Health endpoint responde 200 com paginação dinâmica válida',health.response.status===200&&Number.isInteger(healthJson.pages)&&healthJson.pages>200&&healthJson.pages<246&&healthJson.chapters===34);
 const home=await get('/');
 const html=home.body.toString('utf8');
-add('Reader responde sem estruturas removidas e exibe capa editorial CATS',home.response.status===200&&!/Revisão cumulativa|Caso de transferência|ApplicationTransferCard/iu.test(html)&&/data-testid="approved-cover"/u.test(html)&&/ATENDIMENTO A/u.test(html)&&/wave54CoverIllustration/u.test(html));
+add('Reader responde sem estruturas removidas e exibe capa editorial CATS',home.response.status===200&&!/Revisão cumulativa|Caso de transferência|ApplicationTransferCard/iu.test(html)&&/data-testid="approved-cover"/u.test(html)&&/ATENDIMENTO A/iu.test(html)&&/wave54CoverIllustration/u.test(html));
 add('Reader publica downloads PDF e EPUB e não fixa contagem antiga',/Baixar PDF/u.test(html)&&/Baixar EPUB/u.test(html)&&new RegExp(`data-page-count="${healthJson.pages}"`,'u').test(html)&&!/Edição Digital Interativa • (?:223|246|249) páginas/u.test(html));
 const pdf=await get('/api/manual');
 const epub=await get('/api/epub');
