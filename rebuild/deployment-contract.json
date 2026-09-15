@@ -1,5 +1,5 @@
 {
-  "schema": 3,
+  "schema": 4,
   "stage": "canonical-single-deployment-release",
   "projectName": "manual-participante-cats-digital",
   "teamId": "team_JRb3bMdqrQWOEUjMGGh0kQHV",
@@ -18,9 +18,13 @@
     "corpus": "canonical-hybrid-recovered",
     "environment": "production",
     "branch": "main",
-    "pdf": "ITE44",
+    "pdf": "professional-book",
+    "pdfBodyTypography": "serif-11.2pt-16pt-leading",
+    "pdfJustification": "full",
+    "pdfMaxResidualBlankArea": "20%",
+    "pdfOverlapGuard": true,
     "epub": "EPUB3",
-    "cover": "approved-firefighters",
+    "cover": "vector-strong-branding",
     "ttsVoice": "Antônio-required"
   },
   "policy": {

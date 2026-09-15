@@ -28,13 +28,15 @@ fs.writeFileSync(pagePath, page);
 const pdfPath = path.join(root, 'app', 'api', 'manual', 'route.ts');
 const pdf = fs.readFileSync(pdfPath, 'utf8');
 for (const token of [
-  'const MARGIN_X = 70.87;',
-  'const leading = opts.leading ?? 18',
-  'firstLineIndent: 35.43',
+  'const MARGIN_X = 58;',
+  "const font = opts.font ?? 'F3'; const size = opts.size ?? 11.2; const leading = opts.leading ?? 16",
+  'firstLineIndent: 22',
   'AUTORIA INSTITUCIONAL',
   'PREFÁCIO DO COORDENADOR',
-  "'X-CATS-Editorial-Edition': 'publication-grade-ite44-frontmatter-2026'",
-  "centered('CATS'"
-]) if (!pdf.includes(token)) fail(`PDF canonical token missing: ${token}`);
+  'PDF_LAYOUT_OVERFLOW',
+  'PDF_BOOK_DENSITY_FILL',
+  "'X-CATS-Editorial-Edition': 'publication-grade-book-2026'",
+  "textCmd('CATS', 58, 720, 'F2', 70"
+]) if (!pdf.includes(token)) fail(`PDF professional-book token missing: ${token}`);
 
-console.log('RELEASE_FINAL_HOTFIX_OK reader=dynamic epub=cta tts=Antonio-only pdf=ite44-cats');
+console.log('RELEASE_FINAL_HOTFIX_OK reader=dynamic epub=cta tts=Antonio-only pdf=professional-book cover=strong density<=20pct overlap-guard=on');

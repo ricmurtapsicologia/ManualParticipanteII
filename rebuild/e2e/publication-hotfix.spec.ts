@@ -85,12 +85,12 @@ test('reader editorial hotfix traverses every page and resets quizzes by chapter
   expect(infographicCount).toBeGreaterThanOrEqual(3);
 });
 
-test('downloadable PDF has ITE44 front matter and physical TOC contract', async ({ request }) => {
+test('downloadable PDF has professional book layout and physical TOC contract', async ({ request }) => {
   test.setTimeout(90_000);
   const response = await request.get('/api/manual');
   expect(response.status()).toBe(200);
   expect(response.headers()['content-type']).toContain('application/pdf');
-  expect(response.headers()['x-cats-editorial-edition']).toBe('publication-grade-ite44-frontmatter-2026');
+  expect(response.headers()['x-cats-editorial-edition']).toBe('publication-grade-book-2026');
   const body = await response.body();
   expect(body.length).toBeGreaterThan(100_000);
   const binary = body.toString('latin1');
@@ -102,6 +102,8 @@ test('downloadable PDF has ITE44 front matter and physical TOC contract', async 
   const streams = [...binary.matchAll(/stream\n([\s\S]*?)\nendstream/g)].map(match => match[1]);
   const pageCommands = streams.map(decodeCommands);
   const allText = pageCommands.flat().join('\n');
+  expect(allText).toContain('CATS');
+  expect(allText).toContain('CONHECIMENTO QUE SALVA VIDAS');
   expect(allText).toContain('AUTORIA INSTITUCIONAL');
   expect(allText).toContain('PREFÁCIO DO COORDENADOR');
   expect(allText).toContain('Maj BM Richelmy Murta Pinto - Coordenador');

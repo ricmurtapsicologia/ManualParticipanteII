@@ -17,15 +17,15 @@ try {
   const health = await healthRes.json();
   if (health.status !== 'ok' || !Number.isInteger(health.pages) || health.pages < 200 || health.pages >= 246 || health.chapters !== 34 || health.wave !== 10 || health.architecture !== 'rebuild-clean' || health.corpus !== 'canonical-hybrid-recovered') throw new Error(`Unexpected health payload: ${JSON.stringify(health)}`);
   if (!/ABNT NBR 6023:2018/iu.test(health.bibliography ?? '')) throw new Error(`Unexpected bibliography standard: ${health.bibliography}`);
-  if (health.publication?.cumulativeReview !== 'removed' || health.publication?.videoAccess !== 'removed' || health.publication?.pdfFormat !== 'ITE44-1.5') throw new Error(`Unexpected publication hotfix proof: ${JSON.stringify(health.publication)}`);
+  if (health.publication?.cumulativeReview !== 'removed' || health.publication?.videoAccess !== 'removed' || health.publication?.pdfFormat !== 'BOOK-11.2-16' || health.publication?.justification !== 'full' || health.publication?.maxResidualBlankArea !== '20%' || health.publication?.overlapGuard !== true || health.publication?.cover !== 'vector-strong-branding') throw new Error(`Unexpected publication hotfix proof: ${JSON.stringify(health.publication)}`);
   if (health.deployment?.platform !== 'local' || health.deployment?.environment !== 'local' || health.deployment?.branch !== 'local' || health.deployment?.commit !== 'local') throw new Error(`Unexpected local deployment proof: ${JSON.stringify(health.deployment)}`);
 
   const homeRes = await fetch(base);
   if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
   const html = await homeRes.text();
-  for (const token of ['Manual do Participante CATS', 'Edição Digital Interativa', `data-page-count="${health.pages}"`]) if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
+  for (const token of ['Manual do Participante CATS', 'Edição Digital Interativa', `data-page-count="${health.pages}"`, 'data-testid="approved-cover"', 'wave54CoverIllustration']) if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
   for (const forbidden of ['data-wave=', 'data-editorial-wave=', 'data-design-wave=', 'data-wave78-status=', 'data-design-system=', 'data-design-subwave=', 'data-semantic-renderer=', 'data-reader-wave=', 'ApplicationTransferCard', 'VideoResourceCard']) if (html.includes(forbidden)) throw new Error(`Home leaked marker: ${forbidden}`);
-  console.log(`SMOKE_OK home=200 health=200 pages=${health.pages} chapters=34 review=removed transfer=removed video=removed pdf=ITE44-1.5`);
+  console.log(`SMOKE_OK home=200 health=200 pages=${health.pages} chapters=34 review=removed transfer=removed video=removed pdf=BOOK-11.2-16 cover=vector density<=20pct overlap-guard=on`);
 } finally {
   child.kill('SIGTERM');
   await sleep(300);

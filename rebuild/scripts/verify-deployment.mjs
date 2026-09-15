@@ -18,14 +18,15 @@ if (!health.deployment?.commit || health.deployment.commit === 'local') throw ne
 const homeRes = await fetch(base, { redirect: 'follow', cache: 'no-store' });
 if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
 const html = await homeRes.text();
-for (const token of ['Manual do Participante CATS', `data-page-count="${health.pages}"`, 'data:image/webp;base64,', 'Baixar PDF', 'Baixar EPUB']) {
+for (const token of ['Manual do Participante CATS', `data-page-count="${health.pages}"`, 'data-testid="approved-cover"', 'wave54CoverIllustration', 'Baixar PDF', 'Baixar EPUB']) {
   if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
 }
 for (const forbidden of ['data-wave=', 'data-editorial-wave=', 'data-design-wave=', 'data-wave78-status=', 'data-design-system=', 'data-design-subwave=', 'data-semantic-renderer=', 'data-reader-wave=']) if (html.includes(forbidden)) throw new Error(`Home leaked backstage marker: ${forbidden}`);
 
 const pdfRes = await fetch(`${base}/api/manual`, { redirect:'follow', cache:'no-store' });
 if (!pdfRes.ok || !(pdfRes.headers.get('content-type') ?? '').includes('application/pdf')) throw new Error(`PDF contract failed ${pdfRes.status}`);
+if (pdfRes.headers.get('x-cats-editorial-edition') !== 'publication-grade-book-2026') throw new Error(`Unexpected PDF editorial edition ${pdfRes.headers.get('x-cats-editorial-edition')}`);
 const epubRes = await fetch(`${base}/api/epub`, { redirect:'follow', cache:'no-store' });
 if (!epubRes.ok || !(epubRes.headers.get('content-type') ?? '').includes('application/epub+zip')) throw new Error(`EPUB contract failed ${epubRes.status}`);
 
-console.log(`VERCEL_GATE_OK url=${base} pages=${health.pages} chapters=34 branch=${health.deployment.branch} commit=${health.deployment.commit} pdf=ok epub=ok cover=approved`);
+console.log(`VERCEL_GATE_OK url=${base} pages=${health.pages} chapters=34 branch=${health.deployment.branch} commit=${health.deployment.commit} pdf=professional-book epub=ok cover=vector`);

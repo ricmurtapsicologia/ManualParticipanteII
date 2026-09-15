@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('reader exposes approved cover and both publication downloads', async ({ page }) => {
+test('reader exposes professional CATS cover and both publication downloads', async ({ page }) => {
   await page.goto('/', { waitUntil:'networkidle' });
   await page.evaluate(() => localStorage.setItem('cats-rebuild-page','0'));
   await page.reload({ waitUntil:'networkidle' });
@@ -8,7 +8,9 @@ test('reader exposes approved cover and both publication downloads', async ({ pa
   const total = Number(await shell.getAttribute('data-page-count'));
   expect(total).toBeGreaterThan(200);
   expect(total).toBeLessThan(246);
-  await expect(page.getByTestId('approved-cover-image')).toHaveAttribute('src',/^data:image\/webp;base64,/);
+  await expect(page.getByTestId('approved-cover')).toBeVisible();
+  await expect(page.getByTestId('cats-logo')).toContainText('CATS');
+  await expect(page.getByRole('heading', { name:/Atendimento a Tentativas de Suicídio/i })).toBeVisible();
   await expect(page.getByTestId('manual-download')).toHaveAttribute('href','/api/manual');
   await expect(page.getByTestId('epub-download')).toHaveAttribute('href','/api/epub');
 });

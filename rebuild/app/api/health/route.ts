@@ -12,7 +12,7 @@ export function GET() {
     pages,
     chapters: 34,
     corpus: 'canonical-hybrid-recovered',
-    release: '2026-09-14-publication-hotfix',
+    release: '2026-09-14-professional-book-hotfix',
     bibliography: 'ABNT NBR 6023:2018, versão corrigida 2:2020',
     removedFrontMatterPages: [2, 4, 5],
     publication: {
@@ -20,7 +20,12 @@ export function GET() {
       transferCases: 'removed',
       scenarios: 'removed',
       videoAccess: 'removed',
-      pdfFormat: 'ITE44-1.5'
+      pdfFormat: 'BOOK-11.2-16',
+      bodyTypography: 'serif',
+      justification: 'full',
+      maxResidualBlankArea: '20%',
+      overlapGuard: true,
+      cover: 'vector-strong-branding'
     },
     deployment: {
       platform: process.env.VERCEL ? 'vercel' : 'local',
