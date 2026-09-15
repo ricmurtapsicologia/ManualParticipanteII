@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('reader exposes professional CATS cover and both publication downloads', async ({ page }) => {
+test('reader exposes professional CATS cover and a single PDF download CTA', async ({ page }) => {
   await page.goto('/', { waitUntil:'networkidle' });
   await page.evaluate(() => localStorage.setItem('cats-rebuild-page','0'));
   await page.reload({ waitUntil:'networkidle' });
@@ -11,11 +11,13 @@ test('reader exposes professional CATS cover and both publication downloads', as
   await expect(page.getByTestId('approved-cover')).toBeVisible();
   await expect(page.getByTestId('cats-logo')).toContainText('CATS');
   await expect(page.getByRole('heading', { name:/Atendimento a Tentativas de Suicídio/i })).toBeVisible();
+  await expect(page.getByTestId('manual-download')).toHaveCount(1);
   await expect(page.getByTestId('manual-download')).toHaveAttribute('href','/api/manual');
-  await expect(page.getByTestId('epub-download')).toHaveAttribute('href','/api/epub');
+  await expect(page.getByTestId('epub-download')).toHaveCount(0);
+  await expect(page.locator('a.manualDownload')).toHaveCount(1);
 });
 
-test('EPUB 3 download is self-contained and includes approved cover', async ({ request }) => {
+test('EPUB 3 endpoint remains valid without exposing a second main download CTA', async ({ request }) => {
   const response = await request.get('/api/epub');
   expect(response.status()).toBe(200);
   expect(response.headers()['content-type']).toContain('application/epub+zip');
