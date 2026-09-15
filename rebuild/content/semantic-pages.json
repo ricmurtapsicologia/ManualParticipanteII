@@ -5466,7 +5466,7 @@
         },
         {
           "id": "p49-pr1-6",
-          "kind": "summary",
+          "kind": "guided-analysis",
           "sourceIndex": 5,
           "text": "SÍNTESE"
         },
@@ -8286,7 +8286,7 @@
         },
         {
           "id": "p91-pr1-9",
-          "kind": "summary",
+          "kind": "guided-analysis",
           "sourceIndex": 8,
           "text": "SÍNTESE"
         },
@@ -11742,7 +11742,7 @@
         },
         {
           "id": "p139-pr1-6",
-          "kind": "summary",
+          "kind": "guided-analysis",
           "sourceIndex": 5,
           "text": "PONTO DE APRENDIZAGEM"
         },
@@ -11814,7 +11814,7 @@
         },
         {
           "id": "p140-pr1-8",
-          "kind": "summary",
+          "kind": "guided-analysis",
           "sourceIndex": 7,
           "text": "FECHAMENTO"
         },
