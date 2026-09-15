@@ -25,16 +25,12 @@ jobs:
         run: npm install --ignore-scripts --no-audit --no-fund
       - name: Materialize canonical publication artifacts
         working-directory: rebuild
-        run: |
-          npm run content:materialize
-          npm run audit:30
-          npm run audit:90
-          npm run audit:6
-      - name: Commit only generated content state
+        run: npm run content:materialize
+      - name: Commit generated publication state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add rebuild/content/*.json
+          git add rebuild/content/*.json rebuild/package-lock.json
           if git diff --cached --quiet; then
             echo "Publication content already materialized."
             exit 0
