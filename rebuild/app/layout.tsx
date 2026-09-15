@@ -6,6 +6,7 @@ import './wave16.css';
 import './wave18.css';
 import './wave10.css';
 import './a11y-qep.css';
+import SkipLinkFocus from './SkipLinkFocus';
 
 const canonicalUrl = 'https://manual-participante-cats-digital.vercel.app';
 const title = 'Manual do Participante CATS | Edição Digital 2026';
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="pt-BR">
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
+        <SkipLinkFocus />
         {children}
       </body>
     </html>
