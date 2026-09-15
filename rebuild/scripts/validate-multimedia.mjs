@@ -6,6 +6,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'content', 'multimedia-manifest.json'), 'utf8'));
 const semantic = JSON.parse(fs.readFileSync(path.join(root, 'content', 'semantic-pages.json'), 'utf8'));
+const navigation = JSON.parse(fs.readFileSync(path.join(root, 'content', 'navigation.json'), 'utf8'));
 const pageCount = Array.isArray(semantic.pages) ? semantic.pages.length : 0;
 const fail = message => { console.error(`MULTIMEDIA_VALIDATE_FAIL ${message}`); process.exit(1); };
 const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
@@ -80,9 +81,12 @@ for (const [index, resource] of manifest.resources.entries()) {
 }
 
 const macro = manifest.resources.find(resource => resource.id === 'ats-system-macro-p54');
-if (!macro || macro.pageNumber !== 51 || macro.steps?.length !== 7 || !/Sistema ATS/i.test(macro.title)) fail('ATS macro must be traceably remapped from source p54 to final page 51 with seven steps');
+const chapter6 = (navigation.parts ?? []).flatMap(part => part.chapters ?? []).find(chapter => chapter.chapter === 6);
+if (!macro || !chapter6 || macro.pageNumber !== chapter6.openingPage || macro.steps?.length !== 7 || !/Sistema ATS/i.test(macro.title)) {
+  fail(`ATS macro provenance mismatch page=${macro?.pageNumber} chapter6=${chapter6?.openingPage}`);
+}
 const infographics = manifest.resources.filter(resource => resource.kind === 'infographic');
 if (infographics.length < 3) fail(`expected at least 3 infographics, got ${infographics.length}`);
 if (!Array.isArray(manifest.removedFrontMatterPages) || manifest.removedFrontMatterPages.join(',') !== '2,4,5') fail('final page remap provenance missing');
 
-console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} infographics=${infographics.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} video=0 microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} provenance=block-id-global remap=source54->final51 tts=Antônio->pt-BR`);
+console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} infographics=${infographics.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} video=0 microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} provenance=block-id-global ats=source54->chapter6-opening:${macro.pageNumber} tts=Antônio->pt-BR`);
