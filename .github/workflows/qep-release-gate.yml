@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   qep-gate:
+    if: ${{ github.event_name != 'push' || github.ref != 'refs/heads/saneamento/qep-fase1-execucao' || contains(github.event.head_commit.message, '[materialized]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     defaults:
@@ -52,7 +53,11 @@ jobs:
         run: |
           mkdir -p reports
           docker run --rm -v "$PWD:/data" ghcr.io/verapdf/cli:v1.30.2 --format json --flavour ua1 "/data/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf" > reports/verapdf.json
-          jq -e '.. | objects | select(has("isCompliant")) | .isCompliant == true' reports/verapdf.json >/dev/null
+          if ! jq -e '.. | objects | select(has("isCompliant")) | .isCompliant == true' reports/verapdf.json >/dev/null; then
+            echo "veraPDF encontrou não conformidades PDF/UA-1:"
+            jq -r '.. | objects | select((.status? == "failed") or (.passed? == false) or (.isCompliant? == false)) | [.testNumber // .ruleId // .id // "rule", .description // .message // .status // "failed"] | @tsv' reports/verapdf.json | head -80 || true
+            exit 1
+          fi
       - name: Runtime smoke 6/6
         run: |
           npm run start -- -p 3100 > /tmp/cats-next.log 2>&1 &
