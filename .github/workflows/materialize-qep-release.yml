@@ -70,10 +70,11 @@ jobs:
         working-directory: rebuild
         run: |
           mkdir -p reports
-          docker run --rm -v "$PWD:/data" verapdf/cli:v1.30.2 --format json --flavour ua1 "/data/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf" > reports/verapdf.json
-          if ! jq -e '.. | objects | select(has("isCompliant")) | .isCompliant == true' reports/verapdf.json >/dev/null; then
-            echo "veraPDF encontrou não conformidades PDF/UA-1:"
-            jq -r '.. | objects | select((.status? == "failed") or (.passed? == false) or (.isCompliant? == false)) | [.testNumber // .ruleId // .id // "rule", .description // .message // .status // "failed"] | @tsv' reports/verapdf.json | head -100 || true
+          VERAPDF_EXIT=0
+          docker run --rm -v "$PWD:/data" verapdf/cli:v1.30.2@sha256:d5ee329657cf9bc4b2400392dd54c7d0a0ce9980ff6fa2da5590eebeec007cdb --format json --flavour ua1 "/data/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf" > reports/verapdf.json || VERAPDF_EXIT=$?
+          if [ "$VERAPDF_EXIT" -ne 0 ] || ! jq -e '.report.jobs[0].validationResult[0].compliant == true' reports/verapdf.json >/dev/null; then
+            echo "veraPDF encontrou não conformidades PDF/UA-1 (exit=$VERAPDF_EXIT):"
+            jq -r '.report.jobs[0].validationResult[0].details.ruleSummaries[] | select((.ruleStatus == "FAILED") or (.status == "failed") or ((.failedChecks // 0) > 0)) | "clause=\(.clause) test=\(.testNumber) failed=\(.failedChecks) tags=\((.tags // []) | join(",")) :: \(.description)"' reports/verapdf.json | head -100 || true
             exit 1
           fi
           echo "VERAPDF_PDFUA_PASS"
