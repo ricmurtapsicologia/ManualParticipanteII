@@ -12,9 +12,12 @@ export async function GET() {
   return new Response(pdf, {
     headers: {
       'Content-Type': 'application/pdf',
+      'Content-Language': 'pt-BR',
       'Content-Disposition': `attachment; filename="${PDF_NAME}"`,
       'Content-Length': String(pdf.byteLength),
       'Cache-Control': 'public, max-age=3600, s-maxage=86400, immutable',
+      'X-CATS-Editorial-Edition': 'publication-grade-book-2026',
+      'X-CATS-Accessibility': 'PDF-UA-1',
       'X-Content-Type-Options': 'nosniff'
     }
   });
