@@ -2,7 +2,7 @@ name: Materialize and QEP Release Gate
 
 on:
   push:
-    branches: [saneamento/qep-fase1-execucao]
+    branches: [saneamento/qep-fase1-execucao, prontidao/final-6-ondas]
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: saneamento/qep-fase1-execucao
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -38,7 +38,7 @@ jobs:
             git commit -m "chore(qep): materializar estado final determinístico [materialized]"
           fi
           echo "QEP_CHECKPOINT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-          git push origin HEAD:saneamento/qep-fase1-execucao
+          git push origin HEAD:"$GITHUB_REF_NAME"
       - name: Build deterministic artifact
         working-directory: rebuild
         run: npm run build
