@@ -27,6 +27,8 @@ for (const resource of manifest.resources) if (!allowed.has(resource.kind)) fail
 
 const ids = new Set();
 const semanticByPage = new Map((semantic.pages ?? []).map(page => [page.number, page]));
+const blockById = new Map();
+for (const page of semantic.pages ?? []) for (const block of page.blocks ?? []) blockById.set(block.id, { pageNumber: page.number, block });
 const nativeRenderers = new Set(['native://ats-system-macro', 'native://cats-infographic', 'native://speech-synthesis']);
 const visualKinds = new Set(['infographic', 'chart', 'image']);
 
@@ -37,9 +39,7 @@ for (const [index, resource] of manifest.resources.entries()) {
   ids.add(resource.id);
   if (!Number.isInteger(resource.pageNumber) || resource.pageNumber < 1 || resource.pageNumber > pageCount) fail(`resource=${resource.id} invalid pageNumber=${resource.pageNumber}`);
   if (typeof resource.title !== 'string' || !resource.title.trim()) fail(`resource=${resource.id} missing title`);
-
-  const sourcePage = semanticByPage.get(resource.pageNumber);
-  if (!sourcePage) fail(`resource=${resource.id} source page not found`);
+  if (!semanticByPage.has(resource.pageNumber)) fail(`resource=${resource.id} published page not found`);
 
   if (visualKinds.has(resource.kind)) {
     if (typeof resource.src !== 'string' || !resource.src.trim()) fail(`resource=${resource.id} missing src`);
@@ -50,9 +50,9 @@ for (const [index, resource] of manifest.resources.entries()) {
     if (resource.src !== 'native://speech-synthesis') fail(`resource=${resource.id} audio src must be native://speech-synthesis`);
     if (typeof resource.transcript !== 'string' || !resource.transcript.trim()) fail(`resource=${resource.id} missing transcript`);
     if (typeof resource.sourceBlockId !== 'string' || !resource.sourceBlockId.trim()) fail(`resource=${resource.id} missing sourceBlockId`);
-    const sourceBlock = (sourcePage.blocks ?? []).find(block => block.id === resource.sourceBlockId);
-    if (!sourceBlock) fail(`resource=${resource.id} sourceBlockId not found=${resource.sourceBlockId}`);
-    if (normalize(resource.transcript) !== normalize(sourceBlock.text)) fail(`resource=${resource.id} transcript must match source block`);
+    const source = blockById.get(resource.sourceBlockId);
+    if (!source) fail(`resource=${resource.id} sourceBlockId not found anywhere=${resource.sourceBlockId}`);
+    if (normalize(resource.transcript) !== normalize(source.block.text)) fail(`resource=${resource.id} transcript must match preserved source block`);
     if (resource.preferredVoice !== 'Antônio' || resource.fallbackLang !== 'pt-BR') fail(`resource=${resource.id} invalid TTS policy`);
   }
 
@@ -61,10 +61,7 @@ for (const [index, resource] of manifest.resources.entries()) {
     if (typeof resource.reveal !== 'string' || !resource.reveal.trim()) fail(`resource=${resource.id} missing reveal`);
     if (!Array.isArray(resource.choices) || resource.choices.length < 2) fail(`resource=${resource.id} requires at least two choices`);
     if (resource.choices.filter(choice => choice.correct === true).length !== 1) fail(`resource=${resource.id} requires exactly one correct choice`);
-    if (typeof resource.sourceBlockId === 'string' && resource.sourceBlockId.trim()) {
-      const sourceBlock = (sourcePage.blocks ?? []).find(block => block.id === resource.sourceBlockId);
-      if (!sourceBlock) fail(`resource=${resource.id} sourceBlockId not found=${resource.sourceBlockId}`);
-    }
+    if (typeof resource.sourceBlockId === 'string' && resource.sourceBlockId.trim() && !blockById.has(resource.sourceBlockId)) fail(`resource=${resource.id} sourceBlockId not found anywhere=${resource.sourceBlockId}`);
   }
 
   if (typeof resource.src === 'string' && resource.src.startsWith('native://')) {
@@ -88,4 +85,4 @@ const infographics = manifest.resources.filter(resource => resource.kind === 'in
 if (infographics.length < 3) fail(`expected at least 3 infographics, got ${infographics.length}`);
 if (!Array.isArray(manifest.removedFrontMatterPages) || manifest.removedFrontMatterPages.join(',') !== '2,4,5') fail('final page remap provenance missing');
 
-console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} infographics=${infographics.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} video=0 microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} remap=source54->final51 tts=Antônio->pt-BR`);
+console.log(`MULTIMEDIA_VALIDATE_OK wave=${manifest.wave} pages=${pageCount} resources=${manifest.resources.length} infographics=${infographics.length} audio=${manifest.resources.filter(item => item.kind === 'audio').length} video=0 microlearning=${manifest.resources.filter(item => item.kind === 'microlearning').length} provenance=block-id-global remap=source54->final51 tts=Antônio->pt-BR`);
