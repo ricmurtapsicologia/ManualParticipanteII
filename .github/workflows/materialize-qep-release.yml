@@ -70,7 +70,7 @@ jobs:
         working-directory: rebuild
         run: |
           mkdir -p reports
-          docker run --rm -v "$PWD:/data" ghcr.io/verapdf/cli:v1.30.2 --format json --flavour ua1 "/data/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf" > reports/verapdf.json
+          docker run --rm -v "$PWD:/data" verapdf/cli:v1.30.2 --format json --flavour ua1 "/data/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf" > reports/verapdf.json
           if ! jq -e '.. | objects | select(has("isCompliant")) | .isCompliant == true' reports/verapdf.json >/dev/null; then
             echo "veraPDF encontrou não conformidades PDF/UA-1:"
             jq -r '.. | objects | select((.status? == "failed") or (.passed? == false) or (.isCompliant? == false)) | [.testNumber // .ruleId // .id // "rule", .description // .message // .status // "failed"] | @tsv' reports/verapdf.json | head -100 || true
