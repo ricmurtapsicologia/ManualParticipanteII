@@ -31,10 +31,22 @@ const blocks = (semantic.pages ?? []).flatMap(page => [
   { page: page.number, kind: 'page-title', text: page.title },
   ...(page.blocks ?? []).map(block => ({ page: page.number, kind: block.kind, text: block.text }))
 ]).filter(item => normalize(item.text).length > 1);
+
+const canonicalCoverLine = normalize('Manual do Participante • Edição Digital Interativa • 2026');
+const coverSegments = ['Manual do Participante', 'Edição Digital Interativa', '2026'].map(normalize);
+const coverSegmentedEquivalent = item =>
+  item.page === 1 &&
+  item.kind === 'paragraph' &&
+  normalize(item.text) === canonicalCoverLine &&
+  coverSegments.every(segment => pdfText.includes(segment));
+
 const missing = [];
+let coverSegmentedMatches = 0;
 for (const item of blocks) {
   const n = normalize(item.text);
-  if (!pdfText.includes(n)) missing.push({ page: item.page, kind: item.kind, text: String(item.text).slice(0, 180) });
+  if (pdfText.includes(n)) continue;
+  if (coverSegmentedEquivalent(item)) { coverSegmentedMatches += 1; continue; }
+  missing.push({ page: item.page, kind: item.kind, text: String(item.text).slice(0, 180) });
 }
 const pageCountMatch = Number(preflight.pageCount) === (semantic.pages ?? []).length;
 const chapterCountMatch = Number(preflight.chapterCount) === Number(navigation.chapterCount ?? 34);
@@ -47,6 +59,7 @@ const report = {
   pdfManifestChapters: preflight.chapterCount,
   blocksChecked: blocks.length,
   blocksMissing: missing.length,
+  coverSegmentedMatches,
   missing: missing.slice(0, 100)
 };
 await writeFile(reportPath, JSON.stringify(report, null, 2));
