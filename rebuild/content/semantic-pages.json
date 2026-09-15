@@ -4461,7 +4461,44 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p31-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "9. Do conceito à observação operacional"
+        },
+        {
+          "id": "p31-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Os conceitos deste capítulo são úteis quando ajudam a formular hipóteses de trabalho, não quando viram rótulos. Dor psicológica, desesperança, ambivalência e constrição orientam o profissional a observar como a pessoa descreve o presente, que alternativas consegue imaginar, quais mudanças aceita e como responde à redução de pressão. A leitura permanece provisória e deve ser atualizada durante toda a ocorrência."
+        },
+        {
+          "id": "p31-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 2,
+          "text": "NA PRÁTICA"
+        },
+        {
+          "id": "p31-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "Antes de responder a uma fala extrema, faça três perguntas internas: o que foi realmente dito; que necessidade ou impasse essa fala pode expressar; e qual intervenção reduz carga, preserva vínculo e mantém uma próxima escolha segura. A meta não é interpretar profundamente a pessoa em poucos segundos, mas evitar respostas automáticas que estreitem ainda mais a conversa."
+        },
+        {
+          "id": "p31-pr1-5",
+          "kind": "guided-analysis",
+          "sourceIndex": 4,
+          "text": "ANÁLISE ORIENTADA"
+        },
+        {
+          "id": "p31-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Compare duas intervenções possíveis para a mesma fala. Uma tenta convencer, corrigir ou moralizar. A outra descreve a experiência, reconhece o sofrimento e procura um próximo passo possível. Explique qual delas tende a manter mais informação circulando e por quê. Em seguida, reescreva a intervenção menos adequada sem usar promessa, ameaça ou argumento de culpa."
+        }
+      ]
     },
     {
       "number": 32,
@@ -5342,7 +5379,44 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p48-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "34. Formular risco sem transformar pessoa em pontuação"
+        },
+        {
+          "id": "p48-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Uma formulação operacional organiza informações que mudam a conduta: condições atuais da cena, método disponível, alterações recentes, capacidade de comunicação, presença de terceiros, acesso a apoio e mudanças observadas ao longo do contato. Nenhum item isolado produz certeza. O valor está em integrar informações, declarar o que ainda é desconhecido e revisar a leitura quando a situação muda."
+        },
+        {
+          "id": "p48-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 2,
+          "text": "NA PRÁTICA"
+        },
+        {
+          "id": "p48-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "Em vez de concluir “baixo”, “médio” ou “alto” risco como se fossem estados permanentes, descreva o que sustenta sua decisão naquele momento. Exemplo de estrutura: fatos observáveis; fatores que aumentam preocupação; elementos que favorecem comunicação ou proteção; incertezas relevantes; e ação imediata compatível com segurança. Essa forma facilita passagem de comando e reduz dependência de rótulos."
+        },
+        {
+          "id": "p48-pr1-5",
+          "kind": "attention",
+          "sourceIndex": 4,
+          "text": "ATENÇÃO"
+        },
+        {
+          "id": "p48-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "A ausência de um sinal esperado não equivale à ausência de risco. Da mesma forma, a presença de um fator associado não autoriza prever comportamento individual. A equipe trabalha com atualização contínua da situação, e não com uma fotografia definitiva da pessoa."
+        }
+      ]
     },
     {
       "number": 49,
@@ -5359,7 +5433,50 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p49-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "35. Laboratório de formulação operacional"
+        },
+        {
+          "id": "p49-pr1-2",
+          "kind": "case",
+          "sourceIndex": 1,
+          "text": "CASO PARA ANÁLISE"
+        },
+        {
+          "id": "p49-pr1-3",
+          "kind": "paragraph",
+          "sourceIndex": 2,
+          "text": "Uma pessoa aceita conversar, mantém distância segura e responde de forma coerente, mas ainda permanece próxima ao meio utilizado e alterna momentos de cooperação com falas de desesperança. Um familiar informa mudança recente importante, enquanto outro minimiza a situação. A equipe dispõe de apoio de saúde a caminho e o cenário continua controlado."
+        },
+        {
+          "id": "p49-pr1-4",
+          "kind": "decide",
+          "sourceIndex": 3,
+          "text": "DECIDA"
+        },
+        {
+          "id": "p49-pr1-5",
+          "kind": "paragraph",
+          "sourceIndex": 4,
+          "text": "Organize a passagem de comando em cinco blocos: fatos observados; informações de terceiros que ainda precisam ser confirmadas; riscos presentes; elementos que favorecem proteção ou comunicação; e próximas ações. Depois retire qualquer adjetivo que não possa ser sustentado por comportamento observável. O exercício deve produzir uma síntese curta, útil e revisável."
+        },
+        {
+          "id": "p49-pr1-6",
+          "kind": "summary",
+          "sourceIndex": 5,
+          "text": "SÍNTESE"
+        },
+        {
+          "id": "p49-pr1-7",
+          "kind": "paragraph",
+          "sourceIndex": 6,
+          "text": "Boa avaliação operacional não busca adivinhar o desfecho. Ela reduz pontos cegos, organiza prioridades e deixa explícito por que a equipe tomou determinada decisão com as informações disponíveis naquele momento."
+        }
+      ]
     },
     {
       "number": 50,
@@ -8022,6 +8139,30 @@
           "kind": "paragraph",
           "sourceIndex": 1,
           "text": "Referências principais: CBMMG, 2021, capítulos 4 e 8."
+        },
+        {
+          "id": "p89-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 2,
+          "text": "28. Registro simples para cenas prolongadas"
+        },
+        {
+          "id": "p89-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "O registro ajuda quando diferentes equipes entram e saem da ocorrência, quando decisões precisam ser relembradas e quando a passagem de comando acontece após longo período. O objetivo não é produzir narrativa extensa durante a crise. Registre marcos que alteram compreensão ou estratégia: horário aproximado, mudança de posição ou método, recursos acionados, decisões relevantes, transições de função e informações que ainda aguardam confirmação."
+        },
+        {
+          "id": "p89-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 4,
+          "text": "MODELO DE ANOTAÇÃO"
+        },
+        {
+          "id": "p89-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Use linhas curtas com quatro elementos: momento; fato observável; decisão ou recurso relacionado; responsável pela continuidade. Diferencie claramente observação direta de relato de terceiro. Evite registrar interpretação como se fosse fato. Um registro enxuto e legível deve permitir que outro profissional compreenda o estado atual sem precisar reconstruir toda a ocorrência."
         }
       ]
     },
@@ -8040,7 +8181,44 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p90-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "29. Briefing interinstitucional: a informação certa para a função certa"
+        },
+        {
+          "id": "p90-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Nem todos os profissionais precisam receber a mesma quantidade de informação. O abordador precisa do que muda segurança, compreensão da fala ou estratégia de contato. O comando precisa de mudanças de risco, recursos e decisões. A equipe de saúde precisa de informações necessárias à continuidade do cuidado. Compartilhar tudo com todos aumenta ruído e exposição sem necessariamente melhorar a coordenação."
+        },
+        {
+          "id": "p90-pr1-3",
+          "kind": "doctrine",
+          "sourceIndex": 2,
+          "text": "PRINCÍPIO DE COORDENAÇÃO"
+        },
+        {
+          "id": "p90-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "Antes de repassar um dado, pergunte qual decisão aquela informação permite tomar. Se não altera ação, prioridade, segurança ou continuidade, talvez possa aguardar. Quando o dado for sensível, reduza a circulação ao mínimo necessário e escolha um canal que não exponha a pessoa em crise."
+        },
+        {
+          "id": "p90-pr1-5",
+          "kind": "guided-analysis",
+          "sourceIndex": 4,
+          "text": "EXERCÍCIO"
+        },
+        {
+          "id": "p90-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Separe uma atualização de ocorrência em três versões: uma para o abordador, uma para o comandante e uma para a equipe de saúde. Compare o que permanece, o que sai e o que muda de linguagem em cada versão. O exercício mostra que coordenação não é repetição de conteúdo, mas tradução da informação para a função de quem a recebe."
+        }
+      ]
     },
     {
       "number": 91,
@@ -8057,7 +8235,68 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p91-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "30. Passagem de comando sem perder continuidade"
+        },
+        {
+          "id": "p91-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Uma boa passagem de comando preserva o que já foi construído e deixa claro o que mudou. Comece pelo estado atual da cena e pelos riscos que exigem atenção imediata. Em seguida, informe recursos presentes e pendentes, estratégias que funcionaram ou pioraram a interação, decisões já tomadas e questões ainda abertas. O objetivo é permitir continuidade, não demonstrar quantidade de informações acumuladas."
+        },
+        {
+          "id": "p91-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 2,
+          "text": "CHECKPOINT DE TRANSIÇÃO"
+        },
+        {
+          "id": "p91-pr1-4",
+          "kind": "list-item",
+          "sourceIndex": 3,
+          "text": "O que mudou desde a última atualização?"
+        },
+        {
+          "id": "p91-pr1-5",
+          "kind": "list-item",
+          "sourceIndex": 4,
+          "text": "Qual risco exige vigilância imediata?"
+        },
+        {
+          "id": "p91-pr1-6",
+          "kind": "list-item",
+          "sourceIndex": 5,
+          "text": "Que vínculo ou estratégia não deve ser interrompido sem motivo?"
+        },
+        {
+          "id": "p91-pr1-7",
+          "kind": "list-item",
+          "sourceIndex": 6,
+          "text": "Que recurso ainda está pendente e quem acompanha sua chegada?"
+        },
+        {
+          "id": "p91-pr1-8",
+          "kind": "list-item",
+          "sourceIndex": 7,
+          "text": "Qual decisão precisa ser reavaliada se a cena mudar?"
+        },
+        {
+          "id": "p91-pr1-9",
+          "kind": "summary",
+          "sourceIndex": 8,
+          "text": "SÍNTESE"
+        },
+        {
+          "id": "p91-pr1-10",
+          "kind": "paragraph",
+          "sourceIndex": 9,
+          "text": "Integração interinstitucional funciona melhor quando papéis, informação e decisão permanecem conectados. A coordenação deve reduzir interferências na díade, aumentar previsibilidade e tornar explícito quem faz o quê quando a situação muda."
+        }
+      ]
     },
     {
       "number": 92,
@@ -11074,7 +11313,44 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p133-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "9. Checkpoint antes de trocar o abordador"
+        },
+        {
+          "id": "p133-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Antes de substituir o profissional, diferencie cansaço normal de perda de qualidade. Observe se o abordador deixou de escutar, repete a mesma intervenção, responde com irritação, perde informações importantes ou começa a disputar controle. Quando a troca for indicada, prepare continuidade: o novo profissional precisa conhecer riscos, limites, temas sensíveis, estratégias úteis e pontos que produziram ruptura."
+        },
+        {
+          "id": "p133-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 2,
+          "text": "NA PRÁTICA"
+        },
+        {
+          "id": "p133-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "A troca deve ter um objetivo observável. Exemplos: recuperar qualidade de escuta, reduzir escalada relacional, permitir descanso ou adequar competência técnica. “Já passou muito tempo” é insuficiente como justificativa isolada. Registre a razão da troca e o que precisa ser preservado nos primeiros minutos do novo contato."
+        },
+        {
+          "id": "p133-pr1-5",
+          "kind": "attention",
+          "sourceIndex": 4,
+          "text": "ATENÇÃO"
+        },
+        {
+          "id": "p133-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Substituição de abordador e mudança para estratégia tática são decisões diferentes. Podem ocorrer próximas no tempo, mas uma não implica automaticamente a outra. Cada decisão deve responder ao problema que pretende resolver."
+        }
+      ]
     },
     {
       "number": 134,
@@ -11379,7 +11655,44 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p138-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "26. Síntese ativa das microhabilidades"
+        },
+        {
+          "id": "p138-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Escuta qualificada resulta da combinação de pequenas ações observáveis: atenção ao que acabou de ser dito, perguntas com função clara, devoluções fiéis, pausas toleráveis, resumo quando a narrativa se dispersa e ajuste diante do feedback da pessoa. Nenhuma microhabilidade funciona como fórmula isolada. A competência está em escolher a intervenção compatível com o momento e perceber seu efeito."
+        },
+        {
+          "id": "p138-pr1-3",
+          "kind": "guided-analysis",
+          "sourceIndex": 2,
+          "text": "AUTO-OBSERVAÇÃO"
+        },
+        {
+          "id": "p138-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "Durante uma simulação, marque cada intervenção do abordador como pergunta, reflexão, resumo, validação, informação, limite ou silêncio. Depois observe o padrão. Há excesso de perguntas? Conselhos disfarçados? Validações genéricas? Pouco espaço para resposta? A transcrição curta transforma impressão subjetiva em material concreto para feedback."
+        },
+        {
+          "id": "p138-pr1-5",
+          "kind": "practice",
+          "sourceIndex": 4,
+          "text": "META DE TREINO"
+        },
+        {
+          "id": "p138-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Escolha uma única microhabilidade para a próxima rodada e defina um comportamento verificável. Treinar uma variável por vez permite perceber mudança real e reduz a tendência de tentar melhorar tudo simultaneamente."
+        }
+      ]
     },
     {
       "number": 139,
@@ -11396,7 +11709,50 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p139-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "27. Laboratório de comunicação sob pressão"
+        },
+        {
+          "id": "p139-pr1-2",
+          "kind": "case",
+          "sourceIndex": 1,
+          "text": "CENÁRIO"
+        },
+        {
+          "id": "p139-pr1-3",
+          "kind": "paragraph",
+          "sourceIndex": 2,
+          "text": "Após longo período de conversa, a pessoa alterna respostas curtas e silêncio. O abordador percebe urgência crescente na equipe e começa a fazer perguntas em sequência. O auxiliar nota a mudança de ritmo e sinaliza discretamente. Não houve mudança objetiva de posição, método ou acesso ao risco naquele momento."
+        },
+        {
+          "id": "p139-pr1-4",
+          "kind": "decide",
+          "sourceIndex": 3,
+          "text": "DECIDA"
+        },
+        {
+          "id": "p139-pr1-5",
+          "kind": "paragraph",
+          "sourceIndex": 4,
+          "text": "Construa três intervenções possíveis: uma pausa deliberada; uma reflexão de conteúdo; e uma pergunta aberta curta. Para cada uma, descreva a função pretendida e qual resposta indicaria que é melhor manter, ajustar ou abandonar a estratégia. O exercício desloca o foco da frase “perfeita” para a relação entre objetivo, intervenção e feedback."
+        },
+        {
+          "id": "p139-pr1-6",
+          "kind": "summary",
+          "sourceIndex": 5,
+          "text": "PONTO DE APRENDIZAGEM"
+        },
+        {
+          "id": "p139-pr1-7",
+          "kind": "paragraph",
+          "sourceIndex": 6,
+          "text": "Comunicação profissional é adaptativa. O abordador não precisa defender a intervenção anterior quando a resposta mostra que ela não funcionou. Corrigir o curso preserva mais competência do que insistir para parecer consistente."
+        }
+      ]
     },
     {
       "number": 140,
@@ -11413,7 +11769,62 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p140-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "28. Autorregulação e passagem para a próxima fase"
+        },
+        {
+          "id": "p140-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "O profissional também precisa monitorar o próprio estado. Pressa, medo, irritação, excesso de confiança e fadiga podem aparecer como mudanças de voz, distância, repetição, rigidez ou perda de escuta. Reconhecer esses sinais cedo permite solicitar apoio, usar o auxiliar e considerar troca antes que a qualidade do contato caia."
+        },
+        {
+          "id": "p140-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 2,
+          "text": "MICROCHECKLIST"
+        },
+        {
+          "id": "p140-pr1-4",
+          "kind": "list-item",
+          "sourceIndex": 3,
+          "text": "Meu objetivo para a próxima fala está claro?"
+        },
+        {
+          "id": "p140-pr1-5",
+          "kind": "list-item",
+          "sourceIndex": 4,
+          "text": "Estou respondendo ao que a pessoa disse ou à urgência que sinto?"
+        },
+        {
+          "id": "p140-pr1-6",
+          "kind": "list-item",
+          "sourceIndex": 5,
+          "text": "Houve mudança objetiva de risco ou apenas aumento de ansiedade na equipe?"
+        },
+        {
+          "id": "p140-pr1-7",
+          "kind": "list-item",
+          "sourceIndex": 6,
+          "text": "Preciso de informação, pausa, apoio do auxiliar ou troca?"
+        },
+        {
+          "id": "p140-pr1-8",
+          "kind": "summary",
+          "sourceIndex": 7,
+          "text": "FECHAMENTO"
+        },
+        {
+          "id": "p140-pr1-9",
+          "kind": "paragraph",
+          "sourceIndex": 8,
+          "text": "A parte seguinte aprofunda a abordagem tática e seus limites. A transição pedagógica não transforma a tática em destino inevitável da ocorrência. Ela amplia o repertório para situações excepcionais em que risco, oportunidade e segurança exigem outra forma de atuação."
+        }
+      ]
     },
     {
       "number": 141,
@@ -16862,5 +17273,21 @@
         "normalized": 1
       }
     ]
+  },
+  "prontidao": {
+    "editorialWave": 1,
+    "editorialSupplements": [
+      31,
+      48,
+      49,
+      89,
+      90,
+      91,
+      133,
+      138,
+      139,
+      140
+    ],
+    "policy": "conteudo-substantivo-sem-fatos-novos"
   }
 }
