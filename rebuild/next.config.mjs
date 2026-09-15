@@ -1,4 +1,6 @@
-const csp = [
+const isVercel = process.env.VERCEL === '1';
+
+const cspDirectives = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
@@ -10,9 +12,15 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "script-src 'self' 'unsafe-inline'",
   "connect-src 'self'",
-  "worker-src 'self' blob:",
-  'upgrade-insecure-requests'
-].join('; ');
+  "worker-src 'self' blob:"
+];
+
+// A plataforma Vercel já entrega a aplicação por HTTPS. Manter esta diretiva
+// apenas nesse ambiente evita que WebKit promova o servidor HTTP local do E2E
+// para https://127.0.0.1 e impeça a hidratação dos componentes cliente.
+if (isVercel) cspDirectives.push('upgrade-insecure-requests');
+
+const csp = cspDirectives.join('; ');
 
 const securityHeaders = [
   { key: 'Content-Security-Policy', value: csp },
