@@ -20,7 +20,9 @@ for (const entry of supplements.pages ?? []) {
   (entry.blocks ?? []).forEach((block, index) => {
     const id = `p${entry.page}-pr1-${index + 1}`;
     if (existing.has(id)) return;
-    page.blocks.push({ id, kind:block.kind, sourceIndex:baseIndex + index, text:block.text });
+    const kind = block.kind === 'case' ? 'guided-analysis' : block.kind;
+    const text = /^CENÁRIO$/iu.test(String(block.text ?? '').trim()) ? 'EXERCÍCIO SITUACIONAL' : block.text;
+    page.blocks.push({ id, kind, sourceIndex:baseIndex + index, text });
     added += 1;
   });
 }
