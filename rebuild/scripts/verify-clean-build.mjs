@@ -11,10 +11,12 @@ if (diff.status !== 0) {
   process.exit(1);
 }
 const status = spawnSync('git', ['status', '--porcelain', '--untracked-files=all'], { encoding: 'utf8' });
-const allowed = /^(\?\?| M|M ) (rebuild\/)?(public\/downloads\/|reports\/|\.next\/|test-results\/|playwright-report\/|\.lighthouseci\/|package-lock\.json$)/;
-const unexpected = status.stdout.split(/\r?\n/).filter(Boolean).filter(line => !allowed.test(line));
+const buildArtifacts = /^(\?\?| M|M ) (rebuild\/)?(public\/downloads\/|reports\/|\.next\/|test-results\/|playwright-report\/|\.lighthouseci\/|package-lock\.json$)/;
+const vercelArtifacts = /^(\?\?| M|M ) (rebuild\/)?(\.vercel\/|vercel\.json$)/;
+const isAllowed = line => buildArtifacts.test(line) || (process.env.VERCEL === '1' && vercelArtifacts.test(line));
+const unexpected = status.stdout.split(/\r?\n/).filter(Boolean).filter(line => !isAllowed(line));
 if (unexpected.length) {
   console.error(`Arquivos inesperadamente alterados pelo build:\n${unexpected.join('\n')}`);
   process.exit(1);
 }
-console.log('repo:clean PASS — nenhuma alteração inesperada de source code.');
+console.log(`repo:clean PASS — nenhuma alteração inesperada de source code${process.env.VERCEL === '1' ? '; metadados Vercel isolados' : ''}.`);
