@@ -6,7 +6,9 @@ import './wave16.css';
 import './wave18.css';
 import './wave10.css';
 import './a11y-qep.css';
+import './download-format-actions.css';
 import SkipLinkFocus from './SkipLinkFocus';
+import DownloadFormatActions from './DownloadFormatActions';
 
 const canonicalUrl = 'https://manual-participante-cats-digital.vercel.app';
 const title = 'Manual do Participante CATS | Edição Digital 2026';
@@ -49,6 +51,7 @@ const structuredData = {
   version: 'Edição 2026',
   url: canonicalUrl,
   isAccessibleForFree: true,
+  encodingFormat: ['application/pdf', 'application/epub+zip'],
   learningResourceType: 'Manual de formação',
   author: { '@type': 'Organization', name: 'Corpo de Bombeiros Militar de Minas Gerais' },
   publisher: { '@type': 'Organization', name: 'Corpo de Bombeiros Militar de Minas Gerais' }
@@ -61,6 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
         <SkipLinkFocus />
         {children}
+        <DownloadFormatActions />
       </body>
     </html>
   );
