@@ -20,20 +20,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Install dependencies
+      - name: Install locked dependencies
         working-directory: rebuild
-        run: npm install --ignore-scripts --no-audit --no-fund
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Materialize canonical publication artifacts
         working-directory: rebuild
         run: npm run content:materialize
-      - name: Commit generated publication state
+      - name: Commit materialized checkpoint
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add rebuild/content/*.json rebuild/package-lock.json
           if git diff --cached --quiet; then
-            echo "Publication content already materialized."
-            exit 0
+            git commit --allow-empty -m "chore(qep): checkpoint materializado [materialized]"
+          else
+            git commit -m "chore(qep): materializar estado final determinístico [materialized]"
           fi
-          git commit -m "chore(qep): materializar estado final determinístico [materialized]"
           git push origin HEAD:saneamento/qep-fase1-execucao
