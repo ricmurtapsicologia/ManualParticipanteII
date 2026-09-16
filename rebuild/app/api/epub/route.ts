@@ -1,6 +1,5 @@
 import semanticData from '../../../content/semantic-pages.json';
 import navigationData from '../../../content/navigation.json';
-import { approvedCoverDataUrl } from '../../cover-data';
 import quizData from '../../../content/chapter-quizzes.json';
 import enrichmentData from '../../../content/chapter-enrichment.json';
 
@@ -20,7 +19,6 @@ type NavigationArtifact = { frontMatter: NavSupplement[]; parts: NavPart[] };
 
 const pages = (semanticData as { pages: ManualPage[] }).pages;
 const navigation = navigationData as NavigationArtifact;
-const coverBase64 = approvedCoverDataUrl.replace(/^data:image\/webp;base64,/, '');
 const quizzes = (quizData as { chapters: QuizChapter[] }).chapters;
 const resources = (enrichmentData as { chapters: Array<{ resource?: ChapterResource }> }).chapters.map(item => item.resource).filter(Boolean) as ChapterResource[];
 const quizByPage = new Map(quizzes.map(item => [item.endingPage, item]));
@@ -30,6 +28,9 @@ const esc = (value: string) => String(value ?? '')
   .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+const normalize = (value: string) => String(value ?? '')
+  .normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+const stripLeadingBullet = (value: string) => String(value ?? '').replace(/^\s*[•▪◦‣·–—-]\s*/, '').trim();
 
 const pedagogicalLabels: Record<string, string> = {
   opening: 'Situação de abertura', objectives: 'Objetivos do capítulo', doctrine: 'Doutrina', evidence: 'Evidência',
@@ -57,17 +58,35 @@ function renderManual() {
     } else if (page.title) {
       body.push(`<h2>${esc(page.title)}</h2>`);
     }
-    for (const block of page.blocks ?? []) {
-      const text = esc(block.text);
-      if (!text) continue;
+    const blocks = page.blocks ?? [];
+    for (let i = 0; i < blocks.length;) {
+      const block = blocks[i];
+      const raw = String(block.text ?? '').trim();
+      if (!raw) { i += 1; continue; }
+      if (block.kind === 'list-item') {
+        const items: string[] = [];
+        while (i < blocks.length && blocks[i].kind === 'list-item') {
+          const item = stripLeadingBullet(blocks[i].text);
+          if (item) items.push(item);
+          i += 1;
+        }
+        if (items.length) body.push(`<ul class="list">${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul>`);
+        continue;
+      }
+      const text = esc(raw);
       if (block.kind === 'heading') body.push(`<h3>${text}</h3>`);
-      else if (block.kind === 'list-item') body.push(`<p class="list"><span aria-hidden="true">• </span>${text}</p>`);
-      else if (pedagogicalLabels[block.kind]) body.push(`<aside class="box ${esc(block.kind)}"><strong>${esc(pedagogicalLabels[block.kind])}</strong><p>${text}</p></aside>`);
-      else if ((block.kind === 'external-link' || block.kind === 'external-resource') && (block.url || block.href)) body.push(`<p><a href="${esc(block.url || block.href || '')}">${text}</a></p>`);
+      else if (pedagogicalLabels[block.kind]) {
+        const label = pedagogicalLabels[block.kind];
+        const redundant = normalize(raw) === normalize(label);
+        body.push(`<aside class="box ${esc(block.kind)}"><p class="boxLabel">${esc(label)}</p>${redundant ? '' : `<p>${text}</p>`}</aside>`);
+      }
+      else if ((block.kind === 'external-link' || block.kind === 'external-resource') && (block.url || block.href)) body.push(`<p class="external"><a href="${esc(block.url || block.href || '')}">${text}</a></p>`);
+      else if (block.kind === 'reference') body.push(`<p class="reference">${text}</p>`);
       else body.push(`<p>${text}</p>`);
+      i += 1;
     }
     const resource = resourceByPage.get(page.number);
-    if (resource) body.push(`<aside class="box resource"><strong>Material complementar</strong><p><a href="${esc(resource.url)}" hreflang="pt-BR">${esc(resource.title)}</a></p>${resource.note ? `<p>${esc(resource.note)}</p>` : ''}</aside>`);
+    if (resource) body.push(`<aside class="box resource"><p class="boxLabel">Material complementar</p><p><a href="${esc(resource.url)}" hreflang="pt-BR">${esc(resource.title)}</a></p>${resource.note ? `<p>${esc(resource.note)}</p>` : ''}</aside>`);
     const quiz = quizByPage.get(page.number);
     if (quiz) {
       body.push('<section class="quiz" aria-label="Teste do capítulo"><h3>Teste do capítulo</h3>');
@@ -79,9 +98,7 @@ function renderManual() {
     }
     body.push('</section>');
   }
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="pt-BR" lang="pt-BR"><head><meta charset="utf-8"/><title>Manual do Participante CATS — conteúdo</title><link rel="stylesheet" type="text/css" href="styles.css"/></head><body epub:type="bodymatter">${body.join('')}</body></html>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="pt-BR" lang="pt-BR"><head><meta charset="utf-8"/><title>Manual do Participante CATS — conteúdo</title><link rel="stylesheet" type="text/css" href="styles.css"/></head><body epub:type="bodymatter">${body.join('')}</body></html>`;
 }
 
 const frontNav = navigation.frontMatter.map(section => `<li><a href="${pageHref(section.openingPage)}">${esc(section.title)}</a></li>`).join('');
@@ -91,16 +108,20 @@ const partsNav = navigation.parts.map(part => {
   return `<li><a href="${pageHref(part.openingPage)}">Parte ${part.part} — ${esc(part.title)}</a><ol>${chapters}${supplements}</ol></li>`;
 }).join('');
 const pageList = pages.map(page => `<li><a href="${pageHref(page.number)}">${page.number}</a></li>`).join('');
-const nav = `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="pt-BR" lang="pt-BR"><head><meta charset="utf-8"/><title>Sumário</title><link rel="stylesheet" type="text/css" href="styles.css"/></head><body><nav epub:type="toc" id="toc" aria-label="Sumário"><h1>Sumário</h1><ol><li><a href="cover.xhtml#page-1">Capa</a></li>${frontNav}${partsNav}</ol></nav><nav epub:type="page-list" id="page-list" aria-label="Navegação por páginas" hidden="hidden"><h2>Páginas</h2><ol>${pageList}</ol></nav><nav epub:type="landmarks" id="landmarks" aria-label="Marcos da publicação" hidden="hidden"><h2>Marcos</h2><ol><li><a epub:type="cover" href="cover.xhtml#page-1">Capa</a></li><li><a epub:type="bodymatter" href="manual.xhtml#page-2">Conteúdo principal</a></li></ol></nav></body></html>`;
+const nav = `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="pt-BR" lang="pt-BR"><head><meta charset="utf-8"/><title>Sumário</title><link rel="stylesheet" type="text/css" href="styles.css"/></head><body><nav epub:type="toc" id="toc" aria-label="Sumário"><h1>Sumário</h1><ol><li><a href="cover.xhtml#page-1">Capa</a></li>${frontNav}${partsNav}</ol></nav><nav epub:type="page-list" id="page-list" aria-label="Navegação por páginas" hidden="hidden"><h2>Páginas</h2><ol>${pageList}</ol></nav><nav epub:type="landmarks" id="landmarks" aria-label="Marcos da publicação" hidden="hidden"><h2>Marcos</h2><ol><li><a epub:type="cover" href="cover.xhtml#page-1">Capa</a></li><li><a epub:type="bodymatter" href="manual.xhtml#page-2">Conteúdo principal</a></li></ol></nav></body></html>`;
 
-const coverXhtml = `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="pt-BR" lang="pt-BR"><head><meta charset="utf-8"/><title>Capa</title><link rel="stylesheet" type="text/css" href="styles.css"/></head><body class="coverPage" epub:type="cover"><span id="page-1" epub:type="pagebreak" role="doc-pagebreak" aria-label="Página 1"></span><img src="cover.webp" alt="Capa do Manual do Participante CATS — edição 2026"/></body></html>`;
+const coverSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="cover-title cover-desc">
+<title id="cover-title">Capa do Manual do Participante CATS</title><desc id="cover-desc">Capa institucional em verde escuro e laranja, com composição gráfica inspirada em capacete de bombeiro e foco em escuta, técnica, segurança e humanidade.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#062f31"/><stop offset="1" stop-color="#01191b"/></linearGradient><linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a00"/><stop offset="1" stop-color="#d95200"/></linearGradient></defs>
+<rect width="800" height="1000" fill="url(#bg)"/><rect width="800" height="16" fill="#ff7300"/><rect x="64" y="660" width="7" height="220" rx="3" fill="#ff7300"/><circle cx="650" cy="180" r="210" fill="#0a4648" opacity=".38"/><circle cx="690" cy="220" r="125" fill="#0e5557" opacity=".25"/>
+<g opacity=".98"><path d="M95 590c20-125 104-205 225-205s205 80 225 205H95Z" fill="url(#glow)"/><path d="M145 590c15-92 78-151 175-151s160 59 175 151H145Z" fill="#0a2729"/><rect x="118" y="565" width="404" height="54" rx="24" fill="#101b1c"/><rect x="250" y="520" width="140" height="38" rx="12" fill="#ff7300"/><path d="M182 610h278l60 116H122l60-116Z" fill="#071d1f"/><path d="M225 622h192l30 92H195l30-92Z" fill="#0f3a3c"/></g>
+<text x="72" y="112" fill="#ff7300" font-size="26" font-weight="700" font-family="Arial, sans-serif" letter-spacing="2">CATS</text><text x="72" y="166" fill="#f4f2e9" font-size="46" font-weight="700" font-family="Arial, sans-serif">Manual do</text><text x="72" y="216" fill="#f4f2e9" font-size="46" font-weight="700" font-family="Arial, sans-serif">Participante</text><text x="72" y="266" fill="#bcd0cb" font-size="21" font-family="Arial, sans-serif">Atendimento a Tentativas de Suicídio</text><line x1="72" y1="302" x2="500" y2="302" stroke="#ff7300" stroke-width="5"/><text x="72" y="342" fill="#d9e4e1" font-size="16" font-family="Arial, sans-serif" letter-spacing="2">ESCUTA • TÉCNICA • SEGURANÇA • HUMANIDADE</text><text x="72" y="900" fill="#f4f2e9" font-size="18" font-weight="700" font-family="Arial, sans-serif">CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS</text><text x="72" y="936" fill="#a8beb9" font-size="15" font-family="Arial, sans-serif">Edição digital interativa</text><text x="700" y="936" text-anchor="end" fill="#ff7300" font-size="18" font-weight="700" font-family="Arial, sans-serif">2026</text></svg>`;
+const coverXhtml = `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="pt-BR" lang="pt-BR"><head><meta charset="utf-8"/><title>Capa</title><link rel="stylesheet" type="text/css" href="styles.css"/></head><body class="coverPage" epub:type="cover"><span id="page-1" epub:type="pagebreak" role="doc-pagebreak" aria-label="Página 1"></span><img src="cover.svg" alt="Capa do Manual do Participante CATS — edição 2026"/></body></html>`;
 
-const css = `html{font-size:100%;}body{font-family:Georgia,"Times New Roman",serif;line-height:1.62;color:#183537;background:#fff;margin:0 auto;padding:1.25em;max-width:42em;}h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:#0f6260;line-height:1.25;}h1{break-before:page;page-break-before:always;border-bottom:.18em solid #e86d2b;padding-bottom:.35em;margin-top:1.4em;}h2{margin-top:1.5em;}h3{margin-top:1.25em;}p{margin:.7em 0;text-align:justify;hyphens:auto;-webkit-hyphens:auto;orphans:2;widows:2;}.kicker{font-family:Arial,Helvetica,sans-serif;color:#b64f17;font-weight:bold;letter-spacing:.08em;text-align:left}.page{margin:0 0 1.5em}.list{text-indent:0}.box{border-left:.28em solid #0f6260;background:#eef6f4;padding:.75em 1em;margin:1em 0;break-inside:avoid;page-break-inside:avoid}.attention,.decide{border-left-color:#c65a1c;background:#fff2ec}.box strong{font-family:Arial,Helvetica,sans-serif;font-size:.88em;letter-spacing:.03em}.resource a,a{color:#0b5f5b;text-decoration:underline;text-underline-offset:.12em;overflow-wrap:anywhere}.quiz{margin-top:2em;border-top:.14em solid #e86d2b;padding-top:1em}.question{margin:1.2em 0}.prompt{font-weight:bold;text-align:left}.answer{margin-top:.5em;color:#0f6260}.coverPage{margin:0;padding:0;max-width:none;background:#061f21}.coverPage img{display:block;width:100%;height:auto;max-width:100%}[epub\\:type="pagebreak"]{display:block;height:0;overflow:hidden}@media(prefers-color-scheme:dark){body{background:#111;color:#f0f1ed}h1,h2,h3,a,.answer{color:#86d9d2}.box{background:#183130;color:#f0f1ed}.attention,.decide{background:#3a281f}}`;
+const css = `html{font-size:100%;}body{font-family:Georgia,"Times New Roman",serif;font-size:1em;line-height:1.62;color:#183537;background:#fff;margin:0 auto;padding:1.25em;max-width:42em;}h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:#0f6260;line-height:1.25;break-after:avoid;page-break-after:avoid;}h1{break-before:page;page-break-before:always;border-bottom:.18em solid #e86d2b;padding-bottom:.35em;margin-top:1.4em;}h2{margin-top:1.5em;}h3{margin-top:1.25em;}p{margin:.7em 0;text-align:justify;hyphens:auto;-webkit-hyphens:auto;orphans:2;widows:2;}.kicker{font-family:Arial,Helvetica,sans-serif;color:#b64f17;font-weight:bold;letter-spacing:.08em;text-align:left}.page{margin:0 0 1.5em}.list{margin:.65em 0 .85em;padding-left:1.45em}.list li{margin:.35em 0;text-align:left}.box{border-left:.28em solid #0f6260;background:#eef6f4;padding:.75em 1em;margin:1em 0;break-inside:avoid;page-break-inside:avoid}.attention,.decide{border-left-color:#c65a1c;background:#fff2ec}.boxLabel{font-family:Arial,Helvetica,sans-serif;font-size:.88em;font-weight:bold;letter-spacing:.03em;text-transform:uppercase;text-align:left;margin:0 0 .35em}.boxLabel:only-child{margin-bottom:0}.reference{padding-left:1.5em;text-indent:-1.5em;text-align:left;font-size:.94em;overflow-wrap:anywhere}.external{overflow-wrap:anywhere}.resource a,a{color:#0b5f5b;text-decoration:underline;text-underline-offset:.12em;overflow-wrap:anywhere}.quiz{margin-top:2em;border-top:.14em solid #e86d2b;padding-top:1em}.question{margin:1.2em 0;break-inside:avoid}.prompt{font-weight:bold;text-align:left}.answer{margin-top:.5em;color:#0f6260}.coverPage{margin:0;padding:0;max-width:none;background:#061f21}.coverPage img{display:block;width:100%;height:auto;max-width:100%}[epub\\:type="pagebreak"]{display:block;height:0;overflow:hidden}@media(prefers-color-scheme:dark){body{background:#111;color:#f0f1ed}h1,h2,h3,a,.answer{color:#86d9d2}.box{background:#183130;color:#f0f1ed}.attention,.decide{background:#3a281f}}`;
 const identifier = 'urn:uuid:6f8a7f60-3e64-4cb0-8ae7-9c1e6fd3a226';
-const opf = `<?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="pub-id" xml:lang="pt-BR" prefix="schema: http://schema.org/"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="pub-id">${identifier}</dc:identifier><dc:title>Manual do Participante CATS</dc:title><dc:language>pt-BR</dc:language><dc:creator>Corpo de Bombeiros Militar de Minas Gerais</dc:creator><dc:publisher>Corpo de Bombeiros Militar de Minas Gerais</dc:publisher><dc:description>Manual de formação especializada em Atendimento a Tentativas de Suicídio — edição digital 2026.</dc:description><dc:date>2026</dc:date><dc:rights>Corpo de Bombeiros Militar de Minas Gerais — edição 2026.</dc:rights><meta property="dcterms:modified">2026-09-15T00:00:00Z</meta><meta property="rendition:layout">reflowable</meta><meta property="schema:accessMode">textual</meta><meta property="schema:accessModeSufficient">textual</meta><meta property="schema:accessibilityFeature">tableOfContents</meta><meta property="schema:accessibilityFeature">structuralNavigation</meta><meta property="schema:accessibilityFeature">pageNavigation</meta><meta property="schema:accessibilityFeature">pageBreakMarkers</meta><meta property="schema:accessibilityFeature">displayTransformability</meta><meta property="schema:accessibilityHazard">none</meta><meta property="schema:accessibilitySummary" xml:lang="pt-BR">Publicação reflowable em português do Brasil, com estrutura semântica, sumário hierárquico, navegação por páginas e texto adaptável. A capa é a única imagem essencialmente editorial e possui alternativa textual.</meta></metadata><manifest><item id="cover-image" href="cover.webp" media-type="image/webp" properties="cover-image"/><item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="manual" href="manual.xhtml" media-type="application/xhtml+xml"/><item id="css" href="styles.css" media-type="text/css"/></manifest><spine page-progression-direction="ltr"><itemref idref="cover"/><itemref idref="manual"/></spine></package>`;
+const opf = `<?xml version="1.0" encoding="UTF-8"?>\n<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="pub-id" xml:lang="pt-BR" prefix="schema: http://schema.org/"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="pub-id">${identifier}</dc:identifier><dc:title>Manual do Participante CATS</dc:title><dc:language>pt-BR</dc:language><dc:creator>Corpo de Bombeiros Militar de Minas Gerais</dc:creator><dc:publisher>Corpo de Bombeiros Militar de Minas Gerais</dc:publisher><dc:description>Manual de formação especializada em Atendimento a Tentativas de Suicídio — edição digital 2026.</dc:description><dc:date>2026</dc:date><dc:rights>Corpo de Bombeiros Militar de Minas Gerais — edição 2026.</dc:rights><meta property="dcterms:modified">2026-09-16T00:00:00Z</meta><meta property="rendition:layout">reflowable</meta><meta property="schema:accessMode">textual</meta><meta property="schema:accessModeSufficient">textual</meta><meta property="schema:accessibilityFeature">tableOfContents</meta><meta property="schema:accessibilityFeature">structuralNavigation</meta><meta property="schema:accessibilityFeature">pageNavigation</meta><meta property="schema:accessibilityFeature">pageBreakMarkers</meta><meta property="schema:accessibilityFeature">displayTransformability</meta><meta property="schema:accessibilityHazard">none</meta><meta property="schema:accessibilitySummary" xml:lang="pt-BR">Publicação reflowable em português do Brasil, com estrutura semântica, listas reais, sumário hierárquico, navegação por páginas e texto adaptável. A capa vetorial possui alternativa textual.</meta></metadata><manifest><item id="cover-image" href="cover.svg" media-type="image/svg+xml" properties="cover-image"/><item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="manual" href="manual.xhtml" media-type="application/xhtml+xml"/><item id="css" href="styles.css" media-type="text/css"/></manifest><spine page-progression-direction="ltr"><itemref idref="cover"/><itemref idref="manual"/></spine></package>`;
 const containerXml = `<?xml version="1.0" encoding="UTF-8"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>`;
 
 const crcTable = (() => {
@@ -117,7 +138,7 @@ function crc32(data: Buffer) {
   for (const byte of data) crc = crcTable[(crc ^ byte) & 0xff] ^ (crc >>> 8);
   return (crc ^ 0xffffffff) >>> 0;
 }
-function dosStamp() { return { time: 0, date: ((2026 - 1980) << 9) | (9 << 5) | 15 }; }
+function dosStamp() { return { time: 0, date: ((2026 - 1980) << 9) | (9 << 5) | 16 }; }
 function zipStore(entries: Array<{ name: string; data: Buffer }>) {
   const locals: Buffer[] = []; const centrals: Buffer[] = []; let offset = 0;
   const stamp = dosStamp();
@@ -143,7 +164,7 @@ export async function GET() {
   const entries = [
     { name: 'mimetype', data: Buffer.from('application/epub+zip', 'utf8') },
     { name: 'META-INF/container.xml', data: Buffer.from(containerXml, 'utf8') },
-    { name: 'OEBPS/cover.webp', data: Buffer.from(coverBase64, 'base64') },
+    { name: 'OEBPS/cover.svg', data: Buffer.from(coverSvg, 'utf8') },
     { name: 'OEBPS/cover.xhtml', data: Buffer.from(coverXhtml, 'utf8') },
     { name: 'OEBPS/nav.xhtml', data: Buffer.from(nav, 'utf8') },
     { name: 'OEBPS/manual.xhtml', data: Buffer.from(renderManual(), 'utf8') },

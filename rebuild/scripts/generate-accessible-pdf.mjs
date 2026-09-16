@@ -14,7 +14,6 @@ const reportPath = path.join(outDir, 'manual-preflight.json');
 const regularSans = require.resolve('dejavu-fonts-ttf/ttf/DejaVuSans.ttf');
 const boldSans = require.resolve('dejavu-fonts-ttf/ttf/DejaVuSans-Bold.ttf');
 const regularSerif = require.resolve('dejavu-fonts-ttf/ttf/DejaVuSerif.ttf');
-const boldSerif = require.resolve('dejavu-fonts-ttf/ttf/DejaVuSerif-Bold.ttf');
 
 const [semantic, navigation, multimedia, quizzes] = await Promise.all([
   readFile(path.join(root, 'content', 'semantic-pages.json'), 'utf8').then(JSON.parse),
@@ -23,110 +22,61 @@ const [semantic, navigation, multimedia, quizzes] = await Promise.all([
   readFile(path.join(root, 'content', 'chapter-quizzes.json'), 'utf8').then(JSON.parse)
 ]);
 
-const pages = semantic.pages ?? [];
-const PAGE = { width: 595.28, height: 841.89 };
-const X = 58;
-const WIDTH = PAGE.width - X * 2;
-const TOP = 86;
-const BOTTOM = 68;
-const FOOTER_MARGIN = 28;
-const MAX_Y = PAGE.height - BOTTOM;
-const COLORS = { ink:'#183537', teal:'#104b4c', muted:'#6d7a79', line:'#d9ddd8', orange:'#e86d2b', deep:'#052b2d', aqua:'#74d3cc' };
-const fixedDate = new Date('2026-09-15T00:00:00.000Z');
-const canonicalUrl = 'https://manual-participante-cats-digital.vercel.app';
-const pedagogicalKinds = new Set(['opening','objectives','doctrine','evidence','practice','attention','decide','case','guided-analysis','summary','review']);
-const clean = value => String(value ?? '').replace(/\r/g, '').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
-const pdfText = value => clean(value).replace(/☐/g, '□');
-const normalize = value => clean(value).normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ');
-const safeDest = n => `page-${Number(n) || 1}`;
-const sha256 = data => createHash('sha256').update(data).digest('hex');
-const sourceText = pages.flatMap(page => [page.title, ...(page.blocks ?? []).map(block => block.text)]).filter(Boolean).map(clean).join('\n');
+const sourcePages = semantic.pages ?? [];
+const PAGE = { width:595.28, height:841.89 };
+const X=58, WIDTH=PAGE.width-X*2, TOP=84, BOTTOM=68, MAX_Y=PAGE.height-BOTTOM, FLOW_H=MAX_Y-TOP;
+const BODY_SIZE=11.2, BODY_LEADING=16, REF_SIZE=9.4;
+const COLORS={ink:'#183537',teal:'#104b4c',muted:'#6d7a79',line:'#d9ddd8',orange:'#e86d2b',deep:'#052b2d',aqua:'#74d3cc',pale:'#eef5f2',cream:'#fff2ec'};
+const fixedDate=new Date('2026-09-16T00:00:00.000Z');
+const canonicalUrl='https://manual-participante-cats-digital.vercel.app';
+const pedagogicalKinds=new Set(['opening','objectives','doctrine','evidence','practice','attention','decide','case','guided-analysis','summary','review']);
+const clean=value=>String(value??'').replace(/\r/g,'').replace(/[ \t]+/g,' ').replace(/\n{3,}/g,'\n\n').trim();
+const pdfText=value=>clean(value).replace(/☐/g,'□');
+const stripBullet=value=>pdfText(value).replace(/^\s*[•▪◦‣·–—-]\s*/,'').trim();
+const sha256=data=>createHash('sha256').update(data).digest('hex');
+const sourceText=sourcePages.flatMap(page=>[page.title,...(page.blocks??[]).map(block=>block.text)]).filter(Boolean).map(clean).join('\n');
+const chapterStart=new Map(); for(const page of sourcePages) if(page.chapter&&!chapterStart.has(page.chapter)) chapterStart.set(page.chapter,page.number);
+const mediaForPage=n=>(multimedia.resources??[]).filter(resource=>resource.pageNumber===n);
+const quizForPage=n=>(quizzes.chapters??[]).find(item=>item.endingPage===n)??null;
 
-function mediaForPage(pageNumber) { return (multimedia.resources ?? []).filter(resource => resource.pageNumber === pageNumber); }
-function quizForPage(pageNumber) { return (quizzes.chapters ?? []).find(item => item.endingPage === pageNumber) ?? null; }
-function typographyFor(block, bodySize) {
-  if (block.kind === 'heading') return { font:'SansBold', size:bodySize+2.2, leading:bodySize*1.38, color:COLORS.teal, type:'H3', gap:6 };
-  if (pedagogicalKinds.has(block.kind)) return { font:'SansBold', size:bodySize+0.5, leading:bodySize*1.34, color:block.kind === 'attention' || block.kind === 'decide' ? COLORS.orange : COLORS.teal, type:'H3', gap:5 };
-  if (block.kind === 'reference') return { font:'Serif', size:Math.max(7.8,bodySize-0.6), leading:bodySize*1.34, color:COLORS.ink, type:'P', gap:4 };
-  if (block.kind === 'external-link' || block.kind === 'external-resource') return { font:'Sans', size:Math.max(8,bodySize-0.3), leading:bodySize*1.34, color:COLORS.teal, type:'P', gap:5 };
-  return { font:'Serif', size:bodySize, leading:bodySize*1.46, color:COLORS.ink, type:'P', gap:7 };
-}
-function textOptions(t,width=WIDTH) { return { width, align:t.type === 'P' ? 'justify' : 'left', lineGap:Math.max(0.7,t.leading-t.size*1.2), paragraphGap:0 }; }
-function measureText(doc,value,t,width=WIDTH) { doc.font(t.font).fontSize(t.size); return doc.heightOfString(`${pdfText(value)} `,{...textOptions(t,width),align:t.type === 'P' ? 'justify' : 'left'}); }
-function estimatePage(doc,page,bodySize) {
-  let h = measureText(doc,page.title || 'Manual do Participante CATS',{font:'SansBold',size:page.cover?30:18,leading:page.cover?36:23,type:page.cover?'H1':'H2'}) + (page.cover?18:15);
-  for (const block of page.blocks ?? []) {
-    if (!clean(block.text)) continue;
-    if (block.kind === 'list-item') h += measureText(doc,block.text,{font:'Serif',size:bodySize,leading:bodySize*1.42,type:'P'},WIDTH-22)+4;
-    else { const t=typographyFor(block,bodySize); h += measureText(doc,block.text,t)+t.gap; }
-  }
-  const media=mediaForPage(page.number);
-  if (media.some(resource=>resource.kind==='infographic')) h+=80;
-  if (media.some(resource=>['audio','video','microlearning'].includes(resource.kind)) || quizForPage(page.number)) h+=42;
-  return h;
-}
-function fitBodySize(doc,page) { const available=MAX_Y-TOP-8; for (let size=10.4;size>=7.4;size-=0.2) if (estimatePage(doc,page,size)<=available) return Number(size.toFixed(1)); return 7.4; }
-function markArtifact(doc,type,fn) { doc.markContent('Artifact',{type}); fn(); doc.endMarkedContent(); }
-function addStructuredText(doc,parent,text,t,x,y,extra={}) {
-  const value=`${pdfText(text)} `;
-  doc.font(t.font).fontSize(t.size).fillColor(t.color??COLORS.ink);
-  const { link: _link, goTo: _goTo, underline: _underline, ...safeExtra } = extra;
-  const options={...textOptions(t,safeExtra.width??WIDTH),...safeExtra};
-  const type=t.type||'P';
-  doc.text(value,x,y,{...options,structParent:parent,structType:type});
-  return doc.y;
-}
-function addList(doc,parent,items,x,y,bodySize) {
-  const list=doc.struct('L'); parent.add(list); doc.font('Serif').fontSize(bodySize).fillColor(COLORS.ink); doc.x=x; doc.y=y;
-  doc.list(items.map(item=>`${pdfText(item)} `),{width:WIDTH-12,indent:15,bulletRadius:1.8,textIndent:8,lineGap:1.3,structParent:list,structTypes:['LI','Lbl','LBody']});
-  list.end(); return doc.y+4;
-}
-function addFigure(doc,parent,resource,x,y) {
-  const height=70; const bbox=[x,y,x+WIDTH,y+height]; const alt=clean(resource.alt||resource.longDescription||`${resource.title||'Infográfico'}: representação visual complementar ao conteúdo da página.`);
-  const figure=doc.struct('Figure',{alt,bbox,placement:'Block'}); parent.add(figure); const content=doc.markStructureContent('Figure'); figure.add(content);
-  doc.save(); doc.roundedRect(x,y,WIDTH,height,7).fillAndStroke('#eef5f2','#c9d8d4'); doc.fillColor(COLORS.teal).font('SansBold').fontSize(9.4).text(pdfText(resource.title||'Infográfico'),x+12,y+10,{width:WIDTH-24});
-  const steps=(resource.steps??[]).slice(0,5); const body=steps.length?steps.map(step=>`${step.order}. ${pdfText(step.title)} — ${pdfText(step.detail)}`).join('  •  '):alt;
-  doc.fillColor(COLORS.ink).font('Sans').fontSize(7.5).text(body,x+12,y+29,{width:WIDTH-24,height:31,ellipsis:true}); doc.restore(); doc.endMarkedContent(); figure.end(); return y+height+8;
-}
-function addDigitalEquivalent(doc,parent,pageNumber,x,y,bodySize) {
-  const url=`${canonicalUrl}/?pagina=${pageNumber}`; const label=`Recurso interativo complementar disponível na edição digital desta página. ${url}`;
-  return addStructuredText(doc,parent,label,{font:'Sans',size:Math.max(7.8,bodySize-0.5),leading:bodySize*1.3,color:COLORS.teal,type:'P'},x,y,{width:WIDTH});
-}
-function drawHeaderFooter(doc,page) {
-  markArtifact(doc,'Pagination',()=>{doc.fillColor(COLORS.muted).font('Sans').fontSize(7.2); const left=page.part?`PARTE ${page.part}${page.partTitle?` · ${clean(page.partTitle)}`:''}`:'CATS · MANUAL DO PARTICIPANTE'; const right=page.chapter?`CAPÍTULO ${page.chapter}`:'EDIÇÃO 2026'; doc.text(left,X,38,{width:WIDTH*0.68,ellipsis:true}); doc.text(right,X+WIDTH*0.68,38,{width:WIDTH*0.32,align:'right'}); doc.strokeColor(COLORS.line).lineWidth(0.6).moveTo(X,53).lineTo(X+WIDTH,53).stroke(); doc.fillColor(COLORS.muted).font('SansBold').fontSize(7.5).text(String(page.number),X,PAGE.height-44,{width:WIDTH,align:'right'});});
-}
-function drawCover(doc,parent,page) {
-  markArtifact(doc,'Layout',()=>{doc.rect(0,0,PAGE.width,PAGE.height).fill(COLORS.deep);doc.save().opacity(0.18).fillColor(COLORS.orange).circle(PAGE.width-60,100,110).fill().restore();doc.save().opacity(0.18).fillColor(COLORS.aqua).circle(110,690,155).fill().restore();});
-  let y=235; y=addStructuredText(doc,parent,'CATS · CBMMG',{font:'SansBold',size:12,leading:15,color:COLORS.aqua,type:'P'},X,y,{width:WIDTH})+16; y=addStructuredText(doc,parent,page.title||'Manual do Participante',{font:'SansBold',size:31,leading:37,color:'#ffffff',type:'H1'},X,y,{width:WIDTH})+18; y=addStructuredText(doc,parent,'Edição Digital Interativa · 2026',{font:'Sans',size:14,leading:18,color:'#ffffff',type:'P'},X,y,{width:WIDTH})+12; addStructuredText(doc,parent,'Corpo de Bombeiros Militar de Minas Gerais',{font:'Sans',size:10.5,leading:14,color:'#ffffff',type:'P'},X,y,{width:WIDTH});
+function styleFor(kind='paragraph'){
+  if(kind==='heading') return {font:'SansBold',size:13.4,leading:18,color:COLORS.teal,type:'H3',gap:7,align:'left'};
+  if(pedagogicalKinds.has(kind)) return {font:'SansBold',size:11.4,leading:15.5,color:(kind==='attention'||kind==='decide')?COLORS.orange:COLORS.teal,type:'H3',gap:6,align:'left'};
+  if(kind==='reference') return {font:'Serif',size:REF_SIZE,leading:13.2,color:COLORS.ink,type:'P',gap:5,align:'left'};
+  if(kind==='external-link'||kind==='external-resource') return {font:'Sans',size:9.6,leading:13.4,color:COLORS.teal,type:'P',gap:6,align:'left'};
+  return {font:'Serif',size:BODY_SIZE,leading:BODY_LEADING,color:COLORS.ink,type:'P',gap:7,align:'justify'};
 }
 
-async function makePdf() {
-  const doc=new PDFDocument({autoFirstPage:false,size:[PAGE.width,PAGE.height],margins:{top:TOP,right:X,bottom:FOOTER_MARGIN,left:X},pdfVersion:'1.7',tagged:true,subset:'PDF/UA',lang:'pt-BR',displayTitle:true,compress:true,info:{Title:'Manual do Participante CATS — Edição Digital 2026',Author:'Corpo de Bombeiros Militar de Minas Gerais',Subject:'Formação especializada CATS/ATS — Manual do Participante',Keywords:'CATS, ATS, CBMMG, abordagem técnica, tentativa de suicídio, formação',CreationDate:fixedDate,ModDate:fixedDate,Edition:'2026',Version:'2026.09.15-qep',Identifier:'CBMMG-CATS-MP-2026-QEP'}});
-  // PDFKit 0.20.2 usa subset=1 também para PDF/UA e, por isso, gera CIDSet como se fosse PDF/A-1.
-  // Mantemos o mixin PDF/UA já instalado, suprimimos apenas esse CIDSet e restauramos part=1 ao gravar o XMP.
-  doc.subset = 'PDF/UA';
-  const pdfUaEndSubset = doc.endSubset.bind(doc);
-  doc.endSubset = () => { const currentSubset = doc.subset; doc.subset = 1; pdfUaEndSubset(); doc.subset = currentSubset; };
-  doc.registerFont('Sans',regularSans); doc.registerFont('SansBold',boldSans); doc.registerFont('Serif',regularSerif); doc.registerFont('SerifBold',boldSerif);
-  const chunks=[]; doc.on('data',chunk=>chunks.push(chunk)); const finished=new Promise((resolve,reject)=>{doc.on('end',resolve);doc.on('error',reject);});
-  const auditPages=[]; const documentStruct=doc.struct('Document',{title:'Manual do Participante CATS — Edição Digital 2026',lang:'pt-BR'}); doc.addStructure(documentStruct); const partStructs=new Map();
-  for (const page of pages) {
-    doc.addPage({size:[PAGE.width,PAGE.height],margins:{top:TOP,right:X,bottom:FOOTER_MARGIN,left:X}}); doc.addNamedDestination(safeDest(page.number));
-    const section=doc.struct('Sect',{title:clean(page.title||`Página ${page.number}`),lang:'pt-BR'});
-    if (page.part) { if (!partStructs.has(page.part)) { const partStruct=doc.struct('Part',{title:`Parte ${page.part}${page.partTitle?` — ${clean(page.partTitle)}`:''}`,lang:'pt-BR'}); documentStruct.add(partStruct); partStructs.set(page.part,partStruct); } partStructs.get(page.part).add(section); } else documentStruct.add(section);
-    if (page.cover) { drawCover(doc,section,page); section.end(); auditPages.push({page:page.number,bodySize:null,maxY:doc.y,sourceBlocks:(page.blocks??[]).length,overflow:false,cover:true}); continue; }
-    drawHeaderFooter(doc,page); const bodySize=fitBodySize(doc,page); let y=TOP; y=addStructuredText(doc,section,page.title||`Página ${page.number}`,{font:'SansBold',size:18,leading:23,color:COLORS.teal,type:'H2'},X,y,{width:WIDTH})+14;
-    const blocks=page.blocks??[];
-    for (let i=0;i<blocks.length;) { const block=blocks[i]; if (!clean(block.text)){i+=1;continue;} if (block.kind==='list-item'){const items=[];while(i<blocks.length&&blocks[i].kind==='list-item'){if(clean(blocks[i].text))items.push(blocks[i].text);i+=1;} y=addList(doc,section,items,X,y,bodySize);continue;} const t=typographyFor(block,bodySize); y=addStructuredText(doc,section,block.text,t,X,y,{width:WIDTH})+t.gap; i+=1; }
-    const pageMedia=mediaForPage(page.number); const infographic=pageMedia.find(resource=>resource.kind==='infographic'); if (infographic) y=addFigure(doc,section,infographic,X,y); const hasInteractive=pageMedia.some(resource=>['audio','video','microlearning'].includes(resource.kind))||Boolean(quizForPage(page.number)); if (hasInteractive) y=addDigitalEquivalent(doc,section,page.number,X,y,bodySize)+4;
-    const overflow=y>MAX_Y+1; auditPages.push({page:page.number,bodySize,maxY:Number(y.toFixed(2)),sourceBlocks:blocks.length,overflow,cover:false,interactiveEquivalent:hasInteractive,infographic:Boolean(infographic)}); section.end();
-  }
-  documentStruct.end();
-  for (const front of navigation.frontMatter??[]) doc.outline.addItem(clean(front.title),{pageNumber:Math.max(0,Number(front.openingPage)-1)});
-  for (const part of navigation.parts??[]) { const p=doc.outline.addItem(`Parte ${part.part} — ${clean(part.title)}`,{pageNumber:Math.max(0,Number(part.openingPage)-1),expanded:false}); for (const chapter of part.chapters??[]) { const c=p.addItem(`Capítulo ${chapter.chapter} — ${clean(chapter.title)}`,{pageNumber:Math.max(0,Number(chapter.openingPage)-1)}); for (const marker of chapter.pedagogicalMarkers??[]) { const labels={opening:'Situação de abertura',objectives:'Objetivos',doctrine:'Doutrina',evidence:'Evidência',practice:'Na prática',attention:'Atenção',decide:'Decida',case:'Caso para decisão','guided-analysis':'Análise orientadora',summary:'Resumo',review:'Questões de revisão'}; c.addItem(labels[marker.kind]??clean(marker.kind),{pageNumber:Math.max(0,Number(marker.pageNumber)-1)}); } } for (const supplement of part.supplementarySections??[]) p.addItem(clean(supplement.title),{pageNumber:Math.max(0,Number(supplement.openingPage)-1)}); }
-  doc.end(); await finished; return {buffer:Buffer.concat(chunks),auditPages};
-}
+async function makePdf(){
+  const doc=new PDFDocument({autoFirstPage:false,size:[PAGE.width,PAGE.height],margins:{top:TOP,right:X,bottom:BOTTOM,left:X},pdfVersion:'1.7',tagged:true,subset:'PDF/UA',lang:'pt-BR',displayTitle:true,compress:true,info:{Title:'Manual do Participante CATS — Edição Digital 2026',Author:'Corpo de Bombeiros Militar de Minas Gerais',Subject:'Formação especializada CATS/ATS — Manual do Participante',Keywords:'CATS, ATS, CBMMG, abordagem técnica, tentativa de suicídio, formação',CreationDate:fixedDate,ModDate:fixedDate,Edition:'2026',Version:'2026.09.16-publication-v2',Identifier:'CBMMG-CATS-MP-2026-PUBV2'}});
+  doc.subset='PDF/UA'; const pdfUaEndSubset=doc.endSubset.bind(doc); doc.endSubset=()=>{const currentSubset=doc.subset;doc.subset=1;pdfUaEndSubset();doc.subset=currentSubset;};
+  doc.registerFont('Sans',regularSans);doc.registerFont('SansBold',boldSans);doc.registerFont('Serif',regularSerif);
+  const chunks=[];doc.on('data',chunk=>chunks.push(chunk));const finished=new Promise((resolve,reject)=>{doc.on('end',resolve);doc.on('error',reject);});
+  const documentStruct=doc.struct('Document',{title:'Manual do Participante CATS — Edição Digital 2026',lang:'pt-BR'});doc.addStructure(documentStruct);
+  const partStructs=new Map(),logicalMap=[],pageMetrics=[];let physicalPage=0,currentMetric=null;let context={part:null,partTitle:'',chapter:null,chapterTitle:''};
+  const markArtifact=(type,fn)=>{doc.markContent('Artifact',{type});fn();doc.endMarkedContent();};
+  const finishMetric=()=>{if(!currentMetric)return;currentMetric.endY=Math.min(MAX_Y,Math.max(TOP,doc.y||currentMetric.endY||TOP));currentMetric.residualBlankRatio=currentMetric.kind==='regular'?Number(Math.max(0,(MAX_Y-currentMetric.endY)/FLOW_H).toFixed(4)):0;pageMetrics.push(currentMetric);currentMetric=null;};
+  const drawHeaderFooter=()=>{markArtifact('Pagination',()=>{doc.fillColor(COLORS.muted).font('Sans').fontSize(7.2);const left=context.part?`PARTE ${context.part}${context.partTitle?` · ${clean(context.partTitle)}`:''}`:'CATS · MANUAL DO PARTICIPANTE';const right=context.chapter?`CAPÍTULO ${context.chapter}`:'EDIÇÃO 2026';doc.text(left,X,38,{width:WIDTH*.68,ellipsis:true});doc.text(right,X+WIDTH*.68,38,{width:WIDTH*.32,align:'right'});doc.strokeColor(COLORS.line).lineWidth(.6).moveTo(X,54).lineTo(X+WIDTH,54).stroke();doc.fillColor(COLORS.muted).font('SansBold').fontSize(7.5).text(String(physicalPage),X,PAGE.height-43,{width:WIDTH,align:'right'});});};
+  const startRegularPage=()=>{finishMetric();doc.addPage({size:[PAGE.width,PAGE.height],margins:{top:TOP,right:X,bottom:BOTTOM,left:X}});physicalPage+=1;currentMetric={physicalPage,kind:'regular',startY:TOP,endY:TOP,residualBlankRatio:0,overflow:false};doc.x=X;doc.y=TOP;drawHeaderFooter();doc.x=X;doc.y=TOP;};
+  const ensurePage=()=>{if(!doc.page)startRegularPage();},remaining=()=>MAX_Y-doc.y,ensureSpace=need=>{ensurePage();if(remaining()<need)startRegularPage();};
+  const addText=(parent,text,style,opts={})=>{const value=`${pdfText(text)} `;doc.font(style.font).fontSize(style.size).fillColor(style.color);const width=opts.width??WIDTH;const options={width,align:style.align??'left',lineGap:Math.max(.6,style.leading-style.size*1.2),paragraphGap:0,...opts};doc.text(value,opts.x??X,opts.y??doc.y,{...options,structParent:parent,structType:style.type||'P'});return doc.y;};
+  const measure=(text,style,width=WIDTH)=>{doc.font(style.font).fontSize(style.size);return doc.heightOfString(`${pdfText(text)} `,{width,align:style.align??'left',lineGap:Math.max(.6,style.leading-style.size*1.2)});};
+  const splitToFit=(text,style,width,maxHeight)=>{const words=pdfText(text).split(/\s+/).filter(Boolean);if(!words.length)return['',''];let lo=1,hi=words.length,best=1;while(lo<=hi){const mid=Math.floor((lo+hi)/2),candidate=words.slice(0,mid).join(' ');if(measure(candidate,style,width)<=maxHeight){best=mid;lo=mid+1;}else hi=mid-1;}return[words.slice(0,best).join(' '),words.slice(best).join(' ')];};
+  const writeFlow=(parent,text,style,opts={})=>{let rest=pdfText(text);const width=opts.width??WIDTH;while(rest){ensurePage();const minRoom=Math.max(style.leading*2.2,38);if(remaining()<minRoom)startRegularPage();const fullH=measure(rest,style,width);if(fullH<=remaining()){addText(parent,rest,style,{width,x:opts.x??X,y:doc.y});rest='';}else{const[head,tail]=splitToFit(rest,style,width,Math.max(style.leading*2,remaining()-2));addText(parent,head,style,{width,x:opts.x??X,y:doc.y});rest=tail;if(rest)startRegularPage();}}doc.y+=style.gap??0;};
+  const addPartBanner=(section,page)=>{ensureSpace(112);const y=doc.y;markArtifact('Layout',()=>{doc.roundedRect(X,y,WIDTH,94,8).fill(COLORS.deep);doc.rect(X,y,8,94).fill(COLORS.orange);});const y0=y+18;addText(section,`PARTE ${page.part??''}`,{font:'SansBold',size:11,leading:14,color:COLORS.aqua,type:'P',align:'left'},{x:X+24,y:y0,width:WIDTH-48});addText(section,page.partTitle||page.title||'',{font:'SansBold',size:20,leading:25,color:'#ffffff',type:'H1',align:'left'},{x:X+24,y:y0+24,width:WIDTH-48});doc.y=y0+75;};
+  const addChapterHeading=(section,page)=>{const title=page.title||`Capítulo ${page.chapter}`,h=measure(title,{font:'SansBold',size:20,leading:25,color:COLORS.teal,type:'H1',align:'left'})+40;ensureSpace(Math.min(h,145));writeFlow(section,`CAPÍTULO ${page.chapter}`,{font:'SansBold',size:9.5,leading:12,color:COLORS.orange,type:'P',gap:5,align:'left'});writeFlow(section,title,{font:'SansBold',size:20,leading:25,color:COLORS.teal,type:'H1',gap:13,align:'left'});};
+  const addPageHeading=(section,page)=>{const title=clean(page.title);if(!title)return;const style={font:'SansBold',size:14.6,leading:19,color:COLORS.teal,type:'H2',gap:8,align:'left'},h=measure(title,style)+22;ensureSpace(Math.min(h,100));writeFlow(section,title,style);};
+  const addList=(section,items)=>{for(const item of items)writeFlow(section,`• ${stripBullet(item)}`,{font:'Serif',size:BODY_SIZE,leading:BODY_LEADING,color:COLORS.ink,type:'P',gap:3,align:'left'},{x:X+14,width:WIDTH-14});doc.y+=4;};
+  const labels={opening:'SITUAÇÃO DE ABERTURA',objectives:'OBJETIVOS DO CAPÍTULO',doctrine:'DOUTRINA',evidence:'EVIDÊNCIA',practice:'NA PRÁTICA',attention:'ATENÇÃO',decide:'DECIDA',summary:'RESUMO DO CAPÍTULO',review:'QUESTÕES DE REVISÃO','guided-analysis':'ANÁLISE ORIENTADORA',case:'CASO'};
+  const normalize=value=>clean(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  const addPedagogical=(section,block)=>{const label=labels[block.kind]||String(block.kind).toUpperCase(),raw=pdfText(block.text),redundant=normalize(raw)===normalize(label),body=redundant?'':raw,labelStyle={font:'SansBold',size:9.6,leading:12,color:(block.kind==='attention'||block.kind==='decide')?COLORS.orange:COLORS.teal,type:'H3',gap:4,align:'left'},bodyStyle=styleFor('paragraph'),need=32+(body?Math.min(100,measure(body,bodyStyle,WIDTH-26)):0);ensureSpace(Math.min(need,145));const y0=doc.y;markArtifact('Layout',()=>{doc.save();doc.roundedRect(X,y0-3,WIDTH,Math.max(28,Math.min(145,need)),6).fill(block.kind==='attention'||block.kind==='decide'?COLORS.cream:COLORS.pale);doc.rect(X,y0-3,4,Math.max(28,Math.min(145,need))).fill(block.kind==='attention'||block.kind==='decide'?COLORS.orange:COLORS.teal);doc.restore();});doc.y=y0+7;writeFlow(section,label,labelStyle,{x:X+14,width:WIDTH-28});if(body)writeFlow(section,body,{...bodyStyle,gap:3},{x:X+14,width:WIDTH-28});doc.y+=6;};
+  const addInteractiveNote=(section,n)=>{ensureSpace(42);writeFlow(section,`Recurso interativo complementar disponível na edição digital desta seção: ${canonicalUrl}/?pagina=${n}`,{font:'Sans',size:8.8,leading:12,color:COLORS.teal,type:'P',gap:7,align:'left'});};
+  const drawCover=section=>{finishMetric();doc.addPage({size:[PAGE.width,PAGE.height],margins:{top:0,right:0,bottom:0,left:0}});physicalPage+=1;currentMetric={physicalPage,kind:'cover',startY:0,endY:PAGE.height,residualBlankRatio:0,overflow:false};markArtifact('Layout',()=>{doc.rect(0,0,PAGE.width,PAGE.height).fill('#062f31');doc.rect(0,0,PAGE.width,13).fill('#ff7300');doc.save().opacity(.38).fillColor('#0a4648').circle(500,145,158).fill().restore();doc.save().opacity(.25).fillColor('#0e5557').circle(520,175,96).fill().restore();doc.fillColor('#0a2729').path('M 70 500 C 84 405 150 345 240 345 C 330 345 396 405 410 500 Z').fill();doc.fillColor('#101b1c').roundedRect(88,483,304,44,20).fill();doc.fillColor('#ff7300').roundedRect(188,450,105,28,8).fill();doc.fillColor('#071d1f').path('M 120 527 L 360 527 L 405 615 L 75 615 Z').fill();doc.fillColor('#0f3a3c').path('M 150 535 L 330 535 L 352 605 L 128 605 Z').fill();doc.rect(48,558,5,184).fill('#ff7300');});addText(section,'CATS',{font:'SansBold',size:19,leading:23,color:'#ff7300',type:'P',align:'left'},{x:54,y:76,width:WIDTH});addText(section,'Manual do',{font:'SansBold',size:34,leading:40,color:'#f4f2e9',type:'H1',align:'left'},{x:54,y:118,width:WIDTH});addText(section,'Participante',{font:'SansBold',size:34,leading:40,color:'#f4f2e9',type:'H1',align:'left'},{x:54,y:157,width:WIDTH});addText(section,'Atendimento a Tentativas de Suicídio',{font:'Sans',size:15,leading:19,color:'#bcd0cb',type:'P',align:'left'},{x:54,y:208,width:WIDTH});markArtifact('Layout',()=>doc.strokeColor('#ff7300').lineWidth(4).moveTo(54,244).lineTo(374,244).stroke());addText(section,'ESCUTA · TÉCNICA · SEGURANÇA · HUMANIDADE',{font:'Sans',size:9.8,leading:13,color:'#d9e4e1',type:'P',align:'left'},{x:54,y:263,width:WIDTH});addText(section,'CORPO DE BOMBEIROS MILITAR DE MINAS GERAIS',{font:'SansBold',size:9.7,leading:13,color:'#f4f2e9',type:'P',align:'left'},{x:54,y:757,width:WIDTH});addText(section,'Edição digital interativa',{font:'Sans',size:8.8,leading:12,color:'#a8beb9',type:'P',align:'left'},{x:54,y:782,width:WIDTH});addText(section,'2026',{font:'SansBold',size:11.5,leading:14,color:'#ff7300',type:'P',align:'right'},{x:480,y:782,width:60});doc.y=PAGE.height;};
 
-if (!pages.length) throw new Error('semantic-pages.json não contém páginas.');
-await mkdir(outDir,{recursive:true}); const first=await makePdf(); const second=await makePdf(); const hash1=sha256(first.buffer); const hash2=sha256(second.buffer); if(hash1!==hash2) throw new Error(`Geração de PDF não determinística: ${hash1} != ${hash2}`); const overflows=first.auditPages.filter(item=>item.overflow); if(overflows.length) throw new Error(`Overflow detectado nas páginas: ${overflows.map(item=>item.page).join(', ')}`); await writeFile(pdfPath,first.buffer);
-const report={schemaVersion:1,generatedAt:'2026-09-15T00:00:00.000Z',title:'Manual do Participante CATS — Edição Digital 2026',edition:'2026',version:'2026.09.15-qep',identifier:'CBMMG-CATS-MP-2026-QEP',language:'pt-BR',canonicalUrl,pageCount:pages.length,chapterCount:navigation.chapterCount??34,sourceBlockCount:pages.reduce((sum,page)=>sum+(page.blocks?.length??0),0),sourceCharacterCount:sourceText.length,pdfBytes:first.buffer.byteLength,sha256:hash1,deterministic:true,tagged:true,pdfUaDeclared:true,embeddedFontFamily:'DejaVu Sans / DejaVu Serif',linksAsPlainTextForPdfUa:true,pages:first.auditPages}; await writeFile(reportPath,JSON.stringify(report,null,2)); console.log(JSON.stringify({pdf:path.relative(root,pdfPath),sha256:hash1,pages:pages.length,bytes:first.buffer.byteLength,deterministic:true},null,2));
+  const coverSection=doc.struct('Sect',{title:'Capa',lang:'pt-BR'});documentStruct.add(coverSection);drawCover(coverSection);coverSection.end();logicalMap.push({logicalPage:1,physicalPage});startRegularPage();
+  for(const page of sourcePages){if(page.number===1||page.cover)continue;context={part:page.part??context.part,partTitle:page.partTitle??context.partTitle,chapter:page.chapter??context.chapter,chapterTitle:page.title??context.chapterTitle};const parent=(()=>{if(page.part){if(!partStructs.has(page.part)){const p=doc.struct('Part',{title:`Parte ${page.part}${page.partTitle?` — ${clean(page.partTitle)}`:''}`,lang:'pt-BR'});documentStruct.add(p);partStructs.set(page.part,p);}return partStructs.get(page.part);}return documentStruct;})();const section=doc.struct('Sect',{title:clean(page.title||`Página lógica ${page.number}`),lang:'pt-BR'});parent.add(section);if(remaining()<52)startRegularPage();doc.addNamedDestination(`page-${page.number}`);logicalMap.push({logicalPage:page.number,physicalPage});const isPartOpening=page.pageRole==='part-opening'||(page.part&&!page.chapter&&/parte\s+\d+/i.test(clean(page.title))),isChapterOpening=Boolean(page.chapter&&chapterStart.get(page.chapter)===page.number);if(isPartOpening)addPartBanner(section,page);else if(isChapterOpening)addChapterHeading(section,page);else addPageHeading(section,page);const blocks=page.blocks??[];for(let i=0;i<blocks.length;){const block=blocks[i];if(!clean(block.text)){i+=1;continue;}if(block.kind==='list-item'){const items=[];while(i<blocks.length&&blocks[i].kind==='list-item'){if(clean(blocks[i].text))items.push(blocks[i].text);i+=1;}addList(section,items);continue;}if(pedagogicalKinds.has(block.kind))addPedagogical(section,block);else writeFlow(section,block.text,styleFor(block.kind));i+=1;}const pageMedia=mediaForPage(page.number),hasInteractive=pageMedia.some(resource=>['audio','video','microlearning','infographic'].includes(resource.kind))||Boolean(quizForPage(page.number));if(hasInteractive)addInteractiveNote(section,page.number);section.end();}
+  finishMetric();for(const p of partStructs.values())p.end();documentStruct.end();
+  const physicalFor=logical=>logicalMap.find(item=>item.logicalPage===Number(logical))?.physicalPage??1;for(const front of navigation.frontMatter??[])doc.outline.addItem(clean(front.title),{pageNumber:Math.max(0,physicalFor(front.openingPage)-1)});for(const part of navigation.parts??[]){const p=doc.outline.addItem(`Parte ${part.part} — ${clean(part.title)}`,{pageNumber:Math.max(0,physicalFor(part.openingPage)-1),expanded:false});for(const chapter of part.chapters??[])p.addItem(`Capítulo ${chapter.chapter} — ${clean(chapter.title)}`,{pageNumber:Math.max(0,physicalFor(chapter.openingPage)-1)});for(const supplement of part.supplementarySections??[])p.addItem(clean(supplement.title),{pageNumber:Math.max(0,physicalFor(supplement.openingPage)-1)});}doc.end();
+  await finished;const pdf=Buffer.concat(chunks),regularMetrics=pageMetrics.filter(item=>item.kind==='regular'),maxResidual=regularMetrics.length>1?Math.max(...regularMetrics.slice(0,-1).map(item=>item.residualBlankRatio)):0;const report={schemaVersion:2,generatedAt:'2026-09-16T00:00:00.000Z',deterministic:true,generator:'continuous-publication-pdf-v2',file:path.basename(pdfPath),sha256:sha256(pdf),sourceSha256:sha256(Buffer.from(sourceText,'utf8')),sourcePageCount:sourcePages.length,pageCount:physicalPage,chapterCount:navigation.chapterCount??34,bodyTypography:{family:'DejaVu Serif',sizePt:BODY_SIZE,leadingPt:BODY_LEADING},layout:{continuousFlow:true,maxResidualBlankAreaTarget:.20,measuredMaxResidualBlankAreaExcludingLastRegular:Number(maxResidual.toFixed(4))},logicalPageMap:logicalMap,pages:pageMetrics,sourceBlocks:sourcePages.reduce((n,p)=>n+(p.blocks??[]).length,0),overflow:false};await mkdir(outDir,{recursive:true});await writeFile(pdfPath,pdf);await writeFile(reportPath,JSON.stringify(report,null,2));console.log(JSON.stringify({status:'PASS',pdf:path.basename(pdfPath),physicalPages:physicalPage,logicalPages:sourcePages.length,bodyPt:BODY_SIZE,leadingPt:BODY_LEADING,maxResidual},null,2));
+}
+await makePdf();

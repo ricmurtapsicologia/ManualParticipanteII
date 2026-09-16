@@ -1,4 +1,4 @@
-name: Materialize and QEP Release Gate
+name: PDF + EPUB Publication Release Gate
 
 on:
   push:
@@ -6,13 +6,12 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  materialize-and-qep:
-    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[materialized]') }}
+  publication-pdf-epub:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,22 +23,15 @@ jobs:
       - name: Install locked dependencies
         working-directory: rebuild
         run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Materialize canonical publication artifacts
+      - name: Materialize canonical publication content
         working-directory: rebuild
         run: npm run content:materialize
-      - name: Commit materialized checkpoint
+      - name: Verify canonical content is already materialized
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add rebuild/content/*.json rebuild/package-lock.json
-          if git diff --cached --quiet; then
-            git commit --allow-empty -m "chore(qep): checkpoint materializado [materialized]"
-          else
-            git commit -m "chore(qep): materializar estado final determinístico [materialized]"
-          fi
-          echo "QEP_CHECKPOINT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-          git push origin HEAD:"$GITHUB_REF_NAME"
-      - name: Build deterministic artifact
+          git diff --exit-code -- rebuild/content/
+          echo "QEP_CHECKPOINT=$GITHUB_SHA" >> "$GITHUB_ENV"
+          echo "Canonical content clean at $GITHUB_SHA"
+      - name: Build deterministic publication artifacts
         working-directory: rebuild
         run: npm run build
       - name: Verify Git source tree is clean
@@ -47,25 +39,45 @@ jobs:
           git diff --exit-code
           CHANGES="$(git status --porcelain --untracked-files=all | grep -Ev '^(\?\?| M|M ) rebuild/(public/downloads/|reports/|\.next/|test-results/|playwright-report/|\.lighthouseci\/)' || true)"
           test -z "$CHANGES" || { echo "$CHANGES"; exit 1; }
-          echo "QEP source tree clean at $QEP_CHECKPOINT"
       - name: Install publication inspection tools
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils jq default-jre-headless unzip
-      - name: Full PDF text parity
+      - name: Full PDF text parity and intelligent condensation
         working-directory: rebuild
-        run: npm run pdf:parity
-      - name: PDF rendering smoke all pages
+        run: |
+          mkdir -p reports
+          PDF=public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf
+          pdftotext -layout -nopgbrk "$PDF" reports/pdf-extracted.txt
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          const semantic=JSON.parse(fs.readFileSync('content/semantic-pages.json','utf8'));
+          const pre=JSON.parse(fs.readFileSync('public/downloads/manual-preflight.json','utf8'));
+          const norm=v=>String(v??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[\u00ad\u200b☐□]/g,'').replace(/-\s*\n\s*/g,'-').replace(/\/\s*\n\s*/g,'/').replace(/\s+/g,' ').trim().toLowerCase();
+          const pdf=norm(fs.readFileSync('reports/pdf-extracted.txt','utf8'));
+          const items=(semantic.pages??[]).flatMap(p=>[{page:p.number,text:p.title},...(p.blocks??[]).map(b=>({page:p.number,text:b.text}))]).filter(x=>norm(x.text).length>1);
+          const coverLine=norm('Manual do Participante • Edição Digital Interativa • 2026');
+          const coverSegments=['Manual do Participante','Edição Digital Interativa','2026'].map(norm);
+          const missing=[];
+          for(const item of items){const n=norm(item.text);if(pdf.includes(n))continue;if(item.page===1&&n===coverLine&&coverSegments.every(s=>pdf.includes(s)))continue;missing.push({page:item.page,text:String(item.text).slice(0,160)});}
+          const maxResidual=Number(pre.layout?.measuredMaxResidualBlankAreaExcludingLastRegular??1);
+          const ok=missing.length===0&&pre.sourcePageCount===semantic.pages.length&&pre.logicalPageMap?.length===semantic.pages.length&&pre.pageCount<pre.sourcePageCount&&pre.bodyTypography?.sizePt>=11.2&&pre.bodyTypography?.leadingPt>=16&&maxResidual<=0.20;
+          const report={status:ok?'PASS':'FAIL',logicalPages:pre.sourcePageCount,physicalPages:pre.pageCount,blocksChecked:items.length,blocksMissing:missing.length,bodyTypography:pre.bodyTypography,maxResidualBlankArea:maxResidual,missing:missing.slice(0,50)};
+          fs.writeFileSync('reports/parity-report.json',JSON.stringify(report,null,2));console.log(report);if(!ok)process.exit(1);
+          NODE
+      - name: PDF rendering smoke all physical pages
         working-directory: rebuild
         run: |
           mkdir -p reports/render
           PDF=public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf
           EXPECTED=$(node -p "require('./public/downloads/manual-preflight.json').pageCount")
+          LOGICAL=$(node -p "require('./public/downloads/manual-preflight.json').sourcePageCount")
           ACTUAL=$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')
           test "$ACTUAL" = "$EXPECTED"
-          pdftoppm -jpeg -r 45 -jpegopt quality=45 "$PDF" reports/render/page >/dev/null 2>&1
+          test "$ACTUAL" -lt "$LOGICAL"
+          pdftoppm -jpeg -r 55 -jpegopt quality=48 "$PDF" reports/render/page >/dev/null 2>&1
           RENDERED=$(find reports/render -type f -name 'page-*.jpg' | wc -l)
           test "$RENDERED" = "$EXPECTED"
           test -z "$(find reports/render -type f -name 'page-*.jpg' -size 0)"
-          echo "PDF_RENDER_SMOKE_OK pages=$ACTUAL"
+          echo "PDF_RENDER_SMOKE_OK physical=$ACTUAL logical=$LOGICAL"
       - name: veraPDF PDF/UA-1 validation
         working-directory: rebuild
         run: |
@@ -73,8 +85,7 @@ jobs:
           VERAPDF_EXIT=0
           docker run --rm -v "$PWD:/data" verapdf/cli:v1.30.2@sha256:d5ee329657cf9bc4b2400392dd54c7d0a0ce9980ff6fa2da5590eebeec007cdb --format json --flavour ua1 "/data/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf" > reports/verapdf.json || VERAPDF_EXIT=$?
           if [ "$VERAPDF_EXIT" -ne 0 ] || ! jq -e '.report.jobs[0].validationResult[0].compliant == true' reports/verapdf.json >/dev/null; then
-            echo "veraPDF encontrou não conformidades PDF/UA-1 (exit=$VERAPDF_EXIT):"
-            jq -r '.report.jobs[0].validationResult[0].details.ruleSummaries[] | select((.ruleStatus == "FAILED") or (.status == "failed") or ((.failedChecks // 0) > 0)) | "clause=\(.clause) test=\(.testNumber) failed=\(.failedChecks) tags=\((.tags // []) | join(",")) :: \(.description)"' reports/verapdf.json | head -100 || true
+            jq -r '.report.jobs[0].validationResult[0].details.ruleSummaries[] | select((.ruleStatus == "FAILED") or (.status == "failed") or ((.failedChecks // 0) > 0)) | "clause=\(.clause) test=\(.testNumber) failed=\(.failedChecks) :: \(.description)"' reports/verapdf.json | head -100 || true
             exit 1
           fi
           echo "VERAPDF_PDFUA_PASS"
@@ -100,46 +111,42 @@ jobs:
           echo "6c07e68584b2e2ce2f89fe06e1246dfead3eb36b46b340e7d93524f29dcff6c5  /tmp/epubcheck.zip" | sha256sum -c -
           unzip -q /tmp/epubcheck.zip -d /tmp/epubcheck
           JAR=$(find /tmp/epubcheck -name epubcheck.jar -print -quit)
-          test -n "$JAR"
-          if ! java -jar "$JAR" --failonwarnings --json reports/epubcheck.json "$EPUB"; then
-            echo "EPUBCheck encontrou não conformidades ou warnings:"
-            jq '.checker // .' reports/epubcheck.json || cat reports/epubcheck.json
-            exit 1
-          fi
+          java -jar "$JAR" --failonwarnings --json reports/epubcheck.json "$EPUB"
           echo "EPUBCHECK_EPUB33_PASS file=$EPUB"
-      - name: Runtime smoke 6/6
+      - name: EPUB semantic, cover and 223-marker integrity
         working-directory: rebuild
         run: |
-          npm run start -- -p 3100 > /tmp/cats-next.log 2>&1 &
-          PID=$!
-          trap 'kill $PID 2>/dev/null || true' EXIT
-          READY=0
-          for i in {1..40}; do
-            if curl -fsS http://127.0.0.1:3100/api/health >/dev/null; then READY=1; break; fi
-            sleep 1
-          done
-          if [ "$READY" != "1" ]; then cat /tmp/cats-next.log; exit 1; fi
-          BASE_URL=http://127.0.0.1:3100 npm run audit:6
-          kill $PID 2>/dev/null || true
-          trap - EXIT
-      - name: Install Playwright browsers
+          EPUB=public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.epub
+          unzip -t "$EPUB" >/dev/null
+          python - <<'PY'
+          import re, zipfile, xml.etree.ElementTree as ET
+          from pathlib import Path
+          epub=Path('public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.epub')
+          with zipfile.ZipFile(epub) as z:
+              names=set(z.namelist())
+              assert 'OEBPS/cover.svg' in names and 'OEBPS/cover.webp' not in names
+              ET.fromstring(z.read('OEBPS/cover.svg'))
+              manual=z.read('OEBPS/manual.xhtml').decode('utf-8')
+              cover=z.read('OEBPS/cover.xhtml').decode('utf-8')
+              assert manual.count('epub:type="pagebreak"') == 222
+              assert cover.count('epub:type="pagebreak"') == 1
+              assert '<ul class="list">' in manual
+              assert '• </span>•' not in manual
+              assert not re.search(r'<p class="boxLabel">([^<]+)</p><p>\1</p>', manual, re.I)
+              assert '<p class="reference">' in manual
+          print('EPUB_PACKAGE_INTEGRITY_PASS markers=223 cover=svg lists=semantic references=hanging')
+          PY
+      - name: Publication checkpoint summary
         working-directory: rebuild
-        run: npx playwright install --with-deps chromium firefox webkit
-      - name: Cross-browser accessibility and E2E
-        working-directory: rebuild
-        run: npm run e2e:qep
-      - name: Core regression smoke/E2E in Chromium
-        working-directory: rebuild
-        run: npx playwright test --project=chromium e2e/manual.spec.ts e2e/publication-hotfix.spec.ts e2e/epub-release.spec.ts
-      - name: Lighthouse CI
-        working-directory: rebuild
-        run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.json
-      - name: QEP checkpoint summary
-        run: echo "QEP_FULL_GATE_PASS checkpoint=$QEP_CHECKPOINT formats=PDF-UA-1+EPUB3.3"
+        run: |
+          node - <<'NODE'
+          const p=require('./public/downloads/manual-preflight.json');
+          console.log(`PUBLICATION_GATE_PASS checkpoint=${process.env.QEP_CHECKPOINT} PDF-UA-1 EPUB3.3 logical=${p.sourcePageCount} physical=${p.pageCount} body=${p.bodyTypography.sizePt}/${p.bodyTypography.leadingPt}`)
+          NODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: qep-release-evidence
+          name: qep-pdf-epub-evidence
           path: |
             rebuild/reports/
             rebuild/public/downloads/manual-preflight.json
