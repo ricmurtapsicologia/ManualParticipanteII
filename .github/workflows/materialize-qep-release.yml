@@ -43,26 +43,7 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils jq default-jre-headless unzip
       - name: Full PDF text parity and intelligent condensation
         working-directory: rebuild
-        run: |
-          mkdir -p reports
-          PDF=public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf
-          pdftotext -layout -nopgbrk "$PDF" reports/pdf-extracted.txt
-          node --input-type=module - <<'NODE'
-          import fs from 'node:fs';
-          const semantic=JSON.parse(fs.readFileSync('content/semantic-pages.json','utf8'));
-          const pre=JSON.parse(fs.readFileSync('public/downloads/manual-preflight.json','utf8'));
-          const norm=v=>String(v??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[\u00ad\u200b☐□]/g,'').replace(/-\s*\n\s*/g,'-').replace(/\/\s*\n\s*/g,'/').replace(/\s+/g,' ').trim().toLowerCase();
-          const pdf=norm(fs.readFileSync('reports/pdf-extracted.txt','utf8'));
-          const items=(semantic.pages??[]).flatMap(p=>[{page:p.number,text:p.title},...(p.blocks??[]).map(b=>({page:p.number,text:b.text}))]).filter(x=>norm(x.text).length>1);
-          const coverLine=norm('Manual do Participante • Edição Digital Interativa • 2026');
-          const coverSegments=['Manual do Participante','Edição Digital Interativa','2026'].map(norm);
-          const missing=[];
-          for(const item of items){const n=norm(item.text);if(pdf.includes(n))continue;if(item.page===1&&n===coverLine&&coverSegments.every(s=>pdf.includes(s)))continue;missing.push({page:item.page,text:String(item.text).slice(0,160)});}
-          const maxResidual=Number(pre.layout?.measuredMaxResidualBlankAreaExcludingLastRegular??1);
-          const ok=missing.length===0&&pre.sourcePageCount===semantic.pages.length&&pre.logicalPageMap?.length===semantic.pages.length&&pre.pageCount<pre.sourcePageCount&&pre.bodyTypography?.sizePt>=11.2&&pre.bodyTypography?.leadingPt>=16&&maxResidual<=0.20;
-          const report={status:ok?'PASS':'FAIL',logicalPages:pre.sourcePageCount,physicalPages:pre.pageCount,blocksChecked:items.length,blocksMissing:missing.length,bodyTypography:pre.bodyTypography,maxResidualBlankArea:maxResidual,missing:missing.slice(0,50)};
-          fs.writeFileSync('reports/parity-report.json',JSON.stringify(report,null,2));console.log(report);if(!ok)process.exit(1);
-          NODE
+        run: npm run pdf:parity
       - name: PDF rendering smoke all physical pages
         working-directory: rebuild
         run: |
