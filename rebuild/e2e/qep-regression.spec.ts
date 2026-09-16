@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 const canonical = 'https://manual-participante-cats-digital.vercel.app';
+const canonicalHero = `${canonical}/assets/manual-cats/2026/manual-cats-hero-2026.jpg`;
 
 async function open(page: any) {
   const response = await page.goto('/', { waitUntil: 'networkidle' });
@@ -64,7 +65,7 @@ test('SEO e identidade editorial digital estão completos', async ({ page }) => 
   await expect(page).toHaveTitle(/Manual do Participante CATS/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', canonical);
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', /Manual do Participante CATS/);
-  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /opengraph-image/);
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', canonicalHero);
   await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
   const structured = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() || '{}');
   expect(structured['@type']).toContain('Book');
