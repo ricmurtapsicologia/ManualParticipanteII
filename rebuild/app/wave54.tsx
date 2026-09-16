@@ -14,15 +14,27 @@ export type Wave54AudioResource = {
   fallbackLang?: string;
 };
 
-export function selectPreferredVoice(preferredName = 'Antônio', _fallbackLang = 'pt-BR') {
+function normalizeVoiceValue(value: string) {
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+export function selectPreferredVoice(preferredName = 'Antônio', fallbackLang = 'pt-BR') {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return null;
   const voices = window.speechSynthesis.getVoices();
-  const normalizedPreferred = preferredName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const preferred = voices.find(voice => voice.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(normalizedPreferred));
+  if (!voices.length) return null;
+
+  const normalizedPreferred = normalizeVoiceValue(preferredName);
+  const normalizedLang = fallbackLang.toLowerCase();
+  const preferred = voices.find(voice => normalizeVoiceValue(voice.name).includes(normalizedPreferred));
   if (preferred) return preferred;
-  const message = `A voz ${preferredName} não está disponível neste dispositivo. A leitura não será iniciada.`;
-  window.alert(message);
-  throw new Error(message);
+
+  const exactLanguage = voices.find(voice => voice.lang.toLowerCase() === normalizedLang);
+  if (exactLanguage) return exactLanguage;
+
+  const portuguese = voices.find(voice => voice.lang.toLowerCase().startsWith('pt'));
+  if (portuguese) return portuguese;
+
+  return voices.find(voice => voice.default) ?? voices[0] ?? null;
 }
 
 export function ApprovedCover() {
@@ -83,6 +95,7 @@ export function ApprovedCover() {
 
 export function AudioResourceCard({ resource }: { resource: Wave54AudioResource }) {
   const [state, setState] = useState<'idle' | 'speaking' | 'paused' | 'unavailable'>('idle');
+  const [activeVoiceName, setActiveVoiceName] = useState<string | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const preferredVoice = resource.preferredVoice ?? 'Antônio';
   const speechLang = resource.fallbackLang ?? 'pt-BR';
@@ -111,22 +124,12 @@ export function AudioResourceCard({ resource }: { resource: Wave54AudioResource 
     }
     if (state === 'speaking') return;
 
-    let voice: SpeechSynthesisVoice | null = null;
-    try {
-      voice = selectPreferredVoice(preferredVoice, speechLang);
-    } catch {
-      setState('unavailable');
-      return;
-    }
-    if (!voice) {
-      setState('unavailable');
-      return;
-    }
-
+    const voice = selectPreferredVoice(preferredVoice, speechLang);
     const utterance = new SpeechSynthesisUtterance(resource.transcript);
     utterance.lang = speechLang;
     utterance.rate = 0.96;
-    utterance.voice = voice;
+    if (voice) utterance.voice = voice;
+    setActiveVoiceName(voice?.name ?? `voz padrão ${speechLang}`);
     utterance.onend = () => {
       utteranceRef.current = null;
       setState('idle');
@@ -148,12 +151,12 @@ export function AudioResourceCard({ resource }: { resource: Wave54AudioResource 
   };
 
   const status = state === 'speaking'
-    ? 'Reproduzindo áudio com a voz Antônio.'
+    ? `Reproduzindo em português com ${activeVoiceName ?? preferredVoice}.`
     : state === 'paused'
       ? 'Áudio pausado.'
       : state === 'unavailable'
-        ? 'A voz Antônio não está disponível neste dispositivo. A leitura não foi iniciada.'
-        : 'Áudio parado. Voz obrigatória: Antônio.';
+        ? 'A leitura em voz alta não é suportada por este navegador.'
+        : `Voz preferencial: ${preferredVoice}. Se ela não estiver disponível, outra voz em português será usada automaticamente.`;
 
   return (
     <section
@@ -163,7 +166,8 @@ export function AudioResourceCard({ resource }: { resource: Wave54AudioResource 
       data-media-kind="audio"
       data-media-src={resource.src}
       data-preferred-voice={preferredVoice}
-      data-voice-policy="required"
+      data-voice-policy="prefer-with-fallback"
+      data-fallback-lang={speechLang}
       data-speech-lang={speechLang}
       aria-labelledby={labelId}
     >
