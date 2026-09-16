@@ -29,7 +29,11 @@ const normalizeText = value => String(value ?? '')
   .trim()
   .toLowerCase();
 
-const tokenize = value => normalizeText(value).match(/[a-z0-9]+/g) ?? [];
+// Separa sequências alfabéticas e numéricas. O Poppler pode colar o número físico
+// da página à palavra adjacente (ex.: "o4", "palavras9", "imediatamente114").
+// Separar classes preserva tanto a palavra quanto o número como tokens distintos,
+// sem eliminar nenhum token da fonte durante a verificação de paridade.
+const tokenize = value => normalizeText(value).match(/[a-z]+|[0-9]+/g) ?? [];
 const pdfText = normalizeText(extracted);
 const pdfTokens = tokenize(extracted);
 const positions = new Map();
