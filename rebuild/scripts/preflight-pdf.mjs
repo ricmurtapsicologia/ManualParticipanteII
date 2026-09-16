@@ -12,13 +12,18 @@ const outputPath = path.join(reportsDir, 'pdf-preflight.json');
 const [pdf, generated] = await Promise.all([readFile(pdfPath), readFile(generatorReportPath, 'utf8').then(JSON.parse)]);
 const raw = pdf.toString('latin1');
 const has = pattern => pattern.test(raw);
-const count = pattern => [...raw.matchAll(pattern)].length;
 const sha256 = createHash('sha256').update(pdf).digest('hex');
+const logicalMap = generated.logicalPageMap ?? [];
+const pageMetrics = generated.pages ?? [];
+const physicalMetricsConsistent = Number.isInteger(generated.pageCount) && generated.pageCount > 0 && pageMetrics.length === generated.pageCount;
+const logicalMapConsistent = Number.isInteger(generated.sourcePageCount) && generated.sourcePageCount > 0 && logicalMap.length === generated.sourcePageCount && logicalMap.every((item, index) => item.logicalPage === index + 1 && item.physicalPage >= 1 && item.physicalPage <= generated.pageCount);
 
 const checks = [
   ['header-pdf', pdf.subarray(0, 8).toString('ascii').startsWith('%PDF-1.'), 'Cabeçalho PDF válido'],
   ['eof', /%%EOF\s*$/.test(raw), 'EOF válido'],
-  ['pages', count(/\/Type\s*\/Page(?!s)\b/g) === generated.pageCount, `Contagem de páginas = ${generated.pageCount}`],
+  ['page-metrics', physicalMetricsConsistent, `Métricas de páginas físicas consistentes = ${generated.pageCount}`],
+  ['logical-page-map', logicalMapConsistent, `Mapa lógico contínuo = ${generated.sourcePageCount} marcadores em ${generated.pageCount} páginas físicas`],
+  ['condensation', generated.pageCount < generated.sourcePageCount, `Condensação editorial ativa: ${generated.sourcePageCount} lógicas → ${generated.pageCount} físicas`],
   ['tagged-struct-tree', has(/\/StructTreeRoot\b/), 'StructTreeRoot presente'],
   ['tagged-mark-info', has(/\/MarkInfo\b/), 'MarkInfo presente'],
   ['language', has(/\/Lang\b/), 'Idioma de documento presente'],
@@ -31,18 +36,21 @@ const checks = [
   ['figure-alt', !has(/\/S\s*\/Figure\b/) || has(/\/Alt\b/), 'Figuras estruturadas possuem Alt'],
   ['deterministic', generated.deterministic === true, 'Geração determinística confirmada'],
   ['sha-match', generated.sha256 === sha256, 'SHA-256 do preflight coincide com o gerador'],
-  ['overflow', (generated.pages ?? []).every(page => page.overflow === false), 'Sem overflow declarado pelo motor de composição'],
+  ['typography', generated.bodyTypography?.sizePt >= 11.2 && generated.bodyTypography?.leadingPt >= 16, 'Corpo mínimo 11,2 pt e entrelinha mínima 16 pt'],
+  ['residual-blank-area', Number(generated.layout?.measuredMaxResidualBlankAreaExcludingLastRegular ?? 1) <= 0.20, 'Área residual máxima dentro do limite editorial de 20%'],
+  ['overflow', pageMetrics.every(page => page.overflow === false), 'Sem overflow declarado pelo motor de composição'],
   ['non-empty', pdf.byteLength > 100_000, 'Arquivo não vazio/truncado']
 ].map(([id, pass, description]) => ({ id, pass: Boolean(pass), description }));
 
 const failures = checks.filter(check => !check.pass);
 const report = {
-  schemaVersion: 1,
-  generatedAt: '2026-09-15T00:00:00.000Z',
+  schemaVersion: 2,
+  generatedAt: '2026-09-16T00:00:00.000Z',
   pdf: path.basename(pdfPath),
   sha256,
   bytes: pdf.byteLength,
-  pages: generated.pageCount,
+  physicalPages: generated.pageCount,
+  logicalPages: generated.sourcePageCount,
   checks,
   status: failures.length ? 'FAIL' : 'PASS',
   failures: failures.map(item => item.id)
@@ -53,4 +61,4 @@ if (failures.length) {
   console.error(JSON.stringify(report, null, 2));
   process.exit(1);
 }
-console.log(JSON.stringify({ status: 'PASS', sha256, pages: generated.pageCount, checks: checks.length }, null, 2));
+console.log(JSON.stringify({ status: 'PASS', sha256, physicalPages: generated.pageCount, logicalPages: generated.sourcePageCount, checks: checks.length }, null, 2));
