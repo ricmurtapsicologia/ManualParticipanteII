@@ -1,17 +1,11 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadSavedPage } from './helpers';
 
 const enrichment = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'content', 'chapter-enrichment.json'), 'utf8')) as {
   chapters: Array<{ chapter:number; microlearning:{ pageNumber:number; choices:Array<{id:string;label:string;correct:boolean}>; reveal:string } }>;
 };
-
-async function loadSavedPage(page: import('@playwright/test').Page, pageNumber: number) {
-  await page.goto('/', { waitUntil: 'networkidle' });
-  await page.evaluate(number => localStorage.setItem('cats-rebuild-page', String(number - 1)), pageNumber);
-  await page.reload({ waitUntil: 'networkidle' });
-  await expect(page.getByTestId('page-counter')).toHaveText(`${pageNumber} / 249`);
-}
 
 test('Wave10 exposes exactly one grounded microlearning box in every chapter', async ({ page }) => {
   test.setTimeout(180_000);
@@ -44,5 +38,9 @@ test('Wave10 microlearning remains usable without horizontal overflow at 320px',
   expect(metrics.paper).toBeTruthy(); expect(metrics.card).toBeTruthy();
   expect(metrics.card!.left).toBeGreaterThanOrEqual(metrics.paper!.left - 1);
   expect(metrics.card!.right).toBeLessThanOrEqual(metrics.paper!.right + 1);
-  for (const choice of metrics.choices) { expect(choice.left).toBeGreaterThanOrEqual(metrics.card!.left - 1); expect(choice.right).toBeLessThanOrEqual(metrics.card!.right + 1); expect(choice.height).toBeGreaterThanOrEqual(40); }
+  for (const choice of metrics.choices) {
+    expect(choice.left).toBeGreaterThanOrEqual(metrics.card!.left - 1);
+    expect(choice.right).toBeLessThanOrEqual(metrics.card!.right + 1);
+    expect(choice.height).toBeGreaterThanOrEqual(40);
+  }
 });

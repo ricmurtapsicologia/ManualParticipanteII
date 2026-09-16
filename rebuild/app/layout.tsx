@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './ds2.css';
 import './wave54.css';
+import './canonical-covers.css';
 import './wave16.css';
 import './wave18.css';
 import './wave10.css';
@@ -11,6 +12,8 @@ import SkipLinkFocus from './SkipLinkFocus';
 import DownloadFormatActions from './DownloadFormatActions';
 
 const canonicalUrl = 'https://manual-participante-cats-digital.vercel.app';
+const heroUrl = '/assets/manual-cats/2026/manual-cats-hero-2026.jpg';
+const coverUrl = '/assets/manual-cats/2026/manual-cats-capa-digital-2026.jpg';
 const title = 'Manual do Participante CATS | Edição Digital 2026';
 const description = 'Manual do Participante CATS — edição digital interativa 2026 do Corpo de Bombeiros Militar de Minas Gerais.';
 
@@ -30,13 +33,18 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: 'CATS — Manual do Participante',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Capa digital do Manual do Participante CATS — Edição 2026' }]
+    images: [{
+      url: heroUrl,
+      width: 1536,
+      height: 864,
+      alt: 'Manual do Participante CATS — Atendimento a Tentativas de Suicídio — Edição Digital 2026.'
+    }]
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/opengraph-image']
+    images: [heroUrl]
   },
   robots: { index: true, follow: true }
 };
@@ -50,6 +58,8 @@ const structuredData = {
   datePublished: '2026',
   version: 'Edição 2026',
   url: canonicalUrl,
+  image: `${canonicalUrl}${heroUrl}`,
+  thumbnailUrl: `${canonicalUrl}${coverUrl}`,
   isAccessibleForFree: true,
   encodingFormat: ['application/pdf', 'application/epub+zip'],
   learningResourceType: 'Manual de formação',
@@ -60,6 +70,10 @@ const structuredData = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="preload" as="image" href={heroUrl} fetchPriority="high" />
+        <link rel="preload" as="image" href={coverUrl} fetchPriority="high" />
+      </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
         <SkipLinkFocus />

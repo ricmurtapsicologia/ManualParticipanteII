@@ -39,56 +39,29 @@ export function selectPreferredVoice(preferredName = 'Antônio', fallbackLang = 
 
 export function ApprovedCover() {
   return (
-    <figure className="wave54Cover" data-testid="approved-cover" aria-labelledby="cats-cover-title">
-      <div className="wave54CoverTopRule" aria-hidden="true" />
-      <div className="wave54CoverInner">
-        <header className="wave54CoverHeader">
-          <div className="wave54CoverWordmark" data-testid="cats-logo" aria-label="CATS">
-            <span>C</span><span>A</span><span className="wave54CoverMark">T</span><span>S</span>
-          </div>
-          <div className="wave54CoverKicker">MANUAL DO PARTICIPANTE</div>
-          <h1 id="cats-cover-title">Atendimento a<br />Tentativas de<br />Suicídio</h1>
-          <div className="wave54CoverRule" aria-hidden="true" />
-          <p className="wave54CoverTagline">Escuta, técnica, segurança e humanidade.</p>
-        </header>
-
-        <div className="wave54CoverIllustration" aria-hidden="true">
-          <svg viewBox="0 0 900 500" role="img" focusable="false">
-            <defs>
-              <linearGradient id="catsOrangeBand" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stopColor="#ef6524" />
-                <stop offset="1" stopColor="#ff8b45" />
-              </linearGradient>
-            </defs>
-            <path className="wave54CoverArc" d="M35 420 C170 245, 340 205, 455 295 C585 400, 700 375, 860 190" />
-            <path className="wave54CoverArc wave54CoverArcSoft" d="M25 455 C200 300, 320 315, 445 375 C575 438, 710 405, 875 250" />
-            <circle cx="180" cy="220" r="70" className="wave54CoverPerson" />
-            <path d="M80 410 C95 315, 132 265, 180 265 C232 265, 272 315, 286 410 Z" className="wave54CoverPerson" />
-            <path d="M112 188 Q180 112 248 188 L234 213 Q180 172 126 213 Z" className="wave54CoverHelmet" />
-            <circle cx="450" cy="250" r="62" className="wave54CoverCenterPerson" />
-            <path d="M355 420 C370 335, 405 292, 450 292 C495 292, 530 335, 545 420 Z" className="wave54CoverCenterPerson" />
-            <circle cx="720" cy="220" r="70" className="wave54CoverPerson" />
-            <path d="M614 410 C628 315, 668 265, 720 265 C770 265, 810 315, 825 410 Z" className="wave54CoverPerson" />
-            <path d="M652 188 Q720 112 788 188 L774 213 Q720 172 666 213 Z" className="wave54CoverHelmet" />
-            <path d="M260 302 C325 315, 348 330, 392 350" className="wave54CoverSupport" />
-            <path d="M640 302 C575 315, 552 330, 508 350" className="wave54CoverSupport" />
-            <rect x="0" y="448" width="900" height="30" fill="url(#catsOrangeBand)" transform="rotate(3 450 463)" />
-          </svg>
-        </div>
-
-        <footer className="wave54CoverFooter">
-          <div>
-            <strong>Corpo de Bombeiros Militar de Minas Gerais</strong>
-            <span>GTO ATS · CATS · Formação especializada</span>
-          </div>
-          <div className="wave54CoverEdition">
-            <strong>Conhecimento que salva vidas</strong>
-            <span>Edição digital 2026</span>
-          </div>
-          <div className="wave54CoverYear">2026</div>
-        </footer>
+    <figure className="wave54Cover canonicalCoverStack" data-testid="approved-cover" aria-labelledby="cats-cover-caption">
+      <div className="canonicalHeroFrame" data-testid="canonical-hero" aria-hidden="true">
+        <img
+          src="/assets/manual-cats/2026/manual-cats-hero-2026.jpg"
+          alt=""
+          width={1536}
+          height={864}
+          fetchPriority="high"
+        />
       </div>
-      <figcaption className="srOnly">Capa editorial do Manual do Participante CATS - Atendimento a Tentativas de Suicídio.</figcaption>
+      <div className="canonicalCoverFrame">
+        <img
+          className="canonicalCoverImage"
+          data-testid="approved-cover-image"
+          src="/assets/manual-cats/2026/manual-cats-capa-digital-2026.jpg"
+          alt="Capa oficial do Manual do Participante CATS — Atendimento a Tentativas de Suicídio — Edição Digital 2026."
+          width={961}
+          height={1536}
+          fetchPriority="high"
+        />
+      </div>
+      <span className="srOnly" data-testid="cats-logo">CATS</span>
+      <figcaption id="cats-cover-caption" className="srOnly">Manual do Participante CATS — Atendimento a Tentativas de Suicídio. Escuta, Técnica, Segurança e Humanidade. Edição Digital 2026. CBMMG · GTO ATS · CATS.</figcaption>
     </figure>
   );
 }
