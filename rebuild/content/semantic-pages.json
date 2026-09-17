@@ -2331,71 +2331,41 @@
         ],
         "supplementarySections": [
           {
-            "id": "part-7-supplement-1",
-            "title": "Respostas orientadoras às questões de revisão",
+            "id": "part-7-supplement-2",
+            "title": "Recursos digitais do participante",
             "openingPage": 214,
             "pageNumbers": [
               214,
-              215,
-              216,
-              217,
-              218,
-              219,
-              220,
-              221,
-              222,
-              223,
-              224,
-              225,
-              226,
-              227,
-              228,
-              229,
-              230,
-              231,
-              232,
-              233,
-              234,
-              235,
-              236
-            ]
-          },
-          {
-            "id": "part-7-supplement-2",
-            "title": "Recursos digitais do participante",
-            "openingPage": 237,
-            "pageNumbers": [
-              237,
-              238
+              215
             ]
           },
           {
             "id": "part-7-supplement-3",
             "title": "Referências nucleares",
-            "openingPage": 239,
+            "openingPage": 216,
             "pageNumbers": [
-              239,
-              240,
-              241
+              216,
+              217,
+              218
             ]
           },
           {
             "id": "part-7-supplement-4",
             "title": "Glossário essencial",
-            "openingPage": 242,
+            "openingPage": 219,
             "pageNumbers": [
-              242,
-              243,
-              244
+              219,
+              220,
+              221
             ]
           },
           {
             "id": "part-7-supplement-5",
             "title": "Checklist final do participante",
-            "openingPage": 245,
+            "openingPage": 222,
             "pageNumbers": [
-              245,
-              246
+              222,
+              223
             ]
           }
         ]
@@ -3369,12 +3339,6 @@
           "kind": "paragraph",
           "sourceIndex": 3,
           "text": "Referências principais: CBMMG, 2021; CBMMG/ABM, 2026; Wenzel & Beck, 2008; WHO, 2025."
-        },
-        {
-          "id": "p15-b5",
-          "kind": "heading",
-          "sourceIndex": 4,
-          "text": "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 1"
         },
         {
           "id": "p15-b10",
@@ -4497,7 +4461,44 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p31-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "9. Do conceito à observação operacional"
+        },
+        {
+          "id": "p31-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Os conceitos deste capítulo são úteis quando ajudam a formular hipóteses de trabalho, não quando viram rótulos. Dor psicológica, desesperança, ambivalência e constrição orientam o profissional a observar como a pessoa descreve o presente, que alternativas consegue imaginar, quais mudanças aceita e como responde à redução de pressão. A leitura permanece provisória e deve ser atualizada durante toda a ocorrência."
+        },
+        {
+          "id": "p31-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 2,
+          "text": "NA PRÁTICA"
+        },
+        {
+          "id": "p31-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "Antes de responder a uma fala extrema, faça três perguntas internas: o que foi realmente dito; que necessidade ou impasse essa fala pode expressar; e qual intervenção reduz carga, preserva vínculo e mantém uma próxima escolha segura. A meta não é interpretar profundamente a pessoa em poucos segundos, mas evitar respostas automáticas que estreitem ainda mais a conversa."
+        },
+        {
+          "id": "p31-pr1-5",
+          "kind": "guided-analysis",
+          "sourceIndex": 4,
+          "text": "ANÁLISE ORIENTADA"
+        },
+        {
+          "id": "p31-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Compare duas intervenções possíveis para a mesma fala. Uma tenta convencer, corrigir ou moralizar. A outra descreve a experiência, reconhece o sofrimento e procura um próximo passo possível. Explique qual delas tende a manter mais informação circulando e por quê. Em seguida, reescreva a intervenção menos adequada sem usar promessa, ameaça ou argumento de culpa."
+        }
+      ]
     },
     {
       "number": 32,
@@ -5380,10 +5381,40 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p51-b1",
+          "id": "p48-pr1-1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "REVISÃO CUMULATIVA • PARTE 1"
+          "text": "34. Formular risco sem transformar pessoa em pontuação"
+        },
+        {
+          "id": "p48-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Uma formulação operacional organiza informações que mudam a conduta: condições atuais da cena, método disponível, alterações recentes, capacidade de comunicação, presença de terceiros, acesso a apoio e mudanças observadas ao longo do contato. Nenhum item isolado produz certeza. O valor está em integrar informações, declarar o que ainda é desconhecido e revisar a leitura quando a situação muda."
+        },
+        {
+          "id": "p48-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 2,
+          "text": "NA PRÁTICA"
+        },
+        {
+          "id": "p48-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "Em vez de concluir “baixo”, “médio” ou “alto” risco como se fossem estados permanentes, descreva o que sustenta sua decisão naquele momento. Exemplo de estrutura: fatos observáveis; fatores que aumentam preocupação; elementos que favorecem comunicação ou proteção; incertezas relevantes; e ação imediata compatível com segurança. Essa forma facilita passagem de comando e reduz dependência de rótulos."
+        },
+        {
+          "id": "p48-pr1-5",
+          "kind": "attention",
+          "sourceIndex": 4,
+          "text": "ATENÇÃO"
+        },
+        {
+          "id": "p48-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "A ausência de um sinal esperado não equivale à ausência de risco. Da mesma forma, a presença de um fator associado não autoriza prever comportamento individual. A equipe trabalha com atualização contínua da situação, e não com uma fotografia definitiva da pessoa."
         }
       ]
     },
@@ -5404,22 +5435,46 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p52-b1",
+          "id": "p49-pr1-1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "CASO DE TRANSFERÊNCIA • PARTE 1"
+          "text": "35. Laboratório de formulação operacional"
         },
         {
-          "id": "p52-b2",
-          "kind": "paragraph",
+          "id": "p49-pr1-2",
+          "kind": "guided-analysis",
           "sourceIndex": 1,
-          "text": "Construa decisão, não resposta decorada"
+          "text": "CASO PARA ANÁLISE"
         },
         {
-          "id": "p52-b3",
-          "kind": "heading",
+          "id": "p49-pr1-3",
+          "kind": "paragraph",
           "sourceIndex": 2,
-          "text": "CENÁRIO"
+          "text": "Uma pessoa aceita conversar, mantém distância segura e responde de forma coerente, mas ainda permanece próxima ao meio utilizado e alterna momentos de cooperação com falas de desesperança. Um familiar informa mudança recente importante, enquanto outro minimiza a situação. A equipe dispõe de apoio de saúde a caminho e o cenário continua controlado."
+        },
+        {
+          "id": "p49-pr1-4",
+          "kind": "decide",
+          "sourceIndex": 3,
+          "text": "DECIDA"
+        },
+        {
+          "id": "p49-pr1-5",
+          "kind": "paragraph",
+          "sourceIndex": 4,
+          "text": "Organize a passagem de comando em cinco blocos: fatos observados; informações de terceiros que ainda precisam ser confirmadas; riscos presentes; elementos que favorecem proteção ou comunicação; e próximas ações. Depois retire qualquer adjetivo que não possa ser sustentado por comportamento observável. O exercício deve produzir uma síntese curta, útil e revisável."
+        },
+        {
+          "id": "p49-pr1-6",
+          "kind": "guided-analysis",
+          "sourceIndex": 5,
+          "text": "SÍNTESE"
+        },
+        {
+          "id": "p49-pr1-7",
+          "kind": "paragraph",
+          "sourceIndex": 6,
+          "text": "Boa avaliação operacional não busca adivinhar o desfecho. Ela reduz pontos cegos, organiza prioridades e deixa explícito por que a equipe tomou determinada decisão com as informações disponíveis naquele momento."
         }
       ]
     },
@@ -7798,12 +7853,6 @@
           "text": "Referências principais: CBMMG, 2021, capítulo 9 e seções de encerramento; CBMMG/ABM, 2026."
         },
         {
-          "id": "p87-b8",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 11"
-        },
-        {
           "id": "p87-b13",
           "kind": "heading",
           "sourceIndex": 12,
@@ -8090,6 +8139,30 @@
           "kind": "paragraph",
           "sourceIndex": 1,
           "text": "Referências principais: CBMMG, 2021, capítulos 4 e 8."
+        },
+        {
+          "id": "p89-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 2,
+          "text": "28. Registro simples para cenas prolongadas"
+        },
+        {
+          "id": "p89-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "O registro ajuda quando diferentes equipes entram e saem da ocorrência, quando decisões precisam ser relembradas e quando a passagem de comando acontece após longo período. O objetivo não é produzir narrativa extensa durante a crise. Registre marcos que alteram compreensão ou estratégia: horário aproximado, mudança de posição ou método, recursos acionados, decisões relevantes, transições de função e informações que ainda aguardam confirmação."
+        },
+        {
+          "id": "p89-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 4,
+          "text": "MODELO DE ANOTAÇÃO"
+        },
+        {
+          "id": "p89-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Use linhas curtas com quatro elementos: momento; fato observável; decisão ou recurso relacionado; responsável pela continuidade. Diferencie claramente observação direta de relato de terceiro. Evite registrar interpretação como se fosse fato. Um registro enxuto e legível deve permitir que outro profissional compreenda o estado atual sem precisar reconstruir toda a ocorrência."
         }
       ]
     },
@@ -8110,10 +8183,40 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p93-b1",
+          "id": "p90-pr1-1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "REVISÃO CUMULATIVA • PARTE 2"
+          "text": "29. Briefing interinstitucional: a informação certa para a função certa"
+        },
+        {
+          "id": "p90-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Nem todos os profissionais precisam receber a mesma quantidade de informação. O abordador precisa do que muda segurança, compreensão da fala ou estratégia de contato. O comando precisa de mudanças de risco, recursos e decisões. A equipe de saúde precisa de informações necessárias à continuidade do cuidado. Compartilhar tudo com todos aumenta ruído e exposição sem necessariamente melhorar a coordenação."
+        },
+        {
+          "id": "p90-pr1-3",
+          "kind": "doctrine",
+          "sourceIndex": 2,
+          "text": "PRINCÍPIO DE COORDENAÇÃO"
+        },
+        {
+          "id": "p90-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "Antes de repassar um dado, pergunte qual decisão aquela informação permite tomar. Se não altera ação, prioridade, segurança ou continuidade, talvez possa aguardar. Quando o dado for sensível, reduza a circulação ao mínimo necessário e escolha um canal que não exponha a pessoa em crise."
+        },
+        {
+          "id": "p90-pr1-5",
+          "kind": "guided-analysis",
+          "sourceIndex": 4,
+          "text": "EXERCÍCIO"
+        },
+        {
+          "id": "p90-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Separe uma atualização de ocorrência em três versões: uma para o abordador, uma para o comandante e uma para a equipe de saúde. Compare o que permanece, o que sai e o que muda de linguagem em cada versão. O exercício mostra que coordenação não é repetição de conteúdo, mas tradução da informação para a função de quem a recebe."
         }
       ]
     },
@@ -8134,22 +8237,64 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p94-b1",
+          "id": "p91-pr1-1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "CASO DE TRANSFERÊNCIA • PARTE 2"
+          "text": "30. Passagem de comando sem perder continuidade"
         },
         {
-          "id": "p94-b2",
+          "id": "p91-pr1-2",
           "kind": "paragraph",
           "sourceIndex": 1,
-          "text": "Construa decisão, não resposta decorada"
+          "text": "Uma boa passagem de comando preserva o que já foi construído e deixa claro o que mudou. Comece pelo estado atual da cena e pelos riscos que exigem atenção imediata. Em seguida, informe recursos presentes e pendentes, estratégias que funcionaram ou pioraram a interação, decisões já tomadas e questões ainda abertas. O objetivo é permitir continuidade, não demonstrar quantidade de informações acumuladas."
         },
         {
-          "id": "p94-b3",
-          "kind": "heading",
+          "id": "p91-pr1-3",
+          "kind": "practice",
           "sourceIndex": 2,
-          "text": "CENÁRIO"
+          "text": "CHECKPOINT DE TRANSIÇÃO"
+        },
+        {
+          "id": "p91-pr1-4",
+          "kind": "list-item",
+          "sourceIndex": 3,
+          "text": "O que mudou desde a última atualização?"
+        },
+        {
+          "id": "p91-pr1-5",
+          "kind": "list-item",
+          "sourceIndex": 4,
+          "text": "Qual risco exige vigilância imediata?"
+        },
+        {
+          "id": "p91-pr1-6",
+          "kind": "list-item",
+          "sourceIndex": 5,
+          "text": "Que vínculo ou estratégia não deve ser interrompido sem motivo?"
+        },
+        {
+          "id": "p91-pr1-7",
+          "kind": "list-item",
+          "sourceIndex": 6,
+          "text": "Que recurso ainda está pendente e quem acompanha sua chegada?"
+        },
+        {
+          "id": "p91-pr1-8",
+          "kind": "list-item",
+          "sourceIndex": 7,
+          "text": "Qual decisão precisa ser reavaliada se a cena mudar?"
+        },
+        {
+          "id": "p91-pr1-9",
+          "kind": "guided-analysis",
+          "sourceIndex": 8,
+          "text": "SÍNTESE"
+        },
+        {
+          "id": "p91-pr1-10",
+          "kind": "paragraph",
+          "sourceIndex": 9,
+          "text": "Integração interinstitucional funciona melhor quando papéis, informação e decisão permanecem conectados. A coordenação deve reduzir interferências na díade, aumentar previsibilidade e tornar explícito quem faz o quê quando a situação muda."
         }
       ]
     },
@@ -9874,12 +10019,6 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p119-b1",
-          "kind": "heading",
-          "sourceIndex": 0,
-          "text": "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 16"
-        },
-        {
           "id": "p119-b6",
           "kind": "heading",
           "sourceIndex": 5,
@@ -10949,7 +11088,7 @@
         },
         {
           "id": "p132-b10",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 9,
           "text": "1. Troca não precisa parecer abandono"
         },
@@ -10961,7 +11100,7 @@
         },
         {
           "id": "p132-b12",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 11,
           "text": "2. Critérios de troca"
         },
@@ -11003,7 +11142,7 @@
         },
         {
           "id": "p133-b4",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 3,
           "text": "3. Preparação tática acontece durante a dissuasão"
         },
@@ -11027,7 +11166,7 @@
         },
         {
           "id": "p133-b8",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 7,
           "text": "4. Tática não é etapa obrigatória"
         },
@@ -11039,7 +11178,7 @@
         },
         {
           "id": "p133-b10",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 9,
           "text": "5. A confiança não elimina contingência"
         },
@@ -11069,7 +11208,7 @@
       "blocks": [
         {
           "id": "p134-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "6. Como comunicar uma mudança de abordador"
         },
@@ -11081,7 +11220,7 @@
         },
         {
           "id": "p134-b4",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 3,
           "text": "7. O momento da transição técnico-tática"
         },
@@ -11123,7 +11262,7 @@
         },
         {
           "id": "p135-b3",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 2,
           "text": "8. Depois da intervenção, a relação ainda importa"
         },
@@ -11135,7 +11274,7 @@
         },
         {
           "id": "p135-b5",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 4,
           "text": "LABORATÓRIO DE DECISÃO"
         },
@@ -11147,7 +11286,7 @@
         },
         {
           "id": "p135-b7",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 6,
           "text": "DEBRIEFING"
         },
@@ -11174,7 +11313,44 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p133-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "9. Checkpoint antes de trocar o abordador"
+        },
+        {
+          "id": "p133-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Antes de substituir o profissional, diferencie cansaço normal de perda de qualidade. Observe se o abordador deixou de escutar, repete a mesma intervenção, responde com irritação, perde informações importantes ou começa a disputar controle. Quando a troca for indicada, prepare continuidade: o novo profissional precisa conhecer riscos, limites, temas sensíveis, estratégias úteis e pontos que produziram ruptura."
+        },
+        {
+          "id": "p133-pr1-3",
+          "kind": "practice",
+          "sourceIndex": 2,
+          "text": "NA PRÁTICA"
+        },
+        {
+          "id": "p133-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "A troca deve ter um objetivo observável. Exemplos: recuperar qualidade de escuta, reduzir escalada relacional, permitir descanso ou adequar competência técnica. “Já passou muito tempo” é insuficiente como justificativa isolada. Registre a razão da troca e o que precisa ser preservado nos primeiros minutos do novo contato."
+        },
+        {
+          "id": "p133-pr1-5",
+          "kind": "attention",
+          "sourceIndex": 4,
+          "text": "ATENÇÃO"
+        },
+        {
+          "id": "p133-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Substituição de abordador e mudança para estratégia tática são decisões diferentes. Podem ocorrer próximas no tempo, mas uma não implica automaticamente a outra. Cada decisão deve responder ao problema que pretende resolver."
+        }
+      ]
     },
     {
       "number": 134,
@@ -11200,7 +11376,7 @@
         },
         {
           "id": "p137-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "9. Presença"
         },
@@ -11212,7 +11388,7 @@
         },
         {
           "id": "p137-b4",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 3,
           "text": "10. Pergunta aberta e fechada"
         },
@@ -11224,7 +11400,7 @@
         },
         {
           "id": "p137-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "11. Reflexão de conteúdo"
         },
@@ -11236,7 +11412,7 @@
         },
         {
           "id": "p137-b8",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 7,
           "text": "12. Reflexão de emoção"
         },
@@ -11248,7 +11424,7 @@
         },
         {
           "id": "p137-b10",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 9,
           "text": "13. Sumário"
         },
@@ -11278,7 +11454,7 @@
       "blocks": [
         {
           "id": "p138-b1",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 0,
           "text": "14. Pausa"
         },
@@ -11290,7 +11466,7 @@
         },
         {
           "id": "p138-b3",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 2,
           "text": "15. Feedback imediato"
         },
@@ -11320,7 +11496,7 @@
       "blocks": [
         {
           "id": "p139-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "16. Perguntas em série"
         },
@@ -11332,7 +11508,7 @@
         },
         {
           "id": "p139-b4",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 3,
           "text": "17. Conselho disfarçado"
         },
@@ -11344,7 +11520,7 @@
         },
         {
           "id": "p139-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "18. Validação vazia"
         },
@@ -11356,7 +11532,7 @@
         },
         {
           "id": "p139-b8",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 7,
           "text": "19. Treino com pausa"
         },
@@ -11392,7 +11568,7 @@
         },
         {
           "id": "p140-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "20. O profissional também reage"
         },
@@ -11404,7 +11580,7 @@
         },
         {
           "id": "p140-b4",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 3,
           "text": "21. Sinais pessoais"
         },
@@ -11416,7 +11592,7 @@
         },
         {
           "id": "p140-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "22. Microchecagem"
         },
@@ -11428,7 +11604,7 @@
         },
         {
           "id": "p140-b8",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 7,
           "text": "23. Uso do auxiliar"
         },
@@ -11440,7 +11616,7 @@
         },
         {
           "id": "p140-b10",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 9,
           "text": "24. Troca como competência"
         },
@@ -11452,7 +11628,7 @@
         },
         {
           "id": "p140-b12",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 11,
           "text": "25. Depois da cena"
         },
@@ -11479,7 +11655,44 @@
         "normalizationReason": null
       },
       "pageRole": "continuation",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "p138-pr1-1",
+          "kind": "heading",
+          "sourceIndex": 0,
+          "text": "26. Síntese ativa das microhabilidades"
+        },
+        {
+          "id": "p138-pr1-2",
+          "kind": "paragraph",
+          "sourceIndex": 1,
+          "text": "Escuta qualificada resulta da combinação de pequenas ações observáveis: atenção ao que acabou de ser dito, perguntas com função clara, devoluções fiéis, pausas toleráveis, resumo quando a narrativa se dispersa e ajuste diante do feedback da pessoa. Nenhuma microhabilidade funciona como fórmula isolada. A competência está em escolher a intervenção compatível com o momento e perceber seu efeito."
+        },
+        {
+          "id": "p138-pr1-3",
+          "kind": "guided-analysis",
+          "sourceIndex": 2,
+          "text": "AUTO-OBSERVAÇÃO"
+        },
+        {
+          "id": "p138-pr1-4",
+          "kind": "paragraph",
+          "sourceIndex": 3,
+          "text": "Durante uma simulação, marque cada intervenção do abordador como pergunta, reflexão, resumo, validação, informação, limite ou silêncio. Depois observe o padrão. Há excesso de perguntas? Conselhos disfarçados? Validações genéricas? Pouco espaço para resposta? A transcrição curta transforma impressão subjetiva em material concreto para feedback."
+        },
+        {
+          "id": "p138-pr1-5",
+          "kind": "practice",
+          "sourceIndex": 4,
+          "text": "META DE TREINO"
+        },
+        {
+          "id": "p138-pr1-6",
+          "kind": "paragraph",
+          "sourceIndex": 5,
+          "text": "Escolha uma única microhabilidade para a próxima rodada e defina um comportamento verificável. Treinar uma variável por vez permite perceber mudança real e reduz a tendência de tentar melhorar tudo simultaneamente."
+        }
+      ]
     },
     {
       "number": 139,
@@ -11498,10 +11711,46 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p142-b1",
+          "id": "p139-pr1-1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "REVISÃO CUMULATIVA • PARTE 3"
+          "text": "27. Laboratório de comunicação sob pressão"
+        },
+        {
+          "id": "p139-pr1-2",
+          "kind": "guided-analysis",
+          "sourceIndex": 1,
+          "text": "EXERCÍCIO SITUACIONAL"
+        },
+        {
+          "id": "p139-pr1-3",
+          "kind": "paragraph",
+          "sourceIndex": 2,
+          "text": "Após longo período de conversa, a pessoa alterna respostas curtas e silêncio. O abordador percebe urgência crescente na equipe e começa a fazer perguntas em sequência. O auxiliar nota a mudança de ritmo e sinaliza discretamente. Não houve mudança objetiva de posição, método ou acesso ao risco naquele momento."
+        },
+        {
+          "id": "p139-pr1-4",
+          "kind": "decide",
+          "sourceIndex": 3,
+          "text": "DECIDA"
+        },
+        {
+          "id": "p139-pr1-5",
+          "kind": "paragraph",
+          "sourceIndex": 4,
+          "text": "Construa três intervenções possíveis: uma pausa deliberada; uma reflexão de conteúdo; e uma pergunta aberta curta. Para cada uma, descreva a função pretendida e qual resposta indicaria que é melhor manter, ajustar ou abandonar a estratégia. O exercício desloca o foco da frase “perfeita” para a relação entre objetivo, intervenção e feedback."
+        },
+        {
+          "id": "p139-pr1-6",
+          "kind": "guided-analysis",
+          "sourceIndex": 5,
+          "text": "PONTO DE APRENDIZAGEM"
+        },
+        {
+          "id": "p139-pr1-7",
+          "kind": "paragraph",
+          "sourceIndex": 6,
+          "text": "Comunicação profissional é adaptativa. O abordador não precisa defender a intervenção anterior quando a resposta mostra que ela não funcionou. Corrigir o curso preserva mais competência do que insistir para parecer consistente."
         }
       ]
     },
@@ -11522,22 +11771,58 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p143-b1",
+          "id": "p140-pr1-1",
           "kind": "heading",
           "sourceIndex": 0,
-          "text": "CASO DE TRANSFERÊNCIA • PARTE 3"
+          "text": "28. Autorregulação e passagem para a próxima fase"
         },
         {
-          "id": "p143-b2",
+          "id": "p140-pr1-2",
           "kind": "paragraph",
           "sourceIndex": 1,
-          "text": "Construa decisão, não resposta decorada"
+          "text": "O profissional também precisa monitorar o próprio estado. Pressa, medo, irritação, excesso de confiança e fadiga podem aparecer como mudanças de voz, distância, repetição, rigidez ou perda de escuta. Reconhecer esses sinais cedo permite solicitar apoio, usar o auxiliar e considerar troca antes que a qualidade do contato caia."
         },
         {
-          "id": "p143-b3",
-          "kind": "heading",
+          "id": "p140-pr1-3",
+          "kind": "practice",
           "sourceIndex": 2,
-          "text": "CENÁRIO"
+          "text": "MICROCHECKLIST"
+        },
+        {
+          "id": "p140-pr1-4",
+          "kind": "list-item",
+          "sourceIndex": 3,
+          "text": "Meu objetivo para a próxima fala está claro?"
+        },
+        {
+          "id": "p140-pr1-5",
+          "kind": "list-item",
+          "sourceIndex": 4,
+          "text": "Estou respondendo ao que a pessoa disse ou à urgência que sinto?"
+        },
+        {
+          "id": "p140-pr1-6",
+          "kind": "list-item",
+          "sourceIndex": 5,
+          "text": "Houve mudança objetiva de risco ou apenas aumento de ansiedade na equipe?"
+        },
+        {
+          "id": "p140-pr1-7",
+          "kind": "list-item",
+          "sourceIndex": 6,
+          "text": "Preciso de informação, pausa, apoio do auxiliar ou troca?"
+        },
+        {
+          "id": "p140-pr1-8",
+          "kind": "guided-analysis",
+          "sourceIndex": 7,
+          "text": "FECHAMENTO"
+        },
+        {
+          "id": "p140-pr1-9",
+          "kind": "paragraph",
+          "sourceIndex": 8,
+          "text": "A parte seguinte aprofunda a abordagem tática e seus limites. A transição pedagógica não transforma a tática em destino inevitável da ocorrência. Ela amplia o repertório para situações excepcionais em que risco, oportunidade e segurança exigem outra forma de atuação."
         }
       ]
     },
@@ -11559,7 +11844,7 @@
       "blocks": [
         {
           "id": "p144-b1",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 0,
           "text": "AUTOAVALIAÇÃO • PARTE 3"
         },
@@ -11571,19 +11856,19 @@
         },
         {
           "id": "p144-b3",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 2,
           "text": "PLANO DE CORREÇÃO"
         },
         {
           "id": "p144-b5",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 4,
           "text": "PARTE 4"
         },
         {
           "id": "p144-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "ABORDAGEM TÁTICA E RISCOS"
         },
@@ -11691,7 +11976,7 @@
         },
         {
           "id": "p145-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "TRANSIÇÃO PARA ABORDAGEM TÁTICA"
         },
@@ -11739,7 +12024,7 @@
         },
         {
           "id": "p146-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "1. A tática pertence ao mesmo sistema que a dissuasão"
         },
@@ -11763,7 +12048,7 @@
         },
         {
           "id": "p146-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "2. Decisão tática não é cronômetro"
         },
@@ -11793,7 +12078,7 @@
       "blocks": [
         {
           "id": "p147-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "3. Oportunidade não é sinônimo de possibilidade"
         },
@@ -11817,7 +12102,7 @@
         },
         {
           "id": "p147-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "4. O abordador e a equipe tática precisam de coordenação prévia"
         },
@@ -11829,7 +12114,7 @@
         },
         {
           "id": "p147-b8",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 7,
           "text": "5. Depois da contenção, a crise não termina"
         },
@@ -11859,7 +12144,7 @@
       "blocks": [
         {
           "id": "p148-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "LABORATÓRIO DE DECISÃO"
         },
@@ -11871,7 +12156,7 @@
         },
         {
           "id": "p148-b4",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 3,
           "text": "DEBRIEFING"
         },
@@ -11900,26 +12185,20 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p149-b1",
-          "kind": "heading",
-          "sourceIndex": 0,
-          "text": "APLICAÇÃO E TRANSFERÊNCIA • CAPÍTULO 21"
-        },
-        {
           "id": "p149-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "COMPETÊNCIA"
         },
         {
           "id": "p149-b8",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 7,
           "text": "CRITÉRIO DE SUCESSO"
         },
         {
           "id": "p149-b10",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 9,
           "text": "FEEDBACK / DÚVIDA"
         },
@@ -12015,7 +12294,7 @@
         },
         {
           "id": "p150-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "REFERÊNCIA VISUAL • FARDA E EPI"
         },
@@ -12027,7 +12306,7 @@
         },
         {
           "id": "p150-b4",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 3,
           "text": "OPERACIONAL ATS"
         },
@@ -12039,7 +12318,7 @@
         },
         {
           "id": "p150-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "ALTURA / RESGATE"
         },
@@ -12051,7 +12330,7 @@
         },
         {
           "id": "p150-b8",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 7,
           "text": "INCÊNDIO / EXPLOSÃO"
         },
@@ -12063,7 +12342,7 @@
         },
         {
           "id": "p150-b10",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 9,
           "text": "ÁGUA / AMBIENTE AQUÁTICO"
         },
@@ -12117,7 +12396,7 @@
         },
         {
           "id": "p151-b3",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 2,
           "text": "1. Na altura, o ambiente participa da crise"
         },
@@ -12141,7 +12420,7 @@
         },
         {
           "id": "p151-b7",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 6,
           "text": "2. A posição do abordador é decisão técnica e comunicacional"
         },
@@ -12153,7 +12432,7 @@
         },
         {
           "id": "p151-b9",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 8,
           "text": "3. Anteparos e recursos não podem ser improvisados por analogia"
         },
@@ -12195,7 +12474,7 @@
         },
         {
           "id": "p152-b4",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 3,
           "text": "4. O público abaixo também está na zona de risco"
         },
@@ -12207,7 +12486,7 @@
         },
         {
           "id": "p152-b6",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 5,
           "text": "5. Comunicação precisa considerar esforço físico"
         },
@@ -12219,7 +12498,7 @@
         },
         {
           "id": "p152-b8",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 7,
           "text": "6. Mudanças de posição são marcos de reavaliação"
         },
@@ -12231,7 +12510,7 @@
         },
         {
           "id": "p152-b10",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 9,
           "text": "LABORATÓRIO DE DECISÃO"
         },
@@ -12243,7 +12522,7 @@
         },
         {
           "id": "p152-b12",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 11,
           "text": "DEBRIEFING"
         }
@@ -12387,7 +12666,7 @@
         },
         {
           "id": "p154-b10",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 9,
           "text": "1. Um manual de CATS não deve fingir que substitui cursos de"
         },
@@ -12417,7 +12696,7 @@
       "blocks": [
         {
           "id": "p155-b1",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 0,
           "text": "2. Água: contato direto não é resposta automática"
         },
@@ -12441,7 +12720,7 @@
         },
         {
           "id": "p155-b5",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 4,
           "text": "3. Suspensão e enforcamento: urgência médica e risco mecânico"
         },
@@ -12453,7 +12732,7 @@
         },
         {
           "id": "p155-b7",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 6,
           "text": "4. Incêndio, explosão e gás: a atmosfera pode ser o maior perigo"
         },
@@ -12495,19 +12774,19 @@
       "blocks": [
         {
           "id": "p156-b1",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 0,
           "text": "5. Eletricidade: proximidade pode ferir sem contato direto Instalações energizadas, cabos e estruturas exigem distância e controle definidos por normas técnicas e concessionária. Não memorize uma distância histórica como regra universal. Tensão, geometria, estado da estrutura e condições ambientais modificam risco. A articulação com concessionária pode ser uma das primeiras ações do comando."
         },
         {
           "id": "p156-b2",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 1,
           "text": "6. Intoxicação: comportamento pode ser sintoma e risco ambiental Intoxicação exógena pode alterar consciência, coordenação, julgamento e capacidade de conversar. Em ambiente fechado, produto inalatório pode atingir equipe. A presença de embalagens, odores, informações de terceiros e sinais clínicos deve acelerar integração com APH, saúde e, quando aplicável, resposta a produtos perigosos. O abordador não diagnostica substância pelo comportamento. Ele comunica observações e preserva segurança."
         },
         {
           "id": "p156-b3",
-          "kind": "heading",
+          "kind": "paragraph",
           "sourceIndex": 2,
           "text": "7. A abordagem muda quando a fisiologia muda Uma pessoa que se torna progressivamente sonolenta ou confusa não deve ser interpretada apenas como “mais calma”. Pode haver deterioração clínica. Mudanças de consciência são dados de alta prioridade e podem redefinir tempo e estratégia."
         }
@@ -12529,18 +12808,6 @@
       },
       "pageRole": "continuation",
       "blocks": [
-        {
-          "id": "p157-b1",
-          "kind": "case",
-          "sourceIndex": 0,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p157-b2",
-          "kind": "paragraph",
-          "sourceIndex": 1,
-          "text": "Em um apartamento fechado, a pessoa responde cada vez mais lentamente e existe relato de produto químico. Quais dimensões precisam ser reavaliadas antes de qualquer aproximação física?"
-        },
         {
           "id": "p157-b3",
           "kind": "guided-analysis",
@@ -12763,18 +13030,6 @@
       },
       "pageRole": "continuation",
       "blocks": [
-        {
-          "id": "p161-b1",
-          "kind": "case",
-          "sourceIndex": 0,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p161-b2",
-          "kind": "paragraph",
-          "sourceIndex": 1,
-          "text": "Um familiar afirma que há arma de fogo no quarto, mas a pessoa está na varanda e as mãos estão visíveis. Qual deve ser o status dessa informação para o comando e o que ela não autoriza o abordador a fazer?"
-        },
         {
           "id": "p161-b3",
           "kind": "guided-analysis",
@@ -13008,18 +13263,6 @@
           "kind": "paragraph",
           "sourceIndex": 0,
           "text": "Escreva como se outro profissional que não esteve na cena precisasse reconstruir o raciocínio: o que foi encontrado, que riscos existiam, o que foi feito, como a situação mudou e para onde a pessoa foi encaminhada."
-        },
-        {
-          "id": "p165-b2",
-          "kind": "case",
-          "sourceIndex": 1,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p165-b3",
-          "kind": "paragraph",
-          "sourceIndex": 2,
-          "text": "Após resgate, a pessoa está irritada e diz “não vou para hospital nenhum”. Quais necessidades precisam ser organizadas antes de transformar a situação em disputa?"
         },
         {
           "id": "p165-b4",
@@ -13322,18 +13565,6 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p171-b1",
-          "kind": "case",
-          "sourceIndex": 0,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p171-b2",
-          "kind": "paragraph",
-          "sourceIndex": 1,
-          "text": "Gabriel diz: “Se eu voltar para a escola, todo mundo vai rir de mim.” Produza uma resposta invalidante, uma resposta excessivamente otimista e uma resposta validante que abra possibilidade sem prometer solução."
-        },
-        {
           "id": "p171-b3",
           "kind": "guided-analysis",
           "sourceIndex": 2,
@@ -13598,18 +13829,6 @@
           "text": "9. Saída segura e continuidade O planejamento precisa contemplar transporte, medicação necessária, dispositivos, cuidador e local de encaminhamento. Não se deve separar pessoa de recurso assistivo sem razão clínica ou de segurança."
         },
         {
-          "id": "p176-b2",
-          "kind": "case",
-          "sourceIndex": 1,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p176-b3",
-          "kind": "paragraph",
-          "sourceIndex": 2,
-          "text": "Antônio demora 15 segundos para responder e o familiar interrompe todas as vezes para falar por ele. Como reorganizar a interação?"
-        },
-        {
           "id": "p176-b4",
           "kind": "guided-analysis",
           "sourceIndex": 3,
@@ -13848,18 +14067,6 @@
           "kind": "paragraph",
           "sourceIndex": 0,
           "text": "7. Contenção e farmacologia pertencem a competências distintas Quando há necessidade de contenção, o CBMMG segue limites doutrinários e protocolos. Medicação é decisão da equipe de saúde habilitada. A integração precisa evitar disputa na frente da pessoa."
-        },
-        {
-          "id": "p180-b2",
-          "kind": "case",
-          "sourceIndex": 1,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p180-b3",
-          "kind": "paragraph",
-          "sourceIndex": 2,
-          "text": "Júlia está ficando sonolenta enquanto ainda afirma “não quero médico”. Quais elementos mudam a prioridade da ocorrência?"
         },
         {
           "id": "p180-b4",
@@ -14132,18 +14339,6 @@
       "pageRole": "continuation",
       "blocks": [
         {
-          "id": "p185-b1",
-          "kind": "case",
-          "sourceIndex": 0,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p185-b2",
-          "kind": "paragraph",
-          "sourceIndex": 1,
-          "text": "Paula diz: “Se ele chegar aqui, eu me jogo”. O companheiro está no isolamento e exige falar com ela. Quais decisões devem ocorrer antes de qualquer contato?"
-        },
-        {
           "id": "p185-b3",
           "kind": "guided-analysis",
           "sourceIndex": 2,
@@ -14408,18 +14603,6 @@
           "text": "8. O abordador também precisa fechar a própria tarefa Depois da passagem, o abordador deve compartilhar com comando informações que ficaram concentradas na díade e sejam relevantes ao cuidado ou registro. Não precisa reproduzir confidências sem função. Em seguida, deve ter oportunidade de hidratar-se, recuperar-se e participar do debriefing operacional adequado."
         },
         {
-          "id": "p190-b2",
-          "kind": "case",
-          "sourceIndex": 1,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p190-b3",
-          "kind": "paragraph",
-          "sourceIndex": 2,
-          "text": "Escreva uma passagem de 60 segundos para equipe de saúde após desistência de Helena. Depois marque quais informações são essenciais, quais são úteis e quais seriam invasivas sem necessidade."
-        },
-        {
           "id": "p190-b4",
           "kind": "guided-analysis",
           "sourceIndex": 3,
@@ -14670,18 +14853,6 @@
           "kind": "paragraph",
           "sourceIndex": 0,
           "text": "9. Família e consentimento Mesmo quando familiares desejam exposição, a corporação deve seguir normas de privacidade e comunicação institucional. Dor aguda pode influenciar decisões. O papel do serviço é proteger, não explorar narrativa emocional."
-        },
-        {
-          "id": "p194-b2",
-          "kind": "case",
-          "sourceIndex": 1,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "p194-b3",
-          "kind": "paragraph",
-          "sourceIndex": 2,
-          "text": "Compare dois títulos: “Bombeiros impedem homem de saltar após traição” e “Atendimento integrado preserva vida em ocorrência de crise; especialistas reforçam importância da busca de cuidado”. Identifique problemas e méritos sem transformar o segundo em fórmula obrigatória."
         },
         {
           "id": "p194-b4",
@@ -15048,18 +15219,6 @@
           "kind": "paragraph",
           "sourceIndex": 3,
           "text": "Acompanhamento pode significar retomar contato, verificar se a conexão combinada ocorreu e reavaliar necessidades. Não transforme cuidado em cobrança de melhora, exposição ou monitoramento informal. Quem apoia também precisa reconhecer limites, dividir responsabilidade e buscar suporte quando necessário."
-        },
-        {
-          "id": "w10-p200-c1",
-          "kind": "case",
-          "sourceIndex": 4,
-          "text": "CASO PARA DECISÃO"
-        },
-        {
-          "id": "w10-p200-c2",
-          "kind": "paragraph",
-          "sourceIndex": 5,
-          "text": "Após uma ocorrência fatal, um militar diz “não quero falar sobre isso agora”; outro diz “não consigo parar de ver a cena”. Como oferecer apoio proporcional a cada um sem patologizar, pressionar ou ignorar sinais de necessidade?"
         }
       ]
     },
@@ -16082,1668 +16241,6 @@
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-217-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-217-c1-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 1 — O CATS e a prática profissional"
-        },
-        {
-          "id": "w10-review-217-c1-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• O CATS forma desempenho integrado, não repertório de frases."
-        },
-        {
-          "id": "w10-review-217-c1-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• A resposta operacional é a fonte normativa primária."
-        },
-        {
-          "id": "w10-review-217-c1-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Literatura e experiência ampliam compreensão, mas não criam doutrina paralela."
-        },
-        {
-          "id": "w10-review-217-c1-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Descrever comportamentos é mais útil e seguro do que diagnosticar na cena."
-        },
-        {
-          "id": "w10-review-217-c1-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Observar, interpretar com prudência, priorizar, decidir, agir e reavaliar é um ciclo contínuo."
-        },
-        {
-          "id": "w10-review-217-c2-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 2 — Comportamento suicida: conceitos e linguagem"
-        },
-        {
-          "id": "w10-review-217-c2-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas."
-        },
-        {
-          "id": "w10-review-217-c2-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Diferentes formas de comportamento suicida requerem precisão terminológica."
-        },
-        {
-          "id": "w10-review-217-c2-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Linguagem centrada na pessoa preserva dignidade sem minimizar risco."
-        },
-        {
-          "id": "w10-review-217-c2-b4",
-          "kind": "list-item",
-          "sourceIndex": 11,
-          "text": "• Descrição observável é preferível a diagnóstico ou julgamento moral."
-        },
-        {
-          "id": "w10-review-217-c2-b5",
-          "kind": "list-item",
-          "sourceIndex": 12,
-          "text": "• Comunicação direta e responsável é diferente de exposição sensacionalista."
-        }
-      ]
-    },
-    {
-      "number": 215,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-218-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-218-c3-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 3 — Epidemiologia e inteligência para decisão"
-        },
-        {
-          "id": "w10-review-218-c3-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo."
-        },
-        {
-          "id": "w10-review-218-c3-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Número, proporção e taxa respondem a perguntas diferentes."
-        },
-        {
-          "id": "w10-review-218-c3-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• O Brasil registrou 15.507 suicídios em 2021; 77,8% eram do sexo masculino."
-        },
-        {
-          "id": "w10-review-218-c4-h",
-          "kind": "heading",
-          "sourceIndex": 5,
-          "text": "Capítulo 4 — A crise suicida: dor, ambivalência, desesperança e constrição"
-        },
-        {
-          "id": "w10-review-218-c4-b1",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Crise suicida é estado dinâmico e individual, não identidade."
-        },
-        {
-          "id": "w10-review-218-c4-b2",
-          "kind": "list-item",
-          "sourceIndex": 7,
-          "text": "• Dor psicológica, desesperança, ambivalência e constrição são conceitos de compreensão, não etiquetas diagnósticas."
-        },
-        {
-          "id": "w10-review-218-c4-b3",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Ambivalência mantém a situação aberta, mas não garante segurança."
-        },
-        {
-          "id": "w10-review-218-c4-b4",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Constrição favorece comunicação simples e alternativas graduais."
-        },
-        {
-          "id": "w10-review-218-c4-b5",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Modelos cognitivos ajudam a formular hipóteses; não autorizam inferência neurobiológica específica."
-        }
-      ]
-    },
-    {
-      "number": 216,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-219-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-219-c5-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 5 — Fatores associados, proteção, risco e limites da avaliação"
-        },
-        {
-          "id": "w10-review-219-c5-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Associação estatística não equivale a previsão individual."
-        },
-        {
-          "id": "w10-review-219-c5-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Predisponentes ajudam a compreender vulnerabilidade; precipitantes ajudam a entender mudanças recentes."
-        },
-        {
-          "id": "w10-review-219-c5-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Fator de proteção só protege quando é significativo e acessível naquela situação."
-        },
-        {
-          "id": "w10-review-219-c5-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Avaliação operacional prioriza riscos presentes, método, ambiente, comunicação e recursos."
-        },
-        {
-          "id": "w10-review-219-c5-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Listas e escalas não substituem julgamento profissional e reavaliação."
-        },
-        {
-          "id": "w10-review-219-c6-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 6 — Do acionamento ao estabelecimento"
-        },
-        {
-          "id": "w10-review-219-c6-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• O Sistema ATS começa no acionamento."
-        },
-        {
-          "id": "w10-review-219-c6-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Informação inicial orienta hipótese; observação em campo confirma ou corrige."
-        },
-        {
-          "id": "w10-review-219-c6-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Urgência não elimina segurança de deslocamento."
-        }
-      ]
-    },
-    {
-      "number": 217,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-220-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-220-c7-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 7 — Observação inicial, passagem de comando e avaliação"
-        },
-        {
-          "id": "w10-review-220-c7-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• A cena inclui pessoa, perigo, ambiente e resposta institucional."
-        },
-        {
-          "id": "w10-review-220-c7-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Observação inicial é operacional, não diagnóstico clínico."
-        },
-        {
-          "id": "w10-review-220-c7-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Confirmar informação significa atualizá-la."
-        },
-        {
-          "id": "w10-review-220-c7-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Passagem de comando deve transmitir raciocínio, não apenas cronologia."
-        },
-        {
-          "id": "w10-review-220-c7-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Liderança varia conforme competência e risco."
-        },
-        {
-          "id": "w10-review-220-c8-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 8 — Isolamento, espaços de comunicação e avaliação dinâmica"
-        },
-        {
-          "id": "w10-review-220-c8-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Isolamento protege segurança e comunicação."
-        },
-        {
-          "id": "w10-review-220-c8-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Distância é funcional e depende do contexto."
-        },
-        {
-          "id": "w10-review-220-c8-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Privacidade e redução de exposição integram a resposta."
-        },
-        {
-          "id": "w10-review-220-c8-b4",
-          "kind": "list-item",
-          "sourceIndex": 11,
-          "text": "• A avaliação de risco é dinâmica."
-        },
-        {
-          "id": "w10-review-220-c8-b5",
-          "kind": "list-item",
-          "sourceIndex": 12,
-          "text": "• Melhora na conversa não elimina perigos físicos."
-        }
-      ]
-    },
-    {
-      "number": 218,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-221-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-221-c9-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 9 — Funções, comando e coordenação"
-        },
-        {
-          "id": "w10-review-221-c9-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Funções reduzem sobrecarga e lacunas."
-        },
-        {
-          "id": "w10-review-221-c9-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Comandante e abordador possuem focos complementares."
-        },
-        {
-          "id": "w10-review-221-c9-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Auxiliar apoia sem criar segunda voz concorrente."
-        },
-        {
-          "id": "w10-review-221-c9-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Informação deve ser filtrada antes de chegar à díade."
-        },
-        {
-          "id": "w10-review-221-c9-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Segurança mantém vigilância quando o vínculo pode induzir relaxamento."
-        },
-        {
-          "id": "w10-review-221-c10-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 10 — Coleta de informações e apoio à decisão"
-        },
-        {
-          "id": "w10-review-221-c10-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Coleta útil é orientada à decisão."
-        },
-        {
-          "id": "w10-review-221-c10-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Fontes precisam ser contextualizadas e, quando possível, trianguladas."
-        },
-        {
-          "id": "w10-review-221-c10-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Fatores associados não predizem individualmente o desfecho."
-        },
-        {
-          "id": "w10-review-221-c10-b4",
-          "kind": "list-item",
-          "sourceIndex": 11,
-          "text": "• Fator de proteção é aquilo que tem função protetiva para aquela pessoa."
-        },
-        {
-          "id": "w10-review-221-c10-b5",
-          "kind": "list-item",
-          "sourceIndex": 12,
-          "text": "• Repasse ao abordador deve ser seletivo."
-        }
-      ]
-    },
-    {
-      "number": 219,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-222-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-222-c11-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 11 — Integração interinstitucional"
-        },
-        {
-          "id": "w10-review-222-c11-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Instituições cooperam por competências complementares."
-        },
-        {
-          "id": "w10-review-222-c11-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Vínculo existente não deve ser rompido automaticamente."
-        },
-        {
-          "id": "w10-review-222-c11-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Saúde precisa ser integrada antes do momento de encaminhamento."
-        },
-        {
-          "id": "w10-review-222-c11-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Algumas cenas exigem liderança específica de forças policiais ou especialistas."
-        },
-        {
-          "id": "w10-review-222-c11-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Conflito técnico deve ser transformado em análise de risco, norma e competência."
-        },
-        {
-          "id": "w10-review-222-c12-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 12 — O abordador e a preparação para o contato"
-        },
-        {
-          "id": "w10-review-222-c12-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• O abordador funciona melhor quando o sistema ao redor funciona."
-        },
-        {
-          "id": "w10-review-222-c12-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Preparação organiza risco, informação, apoio e autoconsciência."
-        },
-        {
-          "id": "w10-review-222-c12-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Postura e voz precisam ser coerentes com a intenção declarada."
-        },
-        {
-          "id": "w10-review-222-c12-b4",
-          "kind": "list-item",
-          "sourceIndex": 11,
-          "text": "• Calma não significa minimizar urgência."
-        },
-        {
-          "id": "w10-review-222-c12-b5",
-          "kind": "list-item",
-          "sourceIndex": 12,
-          "text": "• Troca de abordador é decisão funcional, não julgamento pessoal."
-        }
-      ]
-    },
-    {
-      "number": 220,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-223-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-223-c13-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 13 — Aproximação, silêncio inicial e apresentação"
-        },
-        {
-          "id": "w10-review-223-c13-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Aproximação é progressiva e condicionada à segurança."
-        },
-        {
-          "id": "w10-review-223-c13-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• “Pare” é informação e pode ser oportunidade de demonstrar previsibilidade."
-        },
-        {
-          "id": "w10-review-223-c13-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Silêncio inicial é presença ativa."
-        },
-        {
-          "id": "w10-review-223-c13-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Apresentação deve prometer apenas o que é sustentável."
-        },
-        {
-          "id": "w10-review-223-c13-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Automatismos sociais podem soar incongruentes."
-        },
-        {
-          "id": "w10-review-223-c14-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 14 — Perguntas e escuta"
-        },
-        {
-          "id": "w10-review-223-c14-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Perguntas modificam a interação."
-        },
-        {
-          "id": "w10-review-223-c14-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Uma pergunta por vez melhora processamento e escuta."
-        },
-        {
-          "id": "w10-review-223-c14-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Propósito vem antes da curiosidade."
-        },
-        {
-          "id": "w10-review-223-c14-b4",
-          "kind": "list-item",
-          "sourceIndex": 11,
-          "text": "• Paráfrase organiza sem tomar posse da narrativa."
-        },
-        {
-          "id": "w10-review-223-c14-b5",
-          "kind": "list-item",
-          "sourceIndex": 12,
-          "text": "• Mudanças ao longo da conversa importam mais que sinais isolados."
-        }
-      ]
-    },
-    {
-      "number": 221,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-224-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-224-c15-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 15 — Validação e paráfrase"
-        },
-        {
-          "id": "w10-review-224-c15-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Validar sofrimento não é concordar com suicídio."
-        },
-        {
-          "id": "w10-review-224-c16-h",
-          "kind": "heading",
-          "sourceIndex": 3,
-          "text": "Capítulo 16 — Ferramentas de diálogo da prática operacional"
-        },
-        {
-          "id": "w10-review-224-c16-b1",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Ferramentas têm função, não obrigação de uso."
-        },
-        {
-          "id": "w10-review-224-c16-b2",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Elas devem nascer de material da própria pessoa."
-        },
-        {
-          "id": "w10-review-224-c16-b3",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Futuro útil é concreto e significativo."
-        },
-        {
-          "id": "w10-review-224-c16-b4",
-          "kind": "list-item",
-          "sourceIndex": 7,
-          "text": "• Memórias podem proteger ou doer."
-        },
-        {
-          "id": "w10-review-224-c16-b5",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Clareza comunicacional dispensa neuroexplicações frágeis."
-        }
-      ]
-    },
-    {
-      "number": 222,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-225-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-225-c17-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 17 — Ambivalência, alternativas e microdecisões"
-        },
-        {
-          "id": "w10-review-225-c17-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Ambivalência é abertura possível, não garantia."
-        },
-        {
-          "id": "w10-review-225-c17-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Perguntas sobre o futuro podem sinalizar mudança relevante."
-        },
-        {
-          "id": "w10-review-225-c17-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Microdecisões reduzem tamanho da escolha."
-        },
-        {
-          "id": "w10-review-225-c17-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Saída honrosa preserva dignidade."
-        },
-        {
-          "id": "w10-review-225-c17-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Cooperação não é barganha."
-        },
-        {
-          "id": "w10-review-225-c18-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 18 — Silêncio, resistência, impasse e ruptura"
-        },
-        {
-          "id": "w10-review-225-c18-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Silêncio não possui um único significado."
-        },
-        {
-          "id": "w10-review-225-c18-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Pausa pode ser parte da escuta."
-        },
-        {
-          "id": "w10-review-225-c18-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• “Resistência” deve ser traduzida em comportamento observável."
-        },
-        {
-          "id": "w10-review-225-c18-b4",
-          "kind": "list-item",
-          "sourceIndex": 11,
-          "text": "• Impasse pede mudança de hipótese ou estratégia."
-        }
-      ]
-    },
-    {
-      "number": 223,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-226-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-226-c19-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 19 — Agitação, retraimento e alterações perceptivas"
-        },
-        {
-          "id": "w10-review-226-c19-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Perfis da ITO são didáticos e flexíveis."
-        },
-        {
-          "id": "w10-review-226-c19-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Descrição supera rótulo."
-        },
-        {
-          "id": "w10-review-226-c19-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Agitação pede desescalada e segurança."
-        },
-        {
-          "id": "w10-review-226-c19-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Retraimento não deve ser preenchido com monólogo."
-        },
-        {
-          "id": "w10-review-226-c19-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Alterações perceptivas não exigem confronto nem concordância."
-        },
-        {
-          "id": "w10-review-226-c20-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 20 — Troca do abordador e transição para abordagem tática"
-        },
-        {
-          "id": "w10-review-226-c20-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Troca de abordador pode preservar, e não necessariamente romper, vínculo."
-        },
-        {
-          "id": "w10-review-226-c20-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Tempo sozinho não define troca."
-        },
-        {
-          "id": "w10-review-226-c20-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Preparação tática é parte da segurança durante dissuasão."
-        },
-        {
-          "id": "w10-review-226-c20-b4",
-          "kind": "list-item",
-          "sourceIndex": 11,
-          "text": "• Tática não é punição nem etapa obrigatória."
-        },
-        {
-          "id": "w10-review-226-c20-b5",
-          "kind": "list-item",
-          "sourceIndex": 12,
-          "text": "• Confiança e contingência coexistem."
-        }
-      ]
-    },
-    {
-      "number": 224,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-227-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-227-c21-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 21 — Princípios e segurança da abordagem tática"
-        },
-        {
-          "id": "w10-review-227-c21-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Técnica e tática pertencem ao mesmo Sistema ATS."
-        },
-        {
-          "id": "w10-review-227-c21-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Preparação tática não equivale a decisão de executar."
-        },
-        {
-          "id": "w10-review-227-c21-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Tempo de cena isolado não determina intervenção."
-        },
-        {
-          "id": "w10-review-227-c21-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Técnicas de alto risco exigem treinamento específico."
-        },
-        {
-          "id": "w10-review-227-c21-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Coordenação evita ações concorrentes."
-        },
-        {
-          "id": "w10-review-227-c22-h",
-          "kind": "heading",
-          "sourceIndex": 7,
-          "text": "Capítulo 22 — Precipitação e ambiente vertical"
-        },
-        {
-          "id": "w10-review-227-c22-b1",
-          "kind": "list-item",
-          "sourceIndex": 8,
-          "text": "• Em altura, o ambiente modifica cada decisão."
-        },
-        {
-          "id": "w10-review-227-c22-b2",
-          "kind": "list-item",
-          "sourceIndex": 9,
-          "text": "• Proximidade comunicacional não supera segurança física."
-        },
-        {
-          "id": "w10-review-227-c22-b3",
-          "kind": "list-item",
-          "sourceIndex": 10,
-          "text": "• Salvamento especializado e abordagem devem operar integrados."
-        },
-        {
-          "id": "w10-review-227-c22-b4",
-          "kind": "list-item",
-          "sourceIndex": 11,
-          "text": "• Exemplos técnicos não são autorizações universais."
-        },
-        {
-          "id": "w10-review-227-c22-b5",
-          "kind": "list-item",
-          "sourceIndex": 12,
-          "text": "• O isolamento inclui pessoas e áreas abaixo."
-        }
-      ]
-    },
-    {
-      "number": 225,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-228-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-228-c23-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 23 — Água, enforcamento, incêndio, eletricidade e intoxicação"
-        },
-        {
-          "id": "w10-review-228-c23-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Cada ambiente acrescenta riscos próprios."
-        },
-        {
-          "id": "w10-review-228-c23-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Especialidade de salvamento não pode ser substituída por leitura."
-        },
-        {
-          "id": "w10-review-228-c23-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Atmosfera e energia são perigos que podem permanecer invisíveis."
-        },
-        {
-          "id": "w10-review-228-c23-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Alteração de consciência pode ser emergência clínica."
-        }
-      ]
-    },
-    {
-      "number": 226,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-229-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-229-c24-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 24 — Arma branca, arma de fogo e risco de violência"
-        },
-        {
-          "id": "w10-review-229-c24-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Violência pode mudar de direção."
-        },
-        {
-          "id": "w10-review-229-c24-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Segurança limita proximidade."
-        },
-        {
-          "id": "w10-review-229-c24-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Arma de fogo exige liderança policial especializada segundo a ITO."
-        },
-        {
-          "id": "w10-review-229-c24-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Informação não confirmada pode ter alto impacto operacional."
-        }
-      ]
-    },
-    {
-      "number": 227,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-230-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-230-c25-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 25 — Entrada, contenção, lesões, APH e presunção de óbito"
-        },
-        {
-          "id": "w10-review-230-c25-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Entrada combina necessidade, segurança e competência."
-        },
-        {
-          "id": "w10-review-230-c25-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Contenção é proteção proporcional, não punição."
-        },
-        {
-          "id": "w10-review-230-c25-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Lesões e deterioração exigem APH conforme protocolo."
-        },
-        {
-          "id": "w10-review-230-c25-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Saída do ponto de risco não encerra cuidado."
-        }
-      ]
-    },
-    {
-      "number": 228,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-231-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-231-c26-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 26 — Crianças e adolescentes"
-        },
-        {
-          "id": "w10-review-231-c26-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Idade jovem não reduz seriedade da ocorrência."
-        },
-        {
-          "id": "w10-review-231-c26-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Desenvolvimento modifica linguagem e interpretação."
-        },
-        {
-          "id": "w10-review-231-c26-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Família precisa ser avaliada como recurso, não presumida como proteção."
-        },
-        {
-          "id": "w10-review-231-c26-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Escola, pares e redes digitais podem ter grande peso subjetivo."
-        }
-      ]
-    },
-    {
-      "number": 229,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-232-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-232-c27-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 27 — Pessoas idosas, pessoas com deficiência e neurodivergentes"
-        },
-        {
-          "id": "w10-review-232-c27-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Idade e deficiência não definem capacidade por si só."
-        },
-        {
-          "id": "w10-review-232-c27-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Barreiras sensoriais podem parecer recusa."
-        },
-        {
-          "id": "w10-review-232-c27-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Acessibilidade faz parte da segurança."
-        },
-        {
-          "id": "w10-review-232-c27-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Fale com a pessoa antes de falar sobre ela."
-        },
-        {
-          "id": "w10-review-232-c27-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• Neurodivergência pode exigir mais previsibilidade, menos estímulos e maior tempo de resposta."
-        }
-      ]
-    },
-    {
-      "number": 230,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-233-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-233-c28-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 28 — Intoxicação, agitação e alterações do pensamento"
-        },
-        {
-          "id": "w10-review-233-c28-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Alteração comportamental pode ter múltiplas causas."
-        },
-        {
-          "id": "w10-review-233-c28-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Deterioração de consciência é dado de alta prioridade."
-        },
-        {
-          "id": "w10-review-233-c28-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Agitação melhora com redução de estímulos e confronto."
-        },
-        {
-          "id": "w10-review-233-c28-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Relatos perceptivos devem ser reconhecidos sem confirmação do conteúdo."
-        }
-      ]
-    },
-    {
-      "number": 231,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-234-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-234-c29-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 29 — Mulheres, violência doméstica, cultura, espiritualidade e contexto social"
-        },
-        {
-          "id": "w10-review-234-c29-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Família pode ser proteção ou ameaça."
-        },
-        {
-          "id": "w10-review-234-c29-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Violência doméstica exige proteção específica."
-        },
-        {
-          "id": "w10-review-234-c29-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Espiritualidade só é recurso quando possui esse significado para a pessoa."
-        },
-        {
-          "id": "w10-review-234-c29-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• O Estado não deve moralizar religiosamente a crise. • Mulheres e meninas devem ter relato, identidade, privacidade e risco de violência protegidos sem culpabilização."
-        }
-      ]
-    },
-    {
-      "number": 232,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-235-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-235-c30-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 30 — Desistência, resgate, encaminhamento e registro"
-        },
-        {
-          "id": "w10-review-235-c30-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• A saída do ponto de risco é transição, não alta."
-        },
-        {
-          "id": "w10-review-235-c30-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• O ambiente pós-resgate precisa permanecer organizado."
-        },
-        {
-          "id": "w10-review-235-c30-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Reencontro familiar deve ser avaliado."
-        },
-        {
-          "id": "w10-review-235-c30-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Passagem para saúde deve ser objetiva."
-        },
-        {
-          "id": "w10-review-235-c30-b5",
-          "kind": "list-item",
-          "sourceIndex": 6,
-          "text": "• A continuidade do cuidado deve considerar RAPS, rede de apoio e regulação conforme o caso."
-        }
-      ]
-    },
-    {
-      "number": 233,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-236-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-236-c31-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 31 — Comunicação responsável, imprensa, Werther e Papageno"
-        },
-        {
-          "id": "w10-review-236-c31-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Falar sobre suicídio exige forma responsável, não silêncio absoluto."
-        },
-        {
-          "id": "w10-review-236-c31-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Werther e Papageno descrevem efeitos diferentes de exposição."
-        },
-        {
-          "id": "w10-review-236-c31-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Método e detalhes íntimos não precisam ser centrais."
-        },
-        {
-          "id": "w10-review-236-c31-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Causalidade simplista distorce fenômeno multifatorial."
-        }
-      ]
-    },
-    {
-      "number": 234,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-237-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-237-c32-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 32 — Primeiros Socorros Psicológicos, pós-ocorrência e posvenção"
-        },
-        {
-          "id": "w10-review-237-c32-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• PSP organiza ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar."
-        },
-        {
-          "id": "w10-review-237-c32-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• PSP não é psicoterapia, diagnóstico, investigação ou debriefing psicológico compulsório."
-        },
-        {
-          "id": "w10-review-237-c32-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Reações após eventos difíceis devem ser lidas por contexto, duração, intensidade, mudança do habitual e impacto funcional."
-        },
-        {
-          "id": "w10-review-237-c32-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Conectar significa combinar próximo passo concreto e aproximar a pessoa da rede adequada."
-        }
-      ]
-    },
-    {
-      "number": 235,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-238-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-238-c33-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 33 — Casos longitudinais integradores"
-        },
-        {
-          "id": "w10-review-238-c33-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Informação chega progressivamente e exige atualização."
-        },
-        {
-          "id": "w10-review-238-c33-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• Segurança, comunicação e saúde evoluem em paralelo."
-        },
-        {
-          "id": "w10-review-238-c33-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Um dado só é útil quando seu efeito sobre decisão é compreendido."
-        },
-        {
-          "id": "w10-review-238-c33-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Casos diferentes compartilham estrutura, não roteiro."
-        }
-      ]
-    },
-    {
-      "number": 236,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
-      "title": "Revisão cumulativa",
-      "cover": false,
-      "editorial": {
-        "part": 7,
-        "partTitle": "Integração e consolidação",
-        "chapter": 0,
-        "taxonomyAdjusted": false,
-        "normalizationReason": null
-      },
-      "pageRole": "supplementary",
-      "blocks": [
-        {
-          "id": "w10-review-239-intro",
-          "kind": "paragraph",
-          "sourceIndex": 0,
-          "text": "Recupere os pontos essenciais sem consultar o capítulo. Depois compare sua lembrança com a síntese abaixo e identifique o que precisa revisar."
-        },
-        {
-          "id": "w10-review-239-c34-h",
-          "kind": "heading",
-          "sourceIndex": 1,
-          "text": "Capítulo 34 — Síntese do Sistema ATTS e matriz final de competências"
-        },
-        {
-          "id": "w10-review-239-c34-b1",
-          "kind": "list-item",
-          "sourceIndex": 2,
-          "text": "• Competência integra conhecimento, reconhecimento, decisão e aplicação."
-        },
-        {
-          "id": "w10-review-239-c34-b2",
-          "kind": "list-item",
-          "sourceIndex": 3,
-          "text": "• O Sistema ATTS é mais importante que qualquer frase isolada."
-        },
-        {
-          "id": "w10-review-239-c34-b3",
-          "kind": "list-item",
-          "sourceIndex": 4,
-          "text": "• Segurança e comunicação precisam ser atualizadas continuamente."
-        },
-        {
-          "id": "w10-review-239-c34-b4",
-          "kind": "list-item",
-          "sourceIndex": 5,
-          "text": "• Limite de competência é informação operacional, não fraqueza."
-        }
-      ]
-    },
-    {
-      "number": 237,
-      "part": 7,
-      "partTitle": "Integração e consolidação",
-      "chapter": 0,
       "title": "Recursos digitais do participante",
       "cover": false,
       "editorial": {
@@ -17768,42 +16265,21 @@
           "text": "Organização Mundial da Saúde — Suicide fact sheet"
         },
         {
-          "id": "w10-res-240-1-l",
-          "kind": "external-link",
-          "sourceIndex": 2,
-          "text": "Abrir recurso",
-          "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
-        },
-        {
           "id": "w10-res-240-2-h",
           "kind": "heading",
           "sourceIndex": 3,
           "text": "Organização Mundial da Saúde — LIVE LIFE: guia de implementação para prevenção do suicídio"
         },
         {
-          "id": "w10-res-240-2-l",
-          "kind": "external-link",
-          "sourceIndex": 4,
-          "text": "Abrir recurso",
-          "url": "https://www.who.int/publications/i/item/9789240026629"
-        },
-        {
           "id": "w10-res-240-3-h",
           "kind": "heading",
           "sourceIndex": 5,
           "text": "Organização Mundial da Saúde — Primeiros Socorros Psicológicos: guia para trabalhadores de campo"
-        },
-        {
-          "id": "w10-res-240-3-l",
-          "kind": "external-link",
-          "sourceIndex": 6,
-          "text": "Abrir recurso",
-          "url": "https://www.who.int/publications/i/item/9789241548205"
         }
       ]
     },
     {
-      "number": 238,
+      "number": 215,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -17829,13 +16305,6 @@
           "kind": "heading",
           "sourceIndex": 1,
           "text": "Organização Mundial da Saúde — comunicação responsável sobre suicídio para profissionais de mídia"
-        },
-        {
-          "id": "w10-res-241-1-l",
-          "kind": "external-link",
-          "sourceIndex": 2,
-          "text": "Abrir recurso",
-          "url": "https://www.who.int/publications/i/item/9789240076846"
         },
         {
           "id": "w10-res-241-2-h",
@@ -17866,7 +16335,7 @@
       ]
     },
     {
-      "number": 239,
+      "number": 216,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -17914,7 +16383,7 @@
       ]
     },
     {
-      "number": 240,
+      "number": 217,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -17962,7 +16431,7 @@
       ]
     },
     {
-      "number": 241,
+      "number": 218,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -18010,7 +16479,7 @@
       ]
     },
     {
-      "number": 242,
+      "number": 219,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -18046,7 +16515,7 @@
       ]
     },
     {
-      "number": 243,
+      "number": 220,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -18076,7 +16545,7 @@
       ]
     },
     {
-      "number": 244,
+      "number": 221,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -18130,7 +16599,7 @@
       ]
     },
     {
-      "number": 245,
+      "number": 222,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -18178,7 +16647,7 @@
       ]
     },
     {
-      "number": 246,
+      "number": 223,
       "part": 7,
       "partTitle": "Integração e consolidação",
       "chapter": 0,
@@ -18227,7 +16696,7 @@
     }
   ],
   "manifest": {
-    "pageCount": 246,
+    "pageCount": 223,
     "blockCount": 2224,
     "partCount": 7,
     "distinctChapterNumberCount": 34,
@@ -18390,19 +16859,26 @@
     "chapterLeafStarts": 34,
     "wave8VisualStatus": "complete",
     "chapterAssessment": "5x4-interactive",
-    "cumulativeReview": "clean",
+    "cumulativeReview": "removed-by-editorial-request",
     "chapterMicrolearningRequired": 34,
     "chapterExternalResourceRequired": 34,
     "applicationTransferRequired": 34,
     "bibliographyStandard": "ABNT NBR 6023:2018, versão corrigida 2:2020",
     "backstageResiduePolicy": "zero-public-text",
-    "publicPageCount": 246,
+    "publicPageCount": 223,
     "removedFrontMatterPages": [
       2,
       4,
       5
     ],
-    "removalReason": "author-approved final release cleanup"
+    "removalReason": "author-approved final release cleanup",
+    "applicationTransfer": "removed-by-editorial-request",
+    "scenarios": "removed-by-editorial-request",
+    "blankPages": "removed",
+    "tacticalBodyWeight": "regular",
+    "videoAccess": "removed",
+    "englishMaterialAccess": "removed",
+    "publicationHotfix": "2026-09-14"
   },
   "chapterEditorial": [
     {
@@ -18797,5 +17273,21 @@
         "normalized": 1
       }
     ]
+  },
+  "prontidao": {
+    "editorialWave": 1,
+    "editorialSupplements": [
+      31,
+      48,
+      49,
+      89,
+      90,
+      91,
+      133,
+      138,
+      139,
+      140
+    ],
+    "policy": "conteudo-substantivo-sem-fatos-novos"
   }
 }

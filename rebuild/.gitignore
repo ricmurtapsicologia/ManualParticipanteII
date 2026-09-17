@@ -1,0 +1,8 @@
+.next/
+node_modules/
+public/downloads/*.pdf
+public/downloads/*.json
+reports/
+test-results/
+playwright-report/
+.lighthouseci/

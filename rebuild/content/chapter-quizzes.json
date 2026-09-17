@@ -3,5 +3,4868 @@
   "wave": "8",
   "source": "semantic-pages.json",
   "doctrineChanged": false,
-  "chapters": []
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "O CATS e a prática profissional",
+      "openingPage": 5,
+      "endingPage": 12,
+      "questions": [
+        {
+          "id": "c1q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: O CATS forma desempenho integrado, não repertório de frases."
+        },
+        {
+          "id": "c1q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A orientação operacional é a fonte normativa primária.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: A orientação operacional é a fonte normativa primária."
+        },
+        {
+          "id": "c1q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Literatura e experiência ampliam compreensão, mas não criam doutrina paralela.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Literatura e experiência ampliam compreensão, mas não criam doutrina paralela."
+        },
+        {
+          "id": "c1q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Descrever comportamentos é mais útil e seguro do que diagnosticar na cena.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Descrever comportamentos é mais útil e seguro do que diagnosticar na cena."
+        },
+        {
+          "id": "c1q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Observar, interpretar com prudência, priorizar, decidir, agir e reavaliar é um ciclo contínuo.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Observar, interpretar com prudência, priorizar, decidir, agir e reavaliar é um ciclo contínuo."
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Comportamento suicida: conceitos e linguagem",
+      "openingPage": 13,
+      "endingPage": 18,
+      "questions": [
+        {
+          "id": "c2q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Conceitos organizam comunicação e registro; não existem para rotular pessoas."
+        },
+        {
+          "id": "c2q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Diferentes formas de comportamento suicida requerem precisão terminológica.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Diferentes formas de comportamento suicida requerem precisão terminológica."
+        },
+        {
+          "id": "c2q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Linguagem centrada na pessoa preserva dignidade sem minimizar risco.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Linguagem centrada na pessoa preserva dignidade sem minimizar risco."
+        },
+        {
+          "id": "c2q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Descrição observável é preferível a diagnóstico ou julgamento moral.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Descrição observável é preferível a diagnóstico ou julgamento moral."
+        },
+        {
+          "id": "c2q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Comunicação direta e responsável é diferente de exposição sensacionalista.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Comunicação direta e responsável é diferente de exposição sensacionalista."
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Epidemiologia e inteligência para decisão",
+      "openingPage": 19,
+      "endingPage": 25,
+      "questions": [
+        {
+          "id": "c3q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo."
+        },
+        {
+          "id": "c3q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Número, proporção e taxa respondem a perguntas diferentes.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Número, proporção e taxa respondem a perguntas diferentes."
+        },
+        {
+          "id": "c3q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "O Brasil registrou 15.507 suicídios em 2021; 77,8% eram do sexo masculino.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: O Brasil registrou 15.507 suicídios em 2021; 77,8% eram do sexo masculino."
+        },
+        {
+          "id": "c3q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Interpretar número absoluto, proporção e taxa de mortalidade.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Interpretar número absoluto, proporção e taxa de mortalidade."
+        },
+        {
+          "id": "c3q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Descrever achados nacionais recentes disponíveis no Boletim Epidemiológico v.55 n.4.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Descrever achados nacionais recentes disponíveis no Boletim Epidemiológico v.55 n.4."
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+      "openingPage": 26,
+      "endingPage": 32,
+      "questions": [
+        {
+          "id": "c4q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Crise suicida é estado dinâmico e individual, não identidade."
+        },
+        {
+          "id": "c4q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Dor psicológica, desesperança, ambivalência e constrição são conceitos de compreensão, não etiquetas diagnósticas.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Dor psicológica, desesperança, ambivalência e constrição são conceitos de compreensão, não etiquetas diagnósticas."
+        },
+        {
+          "id": "c4q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Ambivalência mantém a situação aberta, mas não garante segurança.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Ambivalência mantém a situação aberta, mas não garante segurança."
+        },
+        {
+          "id": "c4q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Constrição favorece comunicação simples e alternativas graduais.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Constrição favorece comunicação simples e alternativas graduais."
+        },
+        {
+          "id": "c4q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Modelos cognitivos ajudam a formular hipóteses; não autorizam inferência neurobiológica específica.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Modelos cognitivos ajudam a formular hipóteses; não autorizam inferência neurobiológica específica."
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "Fatores associados, proteção, risco e limites da avaliação",
+      "openingPage": 33,
+      "endingPage": 50,
+      "questions": [
+        {
+          "id": "c5q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Associação estatística não equivale a previsão individual."
+        },
+        {
+          "id": "c5q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Predisponentes ajudam a compreender vulnerabilidade; precipitantes ajudam a entender mudanças recentes.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Predisponentes ajudam a compreender vulnerabilidade; precipitantes ajudam a entender mudanças recentes."
+        },
+        {
+          "id": "c5q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Fator de proteção só protege quando é significativo e acessível naquela situação.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Fator de proteção só protege quando é significativo e acessível naquela situação."
+        },
+        {
+          "id": "c5q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Avaliação operacional prioriza riscos presentes, método, ambiente, comunicação e recursos.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Avaliação operacional prioriza riscos presentes, método, ambiente, comunicação e recursos."
+        },
+        {
+          "id": "c5q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Listas e escalas não substituem julgamento profissional e reavaliação.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Listas e escalas não substituem julgamento profissional e reavaliação."
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "Do acionamento ao estabelecimento",
+      "openingPage": 51,
+      "endingPage": 56,
+      "questions": [
+        {
+          "id": "c6q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: O Sistema ATS começa no acionamento."
+        },
+        {
+          "id": "c6q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Informação inicial orienta hipótese; observação em campo confirma ou corrige.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Informação inicial orienta hipótese; observação em campo confirma ou corrige."
+        },
+        {
+          "id": "c6q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Urgência não elimina segurança de deslocamento.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Urgência não elimina segurança de deslocamento."
+        },
+        {
+          "id": "c6q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Reconhecer o acionamento, o deslocamento e o estabelecimento como etapas integrantes do Sistema ATS.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Reconhecer o acionamento, o deslocamento e o estabelecimento como etapas integrantes do Sistema ATS."
+        },
+        {
+          "id": "c6q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Distinguir informação útil para decisão de detalhe que apenas aumenta ruído.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Distinguir informação útil para decisão de detalhe que apenas aumenta ruído."
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Observação inicial, passagem de comando e avaliação",
+      "openingPage": 57,
+      "endingPage": 62,
+      "questions": [
+        {
+          "id": "c7q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: A cena inclui pessoa, perigo, ambiente e resposta institucional."
+        },
+        {
+          "id": "c7q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Observação inicial é operacional, não diagnóstico clínico.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Observação inicial é operacional, não diagnóstico clínico."
+        },
+        {
+          "id": "c7q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Confirmar informação significa atualizá-la.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Confirmar informação significa atualizá-la."
+        },
+        {
+          "id": "c7q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Passagem de comando deve transmitir raciocínio, não apenas cronologia.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Passagem de comando deve transmitir raciocínio, não apenas cronologia."
+        },
+        {
+          "id": "c7q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Liderança varia conforme competência e risco.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Liderança varia conforme competência e risco."
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "Isolamento, espaços de comunicação e avaliação dinâmica",
+      "openingPage": 63,
+      "endingPage": 68,
+      "questions": [
+        {
+          "id": "c8q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Isolamento protege segurança e comunicação."
+        },
+        {
+          "id": "c8q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Distância é funcional e depende do contexto.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Distância é funcional e depende do contexto."
+        },
+        {
+          "id": "c8q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Privacidade e redução de exposição integram a resposta.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Privacidade e redução de exposição integram a resposta."
+        },
+        {
+          "id": "c8q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "A avaliação de risco é dinâmica.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: A avaliação de risco é dinâmica."
+        },
+        {
+          "id": "c8q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Melhora na conversa não elimina perigos físicos.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Melhora na conversa não elimina perigos físicos."
+        }
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "Funções, comando e coordenação",
+      "openingPage": 69,
+      "endingPage": 74,
+      "questions": [
+        {
+          "id": "c9q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Funções reduzem sobrecarga e lacunas."
+        },
+        {
+          "id": "c9q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Comandante e abordador possuem focos complementares.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Comandante e abordador possuem focos complementares."
+        },
+        {
+          "id": "c9q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Auxiliar apoia sem criar segunda voz concorrente.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Auxiliar apoia sem criar segunda voz concorrente."
+        },
+        {
+          "id": "c9q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Informação deve ser filtrada antes de chegar à díade.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Informação deve ser filtrada antes de chegar à díade."
+        },
+        {
+          "id": "c9q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Segurança mantém vigilância quando o vínculo pode induzir relaxamento.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Segurança mantém vigilância quando o vínculo pode induzir relaxamento."
+        }
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "Coleta de informações e apoio à decisão",
+      "openingPage": 75,
+      "endingPage": 79,
+      "questions": [
+        {
+          "id": "c10q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Coleta útil é orientada à decisão."
+        },
+        {
+          "id": "c10q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Fontes precisam ser contextualizadas e, quando possível, trianguladas.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Fontes precisam ser contextualizadas e, quando possível, trianguladas."
+        },
+        {
+          "id": "c10q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Fatores associados não predizem individualmente o desfecho.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Fatores associados não predizem individualmente o desfecho."
+        },
+        {
+          "id": "c10q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Fator de proteção é aquilo que tem função protetiva para aquela pessoa.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Fator de proteção é aquilo que tem função protetiva para aquela pessoa."
+        },
+        {
+          "id": "c10q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Repasse ao abordador deve ser seletivo.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Repasse ao abordador deve ser seletivo."
+        }
+      ]
+    },
+    {
+      "chapter": 11,
+      "title": "Integração interinstitucional",
+      "openingPage": 80,
+      "endingPage": 92,
+      "questions": [
+        {
+          "id": "c11q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Instituições cooperam por competências complementares."
+        },
+        {
+          "id": "c11q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Vínculo existente não deve ser rompido automaticamente.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Vínculo existente não deve ser rompido automaticamente."
+        },
+        {
+          "id": "c11q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Saúde precisa ser integrada antes do momento de encaminhamento.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Saúde precisa ser integrada antes do momento de encaminhamento."
+        },
+        {
+          "id": "c11q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Algumas cenas exigem liderança específica de forças policiais ou especialistas.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Algumas cenas exigem liderança específica de forças policiais ou especialistas."
+        },
+        {
+          "id": "c11q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Conflito técnico deve ser transformado em análise de risco, norma e competência.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Conflito técnico deve ser transformado em análise de risco, norma e competência."
+        }
+      ]
+    },
+    {
+      "chapter": 12,
+      "title": "O abordador e a preparação para o contato",
+      "openingPage": 93,
+      "endingPage": 97,
+      "questions": [
+        {
+          "id": "c12q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: O abordador funciona melhor quando o sistema ao redor funciona."
+        },
+        {
+          "id": "c12q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Preparação organiza risco, informação, apoio e autoconsciência.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Preparação organiza risco, informação, apoio e autoconsciência."
+        },
+        {
+          "id": "c12q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Postura e voz precisam ser coerentes com a intenção declarada.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Postura e voz precisam ser coerentes com a intenção declarada."
+        },
+        {
+          "id": "c12q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Calma não significa minimizar urgência.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Calma não significa minimizar urgência."
+        },
+        {
+          "id": "c12q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador é decisão funcional, não julgamento pessoal.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Troca de abordador é decisão funcional, não julgamento pessoal."
+        }
+      ]
+    },
+    {
+      "chapter": 13,
+      "title": "Aproximação, silêncio inicial e apresentação",
+      "openingPage": 98,
+      "endingPage": 102,
+      "questions": [
+        {
+          "id": "c13q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Aproximação é progressiva e condicionada à segurança."
+        },
+        {
+          "id": "c13q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "“Pare” é informação e pode ser oportunidade de demonstrar previsibilidade.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: “Pare” é informação e pode ser oportunidade de demonstrar previsibilidade."
+        },
+        {
+          "id": "c13q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Silêncio inicial é presença ativa.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Silêncio inicial é presença ativa."
+        },
+        {
+          "id": "c13q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Apresentação deve prometer apenas o que é sustentável.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Apresentação deve prometer apenas o que é sustentável."
+        },
+        {
+          "id": "c13q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Automatismos sociais podem soar incongruentes.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Automatismos sociais podem soar incongruentes."
+        }
+      ]
+    },
+    {
+      "chapter": 14,
+      "title": "Perguntas e escuta",
+      "openingPage": 103,
+      "endingPage": 107,
+      "questions": [
+        {
+          "id": "c14q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Perguntas modificam a interação.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Perguntas modificam a interação."
+        },
+        {
+          "id": "c14q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Uma pergunta por vez melhora processamento e escuta.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Uma pergunta por vez melhora processamento e escuta."
+        },
+        {
+          "id": "c14q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Propósito vem antes da curiosidade.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Propósito vem antes da curiosidade."
+        },
+        {
+          "id": "c14q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Paráfrase organiza sem tomar posse da narrativa.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Paráfrase organiza sem tomar posse da narrativa."
+        },
+        {
+          "id": "c14q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Mudanças ao longo da conversa importam mais que sinais isolados.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Mudanças ao longo da conversa importam mais que sinais isolados."
+        }
+      ]
+    },
+    {
+      "chapter": 15,
+      "title": "Validação e paráfrase",
+      "openingPage": 108,
+      "endingPage": 111,
+      "questions": [
+        {
+          "id": "c15q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Validar sofrimento não é concordar com suicídio."
+        },
+        {
+          "id": "c15q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Diferenciar validar experiência, validar emoção e concordar com uma conclusão suicida.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Diferenciar validar experiência, validar emoção e concordar com uma conclusão suicida."
+        },
+        {
+          "id": "c15q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Utilizar paráfrase para organizar narrativa e verificar compreensão.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Utilizar paráfrase para organizar narrativa e verificar compreensão."
+        },
+        {
+          "id": "c15q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Evitar otimismo prematuro, refutação e minimização.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Evitar otimismo prematuro, refutação e minimização."
+        },
+        {
+          "id": "c15q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Reconhecer quando uma devolução precisa ser corrigida.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Reconhecer quando uma devolução precisa ser corrigida."
+        }
+      ]
+    },
+    {
+      "chapter": 16,
+      "title": "Ferramentas de diálogo na abordagem de dissuasão",
+      "openingPage": 112,
+      "endingPage": 116,
+      "questions": [
+        {
+          "id": "c16q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Ferramentas têm função, não obrigação de uso."
+        },
+        {
+          "id": "c16q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Elas devem nascer de material da própria pessoa.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Elas devem nascer de material da própria pessoa."
+        },
+        {
+          "id": "c16q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Futuro útil é concreto e significativo.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Futuro útil é concreto e significativo."
+        },
+        {
+          "id": "c16q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Memórias podem proteger ou doer.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Memórias podem proteger ou doer."
+        },
+        {
+          "id": "c16q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Clareza comunicacional dispensa neuroexplicações frágeis.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Clareza comunicacional dispensa neuroexplicações frágeis."
+        }
+      ]
+    },
+    {
+      "chapter": 17,
+      "title": "Ambivalência, alternativas e microdecisões",
+      "openingPage": 117,
+      "endingPage": 120,
+      "questions": [
+        {
+          "id": "c17q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Ambivalência é abertura possível, não garantia."
+        },
+        {
+          "id": "c17q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Perguntas sobre o futuro podem sinalizar mudança relevante.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Perguntas sobre o futuro podem sinalizar mudança relevante."
+        },
+        {
+          "id": "c17q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Microdecisões reduzem tamanho da escolha.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Microdecisões reduzem tamanho da escolha."
+        },
+        {
+          "id": "c17q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Saída honrosa preserva dignidade.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Saída honrosa preserva dignidade."
+        },
+        {
+          "id": "c17q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Cooperação não é barganha.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Cooperação não é barganha."
+        }
+      ]
+    },
+    {
+      "chapter": 18,
+      "title": "Silêncio, resistência, impasse e ruptura",
+      "openingPage": 121,
+      "endingPage": 124,
+      "questions": [
+        {
+          "id": "c18q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Silêncio não possui um único significado.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Silêncio não possui um único significado."
+        },
+        {
+          "id": "c18q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Pausa pode ser parte da escuta.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Pausa pode ser parte da escuta."
+        },
+        {
+          "id": "c18q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "“Resistência” deve ser traduzida em comportamento observável.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: “Resistência” deve ser traduzida em comportamento observável."
+        },
+        {
+          "id": "c18q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Impasse pede mudança de hipótese ou estratégia.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Impasse pede mudança de hipótese ou estratégia."
+        },
+        {
+          "id": "c18q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Diferenciar silêncio tolerável, baixa responsividade e ruptura de canal.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Diferenciar silêncio tolerável, baixa responsividade e ruptura de canal."
+        }
+      ]
+    },
+    {
+      "chapter": 19,
+      "title": "Agitação, retraimento e alterações perceptivas",
+      "openingPage": 125,
+      "endingPage": 128,
+      "questions": [
+        {
+          "id": "c19q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Perfis da ITO são didáticos e flexíveis."
+        },
+        {
+          "id": "c19q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Descrição supera rótulo.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Descrição supera rótulo."
+        },
+        {
+          "id": "c19q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Agitação pede desescalada e segurança.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Agitação pede desescalada e segurança."
+        },
+        {
+          "id": "c19q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Retraimento não deve ser preenchido com monólogo.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Retraimento não deve ser preenchido com monólogo."
+        },
+        {
+          "id": "c19q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Alterações perceptivas não exigem confronto nem concordância.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Alterações perceptivas não exigem confronto nem concordância."
+        }
+      ]
+    },
+    {
+      "chapter": 20,
+      "title": "Troca do abordador e transição para abordagem tática",
+      "openingPage": 129,
+      "endingPage": 141,
+      "questions": [
+        {
+          "id": "c20q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Troca de abordador pode preservar, e não necessariamente romper, vínculo."
+        },
+        {
+          "id": "c20q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Tempo sozinho não define troca.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Tempo sozinho não define troca."
+        },
+        {
+          "id": "c20q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Preparação tática é parte da segurança durante dissuasão.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Preparação tática é parte da segurança durante dissuasão."
+        },
+        {
+          "id": "c20q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Tática não é punição nem etapa obrigatória.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Tática não é punição nem etapa obrigatória."
+        },
+        {
+          "id": "c20q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Confiança e contingência coexistem.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Confiança e contingência coexistem."
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "title": "Princípios e segurança da abordagem tática",
+      "openingPage": 142,
+      "endingPage": 146,
+      "questions": [
+        {
+          "id": "c21q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Técnica e tática pertencem ao mesmo Sistema ATS."
+        },
+        {
+          "id": "c21q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Preparação tática não equivale a decisão de executar.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Preparação tática não equivale a decisão de executar."
+        },
+        {
+          "id": "c21q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Tempo de cena isolado não determina intervenção.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Tempo de cena isolado não determina intervenção."
+        },
+        {
+          "id": "c21q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Técnicas de alto risco exigem treinamento específico.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Técnicas de alto risco exigem treinamento específico."
+        },
+        {
+          "id": "c21q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Coordenação evita ações concorrentes.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Coordenação evita ações concorrentes."
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "title": "Precipitação e ambiente vertical",
+      "openingPage": 147,
+      "endingPage": 150,
+      "questions": [
+        {
+          "id": "c22q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Em altura, o ambiente modifica cada decisão."
+        },
+        {
+          "id": "c22q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Proximidade comunicacional não supera segurança física.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Proximidade comunicacional não supera segurança física."
+        },
+        {
+          "id": "c22q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Salvamento especializado e abordagem devem operar integrados.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Salvamento especializado e abordagem devem operar integrados."
+        },
+        {
+          "id": "c22q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Exemplos técnicos não são autorizações universais.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Exemplos técnicos não são autorizações universais."
+        },
+        {
+          "id": "c22q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O isolamento inclui pessoas e áreas abaixo.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: O isolamento inclui pessoas e áreas abaixo."
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "title": "Água, enforcamento, incêndio, eletricidade e intoxicação",
+      "openingPage": 151,
+      "endingPage": 154,
+      "questions": [
+        {
+          "id": "c23q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Cada ambiente acrescenta riscos próprios."
+        },
+        {
+          "id": "c23q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Especialidade de salvamento não pode ser substituída por leitura.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Especialidade de salvamento não pode ser substituída por leitura."
+        },
+        {
+          "id": "c23q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Atmosfera e energia são perigos que podem permanecer invisíveis.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Atmosfera e energia são perigos que podem permanecer invisíveis."
+        },
+        {
+          "id": "c23q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Alteração de consciência pode ser emergência clínica.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Alteração de consciência pode ser emergência clínica."
+        },
+        {
+          "id": "c23q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Reconhecer perigos específicos que exigem competências próprias de salvamento e APH.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Reconhecer perigos específicos que exigem competências próprias de salvamento e APH."
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "title": "Arma branca, arma de fogo e risco de violência",
+      "openingPage": 155,
+      "endingPage": 158,
+      "questions": [
+        {
+          "id": "c24q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Violência pode mudar de direção."
+        },
+        {
+          "id": "c24q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Segurança limita proximidade.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Segurança limita proximidade."
+        },
+        {
+          "id": "c24q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Arma de fogo exige liderança policial especializada segundo A orientação operacional.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Arma de fogo exige liderança policial especializada segundo A orientação operacional."
+        },
+        {
+          "id": "c24q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Informação não confirmada pode ter alto impacto operacional.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Informação não confirmada pode ter alto impacto operacional."
+        },
+        {
+          "id": "c24q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Reconhecer que violência autodirigida pode tornar-se dirigida a terceiros.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Reconhecer que violência autodirigida pode tornar-se dirigida a terceiros."
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "title": "Entrada, contenção, lesões, APH e presunção de óbito",
+      "openingPage": 159,
+      "endingPage": 162,
+      "questions": [
+        {
+          "id": "c25q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Entrada combina necessidade, segurança e competência."
+        },
+        {
+          "id": "c25q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Contenção é proteção proporcional, não punição.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Contenção é proteção proporcional, não punição."
+        },
+        {
+          "id": "c25q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Lesões e deterioração exigem APH conforme protocolo.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Lesões e deterioração exigem APH conforme protocolo."
+        },
+        {
+          "id": "c25q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Saída do ponto de risco não encerra cuidado.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Saída do ponto de risco não encerra cuidado."
+        },
+        {
+          "id": "c25q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Reconhecer limites e princípios de entrada em ambiente.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Reconhecer limites e princípios de entrada em ambiente."
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "title": "Crianças e adolescentes",
+      "openingPage": 164,
+      "endingPage": 168,
+      "questions": [
+        {
+          "id": "c26q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Idade jovem não reduz seriedade da ocorrência."
+        },
+        {
+          "id": "c26q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Desenvolvimento modifica linguagem e interpretação.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Desenvolvimento modifica linguagem e interpretação."
+        },
+        {
+          "id": "c26q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Família precisa ser avaliada como recurso, não presumida como proteção.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Família precisa ser avaliada como recurso, não presumida como proteção."
+        },
+        {
+          "id": "c26q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Escola, pares e redes digitais podem ter grande peso subjetivo.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Escola, pares e redes digitais podem ter grande peso subjetivo."
+        },
+        {
+          "id": "c26q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Reconhecer especificidades do desenvolvimento sem infantilizar adolescentes nem adultificar crianças.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Reconhecer especificidades do desenvolvimento sem infantilizar adolescentes nem adultificar crianças."
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "title": "Pessoas idosas, pessoas com deficiência e neurodivergentes",
+      "openingPage": 169,
+      "endingPage": 173,
+      "questions": [
+        {
+          "id": "c27q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Idade e deficiência não definem capacidade por si só."
+        },
+        {
+          "id": "c27q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Barreiras sensoriais podem parecer recusa.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Barreiras sensoriais podem parecer recusa."
+        },
+        {
+          "id": "c27q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Acessibilidade faz parte da segurança.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Acessibilidade faz parte da segurança."
+        },
+        {
+          "id": "c27q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Fale com a pessoa antes de falar sobre ela.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Fale com a pessoa antes de falar sobre ela."
+        },
+        {
+          "id": "c27q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Neurodivergência pode exigir mais previsibilidade, menos estímulos e maior tempo de resposta.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Neurodivergência pode exigir mais previsibilidade, menos estímulos e maior tempo de resposta."
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "title": "Intoxicação, agitação e alterações do pensamento",
+      "openingPage": 174,
+      "endingPage": 177,
+      "questions": [
+        {
+          "id": "c28q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "O CATS forma desempenho integrado, não repertório de frases.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Alteração comportamental pode ter múltiplas causas."
+        },
+        {
+          "id": "c28q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Deterioração de consciência é dado de alta prioridade.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Deterioração de consciência é dado de alta prioridade."
+        },
+        {
+          "id": "c28q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Agitação melhora com redução de estímulos e confronto.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Agitação melhora com redução de estímulos e confronto."
+        },
+        {
+          "id": "c28q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Relatos perceptivos devem ser reconhecidos sem confirmação do conteúdo.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Relatos perceptivos devem ser reconhecidos sem confirmação do conteúdo."
+        },
+        {
+          "id": "c28q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Reconhecer intoxicação e alteração de consciência como prioridades de segurança e saúde.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Reconhecer intoxicação e alteração de consciência como prioridades de segurança e saúde."
+        }
+      ]
+    },
+    {
+      "chapter": 29,
+      "title": "Mulheres, violência doméstica, cultura, espiritualidade e contexto social",
+      "openingPage": 178,
+      "endingPage": 182,
+      "questions": [
+        {
+          "id": "c29q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Família pode ser proteção ou ameaça."
+        },
+        {
+          "id": "c29q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Violência doméstica exige proteção específica.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Violência doméstica exige proteção específica."
+        },
+        {
+          "id": "c29q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Espiritualidade só é recurso quando possui esse significado para a pessoa.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Espiritualidade só é recurso quando possui esse significado para a pessoa."
+        },
+        {
+          "id": "c29q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Estado não deve moralizar religiosamente a crise. • Mulheres e meninas devem ter relato, identidade, privacidade e risco de violência protegidos sem culpabilização.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: O Estado não deve moralizar religiosamente a crise. • Mulheres e meninas devem ter relato, identidade, privacidade e risco de violência protegidos sem culpabilização."
+        },
+        {
+          "id": "c29q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Reconhecer violência doméstica como contexto que pode exigir proteção específica.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Reconhecer violência doméstica como contexto que pode exigir proteção específica."
+        }
+      ]
+    },
+    {
+      "chapter": 30,
+      "title": "Desistência, resgate, encaminhamento e registro",
+      "openingPage": 184,
+      "endingPage": 187,
+      "questions": [
+        {
+          "id": "c30q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: A saída do ponto de risco é transição, não alta."
+        },
+        {
+          "id": "c30q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "O ambiente pós-resgate precisa permanecer organizado.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: O ambiente pós-resgate precisa permanecer organizado."
+        },
+        {
+          "id": "c30q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Reencontro familiar deve ser avaliado.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Reencontro familiar deve ser avaliado."
+        },
+        {
+          "id": "c30q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Passagem para saúde deve ser objetiva.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Passagem para saúde deve ser objetiva."
+        },
+        {
+          "id": "c30q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A continuidade do cuidado deve considerar RAPS, rede de apoio e regulação conforme o caso.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: A continuidade do cuidado deve considerar RAPS, rede de apoio e regulação conforme o caso."
+        }
+      ]
+    },
+    {
+      "chapter": 31,
+      "title": "Comunicação responsável, imprensa, Werther e Papageno",
+      "openingPage": 188,
+      "endingPage": 191,
+      "questions": [
+        {
+          "id": "c31q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Crise suicida é estado dinâmico e individual, não identidade.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Falar sobre suicídio exige forma responsável, não silêncio absoluto."
+        },
+        {
+          "id": "c31q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Werther e Papageno descrevem efeitos diferentes de exposição.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Werther e Papageno descrevem efeitos diferentes de exposição."
+        },
+        {
+          "id": "c31q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Método e detalhes íntimos não precisam ser centrais.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Método e detalhes íntimos não precisam ser centrais."
+        },
+        {
+          "id": "c31q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Causalidade simplista distorce fenômeno multifatorial.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Causalidade simplista distorce fenômeno multifatorial."
+        },
+        {
+          "id": "c31q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Explicar de forma cuidadosa os efeitos Werther e Papageno.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Explicar de forma cuidadosa os efeitos Werther e Papageno."
+        }
+      ]
+    },
+    {
+      "chapter": 32,
+      "title": "Primeiros Socorros Psicológicos, pós-ocorrência e posvenção",
+      "openingPage": 192,
+      "endingPage": 198,
+      "questions": [
+        {
+          "id": "c32q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Associação estatística não equivale a previsão individual.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar."
+        },
+        {
+          "id": "c32q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Isolamento protege segurança e comunicação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Apoio inicial não é psicoterapia, diagnóstico, investigação nem debriefing psicológico compulsório.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Apoio inicial não é psicoterapia, diagnóstico, investigação nem debriefing psicológico compulsório."
+        },
+        {
+          "id": "c32q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Segurança, necessidades básicas, funcionamento e autonomia orientam o nível de apoio.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Instituições cooperam por competências complementares.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Segurança, necessidades básicas, funcionamento e autonomia orientam o nível de apoio."
+        },
+        {
+          "id": "c32q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Alteração comportamental pode ter múltiplas causas.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Conectar significa combinar próximo passo concreto e aproximar a pessoa da rede adequada.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Conectar significa combinar próximo passo concreto e aproximar a pessoa da rede adequada."
+        },
+        {
+          "id": "c32q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Posvenção organiza cuidado depois da perda e inclui pessoas e equipes diretamente impactadas.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Posvenção organiza cuidado depois da perda e inclui pessoas e equipes diretamente impactadas."
+        }
+      ]
+    },
+    {
+      "chapter": 33,
+      "title": "Casos longitudinais integradores",
+      "openingPage": 200,
+      "endingPage": 207,
+      "questions": [
+        {
+          "id": "c33q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "O Sistema ATS começa no acionamento.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Informação chega progressivamente e exige atualização."
+        },
+        {
+          "id": "c33q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Segurança, comunicação e saúde evoluem em paralelo.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Funções reduzem sobrecarga e lacunas.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Segurança, comunicação e saúde evoluem em paralelo."
+        },
+        {
+          "id": "c33q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Um dado só é útil quando seu efeito sobre decisão é compreendido.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "O abordador funciona melhor quando o sistema ao redor funciona.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Um dado só é útil quando seu efeito sobre decisão é compreendido."
+        },
+        {
+          "id": "c33q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Casos diferentes compartilham estrutura, não roteiro.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Validar sofrimento não é concordar com suicídio.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Em altura, o ambiente modifica cada decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Família pode ser proteção ou ameaça.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Casos diferentes compartilham estrutura, não roteiro."
+        },
+        {
+          "id": "c33q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Silêncio não possui um único significado.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Entrada combina necessidade, segurança e competência.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Integrar segurança, comando, comunicação, coleta, tática, saúde e continuidade do cuidado.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Integrar segurança, comando, comunicação, coleta, tática, saúde e continuidade do cuidado."
+        }
+      ]
+    },
+    {
+      "chapter": 34,
+      "title": "Síntese do Sistema ATTS e matriz final de competências",
+      "openingPage": 208,
+      "endingPage": 213,
+      "questions": [
+        {
+          "id": "c34q1",
+          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Perguntas modificam a interação.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Técnica e tática pertencem ao mesmo Sistema ATS.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Competência integra conhecimento, reconhecimento, decisão e aplicação."
+        },
+        {
+          "id": "c34q2",
+          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Violência pode mudar de direção.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "O Sistema ATTS é mais importante que qualquer frase isolada.",
+              "correct": true
+            },
+            {
+              "id": "C",
+              "label": "Coleta útil é orientada à decisão.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Ambivalência é abertura possível, não garantia.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: O Sistema ATTS é mais importante que qualquer frase isolada."
+        },
+        {
+          "id": "c34q3",
+          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Segurança e comunicação precisam ser atualizadas continuamente.",
+              "correct": true
+            },
+            {
+              "id": "B",
+              "label": "Aproximação é progressiva e condicionada à segurança.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Idade e deficiência não definem capacidade por si só.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Segurança e comunicação precisam ser atualizadas continuamente."
+        },
+        {
+          "id": "c34q4",
+          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ferramentas têm função, não obrigação de uso.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Cada ambiente acrescenta riscos próprios.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "A saída do ponto de risco é transição, não alta.",
+              "correct": false
+            },
+            {
+              "id": "D",
+              "label": "Limite de competência é informação operacional, não fraqueza.",
+              "correct": true
+            }
+          ],
+          "feedback": "Resposta correta: Limite de competência é informação operacional, não fraqueza."
+        },
+        {
+          "id": "c34q5",
+          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Idade jovem não reduz seriedade da ocorrência.",
+              "correct": false
+            },
+            {
+              "id": "B",
+              "label": "Informação chega progressivamente e exige atualização.",
+              "correct": false
+            },
+            {
+              "id": "C",
+              "label": "Integrar todo o Sistema ATTS em um mapa mental único.",
+              "correct": true
+            },
+            {
+              "id": "D",
+              "label": "Perfis da ITO são didáticos e flexíveis.",
+              "correct": false
+            }
+          ],
+          "feedback": "Resposta correta: Integrar todo o Sistema ATTS em um mapa mental único."
+        }
+      ]
+    }
+  ]
 }

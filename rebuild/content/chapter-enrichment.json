@@ -1,7 +1,1513 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "wave": "10",
   "source": "generated-at-build",
   "doctrineChanged": false,
-  "chapters": []
+  "resourcePolicy": {
+    "language": "pt-BR",
+    "unique": true,
+    "gtoExcluded": true,
+    "writtenMaterials": true,
+    "video": false,
+    "english": false,
+    "transfer": false
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "O CATS e a prática profissional",
+      "openingPage": 5,
+      "endingPage": 12,
+      "microlearning": {
+        "id": "w10-c1-micro",
+        "pageNumber": 9,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "Nomear com precisão para reduzir ruído, estigma e improviso",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • O CATS forma desempenho integrado, não repertório de frases."
+      },
+      "resource": {
+        "id": "w10-c1-resource",
+        "pageNumber": 12,
+        "type": "link",
+        "title": "Guia de acolhimento à crise em saúde mental na RAPS",
+        "url": "https://biblioteca.saude.gov.br/TerminalWeb/Acervo/Detalhe/79252",
+        "note": "Guia do Ministério da Saúde, em português, para acolhimento, organização da resposta e cuidado centrado na pessoa em situações de crise.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 2,
+      "title": "Comportamento suicida: conceitos e linguagem",
+      "openingPage": 13,
+      "endingPage": 18,
+      "microlearning": {
+        "id": "w10-c2-micro",
+        "pageNumber": 16,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Conceitos organizam comunicação e registro; não existem para rotular pessoas."
+      },
+      "resource": {
+        "id": "w10-c2-resource",
+        "pageNumber": 18,
+        "type": "link",
+        "title": "Prevenção do suicídio: manual para profissionais das equipes de saúde mental",
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_editoracao.pdf",
+        "note": "Manual em português sobre conceitos, linguagem, avaliação e prevenção do comportamento suicida.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 3,
+      "title": "Epidemiologia e inteligência para decisão",
+      "openingPage": 19,
+      "endingPage": 25,
+      "microlearning": {
+        "id": "w10-c3-micro",
+        "pageNumber": 22,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo."
+      },
+      "resource": {
+        "id": "w10-c3-resource",
+        "pageNumber": 25,
+        "type": "link",
+        "title": "Boletim Epidemiológico: panorama dos suicídios e lesões autoprovocadas no Brasil",
+        "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/boletins/epidemiologicos/edicoes/2024/boletim-epidemiologico-volume-55-no-04.pdf/view",
+        "note": "Boletim epidemiológico nacional, em português, para leitura crítica de indicadores e tendências.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 4,
+      "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+      "openingPage": 26,
+      "endingPage": 32,
+      "microlearning": {
+        "id": "w10-c4-micro",
+        "pageNumber": 29,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Crise suicida é estado dinâmico e individual, não identidade",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Crise suicida é estado dinâmico e individual, não identidade."
+      },
+      "resource": {
+        "id": "w10-c4-resource",
+        "pageNumber": 32,
+        "type": "link",
+        "title": "Prevenção do suicídio: manual para profissionais da atenção primária",
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/atencaobasica.pdf",
+        "note": "Manual em português para compreender crise, sinais de alerta, comunicação e encaminhamento.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 5,
+      "title": "Fatores associados, proteção, risco e limites da avaliação",
+      "openingPage": 33,
+      "endingPage": 50,
+      "microlearning": {
+        "id": "w10-c5-micro",
+        "pageNumber": 42,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Associação estatística não equivale a previsão individual",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Associação estatística não equivale a previsão individual."
+      },
+      "resource": {
+        "id": "w10-c5-resource",
+        "pageNumber": 50,
+        "type": "link",
+        "title": "Viver a Vida: guia de implementação para a prevenção do suicídio nos países",
+        "url": "https://www.paho.org/pt/documentos/viver-vida-guia-implementacao-para-prevencao-do-suicidio-nos-paises",
+        "note": "Guia oficial em português com estratégias baseadas em evidências para prevenção, proteção e seguimento.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 6,
+      "title": "Do acionamento ao estabelecimento",
+      "openingPage": 51,
+      "endingPage": 56,
+      "microlearning": {
+        "id": "w10-c6-micro",
+        "pageNumber": 54,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Informação inicial orienta hipótese; observação em campo confirma ou corrige",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Informação inicial orienta hipótese; observação em campo confirma ou corrige."
+      },
+      "resource": {
+        "id": "w10-c6-resource",
+        "pageNumber": 56,
+        "type": "link",
+        "title": "Regulação Médica das Urgências",
+        "url": "https://www.gov.br/saude/pt-br/composicao/saes/samu-192/publicacoes/regulacao_medica_urgencias.pdf/view",
+        "note": "Manual brasileiro em português sobre regulação, acionamento, coordenação e resposta pré-hospitalar.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 7,
+      "title": "Observação inicial, passagem de comando e avaliação",
+      "openingPage": 57,
+      "endingPage": 62,
+      "microlearning": {
+        "id": "w10-c7-micro",
+        "pageNumber": 60,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• A cena inclui pessoa, perigo, ambiente e resposta institucional",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • A cena inclui pessoa, perigo, ambiente e resposta institucional."
+      },
+      "resource": {
+        "id": "w10-c7-resource",
+        "pageNumber": 62,
+        "type": "link",
+        "title": "Atuação do Atendimento Pré-Hospitalar Móvel e da Central de Regulação das Urgências",
+        "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/estudos-e-notas-informativas/2024/nota-informativa-n-o-9-2024-cgurg-dahu-saes-ms.pdf/view",
+        "note": "Documento técnico em português sobre funções, regulação e composição da resposta pré-hospitalar móvel.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 8,
+      "title": "Isolamento, espaços de comunicação e avaliação dinâmica",
+      "openingPage": 63,
+      "endingPage": 68,
+      "microlearning": {
+        "id": "w10-c8-micro",
+        "pageNumber": 66,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Isolamento protege segurança e comunicação",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Isolamento protege segurança e comunicação."
+      },
+      "resource": {
+        "id": "w10-c8-resource",
+        "pageNumber": 68,
+        "type": "link",
+        "title": "Serviços de saúde mental para atenção à crise",
+        "url": "https://www.paho.org/pt/documentos/servicos-saude-mental-para-atencao-crise-promocao-abordagens-centradas-na-pessoa-e",
+        "note": "Guia em português sobre atenção à crise centrada na pessoa, direitos, segurança e redução de coerção.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 9,
+      "title": "Funções, comando e coordenação",
+      "openingPage": 69,
+      "endingPage": 74,
+      "microlearning": {
+        "id": "w10-c9-micro",
+        "pageNumber": 72,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Funções reduzem sobrecarga e lacunas",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Funções reduzem sobrecarga e lacunas."
+      },
+      "resource": {
+        "id": "w10-c9-resource",
+        "pageNumber": 74,
+        "type": "link",
+        "title": "Nota Técnica CFP nº 22/2024: atuação em emergências e desastres",
+        "url": "https://transparencia.cfp.org.br/legislacao/nota-tecnica-cfp-no-22-2024/",
+        "note": "Orientações em português sobre preparação, resposta, reconstrução, trabalho em equipe e cuidado psicossocial.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 10,
+      "title": "Coleta de informações e apoio à decisão",
+      "openingPage": 75,
+      "endingPage": 79,
+      "microlearning": {
+        "id": "w10-c10-micro",
+        "pageNumber": 77,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Fontes precisam ser contextualizadas e, quando possível, trianguladas",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Fontes precisam ser contextualizadas e, quando possível, trianguladas."
+      },
+      "resource": {
+        "id": "w10-c10-resource",
+        "pageNumber": 79,
+        "type": "link",
+        "title": "VIVA/SINAN: vigilância contínua e notificação de violências",
+        "url": "https://www.gov.br/saude/pt-br/composicao/svsa/inqueritos-de-saude/viva-sinan",
+        "note": "Página oficial do Ministério da Saúde, em português, sobre vigilância contínua, objetos de notificação e fluxo de registro de violências interpessoais e autoprovocadas.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 11,
+      "title": "Integração interinstitucional",
+      "openingPage": 80,
+      "endingPage": 92,
+      "microlearning": {
+        "id": "w10-c11-micro",
+        "pageNumber": 86,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Instituições cooperam por competências complementares",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Instituições cooperam por competências complementares."
+      },
+      "resource": {
+        "id": "w10-c11-resource",
+        "pageNumber": 92,
+        "type": "link",
+        "title": "Nova Agenda de Saúde Mental para as Américas: resumo executivo",
+        "url": "https://www.paho.org/pt/documentos/resumo-executivo-nova-agenda-saude-mental-para-americas-relatorio-da-comissao-alto-nivel",
+        "note": "Documento em português sobre integração de redes, direitos, intersetorialidade e fortalecimento de sistemas de saúde mental.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 12,
+      "title": "O abordador e a preparação para o contato",
+      "openingPage": 93,
+      "endingPage": 97,
+      "microlearning": {
+        "id": "w10-c12-micro",
+        "pageNumber": 95,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• O abordador funciona melhor quando o sistema ao redor funciona",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • O abordador funciona melhor quando o sistema ao redor funciona."
+      },
+      "resource": {
+        "id": "w10-c12-resource",
+        "pageNumber": 97,
+        "type": "link",
+        "title": "Serviços de suporte de pares em saúde mental",
+        "url": "https://www.paho.org/pt/documentos/servicos-suporte-pares-em-saude-mental-promocao-abordagens-centradas-na-pessoa-e",
+        "note": "Guia em português sobre apoio entre pares, escuta, autonomia, escolha e relações não coercitivas.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 13,
+      "title": "Aproximação, silêncio inicial e apresentação",
+      "openingPage": 98,
+      "endingPage": 102,
+      "microlearning": {
+        "id": "w10-c13-micro",
+        "pageNumber": 100,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Aproximação é progressiva e condicionada à segurança",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Aproximação é progressiva e condicionada à segurança."
+      },
+      "resource": {
+        "id": "w10-c13-resource",
+        "pageNumber": 102,
+        "type": "link",
+        "title": "Nada sobre nós sem nós: escuta protetiva em saúde mental de adolescentes e jovens",
+        "url": "https://www.unicef.org/brazil/relatorios/nada-sobre-nos-sem-nos",
+        "note": "E-book em português sobre escuta acolhedora, vínculo, participação e proteção de adolescentes e jovens.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 14,
+      "title": "Perguntas e escuta",
+      "openingPage": 103,
+      "endingPage": 107,
+      "microlearning": {
+        "id": "w10-c14-micro",
+        "pageNumber": 105,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Uma pergunta por vez melhora processamento e escuta",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Uma pergunta por vez melhora processamento e escuta."
+      },
+      "resource": {
+        "id": "w10-c14-resource",
+        "pageNumber": 107,
+        "type": "link",
+        "title": "Comunicação e enfermagem em saúde mental: reflexões teóricas",
+        "url": "https://www.scielo.br/j/rlae/a/qd7htQwqMjyCtshwDcpDpnR/?lang=pt",
+        "note": "Artigo científico em português sobre comunicação terapêutica, relação intersubjetiva e flexibilidade profissional.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 15,
+      "title": "Validação e paráfrase",
+      "openingPage": 108,
+      "endingPage": 111,
+      "microlearning": {
+        "id": "w10-c15-micro",
+        "pageNumber": 110,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Validar sofrimento não é concordar com suicídio",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Validar sofrimento não é concordar com suicídio."
+      },
+      "resource": {
+        "id": "w10-c15-resource",
+        "pageNumber": 111,
+        "type": "link",
+        "title": "Saúde mental de adolescentes e jovens",
+        "url": "https://www.unicef.org/brazil/innocenti/brazil/media/16126/file/saude-mental-de-adolescentes-e-jovens.pdf",
+        "note": "Publicação em português sobre sofrimento emocional, fatores associados, redes de apoio e proteção de adolescentes e jovens.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 16,
+      "title": "Ferramentas de diálogo da ITO 30",
+      "openingPage": 112,
+      "endingPage": 116,
+      "microlearning": {
+        "id": "w10-c16-micro",
+        "pageNumber": 114,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Ferramentas têm função, não obrigação de uso",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Ferramentas têm função, não obrigação de uso."
+      },
+      "resource": {
+        "id": "w10-c16-resource",
+        "pageNumber": 116,
+        "type": "link",
+        "title": "Estratégias e possibilidades da entrevista motivacional na adolescência",
+        "url": "https://www.scielo.br/j/tce/a/KcKyD4LsPvPXzwfV6BZfvgM/",
+        "note": "Revisão científica com versão em português sobre entrevista motivacional, diálogo, autonomia e mudança.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 17,
+      "title": "Ambivalência, alternativas e microdecisões",
+      "openingPage": 117,
+      "endingPage": 120,
+      "microlearning": {
+        "id": "w10-c17-micro",
+        "pageNumber": 119,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Ambivalência é abertura possível, não garantia",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Ambivalência é abertura possível, não garantia."
+      },
+      "resource": {
+        "id": "w10-c17-resource",
+        "pageNumber": 120,
+        "type": "link",
+        "title": "Manual mhGAP de Intervenções",
+        "url": "https://www.paho.org/pt/node/65031",
+        "note": "Manual em português para avaliação e manejo de condições mentais, neurológicas e relacionadas ao uso de álcool e outras drogas.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 18,
+      "title": "Silêncio, resistência, impasse e ruptura",
+      "openingPage": 121,
+      "endingPage": 124,
+      "microlearning": {
+        "id": "w10-c18-micro",
+        "pageNumber": 123,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Silêncio não possui um único significado",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Silêncio não possui um único significado."
+      },
+      "resource": {
+        "id": "w10-c18-resource",
+        "pageNumber": 124,
+        "type": "link",
+        "title": "Tentativas de suicídio e o acolhimento nos serviços de urgência",
+        "url": "https://www.scielo.br/j/cadsc/a/ZgWqyVy6hjVYchTXBWc4z9R/abstract/?lang=pt",
+        "note": "Artigo científico em português sobre acolhimento, postura profissional e experiência de pessoas atendidas após tentativa de suicídio.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 19,
+      "title": "Agitação, retraimento e alterações perceptivas",
+      "openingPage": 125,
+      "endingPage": 128,
+      "microlearning": {
+        "id": "w10-c19-micro",
+        "pageNumber": 127,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Perfis da ITO são didáticos e flexíveis",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Perfis da ITO são didáticos e flexíveis."
+      },
+      "resource": {
+        "id": "w10-c19-resource",
+        "pageNumber": 128,
+        "type": "link",
+        "title": "Manejo de paciente agitado ou agressivo",
+        "url": "https://www.scielo.br/j/rbp/a/5sFSTKMhdRN6Vp7WkcbYBJg/?lang=pt",
+        "note": "Artigo científico em português sobre avaliação, diagnóstico diferencial, segurança e manejo de agitação psicomotora.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 20,
+      "title": "Troca do abordador e transição para abordagem tática",
+      "openingPage": 129,
+      "endingPage": 141,
+      "microlearning": {
+        "id": "w10-c20-micro",
+        "pageNumber": 135,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Troca de abordador pode preservar, e não necessariamente romper, vínculo",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Troca de abordador pode preservar, e não necessariamente romper, vínculo."
+      },
+      "resource": {
+        "id": "w10-c20-resource",
+        "pageNumber": 141,
+        "type": "link",
+        "title": "Emergências psiquiátricas",
+        "url": "https://www.scielo.br/j/rbp/a/TSFBrHtHZS859jXNy5HDXTq/?lang=pt",
+        "note": "Texto científico em português sobre raciocínio em emergência, risco de suicídio, agitação, violência e aspectos ético-legais.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 21,
+      "title": "Princípios e segurança da abordagem tática",
+      "openingPage": 142,
+      "endingPage": 146,
+      "microlearning": {
+        "id": "w10-c21-micro",
+        "pageNumber": 144,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Técnica e tática pertencem ao mesmo Sistema ATS",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Técnica e tática pertencem ao mesmo Sistema ATS."
+      },
+      "resource": {
+        "id": "w10-c21-resource",
+        "pageNumber": 146,
+        "type": "link",
+        "title": "Política Nacional de Atenção às Urgências",
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_atencao_urgencias.pdf",
+        "note": "Publicação brasileira em português sobre organização da rede de urgência, APH, segurança e integração assistencial.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 22,
+      "title": "Precipitação e ambiente vertical",
+      "openingPage": 147,
+      "endingPage": 150,
+      "microlearning": {
+        "id": "w10-c22-micro",
+        "pageNumber": 149,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Em altura, o ambiente modifica cada decisão",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Em altura, o ambiente modifica cada decisão."
+      },
+      "resource": {
+        "id": "w10-c22-resource",
+        "pageNumber": 150,
+        "type": "link",
+        "title": "Manual Consolidado da NR-35: trabalho em altura",
+        "url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/manuais-e-publicacoes/2020/manual_consolidado_da_nr_35.pdf/view",
+        "note": "Manual em português sobre planejamento, prevenção de quedas e segurança em trabalho em altura.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 23,
+      "title": "Água, enforcamento, incêndio, eletricidade e intoxicação",
+      "openingPage": 151,
+      "endingPage": 154,
+      "microlearning": {
+        "id": "w10-c23-micro",
+        "pageNumber": 153,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Cada ambiente acrescenta riscos próprios",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Cada ambiente acrescenta riscos próprios."
+      },
+      "resource": {
+        "id": "w10-c23-resource",
+        "pageNumber": 154,
+        "type": "link",
+        "title": "Guia de Vigilância em Saúde: intoxicação exógena e violência autoprovocada",
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_rev_atual.pdf",
+        "note": "Guia brasileiro em português para reconhecer intoxicação, gravidade, vigilância e eventos autoprovocados.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 24,
+      "title": "Arma branca, arma de fogo e risco de violência",
+      "openingPage": 155,
+      "endingPage": 158,
+      "microlearning": {
+        "id": "w10-c24-micro",
+        "pageNumber": 157,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Arma de fogo exige liderança policial especializada segundo A orientação operacional",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Arma de fogo exige liderança policial especializada segundo A orientação operacional."
+      },
+      "resource": {
+        "id": "w10-c24-resource",
+        "pageNumber": 158,
+        "type": "link",
+        "title": "Atlas da Violência 2025",
+        "url": "https://www.ipea.gov.br/atlasviolencia/arquivos/artigos/5999-atlasdaviolencia2025.pdf",
+        "note": "Publicação científica e institucional em português para contextualizar violência, armas, vulnerabilidades e segurança pública.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 25,
+      "title": "Entrada, contenção, lesões, APH e presunção de óbito",
+      "openingPage": 159,
+      "endingPage": 162,
+      "microlearning": {
+        "id": "w10-c25-micro",
+        "pageNumber": 161,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Entrada combina necessidade, segurança e competência",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Entrada combina necessidade, segurança e competência."
+      },
+      "resource": {
+        "id": "w10-c25-resource",
+        "pageNumber": 162,
+        "type": "link",
+        "title": "SAMU 192: atendimento pré-hospitalar móvel",
+        "url": "https://www.gov.br/saude/pt-br/composicao/saes/samu-192",
+        "note": "Material oficial em português sobre resposta pré-hospitalar, estabilização, regulação, transporte e integração com a rede.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 26,
+      "title": "Crianças e adolescentes",
+      "openingPage": 164,
+      "endingPage": 168,
+      "microlearning": {
+        "id": "w10-c26-micro",
+        "pageNumber": 166,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Idade jovem não reduz seriedade da ocorrência",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Idade jovem não reduz seriedade da ocorrência."
+      },
+      "resource": {
+        "id": "w10-c26-resource",
+        "pageNumber": 168,
+        "type": "link",
+        "title": "Linha de cuidado para crianças e adolescentes em situação de violências",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/publicacoes/linha-de-cuidado-para-a-atencao-integral-a-saude-de-criancas-adolescentes-e-suas-familias-em-situacao-de-violencias-orientacao-para-gestores-e-profissionais-de-saude/view",
+        "note": "Publicação brasileira em português sobre proteção, acolhimento, comunicação e articulação de rede para crianças e adolescentes.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 27,
+      "title": "Pessoas idosas, pessoas com deficiência e neurodivergentes",
+      "openingPage": 169,
+      "endingPage": 173,
+      "microlearning": {
+        "id": "w10-c27-micro",
+        "pageNumber": 171,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Idade e deficiência não definem capacidade por si só",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Idade e deficiência não definem capacidade por si só."
+      },
+      "resource": {
+        "id": "w10-c27-resource",
+        "pageNumber": 173,
+        "type": "link",
+        "title": "Guia Prático de Direitos de Acessibilidade",
+        "url": "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/guia-pratico-de-direitos-de-acessibilidade",
+        "note": "Guia em português sobre acessibilidade, direitos, comunicação e inclusão de pessoas com deficiência e mobilidade reduzida.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 28,
+      "title": "Intoxicação, agitação e alterações do pensamento",
+      "openingPage": 174,
+      "endingPage": 177,
+      "microlearning": {
+        "id": "w10-c28-micro",
+        "pageNumber": 176,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Alteração comportamental pode ter múltiplas causas",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Alteração comportamental pode ter múltiplas causas."
+      },
+      "resource": {
+        "id": "w10-c28-resource",
+        "pageNumber": 177,
+        "type": "link",
+        "title": "Situações agudas nos transtornos por uso de álcool",
+        "url": "https://linhasdecuidado.saude.gov.br/portal/transtornos-por-uso-de-alcool-no-adulto/situacoes-agudas/",
+        "note": "Linha de cuidado brasileira em português sobre intoxicação, situações agudas, risco, avaliação e encaminhamento.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 29,
+      "title": "Mulheres, violência doméstica, cultura, espiritualidade e contexto social",
+      "openingPage": 178,
+      "endingPage": 182,
+      "microlearning": {
+        "id": "w10-c29-micro",
+        "pageNumber": 180,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Violência doméstica exige proteção específica",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Violência doméstica exige proteção específica."
+      },
+      "resource": {
+        "id": "w10-c29-resource",
+        "pageNumber": 182,
+        "type": "link",
+        "title": "Guia prático para atendimento a mulheres em situação de violência doméstica",
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_atendimento_mulheres_situacao_viol%C3%AAncia_aps.pdf",
+        "note": "Guia brasileiro em português sobre acolhimento, segurança, rede de proteção e cuidado a mulheres em situação de violência.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 30,
+      "title": "Desistência, resgate, encaminhamento e registro",
+      "openingPage": 184,
+      "endingPage": 187,
+      "microlearning": {
+        "id": "w10-c30-micro",
+        "pageNumber": 186,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• A saída do ponto de risco é transição, não alta",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • A saída do ponto de risco é transição, não alta."
+      },
+      "resource": {
+        "id": "w10-c30-resource",
+        "pageNumber": 187,
+        "type": "link",
+        "title": "Nota Técnica nº 62/2022: notificações de violências interpessoais e autoprovocadas",
+        "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/notas-tecnicas/2022/nota-tecnica-no-62-2022-cgdant-daent-svs-ms/view",
+        "note": "Documento em português sobre escopo, preenchimento e fluxo de registro e notificação no SINAN.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 31,
+      "title": "Comunicação responsável, imprensa, Werther e Papageno",
+      "openingPage": 188,
+      "endingPage": 191,
+      "microlearning": {
+        "id": "w10-c31-micro",
+        "pageNumber": 190,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Falar sobre suicídio exige forma responsável, não silêncio absoluto",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Falar sobre suicídio exige forma responsável, não silêncio absoluto."
+      },
+      "resource": {
+        "id": "w10-c31-resource",
+        "pageNumber": 191,
+        "type": "link",
+        "title": "Prevenção do suicídio: manual para profissionais da mídia",
+        "url": "https://www.paho.org/pt/noticias/30-9-2025-manual-sobre-prevencao-do-suicidio-para-profissionais-da-midia-ganha-versao-em",
+        "note": "Versão em português com orientações para comunicação responsável, redução de dano e prevenção de efeito imitativo.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 32,
+      "title": "Primeiros Socorros Psicológicos, pós-ocorrência e posvenção",
+      "openingPage": 192,
+      "endingPage": 198,
+      "microlearning": {
+        "id": "w10-c32-micro",
+        "pageNumber": 195,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar."
+      },
+      "resource": {
+        "id": "w10-c32-resource",
+        "pageNumber": 198,
+        "type": "link",
+        "title": "Primeiros socorros psicológicos: guia para trabalhadores de campo",
+        "url": "https://www.paho.org/pt/node/44399",
+        "note": "Guia em português sobre ajuda humana, prática e não invasiva, proteção, escuta, conexão e limites do apoio em crise.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 33,
+      "title": "Casos longitudinais integradores",
+      "openingPage": 200,
+      "endingPage": 207,
+      "microlearning": {
+        "id": "w10-c33-micro",
+        "pageNumber": 204,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Informação chega progressivamente e exige atualização",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Informação chega progressivamente e exige atualização."
+      },
+      "resource": {
+        "id": "w10-c33-resource",
+        "pageNumber": 207,
+        "type": "link",
+        "title": "Guia metodológico em saúde mental: Criando Redes",
+        "url": "https://www.unicef.org/brazil/innocenti/relatorios/criando-redes-guia-metodologico-em-saude-mental",
+        "note": "Guia em português para aplicar cuidado psicossocial, trabalho em rede, atividades práticas e reflexão sobre casos.",
+        "language": "pt-BR"
+      }
+    },
+    {
+      "chapter": 34,
+      "title": "Síntese do Sistema ATTS e matriz final de competências",
+      "openingPage": 208,
+      "endingPage": 213,
+      "microlearning": {
+        "id": "w10-c34-micro",
+        "pageNumber": 211,
+        "title": "Decisão rápida",
+        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "choices": [
+          {
+            "id": "A",
+            "label": "• Competência integra conhecimento, reconhecimento, decisão e aplicação",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "correct": false
+          },
+          {
+            "id": "C",
+            "label": "O que este curso pretende transformar na forma de observar, decidir e agir",
+            "correct": false
+          },
+          {
+            "id": "D",
+            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "correct": false
+          }
+        ],
+        "reveal": "Ponto-chave: • Competência integra conhecimento, reconhecimento, decisão e aplicação."
+      },
+      "resource": {
+        "id": "w10-c34-resource",
+        "pageNumber": 213,
+        "type": "link",
+        "title": "Estratégia para melhorar a saúde mental e a prevenção do suicídio nas Américas",
+        "url": "https://www.paho.org/pt/documentos/cd609-estrategia-para-melhorar-saude-mental-e-prevencao-do-suicidio-na-regiao-das",
+        "note": "Documento estratégico em português para síntese, articulação intersetorial, prevenção e fortalecimento de competências.",
+        "language": "pt-BR"
+      }
+    }
+  ]
 }

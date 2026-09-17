@@ -1,10 +1,17 @@
 {
   "name": "manual-participante-cats-rebuild",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/migrate-semantic.mjs && node scripts/validate-semantic.mjs && node scripts/build-navigation.mjs && node scripts/apply-editorial-wave7.mjs && node scripts/apply-editorial-wave7-final.mjs && node scripts/fix-editorial-wave7-question-punctuation.mjs && node scripts/harden-editorial-wave7-final.mjs && node scripts/validate-editorial-runtime.mjs && node scripts/validate-editorial-wave7-hardening.mjs && node scripts/finalize-wave7-8.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/validate-wave7-8.mjs && node scripts/prepare-wave10-summaries.mjs && node scripts/finalize-wave10.mjs && node scripts/normalize-wave10-chapter-structure.mjs && node scripts/remove-wave10-pages.mjs && node scripts/sanitize-wave10-public-text.mjs && node scripts/publication-content-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-wave10-enrichment.mjs && node scripts/remap-wave10-enrichment-pages.mjs && node scripts/publication-enrichment-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/patch-publication-runtime.mjs && node scripts/professional-book-hotfix.mjs && node scripts/release-final-hotfix.mjs && node scripts/audit-publication-30.mjs && node scripts/audit-publication-90.mjs && next dev",
-    "build": "node scripts/migrate-semantic.mjs && node scripts/validate-semantic.mjs && node scripts/build-navigation.mjs && node scripts/apply-editorial-wave7.mjs && node scripts/apply-editorial-wave7-final.mjs && node scripts/fix-editorial-wave7-question-punctuation.mjs && node scripts/harden-editorial-wave7-final.mjs && node scripts/validate-editorial-runtime.mjs && node scripts/validate-editorial-wave7-hardening.mjs && node scripts/finalize-wave7-8.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/validate-wave7-8.mjs && node scripts/prepare-wave10-summaries.mjs && node scripts/finalize-wave10.mjs && node scripts/normalize-wave10-chapter-structure.mjs && node scripts/remove-wave10-pages.mjs && node scripts/sanitize-wave10-public-text.mjs && node scripts/publication-content-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-wave10-enrichment.mjs && node scripts/remap-wave10-enrichment-pages.mjs && node scripts/publication-enrichment-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/patch-publication-runtime.mjs && node scripts/professional-book-hotfix.mjs && node scripts/release-final-hotfix.mjs && node scripts/audit-publication-30.mjs && node scripts/audit-publication-90.mjs && next build",
+    "dev": "next dev",
+    "content:transform": "node scripts/reset-multimedia-source.mjs && node scripts/migrate-semantic.mjs && node scripts/validate-semantic.mjs && node scripts/build-navigation.mjs && node scripts/apply-editorial-wave7.mjs && node scripts/apply-editorial-wave7-final.mjs && node scripts/fix-editorial-wave7-question-punctuation.mjs && node scripts/harden-editorial-wave7-final.mjs && node scripts/validate-editorial-runtime.mjs && node scripts/validate-editorial-wave7-hardening.mjs && node scripts/finalize-wave7-8.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/validate-wave7-8.mjs && node scripts/prepare-wave10-summaries.mjs && node scripts/finalize-wave10.mjs && node scripts/normalize-wave10-chapter-structure.mjs && node scripts/remove-wave10-pages.mjs && node scripts/sanitize-wave10-public-text.mjs && node scripts/publication-content-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-wave10-enrichment.mjs && node scripts/remap-wave10-enrichment-pages.mjs && node scripts/publication-enrichment-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/patch-publication-runtime.mjs && node scripts/professional-book-hotfix.mjs && node scripts/release-final-hotfix.mjs && node scripts/apply-prontidao-editorial.mjs && node scripts/audit-prontidao-editorial.mjs",
+    "content:materialize": "node scripts/reset-multimedia-source.mjs && node scripts/migrate-semantic.mjs && node scripts/validate-semantic.mjs && node scripts/build-navigation.mjs && node scripts/apply-editorial-wave7.mjs && node scripts/apply-editorial-wave7-final.mjs && node scripts/fix-editorial-wave7-question-punctuation.mjs && node scripts/harden-editorial-wave7-final.mjs && node scripts/validate-editorial-runtime.mjs && node scripts/validate-editorial-wave7-hardening.mjs && node scripts/finalize-wave7-8.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/validate-wave7-8.mjs && node scripts/prepare-wave10-summaries.mjs && node scripts/finalize-wave10.mjs && node scripts/normalize-wave10-chapter-structure.mjs && node scripts/remove-wave10-pages.mjs && node scripts/sanitize-wave10-public-text.mjs && node scripts/publication-content-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-wave10-enrichment.mjs && node scripts/remap-wave10-enrichment-pages.mjs && node scripts/publication-enrichment-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/validate-navigation.mjs && node scripts/apply-prontidao-editorial.mjs && node scripts/audit-prontidao-editorial.mjs",
+    "source:validate": "node scripts/validate-release-state.mjs && node scripts/validate-navigation.mjs && node scripts/validate-multimedia.mjs && node scripts/audit-publication-30.mjs && node scripts/audit-publication-90.mjs && node scripts/audit-prontidao-editorial.mjs",
+    "pdf:generate": "node scripts/generate-canonical-pdf.mjs",
+    "pdf:preflight": "node scripts/preflight-pdf.mjs",
+    "pdf:parity": "node scripts/verify-pdf-parity.mjs",
+    "repo:clean": "node scripts/verify-clean-build.mjs",
+    "build": "npm run source:validate && npm run pdf:generate && npm run pdf:preflight && npm run repo:clean && next build",
     "start": "next start",
     "migrate:25": "node scripts/migrate25.mjs",
     "migrate:50": "node scripts/migrate50.mjs",
@@ -14,33 +21,39 @@
     "migrate:249": "node scripts/migrate155.mjs && node scripts/repair-v08-source.mjs && node scripts/reflow-v08-tail.mjs",
     "semantic:migrate": "node scripts/migrate-semantic.mjs",
     "semantic:validate": "node scripts/validate-semantic.mjs",
+    "release:validate": "node scripts/validate-release-state.mjs",
     "navigation:build": "node scripts/build-navigation.mjs",
     "navigation:validate": "node scripts/validate-navigation.mjs",
     "multimedia:validate": "node scripts/validate-multimedia.mjs",
-    "editorial:audit": "node scripts/audit-publication-30.mjs && node scripts/audit-publication-90.mjs",
-    "editorial:apply": "node scripts/prepare-wave10-summaries.mjs && node scripts/finalize-wave10.mjs && node scripts/normalize-wave10-chapter-structure.mjs && node scripts/remove-wave10-pages.mjs && node scripts/sanitize-wave10-public-text.mjs && node scripts/publication-content-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/build-chapter-quizzes.mjs && node scripts/build-wave10-enrichment.mjs && node scripts/remap-wave10-enrichment-pages.mjs && node scripts/publication-enrichment-hotfix.mjs && node scripts/build-navigation.mjs && node scripts/patch-publication-runtime.mjs && node scripts/professional-book-hotfix.mjs && node scripts/release-final-hotfix.mjs",
+    "editorial:audit": "node scripts/audit-publication-30.mjs && node scripts/audit-publication-90.mjs && node scripts/audit-prontidao-editorial.mjs",
+    "editorial:apply": "npm run content:transform",
     "editorial:runtime-validate": "node scripts/validate-editorial-runtime.mjs && node scripts/validate-editorial-wave7-hardening.mjs",
     "wave78:validate": "node scripts/validate-wave7-8.mjs",
     "wave10:audit": "node scripts/audit-publication-30.mjs && node scripts/audit-publication-90.mjs",
     "audit:30": "node scripts/audit-publication-30.mjs",
     "audit:90": "node scripts/audit-publication-90.mjs",
     "audit:6": "node scripts/audit-publication-6.mjs",
+    "audit:prontidao": "node scripts/audit-prontidao-editorial.mjs",
     "validate": "node scripts/validate.mjs",
     "smoke": "node scripts/smoke.mjs",
     "verify:deployment": "node scripts/verify-deployment.mjs",
     "e2e": "playwright test",
-    "e2e:final": "playwright test e2e/publication-hotfix.spec.ts e2e/epub-release.spec.ts"
+    "e2e:qep": "playwright test e2e/qep-regression.spec.ts",
+    "e2e:final": "playwright test e2e/publication-hotfix.spec.ts e2e/epub-release.spec.ts e2e/qep-regression.spec.ts"
   },
   "dependencies": {
+    "dejavu-fonts-ttf": "2.37.3",
     "next": "16.3.5",
+    "pdfkit": "0.20.2",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.2.0",
-    "typescript": "^5.9.0"
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.55.0",
+    "@types/node": "24.0.0",
+    "@types/react": "19.2.0",
+    "@types/react-dom": "19.2.0",
+    "typescript": "5.9.3"
   }
 }

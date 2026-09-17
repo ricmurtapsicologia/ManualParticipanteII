@@ -4,7 +4,13 @@
   "policy": {
     "sourceTextFrozen": true,
     "accessibilityRequired": true,
-    "allowedKinds": ["infographic", "chart", "image", "audio", "video", "microlearning"],
+    "allowedKinds": [
+      "infographic",
+      "chart",
+      "image",
+      "audio",
+      "microlearning"
+    ],
     "ttsPreferredVoice": "Antônio",
     "ttsFallbackLang": "pt-BR"
   },
@@ -12,69 +18,79 @@
     {
       "id": "ats-system-macro-p54",
       "kind": "infographic",
-      "pageNumber": 54,
+      "pageNumber": 51,
       "title": "Sistema ATS • visão macro",
       "src": "native://ats-system-macro",
       "alt": "Infográfico do Sistema ATS com sete fases operacionais e reavaliação dinâmica transversal.",
       "steps": [
-        { "order": 1, "title": "Acionamento", "detail": "Receber e qualificar dados." },
-        { "order": 2, "title": "Deslocamento", "detail": "Preparar equipe e recursos." },
-        { "order": 3, "title": "Estabelecimento", "detail": "Posicionar e organizar a cena." },
-        { "order": 4, "title": "Observação + avaliação", "detail": "Ler risco, ambiente e comportamento." },
-        { "order": 5, "title": "Desenvolvimento", "detail": "Definir e executar estratégia." },
-        { "order": 6, "title": "Encerramento", "detail": "Confirmar segurança e transição." },
-        { "order": 7, "title": "Continuidade", "detail": "APH, rede, registro e cuidado." }
+        {
+          "order": 1,
+          "title": "Acionamento",
+          "detail": "Receber e qualificar dados."
+        },
+        {
+          "order": 2,
+          "title": "Deslocamento",
+          "detail": "Preparar equipe e recursos."
+        },
+        {
+          "order": 3,
+          "title": "Estabelecimento",
+          "detail": "Posicionar e organizar a cena."
+        },
+        {
+          "order": 4,
+          "title": "Observação + avaliação",
+          "detail": "Ler risco, ambiente e comportamento."
+        },
+        {
+          "order": 5,
+          "title": "Desenvolvimento",
+          "detail": "Definir e executar estratégia."
+        },
+        {
+          "order": 6,
+          "title": "Encerramento",
+          "detail": "Confirmar segurança e transição."
+        },
+        {
+          "order": 7,
+          "title": "Continuidade",
+          "detail": "APH, rede, registro e cuidado."
+        }
       ],
       "transverse": "REAVALIAR QUANDO RISCO, AMBIENTE, COMPORTAMENTO, RECURSOS OU RESPOSTA MUDAREM"
     },
     {
-      "id": "video-ats-operational-flow-p54",
-      "kind": "video",
-      "pageNumber": 54,
-      "title": "Sistema ATS • sequência operacional",
-      "src": "native://ats-system-video",
-      "alt": "Vídeo didático animado com as sete fases operacionais do Sistema ATS e a regra transversal de reavaliação.",
-      "steps": [
-        { "order": 1, "title": "Acionamento", "detail": "Receber e qualificar dados." },
-        { "order": 2, "title": "Deslocamento", "detail": "Preparar equipe e recursos." },
-        { "order": 3, "title": "Estabelecimento", "detail": "Posicionar e organizar a cena." },
-        { "order": 4, "title": "Observação + avaliação", "detail": "Ler risco, ambiente e comportamento." },
-        { "order": 5, "title": "Desenvolvimento", "detail": "Definir e executar estratégia." },
-        { "order": 6, "title": "Encerramento", "detail": "Confirmar segurança e transição." },
-        { "order": 7, "title": "Continuidade", "detail": "APH, rede, registro e cuidado." }
-      ],
-      "transverse": "REAVALIAR QUANDO RISCO, AMBIENTE, COMPORTAMENTO, RECURSOS OU RESPOSTA MUDAREM",
-      "transcript": "Acionamento. Receber e qualificar dados. Deslocamento. Preparar equipe e recursos. Estabelecimento. Posicionar e organizar a cena. Observação + avaliação. Ler risco, ambiente e comportamento. Desenvolvimento. Definir e executar estratégia. Encerramento. Confirmar segurança e transição. Continuidade. APH, rede, registro e cuidado. Reavaliar quando risco, ambiente, comportamento, recursos ou resposta mudarem."
-    },
-    {
       "id": "microlearning-high-impact-hypothesis-p58",
       "kind": "microlearning",
-      "pageNumber": 58,
+      "pageNumber": 55,
       "title": "DECIDA • hipótese de alto impacto",
       "sourceBlockId": "p58-b4",
       "prompt": "Se o solicitante diz que a pessoa possui uma arma, mas ninguém a viu, trate a informação como irrelevante, como certeza ou como hipótese de alto impacto?",
       "choices": [
-        { "id": "irrelevant", "label": "Irrelevante", "correct": false },
-        { "id": "certainty", "label": "Certeza", "correct": false },
-        { "id": "high-impact", "label": "Hipótese de alto impacto", "correct": true }
+        {
+          "id": "irrelevant",
+          "label": "Irrelevante",
+          "correct": false
+        },
+        {
+          "id": "certainty",
+          "label": "Certeza",
+          "correct": false
+        },
+        {
+          "id": "high-impact",
+          "label": "Hipótese de alto impacto",
+          "correct": true
+        }
       ],
       "reveal": "A resposta mais prudente é hipótese de alto impacto: ela altera posicionamento e necessidade de apoio até ser verificada, sem autorizar afirmar que a arma está presente."
     },
     {
-      "id": "audio-opening-cats-p8",
-      "kind": "audio",
-      "pageNumber": 8,
-      "title": "O CATS e a prática profissional",
-      "src": "native://speech-synthesis",
-      "sourceBlockId": "p8-b3",
-      "preferredVoice": "Antônio",
-      "fallbackLang": "pt-BR",
-      "transcript": "Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único. Enquanto uma pessoa está em crise, a equipe precisa proteger a cena, compreender o que está acontecendo, coordenar recursos, comunicar-se com cuidado, manejar incerteza e preparar a continuidade do cuidado. O Curso de Atendimento a Tentativas de Suicídio (CATS) existe para transformar esse conjunto de exigências em desempenho profissional organizado. O objetivo não é ensinar uma coleção de frases ou técnicas isoladas, mas formar um raciocínio que possa ser usado quando a cena muda, quando a informação é incompleta e quando o tempo exerce pressão."
-    },
-    {
       "id": "audio-approach-boundary-p101",
       "kind": "audio",
-      "pageNumber": 101,
+      "pageNumber": 98,
       "title": "Aproximação e limite relacional",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p101-b3",
@@ -85,7 +101,7 @@
     {
       "id": "audio-vertical-attention-p152",
       "kind": "audio",
-      "pageNumber": 152,
+      "pageNumber": 149,
       "title": "Ambiente vertical • atenção",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p152-b3",
@@ -96,7 +112,7 @@
     {
       "id": "audio-violence-high-impact-p185",
       "kind": "audio",
-      "pageNumber": 185,
+      "pageNumber": 182,
       "title": "Violência doméstica • decisão e proteção",
       "src": "native://speech-synthesis",
       "sourceBlockId": "p185-b4",
@@ -105,60 +121,77 @@
       "transcript": "A fala de Paula é informação de alto impacto. O parceiro deve permanecer fora do espaço crítico; equipe coleta histórico de violência e aciona segurança/rede apropriada; o abordador valida medo e não promete reconciliação. Qualquer participação futura dependeria de avaliação de risco e desejo de Paula, não da insistência do companheiro."
     },
     {
-      "id": "microlearning-observable-language-p217",
-      "kind": "microlearning",
-      "pageNumber": 217,
-      "title": "Linguagem observável",
-      "sourceBlockId": "p217-b4",
-      "prompt": "Por que descrever comportamentos observáveis costuma ser superior a usar rótulos diagnósticos na comunicação operacional?",
-      "choices": [
-        { "id": "auditable", "label": "mais auditáveis e compartilháveis", "correct": true },
-        { "id": "labels", "label": "rótulos diagnósticos", "correct": false },
-        { "id": "diagnosis", "label": "diagnóstico clínico", "correct": false }
+      "id": "cats-tactical-decision-flow",
+      "kind": "infographic",
+      "pageNumber": 151,
+      "title": "Abordagem tática • decisão proporcional ao risco",
+      "src": "native://cats-infographic",
+      "alt": "Fluxograma para organizar observação, confirmação de risco, oportunidade, intervenção e reavaliação na abordagem tática.",
+      "steps": [
+        {
+          "order": 1,
+          "title": "Observar",
+          "detail": "Identificar comportamento, método, posição e ambiente."
+        },
+        {
+          "order": 2,
+          "title": "Confirmar",
+          "detail": "Separar indício, hipótese e condição efetivamente observada."
+        },
+        {
+          "order": 3,
+          "title": "Decidir",
+          "detail": "Avaliar iminência, segurança, oportunidade e proporcionalidade."
+        },
+        {
+          "order": 4,
+          "title": "Intervir",
+          "detail": "Executar somente a alternativa tecnicamente segura."
+        },
+        {
+          "order": 5,
+          "title": "Reavaliar",
+          "detail": "Atualizar a decisão quando a cena mudar."
+        }
       ],
-      "reveal": "Descrições observáveis são mais auditáveis e compartilháveis, reduzem inferências precipitadas e mantêm o bombeiro no seu escopo operacional sem depender de diagnóstico clínico."
+      "transverse": "A intervenção tática depende de risco real, oportunidade e segurança — não de uma distância ou sinal isolado."
     },
     {
-      "id": "microlearning-validation-p219",
-      "kind": "microlearning",
-      "pageNumber": 219,
-      "title": "Validar sem endossar",
-      "sourceBlockId": "p219-b1",
-      "prompt": "Qual é a diferença entre validar sofrimento e concordar com a conclusão suicida?",
-      "choices": [
-        { "id": "recognize", "label": "reconhecer a experiência e a emoção comunicadas como compreensíveis naquele contexto", "correct": true },
-        { "id": "endorse", "label": "endossar a conclusão de que morrer é a solução", "correct": false },
-        { "id": "confirm", "label": "confirmar ou apoiar essa decisão", "correct": false }
+      "id": "cats-psp-flow",
+      "kind": "infographic",
+      "pageNumber": 192,
+      "title": "Primeiros Socorros Psicológicos • sequência prática",
+      "src": "native://cats-infographic",
+      "alt": "Fluxograma de Primeiros Socorros Psicológicos com preparar, olhar, escutar e conectar.",
+      "steps": [
+        {
+          "order": 1,
+          "title": "Preparar",
+          "detail": "Compreender evento, riscos, recursos e limites do papel."
+        },
+        {
+          "order": 2,
+          "title": "Olhar",
+          "detail": "Reconhecer segurança, necessidades urgentes e sofrimento intenso."
+        },
+        {
+          "order": 3,
+          "title": "Escutar",
+          "detail": "Acolher sem pressionar por narrativa detalhada."
+        },
+        {
+          "order": 4,
+          "title": "Conectar",
+          "detail": "Combinar próximo passo e aproximar a pessoa da rede adequada."
+        }
       ],
-      "reveal": "Validar sofrimento é reconhecer a experiência e a emoção comunicadas como compreensíveis naquele contexto, sem endossar a conclusão de que morrer é a solução."
-    },
-    {
-      "id": "microlearning-remote-judgment-p220",
-      "kind": "microlearning",
-      "pageNumber": 220,
-      "title": "Julgamento remoto e averiguação",
-      "sourceBlockId": "p220-b3",
-      "prompt": "Por que o chamado de tentativa de suicídio não deve ser descartado apenas por julgamento remoto sobre sua “seriedade”?",
-      "choices": [
-        { "id": "verify", "label": "averiguação, segurança e avaliação no local", "correct": true },
-        { "id": "remote", "label": "julgamento remoto", "correct": false },
-        { "id": "caller", "label": "interpretações do solicitante", "correct": false }
-      ],
-      "reveal": "Porque informação remota é incompleta e interpretações do solicitante não substituem verificação da situação."
-    },
-    {
-      "id": "microlearning-command-handover-p221",
-      "kind": "microlearning",
-      "pageNumber": 221,
-      "title": "Passagem de comando útil",
-      "sourceBlockId": "p221-b4",
-      "prompt": "O que diferencia passagem de comando informativa de uma passagem realmente útil para decisão?",
-      "choices": [
-        { "id": "organize", "label": "organiza situação atual, riscos, linha operacional em curso, resposta do tentante, ações já realizadas, funções, recursos, apoios e prioridades", "correct": true },
-        { "id": "noise", "label": "Rótulos e detalhes sem efeito decisório", "correct": false },
-        { "id": "facts", "label": "apenas relata fatos", "correct": false }
-      ],
-      "reveal": "A passagem útil não apenas relata fatos: organiza situação atual, riscos, linha operacional em curso, resposta do tentante, ações já realizadas, funções, recursos, apoios e prioridades que exigem reavaliação pelo novo comandante."
+      "transverse": "Apoio inicial é humano, prático e não invasivo; não substitui avaliação clínica quando ela é necessária."
     }
+  ],
+  "publicPageCount": 223,
+  "removedFrontMatterPages": [
+    2,
+    4,
+    5
   ]
 }

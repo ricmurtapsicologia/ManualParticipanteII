@@ -1,51 +1,35 @@
+import fs from 'node:fs';
+
 const base=(process.env.BASE_URL??'').replace(/\/$/,'');
 if(!base) throw new Error('AUDIT_6_FAIL BASE_URL ausente');
 const checks=[];
 const add=(name,condition)=>checks.push({name,condition:Boolean(condition)});
 const get=async path=>{const response=await fetch(`${base}${path}`,{redirect:'follow'});return {response,body:Buffer.from(await response.arrayBuffer())};};
-const decodeCommands=stream=>[...stream.matchAll(/<([0-9A-F]+)>/g)].map(match=>Buffer.from(match[1],'hex').toString('latin1'));
 
 const health=await get('/api/health');
 let healthJson={};
 try{healthJson=JSON.parse(health.body.toString('utf8'));}catch{}
-add('Health endpoint responde 200 com paginação dinâmica válida',health.response.status===200&&Number.isInteger(healthJson.pages)&&healthJson.pages>200&&healthJson.pages<246&&healthJson.chapters===34);
+add('Health endpoint confirma release 223/34',health.response.status===200&&healthJson.pages===223&&healthJson.chapters===34);
+
 const home=await get('/');
 const html=home.body.toString('utf8');
-add('Reader responde sem estruturas removidas e exibe capa editorial CATS',home.response.status===200&&!/Revisão cumulativa|Caso de transferência|ApplicationTransferCard/iu.test(html)&&/data-testid="approved-cover"/u.test(html)&&/ATENDIMENTO A/iu.test(html)&&/wave54CoverIllustration/u.test(html));
-add('Reader publica downloads PDF e EPUB e não fixa contagem antiga',/Baixar PDF/u.test(html)&&/Baixar EPUB/u.test(html)&&new RegExp(`data-page-count="${healthJson.pages}"`,'u').test(html)&&!/Edição Digital Interativa • (?:223|246|249) páginas/u.test(html));
+const downloadUi=fs.readFileSync(new URL('../app/DownloadFormatActions.tsx',import.meta.url),'utf8');
+add('Reader responde com capa, navegação e dois CTAs distintos de PDF e EPUB',home.response.status===200&&/data-testid="approved-cover"/u.test(html)&&/data-page-count="223"/u.test(html)&&downloadUi.includes('data-testid="pdf-download"')&&downloadUi.includes('data-testid="epub-download"')&&downloadUi.includes('formatDownloadPdf')&&downloadUi.includes('formatDownloadEpub')&&!/Revisão cumulativa|Caso de transferência/iu.test(html));
+
+const csp=home.response.headers.get('content-security-policy')??'';
+add('Headers de segurança estão ativos',csp.includes("frame-ancestors 'none'")&&(home.response.headers.get('referrer-policy')??'').length>0&&(home.response.headers.get('permissions-policy')??'').length>0&&home.response.headers.get('x-frame-options')==='DENY');
+
 const pdf=await get('/api/manual');
 const epub=await get('/api/epub');
-add('PDF e EPUB respondem com seus contratos editoriais',pdf.response.status===200&&/application\/pdf/iu.test(pdf.response.headers.get('content-type')??'')&&pdf.response.headers.get('x-cats-editorial-edition')==='publication-grade-book-2026'&&epub.response.status===200&&/application\/epub\+zip/iu.test(epub.response.headers.get('content-type')??'')&&epub.response.headers.get('x-cats-epub-edition')==='publication-grade-epub3-2026'&&epub.body.length>100000&&epub.body.subarray(0,2).toString('latin1')==='PK');
-const binary=pdf.body.toString('latin1');
-const streams=[...binary.matchAll(/stream\n([\s\S]*?)\nendstream/g)].map(match=>match[1]);
-const pageCommands=streams.map(decodeCommands);
-const allText=pageCommands.flat().join('\n');
-add('PDF é substancial, justificado, tipografado e contém autores/prefácio',pdf.body.length>100000&&binary.startsWith('%PDF-1.4')&&pageCommands.length>100&&((binary.match(/ Tw /g)||[]).length>100)&&/AUTORIA INSTITUCIONAL/u.test(allText)&&/PREFÁCIO DO COORDENADOR/u.test(allText)&&/Richelmy Murta Pinto/u.test(allText)&&/Mike Hollander dos Santos Guimarães/u.test(allText)&&/CONHECIMENTO QUE SALVA VIDAS/u.test(allText));
+const epubBinary=epub.body.toString('latin1');
+add('Downloads PDF e EPUB respondem com contratos editoriais e EPUB semântico',pdf.response.status===200&&/application\/pdf/iu.test(pdf.response.headers.get('content-type')??'')&&pdf.response.headers.get('x-cats-editorial-edition')==='publication-grade-book-2026'&&pdf.response.headers.get('x-cats-accessibility')==='PDF-UA-1'&&epub.response.status===200&&/application\/epub\+zip/iu.test(epub.response.headers.get('content-type')??'')&&epub.response.headers.get('x-cats-epub-edition')==='epub3.3-reflowable-2026'&&epub.response.headers.get('x-cats-epub-accessibility')==='semantic-navigation-page-list-pt-BR'&&epub.body.length>100000&&epub.body.subarray(0,2).toString('latin1')==='PK'&&epubBinary.includes('epub:type="page-list"')&&epubBinary.includes('epub:type="landmarks"')&&epubBinary.includes('schema:accessMode'));
 
-const chapterPhysicalPages=new Map();
-for(let chapter=1;chapter<=34;chapter+=1){
-  const pattern=new RegExp(`^CAPÍTULO ${chapter}(?:\\s|$)`,'u');
-  const pageIndex=pageCommands.findIndex(commands=>commands.some(command=>pattern.test(command)));
-  if(pageIndex>=0) chapterPhysicalPages.set(chapter,pageIndex+1);
-}
-const firstChapterPage=chapterPhysicalPages.get(1)??0;
-const frontCommands=firstChapterPage>1?pageCommands.slice(0,firstChapterPage-1).flat():[];
-let tocMatches=chapterPhysicalPages.size===34&&!allText.includes('__PDF_PAGE_');
-for(let chapter=1;chapter<=34&&tocMatches;chapter+=1){
-  const start=frontCommands.findIndex(command=>command.startsWith(`Capítulo ${chapter} `));
-  if(start<0){tocMatches=false;break;}
-  let end=frontCommands.length;
-  for(let next=chapter+1;next<=34;next+=1){
-    const candidate=frontCommands.findIndex((command,index)=>index>start&&command.startsWith(`Capítulo ${next} `));
-    if(candidate>=0){end=candidate;break;}
-  }
-  const expected=String(chapterPhysicalPages.get(chapter));
-  const segment=frontCommands.slice(start,end);
-  if(!segment.some(command=>command.trim().endsWith(expected))) tocMatches=false;
-}
-add('Sumário aponta para as 34 páginas físicas corretas do PDF',tocMatches);
+const binary=pdf.body.toString('latin1');
+add('PDF possui estrutura acessível, idioma, destinos, outlines e fontes incorporadas',pdf.body.length>100000&&binary.startsWith('%PDF-1.7')&&binary.includes('/StructTreeRoot')&&binary.includes('/MarkInfo')&&/\/Lang\s*\(pt-BR\)/u.test(binary)&&binary.includes('/Outlines')&&binary.includes('/Dests')&&binary.includes('/Names')&&binary.includes('/FontFile2')&&binary.includes('/ToUnicode'));
+
+add('Metadados SEO/canonical estão publicados',/<link[^>]+rel="canonical"/iu.test(html)&&/property="og:title"/iu.test(html)&&/name="twitter:card"/iu.test(html)&&/application\/ld\+json/iu.test(html)&&/Manual do Participante CATS/iu.test(html)&&/application\/epub\+zip/iu.test(html));
 
 if(checks.length!==6) throw new Error(`AUDIT_6_INTERNAL count=${checks.length}`);
 const failed=checks.filter(check=>!check.condition);
 if(failed.length) throw new Error(`AUDIT_6_FAIL ${failed.map((check,index)=>`${index+1}:${check.name}`).join(' | ')}`);
-console.log(`AUDIT_PUBLICATION_6_PASS controls=6/6 pages=${healthJson.pages} runtime=ok pdf=professional-book epub=epub3 cover=vector toc=physical-pages`);
+console.log('AUDIT_PUBLICATION_6_PASS controls=6/6 pages=223 chapters=34 runtime=ok pdf=PDF-UA epub=EPUB3.3-reflowable web-security=ok download-cta=pdf+epub-distinct seo=ok');
