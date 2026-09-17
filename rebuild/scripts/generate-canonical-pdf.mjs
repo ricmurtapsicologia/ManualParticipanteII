@@ -23,6 +23,16 @@ let source = await readFile(sourcePath, 'utf8');
 const makePdfAnchor = 'async function makePdf(){';
 if (!source.includes(makePdfAnchor)) throw new Error('CANONICAL_PDF_FAIL makePdf anchor ausente');
 source = source.replace(makePdfAnchor, `const canonicalCoverImage=await readFile(path.join(root,'public','assets','manual-cats','2026','manual-cats-capa-ebook-2026.jpg'));\n\n${makePdfAnchor}`);
+
+const referenceStyleAnchor = "  if(kind==='reference') return {font:'Serif',size:REF_SIZE,leading:13.2,color:COLORS.ink,type:'P',gap:5,align:'left'};";
+if (!source.includes(referenceStyleAnchor)) throw new Error('CANONICAL_PDF_FAIL reference style anchor ausente');
+source = source.replace(referenceStyleAnchor, "  if(kind==='reference') return {font:'Serif',size:10,leading:12,color:COLORS.ink,type:'P',gap:7,align:'left',keepTogether:true,hangingIndent:18};");
+
+const writeFlowAnchor = "  const writeFlow=(parent,text,style,opts={})=>{let rest=pdfText(text);const width=opts.width??WIDTH;while(rest){ensurePage();const minRoom=Math.max(style.leading*2.2,38);if(remaining()<minRoom)startRegularPage();const fullH=measure(rest,style,width);if(fullH<=remaining()){addText(parent,rest,style,{width,x:opts.x??X,y:doc.y});rest='';}else{const[head,tail]=splitToFit(rest,style,width,Math.max(style.leading*2,remaining()-2));addText(parent,head,style,{width,x:opts.x??X,y:doc.y});rest=tail;if(rest)startRegularPage();}}doc.y+=style.gap??0;};";
+if (!source.includes(writeFlowAnchor)) throw new Error('CANONICAL_PDF_FAIL writeFlow anchor ausente');
+const writeFlowReplacement = "  const writeFlow=(parent,text,style,opts={})=>{let rest=pdfText(text);const hanging=Number(style.hangingIndent||0);const x=opts.x??(hanging?X+hanging:X);const width=opts.width??(hanging?WIDTH-hanging:WIDTH);const indent=opts.indent??(hanging?-hanging:0);ensurePage();if(style.keepTogether&&rest){const fullH=measure(rest,style,width);if(fullH<=FLOW_H&&fullH>remaining())startRegularPage();if(fullH<=remaining()){addText(parent,rest,style,{width,x,y:doc.y,indent});doc.y+=style.gap??0;return;}}while(rest){ensurePage();const minRoom=Math.max(style.leading*2.2,38);if(remaining()<minRoom)startRegularPage();const fullH=measure(rest,style,width);if(fullH<=remaining()){addText(parent,rest,style,{width,x,y:doc.y,indent});rest='';}else{const[head,tail]=splitToFit(rest,style,width,Math.max(style.leading*2,remaining()-2));addText(parent,head,style,{width,x,y:doc.y,indent});rest=tail;if(rest)startRegularPage();}}doc.y+=style.gap??0;};";
+source = source.replace(writeFlowAnchor, writeFlowReplacement);
+
 const start = source.indexOf('  const drawCover=section=>{');
 const end = source.indexOf('\n\n  const coverSection=', start);
 if (start < 0 || end < 0) throw new Error('CANONICAL_PDF_FAIL drawCover anchors ausentes');
@@ -32,7 +42,7 @@ source = source.slice(0, start) + replacement + source.slice(end);
 await writeFile(tempPath, source, 'utf8');
 try {
   await import(`${pathToFileURL(tempPath).href}?v=${Date.now()}`);
-  console.log('CANONICAL_PDF_PASS cover=manual-cats-capa-ebook-2026.jpg sha256=f875ce298711604d1fce6aa3dec4acb67e37396ab754e0ab8b276c0686edbf9f');
+  console.log('CANONICAL_PDF_PASS cover=manual-cats-capa-ebook-2026.jpg sha256=f875ce298711604d1fce6aa3dec4acb67e37396ab754e0ab8b276c0686edbf9f refs=abnt-hanging-keep-together');
 } finally {
   await unlink(tempPath).catch(() => {});
 }
