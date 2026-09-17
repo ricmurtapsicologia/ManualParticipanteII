@@ -9,7 +9,7 @@ test('reader editorial hotfix traverses every page and resets quizzes by chapter
   await expect(page.getByTestId('reader-shell')).toBeVisible();
   await expect(page.getByTestId('approved-cover')).toBeVisible();
   await expect(page.getByTestId('approved-cover-image')).toHaveAttribute('src','/assets/manual-cats/2026/manual-cats-capa-digital-2026.jpg');
-  await expect(page.getByTestId('canonical-hero').locator('img')).toHaveAttribute('src','/assets/manual-cats/2026/manual-cats-hero-2026.jpg');
+  await expect(page.getByTestId('canonical-hero')).toHaveCount(0);
   await expect(page.getByTestId('multimedia-layer').locator('[data-media-kind="video"]')).toHaveCount(0);
 
   const counter=(await page.getByTestId('page-counter').innerText()).trim();
