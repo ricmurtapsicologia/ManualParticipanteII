@@ -23,6 +23,16 @@ let source = await readFile(sourcePath, 'utf8');
 const makePdfAnchor = 'async function makePdf(){';
 if (!source.includes(makePdfAnchor)) throw new Error('CANONICAL_PDF_FAIL makePdf anchor ausente');
 source = source.replace(makePdfAnchor, `const canonicalCoverImage=await readFile(path.join(root,'public','assets','manual-cats','2026','manual-cats-capa-ebook-2026.jpg'));\n\n${makePdfAnchor}`);
+
+const referenceInsertAnchor = "  const addInteractiveNote=(section,n)=>{ensureSpace(42);writeFlow(section,`Recurso interativo complementar disponível na edição digital desta seção: ${canonicalUrl}/?pagina=${n}`,{font:'Sans',size:8.8,leading:12,color:COLORS.teal,type:'P',gap:7,align:'left'});};";
+if (!source.includes(referenceInsertAnchor)) throw new Error('CANONICAL_PDF_FAIL reference insert anchor ausente');
+const referenceWriter = `\n  const writeReference=(parent,text)=>{const style=styleFor('reference'),value=pdfText(text),hang=16;ensurePage();const[first,rest]=splitToFit(value,style,WIDTH,style.leading*1.35),firstH=measure(first,style,WIDTH),restH=rest?measure(rest,style,WIDTH-hang):0,need=firstH+restH+(style.gap??0);if(need<=FLOW_H&&remaining()<need)startRegularPage();addText(parent,first,style,{x:X,y:doc.y,width:WIDTH});if(rest)addText(parent,rest,style,{x:X+hang,y:doc.y,width:WIDTH-hang});doc.y+=style.gap??0;};`;
+source = source.replace(referenceInsertAnchor, referenceInsertAnchor + referenceWriter);
+
+const referenceLoopAnchor = "if(pedagogicalKinds.has(block.kind))addPedagogical(section,block);else writeFlow(section,block.text,styleFor(block.kind));i+=1;";
+if (!source.includes(referenceLoopAnchor)) throw new Error('CANONICAL_PDF_FAIL reference loop anchor ausente');
+source = source.replace(referenceLoopAnchor, "if(pedagogicalKinds.has(block.kind))addPedagogical(section,block);else if(block.kind==='reference')writeReference(section,block.text);else writeFlow(section,block.text,styleFor(block.kind));i+=1;");
+
 const start = source.indexOf('  const drawCover=section=>{');
 const end = source.indexOf('\n\n  const coverSection=', start);
 if (start < 0 || end < 0) throw new Error('CANONICAL_PDF_FAIL drawCover anchors ausentes');
@@ -32,7 +42,7 @@ source = source.slice(0, start) + replacement + source.slice(end);
 await writeFile(tempPath, source, 'utf8');
 try {
   await import(`${pathToFileURL(tempPath).href}?v=${Date.now()}`);
-  console.log('CANONICAL_PDF_PASS cover=manual-cats-capa-ebook-2026.jpg sha256=f875ce298711604d1fce6aa3dec4acb67e37396ab754e0ab8b276c0686edbf9f');
+  console.log('CANONICAL_PDF_PASS cover=manual-cats-capa-ebook-2026.jpg sha256=f875ce298711604d1fce6aa3dec4acb67e37396ab754e0ab8b276c0686edbf9f references=abnt-hanging-no-split');
 } finally {
   await unlink(tempPath).catch(() => {});
 }
