@@ -40,15 +40,6 @@ export function selectPreferredVoice(preferredName = 'Antônio', fallbackLang = 
 export function ApprovedCover() {
   return (
     <figure className="wave54Cover canonicalCoverStack" data-testid="approved-cover" aria-labelledby="cats-cover-caption">
-      <div className="canonicalHeroFrame" data-testid="canonical-hero" aria-hidden="true">
-        <img
-          src="/assets/manual-cats/2026/manual-cats-hero-2026.jpg"
-          alt=""
-          width={1536}
-          height={864}
-          fetchPriority="high"
-        />
-      </div>
       <div className="canonicalCoverFrame">
         <img
           className="canonicalCoverImage"
