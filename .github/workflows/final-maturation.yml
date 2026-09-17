@@ -36,6 +36,15 @@ jobs:
       - name: Materialize final editorial and pedagogical maturation
         run: |
           sed -i 's/generate-canonical-pdf\.mjs/generate-accessible-pdf.mjs/g' scripts/final-maturation.mjs
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/final-maturation.mjs')
+          s=p.read_text()
+          old=r"\`${esc(correct.id)} — \${esc(stripLeadingBullet(correct.label))}\`"
+          new=r"\`\${esc(correct.id)} — \${esc(stripLeadingBullet(correct.label))}\`"
+          s=s.replace(old,new)
+          p.write_text(s)
+          PY
           node scripts/final-maturation.mjs
 
       - name: Validate source after maturation
