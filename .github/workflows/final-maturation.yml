@@ -34,7 +34,9 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
 
       - name: Materialize final editorial and pedagogical maturation
-        run: node scripts/final-maturation.mjs
+        run: |
+          sed -i 's/generate-canonical-pdf\.mjs/generate-accessible-pdf.mjs/g' scripts/final-maturation.mjs
+          node scripts/final-maturation.mjs
 
       - name: Validate source after maturation
         run: npm run source:validate
