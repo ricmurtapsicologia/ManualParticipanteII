@@ -18,9 +18,10 @@ if (!health.deployment?.commit || health.deployment.commit === 'local') throw ne
 const homeRes = await fetch(base, { redirect: 'follow', cache: 'no-store' });
 if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
 const html = await homeRes.text();
-for (const token of ['Manual do Participante CATS', `data-page-count="${health.pages}"`, 'data-testid="approved-cover"', 'wave54CoverIllustration', 'Baixar PDF', 'Baixar EPUB']) {
+for (const token of ['Manual do Participante CATS', `data-page-count="${health.pages}"`, 'data-testid="approved-cover"', 'data-testid="approved-cover-image"', 'manual-cats-capa-digital-2026.jpg', 'Baixar PDF', 'Baixar EPUB']) {
   if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
 }
+if (html.includes('data-testid="canonical-hero"')) throw new Error('Duplicate canonical hero is still rendered');
 for (const forbidden of ['data-wave=', 'data-editorial-wave=', 'data-design-wave=', 'data-wave78-status=', 'data-design-system=', 'data-design-subwave=', 'data-semantic-renderer=', 'data-reader-wave=']) if (html.includes(forbidden)) throw new Error(`Home leaked backstage marker: ${forbidden}`);
 
 const pdfRes = await fetch(`${base}/api/manual`, { redirect:'follow', cache:'no-store' });
@@ -29,4 +30,4 @@ if (pdfRes.headers.get('x-cats-editorial-edition') !== 'publication-grade-book-2
 const epubRes = await fetch(`${base}/api/epub`, { redirect:'follow', cache:'no-store' });
 if (!epubRes.ok || !(epubRes.headers.get('content-type') ?? '').includes('application/epub+zip')) throw new Error(`EPUB contract failed ${epubRes.status}`);
 
-console.log(`VERCEL_GATE_OK url=${base} pages=${health.pages} chapters=34 branch=${health.deployment.branch} commit=${health.deployment.commit} pdf=professional-book epub=ok cover=vector`);
+console.log(`VERCEL_GATE_OK url=${base} pages=${health.pages} chapters=34 branch=${health.deployment.branch} commit=${health.deployment.commit} pdf=professional-book epub=ok cover=single-canonical`);
