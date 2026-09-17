@@ -63,7 +63,7 @@ jobs:
       - name: E2E — complete desktop and mobile traversal
         env:
           E2E_BASE_URL: http://127.0.0.1:3310
-        run: npm run e2e:final
+        run: npm run e2e:final -- --project=chromium --project=mobile-chromium
 
       - name: Stop production server
         if: always()
