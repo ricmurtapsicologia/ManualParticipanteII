@@ -4,14 +4,17 @@ import { loadSavedPage } from './helpers';
 
 const sha256 = (value: Buffer) => createHash('sha256').update(value).digest('hex');
 
-test('page 1 uses the exact approved digital cover and hero assets', async ({ page, request }) => {
+test('page 1 uses one visible approved digital cover; hero remains metadata-only', async ({ page, request }) => {
   await loadSavedPage(page, 1);
   const cover = page.getByTestId('approved-cover');
   await expect(cover).toHaveCount(1);
   const image = page.getByTestId('approved-cover-image');
+  await expect(image).toBeVisible();
   await expect(image).toHaveAttribute('src','/assets/manual-cats/2026/manual-cats-capa-digital-2026.jpg');
   await expect(image).toHaveAttribute('alt',/Capa oficial do Manual do Participante CATS/iu);
-  const hero = page.getByTestId('canonical-hero').locator('img');
+  const heroFrame = page.getByTestId('canonical-hero');
+  const hero = heroFrame.locator('img');
+  await expect(heroFrame).toBeHidden();
   await expect(hero).toHaveAttribute('src','/assets/manual-cats/2026/manual-cats-hero-2026.jpg');
 
   const digital = await request.get('/assets/manual-cats/2026/manual-cats-capa-digital-2026.jpg');
@@ -34,6 +37,21 @@ test('page 8 exposes accessible audio with transcript and voice preference', asy
   const transcript = page.getByTestId('audio-transcript');
   await expect(transcript).toContainText('Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único.');
   await expect(transcript).toContainText('quando a informação é incompleta e quando o tempo exerce pressão.');
+});
+
+test('mobile keeps PDF/EPUB identified and has no horizontal reader overflow', async ({ page }) => {
+  await page.setViewportSize({width:320,height:740});
+  await loadSavedPage(page,1);
+  const pdf = page.getByTestId('pdf-download');
+  const epub = page.getByTestId('epub-download');
+  await expect(pdf).toBeVisible();
+  await expect(epub).toBeVisible();
+  await expect(pdf).toContainText('PDF');
+  await expect(pdf).toContainText('Baixar PDF');
+  await expect(epub).toContainText('EPUB');
+  await expect(epub).toContainText('Baixar EPUB');
+  const integrity = await page.evaluate(() => ({viewportWidth:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth}));
+  expect(integrity.scrollWidth).toBeLessThanOrEqual(integrity.viewportWidth+1);
 });
 
 test('cover and audio remain inside the viewport at 320px', async ({ page }) => {
