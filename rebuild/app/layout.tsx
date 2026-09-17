@@ -78,6 +78,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
         <SkipLinkFocus />
         {children}
+        <noscript>
+          <a href="/api/epub" download="Manual-do-Participante-CATS-Edicao-Digital-2026.epub" aria-label="Baixar Manual do Participante CATS em EPUB">
+            EPUB · Baixar EPUB
+          </a>
+        </noscript>
         <DownloadFormatActions />
       </body>
     </html>
