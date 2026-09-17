@@ -11,7 +11,7 @@
     "pdf:preflight": "node scripts/preflight-pdf.mjs",
     "pdf:parity": "node scripts/verify-pdf-parity.mjs",
     "repo:clean": "node scripts/verify-clean-build.mjs",
-    "build": "npm run source:validate && npm run pdf:generate && npm run pdf:preflight && npm run repo:clean && next build",
+    "build": "npm run source:validate && npm run pdf:generate && npm run pdf:preflight && npm run repo:clean && node scripts/apply-acceptance-hotfix.mjs && next build",
     "start": "next start",
     "migrate:25": "node scripts/migrate25.mjs",
     "migrate:50": "node scripts/migrate50.mjs",
