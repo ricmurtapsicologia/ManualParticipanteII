@@ -23,9 +23,10 @@ try {
   const homeRes = await fetch(base);
   if (!homeRes.ok) throw new Error(`Home status ${homeRes.status}`);
   const html = await homeRes.text();
-  for (const token of ['Manual do Participante CATS', 'Edição Digital Interativa', `data-page-count="${health.pages}"`, 'data-testid="approved-cover"', 'wave54CoverIllustration']) if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
+  for (const token of ['Manual do Participante CATS', 'Edição Digital Interativa', `data-page-count="${health.pages}"`, 'data-testid="approved-cover"', 'data-testid="approved-cover-image"', 'manual-cats-capa-digital-2026.jpg', 'Baixar PDF', 'Baixar EPUB']) if (!html.includes(token)) throw new Error(`Home missing token: ${token}`);
+  if (html.includes('data-testid="canonical-hero"')) throw new Error('Duplicate canonical hero is still rendered');
   for (const forbidden of ['data-wave=', 'data-editorial-wave=', 'data-design-wave=', 'data-wave78-status=', 'data-design-system=', 'data-design-subwave=', 'data-semantic-renderer=', 'data-reader-wave=', 'ApplicationTransferCard', 'VideoResourceCard']) if (html.includes(forbidden)) throw new Error(`Home leaked marker: ${forbidden}`);
-  console.log(`SMOKE_OK home=200 health=200 pages=${health.pages} chapters=34 review=removed transfer=removed video=removed pdf=BOOK-11.2-16 cover=vector density<=20pct overlap-guard=on`);
+  console.log(`SMOKE_OK home=200 health=200 pages=${health.pages} chapters=34 review=removed transfer=removed video=removed pdf=BOOK-11.2-16 cover=single-canonical density<=20pct overlap-guard=on`);
 } finally {
   child.kill('SIGTERM');
   await sleep(300);
