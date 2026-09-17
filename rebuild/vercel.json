@@ -1,4 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "npm ci --ignore-scripts --no-audit --no-fund"
+  "installCommand": "npm ci --ignore-scripts --no-audit --no-fund",
+  "ignoreCommand": "if [ \"$VERCEL_GIT_COMMIT_REF\" = \"release/manual-2026-final\" ] || [ \"$VERCEL_GIT_COMMIT_REF\" = \"prontidao/final-6-ondas\" ]; then exit 0; else exit 1; fi"
 }

@@ -1,0 +1,71 @@
+name: Manual CATS Final Maturation
+
+on:
+  push:
+    branches: [release/manual-2026-final]
+    paths:
+      - 'rebuild/**'
+      - '.github/workflows/final-maturation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  mature-and-gate:
+    if: ${{ !contains(github.event.head_commit.message, '[final-maturation]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: rebuild
+    steps:
+      - name: Checkout release branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: release/manual-2026-final
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Materialize final editorial and pedagogical maturation
+        run: node scripts/final-maturation.mjs
+
+      - name: Validate source after maturation
+        run: npm run source:validate
+
+      - name: Generate canonical PDF before commit
+        run: npm run pdf:generate && npm run pdf:preflight
+
+      - name: Commit deterministic maturation locally
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content app scripts
+          if git diff --cached --quiet; then
+            echo "No maturation changes to commit"
+          else
+            git commit -m "feat: final editorial pedagogical maturation [final-maturation]"
+          fi
+
+      - name: Build from clean committed source
+        run: npm run build
+
+      - name: Smoke release locally
+        run: npm run smoke
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Final Chromium regression before push
+        run: npx playwright test --project=chromium e2e/manual.spec.ts e2e/pedagogy.spec.ts e2e/microlearning.spec.ts e2e/multimedia.spec.ts e2e/publication-hotfix.spec.ts e2e/epub-release.spec.ts e2e/responsive-visual.spec.ts
+
+      - name: Push gated maturation commit
+        shell: bash
+        run: git push origin HEAD:release/manual-2026-final
