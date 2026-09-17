@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 24
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Build canonical runtime with 30/30 and 90/90 gates
         run: npm run build
       - name: Smoke test
