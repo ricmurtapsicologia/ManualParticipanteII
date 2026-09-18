@@ -38,12 +38,33 @@ jobs:
           sed -i 's/generate-canonical-pdf\.mjs/generate-accessible-pdf.mjs/g' scripts/final-maturation.mjs
           python - <<'PY'
           from pathlib import Path
+
           p=Path('scripts/final-maturation.mjs')
           s=p.read_text()
           old=r"\`${esc(correct.id)} — \${esc(stripLeadingBullet(correct.label))}\`"
           new=r"\`\${esc(correct.id)} — \${esc(stripLeadingBullet(correct.label))}\`"
           s=s.replace(old,new)
           p.write_text(s)
+
+          app=Path('app/page.tsx')
+          a=app.read_text()
+          old_condition="if (resource.kind !== 'infographic' || resource.src !== 'native://ats-system-macro' || !resource.steps?.length) return null;"
+          new_condition="const infographicSources = new Set(['native://ats-system-macro', 'native://cats-infographic']);\n  if (resource.kind !== 'infographic' || !resource.src || !infographicSources.has(resource.src) || !resource.steps?.length) return null;"
+          if old_condition not in a:
+              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL condition not found')
+          a=a.replace(old_condition,new_condition,1)
+          old_ids="const labelId = `${resource.id}-label`; const descriptionId = `${resource.id}-description`;"
+          new_ids="const labelId = `${resource.id}-label`; const descriptionId = `${resource.id}-description`; const flowAria = resource.alt || resource.title;"
+          if old_ids not in a:
+              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL ids line not found')
+          a=a.replace(old_ids,new_ids,1)
+          old_aria='aria-label="Fases operacionais do Sistema ATS"'
+          new_aria='aria-label={flowAria}'
+          if old_aria not in a:
+              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL aria label not found')
+          a=a.replace(old_aria,new_aria,1)
+          app.write_text(a)
+          print('MULTIMEDIA_RENDERER_HOTFIX_PASS native-infographics=ats-system-macro,cats-infographic')
           PY
           node scripts/final-maturation.mjs
           python - <<'PY'
