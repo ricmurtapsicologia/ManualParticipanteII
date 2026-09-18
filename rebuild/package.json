@@ -39,7 +39,7 @@
     "verify:deployment": "node scripts/verify-deployment.mjs",
     "e2e": "playwright test",
     "e2e:qep": "playwright test e2e/qep-regression.spec.ts",
-    "e2e:final": "playwright test e2e/publication-hotfix.spec.ts e2e/epub-release.spec.ts e2e/qep-regression.spec.ts"
+    "e2e:final": "npm run pdf:generate && npm run pdf:preflight && playwright test e2e/publication-hotfix.spec.ts e2e/epub-release.spec.ts e2e/qep-regression.spec.ts --project=chromium --project=mobile-chromium"
   },
   "dependencies": {
     "dejavu-fonts-ttf": "2.37.3",
