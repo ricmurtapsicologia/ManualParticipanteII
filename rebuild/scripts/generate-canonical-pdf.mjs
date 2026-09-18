@@ -33,6 +33,20 @@ const referenceLoopAnchor = "if(pedagogicalKinds.has(block.kind))addPedagogical(
 if (!source.includes(referenceLoopAnchor)) throw new Error('CANONICAL_PDF_FAIL reference loop anchor ausente');
 source = source.replace(referenceLoopAnchor, "if(pedagogicalKinds.has(block.kind))addPedagogical(section,block);else if(block.kind==='reference')writeReference(section,block.text);else writeFlow(section,block.text,styleFor(block.kind));i+=1;");
 
+const chapterBreakAnchor = "parent.add(section);if(remaining()<52)startRegularPage();doc.addNamedDestination(`page-${page.number}`);logicalMap.push({logicalPage:page.number,physicalPage});const isPartOpening=page.pageRole==='part-opening'||(page.part&&!page.chapter&&/parte\\s+\\d+/i.test(clean(page.title))),isChapterOpening=Boolean(page.chapter&&chapterStart.get(page.chapter)===page.number);";
+if (!source.includes(chapterBreakAnchor)) throw new Error('CANONICAL_PDF_FAIL chapter break anchor ausente');
+const chapterBreakReplacement = "parent.add(section);const isPartOpening=page.pageRole==='part-opening'||(page.part&&!page.chapter&&/parte\\s+\\d+/i.test(clean(page.title))),isChapterOpening=Boolean(page.chapter&&chapterStart.get(page.chapter)===page.number);if(isChapterOpening){if(Math.abs((doc.y??TOP)-TOP)>0.5)startRegularPage();}else if(remaining()<52)startRegularPage();doc.addNamedDestination(`page-${page.number}`);logicalMap.push({logicalPage:page.number,physicalPage});";
+source = source.replace(chapterBreakAnchor, chapterBreakReplacement);
+
+const residualAnchor = "const pdf=Buffer.concat(chunks),regularMetrics=pageMetrics.filter(item=>item.kind==='regular'),maxResidual=regularMetrics.length>1?Math.max(...regularMetrics.slice(0,-1).map(item=>item.residualBlankRatio)):0;";
+if (!source.includes(residualAnchor)) throw new Error('CANONICAL_PDF_FAIL residual metrics anchor ausente');
+const residualReplacement = "const pdf=Buffer.concat(chunks),regularMetrics=pageMetrics.filter(item=>item.kind==='regular'),chapterPhysicalStarts=new Set([...chapterStart.values()].map(logical=>logicalMap.find(item=>item.logicalPage===logical)?.physicalPage).filter(Boolean)),residualMetrics=regularMetrics.slice(0,-1).filter(item=>!chapterPhysicalStarts.has(item.physicalPage+1)),maxResidual=residualMetrics.length?Math.max(...residualMetrics.map(item=>item.residualBlankRatio)):0,allChapterStartsOnNewPage=[...chapterStart.values()].every(logical=>{const current=logicalMap.find(item=>item.logicalPage===logical),previous=logicalMap.find(item=>item.logicalPage===logical-1);return Boolean(current&&previous&&current.physicalPage>previous.physicalPage);});";
+source = source.replace(residualAnchor, residualReplacement);
+
+const layoutAnchor = "layout:{continuousFlow:true,maxResidualBlankAreaTarget:.20,measuredMaxResidualBlankAreaExcludingLastRegular:Number(maxResidual.toFixed(4))}";
+if (!source.includes(layoutAnchor)) throw new Error('CANONICAL_PDF_FAIL layout report anchor ausente');
+source = source.replace(layoutAnchor, "layout:{continuousFlow:true,chapterStartsOnNewPage:allChapterStartsOnNewPage,maxResidualBlankAreaTarget:.20,measuredMaxResidualBlankAreaExcludingLastRegular:Number(maxResidual.toFixed(4))}");
+
 const start = source.indexOf('  const drawCover=section=>{');
 const end = source.indexOf('\n\n  const coverSection=', start);
 if (start < 0 || end < 0) throw new Error('CANONICAL_PDF_FAIL drawCover anchors ausentes');
@@ -42,7 +56,7 @@ source = source.slice(0, start) + replacement + source.slice(end);
 await writeFile(tempPath, source, 'utf8');
 try {
   await import(`${pathToFileURL(tempPath).href}?v=${Date.now()}`);
-  console.log('CANONICAL_PDF_PASS cover=manual-cats-capa-ebook-2026.jpg sha256=f875ce298711604d1fce6aa3dec4acb67e37396ab754e0ab8b276c0686edbf9f references=abnt-hanging-no-split');
+  console.log('CANONICAL_PDF_PASS cover=manual-cats-capa-ebook-2026.jpg sha256=f875ce298711604d1fce6aa3dec4acb67e37396ab754e0ab8b276c0686edbf9f references=abnt-hanging-no-split chapters=new-page');
 } finally {
   await unlink(tempPath).catch(() => {});
 }
