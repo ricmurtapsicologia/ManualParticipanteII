@@ -74,8 +74,26 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Final Chromium regression before push
-        run: npx playwright test --project=chromium e2e/manual.spec.ts e2e/pedagogy.spec.ts e2e/microlearning.spec.ts e2e/multimedia.spec.ts e2e/publication-hotfix.spec.ts e2e/epub-release.spec.ts e2e/responsive-visual.spec.ts
+      - name: Chromium — manual
+        run: npx playwright test --project=chromium e2e/manual.spec.ts
+
+      - name: Chromium — pedagogy
+        run: npx playwright test --project=chromium e2e/pedagogy.spec.ts
+
+      - name: Chromium — microlearning
+        run: npx playwright test --project=chromium e2e/microlearning.spec.ts
+
+      - name: Chromium — multimedia
+        run: npx playwright test --project=chromium e2e/multimedia.spec.ts
+
+      - name: Chromium — publication hotfix
+        run: npx playwright test --project=chromium e2e/publication-hotfix.spec.ts
+
+      - name: Chromium — EPUB release
+        run: npx playwright test --project=chromium e2e/epub-release.spec.ts
+
+      - name: Chromium — responsive visual
+        run: npx playwright test --project=chromium e2e/responsive-visual.spec.ts
 
       - name: Push gated maturation commit
         shell: bash
