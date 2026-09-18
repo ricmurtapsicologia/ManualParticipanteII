@@ -95,11 +95,12 @@ function renderMultimediaResource(resource: MultimediaResource) {
   if (resource.kind === 'audio' && resource.src === 'native://speech-synthesis' && resource.transcript) return <AudioResourceCard key={resource.id} resource={resource as Wave54AudioResource} />;
   if (resource.kind === 'video' && resource.src === 'native://ats-system-video' && resource.transcript && resource.steps?.length) return <VideoResourceCard key={resource.id} resource={resource as Wave55VideoResource} />;
   if (resource.kind === 'microlearning') return <MicrolearningCard key={resource.id} resource={resource} />;
-  if (resource.kind !== 'infographic' || resource.src !== 'native://ats-system-macro' || !resource.steps?.length) return null;
-  const labelId = `${resource.id}-label`; const descriptionId = `${resource.id}-description`;
+  const infographicSources = new Set(['native://ats-system-macro', 'native://cats-infographic']);
+  if (resource.kind !== 'infographic' || !resource.src || !infographicSources.has(resource.src) || !resource.steps?.length) return null;
+  const labelId = `${resource.id}-label`; const descriptionId = `${resource.id}-description`; const flowAria = resource.alt || resource.title;
   return <figure key={resource.id} className="multimediaFigure atsMacro" data-testid="multimedia-resource" data-media-id={resource.id} data-media-kind={resource.kind} data-media-src={resource.src} aria-labelledby={labelId} aria-describedby={descriptionId}>
     <div className="multimediaEyebrow">Infográfico</div><figcaption id={labelId}>{resource.title}</figcaption><p id={descriptionId} className="multimediaDescription">{resource.alt}</p>
-    <div className="atsFlow" role="list" aria-label="Fases operacionais do Sistema ATS">{resource.steps.sort((a,b) => a.order-b.order).map(step => <div key={step.order} className="atsFlowStep" data-testid="multimedia-step" data-step={step.order} role="listitem"><span className="atsStepNo" aria-hidden="true">{step.order}</span><div><strong>{step.title}</strong><span>{step.detail}</span></div></div>)}</div>
+    <div className="atsFlow" role="list" aria-label={flowAria}>{resource.steps.sort((a,b) => a.order-b.order).map(step => <div key={step.order} className="atsFlowStep" data-testid="multimedia-step" data-step={step.order} role="listitem"><span className="atsStepNo" aria-hidden="true">{step.order}</span><div><strong>{step.title}</strong><span>{step.detail}</span></div></div>)}</div>
     {resource.transverse && <div className="atsTransverse"><span aria-hidden="true">↻</span><strong>{resource.transverse}</strong></div>}
   </figure>;
 }

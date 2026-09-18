@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "edition": "2026-final",
+  "generatedFrom": [
+    "semantic-pages.json",
+    "navigation.json"
+  ],
+  "policy": {
+    "normativeClaimsRequireTraceability": true,
+    "automaticTerminologyNormalization": false,
+    "atsAttsResolution": "VALIDATED_ITO30_2021",
+    "note": "ATS/ATTS não é normalizado automaticamente; a forma final deve seguir a fonte normativa vigente.",
+    "atsAttsCanonical": "ATS = Atendimento a Tentativas de Suicídio; ATTS = Abordagem Técnica a Tentativas de Suicídio.",
+    "normativeSource": "CBMMG. ITO 30: Atendimento a Tentativas de Suicídio. 1. ed. 2021."
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "O CATS e a prática profissional",
+      "openingPage": 5,
+      "endingPage": 12,
+      "doctrineBlocks": 1,
+      "referencesFound": [
+        "Referências principais: CBMMG, 2021; CBMMG/ABM, 2026; Wenzel & Beck, 2008; WHO, 2025."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 2,
+      "title": "Comportamento suicida: conceitos e linguagem",
+      "openingPage": 13,
+      "endingPage": 18,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 3,
+      "title": "Epidemiologia e inteligência para decisão",
+      "openingPage": 19,
+      "endingPage": 25,
+      "doctrineBlocks": 0,
+      "referencesFound": [],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 4,
+      "title": "A crise suicida: dor, ambivalência, desesperança e constrição",
+      "openingPage": 26,
+      "endingPage": 32,
+      "doctrineBlocks": 0,
+      "referencesFound": [],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 5,
+      "title": "Fatores associados, proteção, risco e limites da avaliação",
+      "openingPage": 33,
+      "endingPage": 49,
+      "doctrineBlocks": 1,
+      "referencesFound": [
+        "Sistemas de informação dependem de registro. Lesões autoprovocadas podem ser subnotificadas; óbitos podem ter classificação incompleta; mudanças no sistema podem aumentar detecção sem que todo aumento reflita mudança real do fenômeno. Isso não invalida o dado. Apenas obriga interpretar sua origem. No CBMMG, qualidade do REDS/RAPH ou sistema equivalente influencia indicadores operacionais. Uma corporação só consegue planejar a partir do que registra."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 6,
+      "title": "Do acionamento ao estabelecimento",
+      "openingPage": 51,
+      "endingPage": 56,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 7,
+      "title": "Observação inicial, passagem de comando e avaliação",
+      "openingPage": 57,
+      "endingPage": 62,
+      "doctrineBlocks": 1,
+      "referencesFound": [
+        "Quando outra instituição assume determinada dimensão da ocorrência, isso não torna o CBMMG irrelevante. Pode haver funções de salvamento, APH, apoio, segurança de recursos e continuidade do cuidado. O que muda é a liderança e a distribuição de responsabilidades conforme competência legal e técnica."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 8,
+      "title": "Isolamento, espaços de comunicação e avaliação dinâmica",
+      "openingPage": 63,
+      "endingPage": 68,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 9,
+      "title": "Funções, comando e coordenação",
+      "openingPage": 69,
+      "endingPage": 74,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 10,
+      "title": "Coleta de informações e apoio à decisão",
+      "openingPage": 75,
+      "endingPage": 79,
+      "doctrineBlocks": 0,
+      "referencesFound": [
+        "O framework de inteligência em saúde pública da OMS enfatiza detectar, verificar, analisar e avaliar informações, com comunicação e documentação contínuas. Embora seja de outro domínio, essa lógica é útil como referência cognitiva: informação não passa diretamente de “ouvi dizer” para decisão sem verificação e contexto."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 11,
+      "title": "Integração interinstitucional",
+      "openingPage": 80,
+      "endingPage": 91,
+      "doctrineBlocks": 2,
+      "referencesFound": [
+        "Na cena de Antônio estão CBMMG, SAMU, PMMG e agentes de trânsito. Todos querem ajudar. Um profissional de saúde sugere aproximar a ambulância; um policial pede mudança no perímetro; um familiar tenta convencer a equipe a permitir entrada de um líder religioso. O desafio é integrar saberes sem transformar a ocorrência em assembleia.",
+        "Troque “isso aqui é ocorrência dos bombeiros” por “neste momento, o CBMMG está coordenando a dimensão X; precisamos do apoio de vocês em Y; a dimensão Z é de competência de vocês”. A linguagem de função reduz disputa de território.",
+        "Referências principais: CBMMG, 2021, capítulo 9 e seções de encerramento; CBMMG/ABM, 2026.",
+        "Referências principais: CBMMG, 2021, capítulos 4 e 8."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 12,
+      "title": "O abordador e a preparação para o contato",
+      "openingPage": 93,
+      "endingPage": 97,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 13,
+      "title": "Aproximação, silêncio inicial e apresentação",
+      "openingPage": 98,
+      "endingPage": 102,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 14,
+      "title": "Perguntas e escuta",
+      "openingPage": 103,
+      "endingPage": 107,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 15,
+      "title": "Validação e paráfrase",
+      "openingPage": 108,
+      "endingPage": 111,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 16,
+      "title": "Ferramentas de diálogo da ITO 30",
+      "openingPage": 112,
+      "endingPage": 116,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 17,
+      "title": "Ambivalência, alternativas e microdecisões",
+      "openingPage": 117,
+      "endingPage": 120,
+      "doctrineBlocks": 0,
+      "referencesFound": [],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 18,
+      "title": "Silêncio, resistência, impasse e ruptura",
+      "openingPage": 121,
+      "endingPage": 124,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 19,
+      "title": "Agitação, retraimento e alterações perceptivas",
+      "openingPage": 125,
+      "endingPage": 128,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 20,
+      "title": "Troca do abordador e transição para abordagem tática",
+      "openingPage": 129,
+      "endingPage": 140,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 21,
+      "title": "Princípios e segurança da abordagem tática",
+      "openingPage": 142,
+      "endingPage": 146,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 22,
+      "title": "Precipitação e ambiente vertical",
+      "openingPage": 147,
+      "endingPage": 150,
+      "doctrineBlocks": 1,
+      "referencesFound": [
+        "A representação gráfica deve seguir o CBMMG real; EPI varia conforme função e risco."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 23,
+      "title": "Água, enforcamento, incêndio, eletricidade e intoxicação",
+      "openingPage": 151,
+      "endingPage": 154,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 24,
+      "title": "Arma branca, arma de fogo e risco de violência",
+      "openingPage": 155,
+      "endingPage": 158,
+      "doctrineBlocks": 1,
+      "referencesFound": [
+        "3. Arma de fogo: competência institucional define liderança A orientação operacional vigente é explícita: em tentativa com arma de fogo, equipes policiais especializadas assumem gestão/negociação, e o CBMMG se posiciona conforme orientação de segurança para cumprir funções de apoio, salvamento ou APH quando autorizado. Isso não representa perda de missão. Representa reconhecimento de capacidade, equipamento e atribuição."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 25,
+      "title": "Entrada, contenção, lesões, APH e presunção de óbito",
+      "openingPage": 159,
+      "endingPage": 162,
+      "doctrineBlocks": 1,
+      "referencesFound": [
+        "3. Contenção é medida de proteção, não punição A orientação operacional distingue contenção física/manual, mecânica e farmacológica e delimita competências do CBMMG. Qualquer contenção deve ter necessidade, proporcionalidade, monitoramento e cessar quando deixa de ser necessária. Deve-se evitar exposição, dor desnecessária e comentários punitivos. O manual não ensina amarrações ou técnicas corporais. São habilidades práticas que exigem capacitação e protocolo."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 26,
+      "title": "Crianças e adolescentes",
+      "openingPage": 164,
+      "endingPage": 168,
+      "doctrineBlocks": 0,
+      "referencesFound": [],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 27,
+      "title": "Pessoas idosas, pessoas com deficiência e neurodivergentes",
+      "openingPage": 169,
+      "endingPage": 173,
+      "doctrineBlocks": 0,
+      "referencesFound": [],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 28,
+      "title": "Intoxicação, agitação e alterações do pensamento",
+      "openingPage": 174,
+      "endingPage": 177,
+      "doctrineBlocks": 1,
+      "referencesFound": [
+        "7. Contenção e farmacologia pertencem a competências distintas Quando há necessidade de contenção, o CBMMG segue limites doutrinários e protocolos. Medicação é decisão da equipe de saúde habilitada. A integração precisa evitar disputa na frente da pessoa."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 29,
+      "title": "Mulheres, violência doméstica, cultura, espiritualidade e contexto social",
+      "openingPage": 178,
+      "endingPage": 182,
+      "doctrineBlocks": 0,
+      "referencesFound": [],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 30,
+      "title": "Desistência, resgate, encaminhamento e registro",
+      "openingPage": 184,
+      "endingPage": 187,
+      "doctrineBlocks": 1,
+      "referencesFound": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "chapter": 31,
+      "title": "Comunicação responsável, imprensa, Werther e Papageno",
+      "openingPage": 188,
+      "endingPage": 191,
+      "doctrineBlocks": 0,
+      "referencesFound": [],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 32,
+      "title": "Primeiros Socorros Psicológicos, pós-ocorrência e posvenção",
+      "openingPage": 192,
+      "endingPage": 198,
+      "doctrineBlocks": 0,
+      "referencesFound": [],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 33,
+      "title": "Casos longitudinais integradores",
+      "openingPage": 200,
+      "endingPage": 207,
+      "doctrineBlocks": 0,
+      "referencesFound": [
+        "Rodada A — Chegada Helena, 38 anos, está na parte externa de uma passarela urbana. Há trânsito intenso, cinco curiosos filmando e uma irmã tentando aproximar-se. Helena responde a gritos da irmã com irritação. Ainda não houve contato do CBMMG."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    },
+    {
+      "chapter": 34,
+      "title": "Síntese do Sistema ATTS e matriz final de competências",
+      "openingPage": 208,
+      "endingPage": 213,
+      "doctrineBlocks": 0,
+      "referencesFound": [
+        "6. Matriz — tática e limites O participante deve conseguir reconhecer quando: • a dissuasão continua viável; • a equipe tática precisa ampliar prontidão; • determinado risco exige treinamento de especialidade; • a cena ultrapassa competência do CBMMG em determinada dimensão; • APH ou saúde passam a ter prioridade crescente; • uma intervenção física precisa ser seguida por comunicação e cuidado."
+      ],
+      "status": "TRACED_OR_NO_EXPLICIT_DOCTRINE"
+    }
+  ],
+  "highRiskTopics": [
+    {
+      "topic": "Sistema ATS/ATTS e fases operacionais",
+      "chapters": [
+        6,
+        7,
+        8,
+        34
+      ],
+      "status": "VALIDATED_ITO30_2021_ATS_ATTS_DISTINCTION"
+    },
+    {
+      "topic": "Abordagem de dissuasão",
+      "chapters": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    },
+    {
+      "topic": "Abordagem tática e iminência",
+      "chapters": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    },
+    {
+      "topic": "Arma branca, arma de fogo e violência",
+      "chapters": [
+        24
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    },
+    {
+      "topic": "Precipitação e ambiente vertical",
+      "chapters": [
+        22
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    },
+    {
+      "topic": "Integração interinstitucional",
+      "chapters": [
+        11
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    },
+    {
+      "topic": "Crianças, adolescentes, idosos, PCD e neurodivergência",
+      "chapters": [
+        26,
+        27
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    },
+    {
+      "topic": "Violência doméstica e contexto social",
+      "chapters": [
+        29
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    },
+    {
+      "topic": "Imprensa, Werther e Papageno",
+      "chapters": [
+        31
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    },
+    {
+      "topic": "Primeiros Socorros Psicológicos e posvenção",
+      "chapters": [
+        32
+      ],
+      "status": "TRACED_BY_CHAPTER"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import semanticData from '../../../content/semantic-pages.json';
 import navigationData from '../../../content/navigation.json';
 import quizData from '../../../content/chapter-quizzes.json';
 import enrichmentData from '../../../content/chapter-enrichment.json';
+import multimediaData from '../../../content/multimedia-manifest.json';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -15,6 +16,10 @@ type QuizChoice = { id: string; label: string; correct: boolean };
 type QuizQuestion = { prompt: string; choices: QuizChoice[]; feedback: string };
 type QuizChapter = { chapter: number; endingPage: number; questions: QuizQuestion[] };
 type ChapterResource = { pageNumber: number; title: string; url: string; language: string; note?: string };
+type ChapterMicrolearning = { pageNumber:number; prompt:string; choices:QuizChoice[]; reveal:string };
+type EnrichmentChapter = { chapter:number; microlearning?:ChapterMicrolearning; resource?:ChapterResource };
+type MultimediaStep = { order:number; title:string; detail:string };
+type MultimediaResource = { kind:string; pageNumber:number; title:string; alt?:string; steps?:MultimediaStep[]; transverse?:string; transcript?:string };
 type NavChapter = { chapter: number; title: string; openingPage: number; pageNumbers: number[] };
 type NavSupplement = { id: string; title: string; openingPage: number; pageNumbers: number[] };
 type NavPart = { part: number; title: string; openingPage: number; chapters: NavChapter[]; supplementarySections: NavSupplement[] };
@@ -24,9 +29,15 @@ const COVER_SHA256 = 'f875ce298711604d1fce6aa3dec4acb67e37396ab754e0ab8b276c0686
 const pages = (semanticData as { pages: ManualPage[] }).pages;
 const navigation = navigationData as NavigationArtifact;
 const quizzes = (quizData as { chapters: QuizChapter[] }).chapters;
-const resources = (enrichmentData as { chapters: Array<{ resource?: ChapterResource }> }).chapters.map(item => item.resource).filter(Boolean) as ChapterResource[];
+const enrichmentChapters = (enrichmentData as { chapters: EnrichmentChapter[] }).chapters;
+const resources = enrichmentChapters.map(item => item.resource).filter(Boolean) as ChapterResource[];
+const microlearning = enrichmentChapters.map(item => item.microlearning).filter(Boolean) as ChapterMicrolearning[];
+const multimedia = (multimediaData as { resources: MultimediaResource[] }).resources;
 const quizByPage = new Map(quizzes.map(item => [item.endingPage, item]));
 const resourceByPage = new Map(resources.map(item => [item.pageNumber, item]));
+const microlearningByPage = new Map(microlearning.map(item => [item.pageNumber, item]));
+const multimediaByPage = new Map<number, MultimediaResource[]>();
+for (const item of multimedia) multimediaByPage.set(item.pageNumber, [...(multimediaByPage.get(item.pageNumber) ?? []), item]);
 
 const esc = (value: string) => String(value ?? '')
   .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
@@ -88,15 +99,23 @@ function renderManual() {
       i += 1;
     }
 
+    const media = multimediaByPage.get(page.number) ?? [];
+    for (const item of media) {
+      if (item.kind === 'infographic' && item.steps?.length) body.push(`<figure class="box media"><p class="boxLabel">Infográfico</p><h3>${esc(item.title)}</h3>${item.alt ? `<p>${esc(item.alt)}</p>` : ''}<ol>${[...item.steps].sort((a,b)=>a.order-b.order).map(step => `<li><strong>${esc(step.title)}</strong> — ${esc(step.detail)}</li>`).join('')}</ol>${item.transverse ? `<p><strong>${esc(item.transverse)}</strong></p>` : ''}</figure>`);
+      else if ((item.kind === 'audio' || item.kind === 'video') && item.transcript) body.push(`<aside class="box media"><p class="boxLabel">${item.kind === 'audio' ? 'Áudio — transcrição' : 'Vídeo — transcrição'}</p><h3>${esc(item.title)}</h3><p>${esc(item.transcript)}</p></aside>`);
+    }
+    const micro = microlearningByPage.get(page.number);
+    if (micro) body.push(`<section class="box micro" aria-label="Microlearning"><p class="boxLabel">Decida</p><p class="prompt">${esc(micro.prompt)}</p><ol type="A">${micro.choices.map(choice => `<li>${esc(stripLeadingBullet(choice.label))}</li>`).join('')}</ol><p><em>Registre mentalmente sua resposta antes de consultar o gabarito do capítulo.</em></p></section>`);
     const resource = resourceByPage.get(page.number);
     if (resource) body.push(`<aside class="box resource"><p class="boxLabel">Material complementar</p><p><a href="${esc(resource.url)}" hreflang="pt-BR">${esc(resource.title)}</a></p>${resource.note ? `<p>${esc(resource.note)}</p>` : ''}</aside>`);
     const quiz = quizByPage.get(page.number);
     if (quiz) {
-      body.push('<section class="quiz" aria-label="Teste do capítulo"><h3>Teste do capítulo</h3>');
-      quiz.questions.forEach((question, index) => {
-        const correct = question.choices.find(choice => choice.correct);
-        body.push(`<div class="question"><p class="prompt">${index + 1}. ${esc(question.prompt)}</p><ol type="A">${question.choices.map(choice => `<li>${esc(choice.label)}</li>`).join('')}</ol><p class="answer"><strong>Resposta:</strong> ${correct ? esc(correct.label) : 'Consulte o capítulo.'}</p><p>${esc(question.feedback)}</p></div>`);
-      });
+      body.push('<section class="quiz" aria-label="Teste do capítulo"><h3>Teste do capítulo</h3><p>Responda antes de consultar o gabarito comentado.</p>');
+      quiz.questions.forEach((question, index) => body.push(`<div class="question"><p class="prompt">${index + 1}. ${esc(question.prompt)}</p><ol type="A">${question.choices.map(choice => `<li>${esc(stripLeadingBullet(choice.label))}</li>`).join('')}</ol></div>`));
+      body.push('</section><section class="quiz answers" aria-label="Gabarito comentado"><h3>Gabarito comentado</h3>');
+      const chapterMicro = enrichmentChapters.find(item => item.chapter === quiz.chapter)?.microlearning;
+      if (chapterMicro) { const correct = chapterMicro.choices.find(choice => choice.correct); if (correct) body.push(`<p><strong>Microlearning:</strong> ${esc(correct.id)} — ${esc(stripLeadingBullet(correct.label))}. ${esc(chapterMicro.reveal)}</p>`); }
+      quiz.questions.forEach((question, index) => { const correct = question.choices.find(choice => choice.correct); body.push(`<p><strong>${index + 1}.</strong> ${correct ? `${esc(correct.id)} — ${esc(stripLeadingBullet(correct.label))}` : 'Consulte o capítulo.'}. ${esc(question.feedback)}</p>`); });
       body.push('</section>');
     }
     body.push('</section>');
