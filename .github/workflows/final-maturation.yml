@@ -50,21 +50,27 @@ jobs:
           a=app.read_text()
           old_condition="if (resource.kind !== 'infographic' || resource.src !== 'native://ats-system-macro' || !resource.steps?.length) return null;"
           new_condition="const infographicSources = new Set(['native://ats-system-macro', 'native://cats-infographic']);\n  if (resource.kind !== 'infographic' || !resource.src || !infographicSources.has(resource.src) || !resource.steps?.length) return null;"
-          if old_condition not in a:
-              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL condition not found')
-          a=a.replace(old_condition,new_condition,1)
+          if old_condition in a:
+              a=a.replace(old_condition,new_condition,1)
+          elif new_condition not in a:
+              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL condition neither legacy nor corrected')
+
           old_ids="const labelId = `${resource.id}-label`; const descriptionId = `${resource.id}-description`;"
           new_ids="const labelId = `${resource.id}-label`; const descriptionId = `${resource.id}-description`; const flowAria = resource.alt || resource.title;"
-          if old_ids not in a:
-              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL ids line not found')
-          a=a.replace(old_ids,new_ids,1)
+          if old_ids in a:
+              a=a.replace(old_ids,new_ids,1)
+          elif new_ids not in a:
+              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL ids neither legacy nor corrected')
+
           old_aria='aria-label="Fases operacionais do Sistema ATS"'
           new_aria='aria-label={flowAria}'
-          if old_aria not in a:
-              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL aria label not found')
-          a=a.replace(old_aria,new_aria,1)
+          if old_aria in a:
+              a=a.replace(old_aria,new_aria,1)
+          elif new_aria not in a:
+              raise SystemExit('MULTIMEDIA_RENDERER_HOTFIX_FAIL aria neither legacy nor corrected')
+
           app.write_text(a)
-          print('MULTIMEDIA_RENDERER_HOTFIX_PASS native-infographics=ats-system-macro,cats-infographic')
+          print('MULTIMEDIA_RENDERER_HOTFIX_PASS state=idempotent native-infographics=ats-system-macro,cats-infographic')
           PY
           node scripts/final-maturation.mjs
           python - <<'PY'
@@ -80,14 +86,15 @@ jobs:
           for page in semantic.get('pages', []):
               for block in page.get('blocks', []):
                   if block.get('id') == target:
-                      if block.get('text') != old:
-                          raise SystemExit(f'WAVE1_HOTFIX_FAIL unexpected text: {block.get("text")!r}')
-                      block['text']=new
                       hits += 1
+                      if block.get('text') == old:
+                          block['text']=new
+                      elif block.get('text') != new:
+                          raise SystemExit(f'WAVE1_HOTFIX_FAIL unexpected text: {block.get("text")!r}')
           if hits != 1:
               raise SystemExit(f'WAVE1_HOTFIX_FAIL target hits={hits}')
           semantic_path.write_text(json.dumps(semantic, ensure_ascii=False, indent=2)+'\n')
-          print('WAVE1_HOTFIX_PASS agitation-summary=non-confrontational')
+          print('WAVE1_HOTFIX_PASS state=idempotent agitation-summary=non-confrontational')
 
           trace_path=Path('content/doctrine-traceability.json')
           trace=json.loads(trace_path.read_text())
@@ -149,6 +156,9 @@ jobs:
 
       - name: Chromium — EPUB downloads and cover
         run: npx playwright test --project=chromium e2e/epub-release.spec.ts -g "reader exposes two distinct download formats and canonical cover artwork"
+
+      - name: Chromium — chapter fresh-page invariant
+        run: npx playwright test --project=chromium e2e/epub-release.spec.ts -g "all three products enforce chapter starts on a fresh page boundary"
 
       - name: Chromium — EPUB package and semantics
         run: npx playwright test --project=chromium e2e/epub-release.spec.ts -g "EPUB 3.3 endpoint embeds the exact canonical eBook cover and remains semantically navigable"
