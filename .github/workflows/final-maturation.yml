@@ -46,6 +46,27 @@ jobs:
           p.write_text(s)
           PY
           node scripts/final-maturation.mjs
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('content/semantic-pages.json')
+          data=json.loads(p.read_text())
+          target='p180-b7-w7h-summary-3'
+          old='• Agitação melhora com redução de estímulos e confronto.'
+          new='• Agitação pode reduzir com menos estímulos e menor confrontação.'
+          hits=0
+          for page in data.get('pages', []):
+              for block in page.get('blocks', []):
+                  if block.get('id') == target:
+                      if block.get('text') != old:
+                          raise SystemExit(f'WAVE1_HOTFIX_FAIL unexpected text: {block.get("text")!r}')
+                      block['text']=new
+                      hits += 1
+          if hits != 1:
+              raise SystemExit(f'WAVE1_HOTFIX_FAIL target hits={hits}')
+          p.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n')
+          print('WAVE1_HOTFIX_PASS agitation-summary=non-confrontational')
+          PY
 
       - name: Validate source after maturation
         run: npm run source:validate
