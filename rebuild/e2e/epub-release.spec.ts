@@ -30,5 +30,6 @@ test('EPUB 3.3 endpoint embeds the exact canonical eBook cover and remains seman
   const binary=body.toString('latin1');
   for (const token of ['mimetype','META-INF/container.xml','OEBPS/content.opf','OEBPS/nav.xhtml','OEBPS/manual.xhtml','OEBPS/cover.svg','data:image/jpeg;base64,','epub:type="page-list"','epub:type="landmarks"','schema:accessMode','schema:accessModeSufficient','pageNavigation','pageBreakMarkers','displayTransformability','role="doc-pagebreak"','rendition:layout']) expect(binary).toContain(token);
   expect((binary.match(/epub:type="pagebreak"/g)??[]).length).toBe(223);
-  expect(binary).toContain('Parte 1'); expect(binary).toContain('Capítulo 34');
+  expect(body.includes(Buffer.from('Parte 1','utf8'))).toBe(true);
+  expect(body.includes(Buffer.from('Capítulo 34','utf8'))).toBe(true);
 });
