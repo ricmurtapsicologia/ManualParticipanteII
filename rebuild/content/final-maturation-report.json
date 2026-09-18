@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "edition": "2026-final",
+  "editorialRulesApplied": 3,
+  "doctrine": {
+    "automaticAtsAttsNormalization": false,
+    "traceabilityChapters": 34,
+    "highRiskTopics": 10
+  },
+  "quizzes": {
+    "chapters": 34,
+    "questions": 170,
+    "curatedQuestions": 170,
+    "curationActionCounts": {
+      "manter": 33,
+      "melhorar": 69,
+      "substituir": 68
+    },
+    "pedagogicalTypeCounts": {
+      "conceito": 34,
+      "aplicacao": 34,
+      "discriminacao": 34,
+      "cenario": 34,
+      "integracao": 34
+    }
+  },
+  "microlearning": {
+    "chapters": 34,
+    "scenarioBased": 34
+  },
+  "parity": {
+    "pdfStaticMicrolearningAndQuiz": true,
+    "epubDelayedAnswerKeyAndMedia": true
+  },
+  "gates": {
+    "smokeHydrationLayerFixed": true,
+    "verifyDeploymentHydrationLayerFixed": true
+  },
+  "status": "MATERIALIZED"
+}

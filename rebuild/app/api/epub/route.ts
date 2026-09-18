@@ -5,6 +5,7 @@ import semanticData from '../../../content/semantic-pages.json';
 import navigationData from '../../../content/navigation.json';
 import quizData from '../../../content/chapter-quizzes.json';
 import enrichmentData from '../../../content/chapter-enrichment.json';
+import multimediaData from '../../../content/multimedia-manifest.json';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -15,6 +16,10 @@ type QuizChoice = { id: string; label: string; correct: boolean };
 type QuizQuestion = { prompt: string; choices: QuizChoice[]; feedback: string };
 type QuizChapter = { chapter: number; endingPage: number; questions: QuizQuestion[] };
 type ChapterResource = { pageNumber: number; title: string; url: string; language: string; note?: string };
+type ChapterMicrolearning = { pageNumber:number; prompt:string; choices:QuizChoice[]; reveal:string };
+type EnrichmentChapter = { chapter:number; microlearning?:ChapterMicrolearning; resource?:ChapterResource };
+type MultimediaStep = { order:number; title:string; detail:string };
+type MultimediaResource = { kind:string; pageNumber:number; title:string; alt?:string; steps?:MultimediaStep[]; transverse?:string; transcript?:string };
 type NavChapter = { chapter: number; title: string; openingPage: number; pageNumbers: number[] };
 type NavSupplement = { id: string; title: string; openingPage: number; pageNumbers: number[] };
 type NavPart = { part: number; title: string; openingPage: number; chapters: NavChapter[]; supplementarySections: NavSupplement[] };
@@ -24,9 +29,15 @@ const COVER_SHA256 = 'f875ce298711604d1fce6aa3dec4acb67e37396ab754e0ab8b276c0686
 const pages = (semanticData as { pages: ManualPage[] }).pages;
 const navigation = navigationData as NavigationArtifact;
 const quizzes = (quizData as { chapters: QuizChapter[] }).chapters;
-const resources = (enrichmentData as { chapters: Array<{ resource?: ChapterResource }> }).chapters.map(item => item.resource).filter(Boolean) as ChapterResource[];
+const enrichmentChapters = (enrichmentData as { chapters: EnrichmentChapter[] }).chapters;
+const resources = enrichmentChapters.map(item => item.resource).filter(Boolean) as ChapterResource[];
+const microlearning = enrichmentChapters.map(item => item.microlearning).filter(Boolean) as ChapterMicrolearning[];
+const multimedia = (multimediaData as { resources: MultimediaResource[] }).resources;
 const quizByPage = new Map(quizzes.map(item => [item.endingPage, item]));
 const resourceByPage = new Map(resources.map(item => [item.pageNumber, item]));
+const microlearningByPage = new Map(microlearning.map(item => [item.pageNumber, item]));
+const multimediaByPage = new Map<number, MultimediaResource[]>();
+for (const item of multimedia) multimediaByPage.set(item.pageNumber, [...(multimediaByPage.get(item.pageNumber) ?? []), item]);
 
 const esc = (value: string) => String(value ?? '')
   .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
@@ -88,15 +99,23 @@ function renderManual() {
       i += 1;
     }
 
+    const media = multimediaByPage.get(page.number) ?? [];
+    for (const item of media) {
+      if (item.kind === 'infographic' && item.steps?.length) body.push(`<figure class="box media"><p class="boxLabel">Infográfico</p><h3>${esc(item.title)}</h3>${item.alt ? `<p>${esc(item.alt)}</p>` : ''}<ol>${[...item.steps].sort((a,b)=>a.order-b.order).map(step => `<li><strong>${esc(step.title)}</strong> — ${esc(step.detail)}</li>`).join('')}</ol>${item.transverse ? `<p><strong>${esc(item.transverse)}</strong></p>` : ''}</figure>`);
+      else if ((item.kind === 'audio' || item.kind === 'video') && item.transcript) body.push(`<aside class="box media"><p class="boxLabel">${item.kind === 'audio' ? 'Áudio — transcrição' : 'Vídeo — transcrição'}</p><h3>${esc(item.title)}</h3><p>${esc(item.transcript)}</p></aside>`);
+    }
+    const micro = microlearningByPage.get(page.number);
+    if (micro) body.push(`<section class="box micro" aria-label="Microlearning"><p class="boxLabel">Decida</p><p class="prompt">${esc(micro.prompt)}</p><ol type="A">${micro.choices.map(choice => `<li>${esc(stripLeadingBullet(choice.label))}</li>`).join('')}</ol><p><em>Registre mentalmente sua resposta antes de consultar o gabarito do capítulo.</em></p></section>`);
     const resource = resourceByPage.get(page.number);
     if (resource) body.push(`<aside class="box resource"><p class="boxLabel">Material complementar</p><p><a href="${esc(resource.url)}" hreflang="pt-BR">${esc(resource.title)}</a></p>${resource.note ? `<p>${esc(resource.note)}</p>` : ''}</aside>`);
     const quiz = quizByPage.get(page.number);
     if (quiz) {
-      body.push('<section class="quiz" aria-label="Teste do capítulo"><h3>Teste do capítulo</h3>');
-      quiz.questions.forEach((question, index) => {
-        const correct = question.choices.find(choice => choice.correct);
-        body.push(`<div class="question"><p class="prompt">${index + 1}. ${esc(question.prompt)}</p><ol type="A">${question.choices.map(choice => `<li>${esc(choice.label)}</li>`).join('')}</ol><p class="answer"><strong>Resposta:</strong> ${correct ? esc(correct.label) : 'Consulte o capítulo.'}</p><p>${esc(question.feedback)}</p></div>`);
-      });
+      body.push('<section class="quiz" aria-label="Teste do capítulo"><h3>Teste do capítulo</h3><p>Responda antes de consultar o gabarito comentado.</p>');
+      quiz.questions.forEach((question, index) => body.push(`<div class="question"><p class="prompt">${index + 1}. ${esc(question.prompt)}</p><ol type="A">${question.choices.map(choice => `<li>${esc(stripLeadingBullet(choice.label))}</li>`).join('')}</ol></div>`));
+      body.push('</section><section class="quiz answers" aria-label="Gabarito comentado"><h3>Gabarito comentado</h3>');
+      const chapterMicro = enrichmentChapters.find(item => item.chapter === quiz.chapter)?.microlearning;
+      if (chapterMicro) { const correct = chapterMicro.choices.find(choice => choice.correct); if (correct) body.push(`<p><strong>Microlearning:</strong> ${esc(correct.id)} — ${esc(stripLeadingBullet(correct.label))}. ${esc(chapterMicro.reveal)}</p>`); }
+      quiz.questions.forEach((question, index) => { const correct = question.choices.find(choice => choice.correct); body.push(`<p><strong>${index + 1}.</strong> ${correct ? `${esc(correct.id)} — ${esc(stripLeadingBullet(correct.label))}` : 'Consulte o capítulo.'}. ${esc(question.feedback)}</p>`); });
       body.push('</section>');
     }
     body.push('</section>');
@@ -120,7 +139,7 @@ function renderCoverSvg(image: Buffer) {
 
 const coverXhtml = `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="pt-BR" lang="pt-BR"><head><meta charset="utf-8"/><title>Capa</title><link rel="stylesheet" type="text/css" href="styles.css"/></head><body class="coverPage" epub:type="cover"><span id="page-1" epub:type="pagebreak" role="doc-pagebreak" aria-label="Página 1"></span><img src="cover.svg" alt="Capa oficial do Manual do Participante CATS — Atendimento a Tentativas de Suicídio — Edição Digital 2026"/></body></html>`;
 
-const css = `html{font-size:100%;}body{font-family:Georgia,"Times New Roman",serif;font-size:1em;line-height:1.62;color:#183537;background:#fff;margin:0 auto;padding:1.25em;max-width:42em;}h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:#0f6260;line-height:1.25;break-after:avoid;page-break-after:avoid;}h1{break-before:page;page-break-before:always;border-bottom:.18em solid #e86d2b;padding-bottom:.35em;margin-top:1.4em;}h2{margin-top:1.5em;}h3{margin-top:1.25em;}p{margin:.7em 0;text-align:justify;hyphens:auto;-webkit-hyphens:auto;orphans:2;widows:2;}.kicker{font-family:Arial,Helvetica,sans-serif;color:#b64f17;font-weight:bold;letter-spacing:.08em;text-align:left}.page{margin:0 0 1.5em}.list{margin:.65em 0 .85em;padding-left:1.45em}.list li{margin:.35em 0;text-align:left}.box{border-left:.28em solid #0f6260;background:#eef6f4;padding:.75em 1em;margin:1em 0;break-inside:avoid;page-break-inside:avoid}.attention,.decide{border-left-color:#c65a1c;background:#fff2ec}.boxLabel{font-family:Arial,Helvetica,sans-serif;font-size:.88em;font-weight:bold;letter-spacing:.03em;text-transform:uppercase;text-align:left;margin:0 0 .35em}.boxLabel:only-child{margin-bottom:0}.reference{padding-left:1.5em;text-indent:-1.5em;text-align:left;font-size:.94em;margin:.8em 0;break-inside:avoid;page-break-inside:avoid;hyphens:none;-webkit-hyphens:none;word-break:normal;overflow-wrap:normal;orphans:3;widows:3}.external{overflow-wrap:anywhere}.resource a,a{color:#0b5f5b;text-decoration:underline;text-underline-offset:.12em;overflow-wrap:anywhere}.quiz{margin-top:2em;border-top:.14em solid #e86d2b;padding-top:1em}.question{margin:1.2em 0;break-inside:avoid}.prompt{font-weight:bold;text-align:left}.answer{margin-top:.5em;color:#0f6260}.coverPage{margin:0;padding:0;max-width:none;background:#f5f0e6}.coverPage img{display:block;width:100%;height:auto;max-width:100%}[epub\\:type="pagebreak"]{display:block;height:0;overflow:hidden}@media(prefers-color-scheme:dark){body{background:#111;color:#f0f1ed}h1,h2,h3,a,.answer{color:#86d9d2}.box{background:#183130;color:#f0f1ed}.attention,.decide{background:#3a281f}}`;
+const css = `html{font-size:100%;}body{font-family:Georgia,"Times New Roman",serif;font-size:1em;line-height:1.62;color:#183537;background:#fff;margin:0 auto;padding:1.25em;max-width:42em;}h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:#0f6260;line-height:1.25;break-after:avoid;page-break-after:avoid;}h1{border-bottom:.18em solid #e86d2b;padding-bottom:.35em;margin-top:1.4em;}h2{margin-top:1.5em;}h3{margin-top:1.25em;}p{margin:.7em 0;text-align:justify;hyphens:auto;-webkit-hyphens:auto;orphans:2;widows:2;}.kicker{font-family:Arial,Helvetica,sans-serif;color:#b64f17;font-weight:bold;letter-spacing:.08em;text-align:left}.page{margin:0 0 1.5em}.page.chapter{break-before:page;page-break-before:always}.list{margin:.65em 0 .85em;padding-left:1.45em}.list li{margin:.35em 0;text-align:left}.box{border-left:.28em solid #0f6260;background:#eef6f4;padding:.75em 1em;margin:1em 0;break-inside:avoid;page-break-inside:avoid}.attention,.decide{border-left-color:#c65a1c;background:#fff2ec}.boxLabel{font-family:Arial,Helvetica,sans-serif;font-size:.88em;font-weight:bold;letter-spacing:.03em;text-transform:uppercase;text-align:left;margin:0 0 .35em}.boxLabel:only-child{margin-bottom:0}.reference{padding-left:1.5em;text-indent:-1.5em;text-align:left;font-size:.94em;margin:.8em 0;break-inside:avoid;page-break-inside:avoid;hyphens:none;-webkit-hyphens:none;word-break:normal;overflow-wrap:normal;orphans:3;widows:3}.external{overflow-wrap:anywhere}.resource a,a{color:#0b5f5b;text-decoration:underline;text-underline-offset:.12em;overflow-wrap:anywhere}.quiz{margin-top:2em;border-top:.14em solid #e86d2b;padding-top:1em}.question{margin:1.2em 0;break-inside:avoid}.prompt{font-weight:bold;text-align:left}.answer{margin-top:.5em;color:#0f6260}.coverPage{margin:0;padding:0;max-width:none;background:#f5f0e6}.coverPage img{display:block;width:100%;height:auto;max-width:100%}[epub\\:type="pagebreak"]{display:block;height:0;overflow:hidden}@media(prefers-color-scheme:dark){body{background:#111;color:#f0f1ed}h1,h2,h3,a,.answer{color:#86d9d2}.box{background:#183130;color:#f0f1ed}.attention,.decide{background:#3a281f}}`;
 const identifier = 'urn:uuid:6f8a7f60-3e64-4cb0-8ae7-9c1e6fd3a226';
 const opf = `<?xml version="1.0" encoding="UTF-8"?>\n<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="pub-id" xml:lang="pt-BR" prefix="schema: http://schema.org/"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="pub-id">${identifier}</dc:identifier><dc:title>Manual do Participante CATS</dc:title><dc:language>pt-BR</dc:language><dc:creator>Corpo de Bombeiros Militar de Minas Gerais</dc:creator><dc:publisher>Corpo de Bombeiros Militar de Minas Gerais</dc:publisher><dc:description>Manual de formação especializada em Atendimento a Tentativas de Suicídio — edição digital 2026.</dc:description><dc:date>2026</dc:date><dc:rights>Corpo de Bombeiros Militar de Minas Gerais — edição 2026.</dc:rights><meta property="dcterms:modified">2026-09-16T00:00:00Z</meta><meta property="rendition:layout">reflowable</meta><meta property="schema:accessMode">textual</meta><meta property="schema:accessModeSufficient">textual</meta><meta property="schema:accessibilityFeature">tableOfContents</meta><meta property="schema:accessibilityFeature">structuralNavigation</meta><meta property="schema:accessibilityFeature">pageNavigation</meta><meta property="schema:accessibilityFeature">pageBreakMarkers</meta><meta property="schema:accessibilityFeature">displayTransformability</meta><meta property="schema:accessibilityHazard">none</meta><meta property="schema:accessibilitySummary" xml:lang="pt-BR">Publicação reflowable em português do Brasil, com estrutura semântica, listas reais, sumário hierárquico, navegação por páginas e texto adaptável. A capa oficial possui alternativa textual.</meta></metadata><manifest><item id="cover-image" href="cover.svg" media-type="image/svg+xml" properties="cover-image"/><item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="manual" href="manual.xhtml" media-type="application/xhtml+xml"/><item id="css" href="styles.css" media-type="text/css"/></manifest><spine page-progression-direction="ltr"><itemref idref="cover"/><itemref idref="manual"/></spine></package>`;
 const containerXml = `<?xml version="1.0" encoding="UTF-8"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>`;

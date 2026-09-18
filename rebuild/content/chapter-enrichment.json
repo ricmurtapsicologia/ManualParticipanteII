@@ -22,16 +22,16 @@
         "id": "w10-c1-micro",
         "pageNumber": 9,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único. Enquanto uma pessoa está em crise, a equipe precisa proteger a cena, compreender o que está acontecendo, coordenar recursos, comunicar-se com cuidado, manejar incerteza e… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           },
           {
@@ -41,11 +41,11 @@
           },
           {
             "id": "D",
-            "label": "• Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
+            "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • O CATS forma desempenho integrado, não repertório de frases."
+        "reveal": "Critério de decisão: O CATS forma desempenho integrado, não repertório de frases Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c1-resource",
@@ -66,16 +66,16 @@
         "id": "w10-c2-micro",
         "pageNumber": 16,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Gabriel, 16 anos, está em situação de crise após uma discussão familiar. Em menos de cinco minutos, diferentes pessoas na cena usam expressões como “suicida”, “ameaça”, “tentativa”, “chantagem” e “surto”. Cada palavra conduz a uma interpretação diferente.… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -85,11 +85,11 @@
           },
           {
             "id": "D",
-            "label": "• Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
+            "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Conceitos organizam comunicação e registro; não existem para rotular pessoas."
+        "reveal": "Critério de decisão: Conceitos organizam comunicação e registro; não existem para rotular pessoas Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c2-resource",
@@ -110,16 +110,16 @@
         "id": "w10-c3-micro",
         "pageNumber": 22,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Uma turma do CATS recebe três números: a maioria dos óbitos por suicídio no Brasil ocorre entre homens; a maioria das notificações de violência autoprovocada ocorre entre mulheres; e Minas Gerais apresentou taxa de mortalidade por suicídio acima da média… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
+            "label": "Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -129,11 +129,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo."
+        "reveal": "Critério de decisão: Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c3-resource",
@@ -154,16 +154,16 @@
         "id": "w10-c4-micro",
         "pageNumber": 29,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Helena diz: “eu não quero continuar assim”, mas permanece conversando. Minutos depois afirma: “não tem mais nada”, e logo pergunta o que acontecerá se sair dali. Para um observador apressado, as falas parecem contraditórias. Para quem compreende crise suicida,… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Crise suicida é estado dinâmico e individual, não identidade",
+            "label": "Crise suicida é estado dinâmico e individual, não identidade",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -173,11 +173,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Crise suicida é estado dinâmico e individual, não identidade."
+        "reveal": "Critério de decisão: Crise suicida é estado dinâmico e individual, não identidade Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c4-resource",
@@ -198,16 +198,16 @@
         "id": "w10-c5-micro",
         "pageNumber": 42,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: A equipe de coleta informa que Antônio, 72 anos, vive sozinho, perdeu a esposa há um ano, possui doença crônica e reduziu contato com amigos. Um militar conclui: “ele tem vários fatores de risco; então o risco é alto”. Outro lembra que Antônio mantém vínculo… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Associação estatística não equivale a previsão individual",
+            "label": "Associação estatística não equivale a previsão individual",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -217,11 +217,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Associação estatística não equivale a previsão individual."
+        "reveal": "Critério de decisão: Associação estatística não equivale a previsão individual Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c5-resource",
@@ -242,16 +242,16 @@
         "id": "w10-c6-micro",
         "pageNumber": 54,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: O COBOM recebe ligação de uma irmã relatando que Roberto enviou mensagens de despedida e deixou de responder. Ela sabe o endereço provável, mas não está no local. Poucos minutos depois, outra pessoa informa que há alguém na sacada do mesmo prédio. A guarnição… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Informação inicial orienta hipótese; observação em campo confirma ou corrige",
+            "label": "Informação inicial orienta hipótese; observação em campo confirma ou corrige",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -261,11 +261,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Informação inicial orienta hipótese; observação em campo confirma ou corrige."
+        "reveal": "Critério de decisão: Informação inicial orienta hipótese; observação em campo confirma ou corrige Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c6-resource",
@@ -286,16 +286,16 @@
         "id": "w10-c7-micro",
         "pageNumber": 60,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: A primeira equipe encontra Paula em um apartamento. Ela responde de dentro de um quarto, sem contato visual. Uma vizinha afirma que Paula ingeriu medicamentos, mas não sabe quais. A mãe chega chorando e tenta abrir a porta. Há um cachorro agitado no corredor.… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• A cena inclui pessoa, perigo, ambiente e resposta institucional",
+            "label": "A cena inclui pessoa, perigo, ambiente e resposta institucional",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -305,11 +305,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • A cena inclui pessoa, perigo, ambiente e resposta institucional."
+        "reveal": "Critério de decisão: A cena inclui pessoa, perigo, ambiente e resposta institucional Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c7-resource",
@@ -330,16 +330,16 @@
         "id": "w10-c8-micro",
         "pageNumber": 66,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Helena está na parte externa de uma passarela. Cinco pessoas filmam. Um familiar grita que ela “precisa pensar nos filhos”. Um drone particular sobrevoa o local. Dois policiais chegam pela lateral e um jornalista tenta aproximar-se. Antes mesmo de Helena… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Isolamento protege segurança e comunicação",
+            "label": "Isolamento protege segurança e comunicação",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -349,11 +349,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Isolamento protege segurança e comunicação."
+        "reveal": "Critério de decisão: Isolamento protege segurança e comunicação Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c8-resource",
@@ -374,16 +374,16 @@
         "id": "w10-c9-micro",
         "pageNumber": 72,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Em uma ocorrência com sete bombeiros, três policiais e uma equipe de saúde, todos possuem capacidade para ajudar. Ainda assim, a cena começa a piorar: dois militares perguntam simultaneamente, um familiar passa informação diretamente ao abordador, a equipe… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Funções reduzem sobrecarga e lacunas",
+            "label": "Funções reduzem sobrecarga e lacunas",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -393,11 +393,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Funções reduzem sobrecarga e lacunas."
+        "reveal": "Critério de decisão: Funções reduzem sobrecarga e lacunas Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c9-resource",
@@ -418,16 +418,16 @@
         "id": "w10-c10-micro",
         "pageNumber": 77,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Enquanto o abordador conversa com Marcos, três familiares entregam versões diferentes. A mãe diz que ele perdeu o emprego. Um irmão afirma que houve separação. Um vizinho insiste que Marcos “sempre foi agressivo”. No celular de um familiar há uma mensagem… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Fontes precisam ser contextualizadas e, quando possível, trianguladas",
+            "label": "Fontes precisam ser contextualizadas e, quando possível, trianguladas",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -437,11 +437,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Fontes precisam ser contextualizadas e, quando possível, trianguladas."
+        "reveal": "Critério de decisão: Fontes precisam ser contextualizadas e, quando possível, trianguladas Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c10-resource",
@@ -462,16 +462,16 @@
         "id": "w10-c11-micro",
         "pageNumber": 86,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Na cena de Antônio estão CBMMG, SAMU, PMMG e agentes de trânsito. Todos querem ajudar. Um profissional de saúde sugere aproximar a ambulância; um policial pede mudança no perímetro; um familiar tenta convencer a equipe a permitir entrada de um líder religioso.… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Instituições cooperam por competências complementares",
+            "label": "Instituições cooperam por competências complementares",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -481,11 +481,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Instituições cooperam por competências complementares."
+        "reveal": "Critério de decisão: Instituições cooperam por competências complementares Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c11-resource",
@@ -506,16 +506,16 @@
         "id": "w10-c12-micro",
         "pageNumber": 95,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: A equipe escolheu André como abordador porque ele concluiu o CATS e costuma manter boa comunicação sob pressão. Quando se aproxima da área de contato, percebe o próprio coração acelerado, escuta familiares discutindo atrás do isolamento e recebe três… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• O abordador funciona melhor quando o sistema ao redor funciona",
+            "label": "O abordador funciona melhor quando o sistema ao redor funciona",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -525,11 +525,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • O abordador funciona melhor quando o sistema ao redor funciona."
+        "reveal": "Critério de decisão: O abordador funciona melhor quando o sistema ao redor funciona Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c12-resource",
@@ -550,16 +550,16 @@
         "id": "w10-c13-micro",
         "pageNumber": 100,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: André consegue estabelecer contato visual com Helena a distância. Ela olha rapidamente e volta a observar o trânsito abaixo. Quando ele avança alguns passos, ela diz: “fica aí”. O que parece uma ordem simples é também informação: Helena percebeu a aproximação,… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Aproximação é progressiva e condicionada à segurança",
+            "label": "Aproximação é progressiva e condicionada à segurança",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -569,11 +569,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Aproximação é progressiva e condicionada à segurança."
+        "reveal": "Critério de decisão: Aproximação é progressiva e condicionada à segurança Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c13-resource",
@@ -594,16 +594,16 @@
         "id": "w10-c14-micro",
         "pageNumber": 105,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Helena mantém contato verbal intermitente. Responde com frases curtas: “não adianta”, “ninguém entende” e “quero ficar sozinha”. A equipe já recebeu informações de terceiros, mas algumas são contraditórias. O abordador precisa compreender o que acontece sem… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Uma pergunta por vez melhora processamento e escuta",
+            "label": "Uma pergunta por vez melhora processamento e escuta",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -613,11 +613,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Uma pergunta por vez melhora processamento e escuta."
+        "reveal": "Critério de decisão: Uma pergunta por vez melhora processamento e escuta Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c14-resource",
@@ -638,16 +638,16 @@
         "id": "w10-c15-micro",
         "pageNumber": 110,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Marcos afirma: “Acabou tudo. Eu perdi meu trabalho, minha mulher foi embora e ninguém aqui pode devolver minha vida.” O abordador sente vontade de responder que existem outros empregos e que separações passam. Essa resposta procura esperança, mas pode… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Validar sofrimento não é concordar com suicídio",
+            "label": "Validar sofrimento não é concordar com suicídio",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -657,11 +657,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Validar sofrimento não é concordar com suicídio."
+        "reveal": "Critério de decisão: Validar sofrimento não é concordar com suicídio Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c15-resource",
@@ -682,16 +682,16 @@
         "id": "w10-c16-micro",
         "pageNumber": 114,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Após 50 minutos, Júlia já contou que superou uma crise anterior, falou de uma irmã com quem se afastou e mencionou que costumava correr aos domingos. O abordador conhece “sucesso anterior”, “ponte para o passado” e “ponte para o futuro”. O desafio não é… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Ferramentas têm função, não obrigação de uso",
+            "label": "Ferramentas têm função, não obrigação de uso",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -701,11 +701,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Ferramentas têm função, não obrigação de uso."
+        "reveal": "Critério de decisão: Ferramentas têm função, não obrigação de uso Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c16-resource",
@@ -726,16 +726,16 @@
         "id": "w10-c17-micro",
         "pageNumber": 119,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Depois de longo período de recusa, Helena pergunta: “Se eu sair daqui, vocês vão me algemar?”. A pergunta não significa que decidiu desistir. Significa que começou a representar mentalmente um cenário posterior à posição atual. Essa mudança merece atenção. Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Ambivalência é abertura possível, não garantia",
+            "label": "Ambivalência é abertura possível, não garantia",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -745,11 +745,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Ambivalência é abertura possível, não garantia."
+        "reveal": "Critério de decisão: Ambivalência é abertura possível, não garantia Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c17-resource",
@@ -770,16 +770,16 @@
         "id": "w10-c18-micro",
         "pageNumber": 123,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Roberto conversou por vinte minutos e depois deixou de responder. Permanece visível, mas evita olhar e não reage a duas perguntas. O abordador sente que precisa “fazer alguma coisa”. O silêncio passa a ser desconfortável também para a equipe. Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Silêncio não possui um único significado",
+            "label": "Silêncio não possui um único significado",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -789,11 +789,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Silêncio não possui um único significado."
+        "reveal": "Critério de decisão: Silêncio não possui um único significado Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c18-resource",
@@ -814,16 +814,16 @@
         "id": "w10-c19-micro",
         "pageNumber": 127,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Em menos de dez minutos, Marcos passa de fala intensa e hostil para silêncio. Em outra ocorrência, Júlia fala muito pouco, chora e demora a responder. Roberto diz que escuta uma voz, mas continua conversando com o bombeiro. A orientação operacional usa perfis… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Perfis da ITO são didáticos e flexíveis",
+            "label": "Perfis da ITO são didáticos e flexíveis",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -833,11 +833,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Perfis da ITO são didáticos e flexíveis."
+        "reveal": "Critério de decisão: Perfis da ITO são didáticos e flexíveis Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c19-resource",
@@ -858,16 +858,16 @@
         "id": "w10-c20-micro",
         "pageNumber": 135,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: André está há duas horas com Helena. A conversa permanece aberta, mas ele percebe exaustão e começa a repetir perguntas. O auxiliar possui todas as informações e Helena já ouviu sua voz em um momento breve. Em paralelo, a equipe identifica mudança concreta de… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Troca de abordador pode preservar, e não necessariamente romper, vínculo",
+            "label": "Troca de abordador pode preservar, e não necessariamente romper, vínculo",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -877,11 +877,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Troca de abordador pode preservar, e não necessariamente romper, vínculo."
+        "reveal": "Critério de decisão: Troca de abordador pode preservar, e não necessariamente romper, vínculo Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c20-resource",
@@ -902,16 +902,16 @@
         "id": "w10-c21-micro",
         "pageNumber": 144,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Durante a dissuasão, a equipe tática permanece preparada sem ocupar o centro visual da cena. O comandante recebe atualização de que a condição física da pessoa e a configuração do local mudaram. A pergunta não é “a conversa já demorou demais?”, mas “o risco… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Técnica e tática pertencem ao mesmo Sistema ATS",
+            "label": "Técnica e tática pertencem ao mesmo Sistema ATS",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -921,11 +921,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Técnica e tática pertencem ao mesmo Sistema ATS."
+        "reveal": "Critério de decisão: Técnica e tática pertencem ao mesmo Sistema ATS Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c21-resource",
@@ -946,16 +946,16 @@
         "id": "w10-c22-micro",
         "pageNumber": 149,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Helena está em ambiente elevado. O contato verbal está estabelecido, mas o terreno limita movimentação e impõe risco de queda também aos bombeiros. Uma decisão comunicacional simples — dar um passo — pode ter significado operacional completamente diferente… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Em altura, o ambiente modifica cada decisão",
+            "label": "Em altura, o ambiente modifica cada decisão",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -965,11 +965,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Em altura, o ambiente modifica cada decisão."
+        "reveal": "Critério de decisão: Em altura, o ambiente modifica cada decisão Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c22-resource",
@@ -990,16 +990,16 @@
         "id": "w10-c23-micro",
         "pageNumber": 153,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: Em cinco ocorrências hipotéticas, a pessoa está respectivamente próxima à água, em situação de suspensão, em ambiente com fumaça, perto de instalação energizada e dentro de cômodo com possível intoxicação. A comunicação pode ser semelhante em alguns momentos,… Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Cada ambiente acrescenta riscos próprios",
+            "label": "Cada ambiente acrescenta riscos próprios",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1009,11 +1009,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Cada ambiente acrescenta riscos próprios."
+        "reveal": "Critério de decisão: Cada ambiente acrescenta riscos próprios Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c23-resource",
@@ -1034,16 +1034,16 @@
         "id": "w10-c24-micro",
         "pageNumber": 157,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Arma de fogo exige liderança policial especializada segundo A orientação operacional",
+            "label": "Arma de fogo exige liderança policial especializada segundo A orientação operacional",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1053,11 +1053,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Arma de fogo exige liderança policial especializada segundo A orientação operacional."
+        "reveal": "Critério de decisão: Arma de fogo exige liderança policial especializada segundo A orientação operacional Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c24-resource",
@@ -1078,16 +1078,16 @@
         "id": "w10-c25-micro",
         "pageNumber": 161,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Entrada combina necessidade, segurança e competência",
+            "label": "Entrada combina necessidade, segurança e competência",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1097,11 +1097,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Entrada combina necessidade, segurança e competência."
+        "reveal": "Critério de decisão: Entrada combina necessidade, segurança e competência Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c25-resource",
@@ -1122,16 +1122,16 @@
         "id": "w10-c26-micro",
         "pageNumber": 166,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Idade jovem não reduz seriedade da ocorrência",
+            "label": "Idade jovem não reduz seriedade da ocorrência",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1141,11 +1141,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Idade jovem não reduz seriedade da ocorrência."
+        "reveal": "Critério de decisão: Idade jovem não reduz seriedade da ocorrência Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c26-resource",
@@ -1166,16 +1166,16 @@
         "id": "w10-c27-micro",
         "pageNumber": 171,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Idade e deficiência não definem capacidade por si só",
+            "label": "Idade e deficiência não definem capacidade por si só",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1185,11 +1185,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Idade e deficiência não definem capacidade por si só."
+        "reveal": "Critério de decisão: Idade e deficiência não definem capacidade por si só Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c27-resource",
@@ -1210,16 +1210,16 @@
         "id": "w10-c28-micro",
         "pageNumber": 176,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Alteração comportamental pode ter múltiplas causas",
+            "label": "Alteração comportamental pode ter múltiplas causas",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1229,11 +1229,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Alteração comportamental pode ter múltiplas causas."
+        "reveal": "Critério de decisão: Alteração comportamental pode ter múltiplas causas Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c28-resource",
@@ -1254,16 +1254,16 @@
         "id": "w10-c29-micro",
         "pageNumber": 180,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Violência doméstica exige proteção específica",
+            "label": "Violência doméstica exige proteção específica",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1273,11 +1273,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Violência doméstica exige proteção específica."
+        "reveal": "Critério de decisão: Violência doméstica exige proteção específica Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c29-resource",
@@ -1298,16 +1298,16 @@
         "id": "w10-c30-micro",
         "pageNumber": 186,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• A saída do ponto de risco é transição, não alta",
+            "label": "A saída do ponto de risco é transição, não alta",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1317,11 +1317,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • A saída do ponto de risco é transição, não alta."
+        "reveal": "Critério de decisão: A saída do ponto de risco é transição, não alta Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c30-resource",
@@ -1342,16 +1342,16 @@
         "id": "w10-c31-micro",
         "pageNumber": 190,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Falar sobre suicídio exige forma responsável, não silêncio absoluto",
+            "label": "Falar sobre suicídio exige forma responsável, não silêncio absoluto",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1361,11 +1361,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Falar sobre suicídio exige forma responsável, não silêncio absoluto."
+        "reveal": "Critério de decisão: Falar sobre suicídio exige forma responsável, não silêncio absoluto Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c31-resource",
@@ -1386,16 +1386,16 @@
         "id": "w10-c32-micro",
         "pageNumber": 195,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar",
+            "label": "PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1405,11 +1405,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar."
+        "reveal": "Critério de decisão: PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c32-resource",
@@ -1430,16 +1430,16 @@
         "id": "w10-c33-micro",
         "pageNumber": 204,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Informação chega progressivamente e exige atualização",
+            "label": "Informação chega progressivamente e exige atualização",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1449,11 +1449,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Informação chega progressivamente e exige atualização."
+        "reveal": "Critério de decisão: Informação chega progressivamente e exige atualização Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c33-resource",
@@ -1474,16 +1474,16 @@
         "id": "w10-c34-micro",
         "pageNumber": 211,
         "title": "Decisão rápida",
-        "prompt": "Qual afirmação recupera melhor o ponto central deste capítulo?",
+        "prompt": "Considere este contexto: ANÁLISE ORIENTADORA Qual afirmação oferece o melhor critério para orientar a decisão?",
         "choices": [
           {
             "id": "A",
-            "label": "• Competência integra conhecimento, reconhecimento, decisão e aplicação",
+            "label": "Competência integra conhecimento, reconhecimento, decisão e aplicação",
             "correct": true
           },
           {
             "id": "B",
-            "label": "• O CATS forma desempenho integrado, não repertório de frases",
+            "label": "O CATS forma desempenho integrado, não repertório de frases",
             "correct": false
           },
           {
@@ -1493,11 +1493,11 @@
           },
           {
             "id": "D",
-            "label": "• Conceitos organizam comunicação e registro; não existem para rotular pessoas",
+            "label": "Conceitos organizam comunicação e registro; não existem para rotular pessoas",
             "correct": false
           }
         ],
-        "reveal": "Ponto-chave: • Competência integra conhecimento, reconhecimento, decisão e aplicação."
+        "reveal": "Critério de decisão: Competência integra conhecimento, reconhecimento, decisão e aplicação Reavalie a aplicação conforme risco, ambiente, comportamento, recursos e resposta da pessoa."
       },
       "resource": {
         "id": "w10-c34-resource",

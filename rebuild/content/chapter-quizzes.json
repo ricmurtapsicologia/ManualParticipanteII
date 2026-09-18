@@ -12,7 +12,7 @@
       "questions": [
         {
           "id": "c1q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “O CATS e a prática profissional”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -35,11 +35,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: O CATS forma desempenho integrado, não repertório de frases."
+          "feedback": "Resposta fundamentada: O CATS forma desempenho integrado, não repertório de frases. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c1q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “O CATS e a prática profissional” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -62,11 +64,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: A orientação operacional é a fonte normativa primária."
+          "feedback": "Resposta fundamentada: A orientação operacional é a fonte normativa primária. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c1q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “O CATS e a prática profissional”?",
           "choices": [
             {
               "id": "A",
@@ -89,11 +93,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Literatura e experiência ampliam compreensão, mas não criam doutrina paralela."
+          "feedback": "Resposta fundamentada: Literatura e experiência ampliam compreensão, mas não criam doutrina paralela. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c1q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Uma ocorrência de tentativa de suicídio raramente se apresenta como um problema único. Enquanto uma pessoa está em crise, a equipe precisa proteger a cena, compreender o que está acontecendo, coordenar recursos, comunicar-se com cuidado, manejar incerteza e… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -116,11 +122,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Descrever comportamentos é mais útil e seguro do que diagnosticar na cena."
+          "feedback": "Resposta fundamentada: Descrever comportamentos é mais útil e seguro do que diagnosticar na cena. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c1q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “O CATS e a prática profissional”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -143,7 +151,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Observar, interpretar com prudência, priorizar, decidir, agir e reavaliar é um ciclo contínuo."
+          "feedback": "Resposta fundamentada: Observar, interpretar com prudência, priorizar, decidir, agir e reavaliar é um ciclo contínuo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -155,7 +165,7 @@
       "questions": [
         {
           "id": "c2q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Comportamento suicida: conceitos e linguagem”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -178,11 +188,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Conceitos organizam comunicação e registro; não existem para rotular pessoas."
+          "feedback": "Resposta fundamentada: Conceitos organizam comunicação e registro; não existem para rotular pessoas. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c2q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Comportamento suicida: conceitos e linguagem” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -205,11 +217,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Diferentes formas de comportamento suicida requerem precisão terminológica."
+          "feedback": "Resposta fundamentada: Diferentes formas de comportamento suicida requerem precisão terminológica. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c2q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Comportamento suicida: conceitos e linguagem”?",
           "choices": [
             {
               "id": "A",
@@ -232,11 +246,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Linguagem centrada na pessoa preserva dignidade sem minimizar risco."
+          "feedback": "Resposta fundamentada: Linguagem centrada na pessoa preserva dignidade sem minimizar risco. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c2q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Gabriel, 16 anos, está em situação de crise após uma discussão familiar. Em menos de cinco minutos, diferentes pessoas na cena usam expressões como “suicida”, “ameaça”, “tentativa”, “chantagem” e “surto”. Cada palavra conduz a uma interpretação diferente.… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -259,11 +275,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Descrição observável é preferível a diagnóstico ou julgamento moral."
+          "feedback": "Resposta fundamentada: Descrição observável é preferível a diagnóstico ou julgamento moral. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c2q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Comportamento suicida: conceitos e linguagem”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -286,7 +304,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Comunicação direta e responsável é diferente de exposição sensacionalista."
+          "feedback": "Resposta fundamentada: Comunicação direta e responsável é diferente de exposição sensacionalista. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -298,7 +318,7 @@
       "questions": [
         {
           "id": "c3q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Epidemiologia e inteligência para decisão”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -321,11 +341,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo."
+          "feedback": "Resposta fundamentada: Epidemiologia descreve populações; não prevê, isoladamente, o indivíduo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c3q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Epidemiologia e inteligência para decisão” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -348,11 +370,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Número, proporção e taxa respondem a perguntas diferentes."
+          "feedback": "Resposta fundamentada: Número, proporção e taxa respondem a perguntas diferentes. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c3q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Epidemiologia e inteligência para decisão”?",
           "choices": [
             {
               "id": "A",
@@ -375,11 +399,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: O Brasil registrou 15.507 suicídios em 2021; 77,8% eram do sexo masculino."
+          "feedback": "Resposta fundamentada: O Brasil registrou 15.507 suicídios em 2021; 77,8% eram do sexo masculino. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c3q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Uma turma do CATS recebe três números: a maioria dos óbitos por suicídio no Brasil ocorre entre homens; a maioria das notificações de violência autoprovocada ocorre entre mulheres; e Minas Gerais apresentou taxa de mortalidade por suicídio acima da média… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -402,11 +428,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Interpretar número absoluto, proporção e taxa de mortalidade."
+          "feedback": "Resposta fundamentada: Interpretar número absoluto, proporção e taxa de mortalidade. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c3q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Epidemiologia e inteligência para decisão”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -429,7 +457,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Descrever achados nacionais recentes disponíveis no Boletim Epidemiológico v.55 n.4."
+          "feedback": "Resposta fundamentada: Descrever achados nacionais recentes disponíveis no Boletim Epidemiológico v.55 n.4. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -441,7 +471,7 @@
       "questions": [
         {
           "id": "c4q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “A crise suicida: dor, ambivalência, desesperança e constrição”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -464,11 +494,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Crise suicida é estado dinâmico e individual, não identidade."
+          "feedback": "Resposta fundamentada: Crise suicida é estado dinâmico e individual, não identidade. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c4q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “A crise suicida: dor, ambivalência, desesperança e constrição” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -491,11 +523,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Dor psicológica, desesperança, ambivalência e constrição são conceitos de compreensão, não etiquetas diagnósticas."
+          "feedback": "Resposta fundamentada: Dor psicológica, desesperança, ambivalência e constrição são conceitos de compreensão, não etiquetas diagnósticas. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c4q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “A crise suicida: dor, ambivalência, desesperança e constrição”?",
           "choices": [
             {
               "id": "A",
@@ -518,11 +552,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Ambivalência mantém a situação aberta, mas não garante segurança."
+          "feedback": "Resposta fundamentada: Ambivalência mantém a situação aberta, mas não garante segurança. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c4q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Helena diz: “eu não quero continuar assim”, mas permanece conversando. Minutos depois afirma: “não tem mais nada”, e logo pergunta o que acontecerá se sair dali. Para um observador apressado, as falas parecem contraditórias. Para quem compreende crise suicida,… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -545,11 +581,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Constrição favorece comunicação simples e alternativas graduais."
+          "feedback": "Resposta fundamentada: Constrição favorece comunicação simples e alternativas graduais. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c4q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “A crise suicida: dor, ambivalência, desesperança e constrição”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -572,7 +610,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Modelos cognitivos ajudam a formular hipóteses; não autorizam inferência neurobiológica específica."
+          "feedback": "Resposta fundamentada: Modelos cognitivos ajudam a formular hipóteses; não autorizam inferência neurobiológica específica. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -584,7 +624,7 @@
       "questions": [
         {
           "id": "c5q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Fatores associados, proteção, risco e limites da avaliação”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -607,11 +647,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Associação estatística não equivale a previsão individual."
+          "feedback": "Resposta fundamentada: Associação estatística não equivale a previsão individual. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c5q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Fatores associados, proteção, risco e limites da avaliação” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -634,11 +676,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Predisponentes ajudam a compreender vulnerabilidade; precipitantes ajudam a entender mudanças recentes."
+          "feedback": "Resposta fundamentada: Predisponentes ajudam a compreender vulnerabilidade; precipitantes ajudam a entender mudanças recentes. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c5q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Fatores associados, proteção, risco e limites da avaliação”?",
           "choices": [
             {
               "id": "A",
@@ -661,11 +705,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Fator de proteção só protege quando é significativo e acessível naquela situação."
+          "feedback": "Resposta fundamentada: Fator de proteção só protege quando é significativo e acessível naquela situação. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c5q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: A equipe de coleta informa que Antônio, 72 anos, vive sozinho, perdeu a esposa há um ano, possui doença crônica e reduziu contato com amigos. Um militar conclui: “ele tem vários fatores de risco; então o risco é alto”. Outro lembra que Antônio mantém vínculo… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -688,11 +734,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Avaliação operacional prioriza riscos presentes, método, ambiente, comunicação e recursos."
+          "feedback": "Resposta fundamentada: Avaliação operacional prioriza riscos presentes, método, ambiente, comunicação e recursos. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c5q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Fatores associados, proteção, risco e limites da avaliação”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -715,7 +763,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Listas e escalas não substituem julgamento profissional e reavaliação."
+          "feedback": "Resposta fundamentada: Listas e escalas não substituem julgamento profissional e reavaliação. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -727,7 +777,7 @@
       "questions": [
         {
           "id": "c6q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Do acionamento ao estabelecimento”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -750,11 +800,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: O Sistema ATS começa no acionamento."
+          "feedback": "Resposta fundamentada: O Sistema ATS começa no acionamento. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c6q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Do acionamento ao estabelecimento” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -777,11 +829,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Informação inicial orienta hipótese; observação em campo confirma ou corrige."
+          "feedback": "Resposta fundamentada: Informação inicial orienta hipótese; observação em campo confirma ou corrige. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c6q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Do acionamento ao estabelecimento”?",
           "choices": [
             {
               "id": "A",
@@ -804,11 +858,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Urgência não elimina segurança de deslocamento."
+          "feedback": "Resposta fundamentada: Urgência não elimina segurança de deslocamento. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c6q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: O COBOM recebe ligação de uma irmã relatando que Roberto enviou mensagens de despedida e deixou de responder. Ela sabe o endereço provável, mas não está no local. Poucos minutos depois, outra pessoa informa que há alguém na sacada do mesmo prédio. A guarnição… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -831,11 +887,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Reconhecer o acionamento, o deslocamento e o estabelecimento como etapas integrantes do Sistema ATS."
+          "feedback": "Resposta fundamentada: Reconhecer o acionamento, o deslocamento e o estabelecimento como etapas integrantes do Sistema ATS. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c6q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Do acionamento ao estabelecimento”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -858,7 +916,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Distinguir informação útil para decisão de detalhe que apenas aumenta ruído."
+          "feedback": "Resposta fundamentada: Distinguir informação útil para decisão de detalhe que apenas aumenta ruído. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -870,7 +930,7 @@
       "questions": [
         {
           "id": "c7q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Observação inicial, passagem de comando e avaliação”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -893,11 +953,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: A cena inclui pessoa, perigo, ambiente e resposta institucional."
+          "feedback": "Resposta fundamentada: A cena inclui pessoa, perigo, ambiente e resposta institucional. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c7q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Observação inicial, passagem de comando e avaliação” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -920,11 +982,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Observação inicial é operacional, não diagnóstico clínico."
+          "feedback": "Resposta fundamentada: Observação inicial é operacional, não diagnóstico clínico. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c7q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Observação inicial, passagem de comando e avaliação”?",
           "choices": [
             {
               "id": "A",
@@ -947,11 +1011,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Confirmar informação significa atualizá-la."
+          "feedback": "Resposta fundamentada: Confirmar informação significa atualizá-la. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c7q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: A primeira equipe encontra Paula em um apartamento. Ela responde de dentro de um quarto, sem contato visual. Uma vizinha afirma que Paula ingeriu medicamentos, mas não sabe quais. A mãe chega chorando e tenta abrir a porta. Há um cachorro agitado no corredor.… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -974,11 +1040,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Passagem de comando deve transmitir raciocínio, não apenas cronologia."
+          "feedback": "Resposta fundamentada: Passagem de comando deve transmitir raciocínio, não apenas cronologia. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c7q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Observação inicial, passagem de comando e avaliação”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -1001,7 +1069,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Liderança varia conforme competência e risco."
+          "feedback": "Resposta fundamentada: Liderança varia conforme competência e risco. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -1013,7 +1083,7 @@
       "questions": [
         {
           "id": "c8q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Isolamento, espaços de comunicação e avaliação dinâmica”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -1036,11 +1106,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Isolamento protege segurança e comunicação."
+          "feedback": "Resposta fundamentada: Isolamento protege segurança e comunicação. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c8q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Isolamento, espaços de comunicação e avaliação dinâmica” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -1063,11 +1135,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Distância é funcional e depende do contexto."
+          "feedback": "Resposta fundamentada: Distância é funcional e depende do contexto. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c8q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Isolamento, espaços de comunicação e avaliação dinâmica”?",
           "choices": [
             {
               "id": "A",
@@ -1090,11 +1164,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Privacidade e redução de exposição integram a resposta."
+          "feedback": "Resposta fundamentada: Privacidade e redução de exposição integram a resposta. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c8q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Helena está na parte externa de uma passarela. Cinco pessoas filmam. Um familiar grita que ela “precisa pensar nos filhos”. Um drone particular sobrevoa o local. Dois policiais chegam pela lateral e um jornalista tenta aproximar-se. Antes mesmo de Helena… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -1117,11 +1193,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: A avaliação de risco é dinâmica."
+          "feedback": "Resposta fundamentada: A avaliação de risco é dinâmica. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c8q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Isolamento, espaços de comunicação e avaliação dinâmica”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -1144,7 +1222,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Melhora na conversa não elimina perigos físicos."
+          "feedback": "Resposta fundamentada: Melhora na conversa não elimina perigos físicos. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -1156,7 +1236,7 @@
       "questions": [
         {
           "id": "c9q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Funções, comando e coordenação”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -1179,11 +1259,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Funções reduzem sobrecarga e lacunas."
+          "feedback": "Resposta fundamentada: Funções reduzem sobrecarga e lacunas. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c9q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Funções, comando e coordenação” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -1206,11 +1288,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Comandante e abordador possuem focos complementares."
+          "feedback": "Resposta fundamentada: Comandante e abordador possuem focos complementares. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c9q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Funções, comando e coordenação”?",
           "choices": [
             {
               "id": "A",
@@ -1233,11 +1317,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Auxiliar apoia sem criar segunda voz concorrente."
+          "feedback": "Resposta fundamentada: Auxiliar apoia sem criar segunda voz concorrente. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c9q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Em uma ocorrência com sete bombeiros, três policiais e uma equipe de saúde, todos possuem capacidade para ajudar. Ainda assim, a cena começa a piorar: dois militares perguntam simultaneamente, um familiar passa informação diretamente ao abordador, a equipe… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -1260,11 +1346,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Informação deve ser filtrada antes de chegar à díade."
+          "feedback": "Resposta fundamentada: Informação deve ser filtrada antes de chegar à díade. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c9q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Funções, comando e coordenação”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -1287,7 +1375,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Segurança mantém vigilância quando o vínculo pode induzir relaxamento."
+          "feedback": "Resposta fundamentada: Segurança mantém vigilância quando o vínculo pode induzir relaxamento. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -1299,7 +1389,7 @@
       "questions": [
         {
           "id": "c10q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Coleta de informações e apoio à decisão”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -1322,11 +1412,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Coleta útil é orientada à decisão."
+          "feedback": "Resposta fundamentada: Coleta útil é orientada à decisão. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c10q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Coleta de informações e apoio à decisão” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -1349,11 +1441,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Fontes precisam ser contextualizadas e, quando possível, trianguladas."
+          "feedback": "Resposta fundamentada: Fontes precisam ser contextualizadas e, quando possível, trianguladas. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c10q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Coleta de informações e apoio à decisão”?",
           "choices": [
             {
               "id": "A",
@@ -1376,11 +1470,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Fatores associados não predizem individualmente o desfecho."
+          "feedback": "Resposta fundamentada: Fatores associados não predizem individualmente o desfecho. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c10q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Enquanto o abordador conversa com Marcos, três familiares entregam versões diferentes. A mãe diz que ele perdeu o emprego. Um irmão afirma que houve separação. Um vizinho insiste que Marcos “sempre foi agressivo”. No celular de um familiar há uma mensagem… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -1403,11 +1499,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Fator de proteção é aquilo que tem função protetiva para aquela pessoa."
+          "feedback": "Resposta fundamentada: Fator de proteção é aquilo que tem função protetiva para aquela pessoa. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c10q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Coleta de informações e apoio à decisão”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -1430,7 +1528,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Repasse ao abordador deve ser seletivo."
+          "feedback": "Resposta fundamentada: Repasse ao abordador deve ser seletivo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -1442,7 +1542,7 @@
       "questions": [
         {
           "id": "c11q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Integração interinstitucional”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -1465,11 +1565,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Instituições cooperam por competências complementares."
+          "feedback": "Resposta fundamentada: Instituições cooperam por competências complementares. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c11q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Integração interinstitucional” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -1492,11 +1594,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Vínculo existente não deve ser rompido automaticamente."
+          "feedback": "Resposta fundamentada: Vínculo existente não deve ser rompido automaticamente. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c11q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Integração interinstitucional”?",
           "choices": [
             {
               "id": "A",
@@ -1519,11 +1623,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Saúde precisa ser integrada antes do momento de encaminhamento."
+          "feedback": "Resposta fundamentada: Saúde precisa ser integrada antes do momento de encaminhamento. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c11q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Na cena de Antônio estão CBMMG, SAMU, PMMG e agentes de trânsito. Todos querem ajudar. Um profissional de saúde sugere aproximar a ambulância; um policial pede mudança no perímetro; um familiar tenta convencer a equipe a permitir entrada de um líder religioso.… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -1546,11 +1652,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Algumas cenas exigem liderança específica de forças policiais ou especialistas."
+          "feedback": "Resposta fundamentada: Algumas cenas exigem liderança específica de forças policiais ou especialistas. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c11q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Integração interinstitucional”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -1573,7 +1681,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Conflito técnico deve ser transformado em análise de risco, norma e competência."
+          "feedback": "Resposta fundamentada: Conflito técnico deve ser transformado em análise de risco, norma e competência. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -1585,7 +1695,7 @@
       "questions": [
         {
           "id": "c12q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “O abordador e a preparação para o contato”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -1608,11 +1718,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: O abordador funciona melhor quando o sistema ao redor funciona."
+          "feedback": "Resposta fundamentada: O abordador funciona melhor quando o sistema ao redor funciona. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c12q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “O abordador e a preparação para o contato” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -1635,11 +1747,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Preparação organiza risco, informação, apoio e autoconsciência."
+          "feedback": "Resposta fundamentada: Preparação organiza risco, informação, apoio e autoconsciência. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c12q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “O abordador e a preparação para o contato”?",
           "choices": [
             {
               "id": "A",
@@ -1662,11 +1776,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Postura e voz precisam ser coerentes com a intenção declarada."
+          "feedback": "Resposta fundamentada: Postura e voz precisam ser coerentes com a intenção declarada. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c12q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: A equipe escolheu André como abordador porque ele concluiu o CATS e costuma manter boa comunicação sob pressão. Quando se aproxima da área de contato, percebe o próprio coração acelerado, escuta familiares discutindo atrás do isolamento e recebe três… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -1689,11 +1805,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Calma não significa minimizar urgência."
+          "feedback": "Resposta fundamentada: Calma não significa minimizar urgência. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c12q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “O abordador e a preparação para o contato”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -1716,7 +1834,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Troca de abordador é decisão funcional, não julgamento pessoal."
+          "feedback": "Resposta fundamentada: Troca de abordador é decisão funcional, não julgamento pessoal. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -1728,7 +1848,7 @@
       "questions": [
         {
           "id": "c13q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Aproximação, silêncio inicial e apresentação”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -1751,11 +1871,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Aproximação é progressiva e condicionada à segurança."
+          "feedback": "Resposta fundamentada: Aproximação é progressiva e condicionada à segurança. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c13q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Aproximação, silêncio inicial e apresentação” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -1778,11 +1900,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: “Pare” é informação e pode ser oportunidade de demonstrar previsibilidade."
+          "feedback": "Resposta fundamentada: “Pare” é informação e pode ser oportunidade de demonstrar previsibilidade. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c13q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Aproximação, silêncio inicial e apresentação”?",
           "choices": [
             {
               "id": "A",
@@ -1805,11 +1929,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Silêncio inicial é presença ativa."
+          "feedback": "Resposta fundamentada: Silêncio inicial é presença ativa. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c13q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: André consegue estabelecer contato visual com Helena a distância. Ela olha rapidamente e volta a observar o trânsito abaixo. Quando ele avança alguns passos, ela diz: “fica aí”. O que parece uma ordem simples é também informação: Helena percebeu a aproximação,… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -1832,11 +1958,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Apresentação deve prometer apenas o que é sustentável."
+          "feedback": "Resposta fundamentada: Apresentação deve prometer apenas o que é sustentável. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c13q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Aproximação, silêncio inicial e apresentação”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -1859,7 +1987,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Automatismos sociais podem soar incongruentes."
+          "feedback": "Resposta fundamentada: Automatismos sociais podem soar incongruentes. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -1871,7 +2001,7 @@
       "questions": [
         {
           "id": "c14q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Perguntas e escuta”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -1894,11 +2024,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Perguntas modificam a interação."
+          "feedback": "Resposta fundamentada: Perguntas modificam a interação. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c14q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Perguntas e escuta” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -1921,11 +2053,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Uma pergunta por vez melhora processamento e escuta."
+          "feedback": "Resposta fundamentada: Uma pergunta por vez melhora processamento e escuta. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c14q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Perguntas e escuta”?",
           "choices": [
             {
               "id": "A",
@@ -1948,11 +2082,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Propósito vem antes da curiosidade."
+          "feedback": "Resposta fundamentada: Propósito vem antes da curiosidade. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c14q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Helena mantém contato verbal intermitente. Responde com frases curtas: “não adianta”, “ninguém entende” e “quero ficar sozinha”. A equipe já recebeu informações de terceiros, mas algumas são contraditórias. O abordador precisa compreender o que acontece sem… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -1975,11 +2111,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Paráfrase organiza sem tomar posse da narrativa."
+          "feedback": "Resposta fundamentada: Paráfrase organiza sem tomar posse da narrativa. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c14q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Perguntas e escuta”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -2002,7 +2140,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Mudanças ao longo da conversa importam mais que sinais isolados."
+          "feedback": "Resposta fundamentada: Mudanças ao longo da conversa importam mais que sinais isolados. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -2014,7 +2154,7 @@
       "questions": [
         {
           "id": "c15q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Validação e paráfrase”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -2037,11 +2177,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Validar sofrimento não é concordar com suicídio."
+          "feedback": "Resposta fundamentada: Validar sofrimento não é concordar com suicídio. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c15q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Validação e paráfrase” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -2064,11 +2206,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Diferenciar validar experiência, validar emoção e concordar com uma conclusão suicida."
+          "feedback": "Resposta fundamentada: Diferenciar validar experiência, validar emoção e concordar com uma conclusão suicida. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c15q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Validação e paráfrase”?",
           "choices": [
             {
               "id": "A",
@@ -2091,11 +2235,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Utilizar paráfrase para organizar narrativa e verificar compreensão."
+          "feedback": "Resposta fundamentada: Utilizar paráfrase para organizar narrativa e verificar compreensão. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c15q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Marcos afirma: “Acabou tudo. Eu perdi meu trabalho, minha mulher foi embora e ninguém aqui pode devolver minha vida.” O abordador sente vontade de responder que existem outros empregos e que separações passam. Essa resposta procura esperança, mas pode… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -2118,11 +2264,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Evitar otimismo prematuro, refutação e minimização."
+          "feedback": "Resposta fundamentada: Evitar otimismo prematuro, refutação e minimização. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c15q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Validação e paráfrase”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -2145,7 +2293,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Reconhecer quando uma devolução precisa ser corrigida."
+          "feedback": "Resposta fundamentada: Reconhecer quando uma devolução precisa ser corrigida. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -2157,7 +2307,7 @@
       "questions": [
         {
           "id": "c16q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Ferramentas de diálogo na abordagem de dissuasão”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -2180,11 +2330,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Ferramentas têm função, não obrigação de uso."
+          "feedback": "Resposta fundamentada: Ferramentas têm função, não obrigação de uso. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c16q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Ferramentas de diálogo na abordagem de dissuasão” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -2207,11 +2359,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Elas devem nascer de material da própria pessoa."
+          "feedback": "Resposta fundamentada: Elas devem nascer de material da própria pessoa. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c16q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Ferramentas de diálogo na abordagem de dissuasão”?",
           "choices": [
             {
               "id": "A",
@@ -2234,11 +2388,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Futuro útil é concreto e significativo."
+          "feedback": "Resposta fundamentada: Futuro útil é concreto e significativo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c16q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Após 50 minutos, Júlia já contou que superou uma crise anterior, falou de uma irmã com quem se afastou e mencionou que costumava correr aos domingos. O abordador conhece “sucesso anterior”, “ponte para o passado” e “ponte para o futuro”. O desafio não é… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -2261,11 +2417,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Memórias podem proteger ou doer."
+          "feedback": "Resposta fundamentada: Memórias podem proteger ou doer. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c16q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Ferramentas de diálogo na abordagem de dissuasão”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -2288,7 +2446,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Clareza comunicacional dispensa neuroexplicações frágeis."
+          "feedback": "Resposta fundamentada: Clareza comunicacional dispensa neuroexplicações frágeis. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -2300,7 +2460,7 @@
       "questions": [
         {
           "id": "c17q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Ambivalência, alternativas e microdecisões”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -2323,11 +2483,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Ambivalência é abertura possível, não garantia."
+          "feedback": "Resposta fundamentada: Ambivalência é abertura possível, não garantia. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c17q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Ambivalência, alternativas e microdecisões” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -2350,11 +2512,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Perguntas sobre o futuro podem sinalizar mudança relevante."
+          "feedback": "Resposta fundamentada: Perguntas sobre o futuro podem sinalizar mudança relevante. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c17q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Ambivalência, alternativas e microdecisões”?",
           "choices": [
             {
               "id": "A",
@@ -2377,11 +2541,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Microdecisões reduzem tamanho da escolha."
+          "feedback": "Resposta fundamentada: Microdecisões reduzem tamanho da escolha. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c17q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Depois de longo período de recusa, Helena pergunta: “Se eu sair daqui, vocês vão me algemar?”. A pergunta não significa que decidiu desistir. Significa que começou a representar mentalmente um cenário posterior à posição atual. Essa mudança merece atenção. Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -2404,11 +2570,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Saída honrosa preserva dignidade."
+          "feedback": "Resposta fundamentada: Saída honrosa preserva dignidade. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c17q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Ambivalência, alternativas e microdecisões”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -2431,7 +2599,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Cooperação não é barganha."
+          "feedback": "Resposta fundamentada: Cooperação não é barganha. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -2443,7 +2613,7 @@
       "questions": [
         {
           "id": "c18q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Silêncio, resistência, impasse e ruptura”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -2466,11 +2636,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Silêncio não possui um único significado."
+          "feedback": "Resposta fundamentada: Silêncio não possui um único significado. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c18q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Silêncio, resistência, impasse e ruptura” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -2493,11 +2665,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Pausa pode ser parte da escuta."
+          "feedback": "Resposta fundamentada: Pausa pode ser parte da escuta. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c18q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Silêncio, resistência, impasse e ruptura”?",
           "choices": [
             {
               "id": "A",
@@ -2520,11 +2694,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: “Resistência” deve ser traduzida em comportamento observável."
+          "feedback": "Resposta fundamentada: “Resistência” deve ser traduzida em comportamento observável. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c18q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Roberto conversou por vinte minutos e depois deixou de responder. Permanece visível, mas evita olhar e não reage a duas perguntas. O abordador sente que precisa “fazer alguma coisa”. O silêncio passa a ser desconfortável também para a equipe. Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -2547,11 +2723,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Impasse pede mudança de hipótese ou estratégia."
+          "feedback": "Resposta fundamentada: Impasse pede mudança de hipótese ou estratégia. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c18q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Silêncio, resistência, impasse e ruptura”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -2574,7 +2752,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Diferenciar silêncio tolerável, baixa responsividade e ruptura de canal."
+          "feedback": "Resposta fundamentada: Diferenciar silêncio tolerável, baixa responsividade e ruptura de canal. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -2586,7 +2766,7 @@
       "questions": [
         {
           "id": "c19q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Agitação, retraimento e alterações perceptivas”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -2609,11 +2789,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Perfis da ITO são didáticos e flexíveis."
+          "feedback": "Resposta fundamentada: Perfis da ITO são didáticos e flexíveis. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c19q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Agitação, retraimento e alterações perceptivas” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -2636,11 +2818,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Descrição supera rótulo."
+          "feedback": "Resposta fundamentada: Descrição supera rótulo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c19q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Agitação, retraimento e alterações perceptivas”?",
           "choices": [
             {
               "id": "A",
@@ -2663,11 +2847,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Agitação pede desescalada e segurança."
+          "feedback": "Resposta fundamentada: Agitação pede desescalada e segurança. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c19q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Em menos de dez minutos, Marcos passa de fala intensa e hostil para silêncio. Em outra ocorrência, Júlia fala muito pouco, chora e demora a responder. Roberto diz que escuta uma voz, mas continua conversando com o bombeiro. A orientação operacional usa perfis… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -2690,11 +2876,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Retraimento não deve ser preenchido com monólogo."
+          "feedback": "Resposta fundamentada: Retraimento não deve ser preenchido com monólogo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c19q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Agitação, retraimento e alterações perceptivas”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -2717,7 +2905,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Alterações perceptivas não exigem confronto nem concordância."
+          "feedback": "Resposta fundamentada: Alterações perceptivas não exigem confronto nem concordância. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -2729,7 +2919,7 @@
       "questions": [
         {
           "id": "c20q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Troca do abordador e transição para abordagem tática”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -2752,11 +2942,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Troca de abordador pode preservar, e não necessariamente romper, vínculo."
+          "feedback": "Resposta fundamentada: Troca de abordador pode preservar, e não necessariamente romper, vínculo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c20q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Troca do abordador e transição para abordagem tática” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -2779,11 +2971,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Tempo sozinho não define troca."
+          "feedback": "Resposta fundamentada: Tempo sozinho não define troca. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c20q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Troca do abordador e transição para abordagem tática”?",
           "choices": [
             {
               "id": "A",
@@ -2806,11 +3000,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Preparação tática é parte da segurança durante dissuasão."
+          "feedback": "Resposta fundamentada: Preparação tática é parte da segurança durante dissuasão. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c20q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: André está há duas horas com Helena. A conversa permanece aberta, mas ele percebe exaustão e começa a repetir perguntas. O auxiliar possui todas as informações e Helena já ouviu sua voz em um momento breve. Em paralelo, a equipe identifica mudança concreta de… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -2833,11 +3029,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Tática não é punição nem etapa obrigatória."
+          "feedback": "Resposta fundamentada: Tática não é punição nem etapa obrigatória. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c20q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Troca do abordador e transição para abordagem tática”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -2860,7 +3058,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Confiança e contingência coexistem."
+          "feedback": "Resposta fundamentada: Confiança e contingência coexistem. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -2872,7 +3072,7 @@
       "questions": [
         {
           "id": "c21q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Princípios e segurança da abordagem tática”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -2895,11 +3095,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Técnica e tática pertencem ao mesmo Sistema ATS."
+          "feedback": "Resposta fundamentada: Técnica e tática pertencem ao mesmo Sistema ATS. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c21q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Princípios e segurança da abordagem tática” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -2922,11 +3124,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Preparação tática não equivale a decisão de executar."
+          "feedback": "Resposta fundamentada: Preparação tática não equivale a decisão de executar. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "melhorar"
         },
         {
           "id": "c21q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Princípios e segurança da abordagem tática”?",
           "choices": [
             {
               "id": "A",
@@ -2949,11 +3153,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Tempo de cena isolado não determina intervenção."
+          "feedback": "Resposta fundamentada: Tempo de cena isolado não determina intervenção. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c21q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Durante a dissuasão, a equipe tática permanece preparada sem ocupar o centro visual da cena. O comandante recebe atualização de que a condição física da pessoa e a configuração do local mudaram. A pergunta não é “a conversa já demorou demais?”, mas “o risco… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -2976,11 +3182,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Técnicas de alto risco exigem treinamento específico."
+          "feedback": "Resposta fundamentada: Técnicas de alto risco exigem treinamento específico. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c21q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Princípios e segurança da abordagem tática”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -3003,7 +3211,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Coordenação evita ações concorrentes."
+          "feedback": "Resposta fundamentada: Coordenação evita ações concorrentes. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -3015,7 +3225,7 @@
       "questions": [
         {
           "id": "c22q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Precipitação e ambiente vertical”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -3038,11 +3248,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Em altura, o ambiente modifica cada decisão."
+          "feedback": "Resposta fundamentada: Em altura, o ambiente modifica cada decisão. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c22q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Precipitação e ambiente vertical” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -3065,11 +3277,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Proximidade comunicacional não supera segurança física."
+          "feedback": "Resposta fundamentada: Proximidade comunicacional não supera segurança física. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c22q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Precipitação e ambiente vertical”?",
           "choices": [
             {
               "id": "A",
@@ -3092,11 +3306,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Salvamento especializado e abordagem devem operar integrados."
+          "feedback": "Resposta fundamentada: Salvamento especializado e abordagem devem operar integrados. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c22q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Helena está em ambiente elevado. O contato verbal está estabelecido, mas o terreno limita movimentação e impõe risco de queda também aos bombeiros. Uma decisão comunicacional simples — dar um passo — pode ter significado operacional completamente diferente… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -3119,11 +3335,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Exemplos técnicos não são autorizações universais."
+          "feedback": "Resposta fundamentada: Exemplos técnicos não são autorizações universais. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c22q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Precipitação e ambiente vertical”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -3146,7 +3364,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: O isolamento inclui pessoas e áreas abaixo."
+          "feedback": "Resposta fundamentada: O isolamento inclui pessoas e áreas abaixo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -3158,7 +3378,7 @@
       "questions": [
         {
           "id": "c23q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Água, enforcamento, incêndio, eletricidade e intoxicação”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -3181,11 +3401,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Cada ambiente acrescenta riscos próprios."
+          "feedback": "Resposta fundamentada: Cada ambiente acrescenta riscos próprios. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c23q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Água, enforcamento, incêndio, eletricidade e intoxicação” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -3208,11 +3430,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Especialidade de salvamento não pode ser substituída por leitura."
+          "feedback": "Resposta fundamentada: Especialidade de salvamento não pode ser substituída por leitura. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c23q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Água, enforcamento, incêndio, eletricidade e intoxicação”?",
           "choices": [
             {
               "id": "A",
@@ -3235,11 +3459,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Atmosfera e energia são perigos que podem permanecer invisíveis."
+          "feedback": "Resposta fundamentada: Atmosfera e energia são perigos que podem permanecer invisíveis. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c23q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: Em cinco ocorrências hipotéticas, a pessoa está respectivamente próxima à água, em situação de suspensão, em ambiente com fumaça, perto de instalação energizada e dentro de cômodo com possível intoxicação. A comunicação pode ser semelhante em alguns momentos,… Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -3262,11 +3488,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Alteração de consciência pode ser emergência clínica."
+          "feedback": "Resposta fundamentada: Alteração de consciência pode ser emergência clínica. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c23q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Água, enforcamento, incêndio, eletricidade e intoxicação”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -3289,7 +3517,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Reconhecer perigos específicos que exigem competências próprias de salvamento e APH."
+          "feedback": "Resposta fundamentada: Reconhecer perigos específicos que exigem competências próprias de salvamento e APH. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -3301,7 +3531,7 @@
       "questions": [
         {
           "id": "c24q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Arma branca, arma de fogo e risco de violência”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -3324,11 +3554,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Violência pode mudar de direção."
+          "feedback": "Resposta fundamentada: Violência pode mudar de direção. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c24q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Arma branca, arma de fogo e risco de violência” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -3351,11 +3583,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Segurança limita proximidade."
+          "feedback": "Resposta fundamentada: Segurança limita proximidade. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c24q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Arma branca, arma de fogo e risco de violência”?",
           "choices": [
             {
               "id": "A",
@@ -3378,11 +3612,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Arma de fogo exige liderança policial especializada segundo A orientação operacional."
+          "feedback": "Resposta fundamentada: Arma de fogo exige liderança policial especializada segundo A orientação operacional. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c24q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -3405,11 +3641,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Informação não confirmada pode ter alto impacto operacional."
+          "feedback": "Resposta fundamentada: Informação não confirmada pode ter alto impacto operacional. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c24q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Arma branca, arma de fogo e risco de violência”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -3432,7 +3670,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Reconhecer que violência autodirigida pode tornar-se dirigida a terceiros."
+          "feedback": "Resposta fundamentada: Reconhecer que violência autodirigida pode tornar-se dirigida a terceiros. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -3444,7 +3684,7 @@
       "questions": [
         {
           "id": "c25q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Entrada, contenção, lesões, APH e presunção de óbito”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -3467,11 +3707,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Entrada combina necessidade, segurança e competência."
+          "feedback": "Resposta fundamentada: Entrada combina necessidade, segurança e competência. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c25q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Entrada, contenção, lesões, APH e presunção de óbito” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -3494,11 +3736,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Contenção é proteção proporcional, não punição."
+          "feedback": "Resposta fundamentada: Contenção é proteção proporcional, não punição. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c25q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Entrada, contenção, lesões, APH e presunção de óbito”?",
           "choices": [
             {
               "id": "A",
@@ -3521,11 +3765,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Lesões e deterioração exigem APH conforme protocolo."
+          "feedback": "Resposta fundamentada: Lesões e deterioração exigem APH conforme protocolo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c25q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -3548,11 +3794,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Saída do ponto de risco não encerra cuidado."
+          "feedback": "Resposta fundamentada: Saída do ponto de risco não encerra cuidado. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c25q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Entrada, contenção, lesões, APH e presunção de óbito”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -3575,7 +3823,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Reconhecer limites e princípios de entrada em ambiente."
+          "feedback": "Resposta fundamentada: Reconhecer limites e princípios de entrada em ambiente. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -3587,7 +3837,7 @@
       "questions": [
         {
           "id": "c26q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Crianças e adolescentes”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -3610,11 +3860,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Idade jovem não reduz seriedade da ocorrência."
+          "feedback": "Resposta fundamentada: Idade jovem não reduz seriedade da ocorrência. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c26q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Crianças e adolescentes” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -3637,11 +3889,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Desenvolvimento modifica linguagem e interpretação."
+          "feedback": "Resposta fundamentada: Desenvolvimento modifica linguagem e interpretação. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c26q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Crianças e adolescentes”?",
           "choices": [
             {
               "id": "A",
@@ -3664,11 +3918,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Família precisa ser avaliada como recurso, não presumida como proteção."
+          "feedback": "Resposta fundamentada: Família precisa ser avaliada como recurso, não presumida como proteção. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c26q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -3691,11 +3947,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Escola, pares e redes digitais podem ter grande peso subjetivo."
+          "feedback": "Resposta fundamentada: Escola, pares e redes digitais podem ter grande peso subjetivo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c26q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Crianças e adolescentes”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -3718,7 +3976,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Reconhecer especificidades do desenvolvimento sem infantilizar adolescentes nem adultificar crianças."
+          "feedback": "Resposta fundamentada: Reconhecer especificidades do desenvolvimento sem infantilizar adolescentes nem adultificar crianças. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -3730,7 +3990,7 @@
       "questions": [
         {
           "id": "c27q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Pessoas idosas, pessoas com deficiência e neurodivergentes”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -3753,11 +4013,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Idade e deficiência não definem capacidade por si só."
+          "feedback": "Resposta fundamentada: Idade e deficiência não definem capacidade por si só. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c27q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Pessoas idosas, pessoas com deficiência e neurodivergentes” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -3780,11 +4042,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Barreiras sensoriais podem parecer recusa."
+          "feedback": "Resposta fundamentada: Barreiras sensoriais podem parecer recusa. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c27q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Pessoas idosas, pessoas com deficiência e neurodivergentes”?",
           "choices": [
             {
               "id": "A",
@@ -3807,11 +4071,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Acessibilidade faz parte da segurança."
+          "feedback": "Resposta fundamentada: Acessibilidade faz parte da segurança. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c27q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -3834,11 +4100,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Fale com a pessoa antes de falar sobre ela."
+          "feedback": "Resposta fundamentada: Fale com a pessoa antes de falar sobre ela. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c27q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Pessoas idosas, pessoas com deficiência e neurodivergentes”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -3861,7 +4129,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Neurodivergência pode exigir mais previsibilidade, menos estímulos e maior tempo de resposta."
+          "feedback": "Resposta fundamentada: Neurodivergência pode exigir mais previsibilidade, menos estímulos e maior tempo de resposta. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -3873,7 +4143,7 @@
       "questions": [
         {
           "id": "c28q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Intoxicação, agitação e alterações do pensamento”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -3896,11 +4166,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Alteração comportamental pode ter múltiplas causas."
+          "feedback": "Resposta fundamentada: Alteração comportamental pode ter múltiplas causas. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c28q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Intoxicação, agitação e alterações do pensamento” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -3923,11 +4195,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Deterioração de consciência é dado de alta prioridade."
+          "feedback": "Resposta fundamentada: Deterioração de consciência é dado de alta prioridade. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c28q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Intoxicação, agitação e alterações do pensamento”?",
           "choices": [
             {
               "id": "A",
@@ -3950,11 +4224,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Agitação melhora com redução de estímulos e confronto."
+          "feedback": "Resposta fundamentada: Agitação melhora com redução de estímulos e confronto. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c28q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -3977,11 +4253,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Relatos perceptivos devem ser reconhecidos sem confirmação do conteúdo."
+          "feedback": "Resposta fundamentada: Relatos perceptivos devem ser reconhecidos sem confirmação do conteúdo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c28q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Intoxicação, agitação e alterações do pensamento”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -4004,7 +4282,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Reconhecer intoxicação e alteração de consciência como prioridades de segurança e saúde."
+          "feedback": "Resposta fundamentada: Reconhecer intoxicação e alteração de consciência como prioridades de segurança e saúde. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -4016,7 +4296,7 @@
       "questions": [
         {
           "id": "c29q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Mulheres, violência doméstica, cultura, espiritualidade e contexto social”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -4039,11 +4319,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Família pode ser proteção ou ameaça."
+          "feedback": "Resposta fundamentada: Família pode ser proteção ou ameaça. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c29q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Mulheres, violência doméstica, cultura, espiritualidade e contexto social” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -4066,11 +4348,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Violência doméstica exige proteção específica."
+          "feedback": "Resposta fundamentada: Violência doméstica exige proteção específica. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c29q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Mulheres, violência doméstica, cultura, espiritualidade e contexto social”?",
           "choices": [
             {
               "id": "A",
@@ -4093,11 +4377,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Espiritualidade só é recurso quando possui esse significado para a pessoa."
+          "feedback": "Resposta fundamentada: Espiritualidade só é recurso quando possui esse significado para a pessoa. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c29q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -4120,11 +4406,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: O Estado não deve moralizar religiosamente a crise. • Mulheres e meninas devem ter relato, identidade, privacidade e risco de violência protegidos sem culpabilização."
+          "feedback": "Resposta fundamentada: O Estado não deve moralizar religiosamente a crise. • Mulheres e meninas devem ter relato, identidade, privacidade e risco de violência protegidos sem culpabilização. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c29q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Mulheres, violência doméstica, cultura, espiritualidade e contexto social”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -4147,7 +4435,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Reconhecer violência doméstica como contexto que pode exigir proteção específica."
+          "feedback": "Resposta fundamentada: Reconhecer violência doméstica como contexto que pode exigir proteção específica. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -4159,7 +4449,7 @@
       "questions": [
         {
           "id": "c30q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Desistência, resgate, encaminhamento e registro”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -4182,11 +4472,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: A saída do ponto de risco é transição, não alta."
+          "feedback": "Resposta fundamentada: A saída do ponto de risco é transição, não alta. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c30q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Desistência, resgate, encaminhamento e registro” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -4209,11 +4501,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: O ambiente pós-resgate precisa permanecer organizado."
+          "feedback": "Resposta fundamentada: O ambiente pós-resgate precisa permanecer organizado. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c30q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Desistência, resgate, encaminhamento e registro”?",
           "choices": [
             {
               "id": "A",
@@ -4236,11 +4530,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Reencontro familiar deve ser avaliado."
+          "feedback": "Resposta fundamentada: Reencontro familiar deve ser avaliado. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c30q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -4263,11 +4559,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Passagem para saúde deve ser objetiva."
+          "feedback": "Resposta fundamentada: Passagem para saúde deve ser objetiva. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c30q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Desistência, resgate, encaminhamento e registro”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -4290,7 +4588,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: A continuidade do cuidado deve considerar RAPS, rede de apoio e regulação conforme o caso."
+          "feedback": "Resposta fundamentada: A continuidade do cuidado deve considerar RAPS, rede de apoio e regulação conforme o caso. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -4302,7 +4602,7 @@
       "questions": [
         {
           "id": "c31q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Comunicação responsável, imprensa, Werther e Papageno”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -4325,11 +4625,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Falar sobre suicídio exige forma responsável, não silêncio absoluto."
+          "feedback": "Resposta fundamentada: Falar sobre suicídio exige forma responsável, não silêncio absoluto. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c31q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Comunicação responsável, imprensa, Werther e Papageno” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -4352,11 +4654,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Werther e Papageno descrevem efeitos diferentes de exposição."
+          "feedback": "Resposta fundamentada: Werther e Papageno descrevem efeitos diferentes de exposição. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c31q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Comunicação responsável, imprensa, Werther e Papageno”?",
           "choices": [
             {
               "id": "A",
@@ -4379,11 +4683,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Método e detalhes íntimos não precisam ser centrais."
+          "feedback": "Resposta fundamentada: Método e detalhes íntimos não precisam ser centrais. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c31q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -4406,11 +4712,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Causalidade simplista distorce fenômeno multifatorial."
+          "feedback": "Resposta fundamentada: Causalidade simplista distorce fenômeno multifatorial. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c31q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Comunicação responsável, imprensa, Werther e Papageno”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -4433,7 +4741,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Explicar de forma cuidadosa os efeitos Werther e Papageno."
+          "feedback": "Resposta fundamentada: Explicar de forma cuidadosa os efeitos Werther e Papageno. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -4445,7 +4755,7 @@
       "questions": [
         {
           "id": "c32q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Primeiros Socorros Psicológicos, pós-ocorrência e posvenção”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -4468,11 +4778,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar."
+          "feedback": "Resposta fundamentada: PSP oferece ajuda humana, prática e não invasiva: preparar, olhar, escutar e conectar. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c32q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Primeiros Socorros Psicológicos, pós-ocorrência e posvenção” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -4495,11 +4807,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Apoio inicial não é psicoterapia, diagnóstico, investigação nem debriefing psicológico compulsório."
+          "feedback": "Resposta fundamentada: Apoio inicial não é psicoterapia, diagnóstico, investigação nem debriefing psicológico compulsório. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c32q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Primeiros Socorros Psicológicos, pós-ocorrência e posvenção”?",
           "choices": [
             {
               "id": "A",
@@ -4522,11 +4836,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Segurança, necessidades básicas, funcionamento e autonomia orientam o nível de apoio."
+          "feedback": "Resposta fundamentada: Segurança, necessidades básicas, funcionamento e autonomia orientam o nível de apoio. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c32q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -4549,11 +4865,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Conectar significa combinar próximo passo concreto e aproximar a pessoa da rede adequada."
+          "feedback": "Resposta fundamentada: Conectar significa combinar próximo passo concreto e aproximar a pessoa da rede adequada. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c32q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Primeiros Socorros Psicológicos, pós-ocorrência e posvenção”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -4576,7 +4894,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Posvenção organiza cuidado depois da perda e inclui pessoas e equipes diretamente impactadas."
+          "feedback": "Resposta fundamentada: Posvenção organiza cuidado depois da perda e inclui pessoas e equipes diretamente impactadas. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -4588,7 +4908,7 @@
       "questions": [
         {
           "id": "c33q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Casos longitudinais integradores”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -4611,11 +4931,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Informação chega progressivamente e exige atualização."
+          "feedback": "Resposta fundamentada: Informação chega progressivamente e exige atualização. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c33q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Casos longitudinais integradores” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -4638,11 +4960,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Segurança, comunicação e saúde evoluem em paralelo."
+          "feedback": "Resposta fundamentada: Segurança, comunicação e saúde evoluem em paralelo. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c33q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Casos longitudinais integradores”?",
           "choices": [
             {
               "id": "A",
@@ -4665,11 +4989,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Um dado só é útil quando seu efeito sobre decisão é compreendido."
+          "feedback": "Resposta fundamentada: Um dado só é útil quando seu efeito sobre decisão é compreendido. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c33q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -4692,11 +5018,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Casos diferentes compartilham estrutura, não roteiro."
+          "feedback": "Resposta fundamentada: Casos diferentes compartilham estrutura, não roteiro. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c33q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Casos longitudinais integradores”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -4719,7 +5047,9 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Integrar segurança, comando, comunicação, coleta, tática, saúde e continuidade do cuidado."
+          "feedback": "Resposta fundamentada: Integrar segurança, comando, comunicação, coleta, tática, saúde e continuidade do cuidado. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     },
@@ -4731,7 +5061,7 @@
       "questions": [
         {
           "id": "c34q1",
-          "prompt": "Qual afirmação aparece como ideia-chave deste capítulo?",
+          "prompt": "No contexto de “Síntese do Sistema ATTS e matriz final de competências”, qual princípio central deve orientar a atuação?",
           "choices": [
             {
               "id": "A",
@@ -4754,11 +5084,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Competência integra conhecimento, reconhecimento, decisão e aplicação."
+          "feedback": "Resposta fundamentada: Competência integra conhecimento, reconhecimento, decisão e aplicação. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "conceito",
+          "curationAction": "melhorar"
         },
         {
           "id": "c34q2",
-          "prompt": "Qual alternativa corresponde ao conteúdo apresentado neste capítulo?",
+          "prompt": "Ao aplicar os conteúdos de “Síntese do Sistema ATTS e matriz final de competências” em uma ocorrência, qual alternativa oferece o critério mais adequado para decidir?",
           "choices": [
             {
               "id": "A",
@@ -4781,11 +5113,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: O Sistema ATTS é mais importante que qualquer frase isolada."
+          "feedback": "Resposta fundamentada: O Sistema ATTS é mais importante que qualquer frase isolada. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "aplicacao",
+          "curationAction": "manter"
         },
         {
           "id": "c34q3",
-          "prompt": "Qual opção sintetiza corretamente uma orientação deste capítulo?",
+          "prompt": "Qual alternativa melhor distingue uma orientação adequada de uma resposta inadequada no contexto de “Síntese do Sistema ATTS e matriz final de competências”?",
           "choices": [
             {
               "id": "A",
@@ -4808,11 +5142,13 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Segurança e comunicação precisam ser atualizadas continuamente."
+          "feedback": "Resposta fundamentada: Segurança e comunicação precisam ser atualizadas continuamente. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "discriminacao",
+          "curationAction": "substituir"
         },
         {
           "id": "c34q4",
-          "prompt": "Qual afirmação está explicitamente alinhada aos objetivos ou ao resumo deste capítulo?",
+          "prompt": "Considere o cenário: ANÁLISE ORIENTADORA Qual princípio deve orientar a próxima decisão da equipe?",
           "choices": [
             {
               "id": "A",
@@ -4835,11 +5171,13 @@
               "correct": true
             }
           ],
-          "feedback": "Resposta correta: Limite de competência é informação operacional, não fraqueza."
+          "feedback": "Resposta fundamentada: Limite de competência é informação operacional, não fraqueza. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "cenario",
+          "curationAction": "substituir"
         },
         {
           "id": "c34q5",
-          "prompt": "Qual alternativa foi trabalhada como princípio neste capítulo?",
+          "prompt": "Na reavaliação de uma ocorrência relacionada a “Síntese do Sistema ATTS e matriz final de competências”, qual princípio deve permanecer como critério integrador de decisão?",
           "choices": [
             {
               "id": "A",
@@ -4862,7 +5200,9 @@
               "correct": false
             }
           ],
-          "feedback": "Resposta correta: Integrar todo o Sistema ATTS em um mapa mental único."
+          "feedback": "Resposta fundamentada: Integrar todo o Sistema ATTS em um mapa mental único. Aplicação: use este princípio como critério de decisão sem substituir a reavaliação dinâmica de risco, ambiente, comportamento, recursos e competências.",
+          "pedagogicalType": "integracao",
+          "curationAction": "melhorar"
         }
       ]
     }
