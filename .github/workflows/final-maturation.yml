@@ -49,13 +49,14 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          p=Path('content/semantic-pages.json')
-          data=json.loads(p.read_text())
+
+          semantic_path=Path('content/semantic-pages.json')
+          semantic=json.loads(semantic_path.read_text())
           target='p180-b7-w7h-summary-3'
           old='• Agitação melhora com redução de estímulos e confronto.'
           new='• Agitação pode reduzir com menos estímulos e menor confrontação.'
           hits=0
-          for page in data.get('pages', []):
+          for page in semantic.get('pages', []):
               for block in page.get('blocks', []):
                   if block.get('id') == target:
                       if block.get('text') != old:
@@ -64,8 +65,23 @@ jobs:
                       hits += 1
           if hits != 1:
               raise SystemExit(f'WAVE1_HOTFIX_FAIL target hits={hits}')
-          p.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n')
+          semantic_path.write_text(json.dumps(semantic, ensure_ascii=False, indent=2)+'\n')
           print('WAVE1_HOTFIX_PASS agitation-summary=non-confrontational')
+
+          trace_path=Path('content/doctrine-traceability.json')
+          trace=json.loads(trace_path.read_text())
+          trace.setdefault('policy', {})['atsAttsResolution']='VALIDATED_ITO30_2021'
+          trace['policy']['atsAttsCanonical']='ATS = Atendimento a Tentativas de Suicídio; ATTS = Abordagem Técnica a Tentativas de Suicídio.'
+          trace['policy']['normativeSource']='CBMMG. ITO 30: Atendimento a Tentativas de Suicídio. 1. ed. 2021.'
+          resolved=0
+          for topic in trace.get('highRiskTopics', []):
+              if topic.get('topic') == 'Sistema ATS/ATTS e fases operacionais':
+                  topic['status']='VALIDATED_ITO30_2021_ATS_ATTS_DISTINCTION'
+                  resolved += 1
+          if resolved != 1:
+              raise SystemExit(f'WAVE1_TRACEABILITY_FAIL ats-atts topics={resolved}')
+          trace_path.write_text(json.dumps(trace, ensure_ascii=False, indent=2)+'\n')
+          print('WAVE1_TRACEABILITY_PASS ATS=attendance ATTS=technical-approach')
           PY
 
       - name: Validate source after maturation
