@@ -147,8 +147,11 @@ jobs:
       - name: Chromium — publication hotfix
         run: npx playwright test --project=chromium e2e/publication-hotfix.spec.ts
 
-      - name: Chromium — EPUB release
-        run: npx playwright test --project=chromium e2e/epub-release.spec.ts
+      - name: Chromium — EPUB downloads and cover
+        run: npx playwright test --project=chromium e2e/epub-release.spec.ts -g "reader exposes two distinct download formats and canonical cover artwork"
+
+      - name: Chromium — EPUB package and semantics
+        run: npx playwright test --project=chromium e2e/epub-release.spec.ts -g "EPUB 3.3 endpoint embeds the exact canonical eBook cover and remains semantically navigable"
 
       - name: Chromium — responsive visual
         run: npx playwright test --project=chromium e2e/responsive-visual.spec.ts
