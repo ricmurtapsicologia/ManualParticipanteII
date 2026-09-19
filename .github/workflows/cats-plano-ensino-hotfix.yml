@@ -85,7 +85,6 @@ jobs:
         run: |
           npm run source:validate
           npm run build
-          npm run audit:6
 
       - name: Verify digital, PDF and EPUB wording
         working-directory: rebuild
@@ -112,6 +111,8 @@ jobs:
             sleep 1
           done
           if [ "$READY" != "1" ]; then cat /tmp/cats-hotfix-next.log; exit 1; fi
+
+          BASE_URL=http://127.0.0.1:3101 npm run audit:6
           curl -fsS http://127.0.0.1:3101/api/epub -o /tmp/manual.epub
           unzip -p /tmp/manual.epub OEBPS/manual.xhtml > /tmp/manual-epub.xhtml
           grep -F "$CORRECT" /tmp/manual-epub.xhtml >/dev/null
