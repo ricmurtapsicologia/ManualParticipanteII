@@ -1,0 +1,122 @@
+name: CATS plan source hotfix
+
+on:
+  push:
+    branches: [hotfix/cats-plano-ensino-20260919]
+    paths:
+      - '.github/workflows/cats-plano-ensino-hotfix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply-and-verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: hotfix/cats-plano-ensino-20260919
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: rebuild/package-lock.json
+
+      - name: Correct CATS plan reference at canonical source
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib
+          import re
+
+          old = "O plano de ensino de Atendimento a Tentativas de Suicídio para o CFO define"
+          new = "O plano de ensino do Curso de Atendimento a Tentativas de Suicídio (CATS) define"
+          paths = [
+              Path("rebuild/content/pages.json"),
+              Path("rebuild/content/semantic-pages.json"),
+          ]
+
+          for path in paths:
+              text = path.read_text(encoding="utf-8")
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"HOTFIX_FAIL {path}: expected exactly 1 occurrence, found {count}")
+              path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          pages_path = Path("rebuild/content/pages.json")
+          semantic_path = Path("rebuild/content/semantic-pages.json")
+          digest = hashlib.sha256(pages_path.read_bytes()).hexdigest()
+          semantic = semantic_path.read_text(encoding="utf-8")
+          pattern = r'("source"\s*:\s*\{.*?"sha256"\s*:\s*")[0-9a-f]{64}(")'
+          semantic, replaced = re.subn(pattern, lambda m: m.group(1) + digest + m.group(2), semantic, count=1, flags=re.S)
+          if replaced != 1:
+              raise SystemExit("HOTFIX_FAIL semantic source.sha256 not updated")
+          semantic_path.write_text(semantic, encoding="utf-8")
+
+          for path in paths:
+              text = path.read_text(encoding="utf-8")
+              if old in text or new not in text:
+                  raise SystemExit(f"HOTFIX_FAIL verification {path}")
+          print(f"HOTFIX_SOURCE_PASS sha256={digest}")
+
+      - name: Commit corrected canonical source locally
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rebuild/content/pages.json rebuild/content/semantic-pages.json
+          git commit -m "fix: correct CATS plan reference in participant manual"
+
+      - name: Install dependencies
+        working-directory: rebuild
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Validate source and build all products
+        working-directory: rebuild
+        run: |
+          npm run source:validate
+          npm run build
+          npm run audit:6
+
+      - name: Verify digital, PDF and EPUB wording
+        working-directory: rebuild
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils unzip
+          CORRECT='O plano de ensino do Curso de Atendimento a Tentativas de Suicídio (CATS) define'
+          WRONG='O plano de ensino de Atendimento a Tentativas de Suicídio para o CFO define'
+
+          grep -F "$CORRECT" content/semantic-pages.json >/dev/null
+          ! grep -F "$WRONG" content/semantic-pages.json
+
+          PDF=public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf
+          pdftotext "$PDF" /tmp/manual.txt
+          grep -F "$CORRECT" /tmp/manual.txt >/dev/null
+          ! grep -F "$WRONG" /tmp/manual.txt
+
+          npm run start -- -p 3101 >/tmp/cats-hotfix-next.log 2>&1 &
+          PID=$!
+          trap 'kill $PID 2>/dev/null || true' EXIT
+          READY=0
+          for i in {1..45}; do
+            if curl -fsS http://127.0.0.1:3101/api/health >/dev/null; then READY=1; break; fi
+            sleep 1
+          done
+          if [ "$READY" != "1" ]; then cat /tmp/cats-hotfix-next.log; exit 1; fi
+          curl -fsS http://127.0.0.1:3101/api/epub -o /tmp/manual.epub
+          unzip -p /tmp/manual.epub OEBPS/manual.xhtml > /tmp/manual-epub.xhtml
+          grep -F "$CORRECT" /tmp/manual-epub.xhtml >/dev/null
+          ! grep -F "$WRONG" /tmp/manual-epub.xhtml
+          echo "THREE_PRODUCTS_WORDING_PASS"
+
+      - name: Fold generated PDF into hotfix and remove temporary workflow
+        run: |
+          git add -u rebuild/public/downloads
+          git add rebuild/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf rebuild/public/downloads/manual-preflight.json
+          git rm .github/workflows/cats-plano-ensino-hotfix.yml
+          git commit --amend --no-edit
+          git status --short
+          git push origin HEAD:hotfix/cats-plano-ensino-20260919
