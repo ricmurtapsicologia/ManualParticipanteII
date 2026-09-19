@@ -35,39 +35,45 @@ jobs:
 
           old = "O plano de ensino de Atendimento a Tentativas de Suicídio para o CFO define"
           new = "O plano de ensino do Curso de Atendimento a Tentativas de Suicídio (CATS) define"
-          paths = [
-              Path("rebuild/content/pages.json"),
-              Path("rebuild/content/semantic-pages.json"),
-          ]
+          pages_path = Path("rebuild/content/pages.json")
+          semantic_path = Path("rebuild/content/semantic-pages.json")
+          navigation_path = Path("rebuild/content/navigation.json")
 
-          for path in paths:
+          for path in (pages_path, semantic_path):
               text = path.read_text(encoding="utf-8")
               count = text.count(old)
               if count != 1:
                   raise SystemExit(f"HOTFIX_FAIL {path}: expected exactly 1 occurrence, found {count}")
               path.write_text(text.replace(old, new, 1), encoding="utf-8")
 
-          pages_path = Path("rebuild/content/pages.json")
-          semantic_path = Path("rebuild/content/semantic-pages.json")
           digest = hashlib.sha256(pages_path.read_bytes()).hexdigest()
+
           semantic = semantic_path.read_text(encoding="utf-8")
-          pattern = r'("source"\s*:\s*\{.*?"sha256"\s*:\s*")[0-9a-f]{64}(")'
-          semantic, replaced = re.subn(pattern, lambda m: m.group(1) + digest + m.group(2), semantic, count=1, flags=re.S)
+          semantic_pattern = r'("source"\s*:\s*\{.*?"sha256"\s*:\s*")[0-9a-f]{64}(")'
+          semantic, replaced = re.subn(semantic_pattern, lambda m: m.group(1) + digest + m.group(2), semantic, count=1, flags=re.S)
           if replaced != 1:
               raise SystemExit("HOTFIX_FAIL semantic source.sha256 not updated")
           semantic_path.write_text(semantic, encoding="utf-8")
 
-          for path in paths:
+          navigation = navigation_path.read_text(encoding="utf-8")
+          navigation, replaced = re.subn(r'("sourceSha256"\s*:\s*")[0-9a-f]{64}(")', lambda m: m.group(1) + digest + m.group(2), navigation, count=1)
+          if replaced != 1:
+              raise SystemExit("HOTFIX_FAIL navigation sourceSha256 not updated")
+          navigation_path.write_text(navigation, encoding="utf-8")
+
+          for path in (pages_path, semantic_path):
               text = path.read_text(encoding="utf-8")
               if old in text or new not in text:
-                  raise SystemExit(f"HOTFIX_FAIL verification {path}")
+                  raise SystemExit(f"HOTFIX_FAIL wording verification {path}")
+          if digest not in semantic_path.read_text(encoding="utf-8") or digest not in navigation_path.read_text(encoding="utf-8"):
+              raise SystemExit("HOTFIX_FAIL provenance verification")
           print(f"HOTFIX_SOURCE_PASS sha256={digest}")
 
       - name: Commit corrected canonical source locally
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add rebuild/content/pages.json rebuild/content/semantic-pages.json
+          git add rebuild/content/pages.json rebuild/content/semantic-pages.json rebuild/content/navigation.json
           git commit -m "fix: correct CATS plan reference in participant manual"
 
       - name: Install dependencies
