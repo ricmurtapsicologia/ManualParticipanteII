@@ -119,10 +119,8 @@ jobs:
           ! grep -F "$WRONG" /tmp/manual-epub.xhtml
           echo "THREE_PRODUCTS_WORDING_PASS"
 
-      - name: Fold generated PDF into hotfix and remove temporary workflow
+      - name: Publish verified source hotfix and remove temporary workflow
         run: |
-          git add -u rebuild/public/downloads
-          git add rebuild/public/downloads/Manual-do-Participante-CATS-Edicao-Digital-2026.pdf rebuild/public/downloads/manual-preflight.json
           git rm .github/workflows/cats-plano-ensino-hotfix.yml
           git commit --amend --no-edit
           git status --short
