@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import './ds2.css';
 import './wave54.css';
@@ -75,6 +76,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preload" as="image" href={coverUrl} fetchPriority="high" />
       </head>
       <body>
+        <Script
+          src="https://ricmurtapsicologia.github.io/Curso-ATS/cats-analytics-v2.js?v=20260920-v2"
+          strategy="afterInteractive"
+          data-cats-analytics="v2"
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
         <SkipLinkFocus />
         {children}
