@@ -10,8 +10,8 @@ const cspDirectives = [
   "media-src 'self' blob:",
   "font-src 'self' data:",
   "style-src 'self' 'unsafe-inline'",
-  "script-src 'self' 'unsafe-inline'",
-  "connect-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://ricmurtapsicologia.github.io",
+  "connect-src 'self' https://secretaria-digital-core.vercel.app",
   "worker-src 'self' blob:"
 ];
 
