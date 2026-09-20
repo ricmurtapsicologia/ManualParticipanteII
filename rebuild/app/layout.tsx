@@ -77,7 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         <Script
-          src="https://ricmurtapsicologia.github.io/Curso-ATS/cats-analytics-v2.js?v=20260920-v2"
+          src="https://ricmurtapsicologia.github.io/Curso-ATS/cats-analytics-v2.js?v=20260920-v201"
           strategy="afterInteractive"
           data-cats-analytics="v2"
         />
